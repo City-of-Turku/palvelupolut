@@ -1,0 +1,20 @@
+
+# Values in this file override the default values of our helm chart.
+#
+# See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
+# for all possible options.
+
+exposeDomains:
+  - hostname: service-paths.dev.wdr.io
+
+nginx:
+  basicauth:
+    credentials:
+      username: wunder
+      password: tsp
+
+memcached:
+  enabled: false
+
+varnish:
+  enabled: false

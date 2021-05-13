@@ -28,11 +28,15 @@ workflows:
           executor: cicd73
           codebase-build:
             - silta/drupal-composer-install
-            - silta/npm-install-build
+            # - silta/npm-install-build
+          silta_config: silta/silta.yml,silta/silta-dev.yml
           context: silta_dev
+          requires:
+            - analyze
+            - validate
           filters:
             branches:
-              ignore: production
+              only: master
 
       - silta/drupal-build-deploy:
           # Extend the build-deploy configuration for the production environment.

@@ -1,19 +1,6 @@
-# Wunder template for Drupal projects
-
-This project template is an opinionated fork of the popular [Drupal-composer template](https://github.com/drupal-composer/drupal-project), configured to automatically deploy code to a [Kubernetes](https://kubernetes.io/) cluster using [CircleCI](https://circleci.com/). Everything that works with the Drupal-composer project template will work with this repository, so we won't duplicate the documentation here.
+# Service Paths
 
 ## Getting started
-
-- Click "[Use this template](https://github.com/wunderio/drupal-project/generate)" to generate a new project,
-  - select the correct owner,
-  - name the project as `client-COUNTRYCODE-CLIENT-PROJECT`,
-  - make the repository private (unless the project is public).
-- Clone the new project locally and modify it's details:
-  - `composer.json` name,
-  - `silta/silta.yml` [values](https://github.com/wunderio/charts/blob/master/drupal/values.yaml).
-- Log in to [CircleCI](https://app.circleci.com/) using your Github account and add the new project using existing config.
-
-For additional instructions, please see the [Silta documentation](https://github.com/wunderio/silta).
 
 ## Local development
 
@@ -22,6 +9,7 @@ For additional instructions, please see the [Silta documentation](https://github
 1. Install the latest [Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
 2. Update your project name and other Lando [Drupal 9 recipe](https://docs.lando.dev/config/drupal9.html)'s parameters at `.lando.yml`.
 3. Run `lando start`.
+4. Run `lando db-import db.sql.gz`.
 
 ### [Services](https://docs.lando.dev/config/services.html)
 

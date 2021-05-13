@@ -1,4 +1,4 @@
-name: silta
+name: service-paths
 recipe: drupal9
 
 config:
@@ -91,7 +91,7 @@ services:
 
 proxy:
   mailhog:
-    - mail-silta.lndo.site
+    - mail.service-paths.lndo.site
 
 events:
   post-db-import:
