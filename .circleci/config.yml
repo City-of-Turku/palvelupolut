@@ -12,16 +12,16 @@ workflows:
   version: 2
   commit:
     jobs:
-      - silta/drupal-validate:
-          name: validate
-          executor: cicd73
-          post-validation:
-            - run: echo "You can add additional validation here!"
+      # - silta/drupal-validate:
+      #     name: validate
+      #     executor: cicd73
+      #     post-validation:
+      #       - run: echo "You can add additional validation here!"
 
-      - silta/analyze:
-          name: analyze
-          context: analyze
-          sources: web
+      # - silta/analyze:
+      #     name: analyze
+      #     context: analyze
+      #     sources: web
 
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
@@ -31,9 +31,9 @@ workflows:
             # - silta/npm-install-build
           silta_config: silta/silta.yml,silta/silta-dev.yml
           context: silta_dev
-          requires:
-            - analyze
-            - validate
+          # requires:
+          #   - analyze
+          #   - validate
           filters:
             branches:
               only: master

@@ -11,7 +11,7 @@ nginx:
   basicauth:
     credentials:
       username: wunder
-      password: tsp
+      password: sp
 
 memcached:
   enabled: false
