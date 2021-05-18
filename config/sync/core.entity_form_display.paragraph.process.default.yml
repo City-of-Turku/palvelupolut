@@ -1,0 +1,38 @@
+uuid: c2c55084-730a-4c2e-a57b-cb8ad22ceff8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.process.field_paragraph_heading
+    - field.field.paragraph.process.field_process_steps
+    - paragraphs.paragraphs_type.process
+  module:
+    - paragraphs_asymmetric_translation_widgets
+id: paragraph.process.default
+targetEntityType: paragraph
+bundle: process
+mode: default
+content:
+  field_paragraph_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_process_steps:
+    type: paragraphs_classic_asymmetric
+    weight: 1
+    settings:
+      title: Step
+      title_plural: Steps
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: step
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

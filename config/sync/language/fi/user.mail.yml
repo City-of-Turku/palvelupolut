@@ -1,0 +1,2 @@
+register_admin_created:
+  subject: 'Ylläpitäjä loi sinulle tilin sivustolla [site:name]'

@@ -1,0 +1,16 @@
+session:
+  parameter: language
+url:
+  source: path_prefix
+  prefixes:
+    en: en
+    fi: fi
+    sv: sv
+  domains:
+    en: ''
+    fi: ''
+    sv: ''
+selected_langcode: site_default
+_core:
+  default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
+langcode: fi

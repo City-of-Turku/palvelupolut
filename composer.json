@@ -12,6 +12,18 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fonticonpicker/fonticonpicker--fonticonpicker",
+                "version": "3.1.1",
+                "type": "drupal-library-dist",
+                "dist": {
+                    "url": "https://github.com/fontIconPicker/fontIconPicker/releases/download/v3.1.1/fontIconPicker.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -27,6 +39,7 @@
         "drupal/core-recommended": "^9.1",
         "drupal/eva": "^2.1",
         "drupal/field_group": "^3.1",
+        "drupal/fontawesome": "^2.18",
         "drupal/google_tag": "^1.4",
         "drupal/honeypot": "^2.0",
         "drupal/hreflang": "^1.3",
@@ -50,6 +63,7 @@
         "drupal/twig_tweak": "^2.8",
         "drupal/warden": "^3.0@RC",
         "drush/drush": "^10.3",
+        "fonticonpicker/fonticonpicker--fonticonpicker": "^3.1",
         "kint-php/kint": "^3.3",
         "vlucas/phpdotenv": "^5.2",
         "webflo/drupal-finder": "^1.2",
@@ -104,6 +118,9 @@
             ],
             "web/libraries/{$name}": [
                 "type:drupal-library"
+            ],
+            "web/libraries/{$name}/dist": [
+                "type:drupal-library-dist"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"

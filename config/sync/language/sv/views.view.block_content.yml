@@ -1,0 +1,49 @@
+label: 'Bibliotek med anpassade block'
+description: 'Hitta och hantera anpassade block.'
+display:
+  default:
+    display_title: Huvud
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Verkställ
+          reset_button_label: Återställ
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      pager:
+        options:
+          tags:
+            previous: '‹ Föregående'
+            next: 'Nästa ›'
+          expose:
+            items_per_page_label: 'Inlägg per sida'
+            items_per_page_options_all_label: '- Alla -'
+            offset_label: Kompensera
+      fields:
+        info:
+          label: Blockbeskrivning
+          separator: ', '
+        type:
+          label: 'Typ av block'
+          separator: ', '
+        changed:
+          label: Uppdaterad
+        operations:
+          label: Funktioner
+      filters:
+        info:
+          expose:
+            label: Blockbeskrivning
+        type:
+          expose:
+            label: 'Typ av block'
+      title: 'Bibliotek med anpassade block'
+      empty:
+        area_text_custom:
+          content: 'Det finns inga anpassade block tillgängliga.'
+  page_1:
+    display_title: Sida
+    display_options:
+      menu:
+        title: 'Bibliotek med anpassade block'

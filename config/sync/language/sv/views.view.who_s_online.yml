@@ -1,0 +1,30 @@
+label: 'Block för vilka som är inloggade'
+description: 'Visar de användarnamnen för de senast aktiva användarna samt de totalt antal aktiva användare.'
+display:
+  default:
+    display_title: Huvud
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Verkställ
+          reset_button_label: Återställ
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      filters:
+        access:
+          expose:
+            label: 'Senast åtkomst'
+            description: 'En användare anses vara inloggad så här länge efter att de senast tittat på en sida.'
+      title: 'Vilka är inloggade'
+      header:
+        result:
+          content: 'För närvarande är @total användare inloggade.'
+      empty:
+        area_text_custom:
+          content: 'För närvarande är 0 användare inloggade.'
+  who_s_online_block:
+    display_title: 'Vilka är inloggade'
+    display_options:
+      block_description: 'Vilka är inloggade'
+      display_description: 'En lista på användare som för närvarande är inloggade.'

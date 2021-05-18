@@ -1,0 +1,35 @@
+uuid: d6548ecb-f188-4389-90fc-9b18b983181d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.links.field_link
+    - field.field.paragraph.links.field_paragraph_heading
+    - paragraphs.paragraphs_type.links
+  module:
+    - linkit
+id: paragraph.links.default
+targetEntityType: paragraph
+bundle: links
+mode: default
+content:
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
+    region: content
+  field_paragraph_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

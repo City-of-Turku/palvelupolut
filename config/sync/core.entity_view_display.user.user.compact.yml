@@ -1,5 +1,5 @@
 uuid: 088160e7-ceb7-4561-bea1-8cbf2a1fded7
-langcode: en
+langcode: fi
 status: true
 dependencies:
   config:
@@ -26,4 +26,5 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  langcode: true
   member_for: true

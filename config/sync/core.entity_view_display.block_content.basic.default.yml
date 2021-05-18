@@ -1,5 +1,5 @@
 uuid: a4a5749f-199c-45d4-95ed-56874eb53b1e
-langcode: en
+langcode: fi
 status: true
 dependencies:
   config:
@@ -21,4 +21,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

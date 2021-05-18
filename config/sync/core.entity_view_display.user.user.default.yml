@@ -1,5 +1,5 @@
 uuid: 9990025f-aac0-446f-847e-d676c12297f6
-langcode: en
+langcode: fi
 status: true
 dependencies:
   config:
@@ -27,4 +27,5 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-hidden: {  }
+hidden:
+  langcode: true

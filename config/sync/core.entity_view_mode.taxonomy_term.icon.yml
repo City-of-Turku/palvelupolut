@@ -1,0 +1,10 @@
+uuid: 5a1d9f7f-ee95-460c-94a8-b00f8962f330
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.icon
+label: Icon
+targetEntityType: taxonomy_term
+cache: true

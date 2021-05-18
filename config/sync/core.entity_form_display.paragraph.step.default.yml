@@ -1,0 +1,44 @@
+uuid: d71c985e-d89c-49c3-a3b6-fad017c9f1f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.step.field_link
+    - field.field.paragraph.step.field_step_text
+    - field.field.paragraph.step.field_step_title
+    - paragraphs.paragraphs_type.step
+  module:
+    - linkit
+id: paragraph.step.default
+targetEntityType: paragraph
+bundle: step
+mode: default
+content:
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
+    region: content
+  field_step_text:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_step_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

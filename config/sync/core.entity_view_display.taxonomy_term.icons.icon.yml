@@ -1,0 +1,26 @@
+uuid: 162bbda2-ead1-415d-867a-3c68e19af37d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.icon
+    - field.field.taxonomy_term.icons.field_icon
+    - taxonomy.vocabulary.icons
+  module:
+    - fontawesome
+id: taxonomy_term.icons.icon
+targetEntityType: taxonomy_term
+bundle: icons
+mode: icon
+content:
+  field_icon:
+    weight: 0
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+hidden:
+  description: true
+  langcode: true

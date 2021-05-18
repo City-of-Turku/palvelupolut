@@ -1,0 +1,17 @@
+uuid: 7624fe58-3923-4d8f-ba96-7dab16a8cc55
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Service landing page'
+type: landing_page
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

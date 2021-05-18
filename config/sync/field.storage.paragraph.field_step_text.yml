@@ -1,0 +1,19 @@
+uuid: c0e2f2e2-7033-4fc1-80c0-0219b8f7b3c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_step_text
+field_name: field_step_text
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

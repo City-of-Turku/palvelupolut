@@ -1,0 +1,40 @@
+uuid: 3e4d67f6-63c8-4b8a-862c-86d7d1948f2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_process_steps
+    - paragraphs.paragraphs_type.process
+    - paragraphs.paragraphs_type.step
+  module:
+    - entity_reference_revisions
+id: paragraph.process.field_process_steps
+field_name: field_process_steps
+entity_type: paragraph
+bundle: process
+label: Steps
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      step: step
+    target_bundles_drag_drop:
+      cta:
+        weight: 6
+        enabled: false
+      cta_grid:
+        weight: 7
+        enabled: false
+      process:
+        weight: 8
+        enabled: false
+      step:
+        enabled: true
+        weight: 5
+field_type: entity_reference_revisions

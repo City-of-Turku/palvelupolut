@@ -1,46 +1,77 @@
 module:
+  admin_toolbar: 0
+  admin_toolbar_tools: 0
+  adminimal_admin_toolbar: 0
   automated_cron: 0
+  backup_migrate: 0
   big_pipe: 0
   block: 0
   block_content: 0
   breakpoint: 0
   ckeditor: 0
   color: 0
-  comment: 0
   config: 0
-  contact: 0
+  config_perms: 0
+  config_translation: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dblog: 0
+  devel: 0
+  devel_php: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
+  eva: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
+  fontawesome: 0
+  fontawesome_iconpicker_widget: 0
   help: 0
   history: 0
+  hreflang: 0
   image: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  language: 0
   link: 0
+  linkit: 0
+  locale: 0
+  media: 0
+  media_library: 0
   menu_link_content: 0
+  menu_trail_by_path: 0
   menu_ui: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_tools: 0
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_asymmetric_translation_widgets: 0
   path: 0
   path_alias: 0
-  quickedit: 0
   rdf: 0
-  search: 0
+  roleassign: 0
   shortcut: 0
+  simplei: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
-  tour: 0
+  transliterate_filenames: 0
   user: 0
   views_ui: 0
+  menu_admin_per_menu: 1
+  pathauto: 1
+  content_translation: 10
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   bartik: 0
@@ -48,3 +79,4 @@ theme:
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: fi

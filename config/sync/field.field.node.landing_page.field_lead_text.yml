@@ -1,0 +1,21 @@
+uuid: bd4d4f34-c54c-4a82-88e2-b203ae5edf86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_text
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.field_lead_text
+field_name: field_lead_text
+entity_type: node
+bundle: landing_page
+label: 'Lead Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

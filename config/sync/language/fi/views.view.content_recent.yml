@@ -1,0 +1,22 @@
+label: 'Uusin sisältö'
+display:
+  default:
+    display_title: Isäntä
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      fields:
+        changed:
+          separator: ', '
+      title: 'Uusin sisältö'
+      empty:
+        area_text_custom:
+          content: 'Ei sisältöä.'
+      use_more_text: Lisää
+  block_1:
+    display_title: Lohko

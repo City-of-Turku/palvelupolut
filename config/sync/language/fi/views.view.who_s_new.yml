@@ -1,0 +1,20 @@
+label: 'Uudet käyttäjät'
+description: 'Näyttää listan sivuston uusimmista käyttäjätileistä.'
+display:
+  default:
+    display_title: Isäntä
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      title: 'Uudet käyttäjät'
+  block_1:
+    display_title: 'Uudet käyttäjät'
+    display_options:
+      display_description: 'Lista uusista käyttäjistä'
+      block_description: 'Uudet käyttäjät'
+      block_category: Käyttäjä

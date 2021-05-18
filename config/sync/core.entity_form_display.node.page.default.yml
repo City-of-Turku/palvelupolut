@@ -1,5 +1,5 @@
 uuid: 25226ddc-fbba-499a-b3b2-6b399bf85a21
-langcode: en
+langcode: fi
 status: true
 dependencies:
   config:
@@ -30,6 +30,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

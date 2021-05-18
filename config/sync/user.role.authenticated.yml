@@ -1,5 +1,5 @@
 uuid: 9a8f2404-bdb3-4e1c-ba20-144badd8dba9
-langcode: en
+langcode: fi
 status: true
 dependencies: {  }
 _core:
@@ -17,3 +17,4 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view media'

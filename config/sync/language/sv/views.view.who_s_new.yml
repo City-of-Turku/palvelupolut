@@ -1,0 +1,20 @@
+label: 'Vilka är nya?'
+description: 'Visar en lista över de senast användarkontona på webbplatsen.'
+display:
+  default:
+    display_title: Huvud
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Verkställ
+          reset_button_label: Återställ
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      title: 'Vilka är nya?'
+  block_1:
+    display_title: 'Vilka är nya?'
+    display_options:
+      display_description: 'En lista på nya användare'
+      block_description: 'Vilka är nya?'
+      block_category: Användare

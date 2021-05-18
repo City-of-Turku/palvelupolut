@@ -1,0 +1,38 @@
+uuid: 4e994ef1-e946-4946-a291-c6f07d37c8bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion.field_accordion_items
+    - field.field.paragraph.accordion.field_paragraph_heading
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - paragraphs_asymmetric_translation_widgets
+id: paragraph.accordion.default
+targetEntityType: paragraph
+bundle: accordion
+mode: default
+content:
+  field_accordion_items:
+    type: paragraphs_classic_asymmetric
+    weight: 1
+    settings:
+      title: Item
+      title_plural: Items
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: accordion_item
+    third_party_settings: {  }
+    region: content
+  field_paragraph_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

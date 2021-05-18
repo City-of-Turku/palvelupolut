@@ -1,0 +1,9 @@
+uuid: bcbf4cc4-a49a-4eed-9213-5f0963fd59c7
+langcode: fi
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: L7Fm9s3OFts1EqoEZeMwKxAa7FRxN6H418WDwfav3QI
+id: administer_file_system
+label: 'Administer file system'
+route: system.file_system_settings

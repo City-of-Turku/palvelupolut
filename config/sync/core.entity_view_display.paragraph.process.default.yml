@@ -1,0 +1,33 @@
+uuid: 028d24ce-4ede-489c-89e2-1e8d65aa2173
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.process.field_paragraph_heading
+    - field.field.paragraph.process.field_process_steps
+    - paragraphs.paragraphs_type.process
+  module:
+    - entity_reference_revisions
+id: paragraph.process.default
+targetEntityType: paragraph
+bundle: process
+mode: default
+content:
+  field_paragraph_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_process_steps:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,52 @@
+uuid: 11ea3c0c-3d64-4dad-b6d3-6814974e2512
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta.field_cta_icon
+    - field.field.paragraph.cta.field_cta_link
+    - field.field.paragraph.cta.field_cta_text
+    - field.field.paragraph.cta.field_cta_title
+    - paragraphs.paragraphs_type.cta
+  module:
+    - linkit
+id: paragraph.cta.default
+targetEntityType: paragraph
+bundle: cta
+mode: default
+content:
+  field_cta_icon:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cta_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
+    region: content
+  field_cta_text:
+    weight: 2
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_cta_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true
