@@ -29,6 +29,7 @@
 
 # Ignore OS files
 .DS_Store
+web/themes/custom/turku-theme/.DS_Store
 
 # Ignore .env files as they are personal
 /.env
