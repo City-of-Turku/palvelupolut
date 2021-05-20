@@ -1,0 +1,100 @@
+.details-summary {
+  text-align: right;
+
+  &__summary {
+    list-style: none;
+
+    @include button-base;
+
+    padding: space(3/4) space();
+
+    @include above($width-large) {
+      padding: space(3/4) space();
+    }
+
+    .icon {
+      &--before {
+        width: 1.25em;
+        height: 1.25em;
+        margin-right: space();
+      }
+
+      &--after {
+        margin-left: space(1/2);
+      }
+    }
+
+    &::marker {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: space() 0;
+    margin-right: space(-1/2);
+    margin-left: space(-1/2);
+    margin-top: space();
+    @include transition(
+      transform opacity,
+      0.5s,
+      cubic-bezier(0.19, 1, 0.22, 1)
+    );
+
+    @include above($width-medium) {
+      padding: space(2) 0;
+      margin-right: space(-1);
+      margin-left: space(-1);
+      margin-top: space(2);
+    }
+
+    @include above($width-large) {
+      margin-right: space(-2);
+      margin-left: space(-2);
+      margin-top: space(3);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 1px;
+      background-color: color(border-separator);
+      display: block;
+      right: space(1/2);
+      left: space(1/2);
+
+      @include above($width-medium) {
+        right: space(1);
+        left: space(1);
+      }
+
+      @include above($width-large) {
+        right: space(2);
+        left: space(2);
+      }
+    }
+
+    .details-summary:not([open]) > & {
+      opacity: 0;
+      transform: translateY(space(-1/4));
+    }
+
+    & > * {
+      min-width: 14rem;
+      margin: space(1/2);
+
+      @include above($width-medium) {
+        margin: space(1);
+      }
+
+      @include above($width-large) {
+        margin: space(2);
+      }
+    }
+  }
+}

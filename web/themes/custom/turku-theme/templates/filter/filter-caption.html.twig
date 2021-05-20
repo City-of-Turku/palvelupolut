@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override for a filter caption.
+ *
+ * Returns HTML for a captioned image, audio, video or other tag.
+ *
+ * Available variables
+ * - string node: The complete HTML tag whose contents are being captioned.
+ * - string tag: The name of the HTML tag whose contents are being captioned.
+ * - string caption: The caption text.
+ * - string classes: The classes of the captioned HTML tag.
+ */
+#}
+{% set modifiers = attributes.class|default([]) %}
+{% set modifiers = modifiers|merge([classes]) %}
+
+{# Remove extra classes being picked up from _context.attributes by the bem() Twig function. #}
+{% set attributes = create_attribute() %}
+
+{% include "@atoms/images/figure/figure.twig" with {
+  figure__base_class: 'image-wysiwyg',
+  figure__modifiers: modifiers,
+  figure__content: node,
+  figure__caption: caption
+} %}

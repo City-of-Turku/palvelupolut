@@ -1,0 +1,6 @@
+input__checked: true
+input__type: radio
+input__name: radio
+input__id: radio
+input__modifiers:
+  - radio

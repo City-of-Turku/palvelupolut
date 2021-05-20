@@ -1,0 +1,100 @@
+@import "../03-functions/layout";
+
+/*
+ * Mixin - Grid-width
+ * Calculates widths for CSS grid items. Returns REM values.
+ */
+@mixin grid-width($column-span: $grid-columns) {
+  max-width: calc(#{$column-span * $grid-column-width} + #{($column-span - 1) * $grid-gutter-width});
+}
+
+/*
+ * Mixin - Wrapper-width
+ * Restrict container width.
+ */
+@mixin wrapper-width($width: $width--page-wrapper, $margin: 0 auto) {
+  max-width: $width;
+  width: 100%;
+  margin: #{$margin};
+}
+
+/*
+ * Mixin - Wrapper-padding
+ * Add horizontal gutter to outer containers.
+ */
+@mixin wrapper-padding {
+  padding-left: $width--page-padding;
+  padding-right: $width--page-padding;
+}
+
+/*
+ * Mixin - Wrapper
+ * Outer container mixin.
+ */
+@mixin wrapper($width: $width--page-wrapper, $margin: 0 auto) {
+  @include wrapper-width($width, $margin);
+  @include wrapper-padding;
+}
+
+
+/**
+ * Mixin - Above
+ * Target viewports in a range from given to infinity
+ */
+@mixin above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+/**
+ * Mixin - Below
+ * Target viewports from 0 to given breakpoint $breakpoint.
+ * The inverse behavior of mobile first.
+ */
+@mixin below($breakpoint) {
+  @media (max-width: #{$breakpoint - space(1/100)}) {
+    @content;
+  }
+}
+
+/**
+ * Mixin - Between
+ * Target viewports in a range from given breakpoint $smaller
+ * to breakpoint $larger.
+ */
+@mixin between($smaller, $larger) {
+  @media (min-width: $smaller) and (max-width: #{$larger - space(1/100)}) {
+    @content;
+  }
+}
+
+/**
+ * Mixin - Flexbox-grid
+ * Base styles for a flexbox based layout wrapper.
+ */
+@mixin flexbox-grid($width: calc(100% + #{$grid-gutter-width})) {
+  width: $width;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: - $grid-gutter-width / 2;
+  margin-right: - $grid-gutter-width / 2;
+}
+
+/**
+ * Mixin - Flexbox-grid-item
+ * Base styles for a single flexbox based layout item.
+ */
+@mixin flexbox-grid-item($columns: 4, $columns-medium: 2) {
+  width: 100%;
+  margin: 0 $grid-gutter-width/2 $grid-gutter-width;
+
+  @include above($width-medium) {
+    width: flexbox-item-width($columns-medium);
+  }
+
+  @include above($width-large) {
+    width: flexbox-item-width($columns);
+  }
+}

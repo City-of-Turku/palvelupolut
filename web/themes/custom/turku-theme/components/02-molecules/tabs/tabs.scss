@@ -1,0 +1,20 @@
+.tabs {
+  &__nav {
+    @include list-reset;
+
+    border-bottom: 1px solid color(primary);
+
+    @include above($width-small) {
+      display: flex;
+    }
+
+    &--local-tasks {
+      margin: space() 0 space(1/2);
+      padding: 0;
+    }
+  }
+
+  &__link--local-tasks {
+    padding: space(1/4) space(3/2);
+  }
+}

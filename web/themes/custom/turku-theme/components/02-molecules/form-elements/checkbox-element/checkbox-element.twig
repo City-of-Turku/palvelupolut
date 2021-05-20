@@ -1,0 +1,32 @@
+{#
+/**
+ * Available variables:
+ * - checkbox_element__level - the tag used for the heading
+ * - checkbox_element__base_class - the base classname
+ * - checkbox_element__modifiers - array of modifiers to add to the base classname
+ * - checkbox_element__content: array of content
+ *
+ */
+#}
+{% set checkbox_element__base_class = checkbox_element__base_class|default("checkbox_element") %}
+{% set checkbox_element__modifiers = checkbox_element__modifiers|default([]) %}
+
+<div
+  {{ bem(checkbox_element__base_class, checkbox_element__modifiers, checkbox_element__blockname, checkbox_element__extra_classes) }}
+>
+  {% include "@atoms/form/input/input.twig" with {
+    input__type: "checkbox",
+    input__modifiers: checkbox_element__modifiers|merge(["checkbox"]),
+    input__extra_classes: ["visually-hidden"],
+    input__id: checkbox_element__id
+  } %}
+  {% include "@atoms/form/label/label.twig" with {
+    label__content: checkbox_element__label,
+    label__modifiers: checkbox_element__modifiers|merge(["checkbox"]),
+    label__for: checkbox_element__id
+  } %}
+  {% include "@atoms/form/description/description.twig" with {
+    description__content: checkbox_element__description,
+    description__modifiers: checkbox_element__modifiers
+  } %}
+</div>

@@ -1,0 +1,41 @@
+@mixin blockquote-margin($width, $columns, $gutters) {
+  left: calc((-#{$columns} * #{$grid-column-width} + -#{$gutters} * #{$grid-gutter-width}) - ((#{$width} - (12 * #{$grid-column-width} + 11 * #{$grid-gutter-width})) / 2));
+  margin-right: calc((-#{$columns} * #{$grid-column-width} + -#{$gutters} * #{$grid-gutter-width}) - ((#{$width} - (12 * #{$grid-column-width} + 11 * #{$grid-gutter-width})) / 2) + #{space(3)});
+}
+
+.blockquote {
+  background-color: color(background-section);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: bold;
+  padding: 2rem;
+  position: relative;
+
+  @include above($width-medium) {
+    float: left;
+    margin-left: 0;
+    width: 60%;
+  }
+
+  @include above($width-xl) {
+    @include blockquote-margin($width: 100vw, $columns: 2, $gutters: 2);
+  }
+
+  @include above(1600px) {
+    @include blockquote-margin($width: 1600px, $columns: 2, $gutters: 2);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .page-content--with-sidebar & {
+    @include above($width-xl) {
+      @include blockquote-margin($width: 100vw, $columns: 1, $gutters: 0);
+    }
+
+    @include above(1600px) {
+      @include blockquote-margin($width: 1600px, $columns: 1, $gutters: 0);
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{% set media__base_class = "media" %}
+{% set media__modifiers = media__modifiers|default([]) %}
+
+<div {{ bem(media__base_class, media__modifiers) }}>
+  {{ content }}
+</div>

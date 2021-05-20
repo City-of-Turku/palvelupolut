@@ -1,0 +1,14 @@
+list_links__modifiers:
+  - 'icon'
+list_links__items:
+  - title: 'Read more on Facebook'
+    url: '#'
+    icon_before: 'facebook'
+  - title: 'External link'
+    url: '#'
+    icon_before: 'globe'
+    modifiers:
+      - 'external'
+  - title: 'The name of the attachment'
+    url: '#'
+    icon_before: 'attachment'

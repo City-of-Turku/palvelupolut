@@ -1,0 +1,59 @@
+{#
+/**
+ * Available variables:
+ * - search_keyword__base_class - the base classname
+ * - search_keyword__modifiers - array of modifiers to add to the base classname
+ * - search_keyword__label
+ * - search_keyword__placeholder
+ * - search_keyword__submit_text
+ */
+#}
+
+{% set search_keyword__base_class = "search-keyword" %}
+{% set search_keyword__modifiers = search_keyword__modifiers|default([]) %}
+{% set search_keyword__items = search_keyword__items|default([]) %}
+{% set search_keyword__expand_button_open = "js-expand-button-open" %}
+{% set search_keyword__expand_button_close = "js-expand-button-close" %}
+
+<div {{ bem(search_keyword__base_class, search_keyword__modifiers, search_keyword__blockname) }}>
+  {% include "@atoms/buttons/button/button.twig" with {
+    button__content: section_search_keyword__open_text|default("Search the site"|t),
+    button__type: "button",
+    button__icon: "search",
+    button__extra_classes: [search_keyword__base_class ~ "__open", "js-search-keyword-open", search_keyword__expand_button_open],
+    button__modifiers: ["minimal"]
+  } %}
+  <div
+    {{ bem("content", search_keyword__modifiers, search_keyword__base_class, ["js-search-keyword-content"]) }}
+    aria-hidden="true"
+  >
+    {% include "@atoms/form/label/label.twig" with {
+      label__content: section_search_keyword__label,
+      label__modifiers: ["text"],
+      label__for: "header-search-field",
+      label__extra_classes: ["visually-hidden"]
+    } %}
+
+    {% include "@atoms/form/input/input.twig" with {
+      input__id: "header-search-field",
+      input__name: "keyword",
+      input__type: "text",
+      input__placeholder: section_search_keyword__placeholder,
+      input__modifiers: ["minimal"]
+    } %}
+
+    {% include "@atoms/buttons/button/button.twig" with {
+      button__content: section_search_keyword__submit_text|default("Search"|t),
+      button__type: "submit",
+      button__extra_classes: [search_keyword__base_class ~ "__search", "js-search-keyword-search"]
+    } %}
+
+    {% include "@atoms/buttons/button/button.twig" with {
+      button__content: section_search_keyword__close_text|default("Close"|t),
+      button__type: "button",
+      button__icon: "close",
+      button__extra_classes: [search_keyword__base_class ~ "__close", "js-search-keyword-close", search_keyword__expand_button_close],
+      button__modifiers: ["minimal", "visually-hidden-text"]
+    } %}
+  </div>
+</div>

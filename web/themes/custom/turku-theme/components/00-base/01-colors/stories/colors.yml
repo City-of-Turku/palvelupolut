@@ -1,0 +1,33 @@
+palettes:
+  - palette_heading: 'Text'
+    colors:
+      - name: 'Text'
+      - name: 'Text inverse'
+      - name: 'Text meta'
+      - name: 'Text meta inverse'
+  - palette_heading: 'Accents'
+    colors:
+      - name: 'Accent'
+      - name: 'Highlight'
+      - name: 'Primary'
+      - name: 'Secondary'
+  - palette_heading: 'Border'
+    colors:
+      - name: 'Border primary'
+      - name: 'Border separator'
+      - name: 'Border box'
+      - name: 'Border box dark'
+  - palette_heading: 'Shadow'
+    colors:
+      - name: 'Box shadow'
+  - palette_heading: 'Background'
+    colors:
+      - name: 'Background'
+      - name: 'Background inverse'
+      - name: 'Background section'
+      - name: 'Background box'
+  - palette_heading: 'Status'
+    colors:
+      - name: 'Message'
+      - name: 'Warning'
+      - name: 'Error'

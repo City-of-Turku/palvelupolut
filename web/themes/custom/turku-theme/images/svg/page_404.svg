@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 222.89 336.19" enable-background="new 0 0 222.89 336.19" xml:space="preserve">
+<style>
+.dash-grp {
+stroke-dasharray: 170;
+animation: dash 2s ease forwards; position: absolute;
+}
+#pth1 {
+stroke-dasharray: 14;
+animation: flicker 0.7s linear forwards; animation-iteration-count: infinite;
+}
+#pth2 {
+stroke-dasharray: 14;
+animation: flicker 0.84s linear forwards; animation-iteration-count: infinite;
+}
+#pth3 {
+stroke-dasharray: 14;
+animation: flicker 1s linear forwards; animation-iteration-count: infinite;
+}
+@keyframes flicker {
+0% {opacity: 0; stroke-dashoffset: 14;} 
+50% {opacity: 1; stroke-dashoffset: 7;} 
+100% {opacity: 0; stroke-dashoffset: 0;}
+}
+@keyframes dash {
+from {stroke-dashoffset: 170;}
+to {stroke-dashoffset: 0;}
+}
+</style>
+<g class = "dash-grp">
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M135.32,202.49v24h-0.01c-0.27,12.75-10.68,23-23.49,23s-23.22-10.25-23.49-23h-0.01v-24H135.32z"/>
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M119.84,186.49c0,5.33,0,10.67,0,16"/>
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M104.07,186.49c0,5.33,0,10.67,0,16"/>
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M17.82,322.45c0-12.98,10.52-23.5,23.5-23.5c12.98,0,34.02,0,47,0c12.98,0,23.5-10.52,23.5-23.5v-25.96"/>
+</g>
+<g class = "dash-grp">
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M204.87,12.35c0,12.98-10.52,23.5-23.5,23.5c-12.98,0-34.02,0-47,0c-12.98,0-23.5,10.52-23.5,23.5v25.96"/>
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M87.71,132.32v-24h0.01c0.27-12.75,10.68-23,23.49-23s23.22,10.25,23.49,23h0.01v24H87.71z"/>
+</g>
+<g>
+	<path id = "pth1" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M145.04,189.8c3.66,1.77,7.33,3.53,10.99,5.3"/>
+	<path id = "pth2" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M142.75,180.76c3.3-2.37,6.61-4.74,9.91-7.12"/>
+	<path id = "pth3" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M137.05,173.64c1.11-3.91,2.21-7.83,3.32-11.74"/>
+</g>
+<g class = "dash-grp">
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M76.84,227.14c-20.7-12.03-34.61-34.44-34.61-60.1c0-25.66,13.92-48.07,34.61-60.1"/>
+	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M145.67,106.44c21.17,11.9,35.48,34.58,35.48,60.59c0,26.23-14.53,49.06-35.99,60.88"/>
+</g>
+</svg>

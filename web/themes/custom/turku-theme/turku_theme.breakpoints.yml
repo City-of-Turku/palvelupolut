@@ -1,0 +1,22 @@
+# Breakpoints - sync with /base/defaults/variables/layout.scss
+turku_theme.below_xs:
+  label: Below Xs
+  mediaQuery: 'all and (max-width: 20em)'
+turku_theme.xs:
+  label: Xs
+  mediaQuery: 'all and (min-width: 20em)'
+turku_theme.small:
+  label: Small
+  mediaQuery: 'all and (min-width: 25em)'
+turku_theme.medium:
+  label: Medium
+  mediaQuery: 'all and (min-width: 45em)'
+turku_theme.large:
+  label: Large
+  mediaQuery: 'all and (min-width: 57.5em)'
+turku_theme.xl:
+  label: Xl
+  mediaQuery: 'all and (min-width: 76.5em)'
+turku_theme.xll:
+  label: Xll
+  mediaQuery: 'all and (min-width: 88em)'

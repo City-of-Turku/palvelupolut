@@ -1,0 +1,36 @@
+.textarea {
+  background-color: color(background-box);
+  border: none;
+  border-bottom: $border-width solid color(primary);
+  padding: 0.6em;
+  width: 100%;
+  max-width: 19rem;
+
+  &:focus {
+    @include focus;
+
+    background-color: color(background);
+    border-color: color(accent);
+  }
+
+  &:focus-visible {
+    @include focus;
+  }
+
+  &::placeholder {
+    color: $gray-dark;
+  }
+
+  &.disabled {
+    border-bottom-color: $gray;
+  }
+
+  &--error {
+    background-color: color(error);
+    border-bottom: $border-width solid color(error-text);
+
+    &::placeholder {
+      color: color(error-text);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{#
+/**
+ * Available variables:
+ * - form_element__level - the tag used for the heading
+ * - form_element__base_class - the base classname
+ * - form_element__modifiers - array of modifiers to add to the base classname
+ * - form_element__content: array of content
+ *
+ */
+#}
+{% set form_element__base_class = form_element__base_class|default("form_element") %}
+{% set form_element__modifiers = form_element__modifiers|default([]) %}
+
+{% embed "@atoms/form/form/form.twig" with {
+  form__attributes: form_element__attributes
+} %}
+  {% block form__content %}
+    {% if form_element__heading %}
+      {% include "@atoms/text/heading/heading.twig" with {
+        heading: form_element__heading,
+        heading__level: form_element__heading_level|default("2"),
+      } %}
+    {% endif %}
+    {% if form_element__description %}
+      {% include "@atoms/text/paragraph/paragraph.twig" with {
+        paragraph__content: form_element__description
+      } %}
+    {% endif %}
+    {% block form_element__content %}
+      {{ form_element__content }}
+    {% endblock %}
+  {% endblock %}
+{% endembed %}
+

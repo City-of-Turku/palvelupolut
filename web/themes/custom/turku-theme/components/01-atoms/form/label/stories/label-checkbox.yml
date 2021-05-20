@@ -1,0 +1,4 @@
+label__content: Label text
+label__for: text
+label__modifiers:
+  - checkbox

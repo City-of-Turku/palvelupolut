@@ -1,0 +1,36 @@
+{#
+/**
+ * Available variables:
+ * - label__level - the tag used for the heading
+ * - label__base_class - the base classname
+ * - label__modifiers - array of modifiers to add to the base classname
+ * - label__content: array of content
+ *
+ */
+#}
+{% set label__base_class = label__base_class|default("label") %}
+{% set label__modifiers = label__modifiers|default([]) %}
+
+<label
+  {{ bem(label__base_class, label__modifiers, label__blockname, label__extra_classes) }}
+  {% if label__for %}
+    for={{ label__for }}
+  {% endif %}
+>
+  {% if 'checkbox' in label__modifiers %}
+    <div {{ bem('checkbox', label__modifiers, label__base_class, label__extra_classes) }}>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' aria-hidden="true" focusable="false">
+        <path fill='none' stroke='currentColor' stroke-width='3' d='m 8 8 L 24 24 M 8 24 L 24 8' />
+      </svg>
+    </div>
+  {% endif %}
+
+  {% if 'radio' in label__modifiers %}
+    <div {{ bem('radio', label__modifiers, label__base_class, label__extra_classes) }}></div>
+  {% endif %}
+
+  {{ label__content }}
+  {% if label__required %}
+    *
+  {% endif %}
+</label>

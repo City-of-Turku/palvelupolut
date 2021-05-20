@@ -1,0 +1,6 @@
+input__checked: true
+input__type: checkbox
+input__name: checkbox
+input__id: checkbox
+input__modifiers:
+  - checkbox

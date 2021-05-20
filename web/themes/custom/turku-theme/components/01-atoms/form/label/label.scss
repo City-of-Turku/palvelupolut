@@ -1,0 +1,80 @@
+.label {
+  display: block;
+  font-weight: 600;
+
+  &--error {
+    color: color(error-text);
+  }
+
+  &--text {
+    .form--search & {
+      @extend .visually-hidden;
+    }
+  }
+
+  &--checkbox,
+  &--radio {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+
+    &:focus,
+    &:hover,
+    input:focus + & {
+      color: color(accent);
+    }
+
+    input:checked + & {
+      font-weight: 600;
+    }
+  }
+
+  &__checkbox,
+  &__radio {
+    background-color: color(text-inverse);
+    border: 2px solid color(text);
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: space();
+
+    @include transition(
+      background-color,
+      0.125s,
+      cubic-bezier(0.19, 1, 0.22, 1)
+    );
+
+    .label:hover &,
+    input:focus + .label &,
+    input:checked:focus + .label > & {
+      border-color: color(accent);
+      box-shadow: inset 0 0 0 2px color(accent);
+    }
+
+    input:checked + .label > &,
+    input:checked + .label:hover > & {
+      border-color: color(text);
+      box-shadow: inset 0 0 0 2px color(text);
+      background-color: color(text);
+    }
+
+    .label--error & {
+      border-color: color(error-text);
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      color: color(text-inverse);
+    }
+  }
+
+  &__radio {
+    border-radius: 50%;
+  }
+}

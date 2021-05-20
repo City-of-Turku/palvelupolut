@@ -1,0 +1,5 @@
+checkbox_element__id: checkboxIdError
+checkbox_element__label: Checkbox label
+checkbox_element__description: Checkbox description
+checkbox_element__modifiers:
+  - error

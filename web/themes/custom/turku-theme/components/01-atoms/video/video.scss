@@ -1,0 +1,28 @@
+.video {
+  max-height: calc(100vh - 8rem); // Subtract compact header size.
+  margin-bottom: space();
+
+  /* Responsive Video using CSS only */
+  &__content {
+    height: 0;
+    overflow: hidden;
+    padding-top: 35px;
+    padding-bottom: 56.25%; /* 56.25% = 16x9 */
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      // By limiting the iframe and .video element in height we can achieve a video that fluently resizes from the
+      // height set by max-height up to the ratio set by the padding on .video__content.
+      max-height: calc(100vh - 8rem);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &--full {
+    padding-bottom: 75%; /* 75% = 4x3 */
+  }
+}

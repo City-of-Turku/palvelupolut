@@ -1,0 +1,32 @@
+{#
+/**
+ * Available variables:
+ * - radio_element__level - the tag used for the heading
+ * - radio_element__base_class - the base classname
+ * - radio_element__modifiers - array of modifiers to add to the base classname
+ * - radio_element__content: array of content
+ *
+ */
+#}
+{% set radio_element__base_class = radio_element__base_class|default("radio_element") %}
+{% set radio_element__modifiers = radio_element__modifiers|default([]) %}
+
+<div
+  {{ bem(radio_element__base_class, radio_element__modifiers, radio_element__blockname, radio_element__extra_classes) }}
+>
+  {% include "@atoms/form/input/input.twig" with {
+    input__type: "radio",
+    input__modifiers: radio_element__modifiers|merge(["radio"]),
+    input__extra_classes: ["visually-hidden"],
+    input__id: radio_element__id
+  } %}
+  {% include "@atoms/form/label/label.twig" with {
+    label__content: radio_element__label,
+    label__modifiers: radio_element__modifiers|merge(["radio"]),
+    label__for: radio_element__id
+  } %}
+  {% include "@atoms/form/description/description.twig" with {
+    description__content: radio_element__description,
+    description__modifiers: radio_element__modifiers
+  } %}
+</div>

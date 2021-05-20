@@ -1,0 +1,23 @@
+.box-applications-item {
+  padding: space(2) 0 space(2 + 1/2);
+  border-top: 1px solid color(border-box);
+
+  &__title,
+  &__detail-label {
+    margin: 0;
+    line-height: 1.75;
+    font-family: $font-family--base;
+    font-size: $font-size--small-1;
+    font-weight: 700;
+  }
+
+  &__detail {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: $font-size--small-1;
+  }
+
+  &__detail-label {
+    margin-right: space(1/2);
+  }
+}

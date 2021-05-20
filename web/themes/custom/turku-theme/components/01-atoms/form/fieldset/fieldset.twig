@@ -1,0 +1,23 @@
+{#
+/**
+ * Available variables:
+ * - fieldset__level - the tag used for the heading
+ * - fieldset__base_class - the base classname
+ * - fieldset__modifiers - array of modifiers to add to the base classname
+ * - fieldset__content - content
+ *
+ */
+#}
+{% set fieldset__base_class = fieldset__base_class|default("fieldset") %}
+{% set fieldset__modifiers = fieldset__modifiers|default([]) %}
+
+<fieldset
+  {{ bem(fieldset__base_class, fieldset__modifiers, fieldset__blockname, fieldset__extra_classes) }}
+  {% if fieldset__disabled %}
+    disabled
+  {% endif %}
+>
+  {% block fieldset__content %}
+    {{ fieldset__content }}
+  {% endblock %}
+</fieldset>

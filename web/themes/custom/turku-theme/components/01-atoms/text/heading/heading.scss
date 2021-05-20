@@ -1,0 +1,41 @@
+.heading {
+  &--h1 {
+    @include h1;
+  }
+
+  &--h2 {
+    @include h2;
+  }
+
+  &--h3 {
+    @include h3;
+  }
+
+  &--h4 {
+    @include h4;
+  }
+
+  &--h5,
+  &--h6 {
+    @include h5;
+  }
+
+  &--subheading {
+    @include h3;
+  }
+
+  &--title-label {
+    @include label;
+  }
+
+  &--title-section-small {
+    @include label(
+      $margin: 0 0 space(),
+      $color: color(text-meta)
+    );
+  }
+
+  &--heavy {
+    text-transform: uppercase;
+  }
+}

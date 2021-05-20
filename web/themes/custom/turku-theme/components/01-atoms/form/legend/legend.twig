@@ -1,0 +1,18 @@
+{#
+/**
+ * Available variables:
+ * - legend__level - the tag used for the heading
+ * - legend__base_class - the base classname
+ * - legend__modifiers - array of modifiers to add to the base classname
+ * - legend__content - content
+ *
+ */
+#}
+{% set legend__base_class = legend__base_class|default("legend") %}
+{% set legend__modifiers = legend__modifiers|default([]) %}
+
+<legend
+  {{ bem(legend__base_class, legend__modifiers, legend__blockname, legend__extra_classes) }}
+>
+  {{ legend__content }}
+</legend>

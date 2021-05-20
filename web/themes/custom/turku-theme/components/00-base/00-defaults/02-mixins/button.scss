@@ -1,0 +1,117 @@
+// Sass map to define colors.`. Using `var(--color--name)` instead of `color(name)` since
+// the later did not compile to CSS when used withing a mixin and `map-get()`.
+$button-colors: (
+  primary: (
+    text: var(--color-text-inverse),
+    text-hover: var(--color-text-inverse),
+    bg: var(--color-background-inverse),
+    bg-hover: var(--color-accent),
+    border: var(--color-background-inverse),
+    border-hover: var(--color-accent),
+  ),
+  primary-dark: (
+    text: var(--color-text),
+    text-hover: var(--color-text-inverse),
+    bg: var(--color-background),
+    bg-hover: var(--color-accent),
+    border: var(--color-background),
+    border-hover: var(--color-accent),
+  ),
+  outline: (
+    text: var(--color-text),
+    text-hover: var(--color-text-inverse),
+    bg: var(--color-background),
+    bg-hover: var(--color-background-inverse),
+    border: var(--color-background-inverse),
+    border-hover: var(--color-background-inverse),
+  ),
+  outline-dark: (
+    text: var(--color-text-inverse),
+    text-hover: var(--color-text),
+    bg: var(--color-background-inverse),
+    bg-hover: var(--color-background),
+    border: var(--color-background),
+    border-hover: var(--color-background),
+  ),
+);
+
+// Mixin to define colors for one or more schemes.
+// Simply pass the color scheme to the mixin to get the colors defined in the map.
+// e.g. @include button-colors(default) will get all of the colors defined in the "default" section.
+@mixin button-colors(
+  $scheme,
+  $palette: map-get($button-colors, $scheme),
+  $map: $button-colors
+) {
+  color: map-get($palette, text);
+  background-color: map-get($palette, bg);
+  border-color: map-get($palette, border);
+
+  &:visited {
+    color: map-get($palette, text);
+  }
+
+  &:focus,
+  &:hover {
+    color: map-get($palette, text-hover);
+    background-color: map-get($palette, bg-hover);
+    border-color: map-get($palette, border-hover);
+  }
+}
+
+// The button-base mixin contains styles that apply to all buttons
+// regardless of color or size.
+@mixin button-base(
+  $colors: primary,
+  $colors-dark: primary-dark,
+  $display: inline-flex
+) {
+  border: 4px solid;
+
+  @include button-medium;
+  @include button-colors($colors);
+
+  // @todo Enable this at some point.
+  //@media (prefers-color-scheme: dark) {
+  //  @include button-colors($colors-dark);
+  //}
+
+  display: $display;
+  align-items: center;
+  font-family: $font-family--base;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+
+  &:focus {
+    @include focus;
+  }
+}
+
+// Button size variations
+@mixin button-medium {
+  line-height: 1.4;
+  padding: space(2/3) space();
+
+  @include above($width-large) {
+    padding: space(2/3) space(2);
+  }
+}
+
+@mixin button-large {
+  line-height: 2;
+  padding: space();
+
+  @include above($width-large) {
+    padding: space() space(2);
+  }
+}
+
+@mixin button-small {
+  line-height: 1;
+  padding: space(1/2) space();
+
+  @include above($width-large) {
+    padding: space(1/2) space(2);
+  }
+}

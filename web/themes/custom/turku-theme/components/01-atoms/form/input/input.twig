@@ -1,0 +1,42 @@
+{#
+/**
+ * Available variables:
+ * - input__level - the tag used for the heading
+ * - input__base_class - the base classname
+ * - input__modifiers - array of modifiers to add to the base classname
+ * - input__content - array of content
+ * - input__type - input type
+ * - input__placeholder
+ */
+#}
+{% set input__base_class = input__base_class|default("input") %}
+{% set input__modifiers = input__modifiers|default([]) %}
+{% set input__extra_classes = input__extra_classes|default([]) %}
+
+{% if ("checkbox" in input__modifiers or "radio" in input__modifiers) %}
+  {% set input__extra_classes = input__extra_classes|merge(['visually-hidden']) %}
+{% endif %}
+
+<input
+  {{ bem(input__base_class, input__modifiers, input__blockname, input__extra_classes) }}
+  type="{{ input__type }}"
+  {% if input__placeholder %}
+    placeholder="{{ input__placeholder }}"
+  {% endif %}
+  {% if input__id %}
+    id="{{ input__id }}"
+  {% endif %}
+  {% if input__name %}
+    name="{{ input__name }}"
+  {% endif %}
+  {% if input__value %}
+    value="{{ input__value }}"
+  {% endif %}
+  {% if input__checked %}
+    checked
+  {% endif %}
+  {% if input__required %}
+    required
+  {% endif %}
+/>
+

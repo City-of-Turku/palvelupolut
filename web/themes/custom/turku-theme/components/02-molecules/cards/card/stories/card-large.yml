@@ -1,0 +1,7 @@
+card__modifiers: ['large']
+card__image__src: 'hero.jpg'
+card__heading: 'Online Q&A session'
+card__link__url: '#'
+card__type: 'Event'
+card__category: ['Info session']
+card__date: '1.9.2020'

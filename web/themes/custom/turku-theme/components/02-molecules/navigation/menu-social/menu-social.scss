@@ -1,0 +1,54 @@
+.social-menu {
+  @include list-reset;
+
+  .heading {
+    color: currentColor;
+    font-size: $font-size--small-1;
+    margin-bottom: space(1/2);
+  }
+
+  &__list-item {
+    display: inline-block;
+    margin-bottom: space(1/4);
+  }
+
+  &__link {
+    @include transition(box-shadow color);
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    text-decoration: none;
+    color: color(text);
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: currentColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    font-weight: bold;
+  }
+
+  a {
+    @include link-reset;
+
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: space(1/2);
+    position: relative;
+
+    &:hover {
+      .social-menu__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+  }
+}

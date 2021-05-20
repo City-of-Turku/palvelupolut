@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override to display primary and secondary local tasks.
+ *
+ * Available variables:
+ * - primary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing secondary tasks.
+ */
+#}
+
+{% if primary %}
+  {% set tabs__heading = 'Primary tabs'|t %}
+{% endif %}
+{% if secondary %}
+  {% set tabs__heading = 'Secondary tabs'|t %}
+{% endif %}
+
+{% embed "@molecules/tabs/tabs.twig" %}
+  {% block tabs__content %}
+    {% if primary %}
+      {{ primary }}
+    {% endif %}
+    {% if secondary %}
+      {{ secondary }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

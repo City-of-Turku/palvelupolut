@@ -1,0 +1,317 @@
+$menu-top-width: 27rem;
+$menu-sub-offset: $width--page - $menu-top-width;
+
+.menu-main {
+  position: relative;
+  display: flex;
+  z-index: 5;
+  background: color(background);
+
+  @include below($width-large) {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      background: color(background);
+      z-index: 1;
+    }
+
+    &::before {
+      right: 100%;
+    }
+
+    &::after {
+      left: 100%;
+    }
+  }
+
+  @include above($width-large) {
+    // On small viewports we want the quick links to be visible
+    // outside the main menu wrapper but not let it cause any
+    // content scroll. On small viewports we cover the unwanted
+    // overflown parts instead of cutting them off.
+    overflow: hidden;
+  }
+}
+
+.menu {
+  @include transition(transform);
+
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin: space(3/2) 0;
+    list-style: none;
+
+    &[data-active='true'] > .menu__link-wrapper .menu__link {
+      &[data-menu-level='1'] {
+        @include above($width-large) {
+          padding-left: space();
+          border-left: 2px solid color(text-inverse);
+        }
+      }
+    }
+  }
+
+  &__parent-title {
+    @include h3($margin: 0);
+
+    @include below($width-large) {
+      display: none;
+      font-size: $font-size--large-2;
+    }
+
+    @include above($width-large) {
+      margin: 0 0 space(3/2);
+      padding-bottom: space();
+      border-bottom: 1px solid color(border-box-dark);
+    }
+
+    &--mobile {
+      display: none;
+
+      @include below($width-large) {
+        display: block;
+      }
+    }
+  }
+
+  &__link-wrapper {
+    display: flex;
+    margin: space(1/2) 0;
+    color: color(text-inverse);
+  }
+
+  &__link {
+    @include link-reset;
+
+    font-family: $font-family--base;
+    font-size: $font-size--base;
+    font-weight: 700;
+    box-shadow: none;
+    color: inherit;
+
+    &[tabindex='-1'] {
+      pointer-events: none;
+    }
+
+    &:hover {
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      @include focus($color: currentColor);
+    }
+
+    &.is-active {
+      color: color(accent);
+    }
+  }
+
+  &__button-separator {
+    margin-left: auto;
+    margin-right: space(1/2);
+    padding-left: space(1/2);
+    border-right: 1px solid color(border-box-dark);
+  }
+
+  &__expand-submenu,
+  &__collapse-submenu {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+  }
+
+  &__expand-submenu {
+    align-self: center; // Prevent growing vertically.
+    padding: space(1/3) space();
+
+    &:focus {
+      color: color(text);
+      background: color(background);
+    }
+  }
+
+  &__collapse-submenu {
+    @include label;
+
+    display: flex;
+    align-items: center;
+    margin: space() 0;
+
+    .icon {
+      width: 1.25em;
+      height: 1.25em;
+      transform: rotate(-180deg);
+      margin-right: space(1/2);
+    }
+
+    &--mobile {
+      @include above($width-large) {
+        display: none;
+      }
+    }
+  }
+
+  &__drawer {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    z-index: -1; // Slide under the top level menu.
+    padding: space(1/2) space() space(3/2) space(3/2);
+    border-bottom: 1px solid color(border-box-dark);
+    border-top: 1px solid color(border-box-dark);
+    background: color(background);
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    @include above($width-large) {
+      width: auto;
+      left: $menu-top-width;
+      padding: space(2) space(3);
+      border-right: 1px solid color(border-box-dark);
+    }
+  }
+
+  &__quick-links {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: space() space(3/2);
+    border-bottom: 1px solid color(border-box-dark);
+
+    @include between($width-large, $width-xl) {
+      width: calc(100% - #{space(3) * 2});
+      top: auto;
+      left: space(3);
+      bottom: 0;
+      padding: space() 0;
+      border-bottom: none;
+      border-top: 1px solid color(border-box-dark);
+    }
+
+    @include above($width-xl) {
+      width: 40%;
+      top: auto;
+      left: auto;
+      right: 0;
+      padding: space() space(2);
+      border-bottom: none;
+      border-left: 1px solid color(border-box-dark);
+      background: color(background);
+    }
+
+    &__title {
+      @include label;
+
+      margin: 0 0 space();
+    }
+
+    &__items {
+      @include list-reset;
+    }
+
+    &__item {
+      margin-bottom: space(1/2);
+
+      @include above($width-large) {
+        margin-bottom: space(3/2);
+      }
+    }
+
+    &__link {
+      font-size: $font-size--small-1;
+    }
+  }
+
+  &--top {
+    width: 100%;
+    padding: 0 space(3/2);
+    padding-right: 0;
+    background: color(background-inverse);
+
+    @include below($width-large) {
+      transform: translateX(0);
+
+      &[data-child-sub-expanded='true'] {
+        transform: translateX(-100%);
+      }
+    }
+
+    @include above($width-large) {
+      padding: space(3);
+      padding-right: space();
+      width: $menu-top-width;
+    }
+  }
+
+  &--sub {
+    position: absolute;
+    display: none;
+    width: 100%;
+    transform: translateX($menu-sub-offset);
+
+    .menu__link-wrapper {
+      color: color(text);
+    }
+
+    .menu__link {
+      font-weight: 800;
+
+      @include below($width-large) {
+        font-size: $font-size--small-1;
+      }
+    }
+
+    .menu__expand-submenu {
+      &:focus {
+        color: color(text-inverse);
+        background: color(background-inverse);
+      }
+    }
+
+    &[aria-hidden='false'] {
+      transform: translateX(0);
+      display: block;
+    }
+
+    &[data-child-sub-expanded='true'] {
+      transform: translateX(-$menu-sub-offset);
+
+      > .menu__item > .menu__link-wrapper {
+        opacity: 0;
+      }
+    }
+  }
+
+  &--sub-2 {
+    width: calc(100% - #{space(2)});
+
+    @include above($width-large) {
+      width: calc(100% - #{space(2 * 3)});
+    }
+
+    @include above($width-xl) {
+      width: calc(60% - #{space(2 * 3)});
+    }
+  }
+
+  &--sub-3,
+  &--sub-4,
+  &--sub-5,
+  &--sub-6 {
+    top: 0;
+    left: $menu-sub-offset;
+  }
+}

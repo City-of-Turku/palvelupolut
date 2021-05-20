@@ -1,0 +1,5 @@
+list__items:
+  - term: 'Event time'
+    definition: '<p>Mon 23.11.2020 - Fri 27.11.2020</p><p>9:00 - 16:00</p>'
+  - term: 'Venue'
+    definition: '<p><a href="#">Kirkkokatu 16 B</a></p><p>Perkkaa chapel</p>'

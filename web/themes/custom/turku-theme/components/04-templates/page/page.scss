@@ -1,0 +1,11 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    @include wrapper-padding;
+
+    padding-bottom: var(--space-elements);
+  }
+}

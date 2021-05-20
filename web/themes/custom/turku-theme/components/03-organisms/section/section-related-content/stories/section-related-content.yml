@@ -1,0 +1,25 @@
+section_related_content__title: 'Blogs'
+section_related_content__cta: 'All blogs'
+section_related_content__cta__url: '#'
+section_related_content__items:
+  - image__src: 'hero.jpg'
+    heading: 'The match of our lives'
+    link__url: '#'
+    type: 'Blogs'
+    category: ['Life at Wunder']
+    date: '10.9.2020'
+    is_card: true
+  - image__src: 'hero.jpg'
+    heading: 'What can you do?'
+    link__url: '#'
+    type: 'Blogs'
+    category: ['Life at Wunder']
+    date: '10.9.2020'
+    is_card: true
+  - image__src: 'hero.jpg'
+    heading: 'University of the Elderly 35 years in Espoo!'
+    link__url: '#'
+    type: 'Blogs'
+    category: ['Learn and rejoice']
+    date: '10.9.2020'
+    is_card: true

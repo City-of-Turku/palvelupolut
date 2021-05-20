@@ -1,0 +1,8 @@
+{% set menu_footer__base_class = "menu-footer" %}
+{% set menu_footer__modifiers = menu_footer__base_class|default([]) %}
+
+{% include "@molecules/navigation/_menu.twig" with {
+  menu_class: menu_footer__base_class,
+  menu_modifiers: menu_footer__modifiers,
+  items: menu_footer__items,
+} %}

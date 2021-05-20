@@ -1,0 +1,20 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+
+<style>
+.animoitu {
+animation: resize 2.5s ease forwards; animation-iteration-count: infinite;
+}
+@keyframes resize {
+0% {transform: translate(0px, 0px) scale(1.0);}
+50% {transform: translate(1px, 1px) scale(0.943);}
+100% {transform: translate(0px, 0px) scale(1.0);}
+}
+</style>
+<g class = "animoitu">
+<line fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="15.91" y1="11.28" x2="15.91" y2="16.62"/>
+<line fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="15.91" y1="21.82" x2="15.91" y2="21.82"/>
+<path fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M14.32,3.74L2.11,24.88c-0.77,1.33,0.19,3,1.73,3h24.41c1.54,0,2.5-1.67,1.73-3L17.78,3.74C17.01,2.41,15.09,2.41,14.32,3.74z"/>
+</g>
+</svg>

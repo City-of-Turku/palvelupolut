@@ -1,0 +1,30 @@
+{% set page_sidebar = true %}
+
+{% extends "@templates/page/page.twig" %}
+  {% block page_main %}
+    {% embed "@templates/page/page-content.twig" %}
+      {% block page_sidebar_pre_content %}
+        {% include "@templates/place-holder.twig" with {
+          "place_holder": "Sidebar Pre Content",
+        } %}
+      {% endblock %}
+
+      {% block page_content %}
+          {% include "@templates/place-holder.twig" with {
+            "place_holder": "<p>Primary Content.</p><p>Resize the viewport to see how layout changes on different screen widths.</p>",
+          } %}
+      {% endblock %}
+
+      {% block page_sidebar_post_content %}
+        {% include "@templates/place-holder.twig" with {
+          "place_holder": "Sidebar Post Content",
+        } %}
+      {% endblock %}
+
+      {% block page_content_post_content %}
+        {% include "@templates/place-holder.twig" with {
+          "place_holder": "Page Content Post Content",
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}

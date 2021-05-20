@@ -1,0 +1,24 @@
+{#
+/**
+ * Available variables:
+ * - header_branding__base_class - the base classname
+ * - header_branding__url - the URL that the logo will link to
+ */
+#}
+{% set header_branding__base_class = "header-branding" %}
+
+{% embed "@atoms/links/link/link.twig" with {
+  link__base_class: header_branding__base_class,
+  link__url: header_branding__url|default("/"),
+} %}
+  {% block link_content %}
+    {% include "@atoms/visually-hidden/visually-hidden.twig" with {
+      visually_hidden__content: "Front page"|t,
+    } %}
+
+    {% include "@atoms/images/image/svg.twig" with {
+      svg__theme_path: "svg/logo.svg",
+    } %}
+
+  {% endblock %}
+{% endembed %}

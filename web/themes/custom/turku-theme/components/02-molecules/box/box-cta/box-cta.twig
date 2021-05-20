@@ -1,0 +1,26 @@
+{#
+ @todo List expected variables.
+#}
+
+{% set box_cta__base_class = "box-cta" %}
+{% set box_cta__modifiers = box_cta__modifiers|default([]) %}
+
+<div {{ bem(box_cta__base_class, box_cta__modifiers, box_cta__blockname, box_cta__extra_classes) }}>
+  {% if box_cta__heading|render|trim %}
+    <div {{ bem("heading", [], box_cta__base_class) }}>
+      {{ box_cta__heading }}
+    </div>
+  {% endif %}
+
+  {% block box_cta_link %}
+    {% for item in box_cta__link_items %}
+      {% set item_modifiers = item.box_cta__link_modifiers|default([]) %}
+
+      {% include "@atoms/links/link-cta/link-cta.twig" with {
+        link_cta__content: item.box_cta__link_text,
+        link_cta__modifiers: item_modifiers|merge(["inverse"]),
+        link_cta__url: item.box_cta__link_url,
+      } %}
+    {% endfor %}
+  {% endblock %}
+</div>

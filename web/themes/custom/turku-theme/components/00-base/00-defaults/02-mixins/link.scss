@@ -1,0 +1,53 @@
+
+@mixin link($color: color(text), $underline-color: color(primary), $underline-width: -0.1875rem) {
+  @include transition(box-shadow color);
+
+  // The box shadow spread is reduced by 0.1rem to workaround Chrome showing a slight
+  // shadow on the y axis on some viewport widths.
+  box-shadow: inset 0 #{$underline-width - 0.1rem} 0 -0.1rem $underline-color;
+  color: $color;
+  padding-left: 0.15em;
+  padding-right: 0.15em;
+  text-decoration: none;
+
+  &:hover {
+    @include link--hover;
+  }
+}
+
+@mixin link--hover($effect-color: color(text), $text-color: color(text-inverse)) {
+  box-shadow: inset 0 -6ex 0 0 $effect-color;
+  color: $text-color;
+}
+
+/*
+ * Mixin - Link-reset
+ * Reset the link style.
+ */
+@mixin link-reset($padding: 0) {
+  box-shadow: none;
+  color: currentColor;
+  padding: $padding;
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    color: currentColor;
+  }
+}
+
+/*
+ * Mixin - Link-expand
+ * Makes a link element expand and cover the whole parent wrapper area.
+ */
+@mixin link-expand {
+  &::after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}

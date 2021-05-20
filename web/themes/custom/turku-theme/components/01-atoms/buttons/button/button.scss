@@ -1,0 +1,48 @@
+.button {
+  @include button-base;
+  @include transition(transform opacity, 0.5s, cubic-bezier(0.19, 1, 0.22, 1));
+
+  .icon {
+    @include transition(transform);
+
+    &--before {
+      margin-right: space();
+    }
+
+    &--after {
+      margin-left: space(1/2);
+    }
+  }
+
+  &--small {
+    @include button-small;
+  }
+
+  &--inverse {
+    @include border($color: color(background));
+  }
+
+  &--minimal {
+    background-color: transparent;
+    color: color(text);
+    border: 0;
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: color(text);
+      border: 0;
+      text-decoration: underline;
+    }
+  }
+
+  // Hide submit input if it comes after closed details element
+  .details-summary:not([open]) ~ & {
+    @extend .visually-hidden;
+
+    opacity: 0;
+    transform: translateY(space(-1/4));
+  }
+}

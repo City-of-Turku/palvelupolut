@@ -1,0 +1,191 @@
+@mixin h1(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h1,
+  $font-size-small: $font-size--h1--small,
+  $letter-spacing: 0.05em,
+  $line-height: 1.4,
+  $color: color(text),
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 700,
+  $margin: 0 0 0.5em
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size-small;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  @include above($width-medium) {
+    font-size: $font-size;
+  }
+}
+
+@mixin h2(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h2,
+  $font-size-small: $font-size--h2--small,
+  $letter-spacing: 0.05em,
+  $line-height: 1.4,
+  $color: color(text),
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 700,
+  $margin: 0 0 space(3/2)
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size-small;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  @include above($width-medium) {
+    font-size: $font-size;
+  }
+}
+
+@mixin h3(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h3,
+  $font-size-small: $font-size--h3--small,
+  $letter-spacing: 0.05em,
+  $line-height: 1.6,
+  $color: color(text),
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 700,
+  $margin: 0 0 space()
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size-small;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  @include above($width-medium) {
+    font-size: $font-size;
+  }
+}
+
+@mixin h4(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h4,
+  $font-size-small: $font-size--h4--small,
+  $letter-spacing: 0.05em,
+  $line-height: 1.6,
+  $color: color(text),
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 600,
+  $margin: 0 0 space()
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size-small;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  @include above($width-medium) {
+    font-size: $font-size;
+  }
+}
+
+@mixin h5(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h5,
+  $letter-spacing: 0.05em,
+  $line-height: 2,
+  $color: color(text),
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 600,
+  $margin: 0 0 space()
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin label(
+  $color: color(text),
+  $margin: 0,
+  $padding: space(1/4) 0
+) {
+  margin: $margin;
+  padding: $padding; // Align vertically with body text.
+  line-height: $line-height--base;
+  font-family: $font-family--base;
+  font-size: $font-size--small-3;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing--wide;
+  color: $color;
+}
+
+@mixin bold-highlight($font-weight: 700, $letter-spacing: $letter-spacing--medium) {
+  font-family: $font-family--accent;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+}

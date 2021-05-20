@@ -1,0 +1,22 @@
+.section-wrapper {
+  &--background {
+    position: relative;
+    background-color: color(background-box);
+    padding: space();
+
+    @include above($width-medium) {
+      padding: space(2) space(2.25);
+    }
+
+    @include above($width-large) {
+      padding: space(3) space(4);
+    }
+
+    .heading {
+      font-size: 1rem;
+      font-weight: bold;
+      color: color(text);
+      text-transform: none;
+    }
+  }
+}

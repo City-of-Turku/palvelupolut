@@ -1,0 +1,52 @@
+{% set footer__base_class = "footer" %}
+
+{% set menu_social__items = [
+  {
+    title: 'Twitter',
+    url: 'https://twitter.com/Wundersome',
+    icon: 'twitter',
+  },
+  {
+    title: 'Facebook',
+    url: 'https://www.facebook.com/Wundersome',
+    icon: 'facebook',
+  },
+  {
+    title: 'Instagram',
+    url: 'https://www.instagram.com/wundersome',
+    icon: 'instagram',
+  },
+  {
+    title: 'Youtube',
+    url: 'https://www.youtube.com/channel/UCroGLzvf5XBWcOuGOO8TeaA',
+    icon: 'youtube',
+  },
+] %}
+
+<footer {{ bem(footer__base_class) }}>
+  <div {{ bem("inner", [], footer__base_class) }}>
+    <div {{ bem("branding", [], footer__base_class) }}>
+      {% block footer_branding %}
+        {% include "@organisms/footer/footer-branding/footer-branding.twig" %}
+      {% endblock %}
+    </div>
+    <div {{ bem("menu", [], footer__base_class) }}>
+      {% block footer__menu %}
+        {% include "@molecules/navigation/menu-footer/menu-footer.twig" %}
+      {% endblock %}
+    </div>
+    <div {{ bem("contact", [], footer__base_class) }}>
+      {% block footer__contact %}
+        {{ footer__contact }}
+      {% endblock %}
+    </div>
+    <div {{ bem("social-menu", [], footer__base_class) }}>
+      {% block footer__social %}
+        {% include "@molecules/navigation/menu-social/menu-social.twig" %}
+      {% endblock %}
+    </div>
+    <div {{ bem("copyright", [], footer__base_class) }}>
+      {{ "© Wunder " ~ "Now"|date("Y") }}
+    </div>
+  </div>
+</footer>

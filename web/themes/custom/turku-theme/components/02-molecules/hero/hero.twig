@@ -1,0 +1,41 @@
+{#
+/**
+* @file
+* Theme implementation to display site hero content
+*
+* Variables:
+* - hero__meta: Meta information, e.g. node type and publication date
+* - hero__title: Title (h1) text.
+* - hero__image: Background image URL.
+* - hero__lead_text: Copy text to show on the hero.
+*
+* @ingroup themeable
+*/
+#}
+{% set hero__base_class = "hero" %}
+{% set hero__modifiers = hero__modifiers|default([]) %}
+
+<div {{ bem(hero__base_class, hero__modifiers) }}>
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 1,
+      heading__base_class: "title",
+      heading__blockname: hero__base_class,
+      heading: hero__title,
+    } %}
+
+    {% if hero__lead_text %}
+      {% include "@atoms/text/text-long/text-long.twig" with {
+        text_long__base_class: "text",
+        text_long__content:  hero__lead_text,
+        text_long__blockname: hero__base_class,
+      } %}
+    {% endif %}
+
+  {% if hero__image %}
+    <div {{ bem("bg", [], hero__base_class) }} aria-hidden="true">
+      {% block hero_image %}
+        {% include "@atoms/images/image/responsive-image.twig" with hero__image %}
+      {% endblock %}
+    </div>
+  {% endif %}
+</div>

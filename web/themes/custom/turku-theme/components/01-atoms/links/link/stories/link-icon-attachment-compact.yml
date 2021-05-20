@@ -1,0 +1,7 @@
+link__url: 'https://wunder.io'
+link__content: 'This is my link text'
+link__icon_before: 'attachment'
+link__suffix: '(PDF, 288.14kb)'
+link__modifiers:
+  - 'icon'
+  - 'attachment-compact'

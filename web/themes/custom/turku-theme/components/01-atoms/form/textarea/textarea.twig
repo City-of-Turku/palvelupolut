@@ -1,0 +1,17 @@
+{#
+/**
+ * Available variables:
+ * - textarea__level - the tag used for the heading
+ * - textarea__base_class - the base classname
+ * - textarea__modifiers - array of modifiers to add to the base classname
+ * - textarea__content - array of content
+ * - textarea__type - textarea type
+ *
+ */
+#}
+{% set textarea__base_class = textarea__base_class|default("textarea") %}
+{% set textarea__modifiers = textarea__modifiers|default([]) %}
+
+<textarea {{ bem(textarea__base_class, textarea__modifiers, textarea__blockname, textarea__extra_classes) }} placeholder="{{ textarea__placeholder }}">
+</textarea>
+

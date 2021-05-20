@@ -1,0 +1,32 @@
+.section-related-content {
+  @include wrapper-width;
+  @include background-full-width(100vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-elements);
+  padding: space(2) 0;
+
+  @include above($width-large) {
+    padding: space(4) 0 space(6);
+  }
+
+  > .link {
+    margin-top: space(2);
+  }
+
+  &__items {
+    @include flexbox-grid;
+
+    margin-top: space(2);
+
+    @include above($width-large) {
+      margin-top: space(4);
+    }
+  }
+
+  &__item {
+    @include flexbox-grid-item;
+  }
+}

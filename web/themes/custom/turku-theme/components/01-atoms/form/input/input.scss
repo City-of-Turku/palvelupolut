@@ -1,0 +1,67 @@
+.input {
+  width: 100%;
+  max-width: 19rem;
+  padding: 0.6em;
+  border: none;
+  border-bottom: $border-width solid color(primary);
+  background-color: color(background-box);
+
+  &:focus {
+    @include focus;
+
+    background-color: color(background);
+    border-color: color(accent);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $gray-dark;
+  }
+
+  &.disabled {
+    border-bottom-color: $gray;
+  }
+
+  &--submit {
+    @include button-base;
+
+    display: block;
+  }
+
+  &--minimal {
+    border: 0;
+    font-size: $font-size--large-3;
+    background-color: transparent;
+
+    &:focus {
+      background-color: transparent;
+      border-color: color(accent);
+    }
+  }
+
+  &--error {
+    background-color: color(error);
+    border-bottom: $border-width solid color(error-text);
+
+    &::placeholder {
+      color: color(error-text);
+    }
+  }
+
+  .form--search &,
+  .form--keyword & {
+    max-width: none;
+  }
+
+  .form--search & {
+    &--submit {
+      width: auto;
+    }
+
+    &:not(.input--submit) {
+      padding: 0.9em 1em;
+      border: 1px solid color(border-primary);
+      background-color: color(background);
+    }
+  }
+}

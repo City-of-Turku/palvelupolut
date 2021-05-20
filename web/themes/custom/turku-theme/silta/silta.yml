@@ -1,0 +1,13 @@
+
+# Values in this file override the default values of our helm chart.
+#
+# See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
+# for all possible options.
+
+projectName: wunder-theme-storybook
+
+nginx:
+  basicauth:
+    credentials:
+      username: wunder
+      password: theme

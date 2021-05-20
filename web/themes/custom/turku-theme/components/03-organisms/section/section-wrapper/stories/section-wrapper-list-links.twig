@@ -1,0 +1,7 @@
+{% embed "@organisms/section/section-wrapper/section-wrapper.twig" with {
+  section_wrapper__title: "Keywords",
+} %}
+  {% block section_wrapper_content %}
+    {% include "@molecules/list-links/list-links.twig" %}
+  {% endblock %}
+{% endembed %}

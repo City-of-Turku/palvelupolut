@@ -1,0 +1,7 @@
+@function flexbox-item-width($columns: 4) {
+  @return calc(#{100% / $columns} - #{$grid-gutter-width});
+}
+
+@function z-index($layer: base, $adjustment: +0) {
+  @return map-get($z-index, $layer) + $adjustment;
+}

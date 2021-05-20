@@ -1,0 +1,43 @@
+.image-wysiwyg {
+  margin-bottom: space();
+  margin-top: space();
+
+  &--small-1-2 {
+    @include above($width-small) {
+      max-width: 50%;
+    }
+  }
+
+  &--small-1-4 {
+    @include above($width-small) {
+      max-width: 25%;
+    }
+  }
+
+  &--align-left,
+  &.align-left {
+    @include above($width-small) {
+      float: left;
+      margin-right: space();
+    }
+  }
+
+  &--align-right,
+  &.align-right {
+    @include above($width-small) {
+      float: right;
+      margin-left: space();
+    }
+  }
+
+  &--align-center,
+  &.align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-caption,
+  figcaption {
+    margin-bottom: 0;
+  }
+}

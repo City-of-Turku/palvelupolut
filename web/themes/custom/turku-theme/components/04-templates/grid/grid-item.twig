@@ -1,0 +1,16 @@
+{#
+/**
+ * Available variables:
+ * - grid_item__base_class - the base classname
+ *
+ * Available blocks:
+ * - grid_item_content - wraps the grid item content
+ */
+#}
+{% set grid_item__base_class = grid_item__base_class|default('grid__item') %}
+
+<div {{ bem(grid_item__base_class, []) }}>
+  {% block grid_item_content %}
+    {% include "@templates/place-holder.twig" %}
+  {% endblock %}
+</div>

@@ -1,0 +1,88 @@
+.announcement {
+  @include wrapper;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: space();
+  font-size: $font-size--large-2;
+  font-weight: 700;
+  line-height: 1.25;
+  color: color(text-inverse);
+  background: color(background-inverse);
+
+  .link {
+    @include link-reset;
+    @include link-expand;
+
+    align-items: center;
+    display: inline-flex;
+    position: static;
+    padding: 0;
+    color: inherit;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+
+      .icon {
+        transform: translateX(#{space(1/2)});
+      }
+    }
+
+    &:focus {
+      @include focus($color: currentColor);
+
+      padding-right: space(1/2);
+    }
+  }
+
+  .svg,
+  .icon {
+    flex-shrink: 0;
+  }
+
+  .svg {
+    width: 2rem;
+    height: 2rem;
+    order: -1;
+    margin-right: space();
+
+    svg {
+      stroke: currentColor;
+    }
+
+    @include above($width-large) {
+      margin-right: space(2);
+    }
+  }
+
+  .icon {
+    @include transition(transform);
+
+    margin-left: space(1/2);
+  }
+
+  &__message {
+    p {
+      margin: 0;
+    }
+  }
+
+  &--warning {
+    color: color(text);
+    background: color(highlight);
+  }
+
+  &--critical {
+    background: color(accent);
+  }
+
+  &:last-of-type {
+    margin-bottom: var(--space-elements);
+  }
+
+  @include above($width-large) {
+    padding: space(3/2) space(2);
+  }
+}

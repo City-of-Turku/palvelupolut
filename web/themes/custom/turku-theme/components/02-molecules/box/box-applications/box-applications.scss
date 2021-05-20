@@ -1,0 +1,26 @@
+.box-applications {
+  @include border;
+
+  margin: 0 0 var(--space-elements);
+  padding: space(2) space(2) 0;
+
+  @include above($width-small) {
+    padding: space(3) space(3) space();
+  }
+
+  .text-long {
+    margin-bottom: space(2);
+  }
+
+  .link-cta {
+    margin-top: space();
+  }
+
+  &__heading {
+    @include h4;
+  }
+
+  &__no-items-message {
+    margin: 0 0 space(2 + 1/2);
+  }
+}

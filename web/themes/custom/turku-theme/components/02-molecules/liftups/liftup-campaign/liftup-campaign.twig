@@ -1,0 +1,42 @@
+{# @todo Describe required variables. #}
+
+{% set liftup_campaign__base_class = "liftup-campaign" %}
+{% set liftup_campaign__modifiers = liftup_campaign__modifiers|default(["main"]) %}
+
+<div {{ bem(liftup_campaign__base_class, liftup_campaign__modifiers) }}>
+  <div {{ bem("inner", [], liftup_campaign__base_class) }}>
+
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading: liftup_campaign__heading,
+      heading__level: liftup_campaign__heading__level|default(2),
+    } %}
+    {% if liftup_campaign__teaser %}
+      {% include "@atoms/text/text-teaser/text-teaser.twig" with {
+        text_teaser__content: liftup_campaign__teaser
+      } %}
+    {% endif %}
+
+    {% if liftup_campaign__meta %}
+      {% include "@molecules/tags/tags.twig" with {
+        tags__modifiers: ["meta"],
+        tags__items: liftup_campaign__meta
+      } %}
+    {% endif %}
+
+    {% if liftup_campaign__link %}
+      {% include "@atoms/links/link/link.twig" with {
+        link__modifiers: ["action"],
+        link__url: liftup_campaign__link,
+        link__content: liftup_campaign__link__text
+      } %}
+    {% endif %}
+  </div>
+
+  <div {{ bem("bg", [], liftup_campaign__base_class) }} aria-hidden="true">
+    {% block liftup_campaign__media %}
+      {% if liftup_campaign__image %}
+        {% include "@atoms/images/image/image.twig" with liftup_campaign__image %}
+      {% endif %}
+    {% endblock %}
+  </div>
+</div>

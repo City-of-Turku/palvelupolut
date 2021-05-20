@@ -1,0 +1,18 @@
+{#
+/**
+ * Available variables:
+ * - section_cards_item__base_class - the base classname
+ * - section_cards_item__modifiers - array of modifiers to add to the base classname
+ * - section_cards_item__blockname - a class that will prepend all other classes
+ *
+ * Available blocks:
+ * - section_cards_item - the content of the section item.
+ */
+#}
+{% set section_cards_item__base_class = section_cards_item__base_class|default("section-cards-item") %}
+{% set section_cards_item__modifiers = section_cards_item__modifiers|default([]) %}
+
+<div {{ bem(section_cards_item__base_class, section_cards_item__modifiers, section_cards_item__blockname) }}>
+  {% block section_cards_item %}
+  {% endblock %}
+</div>

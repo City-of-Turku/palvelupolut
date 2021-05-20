@@ -1,0 +1,27 @@
+.status__list {
+  @include list-reset;
+
+  margin-bottom: space();
+}
+
+.status {
+  display: block;
+  margin-bottom: space(1/2);
+  padding: space(1/2);
+  text-align: center;
+
+  &--warning {
+    color: color(primary);
+    background-color: color(warning);
+  }
+
+  &--error {
+    color: color(error-text);
+    background-color: color(error);
+  }
+
+  &--status {
+    color: color(message-text);
+    background-color: color(message);
+  }
+}

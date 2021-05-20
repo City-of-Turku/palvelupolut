@@ -1,0 +1,30 @@
+{#
+/**
+ * Available variables:
+ * - footer_branding__base_class - the base classname
+ * - footer_branding__logo - the site logo
+ * - footer_branding__url - the URL that the logo will link to
+ */
+#}
+{% set footer_branding__base_class = "footer-branding" %}
+{# If `directory` is defined, set the path relative for Drupal.
+ # Otherwise, set the path relative to the Component Library. #}
+{% set footer_branding__logo = directory ? "/" ~ directory ~ "/images/logo-inverse.svg" : "logo-inverse.svg" %}
+
+{% embed "@atoms/links/link/link.twig" with {
+  link__base_class: footer_branding__base_class,
+  link__url: footer_branding__url|default("/"),
+} %}
+  {% block link_content %}
+    {% include "@atoms/visually-hidden/visually-hidden.twig" with {
+      visually_hidden__content: "Front page"|t,
+    } %}
+
+    {% include "@atoms/images/image/responsive-image.twig" with {
+      output_image_tag: true,
+      image_src: footer_branding__logo,
+      image_alt: "Logo",
+      responsive_image_blockname: "logo",
+    } %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,268 @@
+.link {
+  @include link;
+
+  position: relative;
+
+  .icon {
+    &--before {
+      width: 1.25em;
+      height: 1.25em;
+      margin-right: space();
+    }
+
+    &--after {
+      margin-left: space(1/2);
+    }
+
+    &--external-link {
+      position: relative;
+      width: 0.5rem;
+      height: 0.5rem;
+      right: 0;
+      top: -0.35rem;
+      margin-left: space(1/4);
+    }
+  }
+
+  &__suffix {
+    @include transition;
+
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto; // Used when link is `display: flex`.
+    padding-left: space();
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: $font-size--small-3;
+    text-transform: uppercase;
+    color: color(text-meta);
+  }
+
+  &--icon {
+    @include bold-highlight;
+
+    align-items: center;
+    display: flex;
+    margin-bottom: space(1/3);
+    padding-top: space(1/3);
+    padding-bottom: space(1/3);
+    font-size: $font-size--small-1;
+    box-shadow: none;
+  }
+
+  &--action {
+    @include bold-highlight($letter-spacing: $letter-spacing--wide);
+
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: space(1/4);
+    padding-top: space(1/4);
+    font-size: $font-size--small-2;
+    text-transform: uppercase;
+    box-shadow: none;
+    border-bottom: 3px solid color(border-primary);
+
+    .icon {
+      @include transition(transform);
+
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    &:hover {
+      padding-right: calc(#{space(1/4)} + 0.75em);
+
+      .icon {
+        transform: translateX(50%);
+      }
+    }
+  }
+
+  &--back-to-top {
+    @include label;
+    @include bold-highlight;
+
+    align-items: center;
+    display: flex;
+    width: max-content;
+    margin: space() 0 0 auto;
+    box-shadow: none;
+
+    .icon {
+      @include transition(transform);
+
+      width: 1.25em;
+      height: 1.25em;
+      margin-left: space();
+    }
+
+    &:hover {
+      .icon {
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &--inverse {
+    @include bold-highlight($letter-spacing: $letter-spacing--wide);
+
+    background-color: color(background-inverse);
+    color: color(text-inverse);
+    padding: space(1/2) space(3/4);
+    font-size: $font-size--small-2;
+    text-transform: uppercase;
+    box-shadow: none;
+    margin: 0;
+    @include transition(
+      background-color,
+      0.35s,
+      cubic-bezier(0.19, 1, 0.22, 1)
+    );
+
+    .icon--before {
+      margin-right: space(3/4);
+    }
+
+    .icon--after {
+      margin-left: auto;
+      box-sizing: content-box; // Do not allow padding to reduce the default content box size.
+      padding-left: space(
+        1/2
+      ); // margin is set to `auto` so we use padding instead.
+    }
+
+    @include above($width-large) {
+      padding: space(3/4) space(1);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: color(background);
+      color: color(text);
+      box-shadow: inset 0 0 0 3px color(text);
+      outline: 0;
+    }
+  }
+
+  &--active {
+    background-color: color(accent);
+    color: color(text-inverse);
+
+    &:hover,
+    &:focus {
+      background-color: color(accent);
+      color: color(text-inverse);
+      box-shadow: inset 0 0 0 3px color(text);
+    }
+  }
+
+  &--quick {
+    @include bold-highlight($letter-spacing: $letter-spacing--wide);
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: color(background-inverse);
+    color: color(text-inverse);
+    padding: space(3/4) space(1 + 1/2);
+    font-size: $font-size--small-2;
+    text-transform: uppercase;
+    box-shadow: none;
+
+    @include above($width-large) {
+      padding: space(1 + 3/4) space(2);
+    }
+
+    .icon {
+      @include transition(transform);
+
+      flex: 0 0 2rem;
+      width: 2rem;
+      height: 1.5rem;
+
+      &--external-link {
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+
+      .icon {
+        transform: translateX(50%);
+
+        &--external-link {
+          transform: translate(50%, -50%);
+        }
+      }
+    }
+
+    &:focus {
+      background-color: color(accent);
+    }
+  }
+
+  &--tab {
+    @include bold-highlight();
+    @include link-reset;
+    @include transition;
+
+    background-color: color(background-section);
+    border: 1px solid color(primary);
+    border-bottom: none;
+    color: color(text);
+    display: block;
+    padding: space() space(2);
+    text-align: center;
+    text-decoration: none;
+
+    @include above($width-small) {
+      border-bottom: $border-width solid color(primary);
+      border-left: none;
+      display: inline-block;
+      font-size: $font-size--small-1;
+      padding: space(1/2) space(3/2);
+      position: relative;
+      top: 1px;
+      width: auto;
+      &:first-child {
+        border-left: 1px solid color(primary);
+      }
+    }
+
+    &.is-active {
+      background-color: color(background);
+      color: color(text);
+    }
+
+    &:hover {
+      background-color: color(primary);
+      color: color(text-inverse);
+    }
+  }
+
+  &--attachment-compact {
+    display: inline-flex;
+    align-items: center;
+
+    .link__suffix {
+      margin-left: 0;
+      padding-left: space(1/4);
+    }
+  }
+
+  &:hover {
+    .link__suffix {
+      color: color(text-meta-inverse);
+    }
+  }
+}
+
+hr.back-to-top {
+  border: none;
+  border-bottom: $border-width solid color(primary);
+  margin-bottom: space();
+  margin-top: space(1/4);
+}

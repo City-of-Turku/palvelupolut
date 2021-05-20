@@ -1,0 +1,41 @@
+.error-page-content {
+  &__heading {
+    &--heavy {
+      @include h1(
+        $font-size: 8rem,
+        $font-size-small: 4rem
+      );
+
+      margin-bottom: 0;
+    }
+
+    &--smaller {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: space(20);
+
+    &--404 {
+      background-image: data-url($image-inline--svg-error-404, svg);
+    }
+
+    @include above($width-large) {
+      height: auto;
+      width: 50%;
+    }
+  }
+
+  &__inner {
+    @include above($width-large) {
+      width: 50%;
+    }
+  }
+
+  @include above($width-large) {
+    display: flex;
+  }
+}

@@ -1,0 +1,48 @@
+$color-breadcrumb: color(primary);
+$color-breadcrumb-hover: color(text-inverse);
+$color-breadcrumb-active: color(text);
+
+.breadcrumb {
+  @include list-reset;
+
+  background-color: color(background-section);
+  padding: 1rem 2rem;
+}
+
+.breadcrumb__link {
+  box-shadow: inset 0 -1px 0 0 var(--color-primary);
+}
+
+.breadcrumb__item,
+.breadcrumb__link,
+.breadcrumb__link:link,
+.breadcrumb__link:visited,
+.breadcrumb__link:focus {
+  color: $color-breadcrumb;
+}
+
+.breadcrumb__link:hover {
+  color: $color-breadcrumb-hover;
+}
+
+.breadcrumb__item {
+  display: inline-block;
+
+  &::after {
+    color: color(accent);
+    content: '\2192';
+    margin: 0 0.5rem;
+  }
+
+  &:last-child {
+    color: $color-breadcrumb-active;
+
+    &::after {
+      content: '';
+    }
+  }
+}
+
+.breadcrumb_link:active {
+  color: $color-breadcrumb-active;
+}

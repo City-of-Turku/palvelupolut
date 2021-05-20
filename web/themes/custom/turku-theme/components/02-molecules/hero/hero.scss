@@ -1,0 +1,16 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: space(4);
+  background: color(primary);
+
+  &__inner {
+    background: color(background);
+    display: flex;
+    flex-direction: column;
+    padding: space(1.5);
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+  }
+}

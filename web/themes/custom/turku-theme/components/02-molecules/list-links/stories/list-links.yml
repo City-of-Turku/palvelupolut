@@ -1,0 +1,9 @@
+list_links__items:
+  - title: 'Current affairs'
+    url: '#'
+  - title: 'Media affairs'
+    url: '#'
+  - title: 'Contact information'
+    url: '#'
+  - title: 'Give feedback'
+    url: '#'

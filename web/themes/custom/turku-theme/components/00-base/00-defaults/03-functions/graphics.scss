@@ -1,0 +1,7 @@
+@function data-url($base64, $type: png) {
+  @if $type == 'png' {
+    @return url('data:image/png;base64,' + $base64 + '');
+  }
+
+  @return url('data:image/svg+xml;base64,' + $base64 + '');
+}

@@ -1,0 +1,4 @@
+announcement__message: 'Hostage situation in the city center'
+announcement__modifiers:
+  - 'critical'
+announcement__cta__url: '#'
