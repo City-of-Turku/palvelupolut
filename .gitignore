@@ -35,3 +35,6 @@
 
 # Ignore node modules
 node_modules
+
+# Ignore theme dist folder
+/web/themes/custom/turku-theme/dist
