@@ -1,0 +1,22 @@
+uuid: 946eb14b-ab07-4c0f-bdac-48d582e05296
+langcode: fi
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - turku_theme
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: turku_theme_messages
+theme: turku_theme
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

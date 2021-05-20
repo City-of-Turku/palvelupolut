@@ -1,0 +1,20 @@
+uuid: 8b8ff670-3ed5-4b8e-ac0d-a8d7906fc347
+langcode: fi
+status: true
+dependencies:
+  theme:
+    - turku_theme
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: turku_theme_local_actions
+theme: turku_theme
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
