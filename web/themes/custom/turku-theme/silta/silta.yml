@@ -4,10 +4,10 @@
 # See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
 # for all possible options.
 
-projectName: wunder-theme-storybook
+projectName: turku-service-paths-storybook
 
 nginx:
   basicauth:
     credentials:
       username: wunder
-      password: theme
+      password: sp

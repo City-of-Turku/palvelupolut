@@ -4,7 +4,7 @@
 # See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
 # for all possible options.
 
-projectName: "turku-service-paths"
+projectName: turku-service-paths-drupal
 
 php:
   drupalCoreVersion: "9"
