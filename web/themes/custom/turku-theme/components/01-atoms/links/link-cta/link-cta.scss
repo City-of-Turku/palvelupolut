@@ -1,0 +1,27 @@
+.link-cta {
+  @include button-base(
+    $colors: outline,
+    $colors-dark: outline-dark
+  );
+
+  box-shadow: none;
+
+  .icon {
+    @include transition(transform);
+
+    flex-shrink: 0;
+    margin-left: space(3/2);
+  }
+
+  &:hover {
+    box-shadow: none;
+
+    .icon {
+      transform: translateX(0.5em);
+    }
+  }
+
+  &--inverse {
+    @include button-colors(outline-dark);
+  }
+}

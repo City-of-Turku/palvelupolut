@@ -1,0 +1,44 @@
+.card-secondary {
+  background: color(background-box);
+  padding: space(2);
+  position: relative;
+
+  &__content {
+    position: relative;
+  }
+
+  &__heading-link {
+    @include link-reset;
+
+    transition-duration: 0.05s;
+
+    &::after {
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__body {
+    font-size: $font-size--small-1;
+  }
+
+  .icon {
+    position: relative;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    .card-secondary__heading-link {
+      border-bottom: 0.25rem solid color(border-default);
+    }
+
+    .icon {
+      left: 0.5rem;
+    }
+  }
+}

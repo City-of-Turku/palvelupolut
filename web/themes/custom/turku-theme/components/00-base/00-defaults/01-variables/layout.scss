@@ -1,0 +1,53 @@
+// Spacing
+$space: 1rem;
+
+// Functions should go into their own file but space() and grid-width() will be used to define layout variables.
+@function space($multiplier: 1) {
+  @return $space * $multiplier;
+}
+
+// Layout
+$width-xs: space(20); // 320
+$width-small: space(25); // 480
+$width-medium: space(45); // 720;
+$width-large: space(57.5); // 920;
+$width-xl: space(76.5); // 1224;
+$width-xxl: space(88); // 1408;
+
+:root {
+  --space-elements: #{space(5)};
+
+  @media (max-width: #{$width-large - space(1/100)}) {
+    --space-elements: #{space(3)};
+  }
+}
+
+$width--page: $width-xxl;
+$width--page-padding: space();
+$width--page-wrapper: $width--page + ($width--page-padding * 2);
+
+$grid-gutter-width: space(2);
+$grid-columns: 12;
+$grid-column-width: ($width--page - ($grid-columns - 1) * $grid-gutter-width) / $grid-columns; // 5.5rem
+
+@function grid-width($column-count, $include-trailing-gutter: false) {
+  @if ($include-trailing-gutter) {
+    @return $grid-column-width * $column-count + $grid-gutter-width * $column-count;
+  }
+  @return $grid-column-width * $column-count + $grid-gutter-width * ($column-count - 1);
+}
+
+@function grid-gutter-width($times: 1) {
+  @return $grid-gutter-width * $times;
+}
+
+$width--content: grid-width(10) + grid-gutter-width(2);
+$width--content-narrow: grid-width(8); // 928
+$width--sidebar: grid-width(3, true); // ~360
+
+$z-index: (
+  over: 200,
+  top: 100,
+  middle: 50,
+  base: 0,
+);

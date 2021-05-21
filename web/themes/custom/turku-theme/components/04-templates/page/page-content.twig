@@ -1,0 +1,29 @@
+{% set page_content__base_class = page_content__base_class|default("page-content") %}
+{% set page_content__modifiers = page_content__modifiers|default([]) %}
+
+{% if page_sidebar %}
+  {% set page_content__modifiers = page_content__modifiers|merge(['with-sidebar']) %}
+{% endif %}
+
+
+<div {{ bem(page_content__base_class, page_content__modifiers, main_blockname) }}>
+  {% if page_sidebar %}
+    <div {{ bem("sidebar-pre-content", [], page_content__base_class) }}>
+      {% block page_sidebar_pre_content %}{% endblock %}
+    </div>
+  {% endif %}
+
+  <div {{ bem("content", [], page_content__base_class) }}>
+    {% block page_content %}{% endblock %}
+  </div>
+
+  {% if page_sidebar %}
+    <div {{ bem("sidebar-post-content", [], page_content__base_class) }}>
+      {% block page_sidebar_post_content %}{% endblock %}
+    </div>
+  {% endif %}
+
+  <div {{ bem("post-content", [], page_content__base_class) }}>
+    {% block page_content_post_content %}{% endblock %}
+  </div>
+</div>

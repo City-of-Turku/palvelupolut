@@ -1,0 +1,4 @@
+link__url: '#main-content'
+link__content: 'Back to top'
+link__modifiers:
+  - 'back-to-top'

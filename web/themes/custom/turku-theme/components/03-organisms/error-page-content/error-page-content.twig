@@ -1,0 +1,48 @@
+{# @todo Describe required variables. #}
+
+{% set error_page_content__base_class = "error-page-content" %}
+{% set error_page_content__modifiers = error_page_content__status_code %}
+
+<div {{ bem(error_page_content__base_class, error_page_content__modifiers) }}>
+  <div {{ bem("inner", [], error_page_content__base_class) }}>
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 1,
+      heading: error_page_content__title,
+      heading__blockname: error_page_content__base_class,
+      heading__modifiers: ["heavy"],
+    } %}
+
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 2,
+      heading: error_page_content__subtitle,
+      heading__blockname: error_page_content__base_class,
+      heading__modifiers: ["smaller"],
+    } %}
+
+    {% if error_page_content__message_main %}
+      {% include "@atoms/text/paragraph/paragraph.twig" with {
+        paragraph__content: error_page_content__message_main
+      } %}
+    {% endif %}
+
+    {% if error_page_content__message_search %}
+      {% include "@atoms/text/paragraph/paragraph.twig" with {
+        paragraph__content: error_page_content__message_search
+      } %}
+    {% endif %}
+
+    {% if error_page_content__message_home %}
+      {% include "@atoms/text/paragraph/paragraph.twig" with {
+        paragraph__content: error_page_content__message_home
+      } %}
+    {% endif %}
+
+    {% if error_page_content__message_contact %}
+      {% include "@atoms/text/paragraph/paragraph.twig" with {
+        paragraph__content: error_page_content__message_contact
+      } %}
+    {% endif %}
+  </div>
+
+  <div {{ bem("bg", [error_page_content__status_code], error_page_content__base_class) }}></div>
+</div>

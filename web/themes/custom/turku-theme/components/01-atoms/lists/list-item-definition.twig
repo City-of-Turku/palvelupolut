@@ -1,0 +1,31 @@
+{#
+/**
+ * Available variables:
+ * - list_item__term__base_class - the base classname for the term
+ * - list_item__term__modifiers - array of modifiers to add to the term base classname
+ *
+ * - list_item__term__base_class - the base classname for the definition
+ * - list_item__term__modifiers - array of modifiers to add to the definition base classname
+ *
+ * Available blocks:
+ * - list_item_term_content - the content of the term
+ * - list_item_definition_content - the content of the definition
+#}
+
+{% set list_item__term__base_class = list_item__term__base_class|default('list-item-term') %}
+{% set list_item__term__modifiers = list_item__term__modifiers|default([]) %}
+
+{% set list_item__definition__base_class = list_item__definition__base_class|default('list-item-defintion') %}
+{% set list_item__definition__modifiers = list_item__definition__modifiers|default([]) %}
+
+<dt {{ bem(list_item__term__base_class, list_item__term__modifiers, list_item__term__blockname) }}>
+  {% block list_item_term_content %}
+    {{ list_item__term }}
+  {% endblock %}
+</dt>
+
+<dd {{ bem(list_item__definition__base_class, list_item__definition__modifiers, list_item__definition__blockname) }}>
+  {% block list_item_definition_content %}
+    {{ list_item__definition }}
+  {% endblock %}
+</dd>

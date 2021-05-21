@@ -1,0 +1,109 @@
+{#
+/**
+ * Available variables:
+ * - link__content - the content of the link (typically text)
+ * - link__url - the url this link should poing to
+ * - link__attributes - array of attribute,value pairs
+ * - link__base_class - the base class name
+ * - link__extra_classes - extra class names
+ * - link__modifiers - array of modifiers to add to the base classname
+ * - link__blockname - blockname prepended to the base classname
+ * - link__icon_before - the name of the icon that will appear before the link text
+ * - link__icon_after - the name of the icon that will appear after the link text
+ *
+ * Available blocks:
+ * - link_content - used to replace the content of the link
+ *     Example: to insert the image component
+ */
+#}
+{% set link__base_class = link__base_class|default("link") %}
+{% set link__modifiers = link__modifiers|default([]) %}
+{% set link__attributes = link__attributes|default([]) %}
+{% set link__icon_before_modifiers = link__icon_before_modifiers|default(["before"]) %}
+{% set link__icon_after_modifiers = link__icon_after_modifiers|default(["after"]) %}
+{% set link_with_arrow = "action" in link__modifiers or "quick" in link__modifiers or "inverse" in link__modifiers %}
+{% set back_to_top_link = "back-to-top" in link__modifiers %}
+{% set presentation_link = not link__url %}
+{% set external_link = "external" in link__modifiers %}
+
+{% if link_with_arrow  and not external_link %}
+  {% set link__icon_after = "arrow-right" %}
+  {% set link__icon_after_decorative = true %}
+{% endif %}
+
+{% if back_to_top_link %}
+  {% set link__icon_after = "arrow-up" %}
+  {% set link__icon_after_decorative = true %}
+{% endif %}
+
+{% if external_link %}
+  {% set external_attributes = {
+    rel: "noopener",
+    target: "_blank",
+  } %}
+  {% set link__attributes = link__attributes|merge(external_attributes) %}
+{% endif %}
+
+{% if presentation_link %}
+  {% set presentation_attributes = {
+    role: "presentation",
+    tabindex: "-1",
+  } %}
+  {% set link__attributes = link__attributes|merge(presentation_attributes) %}
+{% endif %}
+
+{% if link__icon_before or link__icon_after %}
+  {% set link__modifiers = link__modifiers|merge(["with-icon"]) %}
+{% endif %}
+
+<a
+  {{ bem(link__base_class, link__modifiers, link__blockname, link__extra_classes) }}
+  {% for attribute, value in link__attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+  {% if link__url %}
+    href="{{ link__url }}"
+  {% endif %}
+>
+  {% if link__icon_before %}
+    {% include "@atoms/images/icon/icon.twig" with {
+      icon__name: link__icon_before,
+      icon__modifiers: link__icon_before_modifiers,
+      icon__decorative: link__icon_before_decorative,
+    } %}
+  {% endif %}
+
+  {% block link_content %}
+    {{- link__content -}}
+  {% endblock %}
+
+  {% if link__icon_after %}
+    {% include "@atoms/images/icon/icon.twig" with {
+      icon__name: link__icon_after,
+      icon__modifiers: link__icon_after_modifiers,
+      icon__decorative: link__icon_after_decorative,
+    } %}
+  {% endif %}
+
+  {% if external_link %}
+    {% include "@atoms/images/icon/icon.twig" with {
+      icon__name: "external-link",
+      icon__decorative: true,
+      icon__modifiers: ["external-link"],
+    } %}
+
+    {% include "@atoms/visually-hidden/visually-hidden.twig" with {
+      visually_hidden__content: " (opens in a new window, goes to a different website)"|t,
+    } %}
+  {% endif %}
+
+  {% if link__suffix %}
+    <span {{ bem("suffix", [], link__base_class) }}>
+      {{ link__suffix }}
+    </span>
+  {% endif %}
+</a>
+
+{% if back_to_top_link %}
+  <hr class="back-to-top">
+{% endif %}

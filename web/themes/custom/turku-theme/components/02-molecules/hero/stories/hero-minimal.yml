@@ -1,0 +1,5 @@
+hero__title: "The minimal hero"
+hero__meta: "News"
+hero__lead_text: "Hero lead text paragraph"
+hero__modifiers:
+  - "minimal"

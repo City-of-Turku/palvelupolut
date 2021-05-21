@@ -1,0 +1,5 @@
+button__content: 'Inverse Button'
+button__modifiers:
+  - 'inverse'
+  - 'small'
+button__type: 'button'

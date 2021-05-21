@@ -1,0 +1,30 @@
+{#
+/**
+ * Available variables:
+ * - list__base_class - the base classname
+ * - list__modifiers - array of modifiers to add to the base classname
+ * - list__blockname - blockname prepended to the base classname
+ *
+ * - list__items:
+ *   - item.label
+ *   - item.content
+ *   - item.base_class
+ *   - item.modifiers
+ *   - item.blockname
+ */
+#}
+{% set list__base_class = list__base_class|default('list-ordered') %}
+
+<ol {{ bem(list__base_class, list__modifiers, list__blockname) }}>
+  {% block list_content %}
+    {% for item in list__items %}
+      {% include "@atoms/lists/list-item.twig" with {
+        list_item__label: item.label,
+        list_item__content: item.content,
+        list_item__base_class: item.base_class,
+        list_item__modifiers: item.modifiers,
+        list_item__blockname: item.blockname,
+      } %}
+    {% endfor %}
+  {% endblock %}
+</ol>

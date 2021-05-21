@@ -1,0 +1,21 @@
+{#
+/**
+ * Available variables:
+ * - visually_hidden__tag - the HTML tag of the outer wrapper
+ * - visually_hidden__base_class - the base class name
+ * - visually_hidden__modifiers - array of modifiers to add to the base classname
+ * - visually_hidden__content - the content that should be visually hidden (typically text)
+ *
+ * Available blocks:
+ * - visually_hidden_content - used to replace the content of the visually hidden component
+ */
+#}
+{% set visually_hidden__base_class = visually_hidden__base_class|default("visually-hidden") %}
+{% set visually_hidden__modifiers = visually_hidden__modifiers|default([]) %}
+{% set visually_hidden__tag = visually_hidden__tag|default("span") %}
+
+<{{ visually_hidden__tag }} {{ bem(visually_hidden__base_class, visually_hidden__modifiers) }}>
+  {% block visually_hidden_content %}
+    {{ visually_hidden__content }}
+  {% endblock %}
+</{{ visually_hidden__tag }}>

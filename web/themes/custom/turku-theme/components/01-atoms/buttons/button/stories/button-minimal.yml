@@ -1,0 +1,4 @@
+button__content: 'Clear selection'
+button__modifiers:
+  - 'minimal'
+button__type: 'button'

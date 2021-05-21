@@ -1,0 +1,18 @@
+{#
+/**
+ * Available variables:
+ * - grid__base_class - the base classname
+ * - grid__modifiers - the base classname
+ */
+#}
+
+{% set grid__base_class = grid__base_class|default("grid") %}
+{% set grid__modifiers = grid__modifiers|default([]) %}
+
+<div {{ bem(grid__base_class, grid__modifiers, grid__blockname) }}>
+  {% block grid_content %}
+    {% for item in grid__items %}
+      {% include "@templates/grid/grid-item.twig" %}
+    {% endfor %}
+  {% endblock %}
+</div>

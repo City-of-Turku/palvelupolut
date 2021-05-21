@@ -1,0 +1,46 @@
+/**
+ * Mixin - With-motion-allowed
+ * Wrapper for transitions. Only works if user has a "reduce motion" setting
+ * in their operating system and it has no preference (default).
+ *
+ * This enables motion by default unless the user has an old operating system
+ * or wants reduced motion to avoid motion sickness.
+ */
+@mixin with-motion-allowed {
+  @media all and (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+/**
+ * Mixin - transition
+ * Transition property can be one single property or multiple separated by space
+ * Eg.  @include transition(
+ *        transform opacity,
+ *        0.5s,
+ *        cubic-bezier(0.19, 1, 0.22, 1)
+ *      );
+ */
+@mixin transition(
+  $properties: (
+    all,
+  ),
+  $transition-duration: $transition-duration-base,
+  $transition-timing: $transition-timing-function-base,
+  $transition-delay: $transition-delay-base
+) {
+  $property-string: '';
+
+  @each $property in $properties {
+    @if $property-string != '' {
+      $property-string: #{$property-string}, #{$property} $transition-duration;
+    }
+    @if $property-string == '' {
+      $property-string: #{$property} $transition-duration $transition-timing $transition-delay;
+    }
+  }
+
+  transition: $property-string;
+
+  @content;
+}

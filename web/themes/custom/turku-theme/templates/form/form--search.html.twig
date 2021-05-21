@@ -1,0 +1,26 @@
+{#
+/**
+  * @file
+  * Default theme implementation for a 'form' element.
+  *
+  * Available variables
+  * - attributes: A list of HTML attributes for the wrapper element.
+  * - children: The child elements of the form.
+  *
+  * @see template_preprocess_form()
+  *
+  * @ingroup themeable
+  */
+#}
+{% set form_attributes = attributes|merge({
+  role: "search",
+}) %}
+
+{% embed "@atoms/form/form/form.twig" with {
+  form__attributes: form_attributes,
+  form__modifiers: ['search']
+} %}
+  {% block form__content %}
+    {{ children }}
+  {% endblock %}
+{% endembed %}

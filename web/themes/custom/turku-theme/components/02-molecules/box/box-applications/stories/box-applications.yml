@@ -1,0 +1,22 @@
+box_applications__title: 'The title of the box'
+box_applications__description: >
+  <p>Here comes the option to add body text to the box. You can add a title, text, links or attachments to the box.
+  This box is used on the base page as well as the article page. </p>
+  <p>The next line.</p>
+box_applications__items:
+  - box_applications_item__title: 'Lehtimäki, center of Espoo, day'
+    box_applications_item__cta: 'Lehtimäki, the center of Espoo'
+    box_applications_item__cta__url: '#'
+    box_applications_item__details:
+      - label: 'Application period'
+        description: '2.8.2021 from 9.00 to 4.11.2021 at 17.00'
+      - label: 'Start of studies'
+        description: '24.5.2021 '
+  - box_applications_item__title: 'Kirkkonummi, day (Nursing and care expertise)'
+    box_applications_item__cta: 'Church moor'
+    box_applications_item__cta__url: '#'
+    box_applications_item__details:
+      - label: 'Application period'
+        description: '2.8.2021 from 9.00 to 4.11.2021 at 17.00'
+      - label: 'Start of studies'
+        description: '4.8.2021 '

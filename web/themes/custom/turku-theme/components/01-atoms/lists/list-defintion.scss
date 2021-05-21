@@ -1,0 +1,36 @@
+.list-definition {
+  margin: 0 0 space(2);
+  line-height: $line-height--narrow;
+
+  a {
+    @include link-reset;
+
+    color: color(text-meta);
+    text-decoration: underline;
+
+    &:hover {
+      color: color(text);
+    }
+  }
+}
+
+.list-item-term {
+  @include bold-highlight($letter-spacing: $letter-spacing--wide);
+
+  margin: 0 0 space(1/3);
+  font-size: $font-size--small-3;
+  text-transform: uppercase;
+  color: color(text);
+}
+
+.list-item-defintion {
+  margin: 0 0 space(3/2);
+  font-family: $font-family--base;
+  font-size: $font-size--small-1;
+  font-weight: 600;
+  color: color(text-meta);
+
+  p {
+    margin: 0;
+  }
+}

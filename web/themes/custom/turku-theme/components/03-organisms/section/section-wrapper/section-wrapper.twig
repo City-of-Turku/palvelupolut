@@ -1,0 +1,29 @@
+{#
+/**
+ * Available variables:
+ * - section_wrapper__base_class - the base classname
+ * - section_wrapper__modifiers - array of modifiers to add to the base classname
+ * - section_wrapper__blockname - the blockname will be prepended to the base class
+ * - section_wrapper__title - the title of the section
+ * - section_wrapper__content - the section content
+ *
+ * Available blocks:
+ * - section_wrapper_content - wraps the section content
+ */
+#}
+{% set section_wrapper__base_class = section_wrapper__base_class|default("section-wrapper") %}
+{% set section_wrapper__modifiers = section_wrapper__modifiers|default([]) %}
+
+<section {{ bem(section_wrapper__base_class, section_wrapper__modifiers, section_wrapper__blockname) }}>
+  {% if section_wrapper__title %}
+    {% include "@atoms/text/heading/heading.twig" with {
+      "heading": section_wrapper__title,
+      "heading__level": section_wrapper__title_level|default("2"),
+      "heading__modifiers": ["title-section-small"],
+    } %}
+  {% endif %}
+
+  {% block section_wrapper_content %}
+    {{ section_wrapper__content }}
+  {% endblock %}
+</section>

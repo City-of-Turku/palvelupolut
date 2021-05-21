@@ -1,0 +1,68 @@
+{#
+ # Available variables:
+ # - announcement__base_class - base classname of the wrapper.
+ # - announcement__modifiers - array of modifiers to add to the base classname of the wrapper.
+ #
+ # - announcement__cta__url - the url the CTA should link to.
+ # - announcement__cta__modifiers - array of modifiers to add to the base classname of the CTA.
+ #
+ # - announcement__message - the content of the announcement.
+ #
+ #}
+{% set announcement__base_class = "announcement" %}
+{% set announcement__modifiers = announcement__modifiers|default([]) %}
+{% set announcement__cta__modifiers = announcement__cta__modifiers|default(["internal"]) %}
+{% set warning = "warning" in announcement__modifiers %}
+{% set critical = "critical" in announcement__modifiers %}
+
+{% if warning %}
+  {% set icon = "warning" %}
+  {% set type = "Warning:"|t %}
+{% endif %}
+
+{% if critical %}
+  {% set icon = "critical" %}
+  {% set type = "Critical announcement:"|t %}
+{% endif %}
+
+{% if not icon %}
+  {% set icon = "info" %}
+{% endif %}
+
+{% set message %}
+  <div {{ bem("message", [], announcement__base_class) }}>
+    {{ announcement__message }}
+  </div>
+{% endset %}
+
+<div {{ bem(announcement__base_class, announcement__modifiers) }}>
+  {% if type %}
+    {% include "@atoms/visually-hidden/visually-hidden.twig" with {
+      visually_hidden__content: type,
+    } %}
+  {% endif %}
+
+  {% if announcement__cta__url %}
+    {% embed "@atoms/links/link/link.twig" with {
+      link__url: announcement__cta__url,
+      link__modifiers: announcement__cta__modifiers,
+    } %}
+      {% block link_content %}
+        {{ message }}
+
+        {% if "internal" in announcement__cta__modifiers %}
+          {% include "@atoms/images/icon/icon.twig" with {
+            icon__name: "arrow-right",
+            icon__decorative: true,
+          } %}
+        {% endif %}
+      {% endblock %}
+    {% endembed %}
+  {% else %}
+    {{ message }}
+  {% endif %}
+
+  {% include "@atoms/images/image/svg.twig" with {
+    svg__theme_path: "svg/" ~ icon ~ ".svg",
+  } %}
+</div>

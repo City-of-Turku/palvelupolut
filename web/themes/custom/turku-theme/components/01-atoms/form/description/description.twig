@@ -1,0 +1,18 @@
+{#
+/**
+ * Available variables:
+ * - description__level - the tag used for the heading
+ * - description__base_class - the base classname
+ * - description__modifiers - array of modifiers to add to the base classname
+ * - description__content - content
+ *
+ */
+#}
+{% set description__base_class = description__base_class|default("description") %}
+{% set description__modifiers = description__modifiers|default([]) %}
+
+<div
+  {{ bem(description__base_class, description__modifiers, description__blockname, description__extra_classes) }}
+>
+  {{ description__content }}
+</div>

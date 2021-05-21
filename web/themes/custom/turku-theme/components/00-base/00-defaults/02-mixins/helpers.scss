@@ -1,0 +1,47 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin focus($width: $border-width, $color: color(primary)) {
+  outline: $width solid $color;
+}
+
+@mixin border(
+  $width: $default-border-width,
+  $color: $default-border-color,
+  $style: $default-border-style
+) {
+  border: $color $style $width;
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin background-full-width(
+  $width: $width--page,
+  $background: color(background-box),
+  $position: relative,
+  $z-index: -1
+) {
+  position: $position;
+
+  &::before {
+    content: '';
+    width: $width;
+    max-width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: $z-index;
+    transform: translateX(-50%);
+    background: $background;
+  }
+}

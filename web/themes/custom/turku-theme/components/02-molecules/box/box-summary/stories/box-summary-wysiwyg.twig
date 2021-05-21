@@ -1,0 +1,10 @@
+{% embed "../box-summary.twig" with {
+  box_summary__modifiers: ['wysiwyg']
+} %}
+  {% block box_summary_content %}
+    <h2>Event time</h2>
+    <p>Mon 23.11.2020 - Fri 27.11.2020</p><p>9:00 - 16:00</p>
+    <h2>Venue</h2>
+    <p><a href="#">Kirkkokatu 16 B</a></p><p>Perkkaa chapel</p>
+  {% endblock %}
+{% endembed %}

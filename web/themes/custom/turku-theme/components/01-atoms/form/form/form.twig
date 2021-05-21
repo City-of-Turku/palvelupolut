@@ -1,0 +1,25 @@
+{#
+/**
+ * Available variables:
+ * - form__level - the tag used for the heading
+ * - form__base_class - the base classname
+ * - form__modifiers - array of modifiers to add to the base classname
+ * - form__content - content
+ * - form__attributes - attributes
+ *
+ */
+#}
+{% set form__base_class = form__base_class|default("form") %}
+{% set form__modifiers = form__modifiers|default([]) %}
+{% set form__attributes = form__attributes|default({}) %}
+
+<form
+  {{ bem(form__base_class, form__modifiers, form__blockname, form__extra_classes) }}
+  {%  for attribute,value in form__attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+>
+  {% block form__content %}
+    {{ form__content }}
+  {% endblock %}
+</form>

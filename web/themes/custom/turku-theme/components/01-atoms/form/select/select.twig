@@ -1,0 +1,28 @@
+{#
+/**
+ * Available variables:
+ * - select__level - the tag used for the heading
+ * - select__base_class - the base classname
+ * - select__modifiers - array of modifiers to add to the base classname
+ * - select__content - array of content
+ * - select__type - select type
+ *
+ */
+#}
+{% set select__base_class = select__base_class|default("select") %}
+{% set select__modifiers = select__modifiers|default([]) %}
+
+<select {{ bem(select__base_class, select__modifiers, select__blockname, select__extra_classes) }}>
+  {% for option in select__content %}
+    {% if option.type == 'optgroup' %}
+      <optgroup label="{{ option.label }}">
+        {% for sub_option in option.options %}
+          <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
+        {% endfor %}
+      </optgroup>
+    {% elseif option.type == 'option' %}
+      <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+

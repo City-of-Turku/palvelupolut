@@ -1,0 +1,28 @@
+{#
+/**
+ * Available variables:
+ * - svg__raw           - raw SVG markup
+ * - svg__theme_path    - path to SVG file in `wunder/images`
+ * - svg__full_path     - path to SVG file in other locations
+ *
+ */
+#}
+{% set svg_base_class = svg_base_class|default('svg') %}
+{% set svg_modifiers = svg_modifiers|default([]) %}
+
+{% if svg__theme_path and not svg__raw %}
+  {# If `directory` is defined, set the path relative for Drupal.
+   # Otherwise, set the path relative to the Component Library. #}
+  {% set svg_basepath = directory ? directory ~ "/images/" %}
+  {% set svg_path = svg_basepath ~ svg__theme_path %}
+{% else %}
+  {% set svg_path = svg__full_path %}
+{% endif %}
+
+<div {{ bem(svg_base_class, svg_modifiers, svg_blockname) }}>
+  {% if svg__raw %}
+    {{ svg__raw|raw }}
+  {% else %}
+    {{ source(svg_path) }}
+  {% endif %}
+</div>

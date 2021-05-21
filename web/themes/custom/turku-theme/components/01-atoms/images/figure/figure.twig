@@ -1,0 +1,31 @@
+{#
+/**
+ * Available variables:
+ * - figure__base_class - the base classname
+ * - figure__modifiers - array of modifiers to add to the base classname
+ * - figure__content - the markup of the image. Use either this or figure__src
+ * - figure__src - the source of the image
+ *
+ * Available blocks:
+ * - figure_content - used to replace the content of the component with a rendered image field
+ */
+#}
+{% set figure__base_class = figure__base_class|default('image-wysiwyg') %}
+{% set figure__modifiers = figure__modifiers|default([]) %}
+
+<figure {{ bem(figure__base_class, figure__modifiers) }}>
+  {% block figure_content %}
+    {% if figure__content %}
+      {{ figure__content }}
+    {% else %}
+      {% include "@atoms/images/image/image.twig" with {
+        image_src: figure__src,
+      } %}
+    {% endif %}
+  {% endblock %}
+
+  {% include "@atoms/text/text-caption/text-caption.twig" with {
+    text_caption__content: figure__caption,
+    text_caption__tag: "figcaption",
+  } %}
+</figure>

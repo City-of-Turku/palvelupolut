@@ -1,0 +1,4 @@
+fieldset__content: This is fieldset element
+fieldset__disabled: true
+fieldset__modifiers:
+  - disabled

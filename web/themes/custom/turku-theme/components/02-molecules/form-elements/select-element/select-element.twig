@@ -1,0 +1,29 @@
+{#
+/**
+ * Available variables:
+ * - select_element__level - the tag used for the heading
+ * - select_element__base_class - the base classname
+ * - select_element__modifiers - array of modifiers to add to the base classname
+ * - select_element__content: array of content
+ *
+ */
+#}
+{% set select_element__base_class = select_element__base_class|default("select_element") %}
+{% set select_element__modifiers = select_element__modifiers|default([]) %}
+
+<div
+  {{ bem(select_element__base_class, select_element__modifiers, select_element__blockname, select_element__extra_classes) }}
+>
+  {% include "@atoms/form/label/label.twig" with {
+    label__content: select_element__label,
+    label__modifiers: select_element__modifiers
+  } %}
+  {% include "@atoms/form/select/select.twig" with {
+    select__content: select_element__content,
+    select__modifiers: select_element__modifiers
+  } %}
+  {% include "@atoms/form/description/description.twig" with {
+    description__content: select_element__description,
+    description__modifiers: select_element__modifiers
+  } %}
+</div>

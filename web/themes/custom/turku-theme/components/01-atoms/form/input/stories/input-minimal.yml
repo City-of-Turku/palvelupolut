@@ -1,0 +1,8 @@
+input__value: ""
+input__type: text
+input__name: text
+input__id: text
+input__placeholder: Placeholder text
+input__modifiers:
+  - text
+  - minimal

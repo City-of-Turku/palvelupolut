@@ -1,0 +1,19 @@
+.list-links {
+  @include list-reset;
+
+  margin-bottom: var(--space-elements);
+
+  &__item {
+    margin-bottom: space(1/2);
+  }
+
+  &__text {
+    //@include link-style-disabled;
+  }
+
+  &--attachment {
+    .list-links__item {
+      border-bottom: 1px solid color(border-primary);
+    }
+  }
+}

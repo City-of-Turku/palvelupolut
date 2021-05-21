@@ -1,0 +1,34 @@
+{#
+/**
+ * Available variables:
+ * - text_element__level - the tag used for the heading
+ * - text_element__base_class - the base classname
+ * - text_element__modifiers - array of modifiers to add to the base classname
+ * - text_element__content: array of content
+ *
+ */
+#}
+{% set text_element__base_class = text_element__base_class|default("text_element") %}
+{% set text_element__modifiers = text_element__modifiers|default([]) %}
+
+<div
+  {{ bem(text_element__base_class, text_element__modifiers, text_element__blockname, text_element__extra_classes) }}
+>
+  {% include "@atoms/form/label/label.twig" with {
+    label__content: text_element__label,
+    label__required: text_element__required,
+    label__modifiers: text_element__modifiers
+  } %}
+  {% include "@atoms/form/input/input.twig" with {
+    input__type: text_element__type|default("text"),
+    input__name: text_element__name,
+    input__required: text_element__required,
+    input__modifiers: text_element__modifiers|merge(["text"]),
+    input__placeholder: text_element__placeholder
+  } %}
+  {% include "@atoms/form/description/description.twig" with {
+    description__content: text_element__description,
+    description__modifiers: text_element__modifiers
+  } %}
+</div>
+

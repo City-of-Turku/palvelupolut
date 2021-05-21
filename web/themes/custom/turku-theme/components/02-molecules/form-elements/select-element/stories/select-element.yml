@@ -1,0 +1,27 @@
+select_element__content:
+  - type: option
+    value: option1
+    label: Option 1
+    selected: true
+  - type: option
+    value: option2
+    label: Option 2
+    selected: false
+  - type: option
+    value: option3
+    label: Option 3
+    selected: false
+  - type: option
+    value: option4
+    label: Option 4
+    selected: false
+  - type: option
+    value: option5
+    label: Option 5
+    selected: false
+  - type: option
+    value: option6
+    label: Option 6
+    selected: false
+select_element__label: Select label
+select_element__description: Select description

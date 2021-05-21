@@ -1,0 +1,11 @@
+radio_element__content:
+  - title: Option 1
+    checked: checked
+  - title: Option 2
+  - title: Option 3
+  - title: Option 4
+radio_element__id: radioIdError
+radio_element__label: Checkbox label
+radio_element__description: Checkbox description
+radio_element__modifiers:
+  - error

@@ -1,0 +1,52 @@
+{#
+/**
+ * Available variables:
+ * - button__base_class - the base classname
+ * - button__modifiers - array of modifiers to add to the base classname
+ * - button__blockname - blockname prepended to the base classname
+ * - button__content - the content of the button (typically text)
+ * - button__icon - the name of the icon to prepend the button
+ *
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert an icon
+ */
+#}
+
+{% set button__base_class = button__base_class|default('button') %}
+{% set button__modifiers = button__modifiers|default([]) %}
+{% set button__type = button__type|default('button') %}
+{% set button__icon_before_modifiers = button__icon_before_modifiers|default(["before"]) %}
+{% set button__icon_after_modifiers = button__icon_after_modifiers|default(["after"]) %}
+
+{% if "visually-hidden-text" in button__modifiers %}
+  {% set hide_text_visually = true %}
+{% endif %}
+
+<button
+  type="{{ button__type }}"
+  {{ bem(button__base_class, button__modifiers, button__blockname, button__extra_classes) }}
+>
+  {% if button__icon_before %}
+    {% include "@atoms/images/icon/icon.twig" with {
+      icon__name: button__icon_before,
+      icon__modifiers: button__icon_before_modifiers,
+      icon__decorative: true,
+    } %}
+  {% endif %}
+
+  {% block button_content %}
+    <span
+      {{ bem('text', button__modifiers, button__base_class, hide_text_visually ? ['visually-hidden'] : []) }}>
+        {{ button__content }}
+    </span>
+  {% endblock %}
+
+  {% if button__icon %}
+    {% include "@atoms/images/icon/icon.twig" with {
+      icon__name: button__icon,
+      icon__modifiers: button__icon_after_modifiers,
+      icon__decorative: true,
+    } %}
+  {% endif %}
+</button>

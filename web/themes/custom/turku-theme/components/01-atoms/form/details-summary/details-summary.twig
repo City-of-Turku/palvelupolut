@@ -1,0 +1,39 @@
+{#
+/**
+ * Available variables:
+ * - label__level - the tag used for the heading
+ * - label__base_class - the base classname
+ * - label__modifiers - array of modifiers to add to the base classname
+ * - label__content: array of content
+ *
+ */
+#}
+{% set details_summary__base_class = details_summary__base_class|default('details-summary') %}
+{% set details_summary__modifiers = details_summary__modifiers|default([]) %}
+{% set details_summary__icon = details_summary__icon|default('filter') %}
+
+<details {{ bem(details_summary__base_class, details_summary__modifiers, details_summary__blockname) }}>
+  {%- if details_summary__title -%}
+    <summary
+      {{ bem('summary', details_summary__modifiers, details_summary__base_class, details_summary__extra_classes) }}
+      {{ details_summary__summary_attributes }}>
+      {% include '@atoms/images/icon/icon.twig' with {
+        icon__name: details_summary__icon,
+        icon__decorative: true,
+        icon__modifiers: ['before']
+      } %}
+      {{ details_summary__title }}
+    </summary>
+  {%- endif -%}
+
+  {% if details_summary__errors %}
+    <div>
+      {{ details_summary__errors }}
+    </div>
+  {% endif %}
+  <div {{ bem('content', details_summary__modifiers, details_summary__base_class) }}>
+    {{ details_summary__description }}
+    {{ details_summary__children }}
+    {{ details_summary__value }}
+  </div>
+</details>

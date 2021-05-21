@@ -1,0 +1,29 @@
+{#
+/**
+ * Available variables:
+ * - textarea_element__level - the tag used for the heading
+ * - textarea_element__base_class - the base classname
+ * - textarea_element__modifiers - array of modifiers to add to the base classname
+ * - textarea_element__content: array of content
+ *
+ */
+#}
+{% set textarea_element__base_class = textarea_element__base_class|default("textarea_element") %}
+{% set textarea_element__modifiers = textarea_element__modifiers|default([]) %}
+
+<div
+  {{ bem(textarea_element__base_class, textarea_element__modifiers, textarea_element__blockname, textarea_element__extra_classes) }}
+>
+  {% include "@atoms/form/label/label.twig" with {
+    label__content: "Textarea label"
+  } %}
+  {% include "@atoms/form/textarea/textarea.twig" with {
+    textarea__placeholder: textarea_element__placeholder,
+    textarea__modifiers: textarea_element__modifiers
+  } %}
+  {% include "@atoms/form/description/description.twig" with {
+    description__content: textarea_element__description,
+    description__modifiers: textarea_element__modifiers
+  } %}
+</div>
+

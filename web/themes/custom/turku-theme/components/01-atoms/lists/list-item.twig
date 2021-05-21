@@ -1,0 +1,23 @@
+{#
+/**
+ * Available variables:
+ * - list_item__base_class - the base classname
+ * - list_item__modifiers - array of modifiers to add to the base classname
+ * - list_item__blockname - blockname prepended to the base classname
+ * - list_item__label - (optional) a <strong> label before the list item itself
+ * - list_item__content - the content of the list_item (typically text)
+ *
+ * Available blocks:
+ * - list_item__content - used to replace the content of the list_item with something other than text
+ *   for example: to insert the image and/or link components
+ */
+#}
+{% set list_item__base_class = list_item__base_class|default('list-item') %}
+{% set list_item__modifiers = list_item__modifiers|default([]) %}
+
+<li {{ bem(list_item__base_class, list_item__modifiers, list_item__blockname) }}>
+  {% block list_item_content %}
+    {% if list_item__label %}<strong>{{ list_item__label }}</strong> {% endif %}
+    {{ list_item__content }}
+  {% endblock %}
+</li>

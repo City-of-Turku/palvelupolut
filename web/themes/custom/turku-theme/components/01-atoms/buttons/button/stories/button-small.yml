@@ -1,0 +1,4 @@
+button__content: 'Small Button'
+button__modifiers:
+  - 'small'
+button__type: 'button'

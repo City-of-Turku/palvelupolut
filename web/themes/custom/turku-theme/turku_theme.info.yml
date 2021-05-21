@@ -1,0 +1,57 @@
+name: Turku theme
+type: theme
+description: Theme based on <a href="http://emulsify.info">Emulsify</a>.
+base theme: stable
+core: 8.x
+core_version_requirement: ^8 || ^9
+logo: images/logo.png
+
+regions:
+  header: Header
+  pre_content: Pre Content
+  content: Content
+  post_content: Post Content
+  footer: Footer
+  # A hidden region to place blocks that are printed programmatically elsewhere.
+  hidden: Not rendered (used only for config)
+
+
+# Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
+libraries:
+  - 'turku_theme/global'
+  # - 'turku_theme/typekit'
+
+
+# Libraries override allows you to remove libraries added by other projects.
+# libraries-override:
+#   chosen/drupal.chosen:
+#     js:
+#       js/chosen.js: false
+#     css:
+#       component:
+#         css/chosen-drupal.css: false
+
+# MUST install `components` module: `drush dl components && drush en components -y``
+component-libraries:
+  base:
+    paths:
+      - components/00-base
+  atoms:
+    paths:
+      - components/01-atoms
+  molecules:
+    paths:
+      - components/02-molecules
+  organisms:
+    paths:
+      - components/03-organisms
+  templates:
+    paths:
+      - components/04-templates
+  pages:
+    paths:
+      - components/05-pages
+
+# CKEditor stylesheet loads in wysiwyg to give content editors a better experience
+ckeditor_stylesheets:
+  - dist/style.css

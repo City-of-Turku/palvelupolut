@@ -1,0 +1,30 @@
+{#
+/**
+ * Available variables:
+ * - fieldset_element__level - the tag used for the heading
+ * - fieldset_element__base_class - the base classname
+ * - fieldset_element__modifiers - array of modifiers to add to the base classname
+ * - fieldset_element__content: array of content
+ *
+ */
+#}
+{% set fieldset_element__base_class = fieldset_element__base_class|default("fieldset_element") %}
+{% set fieldset_element__modifiers = fieldset_element__modifiers|default([]) %}
+
+<div
+  {{ bem(fieldset_element__base_class, fieldset_element__modifiers, fieldset_element__blockname, fieldset_element__extra_classes) }}
+>
+  {% embed "@atoms/form/fieldset/fieldset.twig" with {
+    fieldset__disabled: fieldset_element__disabled
+  } %}
+    {% block fieldset__content %}
+      {% include "@atoms/form/legend/legend.twig" with {
+        legend__content: fieldset_element__legend
+      } %}
+      {% block fieldset_element__content %}
+        {{ fieldset_element__content }}
+      {% endblock %}
+    {% endblock %}
+  {% endembed %}
+</div>
+

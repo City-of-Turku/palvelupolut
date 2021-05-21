@@ -1,0 +1,59 @@
+.share {
+  color: currentColor;
+
+  .icon--external-link {
+    display: none;
+  }
+
+  &__title {
+    color: currentColor;
+    font-size: $font-size--h4--small;
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    flex: 0 0 auto;
+    margin: space(0.25);
+  }
+
+  &__link {
+    color: currentColor;
+    display: block;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+      color: color(text);
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &--vertical {
+    @include above($width-xl) {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      .share__list {
+        flex-flow: column nowrap;
+      }
+    }
+    .share__title {
+      @extend .visually-hidden;
+    }
+  }
+
+  &--follow-us {
+    color: color(text-inverse);
+  }
+}

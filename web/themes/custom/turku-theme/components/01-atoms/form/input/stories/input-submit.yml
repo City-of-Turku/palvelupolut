@@ -1,0 +1,6 @@
+input__value: Submit
+input__type: submit
+input__name: submit
+input__id: submit
+input__modifiers:
+  - submit

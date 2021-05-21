@@ -1,0 +1,10 @@
+tabs__heading: 'Tabs heading'
+tabs:
+  - tab__content: 'Tab 1'
+    tab__url: '#'
+    tab__extra_classes:
+      - 'is-active'
+  - tab__content: 'Tab 2'
+    tab__url: '#'
+  - tab__content: 'Tab 3'
+    tab__url: '#'

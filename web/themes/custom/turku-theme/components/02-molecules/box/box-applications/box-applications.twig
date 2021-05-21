@@ -1,0 +1,46 @@
+{#
+/**
+ * Available variables:
+ * - box_applications__base_class - the base classname
+ * - box_applications__modifiers - array of modifiers to add to the base classname
+ * - box_applications__title - the block title
+ * - box_applications__description - the content of the long text
+ * - box_applications__items - a list of application items
+ *   - item.title - the label of the application link
+ *   - item.cta - the CTA link title
+ *   - item.cta__url - the CTA link URL
+ *   - item.details - a list of application details
+ *     - detail.label - title of the application detail
+ *     - detail.description - description of the application detail
+ *
+ * Available blocks:
+ * - box_applications_items - wraps the applications items
+ */
+#}
+{% set box_applications__base_class = box_applications__base_class|default("box-applications") %}
+{% set box_applications__modifiers = box_applications__modifiers|default([]) %}
+{% set box_applications__title_level = box_applications__title_level|default("2") %}
+
+<div {{ bem(box_applications__base_class, box_applications__modifiers) }}>
+  {% if box_applications__title %}
+    {% include "@atoms/text/heading/heading.twig" with {
+      "heading": box_applications__title,
+      "heading__level": box_applications__title_level,
+      "heading__blockname": box_applications__base_class,
+    } %}
+  {% endif %}
+
+  {% if box_applications__description %}
+    {% include "@atoms/text/text-long/text-long.twig" with {
+      "text_long__content": box_applications__description,
+    } %}
+  {% endif %}
+
+  <div {{ bem("items", [], box_applications__base_class) }}>
+    {% block box_applications_items %}
+      {% for item in box_applications__items %}
+        {% include "@molecules/box/box-applications/box-applications-item.twig" with item %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+</div>

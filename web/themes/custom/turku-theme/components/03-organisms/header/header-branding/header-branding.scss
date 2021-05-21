@@ -1,0 +1,15 @@
+.header-branding {
+  @include link-reset;
+
+  display: block;
+  max-width: 8rem;
+
+  &:focus {
+    @include focus;
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+}

@@ -1,0 +1,36 @@
+{#
+/**
+ * Available variables:
+ * - link_cta__content - the content of the link (typically text)
+ * - link_cta__url - the url this link should poing to
+ * - link_cta__attributes - array of attribute,value pairs
+ * - link_cta__base_class - the base class name
+ * - link_cta__modifiers - array of modifiers to add to the base classname
+ * - link_cta__blockname - blockname prepended to the base classname
+ * - link_cta__icon_before - the name of the icon that will appear before the link text
+ * - link_cta__icon_after - the name of the icon that will appear after the link text
+ *
+ * Available blocks:
+ * - link_cta_content - used to replace the content of the link
+ *     Example: to insert the image component
+ */
+#}
+{% set link_cta__base_class = link_cta__base_class|default('link-cta') %}
+{% set link_cta__modifiers = link_cta__modifiers|default([]) %}
+{% set link_cta__attributes = link_cta__attributes|default([]) %}
+
+<a
+  {{ bem(link_cta__base_class, link_cta__modifiers, link_cta__blockname) }}
+  {% for attribute, value in link_cta__attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+  href="{{ link_cta__url }}"
+>
+  {% block link_cta_content %}
+    {{ link_cta__content }}
+  {% endblock %}
+
+  {% include "@atoms/images/icon/icon.twig" with {
+    icon__name: 'arrow-right',
+  } %}
+</a>

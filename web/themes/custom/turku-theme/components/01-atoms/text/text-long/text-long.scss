@@ -1,0 +1,36 @@
+.text-long {
+  margin-bottom: space(2);
+
+  p {
+    @extend .paragraph;
+  }
+
+  blockquote {
+    @extend .blockquote;
+  }
+
+  ol,
+  ul {
+    display: inline-block;
+
+    li {
+      @extend .list-item;
+    }
+  }
+
+  img {
+    margin-bottom: space();
+  }
+
+  h2 {
+    margin: space(5/2) 0 space(3/4);
+  }
+
+  h3 {
+    margin: space(3/2) 0 space(1/2);
+  }
+
+  h4 {
+    margin: space() 0 space(3/8);
+  }
+}

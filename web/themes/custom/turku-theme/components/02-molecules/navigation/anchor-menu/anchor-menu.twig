@@ -1,0 +1,51 @@
+{#
+/**
+ * Available variables:
+ * - anchor_menu__base_class - the base classname
+ * - anchor_menu__modifiers - array of modifiers to add to the base classname
+ * - anchor_menu__title - the block title
+ * - anchor_menu__items: Anchor link items
+ *   - item.link_title: The link title
+ *   - item.link_url: The link url.
+ *
+ * Available blocks:
+ * - box_links_list - renders a list of links by default
+ */
+ */
+#}
+{% set anchor_menu__base_class = anchor_menu__base_class|default("anchor-menu") %}
+{% set anchor_menu__modifiers = anchor_menu__modifiers|default([]) %}
+
+<div {{ bem(anchor_menu__base_class, anchor_menu__modifiers) }}>
+  {% if anchor_menu__title %}
+    {% include "@atoms/text/heading/heading.twig" with {
+      "heading": anchor_menu__title,
+      "heading__level": anchor_menu__title__level|default(4),
+      "heading__base_class": "title",
+      "heading__blockname": anchor_menu__base_class,
+    } %}
+  {% endif %}
+
+  {% embed "@atoms/lists/list-unordered.twig" with {
+    list__base_class: "menu",
+    list__modifier: anchor_menu__modifiers,
+    list__blockname: anchor_menu__base_class,
+  } %}
+    {% block list_content %}
+      {% for item in anchor_menu__items %}
+        {% embed "@atoms/lists/list-item.twig" with {
+          list_item__base_class: "menu-item",
+          list_item__blockname: anchor_menu__base_class,
+        } %}
+          {% block list_item_content %}
+            {% include "@atoms/links/link/link.twig" with {
+              link__content: item.title,
+              link__url: item.url,
+              link__icon_before: "arrow-down",
+            } %}
+          {% endblock %}
+        {% endembed %}
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
+</div>

@@ -1,0 +1,6 @@
+box_cta__heading: 'This is a reason to act'
+box_cta__link_items:
+  - box_cta__link_text: 'Click here'
+    box_cta__link_url: '#'
+  - box_cta__link_text: 'Click here too'
+    box_cta__link_url: '#'

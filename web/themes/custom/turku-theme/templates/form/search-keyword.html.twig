@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override
+ *
+ * Available variables
+ * - label
+ * - placeholder
+ * - submit_text
+ *
+ * @see template_preprocess_radios()
+ */
+#}
+{% include "@molecules/search/search-keyword/search-keyword.twig" with {
+  section_search_keyword__label: label,
+  section_search_keyword__placeholder: placeholder,
+  section_search_keyword__submit_text: submit_text
+} %}

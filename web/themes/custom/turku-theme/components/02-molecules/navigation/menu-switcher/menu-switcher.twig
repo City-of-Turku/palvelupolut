@@ -1,0 +1,31 @@
+{#
+/**
+ * Available variables:
+ * - menu_switcher__base_class - the base classname
+ * - menu_switcher__modifiers - array of modifiers to add to the base classname
+ * - menu_switcher__content - the content of the long text
+ *
+ * Available blocks:
+ * - menu_switcher_content - used to replace the content of the component with something other than text
+ *   for example: A long text field in Drupal
+ */
+#}
+{% set menu_switcher__base_class = menu_switcher__base_class|default("menu-switcher") %}
+{% set menu_switcher__modifiers = menu_switcher__modifiers|default([]) %}
+
+<button {{ bem(menu_switcher__base_class, menu_switcher__modifiers) }} aria-expanded="false">
+  {% include "@atoms/visually-hidden/visually-hidden.twig" with {
+    visually_hidden__content: "Show menu"|t,
+  } %}
+
+  <div {{ bem("hamburger", [], menu_switcher__base_class) }} aria-hidden="true" role="presentation">
+    {% for i in 1..3 %}
+      <span {{ bem("hamburger-layer", [i], menu_switcher__base_class) }}></span>
+    {% endfor %}
+  </div>
+
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading: "Menu"|t,
+    heading__modifiers: ["title-label", "subheading"],
+  } %}
+</button>
