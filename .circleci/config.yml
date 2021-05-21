@@ -28,7 +28,8 @@ workflows:
           executor: cicd73
           codebase-build:
             - silta/drupal-composer-install
-            # - silta/npm-install-build
+            - silta/npm-install-build:
+                path: './web/themes/custom/turku-theme'
           silta_config: silta/silta.yml,silta/silta-dev.yml
           context: silta_dev
           # requires:
@@ -36,7 +37,8 @@ workflows:
           #   - validate
           filters:
             branches:
-              only: master
+              ignore:
+                - production
 
       - silta/drupal-build-deploy:
           # Extend the build-deploy configuration for the production environment.
@@ -47,3 +49,20 @@ workflows:
           filters:
             branches:
               only: production
+
+      # Storybook deployment to development cluster.
+      - silta/simple-build-deploy:
+          name: build-storybook
+          # requires:
+          #   - validate
+          context: silta_dev
+          codebase_root: web/themes/custom/turku-theme
+          build_folder: storybook-static
+          release-suffix: sb
+          codebase-build:
+            - silta/npm-install-build:
+                build-command: npm run build && npm run build-storybook
+          filters:
+            branches:
+              ignore:
+                - production
