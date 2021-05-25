@@ -26,11 +26,25 @@
   {% endfor %}
   href="{{ link_cta__url }}"
 >
-  {% block link_cta_content %}
-    {{ link_cta__content }}
-  {% endblock %}
+
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 2,
+    heading__base_class: "title",
+    heading__blockname: hero__base_class,
+    heading: hero__title,
+  } %}
+
+  {% include "@atoms/text/text-long/text-long.twig" with {
+    text_long__base_class: "text",
+    text_long__content:  hero__lead_text,
+    text_long__blockname: hero__base_class,
+  } %}
 
   {% include "@atoms/images/icon/icon.twig" with {
-    icon__name: 'arrow-right',
   } %}
+
 </a>
+
+
+
+
