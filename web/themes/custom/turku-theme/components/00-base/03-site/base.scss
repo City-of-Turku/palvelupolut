@@ -47,6 +47,10 @@ h6 {
   @include h5;
 }
 
+p {
+  font-size: 1rem;
+}
+
 hr {
   border-style: solid;
   border-width: 1px 0 0;
