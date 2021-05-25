@@ -6,14 +6,19 @@
     color: black;
     box-shadow: none;
     order: 4;
-    align-self: center;
     margin-top: 12px;
+    position: unset;
+    text-align: center;
     .icon--before {
       margin-right: 0;
     }
     &::before {
+      content: '';
+      height: 100%;
       position: absolute;
       top: 0;
+      left: 0;
+      width: 100%;
     }
   }
   .cta__title {
