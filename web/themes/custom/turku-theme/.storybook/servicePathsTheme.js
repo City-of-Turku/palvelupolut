@@ -4,9 +4,7 @@ import { create } from '@storybook/theming';
 
 export default create({
   base: 'light',
-  // Branding
-  brandTitle: 'Emulsify design system',
-  brandUrl: 'https://wunder.io',
+  brandTitle: 'Service Paths design system',
   brandImage:
     'logo.png',
 });
