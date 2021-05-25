@@ -7,15 +7,10 @@ extends:
 plugins:
   - react
   - prettier
-  - jest
 env:
   es6: true
   browser: true
-  jest/globals: true
 globals:
-  expect: true
-  it: true
-  describe: true
   Drupal: true
 parser: babel-eslint
 rules:
