@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ * - link_cta__content - the content of the link (typically text)
+ * - link_cta__url - the url this link should poing to
+ * - link_cta__attributes - array of attribute,value pairs
+ * - link_cta__base_class - the base class name
+ * - link_cta__modifiers - array of modifiers to add to the base classname
+ * - link_cta__blockname - blockname prepended to the base classname
+ * - link_cta__icon_before - the name of the icon that will appear before the link text
+ * - link_cta__icon_after - the name of the icon that will appear after the link text
+ *
+ * Available blocks:
+ * - link_cta_content - used to replace the content of the link
+ *     Example: to insert the image component
+ */
+#}
+{% set cta__base_class = "cta" %}
+{% set cta__modifiers = cta__modifiers|default([]) %}
+
+<div {{ bem(cta__base_class, cta__modifiers, cta__blockname) }} >
+
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 2,
+    heading__base_class: "title",
+    heading__blockname: cta__base_class,
+    heading: cta__title,
+  } %}
+
+  {% include "@atoms/text/text-long/text-long.twig" with {
+    text_long__blockname: cta__base_class,
+    text_long__base_class: "text",
+    text_long__content:  cta__lead_text,
+  } %}
+
+  {% include "@atoms/images/icon/icon.twig" with {
+    icon__name: "search",
+    icon__base_class: "icon",
+    icon__blockname: cta__base_class,
+  } %}
+
+  {% include "@atoms/links/link/link.twig" with {
+    link__base_class: "link",
+    link__url: cta__link,
+    link__icon_before: "arrow-right",
+  } %}
+
+</div>
