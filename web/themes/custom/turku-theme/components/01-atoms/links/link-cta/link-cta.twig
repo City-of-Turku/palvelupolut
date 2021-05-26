@@ -20,31 +20,17 @@
 {% set link_cta__attributes = link_cta__attributes|default([]) %}
 
 <a
-  {{ bem(link_cta__base_class, link_cta__modifiers, link_cta__blockname) }}
+{{ bem(link_cta__base_class, link_cta__modifiers, link_cta__blockname) }}
   {% for attribute, value in link_cta__attributes %}
-    {{ attribute }}="{{ value }}"
-  {% endfor %}
-  href="{{ link_cta__url }}"
+{{ attribute }}="{{ value }}"
+{% endfor %}
+href="{{ link_cta__url }}"
 >
-
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 2,
-    heading__base_class: "title",
-    heading__blockname: hero__base_class,
-    heading: hero__title,
-  } %}
-
-  {% include "@atoms/text/text-long/text-long.twig" with {
-    text_long__base_class: "text",
-    text_long__content:  hero__lead_text,
-    text_long__blockname: hero__base_class,
-  } %}
+{% block link_cta_content %}
+  {{ link_cta__content }}
+{% endblock %}
 
   {% include "@atoms/images/icon/icon.twig" with {
+    icon__name: 'arrow-right',
   } %}
-
 </a>
-
-
-
-
