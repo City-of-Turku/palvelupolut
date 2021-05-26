@@ -1,0 +1,29 @@
+uuid: 7516cc28-7e45-4bfc-9f59-8919ca11bcb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_services
+    - node.type.service
+    - node.type.service_channel
+id: node.service_channel.field_services
+field_name: field_services
+entity_type: node
+bundle: service_channel
+label: Services
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      service: service
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

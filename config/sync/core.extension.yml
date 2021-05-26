@@ -1,4 +1,5 @@
 module:
+  address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
@@ -8,6 +9,8 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  chosen: 0
+  chosen_lib: 0
   ckeditor: 0
   color: 0
   components: 0
@@ -32,6 +35,11 @@ module:
   filter: 0
   fontawesome: 0
   fontawesome_iconpicker_widget: 0
+  geocoder: 0
+  geocoder_address: 0
+  geocoder_field: 0
+  geocoder_geofield: 0
+  geofield: 0
   help: 0
   history: 0
   hreflang: 0
@@ -57,6 +65,7 @@ module:
   paragraphs_asymmetric_translation_widgets: 0
   path: 0
   path_alias: 0
+  ptv: 0
   rdf: 0
   roleassign: 0
   shortcut: 0

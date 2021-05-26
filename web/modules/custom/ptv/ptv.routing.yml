@@ -1,0 +1,7 @@
+ptv.admin_settings:
+  path: '/admin/config/services/ptv'
+  defaults:
+    _form: '\Drupal\ptv\Form\SettingsForm'
+    _title: 'PTV integration settings'
+  requirements:
+    _permission: 'administer ptv'
