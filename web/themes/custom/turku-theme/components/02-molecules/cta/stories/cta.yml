@@ -1,6 +1,7 @@
 cta__title: "CTA Title"
 cta__lead_text: "CTA lead text"
 cta__link: "www.google.com"
+cta__icon: "search"
 items:
   - name: 'Arrow right'
     value: 'arrow-right'
