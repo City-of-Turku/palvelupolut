@@ -37,8 +37,8 @@ workflows:
           #   - validate
           filters:
             branches:
-              ignore:
-                - production
+              only:
+                - master
 
       - silta/drupal-build-deploy:
           # Extend the build-deploy configuration for the production environment.
@@ -64,5 +64,5 @@ workflows:
                 build-command: npm run build && npm run build-storybook
           filters:
             branches:
-              ignore:
-                - production
+              only:
+                - master
