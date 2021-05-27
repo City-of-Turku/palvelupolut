@@ -4,7 +4,7 @@
 # See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
 # for all possible options.
 
-projectName: turku-service-paths-storybook
+# projectName: turku-service-paths-storybook
 
 exposeDomains:
   - hostname: storybook.service-paths.dev.wdr.io
