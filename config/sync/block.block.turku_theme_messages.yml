@@ -11,7 +11,7 @@ _core:
 id: turku_theme_messages
 theme: turku_theme
 region: header
-weight: 0
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:

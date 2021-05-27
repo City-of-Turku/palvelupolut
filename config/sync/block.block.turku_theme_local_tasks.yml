@@ -9,7 +9,7 @@ _core:
 id: turku_theme_local_tasks
 theme: turku_theme
 region: content
-weight: -40
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

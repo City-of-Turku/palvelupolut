@@ -8,6 +8,8 @@
 
   {% block page_system %}{% endblock %}
 
+  {% block page_pre_content %}{% endblock %}
+
   {# The ID attribute is the target of the skip to main content link. #}
   <main id="main-content" {{ bem("main", [], page__base_class) }}>
     {% if page_hero %}
