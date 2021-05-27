@@ -55,7 +55,6 @@ workflows:
           name: build-storybook
           # requires:
           #   - validate
-          silta_config: silta/silta.yml,silta/silta-dev-sb.yml
           context: silta_dev
           codebase_root: web/themes/custom/turku-theme
           build_folder: storybook-static

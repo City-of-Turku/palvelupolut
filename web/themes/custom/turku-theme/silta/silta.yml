@@ -6,6 +6,9 @@
 
 projectName: turku-service-paths-storybook
 
+exposeDomains:
+  - hostname: storybook.service-paths.dev.wdr.io
+
 nginx:
   basicauth:
     credentials:
