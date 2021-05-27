@@ -1,0 +1,45 @@
+.cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .link {
+    color: black;
+    box-shadow: none;
+    order: 4;
+    margin-top: 12px;
+    position: unset;
+    text-align: center;
+    .icon--before {
+      margin-right: 0;
+    }
+    &::before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  .cta__title {
+    text-align: center;
+    order: 2;
+    line-height: 33px;
+    margin-bottom: 16px;
+    margin-top: 34px;
+  }
+  .cta__icon {
+    order: 1;
+    align-self: center;
+    background-color: #F4E4DD;
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    padding: 35px;
+  }
+  .text {
+    text-align: center;
+    order: 3;
+    font-size: 16px;
+  }
+}

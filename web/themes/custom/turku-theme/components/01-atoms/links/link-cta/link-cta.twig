@@ -20,15 +20,15 @@
 {% set link_cta__attributes = link_cta__attributes|default([]) %}
 
 <a
-  {{ bem(link_cta__base_class, link_cta__modifiers, link_cta__blockname) }}
+{{ bem(link_cta__base_class, link_cta__modifiers, link_cta__blockname) }}
   {% for attribute, value in link_cta__attributes %}
-    {{ attribute }}="{{ value }}"
-  {% endfor %}
-  href="{{ link_cta__url }}"
+{{ attribute }}="{{ value }}"
+{% endfor %}
+href="{{ link_cta__url }}"
 >
-  {% block link_cta_content %}
-    {{ link_cta__content }}
-  {% endblock %}
+{% block link_cta_content %}
+  {{ link_cta__content }}
+{% endblock %}
 
   {% include "@atoms/images/icon/icon.twig" with {
     icon__name: 'arrow-right',

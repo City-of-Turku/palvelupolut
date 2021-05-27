@@ -1,0 +1,10 @@
+.section-cta {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 96px 0;
+  .cta {
+    flex: 33%;
+    margin-bottom: 34px;
+    padding: 0 20px;
+  }
+}
