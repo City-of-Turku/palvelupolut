@@ -1,0 +1,24 @@
+.process-step {
+  position: relative;
+}
+.process_step__title {
+  margin-bottom: 25px;
+}
+.process_step__link {
+  margin-top: 20px;
+}
+li.process_step__item {
+  &::marker {
+    content: "";
+  }
+  .icon {
+    top: 2px;
+    position: relative;
+  }
+}
+ul.process_step__link-list {
+  padding: 0;
+}
+li.process_step__item a {
+  margin-left: 10px;
+}
