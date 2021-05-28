@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: turku_theme_breadcrumbs
 theme: turku_theme
-region: header
-weight: 0
+region: pre_content
+weight: -7
 provider: null
 plugin: system_breadcrumb_block
 settings:

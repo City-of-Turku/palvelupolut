@@ -2,11 +2,11 @@
   @include wrapper;
 
   &__main {
-    @include background-full-width(
-      $width: 100vw,
-      $background: color(background),
-      $position: fixed
-    );
+    // @include background-full-width(
+    //   $width: 100vw,
+    //   $background: color(background),
+    //   $position: fixed
+    // );
 
     width: $width--page;
     max-width: calc(100% - #{$width--page-padding * 2});

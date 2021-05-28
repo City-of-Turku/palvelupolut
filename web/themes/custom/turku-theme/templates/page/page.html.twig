@@ -49,26 +49,15 @@
 {% extends "@templates/page/page.twig" %}
   {% block page_header %}
     {% embed "@organisms/header/header.twig" %}
-      {% block header_branding %}
-        {{ drupal_entity("block", "wunder_branding") }}
-      {% endblock %}
 
-      {% block header_overlay %}
-        {{ drupal_entity("block", "wunder_main_menu") }}
-      {% endblock %}
-
-      {% block header_language_menu %}
-        {{ drupal_entity("block", "wunder_language_switcher") }}
-      {% endblock %}
-
-      {% block header_search %}
-        {{ drupal_entity("block", "searchkeyword") }}
-      {% endblock %}
-
-      {% block header_bottom %}
-        {{ page.header_bottom }}
+      {% block header %}
+        {{ page.header }}
       {% endblock %}
     {% endembed %}
+  {% endblock %}
+
+  {% block page_pre_content %}
+    {{ page.pre_content }}
   {% endblock %}
 
   {% block page_system %}

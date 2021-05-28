@@ -25,5 +25,10 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  service_channels_related:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   langcode: true

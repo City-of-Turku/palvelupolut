@@ -11,7 +11,7 @@ _core:
 id: turku_theme_help
 theme: turku_theme
 region: content
-weight: -30
+weight: -4
 provider: null
 plugin: help_block
 settings:
