@@ -1,0 +1,26 @@
+section_process_steps__items:
+  - placeholder: true
+    title: 'Etsi sopivat vaihtoehdot'
+    lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan. '
+    list_links__items:
+      - title: 'Etsi päivähoitopaikkaa'
+        url: '#'
+      - title: 'Lisää varhaiskasvatuksen vaihtoehdoista'
+        url: '#'
+  - placeholder: true
+    title: 'Lähetä sähköinen hakemus'
+    lead_text: 'Hae varhaiskasvatukseen sähköisen asioinnin kautta. Yksityisiin päivähoitopaikkoihin voit hakea ottamalla suoraan yhteyttä päivähoitopaikkaan. Muistathan tehdä hakemuksen viimeistään neljä kuukautta tai aikaisintaan vuotta ennen tarvetta.'
+    list_links__items:
+      - title: 'Sähköiseen asiointiin'
+        url: '#'
+      - title: 'Tuloselvitys'
+        url: '#'
+  - placeholder: true
+    title: 'Seuraa hakemuksen tilaa'
+    lead_text: 'Asiointipalvelu antaa ilmoituksen lähetyksen onnistumisesta. Voit seurata hakemuksen tilaa asiointikansiossa. On normaalia, että hakemukselle ei tapahdu mitään ennen kuin X.'
+    list_links__items:
+      - title: 'Etsi päivähoitopaikkaa'
+        url: '#'
+      - title: 'Lisää varhaiskasvatuksen vaihtoehdoista'
+        url: '#'
+
