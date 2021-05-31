@@ -1,8 +1,9 @@
-uuid: f7736c46-bacf-4488-a084-3e6a8147c71b
+uuid: d4509821-e381-46a9-aff5-831862d879b7
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.icons.field_icon
     - field.field.taxonomy_term.icons.field_icon_material
     - taxonomy.vocabulary.icons
@@ -10,10 +11,10 @@ dependencies:
     - fontawesome
     - material_icons
     - text
-id: taxonomy_term.icons.default
+id: taxonomy_term.icons.full
 targetEntityType: taxonomy_term
 bundle: icons
-mode: default
+mode: full
 content:
   description:
     label: hidden
