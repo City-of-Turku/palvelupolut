@@ -1,4 +1,4 @@
-Drupal.behaviors.turkuMainMenu = {
+Drupal.behaviors.servicepathsMainMenu = {
   /**
    * Helper for getting the current layout.
    *
@@ -26,11 +26,11 @@ Drupal.behaviors.turkuMainMenu = {
     };
   },
   attach: (context) => {
-    const { currentLayout, debounce } = Drupal.behaviors.turkuMainMenu;
+    const { currentLayout, debounce } = Drupal.behaviors.servicepathsMainMenu;
     const {
       eventHeaderDialogOpened,
       eventHeaderDialogClosed,
-    } = Drupal.behaviors.turkuHeaderOverlay;
+    } = Drupal.behaviors.servicepathsHeaderOverlay;
     const eventMainLevelChanged = 'mainMenu:mainLevelChanged';
     const spacerElementSelector = '.menu-main__spacer';
     const menuWrapperSelector = '.menu';
