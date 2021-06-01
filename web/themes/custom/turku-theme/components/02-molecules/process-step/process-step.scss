@@ -1,5 +1,8 @@
-.process-step {
+.process_step {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 }
 .process_step__title {
   margin-bottom: 25px;
@@ -21,4 +24,25 @@ ul.process_step__link-list {
 }
 li.process_step__item a {
   margin-left: 10px;
+}
+.process-step__number {
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 33px;
+  height: 59px;
+  width: 59px;
+  border: 1px solid rgba(255,255,255,0);
+  border-radius: 11px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #dfd7d4;
+  justify-content: center;
+  flex: 70px;
+}
+.process_step__inner {
+  flex: 100%;
+  padding-left: space(2);
+  margin-right: space(2);
 }
