@@ -1,0 +1,22 @@
+uuid: 3cf8d936-5e7a-4461-a688-677ba94062d7
+langcode: fi
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - service_paths_theme
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: service_paths_theme_breadcrumbs
+theme: service_paths_theme
+region: pre_content
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

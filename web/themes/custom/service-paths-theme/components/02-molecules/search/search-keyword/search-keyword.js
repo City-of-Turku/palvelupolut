@@ -1,4 +1,4 @@
-Drupal.behaviors.turkuSearchKeyword = {
+Drupal.behaviors.servicepathsSearchKeyword = {
   attach(context) {
     // Find elements
     const openButton = context.querySelector('.js-search-keyword-open');

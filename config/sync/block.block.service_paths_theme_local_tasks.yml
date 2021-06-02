@@ -1,0 +1,22 @@
+uuid: bcaf396b-ffe8-4772-95d7-18676bd0855e
+langcode: fi
+status: true
+dependencies:
+  theme:
+    - service_paths_theme
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: service_paths_theme_local_tasks
+theme: service_paths_theme
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
