@@ -17,7 +17,7 @@
 
 <div {{ bem(process_step__base_class, process_step__modifiers) }}>
 
-  <span class='process-step__number'> {{ loop.index }} </span>
+  <span {{ bem("number", [], process_step__base_class) }}> {{ loop.index }} </span>
 
   <div {{ bem("inner", [], process_step__base_class) }}>
     {% include "@atoms/text/heading/heading.twig" with {
@@ -56,7 +56,6 @@
               {% include "@atoms/links/link/link.twig" with {
                 link__content: item.title,
                 link__url: item.url,
-                link__modifiers: item.modifiers|default([])|merge(link_modifiers),
                 link__attributes: item.attributes,
                 link__suffix: item.suffix,
               } %}
