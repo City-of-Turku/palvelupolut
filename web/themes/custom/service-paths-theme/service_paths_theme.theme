@@ -8,7 +8,7 @@
 /**
  * Custom twig templates for radio and checkbox input labels.
  */
-function turku_theme_preprocess_form_element(&$variables) {
+function service_paths_theme_preprocess_form_element(&$variables) {
   if ($variables['element']['#type'] == 'radio') {
     $variables['label']['#theme'] = 'form_element_label__radio';
   }
@@ -23,7 +23,7 @@ function turku_theme_preprocess_form_element(&$variables) {
 /**
  * Implements hook_preprocess_select().
  */
-function turku_theme_preprocess_select(&$variables) {
+function service_paths_theme_preprocess_select(&$variables) {
   if (isset($variables['attributes']['name'])) {
     $variables['attributes']['aria-label'] = 'select__' . $variables['attributes']['id'];
   }
@@ -34,7 +34,7 @@ function turku_theme_preprocess_select(&$variables) {
  *
  * Helper for adding language links in an easy to theme format.
  */
-function turku_theme_preprocess_links__language_block(&$variables) {
+function service_paths_theme_preprocess_links__language_block(&$variables) {
   $current_language = \Drupal::languageManager()->getCurrentLanguage();
   $links = [];
 
@@ -42,7 +42,7 @@ function turku_theme_preprocess_links__language_block(&$variables) {
     $links[$langcode]['title'] = $link['text'];
 
     if (!empty($link['link'])) {
-      $links[$langcode]['url'] = _turku_theme_get_link_url($link['link']['#url'], $link['link']['#options']);
+      $links[$langcode]['url'] = service_paths_theme_get_link_url($link['link']['#url'], $link['link']['#options']);
 
       if ($current_language->getId() === $langcode) {
         $links[$langcode]['modifiers'] = ['is-active'];
@@ -58,7 +58,7 @@ function turku_theme_preprocess_links__language_block(&$variables) {
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function turku_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function service_paths_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   $suggestions = [];
   $element = $variables['element'];
 
@@ -80,7 +80,7 @@ function turku_theme_theme_suggestions_field_alter(array &$suggestions, array $v
 /**
  * Custom twig templates for reset input fields.
  */
-function turku_theme_theme_suggestions_input_alter(&$suggestions, array $variables) {
+function service_paths_theme_theme_suggestions_input_alter(&$suggestions, array $variables) {
   $element = $variables['element'];
   if (
     $element['#type'] === 'submit' &&
@@ -94,14 +94,14 @@ function turku_theme_theme_suggestions_input_alter(&$suggestions, array $variabl
 /**
  * Implements hook_theme_suggestions_responsive_image_formatter_alter().
  */
-function turku_theme_theme_suggestions_responsive_image_formatter_alter(&$suggestions, $variables) {
+function service_paths_theme_theme_suggestions_responsive_image_formatter_alter(&$suggestions, $variables) {
   $suggestions[] = 'responsive_image_formatter__' . $variables['responsive_image_style_id'];
 }
 
 /**
  * Implements hook_theme_suggestions_paragraph_alter().
  */
-function turku_theme_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+function service_paths_theme_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
   $paragraph = $variables['elements']['#paragraph'];
   $view_mode = $variables['elements']['#view_mode'];
   $parent = $paragraph->getParentEntity();
@@ -114,14 +114,14 @@ function turku_theme_theme_suggestions_paragraph_alter(&$suggestions, $variables
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function turku_theme_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+function service_paths_theme_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'views_view__' . $variables['view']->id();
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function turku_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+function service_paths_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'views_view_unformatted__' . $variables['view']->id();
   $suggestions[] = 'views_view_unformatted__' . $variables['view']->id() . '__' . $variables['view']->current_display;
 }
@@ -137,7 +137,7 @@ function turku_theme_theme_suggestions_views_view_unformatted_alter(array &$sugg
  * @return string
  *   The URL for the link.
  */
-function _turku_theme_get_link_url(Url $url, array $options) {
+function service_paths_theme_get_link_url(Url $url, array $options) {
   $url->setOptions($options);
   return $url->toString();
 }

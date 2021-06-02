@@ -1,4 +1,4 @@
-name: Turku theme
+name: Service Paths theme
 type: theme
 description: Theme based on <a href="http://emulsify.info">Emulsify</a>.
 base theme: stable
@@ -18,8 +18,8 @@ regions:
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
-  - 'turku_theme/global'
-  # - 'turku_theme/typekit'
+  - 'service_paths_theme/global'
+  # - 'service_paths_theme/typekit'
 
 
 # Libraries override allows you to remove libraries added by other projects.

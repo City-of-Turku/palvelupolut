@@ -1,0 +1,22 @@
+uuid: dcb9464b-c8bb-4145-93c3-7a0d8d55339d
+langcode: fi
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - service_paths_theme
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: service_paths_theme_help
+theme: service_paths_theme
+region: content
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
