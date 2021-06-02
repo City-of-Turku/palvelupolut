@@ -29,7 +29,7 @@ workflows:
           codebase-build:
             - silta/drupal-composer-install
             - silta/npm-install-build:
-                path: './web/themes/custom/turku-theme'
+                path: './web/themes/custom/service-paths-theme'
           silta_config: silta/silta.yml,silta/silta-dev.yml
           context: silta_dev
           # requires:
@@ -55,11 +55,9 @@ workflows:
           name: build-storybook
           # requires:
           #   - validate
-          silta_config: silta/silta.yml,silta/silta-dev-sb.yml
           context: silta_dev
-          codebase_root: web/themes/custom/turku-theme
+          codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static
-          release-suffix: sb
           codebase-build:
             - silta/npm-install-build:
                 build-command: npm run build && npm run build-storybook

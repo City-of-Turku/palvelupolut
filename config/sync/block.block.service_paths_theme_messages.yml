@@ -1,0 +1,22 @@
+uuid: 2b0a4bd8-3d76-448f-bf5b-f1367c5d6d1c
+langcode: fi
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - service_paths_theme
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: service_paths_theme_messages
+theme: service_paths_theme
+region: header
+weight: -4
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

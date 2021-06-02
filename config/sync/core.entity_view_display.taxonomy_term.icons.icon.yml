@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.icon
     - field.field.taxonomy_term.icons.field_icon
+    - field.field.taxonomy_term.icons.field_icon_material
     - taxonomy.vocabulary.icons
   module:
     - fontawesome
@@ -23,4 +24,5 @@ content:
     region: content
 hidden:
   description: true
+  field_icon_material: true
   langcode: true
