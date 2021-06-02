@@ -26,10 +26,10 @@ li.process_step__item a {
   margin-left: space(0.6);
 }
 span.process_step__number {
-  font-size: space(1.7);
+  font-size: $font-size--large-4;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: space(2);;
+  line-height: space(2);
   height: space(3.7);
   width: space(3.7);
   border: 1px solid rgba(255,255,255,0);
