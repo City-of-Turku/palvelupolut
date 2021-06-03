@@ -9,12 +9,7 @@
     {% include '@atoms/text/heading/heading.twig' with {
       heading__level: accordion__heading_level|default('3'),
       heading: accordion__heading,
-    } %}
-  {% endif %}
-
-  {% if accordion__lead_text %}
-    {% include '@atoms/text/paragraph/paragraph.twig' with {
-      paragraph__content: accordion__lead_text,
+      heading__blockname: accordion__base_class,
     } %}
   {% endif %}
 
