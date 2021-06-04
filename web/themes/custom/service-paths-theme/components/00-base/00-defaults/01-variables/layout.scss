@@ -1,5 +1,6 @@
 // Spacing
 $space: 1rem;
+$spacexs: 0.0625rem;
 
 // Functions should go into their own file but space() and grid-width() will be used to define layout variables.
 @function space($multiplier: 1) {
