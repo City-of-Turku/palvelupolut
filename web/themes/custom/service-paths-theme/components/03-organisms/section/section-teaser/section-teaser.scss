@@ -1,6 +1,16 @@
 .section-teaser {
   display: flex;
-  padding: space(5) space(1);
+  padding: space(2);
+  background: color(background-section-dark);
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include above($width-large) {
+    flex-direction: row;
+    padding: space(5) space(2);
+  }
+  @include above($width-xl) {
+    padding: space(5) space(3);
+  }
 }
 .section-teaser .teaser {
   flex: 1;
