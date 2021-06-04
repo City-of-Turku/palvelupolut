@@ -1,0 +1,4 @@
+teaser__title: "Hero Title"
+teaser__lead_text: "Hero lead text"
+teaser__image:
+  image_src: "/hero.jpg"

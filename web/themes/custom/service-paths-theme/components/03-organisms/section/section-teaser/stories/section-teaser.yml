@@ -1,0 +1,11 @@
+section_teaser__items:
+  - placeholder: true
+    title: 'Blogikirjoitus päivähoitopaikan hausta yhden perheen kokemuksesta'
+    lead_text: 'Blogikirjoitus'
+    image:
+      image_src: "/hero.jpg"
+  - placeholder: true
+    title: 'Kirjoitus toisen perheen näkökulmasta'
+    lead_text: 'Blogikirjoitus'
+    image:
+      image_src: "/hero.jpg"

@@ -1,0 +1,29 @@
+{#
+/**
+ * Available variables:
+ * - section_teaser__base_class - the base classname
+ * - section_teaser__modifiers - array of modifiers to add to the base classname
+ * - section_teaser__blockname - a class that will prepend all other classes
+ * - section_teaser__title - the section title
+ * - section_teaser_link_title - the section read more link title
+ * - section_teaser__link_url - the section read more link url
+ *
+ * Available blocks:
+ * - section_teaser_items - wraps the section items.
+ */
+#}
+{% set section_teaser__base_class = section_teaser__base_class|default("section-teaser") %}
+{% set section_teaser__modifiers = section_teaser__modifiers|default([]) %}
+
+<div {{ bem(section_teaser__base_class, section_teaser__modifiers) }}>
+
+  {% for item in section_teaser__items %}
+    {% include "@molecules/teaser/teaser.twig" with {
+      teaser__modifiers: cta_modifiers,
+      teaser__title: item.title,
+      teaser__lead_text: item.lead_text,
+      teaser__image: item.image,
+    } %}
+  {% endfor %}
+
+</div>
