@@ -67,35 +67,17 @@
  */
 #}
 
-<article {{ bem("node", [node.bundle|clean_class]) }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
+{% set page_content__modifiers = ['full-width', 'with-sidebar'] %}
 
-  {% embed "@templates/page/page-content.twig" with {
-    page_sidebar: content.field_paragraphs_sidebar|render|trim is not empty,
-  } %}
 
-    {% block page_content %}
-      {% if not page %}
-        {% include "@atoms/text/heading/heading.twig" with {
-          "heading__level": 2,
-          "heading": label,
-          "heading__url": url,
-          "heading__link_attributes": {
-            'rel': 'bookmark'
-          },
-        } %}
-      {% endif %}
+{% extends "@service_paths_theme/node/node.html.twig" %}
 
-      {{ content|without("field_paragraphs_bottom", "field_paragraphs_sidebar") }}
-    {% endblock %}
+  {% block page_content %}
 
-    {% block page_sidebar_post_content %}
-      {{ content.field_paragraphs_sidebar }}
-    {% endblock %}
+    {{ content }}
 
-    {% block page_content_post_content %}
-      {{ content.field_paragraphs_bottom }}
-    {% endblock %}
-  {% endembed %}
-</article>
+  {% endblock %}
+
+  {% block page_sidebar_post_content %}
+    <div class="sidebar"></div>
+  {% endblock %}

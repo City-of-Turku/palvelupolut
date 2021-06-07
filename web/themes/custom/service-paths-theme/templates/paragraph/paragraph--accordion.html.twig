@@ -5,12 +5,14 @@
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
- *   - id: The paragraph ID.
- *   - bundle: The type of the paragraph, for example, "image" or "text".
- *   - authorid: The user ID of the paragraph author.
- *   - createdtime: Formatted creation date. Preprocess functions can
- *     reformat it by calling format_date() with the desired parameters on
- *     $variables['paragraph']->getCreatedTime().
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -37,11 +39,20 @@
  */
 #}
 
-{% set section_cta__base_class = section_grid__base_class|default("section-cta") %}
-{% set section_cta__modifiers = section_grid__modifiers|default([]) %}
+{% set accordion__base_class = accordion__base_class|default('accordion') %}
+{% set accordion__modifiers = accordion__modifiers|default([]) %}
 
-<div {{ bem(section_cta__base_class, section_cta__modifiers) }}>
-	{{ content.field_cta_grid_item }}
+<div {{ bem(accordion__base_class, accordion__modifiers) }}>
+
+	{% if content.field_paragraph_heading|render %}
+		{% include '@atoms/text/heading/heading.twig' with {
+      heading__level: accordion__heading_level|default('3'),
+      heading: content.field_paragraph_heading,
+      heading__blockname: accordion__base_class,
+    } %}
+	{% endif %}
+
+	{% block accordion_content %}
+		{{ content.field_accordion_items }}
+	{% endblock %}
 </div>
-
-
