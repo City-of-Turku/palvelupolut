@@ -5,6 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.service.field_description
+    - field.field.node.service.field_heading
+    - field.field.node.service.field_lead_image
+    - field.field.node.service.field_lead_text
+    - field.field.node.service.field_paragraphs
     - node.type.service
   module:
     - user
@@ -20,4 +24,8 @@ content:
     region: content
 hidden:
   field_description: true
+  field_heading: true
+  field_lead_image: true
+  field_lead_text: true
+  field_paragraphs: true
   langcode: true
