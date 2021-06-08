@@ -3,10 +3,12 @@
   display: grid;
   flex-direction: row;
   grid-template-columns: 60px auto;
+  margin-bottom: space(2);
   grid-template-areas:
         "number header"
         "content content";
-  @include above($width-medium) {
+  @include above($width-large) {
+    width: 50%;
     grid-template-areas:
         "number header"
         "number content";
@@ -51,11 +53,15 @@ span.process_step__number {
   justify-content: center;
   flex: space(4.4);
   grid-area: number;
+  margin-bottom: space(1);
+  @include above($width-large) {
+    margin-bottom: 0;
+  }
 }
 .process_step__inner,
 .process_step__title {
   flex: 100%;
-  @include above($width-medium) {
+  @include above($width-large) {
     padding-left: space(2);
     margin-right: space(2);
   }
