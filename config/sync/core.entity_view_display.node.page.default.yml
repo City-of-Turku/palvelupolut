@@ -3,10 +3,12 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
+    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_paragraphs_sidebar
+    - field.field.node.page.field_show_toc
     - node.type.page
   module:
-    - text
+    - entity_reference_revisions
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -15,15 +17,25 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
+  field_paragraphs:
+    weight: 0
     label: hidden
-    type: text_default
-    weight: 100
-    region: content
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-  links:
-    weight: 101
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraphs_sidebar:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
 hidden:
+  field_show_toc: true
   langcode: true
+  links: true

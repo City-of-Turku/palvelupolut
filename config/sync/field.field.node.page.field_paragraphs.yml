@@ -1,0 +1,58 @@
+uuid: ff87bf74-520b-4931-8a3d-1f2db9dbceae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.cta_grid
+    - paragraphs.paragraphs_type.general
+    - paragraphs.paragraphs_type.links
+  module:
+    - entity_reference_revisions
+id: node.page.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: page
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      general: general
+      cta_grid: cta_grid
+      accordion: accordion
+      links: links
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -15
+      accordion_item:
+        weight: -13
+        enabled: false
+      cta:
+        weight: -12
+        enabled: false
+      cta_grid:
+        enabled: true
+        weight: -16
+      general:
+        enabled: true
+        weight: -17
+      links:
+        enabled: true
+        weight: -14
+      process:
+        weight: -11
+        enabled: false
+      step:
+        weight: -10
+        enabled: false
+field_type: entity_reference_revisions

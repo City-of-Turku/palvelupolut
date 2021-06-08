@@ -1,5 +1,5 @@
 {% set page_content__base_class = page_content__base_class|default("page-content") %}
-{% set page_content__modifiers = page_content__modifiers|default([]) %}
+{% set page_content__modifiers = page_content__modifiers|default(["full-width"]) %}
 
 {% if page_sidebar %}
   {% set page_content__modifiers = page_content__modifiers|merge(['with-sidebar']) %}

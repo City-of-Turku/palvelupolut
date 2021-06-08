@@ -63,5 +63,4 @@ workflows:
                 build-command: npm run build && npm run build-storybook
           filters:
             branches:
-              only:
-                - storybook
+              ignore: production
