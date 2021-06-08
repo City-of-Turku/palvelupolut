@@ -19,13 +19,14 @@
 
   <span {{ bem("number", [], process_step__base_class) }}> {{ loop.index }} </span>
 
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 2,
+    heading__base_class: "title",
+    heading__blockname: process_step__base_class,
+    heading: process_step__title,
+  } %}
+
   <div {{ bem("inner", [], process_step__base_class) }}>
-    {% include "@atoms/text/heading/heading.twig" with {
-      heading__level: 2,
-      heading__base_class: "title",
-      heading__blockname: process_step__base_class,
-      heading: process_step__title,
-    } %}
 
     {% include "@atoms/text/text-long/text-long.twig" with {
       text_long__base_class: "text",
