@@ -2,15 +2,44 @@
   position: relative;
   overflow: hidden;
   margin-bottom: space(4);
-  background: color(primary);
+  background: color(background-hero);
+  display: flex;
+  padding: space(2) space(1);
+  flex-direction: column;
+  @include above($width-large) {
+    flex-direction: row;
+    padding: space(3) space(5);
+  }
 
   &__inner {
-    background: color(background);
     display: flex;
     flex-direction: column;
-    padding: space(1.5);
+    padding: space(1) space(1) space(2);
     z-index: 2;
-    position: absolute;
     bottom: 0;
+    flex: auto;
+    color: color(text-inverse);
+
+    @include above($width-large) {
+      padding: space(1.5);
+      padding-right: space(8);
+    }
   }
+}
+.hero__bg {
+  align-self: center;
+  flex: none;
+}
+.hero__bg img {
+  width: 285px;
+  height: 285px;
+  object-fit: cover;
+  border-radius: 50%;
+  @include above($width-large) {
+    width: 375px;
+    height: 375px;
+  }
+}
+.hero__title {
+  color: color(text-inverse);
 }
