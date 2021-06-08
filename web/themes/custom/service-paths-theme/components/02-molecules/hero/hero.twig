@@ -16,6 +16,7 @@
 {% set hero__modifiers = hero__modifiers|default([]) %}
 
 <div {{ bem(hero__base_class, hero__modifiers) }}>
+  <div {{ bem("inner", [], hero__base_class) }}>
     {% include "@atoms/text/heading/heading.twig" with {
       heading__level: 1,
       heading__base_class: "title",
@@ -30,6 +31,7 @@
         text_long__blockname: hero__base_class,
       } %}
     {% endif %}
+  </div>
 
   {% if hero__image %}
     <div {{ bem("bg", [], hero__base_class) }} aria-hidden="true">

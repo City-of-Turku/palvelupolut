@@ -59,6 +59,7 @@
         "drupal/emulsify_twig": "^2.0",
         "drupal/eva": "^2.1",
         "drupal/field_group": "^3.1",
+        "drupal/focal_point": "^1.5",
         "drupal/fontawesome": "2.x-dev",
         "drupal/geocoder": "^3.20",
         "drupal/geofield": "^1.22",

@@ -5,9 +5,9 @@ dependencies:
   module:
     - language
   theme:
-    - turku_theme
+    - service_paths_theme
 id: language_switcher
-theme: turku_theme
+theme: service_paths_theme
 region: header
 weight: 0
 provider: null
