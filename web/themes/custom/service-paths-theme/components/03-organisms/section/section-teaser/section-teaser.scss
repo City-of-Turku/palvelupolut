@@ -13,5 +13,7 @@
   }
 }
 .section-teaser .teaser {
-  flex: 1;
+  @include above($width-large) {
+    width: 50%;
+  }
 }

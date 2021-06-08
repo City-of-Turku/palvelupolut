@@ -5,7 +5,6 @@ import {
 } from '../../../storybook/storybook';
 
 import teaserTemplate from '../teaser.twig';
-
 import teaserData from './teaser.yml';
 
 /**

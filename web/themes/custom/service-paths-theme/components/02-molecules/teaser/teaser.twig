@@ -37,5 +37,11 @@
     heading: teaser__title,
   } %}
 
+  {% include "@atoms/links/link/link.twig" with {
+    link__base_class: "link",
+    link__url: teaser__link,
+    link__blockname: teaser__base_class,
+  } %}
+
   </div>
 </div>
