@@ -10,7 +10,15 @@
     flex-direction: row;
     padding: space(3) space(5);
   }
-
+  &--light {
+    background: color(background-section-dark);
+    h1 {
+      color: color(text-dark);
+    }
+    .text {
+      color: color(text);
+    }
+  }
   &__inner {
     display: flex;
     flex-direction: column;
