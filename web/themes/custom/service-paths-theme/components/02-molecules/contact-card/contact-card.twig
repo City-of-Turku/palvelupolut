@@ -1,64 +1,76 @@
 {#
 /**
  * Available variables:
- * - contact__content - the content of the link (typically text)
- * - contact__url - the url this link should poing to
- * - contact__attributes - array of attribute,value pairs
- * - contact__base_class - the base class name
- * - contact__modifiers - array of modifiers to add to the base classname
- * - contact__blockname - blockname prepended to the base classname
- * - contact__icon_before - the name of the icon that will appear before the link text
- * - contact__icon_after - the name of the icon that will appear after the link text
+ * - contact_card__content - the content of the link (typically text)
+ * - contact_card__url - the url this link should poing to
+ * - contact_card__attributes - array of attribute,value pairs
+ * - contact_card__base_class - the base class name
+ * - contact_cardt__modifiers - array of modifiers to add to the base classname
+ * - contact_card__blockname - blockname prepended to the base classname
+ * - contact_card__icon_before - the name of the icon that will appear before the link text
+ * - contact_card__icon_after - the name of the icon that will appear after the link text
  *
  * Available blocks:
- * - contact_content - used to replace the content of the link
+ * - contact_card_content - used to replace the content of the link
  *     Example: to insert the image component
  */
 #}
-{% set contact__base_class = "contact" %}
-{% set contact__modifiers = contact__modifiers|default([]) %}
+{% set contact_card__base_class = "contact-card" %}
+{% set contact_card__modifiers = contact_card__modifiers|default([]) %}
 
-<div {{ bem(contact__base_class, contact__modifiers, contact__blockname) }} >
+<div {{ bem(contact_card__base_class, contact_card__modifiers, contact_card__blockname) }} >
 
   {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 3,
+    heading__level: 4,
     heading__base_class: "title",
-    heading__blockname: contact__base_class,
-    heading: contact__title,
+    heading__blockname: contact_card__base_class,
+    heading: contact_card__title,
   } %}
 
   {% embed "@atoms/lists/list-unordered.twig" with {
     list__base_class: "link-list",
-    list__modifiers: contact__modifiers,
-    list__blockname: contact__base_class,
+    list__modifiers: contact_card__modifiers,
+    list__blockname: contact_card__base_class,
   } %}
     {% block list_content %}
 
-      {% for item in contact__items %}
+      {% for item in contact_card__items %}
         {% embed "@atoms/lists/list-item.twig" with {
           list_item__base_class: "item",
-          list_item__blockname: contact__base_class,
+          list_item__blockname: contact_card__base_class,
         } %}
           {% block list_item_content %}
-            {% set link_modifiers = contact__link_modifiers|default([]) %}
+            {% set link_modifiers = ccontact_card__link_modifiers|default([]) %}
 
-            {% include "@atoms/images/icon/icon.twig" with {
-              icon__name: item.icon,
-              icon__base_class: "icon",
-            } %}
+              <div {{ bem("link-with-icon", [], hero__base_class) }}>
 
-            {% if item.url %}
-              {% include "@atoms/links/link/link.twig" with {
-                link__content: item.title,
-                link__url: item.url,
-                link__attributes: item.attributes,
-                link__suffix: item.suffix,
-              } %}
-            {% endif %}
+                {% include "@atoms/images/icon/icon.twig" with {
+                  icon__name: item.icon,
+                  icon__base_class: "icon",
+                } %}
 
+                {% if item.link_title %}
+                  {% include "@atoms/links/link/link.twig" with {
+                    link__content: item.link_title,
+                    link__url: item.url,
+                    link__attributes: item.attributes,
+                    link__suffix: item.suffix,
+                  } %}
+                {% endif %}
+
+                {% if item.info_title %}
+                  {% include "@atoms/text/heading/heading.twig" with {
+                    heading__level: 5,
+                    heading__base_class: "title",
+                    heading__blockname: contact_card__base_class,
+                    heading: item.info_title,
+                  } %}
+                {% endif %}
+
+              </div>
 
             {% include "@atoms/text/text-long/text-long.twig" with {
-              text_long__blockname: contact__base_class,
+              text_long__blockname: contact_card__base_class,
               text_long__base_class: "text",
               text_long__content:  item.text,
             } %}

@@ -1,12 +1,11 @@
-.contact {
+.contact-card {
   position: relative;
   display: flex;
   flex-direction: column;
   .icon {
-    margin-right: 1rem;
-    width: 20px;
-    height: 20px;
-    top: 4px;
+    margin-right: space();
+    width: space(1.25);
+    height: space(1.25);
     position: relative;
   }
   .link {
@@ -28,8 +27,10 @@
   }
   .text {
     font-size: $font-size--small-1;
-    padding-left: 2.5rem;
-    margin-top: .5rem;
+    padding-left: 2.3rem;
+    margin-top: space(1/2);;
+    letter-spacing: 0.25px;
+    line-height: 22px;
   }
   li {
     &::marker {
@@ -38,8 +39,24 @@
   }
   ul {
     padding: 0;
+    margin: 0;
   }
 }
-.contact__item {
-  margin-bottom: 1rem;
+.contact-card__item {
+  margin-bottom: space();
+  display: flex;
+  flex-direction: column;
+}
+.link-with-icon {
+  display: flex;
+  h5 {
+    margin: 0;
+  }
+}
+.contact-card__title {
+  font-size: $font-size--base;
+  font-weight: 800;
+  letter-spacing: 0.56px;
+  line-height: 24px;
+  margin-bottom: space();
 }

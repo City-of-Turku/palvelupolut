@@ -1,3 +1,15 @@
 .section-contact-cards {
   position: relative;
+  h2 {
+    font-size: $font-size--large-4;
+    font-weight: bold;
+    letter-spacing: -0.4px;
+    line-height: 38px;
+  }
+  .contact-card {
+    margin-bottom: space(3);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
