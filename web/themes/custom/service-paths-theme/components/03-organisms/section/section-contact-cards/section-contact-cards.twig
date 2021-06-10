@@ -1,0 +1,34 @@
+{#
+/**
+ * Available variables:
+ * - section_contact_cards__base_class - the base classname
+ * - section_contact_cards__modifiers - array of modifiers to add to the base classname
+ * - section_contact_cards__blockname - a class that will prepend all other classes
+ *
+ * Available blocks:
+ * - section_contact_cards_item - the content of the section item.
+ */
+#}
+{% set section_contact_cards__base_class = section_contact_cards__base_class|default("section-contact-cards") %}
+{% set section_contact_cards__modifiers = section_contact_cards__modifiers|default([]) %}
+
+<div {{ bem(section_contact_cards__base_class, section_contact_cards__modifiers, section_contact_cards__blockname) }}>
+
+  {% for item in section_contact_cards__items %}
+
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 2,
+      heading__base_class: "title",
+      heading__blockname: contact__base_class,
+      heading: section_contact_cards__title,
+    } %}
+
+    {% include "@molecules/contact-card/contact-card.twig" with {
+      section_contact_cards__modifiers: process_step_modifiers,
+      contact__title: item.title,
+      contact__items: item.contact__items,
+    } %}
+
+  {% endfor %}
+
+</div>

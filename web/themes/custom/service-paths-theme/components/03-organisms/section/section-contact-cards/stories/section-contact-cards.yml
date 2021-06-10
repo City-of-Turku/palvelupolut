@@ -1,0 +1,15 @@
+section_contact_cards__title: 'Etsi sopivat vaihtoehdot'
+section_contact_cards__items:
+  - placeholder: true
+    title: 'Etsi sopivat vaihtoehdot'
+    contact__items:
+      - title: 'Etsi päivähoitopaikkaa'
+        url: '#'
+        text: 'Etsi päivähoitopaikkaa'
+        icon: 'globe'
+      - title: 'Etsi päivähoitopaikkaa'
+        url: '#'
+        text: 'Etsi päivähoitopaikkaa'
+        icon: 'globe'
+
+

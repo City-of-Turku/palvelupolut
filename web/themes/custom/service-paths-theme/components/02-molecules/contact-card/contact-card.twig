@@ -21,7 +21,7 @@
 <div {{ bem(contact__base_class, contact__modifiers, contact__blockname) }} >
 
   {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 2,
+    heading__level: 3,
     heading__base_class: "title",
     heading__blockname: contact__base_class,
     heading: contact__title,
@@ -47,12 +47,15 @@
               icon__base_class: "icon",
             } %}
 
-            {% include "@atoms/links/link/link.twig" with {
-              link__content: item.title,
-              link__url: item.url,
-              link__attributes: item.attributes,
-              link__suffix: item.suffix,
-            } %}
+            {% if item.url %}
+              {% include "@atoms/links/link/link.twig" with {
+                link__content: item.title,
+                link__url: item.url,
+                link__attributes: item.attributes,
+                link__suffix: item.suffix,
+              } %}
+            {% endif %}
+
 
             {% include "@atoms/text/text-long/text-long.twig" with {
               text_long__blockname: contact__base_class,
