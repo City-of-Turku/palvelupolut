@@ -1,0 +1,13 @@
+contact__title: "Asiakasneuvonta"
+contact__items:
+  - title: '02 123 456'
+    url: '#'
+    icon: "globe"
+    text: "Puhelinneuvonta on auki"
+  - title: 'Avaa chat'
+    url: '#'
+    icon: "globe"
+    text: "Chat on avoinna"
+  - title: 'varhaiskasvatus@turku.fi'
+    url: '#'
+    icon: "email"

@@ -1,0 +1,45 @@
+.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .icon {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    top: 4px;
+    position: relative;
+  }
+  .link {
+    color: black;
+    font-size: $font-size--small-1;
+    font-weight: bold;
+    letter-spacing: 0.22px;
+    line-height: 24px;
+    &:hover {
+      box-shadow: none;
+    }
+    .icon--before {
+      margin-right: 0;
+    }
+  }
+  .contact__title {
+    font-weight: bold;
+    letter-spacing: 0.22px;
+  }
+  .text {
+    font-size: $font-size--small-1;
+    padding-left: 2.5rem;
+    margin-top: .5rem;
+  }
+  li {
+    &::marker {
+      content: "";
+    }
+  }
+  ul {
+    padding: 0;
+  }
+}
+.contact__item {
+  margin-bottom: 1rem;
+}
