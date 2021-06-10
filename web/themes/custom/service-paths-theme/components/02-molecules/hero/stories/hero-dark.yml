@@ -3,3 +3,5 @@ hero__lead_text: "Varhaiskasvatuksen palvelut on tarkoitettu kaikille alle koulu
                   Löydetään yhdessä lapsellesi sopivin vaihtoehto!"
 hero__image:
   image_src: "/hero.jpg"
+hero__modifiers:
+  - "dark"
