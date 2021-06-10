@@ -23,11 +23,16 @@
   align-self: center;
 }
 .teaser__bg img {
-  min-width: 128px;
-  max-width: 128px;
-  height: 128px;
+  min-width: 100px;
+  max-width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
+  @include above($width-large) {
+    min-width: 128px;
+    max-width: 128px;
+    height: 128px;
+  }
 }
 .teaser .text {
   font-size: $font-size--small-1;
