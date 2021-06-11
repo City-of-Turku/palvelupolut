@@ -70,6 +70,7 @@ module:
   path_alias: 0
   ptv: 0
   rdf: 0
+  responsive_image: 0
   roleassign: 0
   shortcut: 0
   simplei: 0
