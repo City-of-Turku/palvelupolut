@@ -1,5 +1,15 @@
 .box-links {
-  @include border;
+  background: color(background-section);
+
+  a {
+    font-size: $font-size--base;
+  }
+
+  svg {
+    margin-right: space();
+    width: 24px;
+    height: 24px;
+  }
 
   margin: 0 0 var(--space-elements);
   padding: space(2);
@@ -11,14 +21,60 @@
   }
 
   &__heading {
-    @include h2;
+    font-size: $font-size--large-4;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 33px;
+    margin-bottom: space(2);
   }
 
   .text-long {
     margin-bottom: space(2);
   }
 
-  .list-links {
+  .link-cta {
+    color: black;
+    background: color(background-section);
+    grid-area: cta;
+    border-color: black;
+    border: 1px solid;
+    border-radius: 10px;
+    justify-content: center;
+  }
+
+  .box-links__box-links {
     margin: 0;
+    grid-area: links;
+    padding: 0;
+  }
+}
+li.box-links__item {
+  padding: 0;
+  margin-bottom: space();
+  &::marker {
+    content: "";
+  }
+}
+ul.box-links__attachment-links {
+  padding: 0;
+  grid-area: attachment;
+  margin: 0;
+}
+.box-links__links {
+  display: grid;
+  flex-direction: row;
+  grid-gap: space(2);
+  grid-template-columns: auto;
+  margin-bottom: space(2);
+  grid-template-areas:
+        "links"
+        "attachment"
+        "cta";
+  @include above($width-medium) {
+    grid-template-columns: auto auto;
+    grid-gap: 4rem;
+    grid-template-areas:
+        "links attachment"
+        "cta attachment";
   }
 }
