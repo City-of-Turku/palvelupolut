@@ -2,6 +2,7 @@ box_links__title: 'The title of the box'
 box_links__links: true
 list_links__link_modifiers:
   - 'icon'
+
 list_links__items:
   - title: 'Read more on Facebook'
     url: '#'
