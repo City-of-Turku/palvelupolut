@@ -49,3 +49,11 @@ a.teaser__link {
     width: 100%;
   }
 }
+a.teaser__link.teaser__link--with-icon {
+  box-shadow: none;
+  color: black;
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
