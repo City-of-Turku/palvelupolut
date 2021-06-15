@@ -13,6 +13,12 @@
         "number header"
         "number content";
   }
+  .text {
+    color: color(text-dark);
+    font-size: $font-size--base;
+    letter-spacing: $letter-spacing--large;
+    line-height: 28px;
+  }
 }
 .process_step__title {
   margin-bottom: space(1.6);
@@ -36,6 +42,11 @@ ul.process_step__link-list {
 }
 li.process_step__item a {
   margin-left: space(0.6);
+  color: color(text-dark);
+  font-size: $font-size--base;
+  font-weight: bold;
+  letter-spacing: $letter-spacing--large;
+  line-height: 24px;
 }
 span.process_step__number {
   font-size: $font-size--large-4;

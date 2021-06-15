@@ -41,5 +41,8 @@
     text-align: center;
     order: 3;
     font-size: $font-size--small-1;
+    color: color(text-dark);
+    letter-spacing: $letter-spacing--large;
+    line-height: 28px;
   }
 }
