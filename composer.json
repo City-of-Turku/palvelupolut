@@ -98,6 +98,7 @@
     },
     "require-dev": {
         "drupal/core-dev": "^9.1",
+        "vimeo/psalm": "^4.7",
         "wunderio/code-quality": "^2.0"
     },
     "conflict": {

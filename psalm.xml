@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<psalm>
+  <projectFiles>
+    <directory name="web/modules/custom" />
+    <directory name="web/themes/custom" />
+    <ignoreFiles>
+      <directory name="web/themes/custom/*/node_modules" />
+    </ignoreFiles>
+  </projectFiles>
+</psalm>
