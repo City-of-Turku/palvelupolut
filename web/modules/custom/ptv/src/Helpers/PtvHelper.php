@@ -9,6 +9,8 @@ class PtvHelper {
 
   /**
    * Returns an array.
+   *
+   * @return array|mixed|string[][]
    */
   public function prepareMigrateData($config, $key, $langcodes) {
 
@@ -22,13 +24,14 @@ class PtvHelper {
         foreach ($config_data as $key => $item) {
           $object = $ptv_service->getService($item);
           $summaries = [];
-          $descriptions= [];
+          $descriptions = [];
           foreach ($object->serviceDescriptions as $value) {
             if (in_array($value->language, $langcodes)) {
               switch ($value->type) {
                 case 'Summary':
                   $summaries[$value->language] = $value->value;
                   break;
+
                 case 'Description':
                   $descriptions[$value->language] = $value->value;
                   break;
@@ -71,6 +74,7 @@ class PtvHelper {
               case 'Summary':
                 $summaries[$value->language] = $value->value;
                 break;
+
               case 'Description':
                 $descriptions[$value->language] = $value->value;
                 break;
@@ -118,7 +122,7 @@ class PtvHelper {
                 'description' => $descriptions[$value->language],
                 'email' => !empty($emails) ? $emails[$value->language] : '',
                 'phone' => !empty($phones) ? $phones[$value->language] : '',
-                'webpage' => !empty($webpages) ? $webpages[$value->language]: '',
+                'webpage' => !empty($webpages) ? $webpages[$value->language] : '',
                 'address' => !empty($address) ? $address[$value->language] : '',
               ];
             }

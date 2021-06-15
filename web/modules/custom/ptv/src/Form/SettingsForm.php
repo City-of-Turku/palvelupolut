@@ -104,6 +104,8 @@ class SettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @return void
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $settings = $this->config('ptv.settings');

@@ -29,8 +29,10 @@ class PtvClient {
 
   /**
    * @inheritdoc
+   *
+   * @param array|null $parameters
    */
-  public function handleRequest($method, $uri = '', $options = [], $parameters = [], $returnAssoc = FALSE) {
+  public function handleRequest(string $method, string $uri = '', array $options = [], ?array $parameters = [], bool $returnAssoc = FALSE) {
     if (!empty($parameters)) {
       if ($method == 'GET') {
         // Send parameters as query string parameters.
