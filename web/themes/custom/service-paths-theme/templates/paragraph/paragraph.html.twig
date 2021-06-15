@@ -37,4 +37,10 @@
  */
 #}
 
-{{ content }}
+{% set pgId = paragraph.id() %}
+
+<div id="pg{{ pgId }}">
+
+  {{ content }}
+
+</div>

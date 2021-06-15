@@ -1,0 +1,10 @@
+uuid: af17bc5d-0596-49ec-8fd9-4d35c56fb56d
+langcode: en
+status: true
+dependencies: {  }
+id: references
+label: References
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

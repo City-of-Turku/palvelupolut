@@ -1,0 +1,35 @@
+uuid: c0261bea-6547-42f4-b0e3-b89f6522fafc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_content_ref
+    - node.type.blog_post
+    - node.type.page
+    - node.type.service
+    - node.type.service_channel
+    - paragraphs.paragraphs_type.references
+id: paragraph.references.field_paragraph_content_ref
+field_name: field_paragraph_content_ref
+entity_type: paragraph
+bundle: references
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      blog_post: blog_post
+      service: service
+      service_channel: service_channel
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: blog_post
+field_type: entity_reference

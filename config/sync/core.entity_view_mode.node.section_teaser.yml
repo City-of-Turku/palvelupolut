@@ -1,0 +1,10 @@
+uuid: cfd10af9-c871-409f-aec3-e58d327acfba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.section_teaser
+label: 'Section Teaser'
+targetEntityType: node
+cache: true

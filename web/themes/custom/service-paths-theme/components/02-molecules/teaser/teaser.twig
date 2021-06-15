@@ -17,11 +17,11 @@
 
 <div {{ bem(teaser__base_class, teaser__modifiers) }}>
 
-  <div {{ bem("bg", [], teaser__base_class) }} aria-hidden="true">
+  {# <div {{ bem("bg", [], teaser__base_class) }} aria-hidden="true">
     {% block teaser_image %}
       {% include "@atoms/images/image/responsive-image.twig" with teaser__image %}
     {% endblock %}
-  </div>
+  </div> #}
   <div {{ bem("inner", [], teaser__base_class) }}>
 
     {% include "@atoms/text/text-long/text-long.twig" with {

@@ -1,0 +1,21 @@
+uuid: 92ae24fd-fbcb-445e-aa67-ba42b40e8c6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_text
+    - node.type.page
+  module:
+    - text
+id: node.page.field_lead_text
+field_name: field_lead_text
+entity_type: node
+bundle: page
+label: 'Lead Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -3,16 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.accordion_item.field_link
     - field.field.paragraph.accordion_item.field_paragraph_body
     - field.field.paragraph.accordion_item.field_paragraph_heading
     - paragraphs.paragraphs_type.accordion_item
   module:
+    - link
     - text
 id: paragraph.accordion_item.default
 targetEntityType: paragraph
 bundle: accordion_item
 mode: default
 content:
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_paragraph_body:
     weight: 1
     label: hidden
