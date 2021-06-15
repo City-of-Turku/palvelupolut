@@ -18,20 +18,84 @@
   {% if box_links__title %}
     {% include "@atoms/text/heading/heading.twig" with {
       "heading": box_links__title,
-      "heading__level": box_links__title_level|default('2'),
+      "heading__level": box_links__title_level|default('3'),
       "heading__blockname": box_links__base_class,
     } %}
   {% endif %}
 
-  {% if box_links__description %}
-    {% include "@atoms/text/text-long/text-long.twig" with {
-      "text_long__content": box_links__description,
-    } %}
-  {% endif %}
+  <div {{ bem("links", [], box_links__base_class) }}>
 
-  {% block box_links_list %}
-    {% if box_links__links %}
-      {% include "@molecules/list-links/list-links.twig" %}
-    {% endif %}
-  {% endblock %}
+    {% embed "@atoms/lists/list-unordered.twig" with {
+      list__base_class: "box-links",
+      list__modifiers:  box_links__modifiers,
+      list__blockname:  box_links__base_class,
+    } %}
+      {% block list_content %}
+
+        {% for item in list_links__items %}
+          {% embed "@atoms/lists/list-item.twig" with {
+            list_item__base_class: "item",
+            list_item__blockname:  box_links__base_class,
+          } %}
+            {% block list_item_content %}
+              {% set link_modifiers = box_links__link_modifiers|default([]) %}
+
+              {% include "@atoms/images/icon/icon.twig" with {
+                icon__name: item.icon,
+                icon__base_class: "icon",
+              } %}
+
+              {% include "@atoms/links/link/link.twig" with {
+                link__content: item.title,
+                link__url: item.url,
+                link__attributes: item.attributes,
+              } %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@atoms/lists/list-unordered.twig" with {
+      list__base_class: "attachment-links",
+      list__modifiers:  box_links__modifiers,
+      list__blockname:  box_links__base_class,
+    } %}
+      {% block list_content %}
+
+        {% for item in attachment_links__items %}
+          {% embed "@atoms/lists/list-item.twig" with {
+            list_item__base_class: "item",
+            list_item__blockname:  box_links__base_class,
+          } %}
+            {% block list_item_content %}
+              {% set link_modifiers = box_links__link_modifiers|default([]) %}
+
+              {% include "@atoms/images/icon/icon.twig" with {
+                icon__name: "attachment",
+                icon__base_class: "icon",
+              } %}
+
+              {% include "@atoms/links/link/link.twig" with {
+                link__content: item.title,
+                link__url: item.url,
+                link__attributes: item.attributes,
+                link__suffix: '(pdf 1.3Mt)',
+              } %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+
+    {% include "@atoms/links/link-cta/link-cta.twig" with {
+      link_cta__url:  box_links__cta__url,
+      link_cta__content:  box_links__cta,
+      link_cta__icon_before: "globe",
+    } %}
+
+  </div>
+
 </div>
