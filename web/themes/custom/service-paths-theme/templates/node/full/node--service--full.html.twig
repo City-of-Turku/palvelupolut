@@ -68,39 +68,42 @@
 #}
 
 {% set excluded_fields = [
+  "field_description",
+  "field_description_custom",
   "field_heading",
   "field_lead_image",
   "field_lead_text",
 ] %}
 
-{% set shared_url = url("entity.node.canonical", { "node": node.id })["#markup"] %}
-{# Truncate the field value to 1500 characters. #}
-{% set shared_text = content.field_teaser[:1500]|field_value|first["#text"] %}
 
 {% set with_tags =
   content.field_global_theme|render|trim
 %}
 
 
-{% if node.field_lead_image|first.entity.field_media_image %}
-	{% set image_src = content.field_lead_image|field_value %}
-{% endif %}
-
-
 <article {{ bem("node", [node.bundle|clean_class, "full"]) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
+  {% embed "@molecules/hero/hero.twig" with {
+    hero__title: content.field_heading,
+    hero__lead_text: content.field_lead_text,
+  } %}
+    {% block hero_image %}
+      {{ content.field_lead_image }}
+    {% endblock %}
+  {% endembed %}
+
   {% embed "@templates/page/page-content.twig" %}
     {% block page_content %}
 
-      {% include "@molecules/hero/hero.twig" with {
-        hero__title: content.field_heading,
-        hero__image: image_src,
-        hero__lead_text: content.field_lead_text,
-      } %}
-
       {{ content|without(excluded_fields) }}
+
+      {% if content.field_description_custom|render %}
+        {{ content.field_description_custom }}
+      {% else %}
+        {{ content.field_description }}
+      {% endif %}
 
       {% include "@atoms/links/link/link.twig" with {
         link__content: "Back to top"|t,
@@ -116,12 +119,6 @@
           {% endblock %}
         {% endembed %}
       {% endif %}
-
-      {% include "@molecules/share/share.twig" with {
-        share__modifiers: ["vertical"],
-        share__shared_url: shared_url,
-        share__shared_text: shared_text,
-      } %}
 
     {% endblock %}
 

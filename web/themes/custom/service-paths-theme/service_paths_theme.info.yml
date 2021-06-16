@@ -18,6 +18,7 @@ regions:
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
+  - 'service_paths_theme/fonts'
   - 'service_paths_theme/global'
   # - 'service_paths_theme/typekit'
 

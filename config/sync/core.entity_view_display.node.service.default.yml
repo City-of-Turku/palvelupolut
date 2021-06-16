@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.service.field_description
+    - field.field.node.service.field_description_custom
     - field.field.node.service.field_heading
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_lead_text
@@ -20,6 +21,13 @@ mode: default
 content:
   field_description:
     weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_description_custom:
+    weight: 11
     label: hidden
     settings: {  }
     third_party_settings: {  }

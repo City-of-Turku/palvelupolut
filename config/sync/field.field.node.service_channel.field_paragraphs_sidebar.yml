@@ -1,0 +1,57 @@
+uuid: c44bde02-fc7f-4bed-9eee-ee41669de329
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs_sidebar
+    - node.type.service_channel
+    - paragraphs.paragraphs_type.general
+    - paragraphs.paragraphs_type.links
+  module:
+    - entity_reference_revisions
+id: node.service_channel.field_paragraphs_sidebar
+field_name: field_paragraphs_sidebar
+entity_type: node
+bundle: service_channel
+label: 'Paragraphs Sidebar'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      general: general
+      links: links
+    target_bundles_drag_drop:
+      accordion:
+        weight: 10
+        enabled: false
+      accordion_item:
+        weight: 11
+        enabled: false
+      cta:
+        weight: 12
+        enabled: false
+      cta_grid:
+        weight: 13
+        enabled: false
+      general:
+        enabled: true
+        weight: 14
+      links:
+        enabled: true
+        weight: 15
+      process:
+        weight: 16
+        enabled: false
+      references:
+        weight: 17
+        enabled: false
+      step:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

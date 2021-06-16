@@ -7,7 +7,12 @@ dependencies:
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
+    - field.field.node.service_channel.field_heading
+    - field.field.node.service_channel.field_lead_image
+    - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_location
+    - field.field.node.service_channel.field_paragraphs
+    - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_webpage
@@ -28,7 +33,12 @@ hidden:
   field_address: true
   field_description: true
   field_email: true
+  field_heading: true
+  field_lead_image: true
+  field_lead_text: true
   field_location: true
+  field_paragraphs: true
+  field_paragraphs_sidebar: true
   field_phone: true
   field_services: true
   field_webpage: true

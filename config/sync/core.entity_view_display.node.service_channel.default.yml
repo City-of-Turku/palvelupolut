@@ -6,13 +6,19 @@ dependencies:
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
+    - field.field.node.service_channel.field_heading
+    - field.field.node.service_channel.field_lead_image
+    - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_location
+    - field.field.node.service_channel.field_paragraphs
+    - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
     - address
+    - entity_reference_revisions
     - geofield
     - link
     - text
@@ -23,54 +29,97 @@ bundle: service_channel
 mode: default
 content:
   field_address:
-    weight: 106
-    label: above
+    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_description:
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_email:
-    weight: 104
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: email_mailto
+    region: content
+  field_heading:
+    weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lead_image:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_lead_text:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_location:
-    weight: 107
-    label: above
+    weight: 5
+    label: hidden
     settings:
       output_format: wkt
       output_escape: true
     third_party_settings: {  }
     type: geofield_default
     region: content
+  field_paragraphs:
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraphs_sidebar:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
   field_phone:
-    weight: 105
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_services:
-    weight: 101
+    weight: 11
     label: above
     settings:
-      link: true
+      view_mode: section_teaser
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_webpage:
-    weight: 103
-    label: above
+    weight: 1
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -80,10 +129,6 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
   langcode: true
+  links: true

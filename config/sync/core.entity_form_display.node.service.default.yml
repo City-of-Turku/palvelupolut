@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.service.field_description
+    - field.field.node.service.field_description_custom
     - field.field.node.service.field_heading
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_lead_text
@@ -22,6 +23,7 @@ third_party_settings:
         - group_hero
         - group_paragraphs
         - group_ptv
+        - group_rewrite
       parent_name: ''
       weight: 2
       format_type: tabs
@@ -75,6 +77,20 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: PTV
+    group_rewrite:
+      children:
+        - field_description_custom
+      parent_name: group_tabs
+      weight: 18
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Rewrite
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -82,12 +98,22 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_description:
     weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_description_custom:
+    weight: 10
     settings:
       rows: 9
       summary_rows: 3
@@ -140,7 +166,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -148,21 +174,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -174,13 +200,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

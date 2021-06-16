@@ -1,0 +1,23 @@
+uuid: f4113c1e-a031-48c2-afe8-076d58cd7718
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_custom
+    - node.type.service
+  module:
+    - text
+id: node.service.field_description_custom
+field_name: field_description_custom
+entity_type: node
+bundle: service
+label: 'Description (rewrite)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
