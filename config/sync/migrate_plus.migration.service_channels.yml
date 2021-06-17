@@ -1,5 +1,5 @@
 uuid: e4275dcd-6935-4d5d-bd57-0d72a837a146
-langcode: fi
+langcode: en
 status: true
 dependencies: {  }
 id: service_channels

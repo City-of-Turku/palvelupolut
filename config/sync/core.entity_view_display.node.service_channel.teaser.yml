@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
     - field.field.node.service_channel.field_heading
+    - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
     - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_location
@@ -34,6 +35,7 @@ hidden:
   field_description: true
   field_email: true
   field_heading: true
+  field_languages: true
   field_lead_image: true
   field_lead_text: true
   field_location: true

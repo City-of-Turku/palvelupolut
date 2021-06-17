@@ -1,0 +1,61 @@
+uuid: 58d2ab09-dfd6-4980-945c-76a81162482e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_card.field_address
+    - field.field.paragraph.contact_card.field_email
+    - field.field.paragraph.contact_card.field_paragraph_heading
+    - field.field.paragraph.contact_card.field_phone
+    - field.field.paragraph.contact_card.field_webpage
+    - paragraphs.paragraphs_type.contact_card
+  module:
+    - address
+    - link
+id: paragraph.contact_card.default
+targetEntityType: paragraph
+bundle: contact_card
+mode: default
+content:
+  field_address:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_email:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_paragraph_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_webpage:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

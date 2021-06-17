@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs_sidebar
     - node.type.service_channel
+    - paragraphs.paragraphs_type.contact_card
     - paragraphs.paragraphs_type.general
     - paragraphs.paragraphs_type.links
   module:
@@ -24,6 +25,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      contact_card: contact_card
       general: general
       links: links
     target_bundles_drag_drop:
@@ -33,6 +35,9 @@ settings:
       accordion_item:
         weight: 11
         enabled: false
+      contact_card:
+        enabled: true
+        weight: 13
       cta:
         weight: 12
         enabled: false

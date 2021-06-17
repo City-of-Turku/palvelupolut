@@ -1,16 +1,16 @@
-uuid: 933561c9-7d5d-4edc-8cec-b2639913a47f
+uuid: 24998c20-110f-4455-8f00-fdd487c76914
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_address
-    - node.type.service_channel
+    - field.storage.paragraph.field_address
+    - paragraphs.paragraphs_type.contact_card
   module:
     - address
-id: node.service_channel.field_address
+id: paragraph.contact_card.field_address
 field_name: field_address
-entity_type: node
-bundle: service_channel
+entity_type: paragraph
+bundle: contact_card
 label: Address
 description: ''
 required: false

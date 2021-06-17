@@ -1,9 +1,9 @@
-uuid: fdd9cdf0-00e0-48ee-98ff-d9f79f3b714d
+uuid: a798f6a8-7c55-460b-bf58-23b6232eaa7a
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.icons
+    - paragraphs.paragraphs_type.general
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.icons
-target_entity_type_id: taxonomy_term
-target_bundle: icons
+id: paragraph.general
+target_entity_type_id: paragraph
+target_bundle: general
 default_langcode: site_default
 language_alterable: true

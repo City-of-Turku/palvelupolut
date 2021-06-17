@@ -68,6 +68,7 @@ class PtvHelper {
           $webpages = [];
           $address = [];
           $location = [];
+          $languages = [];
 
           foreach ($object->serviceChannelDescriptions as $value) {
             switch ($value->type) {
@@ -96,6 +97,9 @@ class PtvHelper {
               $webpages[$value->language]['title'] = $value->value;
             }
           }
+          if (isset($object->languages)) {
+            $languages = $object->languages;
+          }
 
           if (isset($object->addresses)) {
             foreach ($object->addresses as $value) {
@@ -107,6 +111,9 @@ class PtvHelper {
                 $address[$postOffice->language]['locality'] = $postOffice->value;
                 $address[$postOffice->language]['postal_code'] = $post_code;
                 $address[$postOffice->language]['country_code'] = 'FI';
+              }
+              foreach ($value->entrances->accessibilitySentences as $accessibility) {
+
               }
             }
           }
@@ -124,6 +131,7 @@ class PtvHelper {
                 'phone' => !empty($phones) ? $phones[$value->language] : '',
                 'webpage' => !empty($webpages) ? $webpages[$value->language] : '',
                 'address' => !empty($address) ? $address[$value->language] : '',
+                'langauges' => $languages,
               ];
             }
           }

@@ -1,0 +1,30 @@
+uuid: fbd43128-7fa6-427c-b0de-767723b266ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_languages
+field_name: field_languages
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: fi
+      label: Finish
+    -
+      value: en
+      label: English
+    -
+      value: sv
+      label: Swedish
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
