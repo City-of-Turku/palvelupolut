@@ -1,0 +1,30 @@
+.section-icon-grid__items {
+  display: flex;
+  flex-wrap: wrap;
+  .icon-grid {
+    margin-bottom: 24px;
+    padding-right: 24px;
+    font-size: $font-size--small-1;
+    letter-spacing: 0.25px;
+    line-height: $line-height--base;
+    width: 100%;
+    @include above($width-medium) {
+      width: 50%;
+    }
+    @include above($width-large) {
+      width: 33%;
+    }
+  }
+}
+.section-icon-grid {
+  padding: space(3);
+  background-color: color(background-light);
+  border-radius: 18px;
+  h2.heading.heading--h2 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: $line-height--heading;
+    margin-bottom: 40px;
+  }
+}

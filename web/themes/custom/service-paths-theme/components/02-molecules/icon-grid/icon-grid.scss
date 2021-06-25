@@ -2,3 +2,14 @@
   position: relative;
   display: flex;
 }
+.icon-grid__icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 20px;
+}
+.icon-grid__title {
+  margin: 0;
+}
+.icon-grid__inner {
+  font-size: 16px;
+}
