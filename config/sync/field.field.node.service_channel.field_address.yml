@@ -15,21 +15,7 @@ label: Address
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    country_code: FI
-    langcode: ''
-    organization: ''
-    given_name: ''
-    family_name: ''
-    address_line1: ''
-    address_line2: ''
-    postal_code: ''
-    locality: ''
-    additional_name: null
-    sorting_code: null
-    dependent_locality: null
-    administrative_area: null
+default_value: {  }
 default_value_callback: ''
 settings:
   available_countries: {  }

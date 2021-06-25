@@ -66,10 +66,27 @@
  * @see template_preprocess_node()
  */
 #}
+{% set excluded_fields = [
+  "field_heading",
+  "field_lead_image",
+  "field_lead_text",
+  "field_paragraphs_bottom",
+  "field_paragraphs_sidebar"
+] %}
 
 <article {{ bem("node", [node.bundle|clean_class]) }}>
   {{ title_prefix }}
   {{ title_suffix }}
+
+  {% embed "@molecules/hero/hero.twig" with {
+    hero__modifiers: ["light"],
+    hero__title: content.field_heading,
+    hero__lead_text: content.field_lead_text,
+  } %}
+    {% block hero_image %}
+      {{ content.field_lead_image }}
+    {% endblock %}
+  {% endembed %}
 
   {% embed "@templates/page/page-content.twig" with {
     page_sidebar: content.field_paragraphs_sidebar|render|trim is not empty,
@@ -87,7 +104,20 @@
         } %}
       {% endif %}
 
-      {{ content|without("field_paragraphs_bottom", "field_paragraphs_sidebar") }}
+      {% if node.field_show_toc.value == '1' %}
+        {% set menu_items = [] %}
+        {% for i in content.field_paragraphs['#items']|keys %}
+          {% set menu_items = menu_items|merge([{
+            title: node.field_paragraphs[i].entity.field_paragraph_heading.value,
+            url: '#pg' ~ node.field_paragraphs[i].entity.id()
+          }]) %}
+        {% endfor %}
+        {% include "@molecules/navigation/anchor-menu/anchor-menu.twig" with {
+          anchor_menu__items: menu_items
+        } %}
+      {% endif %}
+
+      {{ content|without(excluded_fields) }}
     {% endblock %}
 
     {% block page_sidebar_post_content %}

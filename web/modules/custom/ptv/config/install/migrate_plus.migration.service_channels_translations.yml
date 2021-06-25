@@ -36,6 +36,7 @@ process:
   field_phone: phone
   field_webpage: webpage
   field_address: address
+  # field_languages: languages
 
   path/pathauto:
     plugin: default_value

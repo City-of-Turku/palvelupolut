@@ -1,0 +1,18 @@
+uuid: f4e729a8-df86-4e8d-9879-50bd8b1efd14
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contact_card
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.contact_card
+target_entity_type_id: paragraph
+target_bundle: contact_card
+default_langcode: site_default
+language_alterable: true

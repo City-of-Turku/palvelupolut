@@ -6,17 +6,106 @@ dependencies:
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
+    - field.field.node.service_channel.field_heading
+    - field.field.node.service_channel.field_languages
+    - field.field.node.service_channel.field_lead_image
+    - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_location
+    - field.field.node.service_channel.field_paragraphs
+    - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
     - address
+    - field_group
     - geofield
     - link
+    - media_library
+    - paragraphs_asymmetric_translation_widgets
     - path
     - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_hero
+        - group_paragraphs
+        - group_sidebar
+        - group_ptv
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Tabs
+    group_hero:
+      children:
+        - field_heading
+        - field_lead_text
+        - field_lead_image
+      parent_name: group_tabs
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Hero
+    group_paragraphs:
+      children:
+        - field_paragraphs
+      parent_name: group_tabs
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Paragraphs
+    group_ptv:
+      children:
+        - field_description
+        - field_webpage
+        - field_email
+        - field_phone
+        - field_address
+        - field_location
+      parent_name: group_tabs
+      weight: 25
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: PTV
+    group_sidebar:
+      children:
+        - field_paragraphs_sidebar
+      parent_name: group_tabs
+      weight: 24
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Sidebar
 id: node.service_channel.default
 targetEntityType: node
 bundle: service_channel
@@ -24,18 +113,18 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
-    weight: 126
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_description:
-    weight: 122
+    weight: 11
     settings:
       rows: 9
       summary_rows: 3
@@ -45,22 +134,75 @@ content:
     type: text_textarea_with_summary
     region: content
   field_email:
-    weight: 124
+    weight: 13
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: email_default
     region: content
+  field_heading:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_languages:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lead_image:
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_lead_text:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_location:
-    weight: 127
+    weight: 16
     settings:
       html5_geolocation: false
     third_party_settings: {  }
     type: geofield_latlon
     region: content
+  field_paragraphs:
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs_classic_asymmetric
+    region: content
+  field_paragraphs_sidebar:
+    weight: 12
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs_classic_asymmetric
+    region: content
   field_phone:
-    weight: 125
+    weight: 14
     settings:
       size: 60
       placeholder: ''
@@ -68,7 +210,7 @@ content:
     type: string_textfield
     region: content
   field_services:
-    weight: 121
+    weight: 10
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -78,7 +220,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_webpage:
-    weight: 123
+    weight: 12
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -87,14 +229,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -102,39 +244,39 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

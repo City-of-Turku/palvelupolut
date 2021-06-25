@@ -42,8 +42,10 @@ class PtvApiService {
 
   /**
    * Set the PTV client.
+   *
+   * @return void
    */
-  public function setPtvClient() {
+  public function setPtvClient(): void {
 
     $http_options = [
       'baseUrl' => $this->endpoint,

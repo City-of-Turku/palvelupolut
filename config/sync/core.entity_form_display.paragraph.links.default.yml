@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.links.field_link
+    - field.field.paragraph.links.field_media
     - field.field.paragraph.links.field_paragraph_heading
     - paragraphs.paragraphs_type.links
   module:
     - linkit
+    - media_library
 id: paragraph.links.default
 targetEntityType: paragraph
 bundle: links
@@ -22,6 +24,13 @@ content:
     third_party_settings: {  }
     type: linkit
     region: content
+  field_media:
+    type: media_library_widget
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_paragraph_heading:
     weight: 0
     settings:
@@ -30,6 +39,11 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

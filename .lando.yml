@@ -23,6 +23,10 @@ tooling:
     cmd:
       - appserver: /app/.lando/xdebug.sh
     user: root
+  psalm:
+    description: Run Psalm tasks
+    cmd:
+      - appserver: ./vendor/bin/psalm
 
 services:
   appserver:

@@ -1,0 +1,21 @@
+uuid: 9b50f5d5-8f0a-4ad4-af9d-bc842763148d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_languages
+    - node.type.service_channel
+  module:
+    - options
+id: node.service_channel.field_languages
+field_name: field_languages
+entity_type: node
+bundle: service_channel
+label: Languages
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

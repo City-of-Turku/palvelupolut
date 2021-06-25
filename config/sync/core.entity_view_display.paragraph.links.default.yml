@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.links.field_link
+    - field.field.paragraph.links.field_media
     - field.field.paragraph.links.field_paragraph_heading
     - paragraphs.paragraphs_type.links
   module:
-    - link
+    - linkit
 id: paragraph.links.default
 targetEntityType: paragraph
 bundle: links
@@ -18,12 +19,22 @@ content:
     label: hidden
     settings:
       trim_length: 80
+      linkit_profile: default
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
-    type: link
+    type: linkit
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_paragraph_heading:
     weight: 0

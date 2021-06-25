@@ -1,0 +1,19 @@
+uuid: 277ffbc5-7f4c-4fa6-87c7-67aa09b9cf9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heading
+    - node.type.page
+id: node.page.field_heading
+field_name: field_heading
+entity_type: node
+bundle: page
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -41,5 +41,6 @@
 
 {% include '@molecules/accordion/accordion-item.twig' with {
   accordion__summary: content.field_paragraph_heading,
-  accordion__content: content.field_paragraph_body
+  accordion__content: content.field_paragraph_body,
+  list_links__items: content.field_link,
 } %}

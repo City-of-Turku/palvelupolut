@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_heading
+    - field.field.node.page.field_lead_image
+    - field.field.node.page.field_lead_text
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_paragraphs_sidebar
     - field.field.node.page.field_show_toc
@@ -21,6 +24,9 @@ content:
     weight: 101
     region: content
 hidden:
+  field_heading: true
+  field_lead_image: true
+  field_lead_text: true
   field_paragraphs: true
   field_paragraphs_sidebar: true
   field_show_toc: true
