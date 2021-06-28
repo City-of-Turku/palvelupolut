@@ -112,7 +112,7 @@
   $color: color(text),
   $color-link: inherit,
   $color-link-hover: color(text-inverse),
-  $font-weight: 600,
+  $font-weight: 700,
   $margin: 0 0 space()
 ) {
   color: $color;
@@ -141,12 +141,44 @@
 @mixin h5(
   $font-family: $font-family--heading,
   $font-size: $font-size--h5,
+  $font-size-small: $font-size--h5--small,
   $letter-spacing: 0.05em,
   $line-height: 1.5,
   $color: color(text),
   $color-link: inherit,
   $color-link-hover: color(text-inverse),
-  $font-weight: 600,
+  $font-weight: 700,
+  $margin: 0 0 space()
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin h6(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h6,
+  $font-size-small: $font-size--h6--small,
+  $letter-spacing: 0.05em,
+  $line-height: 1.5,
+  $color: color(text),
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 700,
   $margin: 0 0 space()
 ) {
   color: $color;
