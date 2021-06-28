@@ -1,0 +1,53 @@
+{#
+/**
+* @file
+* Theme implementation to display site hero content
+*
+* Variables:
+* - selection_box__meta: Meta information, e.g. node type and publication date
+* - selection_box__title: Title (h1) text.
+* - selection_box__image: Background image URL.
+* - selection_box__lead_text: Copy text to show on the hero.
+*
+* @ingroup themeable
+*/
+#}
+{% set selection_box__base_class = "selection_box" %}
+{% set selection_box__modifiers = selection_box__modifiers|default([]) %}
+
+<div {{ bem("wrapper", [], selection_box__base_class) }}>
+
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 2,
+    heading__base_class: "title",
+    heading__blockname: selection_box__base_class,
+    heading: selection_box__title,
+  } %}
+
+  <div {{ bem("inner", [], selection_box__base_class) }}>
+
+    {% include "@atoms/buttons/button/button.twig" with {
+      button__content: selection_box__open_text,
+      button__type: "button",
+      button__icon_before: "plus",
+      button__modifiers: ["minimal"]
+    } %}
+
+    <div {{ bem("selection-link", [], selection_box__base_class) }}>
+
+      {% include "@atoms/images/icon/icon.twig" with {
+        icon__name: "search",
+        icon__base_class: "icon",
+      } %}
+
+      {% include "@atoms/links/link/link.twig" with {
+        link__content: selection_box__link_title,
+        link__url: selection_box__url,
+        icon__name: link__icon_before,
+      } %}
+
+    </div>
+
+  </div>
+
+</div>
