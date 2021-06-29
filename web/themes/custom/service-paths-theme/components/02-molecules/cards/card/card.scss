@@ -1,122 +1,45 @@
-.card {
+.card__image {
   position: relative;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 16rem auto;
-  background-color: color(background);
-
-  &__text {
-    padding: space(3/2) space();
+  height: 200px;
+  width: 312px;
+  border-radius: 18px 18px 0 0;
+  background-color: rgba(255,255,255,0);
+}
+.card {
+  border-radius: 16px;
+  background-color: #FBF3ED;
+  width: 312px;
+  ul {
+    padding: 0;
   }
-
-  &__heading {
-    @include bold-highlight;
-
-    margin: 0 0 space(3/4);
-    line-height: $line-height--base;
-    font-size: $font-size--small-1;
-  }
-
-  &__heading-link {
-    @include link-expand;
-
-    text-decoration: none;
-    box-shadow: none;
-    display: block;
-
-    &:hover {
-      box-shadow: inset 0 -30ex 0 0 color(primary);
+  li {
+    &::marker {
+      content: "";
     }
   }
-
-  &__image {
-    grid-column: 1;
-    grid-row: 1;
-
-    figure,
-    picture,
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-
-    &--default {
-      background-color: color(primary);
-      background-image: data-url($image-inline--fallback-image--default, svg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 50%;
-    }
-  }
-
-  &__type {
-    display: flex;
-    flex-wrap: wrap;
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
-    justify-self: start;
+}
+.card__heading.card__heading--h3 {
+  font-size: $font-size--large-2;
+}
+.card__item {
+  display: flex;
+  font-size: $font-size--small-2;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+  .icon {
     position: relative;
-    z-index: 2;
+    top: 4px;
+    margin-right: 12px;
   }
-
-  &__category {
-    @include below($width-medium) {
-      display: none;
-    }
+}
+.card__link {
+  font-size: $font-size--small-2;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+  .icon {
+    margin-right: 16px;
   }
-
-  &__button {
-    @include button-base;
-  }
-
-  &--large {
-    grid-template-rows: 30rem auto;
-  }
-
-  &--small {
-
-    .meta--light {
-      @include above($width-medium) {
-        padding: space(1/4) space();
-      }
-    }
-
-    .card__text {
-      @include above($width-large) {
-        padding: 0;
-      }
-    }
-
-    .card__image {
-      @include above($width-large) {
-        grid-column: 1 / 2;
-        grid-row: 1 / 3;
-        padding-bottom: 100%;
-        height: 0;
-
-        img {
-          height: auto;
-        }
-      }
-    }
-
-    .card__type {
-      @include above($width-large) {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-        align-self: start;
-        justify-self: start;
-        position: relative;
-      }
-    }
-
-    @include above($width-large) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto 1fr;
-      column-gap: space(1 + 1/2);
-      row-gap: space(3/4);
-    }
-  }
+}
+.card__item_content {
+  padding: 24px;
 }

@@ -1,6 +1,9 @@
 card__image__src: 'hero.jpg'
 card__heading: 'The match of our lives'
 card__link__url: '#'
-card__type: 'Blogs'
-card__category: ['Life at Wunder', 'Sports activities ', 'Culture']
-card__date: '1.9.2020'
+card__link_text: 'Blogs'
+card__items:
+  - lead_text: 'Etsi päivähoitopaikkaa'
+    icon: 'globe'
+  - lead_text: 'Lisää varhaiskasvatuksen vaihtoehdoista'
+    icon: 'filter'
