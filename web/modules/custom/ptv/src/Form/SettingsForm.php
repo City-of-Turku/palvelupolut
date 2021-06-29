@@ -42,6 +42,7 @@ class SettingsForm extends ConfigFormBase {
 
     if ($config->get('municipality')) {
       $organizations = $ptv_service->getOrganizationsByAreaCode('Municipality', $config->get('municipality'));
+
       // $form['organization'] = [
       //   '#type' => 'select',
       //   '#options' => $organizations,
@@ -63,7 +64,7 @@ class SettingsForm extends ConfigFormBase {
           '#title' => 'Selected Organizations',
         ];
 
-        foreach ($config->get('organizations') as $key => $organization) {
+        foreach (array_filter($config->get('organizations')) as $key => $organization) {
           $form['selected_organizations_' . $organization] = [
             '#type' => 'details',
             '#title' => $organizations[$organization],

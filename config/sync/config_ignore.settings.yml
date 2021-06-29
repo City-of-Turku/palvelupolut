@@ -1,5 +1,6 @@
 ignored_config_entities:
-  - 'ptv.*'
+  - ptv.settings
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 langcode: fi
+enable_export_filtering: 1
