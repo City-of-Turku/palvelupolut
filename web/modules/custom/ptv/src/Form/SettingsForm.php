@@ -42,59 +42,59 @@ class SettingsForm extends ConfigFormBase {
 
     if ($config->get('municipality')) {
       $organizations = $ptv_service->getOrganizationsByAreaCode('Municipality', $config->get('municipality'));
-      $form['organization'] = [
-        '#type' => 'select',
+      // $form['organization'] = [
+      //   '#type' => 'select',
+      //   '#options' => $organizations,
+      //   '#title' => $this->t('Organization'),
+      //   '#default_value' => $config->get('organization'),
+      // ];
+      $form['organizations'] = [
+        '#type' => 'checkboxes',
         '#options' => $organizations,
-        '#title' => $this->t('Organization'),
-        '#default_value' => $config->get('organization'),
+        '#title' => $this->t('Organizations'),
+        '#default_value' => $config->get('organizations'),
+        '#multiple' => TRUE,
       ];
 
-      if ($config->get('organization')) {
-
-        $services = $ptv_service->getServicesByOrganization($config->get('organization'));
-        // $services = $ptv_service->getServicesByAreaCode('Municipality', $config->get('municipality'));
-        $form['services'] = [
-          '#type' => 'select',
-          '#options' => $services,
-          '#title' => $this->t('Services'),
-          '#default_value' => $config->get('services'),
-          '#chosen' => TRUE,
-          '#multiple' => TRUE,
+      if ($config->get('organizations')) {
+        $form['organizations_tabs'] = [
+          '#type' => 'vertical_tabs',
+          '#parents' => ['organizations_tabs'],
+          '#title' => 'Selected Organizations',
         ];
 
-        if ($config->get('services')) {
-          $form['tabs'] = [
-            '#type' => 'vertical_tabs',
-            '#parents' => ['tabs'],
-            '#title' => 'Selected Services',
+        foreach ($config->get('organizations') as $key => $organization) {
+          $form['selected_organizations_' . $organization] = [
+            '#type' => 'details',
+            '#title' => $organizations[$organization],
+            '#group' => 'organizations_tabs',
           ];
-          foreach ($config->get('services') as $service) {
-            $service_channels = [];
-            $form['selected_services_' . $service] = [
-              '#type' => 'details',
-              '#title' => $services[$service],
-              '#group' => 'tabs',
-            ];
-            $service_data = $ptv_service->getService($service);
-            foreach ($service_data->serviceChannels as $channel) {
-              $service_channels[$channel->serviceChannel->id] = $channel->serviceChannel->name;
-            }
-            $form['selected_services_' . $service]['service_channels_' . $service] = [
-              '#type' => 'checkboxes',
-              '#options' => $service_channels,
-              '#title' => $this->t('Service channels'),
-              '#default_value' => $config->get('service_channels_' . $service),
-            ];
-            // $service_channels = $ptv_service->getServiceChannelsByAreaCode('Municipality', $config->get('municipality'));
-            // ksm($service_channels);
-            // $form['selected_services']['service_' . $service] = [
-            //   '#markup' => dump($ptv_service->getService($service)),
-            // ];
-            // ksm($ptv_service->getService($service));
-          }
+
+          $services = $ptv_service->getServicesByOrganization($organization);
+          $form['selected_organizations_' . $organization]['services'] = [
+            '#type' => 'details',
+            '#title' => $this->t('Services') . ' (' . count($services) . ')',
+          ];
+          $form['selected_organizations_' . $organization]['services']['organization_services_' . $organization] = [
+            '#type' => 'checkboxes',
+            '#options' => $services,
+            '#default_value' => array_keys($services),
+            '#attributes' => ['disabled' => TRUE],
+          ];
+
+          $service_channels = $ptv_service->getServiceChannelsByOrganization($organization);
+          $form['selected_organizations_' . $organization]['channels'] = [
+            '#type' => 'details',
+            '#title' => $this->t('Service Channels') . ' (' . count($service_channels) . ')',
+          ];
+          $form['selected_organizations_' . $organization]['channels']['organization_service_channels_' . $organization] = [
+            '#type' => 'checkboxes',
+            '#options' => $service_channels,
+            '#default_value' => array_keys($service_channels),
+            '#attributes' => ['disabled' => TRUE],
+          ];
 
         }
-
       }
 
     }
@@ -109,25 +109,23 @@ class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $settings = $this->config('ptv.settings');
+    $ptv_service = \Drupal::service('ptv.api_service');
 
     if ($form_state->getValue('municipality') && $form_state->getValue('municipality') != '_none') {
       $settings->set('municipality', $form_state->getValue('municipality'));
-      $settings->set('organization', $form_state->getValue('organization'));
-      $settings->set('services', $form_state->getValue('services'));
-      foreach ($form_state->getValue('services') as $service) {
-        $settings->set('service_channels_' . $service, $form_state->getValue('service_channels_' . $service));
-        foreach ($form_state->getValue('service_channels_' . $service) as $key => $value) {
-          if ($value) {
-            $service_channels[] = $value;
-          }
-        }
-
+      $settings->set('organizations', $form_state->getValue('organizations'));
+      $services = [];
+      $service_channels = [];
+      foreach ($form_state->getValue('organizations') as $organization) {
+        $services += $ptv_service->getServicesByOrganization($organization);
+        $service_channels += $ptv_service->getServiceChannelsByOrganization($organization);
       }
+      $settings->set('services', $services);
       $settings->set('service_channels', $service_channels);
     }
     else {
       $settings->set('municipality', '');
-      $settings->set('organization', '');
+      $settings->set('organizations', '');
       $settings->set('services', '');
       $settings->set('service_channels', '');
     }

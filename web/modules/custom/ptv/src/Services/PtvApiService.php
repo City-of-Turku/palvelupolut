@@ -142,29 +142,13 @@ class PtvApiService {
    *
    * @return array
    */
-  public function getServiceChannelsByAreaCode($area_type, $code, $service_id = NULL) {
-    $response = $this->request('GET', 'ServiceChannel/list/area/' . $area_type . '/code/' . $code);
+  public function getServiceChannelsByOrganization($organization) {
+    $response = $this->request('GET', 'ServiceChannel/organization/' . $organization);
 
     $results = [];
-    $exclude = FALSE;
     if ($response && !empty($response->itemList)) {
       foreach ($response->itemList as $item) {
-        foreach ($item->serviceChannelNames as $value) {
-          if ($value->type == 'Name') {
-            $name = $value->value;
-          }
-        }
-        if ($service_id) {
-          foreach ($item->services as $value) {
-            if ($value->service->id != $service_id) {
-              $exclude = TRUE;
-            }
-          }
-        }
-        if ($exclude) {
-          continue;
-        }
-        $results[$item->id] = $name;
+        $results[$item->id] = $item->name;
       }
     }
     asort($results);

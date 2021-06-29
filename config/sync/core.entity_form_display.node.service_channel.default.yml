@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
     - field.field.node.service_channel.field_lead_text
-    - field.field.node.service_channel.field_location
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone
@@ -20,7 +19,6 @@ dependencies:
   module:
     - address
     - field_group
-    - geofield
     - link
     - media_library
     - paragraphs_asymmetric_translation_widgets
@@ -169,13 +167,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-    region: content
-  field_location:
-    weight: 16
-    settings:
-      html5_geolocation: false
-    third_party_settings: {  }
-    type: geofield_latlon
     region: content
   field_paragraphs:
     weight: 8

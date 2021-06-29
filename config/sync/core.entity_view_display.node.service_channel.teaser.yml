@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
     - field.field.node.service_channel.field_lead_text
-    - field.field.node.service_channel.field_location
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone
@@ -38,7 +37,6 @@ hidden:
   field_languages: true
   field_lead_image: true
   field_lead_text: true
-  field_location: true
   field_paragraphs: true
   field_paragraphs_sidebar: true
   field_phone: true

@@ -1,14 +1,804 @@
 municipality: '853'
 services:
-  7d790c11-1814-4bd0-a327-32f495a36f20: 7d790c11-1814-4bd0-a327-32f495a36f20
-  c1e6036f-4e75-4855-957e-c21a1db1f23e: c1e6036f-4e75-4855-957e-c21a1db1f23e
-  80a89914-6f04-4e66-a81c-ed7d84540ef3: 80a89914-6f04-4e66-a81c-ed7d84540ef3
-  a6d057d1-066d-4fd9-aa43-e4520314f183: a6d057d1-066d-4fd9-aa43-e4520314f183
+  d7c595d2-e502-4e9e-984a-284c1ae1cbd2: 'Jätteenkuljetuksen määräaikainen keskeyttäminen'
+  4b621e09-c769-4ce4-a02b-deac161ca59b: 'Yhteisen jäteastian tai keräyspaikan käyttöönotto tai käytöstä luopuminen'
+  1ff83999-f88b-4c2b-abad-ba2392a2d219: Adoptio
+  2cddb8c3-5902-4ca4-b683-ed2118cc7f45: Adoptioneuvonta
+  7e0c4af8-9633-454f-980b-657947773e69: Aikuislukiokoulutus
+  8a8320a6-213b-479d-8e82-2ea0c00eeead: Aikuissosiaalityö
+  095fc446-e081-4826-b17b-228c8153a928: 'Aitaamis-, kaivu- ja sijoitusluvat'
+  47194c7f-4ec5-4856-b792-cbcb313c0a53: Ajanvaraus
+  858f5857-f08b-4d41-8799-8b329532013e: 'Ammatillinen koulutus'
+  6d190852-0b23-4bbf-931d-8a50d256ec42: 'Ammatillisen koulutuksen ohjaus- ja hakupalvelu'
+  ab152b90-0ced-40e9-9677-01697edf636d: 'Asukas- ja yrityspysäköintilupa'
+  b518c428-f302-4981-bb6c-f83ba704f02d: 'Asuminen ja kotiin järjestettävät palvelut vammaisille'
+  fac29f14-8797-4483-b64c-481f8b567afc: Asumisneuvonta
+  2caaa3c1-5c2d-4964-b01c-0785f5b87cf1: 'Autonhuolto ja -korjauspalvelut'
+  db1e23ee-5140-45fd-90d8-1bf2aceefc3d: 'Avoimen datan tuki'
+  24cb0599-7d70-4f21-b348-56541278a275: 'Avoimet kenraaliharjoitukset'
+  5a7cba29-7f73-4279-aab3-840f42e7d6c8: Avoneuvola
+  f32b9491-ee88-4b65-a9b9-a40a43f59374: 'Avustajapalvelut ja apuvälineet perusopetuksen oppilaalle'
+  d1fc398c-740c-4908-a9ea-504fe8781ca0: Avustukset
+  d00c90c4-d982-4ec6-82c6-6d4366fdab72: 'Brinkkalan galleria'
+  ff98cc08-e316-453d-a589-62088539e1c5: 'Diabeteksen hoito'
+  e268fd9e-89b6-447c-b5e4-2b82c3a1137c: Digituki
+  c9d67bb7-a8a1-4e59-89bb-06ad3fe427af: Ehkäisyneuvola
+  32e8a2fe-0815-4ee4-93cb-c853ce1a36ae: Elintarvikevalvonta
+  9c5df1e6-d071-4fd7-9345-881ef78637e6: Eläinlääkäripäivystys
+  68608b4d-9cd9-4709-9682-a8d686e1a920: Eläinlääkäripäivystys
+  93f47101-a504-4ab1-ad21-d6df2cd68b5f: 'Englannin kieliluokka'
+  3fe0898f-656f-4172-8bcc-afec9d8fdfa7: Erikoisluokat
+  f35b153a-c678-437d-af4b-3f287afc8130: Esiopetus
+  08b74d77-330c-4830-b1e4-1a50e98c75bd: Fysioterapia
+  6300e9a4-202a-4e60-8a34-53ff69904c56: 'Hiekkakentät, varattavissa olevat'
+  407f5e74-80e9-4a48-bbc3-78678aacccb7: Hoitotarvikejakelu
+  999c4667-e3de-446f-9bb1-398fedc2eff0: 'Hyvinvointikeskukset ikäihmisille'
+  eea914e6-0bc7-42ec-b008-86174175650a: 'Ikäihmisten palveluohjaus'
+  fa2d5b90-1217-479c-bcce-2e23fc8fe99f: 'Ikäihmisten perhehoito'
+  9b475f76-9e77-4f5e-81f2-f8f74be9a6ce: Ilppa
+  d51d3c03-0464-420f-a793-5fab5594a5bd: Iltalukio-opiskelu
+  00f99dd2-45fb-4648-9e7b-a71c9816fe57: 'Isyyden selvittäminen'
+  ecb1c03d-6460-4405-80bc-b9fb1e0358ac: Joukkoliikenne
+  65a5d389-47fe-426b-a72a-491038be9590: Kahvilapalvelut
+  3214f28e-22c2-4e7c-a4c3-22dd30458bcb: Kanoottilaiturit
+  bdc644bd-1090-4052-8410-ee68a24de195: Kassapalvelut
+  05e29409-1160-4344-99ac-ba56a09eb28b: 'Kasvun ja oppimisen tuki'
+  8137d631-cd50-492e-91af-38024a9cc778: Katselmukset
+  549f7221-47d9-4643-a131-cee1bb694d50: 'Katujen ja viheralueiden käyttöluvat ja vuokraus'
+  63b24b4a-b5ef-4f33-b974-dddeaa0647ed: 'Katujen ja yleisten alueiden kunnossapito'
+  8f4404da-281e-4409-91c9-68d32c0c911b: 'Kauneuspalvelut opiskelijatyönä'
+  cf93e1aa-795d-4207-af15-bf55e048885f: 'Kaupungin kirjaamo'
+  0d9a9707-9775-4f01-a022-0b6772789d59: Kielipäiväkodit
+  49c386ac-76c4-4109-bcfc-672772df4e56: Kiinteistörasite
+  f8665f0b-f3d1-4984-bfc4-9b6342a1bf73: Kiinteistörekisteri
+  44039712-b481-4429-8df8-789d2e8e4add: Kirjasto
+  a8e8b436-0bb2-467f-8c6b-5ef7497192ad: Koirapuistot
+  38aeb695-3797-4a4a-9d02-7a0b5794f80e: Konservointipalvelut
+  a057a216-6783-47d4-ba60-387ec1054948: Korjausavustukset
+  54dbba6a-44d8-4552-957f-133bd0c75023: Kotihoito
+  f5b2f4e6-6826-4b71-9bfe-dd67d4658e34: 'Kotihoitoa tukeva kuntoutusosasto'
+  e9a4f1c1-22ac-48ed-b699-353a31447c31: Kotiinkuntoutumistoiminta
+  5161ef18-77fd-4839-bd93-842017f26bf1: Koulukuljetukset
+  52f90a94-d9dd-499f-a5a2-17fc426dadb6: Koulukuraattori
+  ca721899-a1a4-4513-8207-cbbf68e7f877: Koulupsykologi
+  928e6c08-7875-4ff5-9151-83b5f8604e39: Kouluruokailu
+  fc1e4366-422e-488d-a0a1-3c269a1616e4: Kouluterveydenhuolto
+  95c483d6-c9b5-4c71-8458-957ec21cca31: 'Kouluterveydenhuolto erityisluokkien oppilaille'
+  e92869b9-c950-4aa3-9bb3-14135defcb5f: Kuljetuspalvelu
+  db7170a7-a440-477e-915b-aecc86d6fb34: 'Kulttuuria lapsille'
+  7d790c11-1814-4bd0-a327-32f495a36f20: 'Kunnallinen perhepäivähoito'
+  9fc2900b-9879-475e-b0e6-e6828a580f7b: 'Kunnan vuokra-asunnot'
+  880c4701-c549-4fa6-87c7-2ddc88c1b41a: Kuntalaisaloite
+  5cb5bcfc-3942-4394-8cbd-b35c94fe41fc: Kuntosali
+  336ea6ac-4467-424d-85ab-37a4e8519ab0: 'Kuntoutus akuutin sairauden jälkeen'
+  cf056c84-066d-41f2-bc87-08b7f7e99cbe: 'Kurssit viranomaisten vaatimiin todistuksiin'
+  a651aa01-fc19-48cd-9be9-66ec2468fa10: Kuvataideluokka
+  210513f1-8618-43d1-a70c-beb074830ce1: 'Lapsen elatus'
+  d15e4308-188b-4639-a628-3d0546f58373: 'Lapsen huolto, asuminen ja tapaaminen'
+  f037fcf6-2517-4645-848e-a4f50ee60896: 'Lapsiperheiden kotipalvelu'
+  063b9e42-d2ca-48ac-bfe3-340445873e5b: 'Lapsiperheiden sosiaalityö'
+  6ecb7ea6-2b55-4de5-ae2b-c4c5766b7067: 'Lasten liikunnan ihmemaa'
+  77b2b290-f106-49de-a269-62c8d92b01ca: Lastenneuvola
+  f60a6ff8-b1c3-494d-a5f1-557724ba4d1e: 'Lastensuojelun avohuolto'
+  4c71d882-2b64-476f-8216-31c1abd898a2: 'Lastensuojelun sijaishuolto'
+  c1e6036f-4e75-4855-957e-c21a1db1f23e: 'Leikkikerhot ja avoimet päiväkodit'
+  80a89914-6f04-4e66-a81c-ed7d84540ef3: Leikkipuistotoiminta
+  67484350-49fd-4990-a976-563cb9672ac2: 'Leirialueiden vuokraus'
+  9303611e-694c-435b-8af9-8c7be620b158: Liikennesuunnittelu
+  b4292136-5fab-497e-9713-ed174de55b46: 'Liikuntaa lapsille ja nuorille'
+  804b74fd-5195-43b4-9b40-01b005d59b63: 'Liikuntaa työikäisille'
+  d465b6bf-733f-4e39-8025-df3b2c860f69: Liikuntalinja
+  62767c15-ff84-4fb1-abc5-fc062c8f9db4: 'Liikuntapaikat vapaassa käytössä'
+  39357ece-ed2d-47f8-83f5-628d57346d72: 'Liikuntasalit alle 290 m2'
+  5b9710ec-dc71-4580-9214-9189a5ba84b5: 'Liikuntasalit ja palloiluhallit 290-399 m2'
+  e5939eec-6250-4052-95e5-09281ccbbdfb: 'Liikuntasalit ja palloiluhallit, yli 400 m2'
+  e8be05d7-849e-490e-8cb6-b6720bbfdfee: 'Liikuntatuotteiden myynti ja lataus'
+  9cc20ebc-a570-4517-b34e-0f383fd4276f: 'Liikuntavuorot, varattavat'
+  bab9a283-8735-4ee5-b4cb-907f59ff6e66: Luistelu
+  de757b53-38b2-4d30-8735-0718307a5050: Lukiokoulutus
+  5c71bae3-b647-413b-aa59-de1e2d091851: 'Luonnonjääkentät / Aurajoen itäpuoli'
+  880b072a-a0a3-4e11-bf9f-c2ef09046e44: 'Luonnonjääkentät / Aurajoen länsipuoli'
+  82bcdd0a-07c4-4d3b-8a9a-b8fc11d9016e: Luonnonsuojelu
+  b4130dc3-50c7-4898-a2db-3508acf78b9e: Löytöeläinpalvelut
+  1765f432-bbd5-4c9b-98cb-51c58ae8acbf: 'Maahanmuuttajien lukiokoulutukseen valmistava koulutus'
+  e9c5aa2f-e0cb-46b2-82a7-041013ac04be: 'Maahanmuuttajien neuvonta'
+  9a7cdc7e-73e7-42be-8a52-3a908eba1a83: 'Maakunnallinen museotoiminta'
+  b78c50db-6fbb-438d-bf3b-7e9d0738004c: 'Maisematyölupa ja puunkaatolupa'
+  5c50878e-4e03-465b-afc1-c07a4ebac3ee: 'Metallialan palvelut'
+  87c3350e-22ca-4548-9bb3-eb2f997769f7: Monitoimikentät
+  c111810f-5148-4e41-b956-2a0e7900e457: Muistikuntoutus
+  23089206-9132-4414-8237-080922b7be4b: Museot
+  fd153576-9a57-4d4b-919e-314aec24e9c3: Musiikkiluokka
+  3fbd9ba4-e2c7-4e5d-a6e8-45c8d1eb8d64: 'Neuvola chat'
+  5d1aaf8a-8c3c-4bda-a68f-3e929f438351: 'Neuvolan perheohjaus'
+  ed644e52-b8a0-4f66-adc2-722de9c47c96: 'Neuvolan puhelinpalvelu'
+  5a0e2b3b-95c2-4e67-8f6f-b6ec47717b28: Nuorisotilatoiminta
+  19717c94-7a26-4582-aef2-bb11f63c92f9: Nuorisotyö
+  faee56c3-7cec-407c-8718-5aad472f92e2: 'Nuorten neuvontapalvelut'
+  ee8eecee-b385-450e-8754-165b59dd8d44: Nurmikentät
+  da158efe-3838-467a-9e06-680a6c198dca: 'Olosuhdeselvityksen tekeminen'
+  d57d80d7-86a9-443a-9138-b333dbe3f1fa: 'Ompelupalvelut opiskelijatyönä'
+  5baf8118-11bb-4b24-b6e3-b768a618f5c5: Oppilaanohjaus
+  9d49af57-40fb-4ccc-8389-4c037cbe5243: 'Ortopedisen potilaan kuntoutus'
+  2c0ea942-dc2c-4022-80dd-5d692ca81ed2: 'Osallistuminen ja vaikuttaminen'
+  de15d2d1-9678-4204-972b-0a88d3a03a19: 'Paikan merkitseminen ja sijaintikatselmus'
+  884397a9-7dcd-4039-bd87-966a18203ac8: 'Perheasioiden sovittelu'
+  6c12c043-261e-4d15-b5f4-b7abb46fc3e7: 'Perhehoito, lapset ja nuoret'
+  c6f82cb1-cd9d-47c9-9347-d4f1f3321429: 'Perhekuntoutusyksikkö Polku'
+  29d58735-190e-4b75-83e6-c106adc76213: Perheneuvonta
+  241bd156-661a-44b0-9527-ee41ed2c94d9: 'Perheoikeudelliset asiat'
+  287009f1-25f7-48d0-8134-580562bb312e: 'Perusopetuksen aamu- ja iltapäivätoiminta'
+  19b48de2-ae5f-4132-a73b-52d527d3afa6: Perusopetus
+  06ed68aa-e965-4a86-9978-6cd445d34c9a: Pesäpallokentät
+  43b6a62d-3947-4929-82e8-66c19198bba6: 'Poikkeamispäätös ja suunnittelutarveratkaisu'
+  5becfaa4-3e92-4c12-9c8b-883228435c69: Potilasasiamies
+  89df5805-51ff-4223-998e-14bb7169a264: Psykologipalvelut
+  ce3c7ebd-b354-458d-a26e-0c3c203e7fac: 'Puistojen hoito ja ylläpito'
+  7cb2a687-0041-40f3-956e-568d97225055: 'Purkamislupa ja -ilmoitus'
+  1d169b2b-9110-46ad-917e-04ccb589528c: 'Päihde- ja asumispalvelut'
+  f21c848e-8a5c-4596-b344-1f6c0320e5f6: Päivystys
+  1e73d319-1c6f-4c96-9d0d-ff821855dca7: 'Päivä- ja työtoiminta'
+  a6d057d1-066d-4fd9-aa43-e4520314f183: Päiväkotitoiminta
+  0c0c4c69-e1b4-4dfd-9d2f-1fd9f2aecce8: 'Rajan näyttö ja rajankäynti'
+  e0aaf8c4-fe1b-4be9-9975-ae259b685180: 'Rakennuslupa ja toimenpidelupa'
+  9da78b54-93eb-4d8a-9bdb-f422ecd95196: Rakennuslupakartta
+  b065b68b-b620-450a-8150-9edb845cf891: 'Rakennusvalvonnan arkistopalvelut'
+  2fbf5d10-af40-4759-8d53-a0e651a66c2f: 'Rakennusvalvonnan neuvonta ja ohjaus'
+  678aa3bd-6348-46f4-a535-7bfe17395dde: Rantalentopallokentät
+  363eee35-6198-4069-828f-3c1029afff02: Ravitsemusterapia
+  5664540d-6b88-4cc6-a214-e7b0e5788091: Rekrytointipalvelut
+  1175fe70-d428-4583-b235-55fc2b3cbced: Rintamaveteraanikuntoutus
+  ec111584-a92b-40ae-b760-3129d7101970: 'Ruotsin kielikylpy päivähoidossa'
+  c19db46c-21e2-4357-96d4-ff44c43ae06d: 'Ruotsinkielinen esiopetus'
+  a067ede9-ea8c-4f2f-82ac-640e574cc0df: 'Ruotsinkielinen perusopetus'
+  021f5c16-089c-47bf-bba1-408ea7f7a75e: 'Ruotsinkielinen päivähoito'
+  7cf44d8a-5425-42ff-814c-48e0717b9db6: Saattohoito
+  7d294e47-737d-4d6f-b682-5a0f28c0d888: 'Saunapalvelut ikäihmisille'
+  fa9b160f-1f7a-4220-9469-040cf4723dd5: Seksuaalineuvonta
+  334c684b-1aaa-440f-b4dc-cc8c0aa94a49: 'Seudullinen päivähoito'
+  386458dc-0946-465d-b371-6c82ba65b4c0: Siirtolapuutarhat
+  a0dcd232-58f2-4f11-9c2b-7863f0383916: Skeittipaikat
+  09fb72f5-12a3-49a2-b32a-55885773fe23: Sosiaaliasiamies
+  ab8db9f4-cde2-4c9e-863d-ba369ddea4d2: Sosiaalipäivystys
+  f663f5c2-d556-4d7c-8a3e-df2da903a8e9: 'Sosiaalityön alkupalvelut'
+  bcfd981a-9cea-4b5e-a134-fcfe16362c60: 'Sotainvalidien palvelut'
+  82f770f7-91d9-45b0-b8df-42f89d91ae97: 'Suun terveydenhuolto'
+  479b0d91-022b-4579-8337-0f6b09a0587b: Taidekontit
+  ce6bd412-334f-4d38-bc20-0a9547329fc4: 'Taiteen perusopetus'
+  accaed8e-9641-4551-955e-113183cc4073: Tekonurmikentät
+  400a8656-f0dd-4004-a3fa-267ac2a469ce: Tenniskentät
+  b8ccda86-1e16-4746-bc17-2f6701126395: 'Terveydensuojelulain mukainen ilmoitus'
+  e22f99e4-ebf3-45a2-a0cd-27de841bed64: 'Tontin lohkominen'
+  d0993d09-83ef-4897-9196-fc3dfe2221d9: 'Tonttijako ja laskenta'
+  20c713a0-397f-4895-b9b9-fba5468030e5: 'Turun suomenkielinen työväenopisto'
+  eeb63fa5-eef0-4bd6-9efe-c66306d6df10: 'Turvapuhelinpalvelu ikäihmiselle'
+  26e9e015-07a0-400f-bb25-38b8146f7202: Työllisyyspalvelut
+  5562427d-d82f-408c-b92f-007f67da9f75: 'Täydentävä ja ehkäisevä toimeentulotuki'
+  34cf0bba-33e3-4439-ac74-70b568546058: Uimakoulu
+  408082e3-af40-4833-aebf-ff71a05146ea: Ulkokuntoilulaitteet
+  df2c67f2-a1ac-4863-8b83-948663d57002: 'Ulkomaalaistoimiston terveyspalvelut'
+  0636872d-b391-4f53-9d7a-52b788c0fcc1: 'Ultraäänitutkimukset ja -seulonnat raskauden aikana'
+  e617a775-ef27-4ecd-b5c4-ab06cdc01735: 'Valmistava opetus (VALMO)'
+  e2fa8e3f-c701-4b14-b027-7b454b6dba5e: 'Vammaisten palvelut'
+  5543a9a3-9f13-4606-9fbd-87935204172a: 'Vanhusten avopalveluiden päivätoiminta'
+  4664017a-a317-4002-a2f1-f2b90f8f61cb: 'Vapaa-ajan välineiden lainaus ja vuokraus'
+  ed6a7ece-3887-4ade-b53b-516422f8bf67: 'Varhaiskasvatuksen palveluohjaus'
+  ff000abb-d4ba-4342-977b-743215b4d567: 'Varhaiskasvatuksen vuorohoito'
+  48662d64-244a-4c58-bd74-19872ac3f389: 'Veneily ja venepaikat'
+  091bdfb3-4eef-4fb3-94a1-414d86c0b865: Vesijumppa
+  40374b60-f0ff-4988-a5d3-7ac5a373b391: Vesijuoksu
+  533cee58-ce2a-4874-af0b-692a5c7b8527: Veteraanipalvelut
+  d54fc59c-47b5-470b-98a0-8a1299278a1b: 'Vuokrattavat nuorisotilat'
+  5674344f-b434-4d95-95ba-e79b5c9a59ad: Vuorohoito
+  af18030d-dda7-42a2-92c5-84e52d0cf3d1: 'Yksityinen perhepäivähoito'
+  865646b9-b91f-4501-8508-dc029e64c09c: 'Yksityiset ruotsinkieliset päiväkodit'
+  2ae529d5-6a1c-4b56-b309-e85053e5fa8e: 'Yleiset vessat'
+  31843fde-e680-43cd-81d4-f8aab58a95dd: 'Yleiskaavaan vaikuttaminen'
+  39414745-aebf-49ce-9c92-aa487bb486ba: Yleisneuvonta
+  c3982b33-0577-4cb1-a477-d30fd84b8116: 'Yleisövuorot jäähalleissa'
+  dda02933-bc41-48dc-b4c7-d351555da2da: Ympäristöilmoitus/meluilmoitus
+  cfa430c4-dfff-40d2-9f1c-bac1f2d6288b: 'Ympäristölupa ja ilmoitus'
+  8281f749-d72b-4052-86e1-015b9f18a39e: Äitiysneuvola
 service_channels:
-  - 9b54b047-0e35-471b-ab1c-a73afed4b82d
-  - a1b85434-4cd0-402a-b554-2838dc9b0f59
-  - afa50539-473f-4823-baf4-d728a1bae7cb
-  - 4866b3b3-5e1e-4ad0-9b7d-42b8ab6fd2ec
+  0cedd108-18f1-449e-bb99-0bc3dc886395: 'Anmälan om ett gemensamt insamlingskärl'
+  5bbb1d92-1e83-4b78-9f86-2a1457388e97: 'Ilmoitus jätteenkuljetuksen keskeytyksestä'
+  397db33b-17a3-49e9-8467-7a43df6089f3: 'Ilmoitus yhteisestä jäteastiasta'
+  16fd8389-9865-4eda-8b50-b3d01b2715d7: 'Ahtelan nuorisoleirikeskus'
+  9d7f3ed5-1dba-4186-832a-0d15d013b970: Aikuissosiaalityö
+  dbceb06d-8465-434c-bee3-a6ef4e54c63a: 'Akuutti neurologinen kuntoutusosasto (osasto 23)'
+  d10399c8-ba71-4026-ad39-1da0462f7699: 'Akuutti ortopedinen kuntoutusosasto'
+  9a1e1593-532f-40b7-9436-4f8822720357: 'Akuutti ortopedinen kuntoutusosasto alakerta'
+  0d03ffb1-bff3-4d23-8c7e-c6d6f81f0bc3: 'Alle 18-vuotiaiden vammaisten lasten palvelut'
+  ad9aade8-dbaa-4465-a244-9c47ec364919: 'Ammatillisen koulutuksen hallinto'
+  a42c12b1-d1f5-40cc-8827-908c22c5f698: 'Aninkaisten kotihoito'
+  0f6fbd3f-064a-473f-b05a-c7f1e102c708: 'Aninkaisten koulutalo'
+  8369ee4c-7e13-49e9-a24c-b2e65613e5c1: 'Apteekkimuseo ja Qwenselin talo'
+  ade0c47e-88a4-45e4-806b-5b52eb70fe9e: 'Apuvälineyksikkö - Apuvälinearviointi ja lainaus'
+  7c2c1a9c-2c12-41a9-a4f8-d3a0ea61b7bf: 'Apuvälineyksikkö - Huolto ja korjaus'
+  8e4a1bae-d507-44bd-8aef-770d8b0a941b: 'Arkeologinkadun päiväkoti (Arkeologinkatu 9)'
+  707fc137-0712-48b1-92b3-737a98926802: 'Asemanseudun päiväkoti (Käsityöläiskatu 20)'
+  66c5bfaa-2a9e-41ec-9785-9762f780308b: 'Asemanseudun päiväkoti (Sairashuoneenkatu 1)'
+  1649ba58-321b-45be-82f3-bcd74adccefe: 'Asiointipiste Monitori, kauppakeskus Skanssi'
+  2cc19919-44c6-4dfb-a7e7-37a71c2e2098: 'Asumis- ja päihdepalvelut'
+  0c127ec3-3280-45e5-b114-99a4de5ad278: Asumisneuvoja
+  c65ba803-f474-40e3-991c-d449a521fa77: 'Aunelan koulu'
+  09301a3b-e521-4544-961e-097e2414f1a4: 'Aunelan monitoimitalo'
+  5d392912-1329-45de-a832-71ffb04931dd: 'Aunelan palloiluhalli'
+  151a28cc-fe11-4c79-b502-8a9df19bc6db: 'Auralan päiväkoti (Satakunnantie 10)'
+  6b766303-682a-4345-8026-57d5bba59ff2: 'Auran Panimon bändi- ja studiotila'
+  962ec654-07fd-45f4-b4e8-d8f2dcd1a523: 'Avustusten hakujärjestelmä'
+  69915b5c-bf61-4c77-9141-3d5d4943b41e: 'Biologinen museo'
+  ea68d45c-082a-4eae-9ecc-3331d072ff25: 'Brahen neuvola'
+  983a013b-fb38-4c2b-a708-69823a108fd0: 'Braheskolan (Riistakatu 10)'
+  883ba185-aec0-40d3-8d0f-fefa2a39fc4f: 'Braheskolan (Valtaojantie 27)'
+  8352e4ad-27f0-4a3e-be0b-39f3e71da40b: Brinkkala
+  6b70696d-e846-4b8c-aff7-f94f813a241a: 'Cygnaeus daghem och förskola (Kuraattorinpolku 7)'
+  2a99879f-d5b3-449b-af12-d08651934237: 'Cygnaeus förskola'
+  e337afdb-ad64-4b58-8171-7540022d64fa: 'Cygnaeus skola'
+  02da956d-6375-47d0-881c-2deac0780564: 'Daghemmet Port Arthur (Sofiankatu 7)'
+  be96d8c2-82fb-480e-a5a0-c448b27f3999: 'Daisy Preschool Varissuo (Koukkarinkatu 6)'
+  09dba3e6-a2cc-4f61-b9e6-d0572ba20498: 'Daycare Daisy Oy (Ylioppilaskylä 25)'
+  4f89e4c7-f25b-4438-9e3b-8a2520178984: Dentalia
+  39dab8d0-3a19-4ee2-ae6c-2b2db0511b2c: Diabetesvastaanotto
+  c69794c9-008c-4f84-a055-dfec7d1e02c8: Ehkäisyneuvola
+  375e3972-8c01-40c0-b435-f3dedc40e898: 'Ekvallan uimaranta'
+  7b509cbb-1b48-472f-b02e-9024b8c5b7de: Elmerikoti
+  70fc8780-6267-498a-ac83-567be72b0c3c: Elsekoti
+  46349b4b-4151-4628-9440-cc675f224ed6: Eläinhoitola
+  07f37a6a-1c3f-4e3a-a78b-cb53b0265821: 'Erityislastenkoti Lakkatie'
+  1e4ac22a-d83f-46f9-8c9a-5cb06886995c: 'Eteläinen lapsiperhesosiaalityö'
+  6ade981c-dfbe-46c9-bcf4-dc21d1d26d17: 'Eteläinen lastensuojelun avohuolto'
+  9b54b047-0e35-471b-ab1c-a73afed4b82d: 'Eteläinen perhepäivähoitoyksikkö'
+  322f60e9-bc1c-451a-933a-56d748be3720: 'Eteläinen/ pohjoinen perhepäivähoitoyksikkö'
+  5b5a21dc-f711-477b-955e-498f17872c3c: Fleminginpuisto
+  d539f10a-5956-4603-94b9-51d852096d27: 'Folkhälsan Gunghästen, ruotsinkielinen (Teollisuuskatu 43)'
+  d2c8c2c7-df42-4ff7-8acf-a16acc385d3e: 'Folkhälsan Kastanjen, ruotsinkielinen (Vänrikinkatu 3)'
+  6b5e761c-dfff-4bdf-a2af-d2684d44f049: Frantsinkenttä
+  c1092d48-d904-40a5-8d38-ea59d70ecc3a: 'Fysioterapia / Akuuttiosastot'
+  2f8e7158-81c8-43d2-b40b-97965d5b32a4: 'Fysioterapia / Geriatrinen jatkokuntoutusosasto'
+  e0178081-991f-4af5-98f1-d40c3dd2037a: 'Fysioterapia / Kirkkotie 13'
+  c2fac2f9-a9e9-48cb-a818-6a07c3372e16: 'Fysioterapia / Kotihoito / Varissuon terveysasema'
+  25b0b87b-dec8-41c9-893f-226ceabf1f0e: 'Fysioterapia / Käsityöläiskatu 2'
+  987441be-0341-42c2-a8dd-e1ca543861c2: 'Fysioterapia / Pääterveysasema / Luolavuorentie 2'
+  d9376252-4cdb-4666-ac1f-984d537ad5ab: 'Fysioterapia / Uudenmaankatu 19'
+  60c46960-c166-4462-b18c-e9de31c10900: 'Gastroenterologian poliklinikka'
+  9ebd1d82-184e-456e-8551-9ac714f5b835: 'Geotekniikka, maaperätutkimus'
+  ec5f9105-7ae7-48ac-8cc4-c0a3fbf11b2c: 'Geriatrinen arviointiyksikkö'
+  b9e66c85-7c4a-4daf-a385-ea4af7a2753f: 'Geriatrinen kuntoutusosasto'
+  8a3bb8bd-e4c1-4e23-9d2b-0f18bd8d3133: 'Geriatrinen osasto 6'
+  ef4ca453-5822-48f5-8441-caf16cd6d221: 'Geriatrinen poliklinikka'
+  ec882035-0c05-4e35-84f0-f9524904a27a: 'Haarla-Pikisaaren päiväkoti (Lautturinkatu 5)'
+  28b2e527-bcca-494b-9e4e-4b10f7455c04: 'Haarla-Pikisaaren päiväkoti (Meteorinkatu 1)'
+  10d65f02-e6b2-486d-a5de-250ea20163ba: 'Haarlan koulu'
+  abecb7c1-e231-4642-bcc5-41152ac4af42: Haarlankenttä
+  8faa7824-4e56-45d8-8666-aa506b848fa9: 'Halisten nuorisotila'
+  bb365dd6-3dd2-4d78-8f89-9596e9baa52b: 'Halisten päiväkoti (Paavinkatu 15)'
+  e658a1f5-4a04-4067-8d71-54055045b665: Halistenkenttä
+  edd41e25-6708-489e-811f-a241f475fa06: 'Hannunniitun kenttä 2'
+  e9407b73-3d2f-4a68-8a76-9752c95cad84: 'Hannunniitun koulu, Hannunniitun yksikkö'
+  3dd8f556-b37a-4477-abb2-a43c7eb30e38: 'Hannunniitun päiväkoti (Virmuntie 1)'
+  f95524a5-ac1c-410e-bd09-55691cfecd8b: 'Hansan nuorisotila "Poppari"'
+  900d49b4-08f5-46f8-bc58-81b30d988f1a: 'Haritun avoin päiväkoti (Turunmaankatu 5A)'
+  9e04c3c0-1453-45f9-9e5f-44446bb7bf1c: 'Haritun leikkikerho (Turunmaankatu 5A)'
+  60a737de-346a-4a73-933c-1d238de10663: 'Haritun päiväkoti (Kymenlaaksonkuja 4)'
+  343f742b-2d54-43db-bddb-0f3fd240f546: 'Heinikonkadun päiväkoti (Heinikonkatu 4)'
+  35a27857-4232-446e-bb7b-fa0319b399bd: Hengityshalvausyksikkö
+  bb56b9c8-e839-4fa2-9107-08bd8d06fdbb: 'Hepokullan kenttä'
+  68a03920-136c-48dd-881f-8b5ac1aafd84: 'Hepokullan koulu'
+  33eaae6c-0c16-4c0b-871a-c623d4060264: 'Hepokullan päiväkoti (Niitunniskantie 1)'
+  be2a2961-074a-4af8-a5c7-49125970cfa0: 'Hintsankujan päiväkoti (Hintsankuja 4)'
+  8f61b3c5-3534-47a0-a938-de2d5055432b: 'Hirvensalon kirjasto'
+  8374bf23-15ab-47f8-a0bd-9727fe5aa7a5: Hoitotarvikejakelu
+  040db514-abeb-4177-b32c-a0997f643f0d: Honkaistenkenttä
+  814afba0-bfd5-49db-b5ca-e85a79de1d4c: 'Hyvinvointitoimialan hallinto'
+  b63baf65-4814-44b1-8148-1a8c79130b50: 'Hyvinvointitoimialan kirjaamo'
+  197ef881-d526-439d-b498-2e256016aaa5: Härkähaankenttä
+  3ffe8ebd-3cf5-4aeb-a7a6-b754ec0114c0: 'Härkämäen palloiluhalli'
+  b1ab08c5-ebb4-49bf-a119-c4fdb2fb36c9: 'Härkämäen päiväkoti (Säkäkuja 2)'
+  29aee197-3cb5-421b-a617-99994c4da4a8: 'Härkämäen tenniskentät 1–2'
+  75a1d346-8813-4bea-a970-3be30eeb8898: 'Ikäihmisten perhehoito'
+  d19a93a2-b723-4aa0-9b28-f07246f481bb: 'Ikääntyneiden tukipalvelut'
+  6ff0eac4-4552-491d-b0eb-a273a381d98c: Ilmestyspäivänkenttä
+  41ff7bd1-01d2-40f7-9316-ba7879dd00cb: 'Ilpoisten kirjasto'
+  636b5c01-e84e-4251-b463-8d2746a55f0c: 'Ilpoisten koulu'
+  48a53214-16f6-4385-bcb9-d3ad9aa4ef59: 'Ilpoisten nuorisotila'
+  fd0118fb-c68c-4ef8-807f-8bba81680db1: 'Ilpoisten palloiluhalli'
+  b80484a0-6f5d-48d9-aedd-41aeab5128b2: 'Ilpoisten päiväkoti (Lauklähteenkatu 10)'
+  3386c556-1b1a-4b79-b52a-0d0a218a7e67: 'Ilpoisten ulkokuntoilulaitteet'
+  c036572f-6ddb-492c-86e0-52c27d2bd215: 'Impivaaran jalkapallohalli'
+  95518b1f-f8f7-4366-b0af-99a597a3b64a: 'Impivaaran jäähalli'
+  dcc40bd0-ea4b-4a5e-950e-377026a79c9b: 'Impivaaran suksivuokraamo'
+  66683ecb-949a-4fd8-9810-742930585f67: 'Impivaaran tenniskentät 1–2'
+  94b286a5-1171-4ded-b258-083aafac85ff: 'Impivaaran tenniskentät 3–4'
+  93d67306-539c-485a-90f5-43da9519b516: 'Impivaaran uimahalli'
+  56708998-76cb-46cc-80e0-0dc0498496c8: 'Inarin Nukkumajoen leirikämppä'
+  f6eb4a90-93c4-4749-aa0b-75586edeff8d: Infotori
+  af81ee1f-e21c-4d77-b203-77339630b59c: 'Ispoinen-Petreliuksen päiväkoti (Ruiskatu 2)'
+  56c1384b-bb45-481a-b9c5-2181863626a4: 'Ispoinen-Petreliuksen päiväkoti (Rätiälänkatu 20)'
+  438d4ed9-8df5-4025-9667-fb6449e940af: 'Ispoisten uimaranta'
+  94f06ab1-8361-45f4-bf52-dbc2f0c55b41: 'Itäpellonpuiston leikkipaikka (Kähäri)'
+  6d36301f-0d6e-4e07-9db1-7536686d1d87: 'Juhannuskukkulan koulutalo'
+  54720380-f1e9-4911-8a30-43c90c0604e6: 'Jäkärlän koulu'
+  3fe294dc-4ba0-47da-96c1-d87012772b91: 'Jäkärlän koulun liikuntahalli'
+  9c1b8334-bbd7-49d6-aefe-db69d2bcc204: 'Jäkärlän kuntosali'
+  657aed2d-efc2-4a45-9d45-e8f17458a69a: 'Jäkärlän urheilupuiston kenttä'
+  ac104c4b-0af1-4893-afb8-86f261767a91: 'Kaerlan päiväkoti (Kaerlantie 16)'
+  110c58ba-9375-4444-ab72-eb7864afb325: 'Karhunaukion päiväkoti (Karhunaukio 1)'
+  a4b46828-d609-4191-a671-2ecf0b561a30: 'Karinakodin palliatiivinen osasto'
+  7bdaba86-e060-4818-93d6-f62ee3120369: Karinaranta
+  6e910728-5bdd-4526-a49b-583c85ed1c7e: 'Karitsa (Paljetie 2)'
+  8734f132-ca13-4025-b65b-ecd415f4da4d: 'Karusellimaa (Ekmaninkatu 4)'
+  0dca1f68-a532-4d77-bdfd-be651d22bde5: 'Karvataskunpuiston leikkipaikka (Varissuo)'
+  b682c4e1-fe91-439a-a745-4feb4c205907: 'Kaskenlinnan sairaala'
+  cbf28973-d714-433f-95fd-06498e6df03c: 'Kaskenmäen päiväkoti (Kaskenkatu 7)'
+  e1d74431-eee4-485c-bcc2-27c69ec7462b: 'Kastun päiväkoti (Pyörämäentie 4)'
+  3ef56c24-0aa4-4502-b8a5-3504cda2995f: 'Kasvatuksen ja opetuksen palvelukokonaisuuden hallinto'
+  f784fb42-3bba-48d2-b8c9-fc2f55eb0d4b: 'Katariinan Vilske (Sigridinpolku 1)'
+  7cb51f29-0c86-4157-9945-92eb896a56f1: 'Katariinan koulu'
+  b856abb9-d15f-4270-b37e-11721c832367: 'Katariinan koulun Urheilupuiston toimipiste'
+  7d815435-d9e4-45dc-b82a-cd5446903369: 'Katariinan toimintakeskus'
+  b89fcbfe-c790-4c61-a306-977357281b8b: 'Katedralskolan i Åbo'
+  fe6e4e35-c81f-414c-986d-88a746208e09: 'Kauppatorin Monitori'
+  d27fd5bb-35c9-446a-bab2-5c445175459e: Kaupunginsairaala
+  bbe54248-c17a-4a4d-94f3-a4118bb4c702: 'Kaupunkisuunnittelu, kaavoitusyksikkö'
+  96817859-b1b2-4215-ac47-d89570a32cc4: 'Kaupunkisuunnittelu, suunnitteluyksikkö'
+  a131f228-59cb-4dba-a10c-c9dcc39939e6: 'Kaupunkiympäristötoimiala, Puolalankatu 5'
+  2e0b7448-ffb7-4912-9e82-ae1bc11bd687: 'Kaupunkiympäristötoimiala, Puutarhakatu 1'
+  162e89f1-3774-4fb8-860f-769d0da27c34: 'Kaupunkiympäristötoimialan arkisto, Puolalankatu 5'
+  5a654158-5742-433d-8fba-e23d8e1108e7: 'Kaupunkiympäristötoimialan arkisto, Puutarhakatu 1'
+  b436528d-d6ce-4f7f-9b14-ef28169638aa: 'Kaupunkiympäristötoimialan asiakaspalvelu'
+  a354b774-f2c1-4ea7-bc9c-9778972a339c: Kelkka-toiminta
+  3e5aaf42-ae89-4014-90f1-76c3e8f2be89: Kerttuli
+  dc10e4fc-9172-4997-9f84-153362153a19: 'Kerttulin lukio'
+  7a1716e8-2213-415d-91ce-1a8f3815b541: 'Kerttulin päiväkoti (Kellonsoittajankatu 6)'
+  6620493d-451f-4731-806f-14ad303ca40d: 'Keskustan terveysasema'
+  f6762ee0-8c83-4042-818a-7dec9592e5c3: 'Keskusvaalilautakunnan kanslia'
+  df574d37-1e04-4bd5-8b15-d0e2bae1d9ce: 'Kielipesä (Mullintie 16)'
+  fec56c4c-b653-4d23-a9a9-4647d8e167d0: 'Kirkkotien hammashoitola'
+  f9ffb633-d4e5-4d55-beac-fbcb7586d9b5: 'Kirkkotien neuvola'
+  23d7738b-173d-4466-a811-750dcbe1630f: 'Kirkkotien terveysasema'
+  bf55530a-53f3-4705-afd7-c9292aa748fb: 'Kohmon skeittipaikka (Pikkunotkon skeittipaikka)'
+  4773ea42-c771-4170-b021-a33aa213c40a: 'Koivulan kotihoito'
+  2220365a-4e47-4665-9f0e-1119a25a844a: 'Koivulan päiväkoti (Sävelkuja 4)'
+  627f32f1-9a15-436c-89e9-391fabf857a1: 'Koivulan ulkokuntoilulaitteet'
+  df725d67-40d4-498c-84a0-ec94c01264a3: 'Konsernihallinnon hankintapalvelut'
+  a8e0d0f1-c9b1-4eee-a532-4027bb552e80: 'Konsernihallinnon viestintä'
+  91974b9c-4106-4cb4-94e7-120ad66bbb7c: Konsernihallinto
+  bd5a303d-267c-43c7-9d10-59e4a8ced423: Konserttitalo
+  8ebdbaaa-c3aa-4027-9d35-cf6ea66a99e2: 'Koroisten ulkokuntoilulaitteet'
+  4fb5e00b-203a-4ba2-a47d-5502ce147d94: 'Korva-, nenä- ja kurkkutautien poliklinikka'
+  5e33aab9-50b7-4269-87ba-ee2ab2fd3037: Koskikoti
+  1dfdb1ff-688a-42ab-aa0e-26c7feaa3ff6: 'Kotihoidon yöhoito'
+  f7026f4c-aa17-4282-b708-d8a7c52b1cbd: 'Kotihoitoa tukeva kuntoutusosasto'
+  3b83d188-5273-40cb-9fc0-d4972fb8f154: Kotiinkuntoutumistoiminta
+  f15f4c47-0acf-4fb1-8560-076d2a8493eb: 'Kotikuntoutuskeskus 1'
+  00e46822-e26c-4056-b10b-dc9f59c7bfde: 'Kotimetsän leikkipaikka (Jaani)'
+  0e24bc0c-840f-4389-bdaf-10eab7747107: Kotiranta
+  12df2766-ab82-44d6-9f79-fdafcfe9c4be: 'Kotisaattohoitoa tukeva vuodeosasto'
+  fa9fb871-6462-4078-adc2-250f4ee1af29: Kotisairaala
+  da78ed7b-2039-45d1-aad9-52ec557cdb5c: Kotiutustiimi
+  28185064-c05b-4f70-8cf9-94d86bf287f3: 'Koukkarinkadun päiväkoti (Koukkarinkatu 3, väistötilat Pelttarinkadulla 1.10.2019 alkaen)'
+  107fcee8-274c-438c-93c2-e5de734f03a6: 'Koulukadun päiväkoti (Koulukatu 12)'
+  176b10ba-f394-44a7-8ef1-cc2ef0432e47: 'Kukolan päiväkoti (Anniitunkatu 2)'
+  71af21b9-a520-48f0-b816-3a168617c5f8: 'Kulkurin Valssi'
+  ba66d1ef-0312-4cd1-9ad1-d04fca8c1beb: 'Kupittaan kivituhkapesäpallokenttä 1'
+  0cad9171-2735-4862-8966-eba149d6c255: 'Kupittaan kivituhkapesäpallokenttä 2'
+  d1e986bb-f6a4-470e-abcb-83a86664ba5a: 'Kupittaan koira-aitaus'
+  728994c3-7e66-4f33-b6a9-f42bd44ad2e2: 'Kupittaan kotihoito'
+  2c0cf8f7-2f56-43ee-9203-96ff3850dfa8: 'Kupittaan liikuntakeskuksen ulkokuntoilulaitteet'
+  88833535-c544-4593-b64d-dbdaf6256587: 'Kupittaan luistelumato'
+  f3b3a5b0-d70c-497b-aef4-e3d6d14faeef: 'Kupittaan maauimala'
+  ddbc25ae-ad98-4e1b-8ef2-8617daf7e574: 'Kupittaan palloiluhalli'
+  fc1f1fd9-7621-4207-ada4-6bf6ecc7df70: 'Kupittaan pesäpallostadionin kenttä'
+  0c394aa7-4499-4f7a-a538-0dc02bdb0a7c: 'Kupittaan skeittiparkki'
+  eaf8de19-6da1-488e-b31a-c243202a6abb: 'Kupittaan urheiluhalli'
+  4b921698-7f43-4918-90ec-959d3bd4a7a4: 'Kuralan Kylämäki'
+  320b7af8-b48c-4dc2-9458-2877d64c0b18: Kurjenmäkikoti
+  dce16adc-60ca-400a-872f-50494135f1a7: 'Kustavintien neuvola'
+  c4a03075-a842-4184-bb06-d2b43e7fad99: 'Kuuvuoren kenttä'
+  0cde0cfe-9c6c-43b1-b74e-014f8894524f: 'Kuuvuoren kentän ulkokuntoilulaitteet'
+  20d6ed45-5af1-4f4e-b0d5-fa4707081714: 'Kähärin koulu'
+  6456280a-8590-44a3-8e3d-bf3f227518f9: 'Käsityöläiskadun hammashoitola'
+  c244ffeb-073f-4c2e-9c95-f4951804b952: 'Lapsiperheiden kotipalvelu'
+  46356281-ccde-4ba7-b804-c8f3332c187c: 'Lasten ja nuorten poliklinikka'
+  da628854-729b-48a0-9e3c-0e9714f4142f: 'Lastenkoti Moikoistenkatu'
+  dc3ba365-3059-4574-89d8-ae1f32db764f: 'Lastenkoti Puolukkatie'
+  c8046765-737a-4b3b-8884-ab21bd471684: 'Lastenneurologian poliklinikka'
+  2b328784-22ba-427f-9da8-aaf4e1d1e967: 'Lastentalo Mukulax Luostarinkatu (Luostarinkatu 5)'
+  a8b5109b-4487-4ef9-b62f-a980ad63fbc7: 'Lastentalo Mukulax/ Hirvensalo (Kukolantie 40)'
+  13f47350-cad2-49d6-9ba0-c3c697eabce9: 'Lastentalo Mukulax/ Kähäri (Untolankatu 29)'
+  702b7a86-e27a-4ce9-9210-330261ed3bd5: 'Lastentalo Mukulax/ Käsityöläiskatu (Käsityöläiskatu 20 A)'
+  42797f37-9027-4051-9692-c789e77f6c61: 'Lastentalo Mukulax/ Linnanrinne (Linnankatu 53 F)'
+  84d844bc-e350-49cf-8bdc-fad022a01f8a: 'Lausteen kirjasto'
+  fe2a2219-3664-455c-8294-3dea30e7a444: 'Lausteen kotihoito'
+  c1da95bc-9d9f-478f-ad88-91d0ab6bbd81: 'Lausteen koulu'
+  1c61d1be-48d1-4e24-bb9d-abcc44259ddb: 'Lausteen neuvola'
+  8c4dbb6e-0051-417d-a7df-ad1b72d9dbea: 'Lausteen perhetupa (Raadinkatu 7)'
+  2269a033-427c-41cb-be33-b476f882140a: 'Lausteen päiväkoti (Maistraatinpolku 2)'
+  b3fcc4ff-299c-44c6-8144-673a44972155: 'Lausteen tenniskentät 1–3'
+  42ce3840-6d03-46f1-bb3c-b98d58de15d3: 'Lausteen ulkokuntoilulaitteet'
+  6df4fcde-baf6-46cb-82b1-21ee35f56453: 'Lehmusvalkaman hyvinvointikeskus'
+  8cd50b82-b7cb-41ad-a1ee-7f45700ae28a: 'Lemminkäisenkadun koulutalo'
+  73c0dac0-e607-4124-8a4b-432b184c19bf: 'Liikuntakeskus Alfa'
+  b07ad824-71ce-40ef-a2ee-159890fc162f: 'Liikuntapalvelukeskuksen asiakaspalvelupiste'
+  4032e764-a69b-4f7f-a3a4-2ea468a9234f: Liinahaka
+  5aba124e-cecd-405a-9f18-6035e76b266b: 'Linnan kotihoito'
+  9b1f7c43-218a-4599-a4c6-da377c4698cb: 'Lintulan voimistelu- ja sirkussali'
+  9823a986-8eaa-4ede-8644-e65c5d5cd845: 'Logistiikan koulutuskeskus'
+  10ff296e-c6fd-4175-b3e8-7636327a79c9: 'Luolavuoren koulu, Inkilänkadun yksikkö'
+  b3559e85-dea6-49eb-bf84-0f51a7760c7e: 'Luolavuoren koulu, Luolavuoren yksikkö'
+  82ccf15a-6c4f-4b61-9d10-41b372c2a448: 'Luolavuoren koulu, Luolavuoren yksikkö (pienluokat)'
+  4e6a6615-8966-491e-818e-9b65c874e5cb: 'Luolavuoren koulu, Piiparinpolun yksikkö'
+  10685ffb-3f60-4862-85e0-5f0130a1700b: 'Luolavuoren lastenneuvola'
+  b9b08134-1a8b-413c-be73-02b16a9bcba3: 'Luolavuoren tenniskentät 1–2'
+  1f09e9f0-5fe0-43d5-b9d8-796a8e852b2b: Luostarinmäki
+  17d2eab0-748d-4e70-bdc7-81b7f95b374e: 'Luostarivuoren Lyseon lukio'
+  3d33c276-4633-4863-829f-2e8095c3612e: 'Luostarivuoren koulu, Kerttulin yksikkö'
+  e11e97ff-f9e8-4094-9dc0-42f1a55e1959: 'Luostarivuoren koulu, Luostarivuoren yksikkö'
+  9b0f5506-9142-4629-b151-5699e8987322: 'Luostarivuoren koulu, Martin yksikkö'
+  cc974ff7-0565-4dbd-b7e0-f3d222fadf22: LähiTapiola-areena
+  d7aa45e9-4a1d-43f0-b860-a7eed23710f6: 'Läntinen lapsiperhesosiaalityö'
+  e60fa315-fd2a-4ddb-ba15-ac5bfbf19018: 'Läntinen lastensuojelun avohuolto'
+  f072ceee-b1b8-48ef-aed7-a7aef956b11b: 'Maaria-Paattisten kotihoito'
+  7205c9a6-919a-48c9-b6b3-f8bcdf8428d6: 'Maarian lähipalvelupiste'
+  961384c0-8993-4800-ad2b-da131e258750: 'Maarian nuorisotila'
+  0ef8110b-6fb7-4148-8fe7-da2b992f218a: Maisaari
+  bf8edd50-24ad-4a44-99ec-2276483777d1: Maksutoimisto
+  51af92cb-9eb1-4b20-a9ba-8b76e2be1c4c: 'Martanpuiston leikkipaikka (Nättinummi)'
+  dd40e962-b472-4c2b-a675-97473156c0ee: 'Martin kotihoito'
+  1516ec26-655a-4908-8d82-8b7b7cc543da: 'Martinmäen Ankkalampi (Martinkatu 5)'
+  7059fc55-b282-4598-a2d0-d1472f09180a: Matkailuneuvonta
+  f988e290-7086-4f09-8f2a-08982d36000a: 'Medisiina D hammashoitola'
+  3a02ae9f-4dc2-42bb-830a-99e4a9ada627: Merimiesterveydenhuolto
+  3622234b-7f62-4f8a-9c81-11a8c0b7aa33: 'Mielenterveys- ja päihdetiimi'
+  96bf8435-16f2-4fb9-b3d5-63500785c70f: 'Mikaelin koulu, Jopo-yksikkö'
+  fc8338fb-5998-4c61-9d78-dbbaeec783a6: 'Mikaelin koulu, Lyseon yksikkö'
+  f29dcc8c-d5c0-4cb1-b31a-6ba307be58f0: 'Mikaelin koulu, Runosmäen yksikkö'
+  e945d58b-c2f8-43d7-9cda-92ba7d609498: 'Mikaelin koulu, Urheilupuiston yksikkö'
+  c3139536-a16d-4f99-b352-de26107eabd9: 'Moikoisten hammashoitola'
+  53054906-4dfb-4ac9-b4ce-9874c2901e0e: 'Moikoisten päiväkoti (Honkaistentie 72)'
+  011ded96-99d6-4304-9c61-20d88cac98ac: 'Moision liikuntahalli'
+  84536fd4-e2b9-440c-9e03-0d1f50e82aa4: 'Moision päiväkoti (Halikonkatu 8)'
+  8a17f9c1-9be0-4137-ae30-ade69e491825: 'Mullintien lähipalvelupiste'
+  e408d3fd-4b38-4aae-a33e-218504f4ac56: 'Mullintien neuvola'
+  260c635a-028c-4003-9539-81a91913f952: 'Munterinkadun päiväkoti (Munterinkatu3)'
+  77fd4a65-ca88-4566-a996-d884ddededc2: 'Munterinkadun päiväkoti (Piiparinpolku 18)'
+  02306562-be0c-42a1-b189-6b934a380a3e: 'Mälikkälän ulkokuntoilulaitteet'
+  666c9c25-7135-4399-9d52-3d2572c9fd9f: 'Mäntykoti Räntämäki'
+  7e614f25-11cc-4a12-8b34-67a1a2477a19: 'Mäntykoti Yli-Maaria'
+  c6ae4100-f554-4dca-965c-01b573920d8d: 'Mäntymäen arkisto (potilaskertomusarkisto)'
+  395193cd-7b4a-4936-8835-71bb08a3d3b9: 'Mäntymäen neuvola'
+  c2bf2446-97ce-42e7-86c7-de0502d0da55: 'Mäntymäen perhetukikeskus'
+  be487567-1fd4-4fd3-bd48-13afea75c9f5: 'Mäntymäen päiväkoti (Kallelankatu 3)'
+  4866b3b3-5e1e-4ad0-9b7d-42b8ab6fd2ec: 'Mäntymäen päiväkoti (Myllymäentie 42)'
+  dff65fdb-1175-4859-90b4-030f225bf65c: 'Mäntymäen terveysasema, 1. toimintayksikkö'
+  b6cbcbe4-459b-4877-8d98-0be595788f59: 'Mäntymäen terveysasema, 2. toimintayksikkö'
+  9f68b551-a1c4-4cc4-92ca-3ba0ced4d9a6: Mäntyrinne
+  8b38b4f3-819b-4d0e-b116-a9737474b740: 'Naperonummi (Jaakontie 3)'
+  9ded6c1c-bbb6-42a2-be1a-aa0854555fa3: 'Neurologinen kuntoutusosasto, Kaskenlinna'
+  ac8427fa-1a53-47d0-91e8-5cc84c22dbe1: 'Norlandia luontopäiväkoti Ilo (Tavastilankatu 4)'
+  6b186563-aa1d-4b29-805e-6cf651fe0ab4: 'Norlandia luontopäiväkoti Puisto (Lukkosepänkatu 25)'
+  9eb3a144-4df8-4566-b37c-82fb51e2d50b: 'Nummen kirjasto'
+  a06207fc-745f-40fc-9a04-10edf84248e7: 'Nummenpakan koulu, Aurajoen yksikkö'
+  538314fc-40e3-4e69-b70b-0816d903c57d: 'Nummenpakan koulu, Halisten yksikkö'
+  f95bdceb-92ec-42cb-894d-f7f66b16c09f: 'Nummenpuistokadun päiväkoti (Nummenpuistokatu 1)'
+  534e48ee-2506-4d2f-8708-4be7a2139bf1: 'Nummi-Halisen kotihoito'
+  a1b85434-4cd0-402a-b554-2838dc9b0f59: 'Nummi-Varissuon perhepäivähoitoyksikkö'
+  088eb135-7940-4573-8fbb-ef591b97c055: 'Nunnavuoren palloiluhalli'
+  a5d76741-5ad8-4b5a-820a-5e48105d4915: 'Nuorten taide- ja toimintatalo Vimma'
+  f9f2b385-8a11-4887-be68-da42c1b21f02: 'Nuorten tieto- ja neuvontapalvelu NuortenTurku'
+  f241ff83-1820-496e-b8ad-2e765856f6e5: 'Nuorten työpaja Fendari'
+  6f3fbcb7-6eca-4dc0-ad11-7292c5b27f32: 'Nättinummen avoin päiväkoti, Teräsrautelan nuorisotalo (Antreksenkuja 1)'
+  a2272389-a037-46d0-a607-c2224879b36d: 'Nättinummen kotihoito'
+  07af14b4-d3eb-410b-aa3c-3e6a479bff23: 'Nättinummen leikkikerho Nasut, Teräsrautelan nuorisotalo (Antreksenkuja 1)'
+  f91b7fd1-ca6e-4a81-97e3-cfab59c05302: 'Nättinummen päiväkoti (Karrinkatu 4)'
+  5868ac2e-dd84-4ff7-9c8e-9659febc5949: Ohjaamo
+  d4cbef1d-3981-4d9f-beba-c5cdf7dc4e34: 'Ohjaus- ja hakupalvelu, Turun ammatti-instituutti'
+  e969eeea-615d-4359-aba3-65a5336896b5: 'Ompelimo TAIn tikki'
+  9da7ef86-01b7-4eda-a57d-204167fbe0f4: Opetushammashoitola
+  896d1942-9d20-4425-a34d-83775972fff7: 'Orikedon palvelukeskus'
+  c51f37a1-6dbd-4d43-b5fd-1d8cfd9686ac: 'Orikedon toimintakeskus'
+  91d34f94-1ab4-4d7d-8c55-46472a6b23a7: 'Orminkujan päiväkoti (Orminkuja 4)'
+  dfe1c053-96b4-4865-a04d-7a4b29a054f9: 'Osasto 22, sydänpotilaiden hoito'
+  99c06375-5aa6-40fd-bbfa-ced22666ecdc: 'Osasto 24'
+  228b79a1-3bd3-4f00-a642-25a054f9a047: 'Osasto 26'
+  959aaa29-5bc7-45ef-adfb-002b378f014d: 'Ostoreskontra (sosiaali- ja terveyspalvelut)'
+  5c851656-55e2-4f86-a733-1590e7d87aaa: 'Paattisten aluetalo'
+  902669c5-9d69-4cc1-b618-611ac5424144: 'Paattisten kirjasto'
+  af79735c-ecc3-4579-aef6-c818c0d91122: 'Paattisten koulu'
+  51420d76-6a4b-487f-929e-1de857ff328f: 'Paattisten neuvola'
+  4e5641ac-243e-4103-bd0d-fe333d9892d3: 'Paattisten nuorisotila'
+  3dc889f1-36c9-4421-92cf-3d60d5a06184: 'Paattisten päiväkoti (Seuravuorenkatu 7)'
+  da2eb775-d81c-4a9f-be08-0a95f3438e3e: 'Paavo Nurmen stadion'
+  6dce67bb-47fa-4077-8717-0930a1ae706d: 'Palliatiivinen osasto'
+  d990924b-2f62-46c6-a6d3-51bb16536a6b: 'Paltan kotihoito'
+  94d2a1e1-a059-4b1d-820f-858a83681cbb: 'Pansio-Jyrkkälän kotihoito'
+  87f540c0-4a17-4fc5-ade1-cf9226889cf6: 'Pansion kirjasto'
+  86620d3a-9415-47a1-b4c9-f1f9eef9d832: 'Pansion kisapuiston kenttä'
+  c2f6b4a8-ac24-40d8-a0de-1b988eac08a0: 'Pansion koulu'
+  365a6ebf-8550-43b1-8ee6-8448d85d724a: 'Pansion neuvola'
+  83623339-6933-4798-bde6-f7ca4987f478: 'Pansion nuorisotila'
+  ac86e224-b454-4988-a0fe-c75bb72d66fe: 'Pansion tenniskentät 1–2'
+  47dda2f1-27cb-4413-a31e-f80884e947a3: 'Pansion terveysasema'
+  45e2daa8-c15b-4615-95eb-b5d04f71a861: 'Parkin kenttä'
+  7d104593-8995-44c1-b3e1-7e9d7cc0eb2f: 'Parolanpolun avoin päiväkoti (Piiparinpolku 13)'
+  fa24a1f4-c88c-48ad-8a4e-1136dbdcff48: 'Parolanpolun leikkikerho (Piiparinpolku 13)'
+  31d67352-4ad1-4f68-b93b-55d461e3b275: 'Parolanpolun päiväkoti (Parolanpolku 9)'
+  b535d82b-d5cc-4d1a-a03f-4fce0b0b3b1c: 'Peltolan koulutalo'
+  b4fbe7e1-036c-4161-a95b-2ef871de468e: 'Peppiinan Ankkalampi/ Pääskyvuori (Käenkuja 3)'
+  1bcd30d8-d622-45bb-bdbf-d7e6d2ca423a: 'Peppiinan Ankkalampi/ Raunistula (Oikotie 7)'
+  a3ed87a8-7025-451c-8f93-0db83f3b265b: 'Perhekuntoutusyksikkö Polku'
+  f57476db-1451-4f6b-a53d-11c7615c6c28: Perheneuvola
+  a6476584-8479-4fa0-a2cf-07f640b03715: 'Perheoikeudellinen yksikkö, Laitilan toimipiste'
+  ee156742-2451-47af-8f69-16ff77380090: 'Perheoikeudellinen yksikkö, Paraisten toimipiste'
+  c9bf1eb1-b312-4333-86ec-b781ce8a3250: 'Perheoikeudellinen yksikkö, Salon toimipiste'
+  52139781-d624-4ff8-8516-fc00f028a581: 'Perheoikeudellinen yksikkö, Turun toimipiste'
+  a3b9aef2-cef2-4460-9565-8c7e47dd048e: 'Pernon palvelupiste'
+  e36492fe-a0b2-4833-93a0-4a73de451ec9: 'Pernon päiväkoti (Hyrköistentie 4)'
+  dca72673-715e-4525-89e0-85d1bee15edb: 'Pernon päiväkoti (Pernontie 31)'
+  172783d3-8388-4c7a-9f73-0733c4248a72: 'Petreliuksen uimahalli'
+  7614e470-b3e6-4fd3-a1dc-cd7a3f723886: 'Piinokankadun päiväkoti (Piinokankatu 4)'
+  80e96ffd-dd67-4d47-8c2b-31d9c81de1fe: 'Pilke Päiväkodit Oy/ Auringonnousu (Ahvenanmaankatu 2)'
+  8109e17c-6c99-465f-a5f9-69dc0591da44: 'Pilke Päiväkodit Oy/ Pikku-Omppu (Pitkäpellonkatu 2)'
+  02c5d5a4-40fd-4e9d-809a-329a24919e59: 'Pilke Päiväkodit Oy/ Satakieli (Ruotsinsalmenkatu 6)'
+  8db55fc0-a972-463c-8398-d4a079d19598: 'Pilke Päiväkodit Oy/ Tähtimetsä (Isohaarlantie 1)'
+  7520ec48-e7ea-4677-bc54-9326fc1c791c: 'Pilke Päiväkodit Oy/ Veturi (Bastioninkatu 4)'
+  957f7022-d0de-4c37-8055-fd65dfa3d422: 'Pilke Päiväkodit Oy/ Välskäri (Välskärinkatu 15)'
+  b6c4cec9-9675-409d-ab26-425e5f0acd27: 'Pilke päiväkodit Oy/ Puolikko (Puolikontie 2)'
+  3081e764-b0a0-4937-956a-4df3b0e8d931: 'Pilke päiväkodit Oy/ Vienola (Vienolanrinne 2)'
+  924cf56f-3ba4-4019-a313-33bf49092c0d: 'Pilkepäiväkodit Oy/ Musiikkipäiväkoti Sinikello (Tuureporinkatu 5 E)'
+  55baabb9-f089-46a2-ae17-ffe31a8d2291: 'Pilkepäiväkodit Oy/ Satakieli (Ruotsinsalmenkatu 6)'
+  e53fea71-f887-46ef-ab0e-e987fdbe9c89: 'Pilkepäiväkodit Oy/ ruotsinkielinen päiväkoti Äppelbo (Stålarminkatu 36)'
+  b0c37b54-75b7-40ae-b186-910af231d3f8: 'Pohjoinen lapsiperhesosiaalityö'
+  4a274c3a-a8be-416b-9e18-ed1edb2d8cc1: 'Pohjoinen lastensuojelun avohuolto'
+  3aef75e2-cc53-4dac-a2e2-ac3cf985cae3: 'Pohjolan kotihoito'
+  9969f5ae-08c4-4c76-9a44-2ff50419bdea: 'Pormestarin toimintakeskus'
+  fbd9ad15-5ea0-47b8-9a06-a1dad8443c91: 'Portsakodin palvelutalo'
+  83b013b8-4516-4ae3-8d52-b203eb7b258a: 'Portsakoti osasto 3'
+  9bf01732-01d8-4d81-a11a-f71af6fbd31f: 'Portsakoti, tilapäishoitoyksikkö'
+  5d2d87e5-aa67-424f-8135-ec9a5998f8b7: 'Portsan kotihoito'
+  a73f300c-4152-4cbc-a183-3320cf90daf5: 'Potilasasiamiehen toimisto (potilasasiamies)'
+  ec8ae1d0-02f9-41eb-a732-3900f489ef86: Psykologiyksikkö
+  9474ed7b-7ed7-49bd-8dc7-74e718fb27ce: 'Puheterapia / Katariinan koulu'
+  3144567c-6c1c-4be2-81d7-f81d0f44e3b6: 'Puheterapia / Uudenmaankatu 19'
+  9b7704a2-c069-42ee-958e-f630a26405f7: 'Puheterapia / Valiocenter, Läntinen pitkäkatu 23 D, 3.krs.'
+  c3c6bea4-3218-431c-823b-a093682a6aa1: 'Puolalan koulu, Kauppiaskadun yksikkö'
+  d41240e5-3f09-4746-b108-ba57c499f226: 'Puolalan koulu, Puutarhakadun yksikkö'
+  0c21a985-4bab-4fb0-bba6-1c83d773012d: 'Puolalanmäen leikkipaikka 1 (Keskusta)'
+  824b59d6-407e-42e6-b397-51b4420e9aa8: 'Puolalanmäen lukio'
+  158943c9-5d62-4324-b611-c7e22eecbdef: 'Puropellon koulu'
+  86d5e537-be36-4931-bcfb-ba1e9d037f82: Päikky-järjestelmä
+  99a2368e-4643-4561-9aa3-134998b1c926: 'Päivystävä eläinlääkäri - lemmikkieläinpäivystys'
+  06047b6d-79ef-44f8-ae8f-a7dc81fe540f: 'Päiväkeskus Kirjo'
+  ceaf4ed9-e6fd-45e2-b019-c99b70c87d61: 'Päiväkoti Pompula (Mullintie 16)'
+  b0eaac19-f77c-4384-99a7-854ad76a4121: 'Päiväpaikka Tammikoti'
+  a62d07fc-ad5b-47b5-a75e-a85b3ab61d7b: Pääkirjasto
+  747d9964-5cbc-40c3-8a12-6a17bda34cfd: 'Pääpoliisiaseman Ankkuri-toiminta'
+  946b70d0-d2a5-440e-93db-251e8dd27bb6: 'Pääskyvuoren hammashoitola'
+  36033778-ded7-4241-9997-ce78cf8f3de4: 'Pääskyvuoren kotihoito'
+  9ef8c7ca-b3b5-4e75-af55-5f053203db69: 'Pääskyvuoren koulu'
+  bf2c94d6-7b6f-485e-8bf2-cbeeed83ee0b: 'Pääskyvuoren leikkikerho (Talvitie 10)'
+  c954038e-2da7-4f59-9e92-eb4dfe41260f: 'Pääskyvuoren päiväkoti (Keltasirkunpolku 3)'
+  cef356ac-2e99-4000-8240-7e3c8aa5462d: 'Pääterveysaseman neuvonta'
+  f3548674-edb0-4f41-8340-1e674286854e: 'Rahjekadun avoin päiväkoti Pääskyt (Rahjekatu 5)'
+  759bc6a5-73ff-4004-9508-4cfddf8075b1: 'Rahjekadun leikkikerho Pääskyt (Rahjekatu 5)'
+  9c5120b2-1c54-4247-9483-2521a52e8e3d: 'Rahjekadun päiväkoti (Rahjekatu 5)'
+  77c16ee6-187b-4cf8-936d-154c9de7a00d: Rakennusvalvonta
+  2621940d-23ac-4f36-83be-d39379b44686: 'Rauninaukion esiopetus (Oikotie 1)'
+  95f31b1b-bbe3-405a-bb6f-609ffdc7668c: 'Raunistulan koulu'
+  6fc22cb9-2c91-412a-86bb-60b3025b7eeb: 'Ravitsemusterapia, aikuiset'
+  403fc246-0a70-4352-a868-ebe210f08f92: 'Ravitsemusterapia, lapset ja nuoret'
+  d93a8e80-6ea9-4da7-a6fe-f6fd778f7750: Rekrytointipalvelut
+  a6120272-d16f-4dbe-9530-8bf97f081232: Revisiotoimisto
+  46ec0e12-a1f6-4392-9cbd-182165767c19: 'Rieskalähteen koulu'
+  6ce8d53b-9a23-4fdb-9a35-17f7bcb8e558: 'Rosanpuiston kenttä'
+  eb89410d-8c3c-4429-8b04-c676a38d3485: 'Ruiskadun kampus'
+  9b1d6896-7dd6-4b29-b455-388c2b11455a: 'Ruiskadun kampus, liiketalous'
+  44b18622-c9c7-4322-83be-54260c8c44d0: 'Ruiskadun kampus, sosiaali- ja terveysala / Uudenmaantien koulutalo'
+  4c6215af-99af-4232-8e4e-8e8f1cb7ad04: 'Ruissalo Info'
+  9f4dea57-340f-4000-92fc-63fcef17c2d1: 'Ruissalon luontokoulu'
+  b78b4e5a-6480-4a4d-b442-1560a523386a: 'Ruissalon ulkokuntoilulaitteet'
+  f6b3dcf1-179a-4067-a320-3da198579466: 'Rummunlyöjänpuiston monitoimikenttä'
+  86295a77-9302-4e73-9343-28cd8eb46e4f: 'Runosmäen hammashoitola'
+  8b3893bf-84ea-4613-acc0-f11c3d27005f: 'Runosmäen kirjasto'
+  e7c9375f-ee81-4670-9e41-23835c8bf156: 'Runosmäen kotihoito'
+  0e0fc051-d76c-4783-b16d-ffd2fa233b53: 'Runosmäen neuvola'
+  119ebaa6-f644-4263-8f8e-78581162b9ad: 'Runosmäen nuorisotila'
+  c3fc8a23-b8b5-4007-862b-cdba60224efc: 'Runosmäen terveysasema'
+  7f40f9fc-3f12-4cd5-89f4-da95319b334a: 'Runosmäen ulkokuntoilulaitteet'
+  9278ed08-5217-4a36-87e3-7032765b421c: 'Runosmäen vanhuskeskus'
+  44d9aa20-0bf8-4545-85e3-ed4ad55a3275: 'Ruotsinkielinen neuvola'
+  93aef2ac-1114-451f-9323-5fce50b66ef3: 'Ruusukorttelin hyvinvointikeskus'
+  e1f252b8-a7bf-48f2-9609-5858cfa4a193: 'Ruusukujan palveluasunnot'
+  563f1b5a-df4e-4b7e-a77e-9b4be730e50a: 'Ruusun kotihoito'
+  7e852aa4-989f-472a-a351-9e3e792a3693: 'Ryhmäperhepäivähoitokoti Kiddy Care (Kataraistentie 1b)'
+  8da87464-420b-4ada-8115-b888f46da686: 'Ryhmäperhepäivähoitokoti Koivula (Välskärinkatu 1)'
+  164400b3-dd84-48f0-9ad0-4b88e0f1f77a: 'Ryhmäperhepäivähoitokoti Metsänväki (Toivolankatu 19)'
+  90229a20-c08b-4696-bad8-a91873c07a0a: 'Ryhmäperhepäivähoitokoti Napsula (Vanha Littoistentie 73)'
+  e7131a61-0992-4b3d-a5c1-36a3a8431840: 'Ryhmäperhepäivähoitokoti Pikku-Pääsky (Kivikartiontie 1)'
+  61fee59b-9208-4e7f-83a0-2b92cee9c1a0: 'Ryhmäperhepäivähoitokoti Päivänsäde (Kuuvuorenkatu 1)'
+  5498848f-5295-42ef-88d9-2a8e87f66262: 'Ryhmäperhepäivähoitokoti Satumetsä (Talvitie 38)'
+  394df007-d110-4056-8f35-59af3583e7ed: 'Ryhmäperhepäivähoitokoti Veitikat (Paavinkatu 14)'
+  fd9c0c23-ac53-4a8f-baad-bfbb9b50846f: 'Ryhmäperhepäivähoitokoti Wipatukset &amp; Wipeltäjät (Runosmäenkatu 2 C 19)'
+  6dee683c-7fbd-4dc5-a62e-171f7acee287: 'Räntämäen päiväkoti (Ritzinkuja 1)'
+  db2e86d9-4e1e-41cb-9381-80c102435cc7: 'S:t Olofsskolan'
+  9a1e5b31-df7f-4916-8da4-0dab4055debb: 'Saaronniemen uimaranta'
+  66ec226c-fbe3-49ea-93a0-82b08cb7c6b0: 'Samppalinnan maauimala'
+  338c81cb-ec86-4093-86b7-d5c17659028a: 'Samppalinnan palloiluhalli'
+  379a14e0-9cc7-4e8e-8fa8-b49410aec6d3: Samppalinnanpuisto
+  539f605d-6d33-43ba-9259-f6b01042c739: 'Sateenkaari Koto Oy/ Halikolo (Paavinkatu 14 H)'
+  4aa32e22-78f7-4899-afb1-219e5a163d80: 'Sateenkaari Koto Oy/ Ketunpesä (Leipäläntie 6)'
+  e83858a5-cf77-4ede-a725-c183eee70697: 'Sateenkaari Koto Oy/ Lyckobo, ruotsinkielinen (Virusmäentie 65 B)'
+  6fd96050-3dff-4446-834d-322123fbeb5d: 'Sateenkaari Koto Oy/ Peikonpesä (Säkäkuja 1)'
+  353d9358-ed47-445c-889f-b505444fb216: 'Sateenkaari Koto Oy/ Pääskynpesä (Kurjenmäenkatu 8, rak. 34)'
+  69b6c309-c0f1-460f-9657-7183f1e3a587: 'Sateenkaari Koto Oy/ Villasukka (Kämnerinpolku 5)'
+  ed2fcdb1-1e94-4000-96b9-ddf0a6a24023: 'Satunummi Oy/ Satunummi (Eskonkatu 10)'
+  d9f3df24-9499-423f-9a72-eafcce483ff5: 'Satunummi Oy/ Satuportsa (Puutarhakatu 46)'
+  7ca37120-ec03-4669-bac2-72905f082172: 'Satunummi Oy/ Satusuikkila (Konstanzankatu 4)'
+  1faa493b-f5aa-4b9a-9adb-442d84e74867: Seikkailupuisto
+  b1befeb7-319c-457f-ac00-5a8b40d96f93: Sikaojanpuisto
+  f42af6ef-c314-43ae-91d1-687d1afe6e14: Sillankorva
+  263e8a65-b4bb-483a-a416-0cbbc1b2ed98: 'Silmätautien poliklinikka'
+  a43a90fe-de1e-4ba3-813e-2d97201a3437: 'Sirkkala daghem och förskola, Tähtitorninkatu 4 (Sirkkalan päivähoitoyksikkö)'
+  3d98345e-dc5d-4e12-920b-09bb2e210d4c: 'Sirkkala skola'
+  5370fa1a-1244-4826-a996-52c7667e33ce: 'Sirkkalabackens skola'
+  58a561ac-9e47-4875-b01b-cfe123c61e20: 'Sirkkalan päiväkeskus'
+  c81244f6-d8a1-496f-9ca8-d89ec23d89ea: 'Sisäisen tarkastuksen toimisto'
+  90144b0a-22ba-4b3f-b2c3-6930ab8462bd: 'Sisätautien poliklinikka'
+  1e5e3d16-4b7e-43d5-a707-a17c1cba321d: 'Skanssin nuorisotila'
+  31c7699d-b18d-4458-9c9f-ae22e584f09b: 'Skeittihalli Cube'
+  04f3463d-3bd6-4837-a0f0-b1c83b9a08b6: 'Skolgatans daghem, Koulukatu10 (Keskustan ruotsinkielinen päivähoitoyksikkö)'
+  989aa69f-ce56-4918-afd2-a32be68695a8: 'Sosiaaliasiamiehen toimisto (sosiaaliasiamies)'
+  ee6b9bae-be32-4239-9d15-ee58e83becbb: Sosiaalipäivystys
+  6b6281ee-082a-4a39-91be-45967d8235ff: 'Sosiaalitoimiston arkisto'
+  8aed8079-e966-47a7-9b7d-934de1b83288: 'Sosiaalityön alkupalvelut'
+  5feab99b-48dc-490d-a855-3d5e0b60a10a: 'Sotainvalidien palvelut'
+  3ead96b1-995c-4d8f-8dc8-df38283ed958: Starttipaja
+  104c45e8-069e-4d05-be8b-527d5c6a0fb0: 'Steinerpäiväkoti Pikku Tammi (Ylioppilaskylä 20 B)'
+  4c54372d-097e-412b-bd96-2aa9e4ce8118: 'Stålarminkadun päiväkoti (Stålarminkatu 27)'
+  935d56f3-d78f-470f-b8d9-47e550b0db3f: 'Suikkilan kotihoito'
+  f1cb7dcf-a251-4596-9ef5-54e707ad0492: 'Suikkilan tenniskentät 1–2'
+  027e3c0d-0662-47af-9ac4-93d5b290f1df: 'Suomalais-ranskalainen päiväkoti l''Hexagone (Linnankatu 64)'
+  d3671a78-0060-4a11-a63a-7d6799ff287e: 'Suomalais-venäläinen päiväkoti Miskatalo (Käsityöläiskatu 12)'
+  898aa0ef-2229-4f4e-ab75-895d88cb5565: 'Suotorpankujan päiväkoti (Suotorpankuja 3)'
+  9cdd513f-9c52-4413-a651-e951d64f0904: 'Syvälahden monitoimitalo'
+  4124ec9c-03ad-4c1b-972f-6f94f5d769bf: 'Syvälahden neuvola'
+  15f52c22-d164-4568-a400-3f7c33cab041: 'Sähköinen asiointipalvelu (kaupunkiympäristötoimiala)'
+  8e03e442-1c98-46c8-94e6-8ed82a0562e0: 'Sähköinen tilauspalvelu (kaupunkiympäristötoimiala)'
+  12cfd6c9-089a-4235-b378-675baab1b400: 'Sähköinen varauspalvelu (kaupunkiympäristötoimiala)'
+  7c945fd3-e96d-4ea6-a623-2233ad756a45: 'TVT Asunnot'
+  1033f984-570e-455b-b947-43c553732599: 'Taikahattu (Taoskuja 1)'
+  6c436781-2cc0-4818-b260-cba4097348a3: 'Talinkorventien päiväkoti (Talinkorventie 16)'
+  e30479d3-4622-4949-9c46-533af368f593: 'Tallimäenkentän päiväkoti (Malminkatu 1)'
+  019a2416-ced7-4333-97af-de5b8c074f34: 'Tallimäenpuiston ulkokuntoilulaitteet'
+  faad32c3-e6dd-4f58-9a65-220586fb7734: 'Taoskujan päiväkoti (Taoskuja 7)'
+  c2fe2f8f-0b33-437c-a37f-4e2be706036d: 'Tartuntatautien valvonta'
+  3338e011-f534-4320-91eb-2fd62fd21779: 'Terveysasemien hengitystieinfektiovastaanotto'
+  eb60664d-bf73-428f-a7ba-e2c010b7dffc: 'Terveysasemien iltavastaanotto'
+  5afc7587-130a-4223-8d44-8444c35c2e19: 'Terveysneuvontapiste Milli'
+  a235e4ad-0d2f-4f8f-a39c-ae6b2d18b941: 'Teräsrautelan nuorisotila'
+  b2b9a250-c835-46d1-9a31-6cba5d0961cd: 'Teräsrautelankentän harjoittelualue senioreille'
+  08d93e25-24da-48a7-8784-c834c0470912: 'Tippsundin nuorisoleirialue'
+  8fa0d80c-a3a7-442a-adea-1325d134983d: 'Toimintaterapia / Ortopedinen kuntoutusosasto ja GAK'
+  2024ce69-3542-4cb5-b5e4-bc4a949b7e28: 'Toimintaterapia / Vuodeosastojen palvelut / Luolavuorentie 2'
+  3b485e72-f994-43f0-82c4-4b5db9f6259f: 'Toimintaterapia / aikuiset / Luolavuorentie 2'
+  5cd82b17-88da-489a-8e8e-39bf624676ee: 'Toimintaterapia / alle kouluikäiset lapset / Uudenmaankatu 19'
+  01becf7f-1676-4784-bf55-5890c807a35c: 'Toimintaterapia / kouluikäiset lapset ja nuoret / Kirkkotie 13'
+  8e238960-f72e-4c0f-9f66-5fe62450e9a9: 'Toivolan toimintakeskus'
+  43b9734f-471b-4240-9eca-aa8e72b2a76c: 'Topeliuksen koulu'
+  83b4cea9-592a-4482-a73d-b6a937b8ad97: 'Torin Kulma'
+  c386d91c-f7ad-43cd-a50a-5ea31c753e81: 'Touhula Liikuntapäiväkoti Nättinummi (Schalininkatu 2)'
+  0d8389e0-b4ea-41c5-8cd9-1c8dd775b309: 'Touhula Liikuntapäiväkoti Varissuo (Ohrapäänkatu 3)'
+  6704cc81-f94b-464a-81a7-3599ced1c1fe: 'Touhula Liikuntapäiväkoti Vähäheikkilä (Uittamontie 31)'
+  04189deb-4eea-4fdf-b6f1-3df497ea1c62: 'Touhula Liikuntapäiväkoti Yli-Maaria (Vakiniituntie 2)'
+  53515a27-487a-402c-bf6d-46b824f6de55: Tukipalvelut
+  204bbef2-4c15-4a35-b613-d7b881df6243: 'Tuomaansillan päiväkoti (Nahkurinpiha 1)'
+  4f4b8caa-000a-4577-9d40-9255d8eb76fa: 'Tuomiokirkon kotihoito'
+  735e057f-b8f2-40f7-a16b-71bd924f8df4: 'Turku Future Technologies'
+  2c6ec73e-1dbd-4088-83be-066dc955a34a: 'Turku Game Academy (pelitila Nexus)'
+  37418f20-240d-4b42-a87c-5b69c1e1eab5: Turku-piste
+  d1c77154-0aa2-4860-a2cb-5c1dfac835ca: 'Turun Kaupunginteatteri'
+  62dffa53-ea33-4dc0-88b3-ba2ccdb5cdc0: 'Turun Kaupunginteatterin lipunmyynti'
+  64459c16-1c62-4451-8d38-328573a44baa: 'Turun Kaupunkiliikenne Oy'
+  12082bc1-9767-4ed2-a79f-1bd563aecaa8: 'Turun Lasarettimuseo'
+  05906b55-6c4b-43e0-b0f3-828528aaac38: 'Turun Lyseon koulu, Kärsämäen yksikkö'
+  4b379809-5660-44bf-b874-b6839d693bfc: 'Turun Lyseon koulu, Pallivahan yksikkö'
+  b49dc0d5-5b0e-4a68-95cd-fce89e47507f: 'Turun Lyseon koulu, Runosmäen yksikkö'
+  b04f8d88-2f8d-411f-81f9-ba6427e42afb: 'Turun Seudun Kuntatekniikka Oy'
+  7fcc0311-2dc2-4d3d-b707-8bf332a72a6f: 'Turun Steiner-koulu'
+  7cb782e6-4f58-467a-a84e-5e91bf5a0db4: 'Turun Suomalaisen Yhteiskoulun lukio (TSYK)'
+  a913f3ef-bc51-4336-8f9a-f6a1b68f76f8: 'Turun Terveydenhuoltomuseo'
+  905c5bd2-cd1b-4c12-a3d7-ddbfe2fda4c4: 'Turun Ympäristöterveys'
+  4c08b5f0-de48-4da1-811a-d1cc2f9c02dd: 'Turun alueen yhteispäivystys'
+  a12264b6-44a0-4d03-a111-95c794522533: 'Turun iltalukio'
+  28789051-c56e-4a76-b3a1-c9efbdd2dac7: 'Turun kansainvälinen koulu - Turku International School'
+  3e4cbcf0-7b30-4782-b085-2cc09ec8dcc0: 'Turun kaupunginarkisto'
+  773a6869-7846-469e-8586-10a07a2f9196: 'Turun klassillinen lukio'
+  29c791bb-9012-4672-9eca-49292fbf1031: 'Turun linna'
+  9f90cb4d-314d-40df-99d0-a20f36521434: 'Turun museokeskus, Kalastajankadun toimipiste'
+  1c2adafe-2a52-4f5b-b165-c304a19f2239: 'Turun normaalikoulu'
+  bc467043-a3ea-49ff-84a7-7969f47a9033: 'Turun oppisopimustoimisto'
+  b431ea27-b623-42da-8ba7-04a478fb02c4: 'Turun seudun tulkkikeskus'
+  a928cf03-18f2-4c51-a4d6-bfa367db6560: 'Turun suomenkielinen työväenopisto'
+  13be0652-7759-43d3-9f86-22bbab7fe0f5: 'Tyksilä (Vanha Littoistentie 26)'
+  88fe2c24-2c08-407e-b28d-c271d655a656: 'Tyytikinpesän ulkokuntoilulaitteet'
+  3fc54af0-0590-470c-9cbd-38666566f6e1: 'Työllisyyspalvelukeskus, Työpiste'
+  645a06e2-ffcd-4cb4-88ec-979d654f15d1: 'Tähkäpuistonpuiston leikkipaikka (Petreliuksessa)'
+  3f1d5655-e2e5-4ace-9a25-c9a077e3efab: 'Uittamon kotihoito'
+  c42bf9a6-ea64-40f4-9b2a-386f54f76914: 'Uittamon päiväkoti (Jalustinkatu 8)'
+  d7611b11-c72f-474c-85b4-ab7f199a1db8: 'Uittamon päiväkoti (Susiniitynkatu 4)'
+  1ccbc90a-f6e1-4f81-955e-0d0f97383d45: Uittamonkenttä
+  1d8cca33-2cab-49f2-baed-4e69ca4877ec: Ulkomaalaistoimisto
+  e3bc540d-be6f-4778-ab80-77fe85fdaf83: 'Urheiluleikkikerho Kanervat (Pyörämäentie 4)'
+  e4a4d5e6-c53d-4a62-b3f6-850bec69ec38: 'Urheilupuiston beach volley -kenttä 1'
+  e2437a91-dca3-4355-a758-b9cadc2d7e7b: 'Urheilupuiston beach volley -kenttä 2'
+  f7fa57bc-e3f7-42e7-bc41-055e4ddbe025: 'Urheilupuiston beach volley -kenttä 3'
+  08ca390f-ed57-40f3-a465-bfc635430e1f: 'Urheilupuiston beach volley -kenttä 4'
+  7c0da42c-b0ed-464e-8f3c-ac66f940f04b: 'Urheilupuiston beach volley -kenttä 5'
+  d5b6f4e8-ed77-4a68-b48e-ff2a69914537: 'Urheilupuiston tenniskentät 1–5'
+  c6d506f6-d1d9-4ac3-8548-a5c6fdefabc6: 'Urheilupuiston ulkokerho (Betaniankatu 10)'
+  3e88b4bb-6aa7-4ead-8e13-532b5a1f4b49: 'Urheilupuiston ulkokuntoilulaitteet'
+  8fd9a715-1e6b-4c94-84d9-b189a7079c0a: 'Vaahteramäen päiväkoti (Luolavuorentie 2)'
+  e628adb6-71a0-4215-a8ca-73a2b9def63c: 'Valmennuspiste, Pansiontie 56'
+  a2055dce-b642-40f2-ada6-fb68c9a0afd5: 'Vammaispalveluiden asiakas- ja palveluohjaus'
+  057f6d5b-b0f2-448d-91a3-d28250703a32: 'Vammaispalveluiden hallinto'
+  7c81cd18-61e0-4fab-8b65-3ded53d15f55: 'Vanhusten avopalveluiden päivätoiminta'
+  21226f4a-ce1a-4f24-8300-0851313c179d: 'Varhaiskasvatuksen ja Henrikin seurakunnan yhteinen leikkikerho/ perhekerho, Haritun päivähoitoyksik'
+  a114734d-57b9-4855-bf51-77c90ca52cc5: 'Varhaiskasvatuksen ja Katariinan seurakunnan yhteinen perhekerho'
+  9e3af269-902c-456f-806d-818f2382a3d2: 'Varhaiskasvatuksen ja Maarian seurakunnan yhteinen perhekerho (Mittumaarintie 73)'
+  ac79c8fe-877e-4257-bc83-aacc229b635d: 'Varhaiskasvatuksen ja Maarian seurakunnan yhteinen ulkokerho (Halikonkatu 8)'
+  5fb558f5-bf24-4f37-9dc2-1de09e1ed3a6: 'Varhaiskasvatuksen ja Mikaelin seurakunnan yhteinen leikkikerho, Heinikonkadun päivähoitoyksikkö (La'
+  afa50539-473f-4823-baf4-d728a1bae7cb: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
+  814d1a4c-2656-4348-b54b-8b04ede310ba: 'Varhaiskasvatuksen sähköinen asiointi, uudet asiakkaat'
+  c2f90eef-6900-4b65-af07-5402b80f4f03: 'Varissuon hammashoitola'
+  8a2d3850-388f-471b-9e58-6ef2ccda3fc6: 'Varissuon jäähalli'
+  3ba4bc2a-10b1-41e1-b537-07e1f161dac1: 'Varissuon kirjasto'
+  b15f0c4f-f8f0-4560-bfca-300e04b17fde: 'Varissuon kotihoito'
+  80e3c504-40d5-416a-8c7d-c0cfad8c0f9a: 'Varissuon koulu'
+  8a49fcf5-f4aa-4a88-b8ee-8ee40aacfc1a: 'Varissuon neuvola'
+  34a8bd0f-f3f1-4ceb-80ee-53b4d9bc63fe: 'Varissuon nuorisotila'
+  06649d6d-9c90-4396-b9b8-75e330f09c6c: 'Varissuon palvelupiste'
+  6b5381e5-8af3-425c-92a5-d5cdce07f171: 'Varissuon terveysasema'
+  3f440e21-abf6-4605-b72c-deca1818cf6c: 'Varissuon ulkokuntoilulaitteet'
+  6f38f220-3e54-45d5-ba33-9ae640ba8ddb: 'Varsinais-Suomen sovittelutoimisto'
+  a6840df9-832a-48cc-8223-b48ff50c13bc: 'Vasaramäen kirjasto'
+  73e86bf3-b758-4b75-a68b-7228a27d20ad: 'Vasaramäen koulu, Lehmustien yksikkö'
+  ce9d493f-e9ef-4cce-b53b-00af26242b21: 'Vasaramäen neuvola'
+  a441f8e0-35d2-47e4-bd23-a2181ad46aaa: 'Vasaramäen päiväkoti (Rakuunatie 56)'
+  15705a0e-465d-460b-81a5-a3c2d1ab281c: 'Vasaramäen tenniskentät 1–3'
+  5647db53-a79d-430c-bf80-6e2f46b4f4e3: Vaski-verkkokirjasto
+  c6b79431-6693-4e99-811b-1c8a69227771: Vepsä
+  d96546ea-2e3c-4415-ab6d-275fe7fd38fd: 'Verkanappulat Knatteskär, ruotsinkielinen (Tapulikatu 9)'
+  0725b21b-9cb5-479f-8686-2becdc1c0df1: 'Verkanappulat Nappula-Aho (Paltankatu 27)'
+  fec1e3d1-425f-41db-9fd3-ff116aa4f8d4: 'Verkanappulat Nappulapuisto (Ruusupuistonkuja 3)'
+  9544e966-79c3-4f8a-9cf3-8a9983d8aee5: 'Veteraanien kotona asumista tukevat palvelut/Sota- ja sotilasinvalidien palvelut'
+  27eac2f9-1cae-491a-806b-467b6df44f3e: 'Veteraanien kuntoutus'
+  e6015c09-3b3c-4457-a255-c4d73501a43f: 'Vienolan nuorisoleirialue'
+  9c90fa82-759a-4a05-bae2-81d4aed99b9f: 'Viinamäen päiväkoti (Ruukinkatu 9)'
+  5a76b720-03f1-4c02-937b-01545e6862ca: 'Villa Piipari'
+  298a8d47-0d51-4464-acea-05e93807f79a: 'Villa Solaris, ruotsinkielinen (Kaurakatu 24 A)'
+  0899edeb-7bcb-4720-a4b9-217d855c1ee6: 'Virtuaalinen kotihoito'
+  23d38126-483f-4eb6-9ce4-483a23cbd3a8: Vuokkokoti
+  a4151726-be04-47ed-bf2a-c5620c03fc41: 'Vähä-Heikkilän koulu, Vähä-Heikkilän yksikkö'
+  bd307129-790a-4d57-a610-c19b9e19bb6b: 'Vähäheikkilä-Hirvensalon kotihoito'
+  cde091da-14ba-4718-b381-69b19eb43909: 'Vähäheikkilän perhetukikeskus'
+  61b14bdf-86de-4d5a-a894-0cbbcd978b38: 'WAM Turun kaupungin taidemuseo'
+  0b6e0453-af0a-434d-9ff3-42715be16c8f: 'Wendy House (Neljäs linja 3)'
+  3776cd5f-b5a5-4d3e-b5ad-567791d1638e: 'Wilma Turku'
+  3476b0d5-1cdc-4157-956c-db1d4dc80bbf: Wisio
+  0da7a017-8a4d-42b2-8426-411249c10a9a: 'Wision Hyvinvointikeskus'
+  8dac7ca9-7fcb-43e9-ad17-35e25d69e334: 'Wision Puuhaparkki'
+  20f97873-f723-42f5-9a4d-c4b04533e52b: 'Wision Yrittäjyyden valmennustilat'
+  c22a005e-8b41-4ba4-847b-2b5365ac255c: 'Wäinö Aaltosen koulu'
+  38493b56-c352-4f38-aef7-215043d5fb85: 'Yli 18-vuotiaiden omaishoidon tuen yhteystiedot'
+  c187043c-300d-461f-a16e-277f6708b356: 'Yli-Maarian koulu, Moision yksikkö'
+  cfd2f740-1fbf-4146-b7ab-e0c818ce92ed: 'Yli-Maarian monitoimitalo Ypsilon / Yli-Maarian koulu ja päiväkoti'
+  b65a8abb-f823-47c7-8448-fa6f640d2698: 'Ylikylänpuiston monitoimikenttä'
+  1f4acaed-e18e-4502-a7b7-c3f43bb2458c: Ympäristönsuojelu
+  129359cd-cfff-4adf-b476-c4fbbeca3f3e: 'Ypsilonin neuvola'
+  4e1fc1bd-cabb-418b-98b4-fd1c50cd7c45: 'Zabadak nuorisotila'
+  ad491ab3-ad9b-4cec-803d-7831217bb8cd: 'Äitiyshuollon ultraääniyksikkö'
+  0bb38b02-d729-46d2-9163-58e1cf38b4a3: 'Åbo svenska arbetarinstitut'
 service_channels_47194c7f-4ec5-4856-b792-cbcb313c0a53:
   23d7738b-173d-4466-a811-750dcbe1630f: 23d7738b-173d-4466-a811-750dcbe1630f
   46356281-ccde-4ba7-b804-c8f3332c187c: 46356281-ccde-4ba7-b804-c8f3332c187c
@@ -164,5 +954,42 @@ service_channels_a6d057d1-066d-4fd9-aa43-e4520314f183:
   1516ec26-655a-4908-8d82-8b7b7cc543da: 0
   60a737de-346a-4a73-933c-1d238de10663: 0
   9cdd513f-9c52-4413-a651-e951d64f0904: 0
-service_channels_c1e6036f-4e75-4855-957e-c21a1db1f23e: null
-service_channels_80a89914-6f04-4e66-a81c-ed7d84540ef3: null
+service_channels_c1e6036f-4e75-4855-957e-c21a1db1f23e:
+  f3548674-edb0-4f41-8340-1e674286854e: 0
+  5fb558f5-bf24-4f37-9dc2-1de09e1ed3a6: 0
+  6f3fbcb7-6eca-4dc0-ad11-7292c5b27f32: 0
+  900d49b4-08f5-46f8-bc58-81b30d988f1a: 0
+  c6d506f6-d1d9-4ac3-8548-a5c6fdefabc6: 0
+  e3bc540d-be6f-4778-ab80-77fe85fdaf83: 0
+  8c4dbb6e-0051-417d-a7df-ad1b72d9dbea: 0
+  9e04c3c0-1453-45f9-9e5f-44446bb7bf1c: 0
+  ac79c8fe-877e-4257-bc83-aacc229b635d: 0
+  e1d74431-eee4-485c-bcc2-27c69ec7462b: 0
+  21226f4a-ce1a-4f24-8300-0851313c179d: 0
+  759bc6a5-73ff-4004-9508-4cfddf8075b1: 0
+  07af14b4-d3eb-410b-aa3c-3e6a479bff23: 0
+  7d104593-8995-44c1-b3e1-7e9d7cc0eb2f: 0
+  9e3af269-902c-456f-806d-818f2382a3d2: 0
+  bf2c94d6-7b6f-485e-8bf2-cbeeed83ee0b: 0
+  c954038e-2da7-4f59-9e92-eb4dfe41260f: 0
+  fa24a1f4-c88c-48ad-8a4e-1136dbdcff48: 0
+service_channels_80a89914-6f04-4e66-a81c-ed7d84540ef3:
+  645a06e2-ffcd-4cb4-88ec-979d654f15d1: 0
+  51af92cb-9eb1-4b20-a9ba-8b76e2be1c4c: 0
+  94f06ab1-8361-45f4-bf52-dbc2f0c55b41: 0
+  0dca1f68-a532-4d77-bdfd-be651d22bde5: 0
+  0c21a985-4bab-4fb0-bba6-1c83d773012d: 0
+  00e46822-e26c-4056-b10b-dc9f59c7bfde: 0
+organizations:
+  59271cc9-db41-4f3e-9754-d6308a5b4a84: 59271cc9-db41-4f3e-9754-d6308a5b4a84
+  fbf1b51b-5378-459f-8b44-e502d222e13f: fbf1b51b-5378-459f-8b44-e502d222e13f
+  cededca0-0c3e-4543-9f00-c98cf675ea0f: 0
+  050ebe7d-0654-4d0a-a3a4-4fe48df013e7: 0
+  c68c1d65-a885-4a82-a9a6-5bf4ec270409: 0
+  97f39541-517a-4df8-8ec4-a835b434df07: 0
+  7aaff8d8-0a76-4a8f-9159-00153d9898d8: 0
+  6f53c023-185c-4a6e-b85f-320c1e5ee0c2: 0
+  dfa7ef74-d4ff-4a15-b8b7-7b382e4faaab: 0
+  5eef0a51-50c0-4618-86ca-4039c4fa7029: 0
+  44e55cb8-1c58-4ac5-af6e-ef0cbdce9b2c: 0
+  2298c701-18da-4302-ad3b-9a7103da7eea: 0

@@ -101,7 +101,7 @@ class ConfigurationSource extends SourcePluginBase {
       $langcodes = $this->languages;
     }
 
-    $data = $helper->prepareMigrateData($this->sourceConfig, $this->sourceKey, $langcodes);
+    $data = $helper->prepareMigrateIterator($this->sourceConfig, $this->sourceKey, $langcodes);
     return new \ArrayIterator($data);
   }
 
@@ -128,6 +128,24 @@ class ConfigurationSource extends SourcePluginBase {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
+    $helper = new PtvHelper();
+    $langcodes = [];
+    if ($this->defaultLangcode) {
+      $langcodes[] = $this->defaultLangcode;
+    }
+    if ($this->languages) {
+      $langcodes = $this->languages;
+    }
+
+    $id = $row->getSourceProperty('id');
+    $data = $helper->prepareMigrateData($this->sourceKey, $langcodes, $id);
+    foreach ($data as $key => $value) {
+      if (!in_array($key, array_keys($row->getSource()))) {
+        $row->setSourceProperty($key, $value);
+      }
+    }
+    // ksm($row->getSource());
+    // ksm($data);
     return parent::prepareRow($row);
   }
 

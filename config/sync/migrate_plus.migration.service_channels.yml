@@ -1,5 +1,5 @@
 uuid: e4275dcd-6935-4d5d-bd57-0d72a837a146
-langcode: en
+langcode: fi
 status: true
 dependencies: {  }
 id: service_channels
@@ -21,6 +21,10 @@ process:
     plugin: default_value
     default_value: service_channel
   title: name
+  field_services:
+    plugin: migration_lookup
+    source: services
+    migration: services
   path/pathauto:
     plugin: default_value
     default_value: 1

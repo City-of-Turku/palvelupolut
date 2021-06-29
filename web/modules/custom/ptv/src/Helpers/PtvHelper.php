@@ -12,17 +12,37 @@ class PtvHelper {
    *
    * @return array|mixed|string[][]
    */
-  public function prepareMigrateData($config, $key, $langcodes) {
+  public function prepareMigrateIterator($config, $key, $langcodes) {
 
-    $ptv_service = \Drupal::service('ptv.api_service');
     $config = \Drupal::config($config);
     $config_data = $config->get($key);
 
     $data = [];
+    foreach ($config_data as $key => $name) {
+      foreach ($langcodes as $langcode) {
+        $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
+      }
+
+    }
+
+    return $data;
+
+  }
+
+  /**
+   * Returns an array.
+   *
+   * @return array|mixed|string[][]
+   */
+  public function prepareMigrateData($key, $langcodes, $id) {
+
+    $ptv_service = \Drupal::service('ptv.api_service');
+    // $config_data = $config->get($key);
+
+    $data = [];
     switch ($key) {
       case 'services':
-        foreach ($config_data as $key => $item) {
-          $object = $ptv_service->getService($item);
+          $object = $ptv_service->getService($id);
           $summaries = [];
           $descriptions = [];
           foreach ($object->serviceDescriptions as $value) {
@@ -41,8 +61,8 @@ class PtvHelper {
           foreach ($object->serviceNames as $value) {
             if (in_array($value->language, $langcodes)) {
               $name = $value->value;
-              $data[] = [
-                'id' => $key,
+              $data = [
+                'id' => $id,
                 'name' => $name,
                 'langcode' => $value->language,
                 'summary' => $summaries[$value->language],
@@ -50,12 +70,13 @@ class PtvHelper {
               ];
             }
           }
-        }
+
+        // ksm($data);
         break;
 
       case 'service_channels':
-        foreach ($config_data as $key => $item) {
-          $object = $ptv_service->getServiceChannel($item);
+
+          $object = $ptv_service->getServiceChannel($id);
           // ksm($object);
           $services = [];
           foreach ($object->services as $value) {
@@ -120,7 +141,7 @@ class PtvHelper {
           foreach ($object->serviceChannelNames as $value) {
             if (in_array($value->language, $langcodes)) {
               $name = $value->value;
-              $data[] = [
+              $data = [
                 'id' => $key,
                 'name' => $name,
                 'langcode' => $value->language,
@@ -135,7 +156,7 @@ class PtvHelper {
               ];
             }
           }
-        }
+
         break;
 
     }
