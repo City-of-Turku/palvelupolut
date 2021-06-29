@@ -1,0 +1,33 @@
+.selection_box__inner {
+  .button.button--minimal {
+    margin-bottom: 12px;
+  }
+  a {
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.22px;
+    line-height: 24px;
+  }
+  span.button__text {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.22px;
+    line-height: 24px;
+  }
+}
+.selection_box__selection-link {
+  align-items: center;
+  display: flex;
+  svg {
+    margin-right: 16px;
+  }
+}
+.selection_box__title {
+  margin-bottom: 1rem;
+}
+.selection_box__wrapper {
+  padding: space(2);
+  background-color: color(background-light);
+  border-radius: 18px;
+}
