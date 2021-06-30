@@ -1,0 +1,9 @@
+uuid: ed09d029-14f5-4e49-9a24-df0cafeff000
+langcode: en
+status: true
+dependencies: {  }
+id: ptv_service_channels_update
+label: 'PTV: Service Channels Update'
+migration: service_channels_translations
+time: '259200'
+update: 1

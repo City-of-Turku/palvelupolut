@@ -3,9 +3,15 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
+    - field.field.node.page.field_heading
+    - field.field.node.page.field_lead_image
+    - field.field.node.page.field_lead_text
+    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_paragraphs_sidebar
+    - field.field.node.page.field_show_toc
     - node.type.page
   module:
+    - entity_reference_revisions
     - text
     - user
 _core:
@@ -15,15 +21,49 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
+  field_heading:
+    weight: 2
     label: hidden
-    type: text_default
-    weight: 100
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
+  field_lead_image:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_lead_text:
+    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 101
+    type: text_default
+    region: content
+  field_paragraphs:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraphs_sidebar:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
 hidden:
+  field_show_toc: true
   langcode: true
+  links: true

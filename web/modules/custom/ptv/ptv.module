@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains ptv.module.
+ */
+
+function ptv_cron() {
+  $ptv_service = \Drupal::service('ptv.api_service');
+  $config = \Drupal::config('ptv.settings');
+  if ($config->get('municipality')) {
+    $services = [];
+    $service_channels = [];
+    foreach (array_filter($config->get('organizations')) as $key => $organization) {
+      $services += $ptv_service->getServicesByOrganization($organization);
+      $service_channels += $ptv_service->getServiceChannelsByOrganization($organization);
+    }
+    $config->set('services', $services);
+    $config->set('service_channels', $service_channels);
+    $config->save();
+  }
+}

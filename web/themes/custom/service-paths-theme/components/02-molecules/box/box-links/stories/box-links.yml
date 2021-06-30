@@ -1,0 +1,23 @@
+box_links__title: 'The title of the box'
+box_links__links: true
+list_links__link_modifiers:
+  - 'icon'
+
+list_links__items:
+  - title: 'Read more on Facebook'
+    url: '#'
+    icon: 'facebook'
+  - title: 'External link'
+    url: '#'
+    icon: 'globe'
+    modifiers:
+      - 'external'
+
+attachment_links__items:
+  - title: 'The name of the attachment'
+    url: '#'
+  - title: 'The name of the attachment'
+    url: '#'
+  - title: 'The name of the attachment'
+    url: '#'
+box_links__cta: "Sähköiseen asiointiin"

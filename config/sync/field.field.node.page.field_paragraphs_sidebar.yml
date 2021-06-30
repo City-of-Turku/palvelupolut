@@ -1,0 +1,62 @@
+uuid: fa1f08b5-7a85-4b57-b930-9c95562d3dd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs_sidebar
+    - node.type.page
+    - paragraphs.paragraphs_type.contact_card
+    - paragraphs.paragraphs_type.general
+    - paragraphs.paragraphs_type.links
+  module:
+    - entity_reference_revisions
+id: node.page.field_paragraphs_sidebar
+field_name: field_paragraphs_sidebar
+entity_type: node
+bundle: page
+label: 'Paragraphs Sidebar'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact_card: contact_card
+      general: general
+      links: links
+    target_bundles_drag_drop:
+      accordion:
+        weight: 9
+        enabled: false
+      accordion_item:
+        weight: 10
+        enabled: false
+      contact_card:
+        enabled: true
+        weight: 11
+      cta:
+        weight: 11
+        enabled: false
+      cta_grid:
+        weight: 12
+        enabled: false
+      general:
+        enabled: true
+        weight: 13
+      links:
+        enabled: true
+        weight: 14
+      process:
+        weight: 15
+        enabled: false
+      references:
+        weight: 19
+        enabled: false
+      step:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

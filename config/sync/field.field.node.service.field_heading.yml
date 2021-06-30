@@ -1,0 +1,19 @@
+uuid: 7c16aeee-86bc-47c9-8366-8090276ba18c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heading
+    - node.type.service
+id: node.service.field_heading
+field_name: field_heading
+entity_type: node
+bundle: service
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

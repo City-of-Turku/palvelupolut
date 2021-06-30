@@ -1,0 +1,19 @@
+uuid: 03cef6f9-903a-45ab-a492-c7789a9b9b78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.service_channel
+id: node.service_channel.field_phone
+field_name: field_phone
+entity_type: node
+bundle: service_channel
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

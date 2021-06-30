@@ -1,0 +1,47 @@
+uuid: 8d0d9587-8127-466c-bd44-cbcc14d77249
+langcode: fi
+status: true
+dependencies: {  }
+id: services_translations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ptv
+label: 'Services translations'
+source:
+  plugin: config
+  configuration_name: ptv.settings
+  key: services
+  languages:
+    - fi
+    - en
+    - sv
+  constants:
+    uid: 1
+process:
+  nid:
+    plugin: migration_lookup
+    source: id
+    migration: services
+  type:
+    plugin: default_value
+    default_value: service
+  title: name
+  langcode: langcode
+  field_description/value: description
+  field_description/summary: summary
+  field_description/format:
+    plugin: default_value
+    default_value: basic_html
+  path/pathauto:
+    plugin: default_value
+    default_value: 1
+  uid: constants/uid
+destination:
+  plugin: 'entity:node'
+  translations: true
+migration_dependencies:
+  required:
+    - services
+  optional: {  }

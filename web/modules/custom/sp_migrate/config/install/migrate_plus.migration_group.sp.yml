@@ -1,9 +1,0 @@
-langcode: fi
-status: true
-dependencies: {  }
-id: sp
-label: Service Paths
-description: ''
-source_type: ''
-module: null
-shared_configuration: null

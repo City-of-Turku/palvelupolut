@@ -1,0 +1,21 @@
+uuid: 75630aa6-eafe-4ea4-904e-8d1ddd1ea53a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_text
+    - node.type.service_channel
+  module:
+    - text
+id: node.service_channel.field_lead_text
+field_name: field_lead_text
+entity_type: node
+bundle: service_channel
+label: 'Lead Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

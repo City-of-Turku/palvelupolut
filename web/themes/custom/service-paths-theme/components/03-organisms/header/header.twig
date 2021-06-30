@@ -1,0 +1,40 @@
+{% set header__base_class = "header" %}
+
+<header {{ bem(header__base_class) }}>
+  {#
+    Keyboard navigation/accessibility link to main content section in
+    page.html.twig.
+  #}
+  <a href="#main-content" class="visually-hidden focusable">
+    {{ "Skip to main content"|t }}
+  </a>
+
+  <div {{ bem("inner", [], header__base_class) }}>
+    <div {{ bem("main", [], header__base_class) }}>
+      <div {{ bem("item", ["branding"], header__base_class) }}>
+        {% block header_branding %}
+          {% include "@organisms/header/header-branding/header-branding.twig" %}
+        {% endblock %}
+      </div>
+
+      <div {{ bem("item", ["menu"], header__base_class) }}>
+        {% block header_overlay %}
+          {% include "@organisms/header/header-overlay/header-overlay.twig" %}
+        {% endblock %}
+      </div>
+
+      <div {{ bem("item", ["additional"], header__base_class, ["js-expand-content"]) }}>
+        {% block header_language_menu %}
+          {% include "@molecules/navigation/language-switcher/language-switcher.twig" %}
+        {% endblock %}
+
+      </div>
+    </div>
+
+    <div {{ bem("bottom", [], header__base_class) }}>
+      {% block header_bottom %}
+        {% include "@molecules/navigation/breadcrumbs/breadcrumbs.twig" %}
+      {% endblock %}
+    </div>
+  </div>
+</header>

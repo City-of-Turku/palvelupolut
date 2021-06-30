@@ -1,0 +1,17 @@
+uuid: 7975f67a-1e5b-4907-8d6e-646d5767e032
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Service Channel'
+type: service_channel
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

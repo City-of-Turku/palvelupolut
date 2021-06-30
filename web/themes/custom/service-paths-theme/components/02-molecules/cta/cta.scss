@@ -1,0 +1,48 @@
+.cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .link {
+    color: black;
+    box-shadow: none;
+    order: 4;
+    margin-top: space(0.75);
+    position: unset;
+    text-align: center;
+    .icon--before {
+      margin-right: 0;
+    }
+    &::before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  .cta__title {
+    text-align: center;
+    order: 2;
+    line-height: 33px;
+    margin-bottom: space(1);
+    margin-top: space(2.125);
+  }
+  .cta__icon {
+    order: 1;
+    align-self: center;
+    background: color(background-section-dark);
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    padding: space(2.1875);
+  }
+  .text {
+    text-align: center;
+    order: 3;
+    font-size: $font-size--small-1;
+    color: color(text-dark);
+    letter-spacing: $letter-spacing--large;
+    line-height: 28px;
+  }
+}

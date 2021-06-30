@@ -1,0 +1,29 @@
+id: service_channels
+migration_group: ptv
+label: 'Service Channels'
+source:
+  plugin: config
+  configuration_name: ptv.settings
+  key: service_channels
+  default_langcode: fi
+  constants:
+    uid: 1
+process:
+  type:
+    plugin: default_value
+    default_value: service_channel
+  title: name
+  field_services:
+    plugin: migration_lookup
+    source: services
+    migration: services
+
+  path/pathauto:
+    plugin: default_value
+    default_value: 1
+  uid: constants/uid
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required: {  }
+  optional: {  }

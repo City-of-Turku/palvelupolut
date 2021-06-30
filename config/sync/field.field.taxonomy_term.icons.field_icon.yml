@@ -11,7 +11,7 @@ id: taxonomy_term.icons.field_icon
 field_name: field_icon
 entity_type: taxonomy_term
 bundle: icons
-label: Icon
+label: 'Icon (Font Awesome)'
 description: ''
 required: false
 translatable: false

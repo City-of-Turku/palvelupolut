@@ -1,0 +1,20 @@
+uuid: 9bfb9456-e04c-44e2-9ab8-e144b24c004f
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - service_paths_theme
+id: service_paths_theme_language_switcher
+theme: service_paths_theme
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_content'
+settings:
+  id: 'language_block:language_content'
+  label: 'Language switcher (Content)'
+  provider: language
+  label_display: '0'
+visibility: {  }

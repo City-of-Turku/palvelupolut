@@ -1,0 +1,23 @@
+uuid: 6876d33e-88e1-4e91-980a-ff4d35b26641
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_toc
+    - node.type.page
+id: node.page.field_show_toc
+field_name: field_show_toc
+entity_type: node
+bundle: page
+label: 'Show TOC'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

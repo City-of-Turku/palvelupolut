@@ -1,0 +1,20 @@
+uuid: 3ca9680d-7f96-46f1-ac42-60c348b8cfb8
+langcode: fi
+status: true
+dependencies:
+  theme:
+    - service_paths_theme
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: service_paths_theme_local_actions
+theme: service_paths_theme
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

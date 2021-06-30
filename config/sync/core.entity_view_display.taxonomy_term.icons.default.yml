@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.icons.field_icon
+    - field.field.taxonomy_term.icons.field_icon_material
     - taxonomy.vocabulary.icons
   module:
     - fontawesome
+    - material_icons
     - text
 id: taxonomy_term.icons.default
 targetEntityType: taxonomy_term
@@ -27,6 +29,13 @@ content:
       layers: false
     third_party_settings: {  }
     type: fontawesome_icon_formatter
+    region: content
+  field_icon_material:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: material_icons
     region: content
 hidden:
   langcode: true

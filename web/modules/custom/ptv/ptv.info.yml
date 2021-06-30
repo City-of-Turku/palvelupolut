@@ -1,0 +1,5 @@
+name: 'PTV Integration'
+type: module
+description: 'Integrates PTV Open API'
+package: 'Service Paths'
+core_version_requirement: ^8.8.0 || ^9.0

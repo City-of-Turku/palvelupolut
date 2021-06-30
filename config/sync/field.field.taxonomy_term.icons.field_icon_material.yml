@@ -1,0 +1,21 @@
+uuid: e9affa84-aebd-4d64-8044-bbe80ce31e4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon_material
+    - taxonomy.vocabulary.icons
+  module:
+    - material_icons
+id: taxonomy_term.icons.field_icon_material
+field_name: field_icon_material
+entity_type: taxonomy_term
+bundle: icons
+label: 'Icon (Material)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: material_icons

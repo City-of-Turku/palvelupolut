@@ -1,0 +1,35 @@
+uuid: 933561c9-7d5d-4edc-8cec-b2639913a47f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.service_channel
+  module:
+    - address
+id: node.service_channel.field_address
+field_name: field_address
+entity_type: node
+bundle: service_channel
+label: Address
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    sortingCode:
+      override: hidden
+  fields: {  }
+field_type: address

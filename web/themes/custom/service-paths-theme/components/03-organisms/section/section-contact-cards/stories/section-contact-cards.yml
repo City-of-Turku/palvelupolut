@@ -1,0 +1,27 @@
+section_contact_cards__title: 'Etsi sopivat vaihtoehdot'
+section_contact_cards__items:
+  - placeholder: true
+    title: 'Asiakasneuvonta'
+    contact__items:
+      - link_title: '02 123 456'
+        url: '#'
+        text: 'Puhelinneuvonta on auki'
+        icon: 'globe'
+      - link_title: 'Avaa chat'
+        url: '#'
+        text: 'Chat on avoinna'
+        icon: 'globe'
+      - info_title: 'varhaiskasvatus@turku.fia'
+        url: '#'
+        icon: 'email'
+  - placeholder: true
+    title: 'Etsi sopivat vaihtoehdot'
+    contact__items:
+      - link_title: 'Näytä kartalla'
+        url: '#'
+        text: 'Toimipiste on avoinna arkisin'
+        icon: 'globe'
+      - info_title: 'Käyntiosoite'
+        url: '#'
+        text: 'Kylätie 22'
+        icon: 'globe'

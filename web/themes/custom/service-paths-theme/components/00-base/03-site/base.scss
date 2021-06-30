@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $font-family--base;
+  font-size: $font-size--base;
+  line-height: $line-height--base;
+  color: color(text);
+  background-color: color(background);
+
+  &[data-header-overlay-expanded='true'] {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+main {
+  @include wrapper-width;
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5,
+h6 {
+  @include h5;
+}
+
+p {
+  font-size: 1rem;
+}
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: currentColor;
+}
+
+a {
+  @include link;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+summary {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  margin: space() 0;
+  font-size: $font-size--small-1;
+  border: none;
+  border-spacing: 0;
+  color: color(text-primary);
+  background-color: color(background);
+  border-collapse: collapse;
+}
+
+table caption {
+  margin-bottom: space(3/2);
+  font-family: $font-family--heading;
+  font-size: $font-size--large-2;
+  font-weight: 800;
+  text-align: left;
+}
+
+th,
+td {
+  padding: space(1/2);
+  vertical-align: top;
+  text-align: left;
+  border: none;
+
+  @include above($width-large) {
+    padding: space(1/2) space();
+  }
+}
+
+th {
+  font-weight: bold;
+  border-bottom: 0.125rem solid color(border-primary);
+}
+
+td {
+  border-bottom: 0.075rem solid color(border-separator);
+}
+
+tfoot th,
+tfoot td {
+  border-bottom: none;
+  border-top: 0.125rem solid color(border-primary);
+}

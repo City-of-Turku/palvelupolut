@@ -1,5 +1,0 @@
-name: 'Service Paths Migrate'
-type: module
-description: 'Service Paths migrations from PTV API'
-package: 'Service Paths'
-core_version_requirement: ^8.8.0 || ^9.0

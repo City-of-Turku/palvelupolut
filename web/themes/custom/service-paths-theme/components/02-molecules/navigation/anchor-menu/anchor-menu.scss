@@ -1,0 +1,38 @@
+.anchor-menu {
+  margin-bottom: var(--space-elements);
+  padding: space() 0;
+  border: 1px solid color(border-primary);
+  border-left: none;
+  border-right: none;
+
+  .link {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    font-size: $font-size--large-2;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 30px;
+    color: color(text-dark);
+
+    .icon {
+      margin-right: space(1);
+    }
+
+    &:hover {
+      @include link--hover;
+    }
+  }
+
+  &__menu {
+    @include list-reset;
+  }
+
+  &__menu-item {
+    margin-bottom: space(1/2);
+    padding: 0;
+    font-weight: bold;
+    letter-spacing: $letter-spacing--medium;
+  }
+}
