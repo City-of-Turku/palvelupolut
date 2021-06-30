@@ -1,9 +1,30 @@
 .section-cards {
-  display: grid;
-  grid-template-rows: auto;
-  align-items: center;
-  position: relative;
-  margin-bottom: var(--space-elements);
+  .heading {
+    margin-bottom: space(1.5);
+    letter-spacing: -0.4px;
+    line-height: 38px;
+  }
+  .card {
+    width: auto;
+    max-width: 400px;
+  }
+
+  .card__image {
+    width: 100%;
+  }
+
+  .section-cards__link-with-icon {
+    margin: 0 0 space(4.75);
+    font-size: $font-size--base;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    line-height: 27px;
+    .icon {
+      margin-right: 20px;
+      position: relative;
+      top: 3px;
+    }
+  }
 
   @include above($width-large) {
     grid-template-columns: auto auto;
@@ -11,7 +32,6 @@
 
   > .link {
     justify-self: center;
-    margin: 0 0 space(2);
 
     @include above($width-large) {
       grid-row-start: 1;
@@ -24,7 +44,7 @@
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-    grid-gap: $grid-gutter-width;
+    grid-gap: 24px;
   }
 
   &--large {

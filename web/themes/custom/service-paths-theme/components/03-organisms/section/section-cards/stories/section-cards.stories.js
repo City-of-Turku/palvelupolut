@@ -7,7 +7,6 @@ import {
 import sectionCardsTemplate from '../section-cards.twig';
 
 import sectionCardsData from './section-cards.yml';
-import sectionCardsLargeData from './section-cards-large.yml';
 
 /**
  * Storybook Definition.
@@ -19,10 +18,6 @@ export const sectionCards = () => (
     <ComponentWrapper
       markup={sectionCardsTemplate(sectionCardsData)}
       label="Section cards"
-    />
-    <ComponentWrapper
-      markup={sectionCardsTemplate(sectionCardsLargeData)}
-      label="Section cards large"
     />
   </CollectionWrapper>
 );

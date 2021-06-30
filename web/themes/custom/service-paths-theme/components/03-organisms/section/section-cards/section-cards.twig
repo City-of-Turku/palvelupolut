@@ -15,10 +15,6 @@
 {% set section_cards__base_class = section_cards__base_class|default("section-cards") %}
 {% set section_cards__modifiers = section_cards__modifiers|default([]) %}
 
-{% if "large" in section_cards__modifiers %}
-  {% set is_large = true %}
-{% endif %}
-
 <div {{ bem(section_cards__base_class, section_cards__modifiers) }}>
   {% if section_cards__title %}
     {% include "@atoms/text/heading/heading.twig" with {
@@ -27,26 +23,34 @@
     } %}
   {% endif %}
 
+  {% if section_cards__link__title and section_cards__link__url %}
+    <div {{ bem("link-with-icon", [], section_cards__base_class) }}>
+      {% include "@atoms/images/icon/icon.twig" with {
+        icon__name: section_cards__link_icon,
+        icon__base_class: "icon",
+      } %}
+      {% include "@atoms/links/link/link.twig" with {
+        link__content: section_cards__link__title,
+        link__url: section_cards__link,
+      } %}
+    </div>
+  {% endif %}
+
   <div {{ bem("items", [], section_cards__base_class) }}>
     {% block section_cards_items %}
       {% for item in section_cards__items %}
         {% embed "@organisms/section/section-cards/section-cards-item.twig" %}
           {% block section_cards_item %}
             {% if item.placeholder %}
-              {% if is_large %}
-                {% set card_modifiers = loop.first ? ["large"] : ["small"] %}
-              {% endif %}
 
               {% include "@molecules/cards/card/card.twig" with {
                 card__modifiers: card_modifiers,
                 card__image__src: item.image__src,
                 card__heading: item.heading,
                 card__link__url: item.link__url,
+                card__link_text: item.link__text,
                 card__type: item.type,
-                card__category: item.category,
-                card__date: item.date,
-                card__tag: item.tag,
-                card__meta_primary: item.meta_primary,
+                card__items: item.card__items,
               } %}
             {% else %}
               {{ item }}
@@ -57,11 +61,4 @@
     {% endblock %}
   </div>
 
-  {% if section_cards__link__title and section_cards__link__url %}
-    {% include "@atoms/links/link/link.twig" with {
-      link__content: section_cards__link__title,
-      link__url: section_cards__link__url,
-      link__modifiers: ["action"],
-    } %}
-  {% endif %}
 </div>
