@@ -6,7 +6,7 @@ import {
 
 import cardTemplate from '../card.twig';
 
-import cardData from './card-default.yml';
+import cardData from './card.yml';
 
 /**
  * Storybook Definition.
@@ -15,6 +15,6 @@ export default { title: 'Molecules/Cards' };
 
 export const card = () => (
   <CollectionWrapper layout="medium">
-    <ComponentWrapper markup={cardTemplate(cardData)} label="Card default" />
+    <ComponentWrapper markup={cardTemplate(cardData)} label="Card" />
   </CollectionWrapper>
 );
