@@ -4,16 +4,16 @@
   }
   a {
     padding: 0;
-    font-size: 16px;
+    font-size: $font-size--small-1;
     font-weight: bold;
-    letter-spacing: 0.22px;
-    line-height: 24px;
+    letter-spacing: $letter-spacing--small;
+    line-height: $line-height--narrow;
   }
   span.button__text {
-    font-size: 16px;
+    font-size: $font-size--small-1;
     font-weight: bold;
-    letter-spacing: 0.22px;
-    line-height: 24px;
+    letter-spacing: $letter-spacing--small;
+    line-height: $line-height--narrow;
   }
 }
 .selection_box__selection-link {
@@ -24,7 +24,7 @@
   }
 }
 .selection_box__title {
-  margin-bottom: 1rem;
+  margin-bottom: space(1);
 }
 .selection_box__wrapper {
   padding: space(2);
