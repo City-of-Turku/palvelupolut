@@ -76,7 +76,6 @@
   }
 
   &--small {
-
     .meta--light {
       @include above($width-medium) {
         padding: space(1/4) space();

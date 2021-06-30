@@ -30,13 +30,13 @@
   .text {
     font-size: $font-size--small-1;
     padding-left: 2.3rem;
-    margin-top: space(1/2);;
+    margin-top: space(1/2);
     letter-spacing: 0.25px;
     line-height: 22px;
   }
   li {
     &::marker {
-      content: "";
+      content: '';
     }
   }
   ul {

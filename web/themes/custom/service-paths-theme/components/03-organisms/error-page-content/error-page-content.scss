@@ -1,10 +1,7 @@
 .error-page-content {
   &__heading {
     &--heavy {
-      @include h1(
-        $font-size: 8rem,
-        $font-size-small: 4rem
-      );
+      @include h1($font-size: 8rem, $font-size-small: 4rem);
 
       margin-bottom: 0;
     }

@@ -200,11 +200,7 @@
   }
 }
 
-@mixin label(
-  $color: color(text),
-  $margin: 0,
-  $padding: space(1/4) 0
-) {
+@mixin label($color: color(text), $margin: 0, $padding: space(1/4) 0) {
   margin: $margin;
   padding: $padding; // Align vertically with body text.
   line-height: $line-height--base;
@@ -216,7 +212,10 @@
   color: $color;
 }
 
-@mixin bold-highlight($font-weight: 700, $letter-spacing: $letter-spacing--medium) {
+@mixin bold-highlight(
+  $font-weight: 700,
+  $letter-spacing: $letter-spacing--medium
+) {
   font-family: $font-family--accent;
   font-weight: $font-weight;
   letter-spacing: $letter-spacing;

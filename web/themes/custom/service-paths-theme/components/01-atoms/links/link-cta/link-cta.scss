@@ -1,8 +1,5 @@
 .link-cta {
-  @include button-base(
-    $colors: outline,
-    $colors-dark: outline-dark
-  );
+  @include button-base($colors: outline, $colors-dark: outline-dark);
 
   box-shadow: none;
 

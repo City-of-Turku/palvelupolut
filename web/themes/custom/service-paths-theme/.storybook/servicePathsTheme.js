@@ -5,6 +5,5 @@ import { create } from '@storybook/theming';
 export default create({
   base: 'light',
   brandTitle: 'Service Paths design system',
-  brandImage:
-    'logo.png',
+  brandImage: 'logo.png',
 });

@@ -1,4 +1,4 @@
-@import "../03-functions/layout";
+@import '../03-functions/layout';
 
 /*
  * Mixin - Grid-width
@@ -35,7 +35,6 @@
   @include wrapper-width($width, $margin);
   @include wrapper-padding;
 }
-
 
 /**
  * Mixin - Above

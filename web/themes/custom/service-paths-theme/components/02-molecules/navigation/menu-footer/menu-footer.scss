@@ -24,13 +24,20 @@
   }
 
   a {
-    @include link($color: color(text-inverse), $underline-color: color(text-inverse), $underline-width: -0.1rem);
+    @include link(
+      $color: color(text-inverse),
+      $underline-color: color(text-inverse),
+      $underline-width: -0.1rem
+    );
 
     color: color(text-inverse);
     line-height: initial;
 
     &:hover {
-      @include link--hover($effect-color: color(text-inverse), $text-color: color(text));
+      @include link--hover(
+        $effect-color: color(text-inverse),
+        $text-color: color(text)
+      );
     }
 
     &:focus {

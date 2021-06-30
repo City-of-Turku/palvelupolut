@@ -36,7 +36,10 @@
       $property-string: #{$property-string}, #{$property} $transition-duration;
     }
     @if $property-string == '' {
-      $property-string: #{$property} $transition-duration $transition-timing $transition-delay;
+      $property-string: #{$property}
+        $transition-duration
+        $transition-timing
+        $transition-delay;
     }
   }
 
