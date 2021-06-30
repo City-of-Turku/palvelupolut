@@ -5,9 +5,12 @@
  * Contains ptv.module.
  */
 
+/**
+ * PTV Cron.
+ */
 function ptv_cron() {
   $ptv_service = \Drupal::service('ptv.api_service');
-  $config = \Drupal::config('ptv.settings');
+  $config = \Drupal::configFactory()->getEditable('ptv.settings');
   if ($config->get('municipality')) {
     $services = [];
     $service_channels = [];
