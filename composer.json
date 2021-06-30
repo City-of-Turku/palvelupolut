@@ -89,6 +89,7 @@
         "drupal/transliterate_twig": "^1.0",
         "drupal/twig_field_value": "^2.0",
         "drupal/twig_tweak": "^3.1",
+        "drupal/ultimate_cron": "2.0-alpha5",
         "drupal/warden": "^3.0@RC",
         "drush/drush": "^10.3",
         "fonticonpicker/fonticonpicker--fonticonpicker": "^3.1",

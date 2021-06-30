@@ -133,9 +133,9 @@ class PtvHelper {
                 $address[$postOffice->language]['postal_code'] = $post_code;
                 $address[$postOffice->language]['country_code'] = 'FI';
               }
-              foreach ($value->entrances->accessibilitySentences as $accessibility) {
+              // foreach ($value->entrances->accessibilitySentences as $accessibility) {
 
-              }
+              // }
             }
           }
           foreach ($object->serviceChannelNames as $value) {
