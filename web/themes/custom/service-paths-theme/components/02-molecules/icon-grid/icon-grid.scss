@@ -11,5 +11,7 @@
   margin: 0;
 }
 .icon-grid__inner {
-  font-size: 16px;
+  font-size: $font-size--small-1;
+  letter-spacing: 0;
+  line-height: $line-height--narrow;
 }
