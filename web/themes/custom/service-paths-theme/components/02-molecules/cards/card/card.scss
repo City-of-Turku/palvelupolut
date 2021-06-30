@@ -26,21 +26,26 @@
   display: flex;
   font-size: $font-size--small-2;
   letter-spacing: 0.25px;
-  line-height: 24px;
+  line-height: $line-height--narrow;
+  margin-bottom: 4px;
   .icon {
     position: relative;
-    top: 4px;
+    top: 2px;
     margin-right: 12px;
   }
 }
 .card__link {
   font-size: $font-size--small-2;
-  letter-spacing: 0.25px;
-  line-height: 24px;
   .icon {
-    margin-right: 16px;
+    margin-right: space(1);
+  }
+  .link {
+    font-weight: bold;
+    letter-spacing: 0.19px;
+    line-height: $line-height--narrow;
+    padding: 0;
   }
 }
 .card__item_content {
-  padding: 24px;
+  padding: space(1.5);
 }
