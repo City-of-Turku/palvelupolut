@@ -1,4 +1,4 @@
-input__value: ""
+input__value: ''
 input__type: text
 input__name: text
 input__id: text

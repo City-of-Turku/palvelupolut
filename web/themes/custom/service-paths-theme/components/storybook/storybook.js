@@ -30,7 +30,7 @@ const ComponentWrapper = ({
     }}
     {...rest}
   >
-    {label && <h2 className="sb-story-label">Variant: {label}</h2>}
+    {label && <h2 className="sb-story-label">Variant:{label}</h2>}
     <div dangerouslySetInnerHTML={{ __html: markup }} />
   </div>
 );
