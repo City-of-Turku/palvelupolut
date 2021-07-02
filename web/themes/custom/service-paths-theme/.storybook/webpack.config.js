@@ -61,6 +61,7 @@ module.exports = async ({ config }) => {
   // JS
   config.module.rules.push({
     test: /\.js$/,
+    enforce: 'pre',
     exclude: /node_modules/,
     loader: 'eslint-loader',
     options: {
