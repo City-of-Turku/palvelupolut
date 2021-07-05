@@ -14,6 +14,6 @@ module.exports = {
     '@storybook/addon-controls',
     '@storybook/addon-toolbars',
     // '@storybook/addon-links/register',
-    "@whitespace/storybook-addon-html'",
+    '@whitespace/storybook-addon-html',
   ],
 };

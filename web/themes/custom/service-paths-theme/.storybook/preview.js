@@ -36,9 +36,13 @@ export const parameters = {
       order: ['Documentation'],
     },
   },
-  html: { root: '#component-root' },
+  html: {
+    // Override the wrapper element selector used to grab the component HTML.
+    // @see https://github.com/whitespace-se/storybook-addon-html#usage
+    root: '#component-root'
+  },
   docs: {
-    // Customise Source tab content
+    // Customise Source tab content.
     // @see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#customizing-source-snippets
     transformSource: setupSource,
   },
