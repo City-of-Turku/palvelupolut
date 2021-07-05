@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin h1(
   $font-family: $font-family--heading,
   $font-size: $font-size--h1,
@@ -43,7 +45,7 @@
   $color-link: inherit,
   $color-link-hover: color(text-inverse),
   $font-weight: 700,
-  $margin: 0 0 space(3/2)
+  $margin: 0 0 space(math.div(3, 2))
 ) {
   color: $color;
   font-family: $font-family;
@@ -200,7 +202,7 @@
   }
 }
 
-@mixin label($color: color(text), $margin: 0, $padding: space(1/4) 0) {
+@mixin label($color: color(text), $margin: 0, $padding: space(math.div(1, 4)) 0) {
   margin: $margin;
   padding: $padding; // Align vertically with body text.
   line-height: $line-height--base;

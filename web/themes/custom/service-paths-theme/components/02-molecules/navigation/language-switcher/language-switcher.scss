@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .language-switcher {
   @include list-reset;
 
@@ -12,7 +14,7 @@
   &__item {
     @include bold-highlight;
 
-    padding: 0 space(1/2);
+    padding: 0 space(math.div(1, 2));
     font-size: $font-size--small-3;
     text-transform: uppercase;
   }
@@ -20,7 +22,7 @@
   &__link {
     @include link-reset;
 
-    padding-bottom: space(1/2);
+    padding-bottom: space(math.div(1, 2));
     position: relative;
 
     &:hover,

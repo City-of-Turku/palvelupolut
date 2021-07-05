@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .form {
   display: grid;
   grid-gap: space();
@@ -16,7 +18,7 @@
     padding: space();
     display: grid;
     grid-template-columns: auto;
-    grid-gap: space(3/4);
+    grid-gap: space(math.div(3, 4));
 
     @include above($width-medium) {
       grid-template-columns: 3fr 1fr;

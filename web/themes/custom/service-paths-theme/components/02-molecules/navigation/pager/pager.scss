@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .pager {
   margin: 2em 0;
 
@@ -38,7 +40,7 @@
     color: color(text);
     font-weight: 600;
     text-decoration: none;
-    padding: space(1/4) space(1);
+    padding: space(math.div(1, 4)) space(1);
 
     @include transition(
       box-shadow color,
@@ -67,8 +69,8 @@
   &__link--next,
   &__link--prev {
     box-shadow: none;
-    padding: space(1/4) space(1);
-    margin: space(1/4) space(1);
+    padding: space(math.div(1, 4)) space(1);
+    margin: space(math.div(1, 4)) space(1);
     display: flex;
     align-items: center;
 

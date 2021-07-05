@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Sass map to define colors.`. Using `var(--color--name)` instead of `color(name)` since
 // the later did not compile to CSS when used withing a mixin and `map-get()`.
 $button-colors: (
@@ -91,10 +93,10 @@ $button-colors: (
 // Button size variations
 @mixin button-medium {
   line-height: 1.4;
-  padding: space(2/3) space();
+  padding: space(math.div(2, 3)) space();
 
   @include above($width-large) {
-    padding: space(2/3) space(2);
+    padding: space(math.div(2, 3)) space(2);
   }
 }
 
@@ -109,9 +111,9 @@ $button-colors: (
 
 @mixin button-small {
   line-height: 1;
-  padding: space(1/2) space();
+  padding: space(math.div(1, 2)) space();
 
   @include above($width-large) {
-    padding: space(1/2) space(2);
+    padding: space(math.div(1, 2)) space(2);
   }
 }

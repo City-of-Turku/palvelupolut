@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../03-functions/layout';
 
 /*
@@ -52,7 +53,7 @@
  * The inverse behavior of mobile first.
  */
 @mixin below($breakpoint) {
-  @media (max-width: #{$breakpoint - space(1/100)}) {
+  @media (max-width: #{$breakpoint - space(math.div(1, 100))}) {
     @content;
   }
 }
@@ -63,7 +64,7 @@
  * to breakpoint $larger.
  */
 @mixin between($smaller, $larger) {
-  @media (min-width: $smaller) and (max-width: #{$larger - space(1/100)}) {
+  @media (min-width: $smaller) and (max-width: #{$larger - space(math.div(1, 100))}) {
     @content;
   }
 }
@@ -77,8 +78,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: -$grid-gutter-width / 2;
-  margin-right: -$grid-gutter-width / 2;
+  margin-left: - math.div($grid-gutter-width, 2);
+  margin-right: - math.div($grid-gutter-width, 2);
 }
 
 /**
@@ -87,7 +88,7 @@
  */
 @mixin flexbox-grid-item($columns: 4, $columns-medium: 2) {
   width: 100%;
-  margin: 0 $grid-gutter-width/2 $grid-gutter-width;
+  margin: 0 math.div($grid-gutter-width, 2) $grid-gutter-width;
 
   @include above($width-medium) {
     width: flexbox-item-width($columns-medium);

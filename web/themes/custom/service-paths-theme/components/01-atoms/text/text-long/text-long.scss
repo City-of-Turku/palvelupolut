@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .text-long {
   margin-bottom: space(2);
 
@@ -23,14 +25,14 @@
   }
 
   h2 {
-    margin: space(5/2) 0 space(3/4);
+    margin: space(math.div(5, 2)) 0 space(math.div(3, 4));
   }
 
   h3 {
-    margin: space(3/2) 0 space(1/2);
+    margin: space(math.div(3, 2)) 0 space(math.div(1, 2));
   }
 
   h4 {
-    margin: space() 0 space(3/8);
+    margin: space() 0 space(math.div(3, 8));
   }
 }

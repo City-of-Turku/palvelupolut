@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .status__list {
   @include list-reset;
 
@@ -6,8 +8,8 @@
 
 .status {
   display: block;
-  margin-bottom: space(1/2);
-  padding: space(1/2);
+  margin-bottom: space(math.div(1, 2));
+  padding: space(math.div(1, 2));
   text-align: center;
 
   &--warning {

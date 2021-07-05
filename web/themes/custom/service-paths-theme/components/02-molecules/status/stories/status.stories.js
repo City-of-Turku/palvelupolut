@@ -1,6 +1,6 @@
 import React from 'react';
 
-import status from './status.twig';
+import status from '../status.twig';
 
 import statusData from './status.yml';
 
