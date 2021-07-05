@@ -73,26 +73,35 @@
   "field_heading",
   "field_lead_image",
   "field_lead_text",
+  "field_service_classes",
+  "field_target_groups",
+  "field_requirements",
+  "field_tags",
+  "service_channels_embed",
 ] %}
 
 
 {% set with_tags =
-  content.field_global_theme|render|trim
+  content.field_tags|render|trim
 %}
 
+{% set page_sidebar = true %}
 
 <article {{ bem("node", [node.bundle|clean_class, "full"]) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
-  {% embed "@molecules/hero/hero.twig" with {
-    hero__title: content.field_heading,
-    hero__lead_text: content.field_lead_text,
-  } %}
-    {% block hero_image %}
-      {{ content.field_lead_image }}
-    {% endblock %}
-  {% endembed %}
+  {% if content.field_lead_image|render or content.field_heading|render %}
+    {% embed "@molecules/hero/hero.twig" with {
+      hero__title: content.field_heading,
+      hero__lead_text: content.field_lead_text,
+    } %}
+      {% block hero_image %}
+        {{ content.field_lead_image }}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
 
   {% embed "@templates/page/page-content.twig" %}
     {% block page_content %}
@@ -115,11 +124,18 @@
       {% if with_tags %}
         {% embed "@molecules/tags/tags.twig" %}
           {% block tags_content %}
-            {{ content.field_global_theme }}
+            {{ content.field_tags }}
           {% endblock %}
         {% endembed %}
       {% endif %}
 
+    {% endblock %}
+
+    {% block page_sidebar_post_content %}
+      {{ content.field_service_classes }}
+      {{ content.field_target_groups }}
+      {{ content.field_requirements }}
+      {{ content.service_channels_embed }}
     {% endblock %}
 
     {% block page_content_post_content %}

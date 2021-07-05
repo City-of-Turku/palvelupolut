@@ -129,23 +129,15 @@ class ConfigurationSource extends SourcePluginBase {
    */
   public function prepareRow(Row $row) {
     $helper = new PtvHelper();
-    $langcodes = [];
-    if ($this->defaultLangcode) {
-      $langcodes[] = $this->defaultLangcode;
-    }
-    if ($this->languages) {
-      $langcodes = $this->languages;
-    }
 
     $id = $row->getSourceProperty('id');
-    $data = $helper->prepareMigrateData($this->sourceKey, $langcodes, $id);
+    $langcode = $row->getSourceProperty('langcode');
+    $data = $helper->prepareMigrateData($this->sourceKey, $langcode, $id);
     foreach ($data as $key => $value) {
-      if (!in_array($key, array_keys($row->getSource()))) {
+      // if (!in_array($key, array_keys($row->getSource()))) {
         $row->setSourceProperty($key, $value);
-      }
+      // }
     }
-    // ksm($row->getSource());
-    // ksm($data);
     return parent::prepareRow($row);
   }
 
