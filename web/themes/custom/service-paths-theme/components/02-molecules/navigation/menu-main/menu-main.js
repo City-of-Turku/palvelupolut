@@ -1,4 +1,4 @@
-Drupal.behaviors.servicepathsMainMenu = {
+Drupal.behaviors.servicePathsMainMenu = {
   /**
    * Helper for getting the current layout.
    *
@@ -26,11 +26,9 @@ Drupal.behaviors.servicepathsMainMenu = {
     };
   },
   attach: (context) => {
-    const { currentLayout, debounce } = Drupal.behaviors.servicepathsMainMenu;
-    const {
-      eventHeaderDialogOpened,
-      eventHeaderDialogClosed,
-    } = Drupal.behaviors.servicepathsHeaderOverlay;
+    const { currentLayout, debounce } = Drupal.behaviors.servicePathsMainMenu;
+    const { eventHeaderDialogOpened, eventHeaderDialogClosed } =
+      Drupal.behaviors.servicePathsHeaderOverlay;
     const eventMainLevelChanged = 'mainMenu:mainLevelChanged';
     const spacerElementSelector = '.menu-main__spacer';
     const menuWrapperSelector = '.menu';
@@ -116,9 +114,8 @@ Drupal.behaviors.servicepathsMainMenu = {
       `;
 
       const menuControls = subMenuWrapper.querySelectorAll(selector);
-      const title = subMenuWrapper.parentElement.querySelector(
-        childTitleSelector,
-      );
+      const title =
+        subMenuWrapper.parentElement.querySelector(childTitleSelector);
 
       menuControls.forEach((menuControl) => {
         // Top level menu items should be reachable and focusable. However on
@@ -147,9 +144,8 @@ Drupal.behaviors.servicepathsMainMenu = {
      *  Indicates whether the submenu should be expanded.
      */
     const toggleSubMenu = (subMenuWrapper, expand) => {
-      const parentSubMenuWrapper = subMenuWrapper.parentElement.closest(
-        menuWrapperSelector,
-      );
+      const parentSubMenuWrapper =
+        subMenuWrapper.parentElement.closest(menuWrapperSelector);
       const drawer = subMenuWrapper.closest(drawerSelector);
       const menuItem = subMenuWrapper.closest(menuItemSelector);
       const titleElement = drawer.querySelector(titleSelector);
@@ -358,9 +354,8 @@ Drupal.behaviors.servicepathsMainMenu = {
           event.stopPropagation();
 
           // Find and collapse parent menu item.
-          const parentMenuItem = subMenuWrapper.parentElement.closest(
-            menuItemSelector,
-          );
+          const parentMenuItem =
+            subMenuWrapper.parentElement.closest(menuItemSelector);
           switchSubMenu(parentMenuItem, false, true);
         }
       });
@@ -435,9 +430,8 @@ Drupal.behaviors.servicepathsMainMenu = {
         );
         // The last active menu item should be the deepest nested menu item.
         const deepestMenuItem = activeMenuItems[activeMenuItems.length - 1];
-        const activeSubMenu = deepestMenuItem?.querySelector(
-          menuWrapperSelector,
-        );
+        const activeSubMenu =
+          deepestMenuItem?.querySelector(menuWrapperSelector);
 
         if (activeSubMenu) {
           toggleSubMenu(activeSubMenu, true);

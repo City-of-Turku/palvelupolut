@@ -1,10 +1,10 @@
 /* eslint-disable no-continue, no-restricted-syntax, no-use-before-define */
 
-Drupal.behaviors.turkuHeaderOverlay = {
+Drupal.behaviors.servicePathsHeaderOverlay = {
   eventHeaderDialogOpened: 'headerDialog:dialogOpened',
   eventHeaderDialogClosed: 'headerDialog:dialogClosed',
   attach(context) {
-    const { currentLayout } = Drupal.behaviors.turkuMainMenu;
+    const { currentLayout } = Drupal.behaviors.servicePathsMainMenu;
     const body = context.querySelector('body');
     const headerOverlay = context.querySelector('.header-overlay__dialog');
     const switcher = headerOverlay?.querySelector('.menu-switcher');

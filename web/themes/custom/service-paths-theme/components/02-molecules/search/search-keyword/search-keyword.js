@@ -1,4 +1,4 @@
-Drupal.behaviors.servicepathsSearchKeyword = {
+Drupal.behaviors.servicePathsSearchKeyword = {
   attach(context) {
     // Find elements
     const openButton = context.querySelector('.js-search-keyword-open');
