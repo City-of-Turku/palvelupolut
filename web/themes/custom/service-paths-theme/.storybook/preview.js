@@ -32,6 +32,11 @@ export const globalTypes = {
 };
 
 export const parameters = {
+  options: {
+    storySort: {
+      order: ['Documentation'],
+    },
+  },
   html: { root: '#component-root' },
   docs: {
     page: DocsPage,
