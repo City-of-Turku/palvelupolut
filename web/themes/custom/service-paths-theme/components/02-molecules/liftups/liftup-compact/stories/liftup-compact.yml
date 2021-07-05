@@ -1,9 +1,0 @@
-liftup_compact__title: 'Tämä on sisältönoston otsikko'
-liftup_compact__content: 'Kurssitarjontaamme kannattaa kahlata avoimin mielin! Kirjoittamisen kursseja, matkoja, kirjallisuuspiirejä, lausuntaa, teatteria ja tanssia: kurssiemme yhteisiä nimittäjiä ovat täydet kohtaamiset.'
-liftup_compact__image:
-  image_srcset: 'https://placeimg.com/824/540 660w, https://placeimg.com/824/540 1000w'
-  image_sizes: '100vw'
-  image_src: 'https://placeimg.com/824/540'
-  image_alt: "This is the liftup image's alt text"
-liftup_compact__link: '#'
-liftup_compact__link__text: 'Klikkaa tästä'

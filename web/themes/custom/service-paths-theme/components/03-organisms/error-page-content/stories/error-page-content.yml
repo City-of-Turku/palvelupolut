@@ -1,8 +1,0 @@
-error_page_content__status_code:
-  - '404'
-error_page_content__title: 'HUPS!'
-error_page_content__subtitle: 'Sorry, the page you are looking for cannot be found.'
-error_page_content__message_main: 'The page may have been moved or deleted, or you might have typed the address wrong.'
-error_page_content__message_search: 'Please try using our <a href="#">search</a>.'
-error_page_content__message_home: 'Please visit our <a href="#">homepage</a> and give it a try if you find what you’re looking for there.'
-error_page_content__message_contact: 'Please <a href="#">contact us</a> if the problem persists.'

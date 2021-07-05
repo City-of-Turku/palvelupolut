@@ -9,11 +9,6 @@ body {
   line-height: $line-height--base;
   color: color(text);
   background-color: color(background);
-
-  &[data-header-overlay-expanded='true'] {
-    height: 100vh;
-    overflow: hidden;
-  }
 }
 
 *,
