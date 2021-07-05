@@ -2,8 +2,7 @@ import { addDecorator } from '@storybook/react';
 import { useEffect } from '@storybook/client-api';
 import Twig from 'twig';
 import { setupTwig } from './setupTwig';
-import setupShowCode from './setupShowCode';
-import { DocsRoot } from './setupWrappers';
+import setupSource from './setupSource';
 import { DocsPage } from '@storybook/addon-docs/blocks';
 
 // Import styles for Storybook.
@@ -39,9 +38,9 @@ export const parameters = {
   },
   html: { root: '#component-root' },
   docs: {
-    page: DocsPage,
-    container: DocsRoot,
-    transformSource: (src, storyContext) => setupShowCode(storyContext.storyFn),
+    // Customise Source tab content
+    // @see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#customizing-source-snippets
+    transformSource: setupSource,
   },
 };
 
