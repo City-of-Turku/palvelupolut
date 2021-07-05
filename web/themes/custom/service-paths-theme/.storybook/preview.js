@@ -15,6 +15,21 @@ import '../components/style.scss';
 // If in a Drupal project, it's recommended to import a symlinked version of drupal.js.
 import './_drupal.js';
 
+// Add global types to the Storybook toolbar.
+export const globalTypes = {
+  locale: {
+    name: 'Language',
+    description: 'Language',
+    defaultValue: 'en',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', right: '🇬🇧', title: 'English' },
+        { value: 'fi', right: '🇫🇮', title: 'Finnish' },
+      ],
+    },
+  },
+};
 
 export const parameters = {
   html: { root: '#component-root' },

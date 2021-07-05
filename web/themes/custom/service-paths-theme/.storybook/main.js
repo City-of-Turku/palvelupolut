@@ -10,16 +10,10 @@ module.exports = {
       },
     },
     '@storybook/addon-a11y',
-    '@storybook/addon-actions/register',
+    // '@storybook/addon-actions/register',
     '@storybook/addon-controls',
-    '@storybook/addon-links/register',
+    '@storybook/addon-toolbars',
+    // '@storybook/addon-links/register',
     "@whitespace/storybook-addon-html'",
-    // {
-    //   name: '@storybook/addon-essentials',
-    //   options: {
-    //     docs: false,
-    //     backgrounds: false,
-    //   },
-    // },
   ],
 };
