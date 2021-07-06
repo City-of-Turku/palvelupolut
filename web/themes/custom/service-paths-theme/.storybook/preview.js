@@ -16,6 +16,7 @@ import './_drupal.js';
 
 // Add global types to the Storybook toolbar.
 export const globalTypes = {
+  // Add a language switcher dropdown to the toolbar.
   locale: {
     name: 'Language',
     description: 'Language',
@@ -32,8 +33,16 @@ export const globalTypes = {
 
 export const parameters = {
   options: {
+    // Show stories from `Documentation` directory before any other stories.
     storySort: {
       order: ['Documentation'],
+    },
+  },
+  previewTabs: {
+    // Hide the Docs panel.
+    // @see https://github.com/storybookjs/storybook/pull/9095
+    'storybook/docs/panel': {
+      hidden: true,
     },
   },
   html: {
