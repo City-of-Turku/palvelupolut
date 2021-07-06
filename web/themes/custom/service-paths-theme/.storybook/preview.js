@@ -35,7 +35,9 @@ export const parameters = {
   options: {
     // Show stories from `Documentation` directory before any other stories.
     storySort: {
-      order: ['Documentation'],
+      order: ['Documentation',
+        ['Introduction', 'Interface', 'Component structure'],
+      ],
     },
   },
   previewTabs: {

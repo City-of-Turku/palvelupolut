@@ -123,6 +123,15 @@ CollectionWrapper.defaultProps = {
   layout: undefined,
 };
 
+/**
+ * Wrapper for a Documentation. It will only render when the global `locale`
+ * matches the passed `language` prop.
+ *
+ * @param {any} children
+ *   Child components.
+ * @param {string} language
+ *   Prefix of the language the documentation is written in (e.g., 'fi', 'en').
+ */
 const Docs = ({ language = 'en', children }) => {
   const { locale } = useContext(ToolbarContext);
   return <>{locale === language && children}</>;
