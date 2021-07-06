@@ -10,10 +10,8 @@ module.exports = {
       },
     },
     '@storybook/addon-a11y',
-    // '@storybook/addon-actions/register',
     '@storybook/addon-controls',
     '@storybook/addon-toolbars',
-    // '@storybook/addon-links/register',
     '@whitespace/storybook-addon-html',
   ],
 };

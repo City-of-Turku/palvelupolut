@@ -55,7 +55,7 @@ export const parameters = {
   docs: {
     // Customise Source tab content.
     // @see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#customizing-source-snippets
-    transformSource: setupSource,
+    // transformSource: setupSource,
     // Add wrapper for MDX documentation pages.
     // @see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#overwriting-docs-container
     container: mdxContainer,
