@@ -1,6 +1,8 @@
-/* eslint-disable react/no-danger */
-import React from 'react';
+/* eslint-disable react/no-danger, react/prop-types */
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import { ToolbarContext } from '../../.storybook/mdxContainer';
 
 /**
  * Wrapper for components in Storybook so they get spacing for preview.
@@ -121,4 +123,19 @@ CollectionWrapper.defaultProps = {
   layout: undefined,
 };
 
-export { CollectionWrapper, ComponentWrapper };
+const Docs = ({ language = 'en', children }) => {
+  const { locale } = useContext(ToolbarContext);
+  return <>{locale === language && children}</>;
+};
+
+Docs.propTypes = {
+  children: PropTypes.node,
+  language: PropTypes.string,
+};
+
+Docs.defaultProps = {
+  children: undefined,
+  language: 'en',
+};
+
+export { CollectionWrapper, ComponentWrapper, Docs };

@@ -3,7 +3,7 @@ import { useEffect } from '@storybook/client-api';
 import Twig from 'twig';
 import { setupTwig } from './setupTwig';
 import setupSource from './setupSource';
-import { DocsPage } from '@storybook/addon-docs/blocks';
+import mdxContainer from './mdxContainer';
 
 // Import styles for Storybook.
 import '../components/storybook/storybook.scss';
@@ -54,6 +54,9 @@ export const parameters = {
     // Customise Source tab content.
     // @see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#customizing-source-snippets
     transformSource: setupSource,
+    // Add wrapper for MDX documentation pages.
+    // @see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#overwriting-docs-container
+    container: mdxContainer,
   },
 };
 
