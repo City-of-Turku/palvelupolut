@@ -15,11 +15,10 @@
  *     Example: to insert the image component
  */
 #}
-{% set icon_grid__base_class = "icon-grid" %}
+{% set icon_grid__base_class = "icon-grid-item" %}
 {% set icon_grid__modifiers = icon_grid__modifiers|default([]) %}
 
 <div {{ bem(icon_grid__base_class, icon_grid__modifiers, icon_grid__blockname) }} >
-
   {% include "@atoms/images/icon/icon.twig" with {
     icon__name: icon_grid__icon,
     icon__base_class: "icon",
@@ -27,9 +26,8 @@
   } %}
 
   <div {{ bem("inner", [], icon_grid__base_class) }}>
-
     {% include "@atoms/text/heading/heading.twig" with {
-      heading__level: 5,
+      heading__level: 3,
       heading__base_class: "title",
       heading__blockname: icon_grid__base_class,
       heading: icon_grid__title,
@@ -40,7 +38,6 @@
       text_long__base_class: "text",
       text_long__content:  icon_grid__lead_text,
     } %}
-
   </div>
 
 </div>
