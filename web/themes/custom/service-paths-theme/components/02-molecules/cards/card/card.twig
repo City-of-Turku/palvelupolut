@@ -42,72 +42,73 @@
 
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
 
-  {% include "@atoms/images/image/image.twig" with {
+  <div {{ bem('wrapper', card__modifiers, card__base_class) }} >
+
+  {% include "@atoms/images/image/responsive-image.twig" with {
     image_src: card__image__src,
-    image__blockname: card__base_class,
+    responsive_image__blockname: card__base_class,
   } %}
 
-  <div {{ bem('item_content', card__modifiers, card__base_class) }} >
+    <div {{ bem('item_content', card__modifiers, card__base_class) }} >
 
-    {% include "@atoms/text/heading/heading.twig" with {
-      heading__level: 3,
-      heading__base_class: card__heading__base_class|default('heading'),
-      heading__modifiers: card__heading__modifiers,
-      heading__blockname: card__base_class,
-      heading: card__heading,
-    } %}
-
-    <div {{ bem('inner', card__modifiers, card__base_class) }} >
-
-      {% embed "@atoms/lists/list-unordered.twig" with {
-        list__base_class: "link-list",
-        list__modifiers: card__modifiers,
-        list__blockname: card__base_class,
+      {% include "@atoms/text/heading/heading.twig" with {
+        heading__level: 3,
+        heading__base_class: card__heading__base_class|default('heading'),
+        heading__modifiers: card__heading__modifiers,
+        heading__blockname: card__base_class,
+        heading: card__heading,
       } %}
 
-        {% block list_content %}
+      <div {{ bem('inner', card__modifiers, card__base_class) }} >
 
-          {% for item in card__items %}
+        {% embed "@atoms/lists/list-unordered.twig" with {
+          list__base_class: "card-text-list",
+          list__modifiers: card__modifiers,
+          list__blockname: card__base_class,
+        } %}
 
-            {% embed "@atoms/lists/list-item.twig" with {
-              list_item__base_class: "item",
-              list_item__blockname: card__base_class,
-            } %}
+          {% block list_content %}
 
-              {% block list_item_content %}
-              {% set link_modifiers = card__link_modifiers|default([]) %}
+            {% for item in card__items %}
 
-                {% include "@atoms/images/icon/icon.twig" with {
-                  icon__name: item.icon,
-                  icon__base_class: "icon",
-                } %}
+              {% embed "@atoms/lists/list-item.twig" with {
+                list_item__base_class: "item",
+                list_item__blockname: card__base_class,
+              } %}
 
-                {% include "@atoms/text/text-long/text-long.twig" with {
-                  text_long__blockname: card__base_class,
-                  text_long__base_class: "text",
-                  text_long__content:  item.lead_text,
-                } %}
+                {% block list_item_content %}
+                {% set link_modifiers = card__link_modifiers|default([]) %}
 
-              {% endblock %}
-            {% endembed %}
-          {% endfor %}
-        {% endblock %}
-     {% endembed %}
+                  {% include "@atoms/images/icon/icon.twig" with {
+                    icon__name: item.icon,
+                    icon__base_class: "icon",
+                  } %}
 
-    </div>
+                  {% include "@atoms/text/text-long/text-long.twig" with {
+                    text_long__base_class: "text",
+                    text_long__content:  item.lead_text,
+                  } %}
 
-    <div {{ bem('link', card__modifiers, card__base_class) }} >
+                {% endblock %}
+              {% endembed %}
+            {% endfor %}
+          {% endblock %}
+       {% endembed %}
 
-      {% include "@atoms/images/icon/icon.twig" with {
-        icon__name: "arrow-right",
-        icon__base_class: "icon",
-      } %}
+      </div>
 
-      {% include "@atoms/links/link/link.twig" with {
-        link__content: card__link_text,
-        link__url: card__link__url,
-      } %}
+      <div {{ bem('link', card__modifiers, card__base_class) }} >
 
+        {% include "@atoms/images/icon/icon.twig" with {
+          icon__name: "arrow-right",
+        } %}
+
+        {% include "@atoms/links/link/link.twig" with {
+          link__content: card__link_text,
+          link__url: card__link__url,
+        } %}
+
+      </div>
     </div>
   </div>
 </div>

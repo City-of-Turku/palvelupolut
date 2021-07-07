@@ -1,15 +1,15 @@
 .card__image {
   position: relative;
-  height: 200px;
-  width: 312px;
   border-radius: 18px 18px 0 0;
   background-color: rgba(255,255,255,0);
   object-fit: cover;
 }
 .card {
   border-radius: 16px;
-  background-color: #FBF3ED;
-  width: 312px;
+  background: color(background-section);
+  width: auto;
+  max-width: 400px;
+
   ul {
     padding: 0;
   }
@@ -19,7 +19,7 @@
     }
   }
 }
-.card__heading.card__heading--h3 {
+.card__heading {
   font-size: $font-size--large-2;
 }
 .card__item {
