@@ -1,33 +1,42 @@
-.selection_box__inner {
-  .button.button--minimal {
-    margin-bottom: 12px;
+.selection_box {
+  &__inner {
+    .button.button--minimal {
+      margin-bottom: space(0.75);
+    }
+
+    a {
+      padding: 0;
+      font-size: $font-size--small-1;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--small;
+      line-height: $line-height--narrow;
+    }
+
+    .button__text {
+      font-size: $font-size--small-1;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--small;
+      line-height: $line-height--narrow;
+    }
   }
-  a {
-    padding: 0;
-    font-size: $font-size--small-1;
-    font-weight: bold;
-    letter-spacing: $letter-spacing--small;
-    line-height: $line-height--narrow;
+
+  &__selection-link {
+    align-items: center;
+    display: flex;
+
+    svg {
+      margin-right: space();
+      width: space();
+      height: space();
+    }
+
+    &__title {
+      margin-bottom: space(1);
+    }
   }
-  span.button__text {
-    font-size: $font-size--small-1;
-    font-weight: bold;
-    letter-spacing: $letter-spacing--small;
-    line-height: $line-height--narrow;
+  &__wrapper {
+    padding: space(2);
+    background-color: color(background-light);
+    border-radius: $border-width;
   }
-}
-.selection_box__selection-link {
-  align-items: center;
-  display: flex;
-  svg {
-    margin-right: 16px;
-  }
-}
-.selection_box__title {
-  margin-bottom: space(1);
-}
-.selection_box__wrapper {
-  padding: space(2);
-  background-color: color(background-light);
-  border-radius: 18px;
 }
