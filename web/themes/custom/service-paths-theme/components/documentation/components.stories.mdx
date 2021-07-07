@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs';
+import { Docs } from '../storybook/storybook'
+
+<Meta title="Documentation/Component structure" />
+
+<Docs language="en">
+
+# Component structure
+
+## Atomic Design principles
+
+Atomic design principles have been implemented and are used to structure the components.
+The main idea behind atomic design is that everything should be split up into the smallest possible reusable components
+and then built up again. The smallest reusable pieces of code are the basic building blocks in atomic design. Since they
+are not split into any smaller components they are usually called atoms. These include things like
+[headings](?path=/story/atoms-text--heading), [links](?path=/story/atoms-links--link),
+[buttons](?path=/story/atoms-button--button) and other small components.
+
+![Atomic design building blocks](/documentation/atomic-design.png)
+
+Putting several small components together we can create larger things called molecules. For instance the
+[Hero component](?path=/story/molecules-hero--hero) is a molecule that consists of a heading, long text and image atoms.
+Adding molecules together we get organisms and so on. You can see this structure being reflected in the
+[sidebar menu](?path=/story/documentation-interface--page#sidebar).
+
+## Benefits of using Atomic design
+
+Using atomic design comes with several benefits:
+
+- Reuse: components are being reused instead of creating new components for every variation.
+- Coherence: reusing the same components inevitably leads to having less variations of very similar components.
+- Efficieny: new components can be created by forming new groups of smaller components. Atomic design can also help to
+  implement changes faster since changes are propagated across all the components that use the changed component.
+  A good structure is important however  since the opposite can also be true.
+
+</Docs>
+
+<Docs language="fi">
+
+# Komponenttirakenne
+...
+
+</Docs>

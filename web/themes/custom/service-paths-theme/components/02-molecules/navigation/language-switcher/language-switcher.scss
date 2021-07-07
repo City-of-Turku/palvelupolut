@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .language-switcher {
   @include list-reset;
 
@@ -12,7 +14,7 @@
   &__item {
     @include bold-highlight;
 
-    padding: 0 space(1/2);
+    padding: 0 space(math.div(1, 2));
     font-size: $font-size--small-3;
     text-transform: uppercase;
   }
@@ -20,7 +22,7 @@
   &__link {
     @include link-reset;
 
-    padding-bottom: space(1/2);
+    padding-bottom: space(math.div(1, 2));
     position: relative;
 
     &:hover,
@@ -45,13 +47,15 @@
       &::before {
         opacity: 0;
         transform: translateY(4px);
-        transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+        transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          opacity 0s;
       }
 
       &::after {
         opacity: 0;
         transform: translateY(4px);
-        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          opacity 0.2s;
       }
 
       &:hover,
@@ -63,11 +67,13 @@
         }
 
         &::before {
-          transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+          transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            opacity 0.2s;
         }
 
         &::after {
-          transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+          transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            opacity 0s 0.2s;
         }
       }
     }

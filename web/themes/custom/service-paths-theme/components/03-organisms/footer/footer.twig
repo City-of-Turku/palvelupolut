@@ -30,19 +30,9 @@
         {% include "@organisms/footer/footer-branding/footer-branding.twig" %}
       {% endblock %}
     </div>
-    <div {{ bem("menu", [], footer__base_class) }}>
-      {% block footer__menu %}
-        {% include "@molecules/navigation/menu-footer/menu-footer.twig" %}
-      {% endblock %}
-    </div>
     <div {{ bem("contact", [], footer__base_class) }}>
       {% block footer__contact %}
         {{ footer__contact }}
-      {% endblock %}
-    </div>
-    <div {{ bem("social-menu", [], footer__base_class) }}>
-      {% block footer__social %}
-        {% include "@molecules/navigation/menu-social/menu-social.twig" %}
       {% endblock %}
     </div>
     <div {{ bem("copyright", [], footer__base_class) }}>

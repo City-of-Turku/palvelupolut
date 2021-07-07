@@ -1,64 +1,77 @@
+@use 'sass:math';
+
 .contact-card {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  li {
+    &::marker {
+      content: '';
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
   .icon {
     margin-right: space();
     width: space(1.25);
     height: space(1.25);
     position: relative;
   }
+
   .link {
     color: black;
     font-size: $font-size--small-1;
     font-weight: bold;
     letter-spacing: 0.22px;
     line-height: 24px;
+
     &:hover {
       box-shadow: none;
     }
+
     .icon--before {
       margin-right: 0;
     }
   }
-  .contact-card__title {
+
+  .text {
+    font-size: $font-size--small-1;
+    padding-left: 2.3rem;
+    margin-top: space(math.div(1, 2));
+    letter-spacing: 0.25px;
+    line-height: 22px;
+  }
+
+  &__title {
     font-size: $font-size--small-1;
     font-weight: 800;
     letter-spacing: 0.56px;
     line-height: 24px;
   }
-  .text {
-    font-size: $font-size--small-1;
-    padding-left: 2.3rem;
-    margin-top: space(1/2);;
-    letter-spacing: 0.25px;
-    line-height: 22px;
+
+  &__item {
+    margin-bottom: space();
+    display: flex;
+    flex-direction: column;
   }
-  li {
-    &::marker {
-      content: "";
+
+  &__link-with-icon {
+    display: flex;
+    h5 {
+      margin: 0;
     }
   }
-  ul {
-    padding: 0;
-    margin: 0;
+
+  &__heading {
+    font-size: $font-size--base;
+    font-weight: 800;
+    letter-spacing: 0.56px;
+    line-height: 24px;
+    margin-bottom: space();
   }
-}
-.contact-card__item {
-  margin-bottom: space();
-  display: flex;
-  flex-direction: column;
-}
-.contact-card__link-with-icon {
-  display: flex;
-  h5 {
-    margin: 0;
-  }
-}
-.contact-card__heading {
-  font-size: $font-size--base;
-  font-weight: 800;
-  letter-spacing: 0.56px;
-  line-height: 24px;
-  margin-bottom: space();
 }

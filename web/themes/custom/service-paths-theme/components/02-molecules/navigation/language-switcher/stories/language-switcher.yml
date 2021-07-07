@@ -2,6 +2,6 @@ language_switcher__items:
   - title: 'Suomi'
     url: '#'
     modifiers:
-    - 'is-active'
+      - 'is-active'
   - title: 'English'
     url: '#'
