@@ -16,7 +16,6 @@
 {% set selection_box__modifiers = selection_box__modifiers|default([]) %}
 
 <div {{ bem("wrapper", [], selection_box__base_class) }}>
-
   {% include "@atoms/text/heading/heading.twig" with {
     heading__level: 2,
     heading__base_class: "title",
@@ -25,7 +24,6 @@
   } %}
 
   <div {{ bem("inner", [], selection_box__base_class) }}>
-
     {% include "@atoms/buttons/button/button.twig" with {
       button__content: selection_box__open_text,
       button__type: "button",
@@ -34,7 +32,6 @@
     } %}
 
     <div {{ bem("selection-link", [], selection_box__base_class) }}>
-
       {% include "@atoms/images/icon/icon.twig" with {
         icon__name: "search",
         icon__base_class: "icon",
@@ -46,9 +43,6 @@
         link__url: selection_box__url,
         icon__name: link__icon_before,
       } %}
-
     </div>
-
   </div>
-
 </div>
