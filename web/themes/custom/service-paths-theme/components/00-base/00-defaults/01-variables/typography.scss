@@ -27,16 +27,19 @@ $font-size--h5--small: 1rem;
 $font-size--h6: 0.875rem;
 $font-size--h6--small: 0.875rem;
 
+$letter-spacing--xs: -0.025em;
 $letter-spacing--medium: 0.05em;
-$letter-spacing--wide: 0.08em;
+$letter-spacing--wide: 0.012em;
 $letter-spacing--large: 0.016em;
 
+$line-height--heading-large: 2.375;
+$line-height--heading-medium: 1.6875;
 $line-height--heading: 1.6;
 $line-height--base: 1.75;
 $line-height--narrow: 1.4;
 
 // Borders
-$border-width: 4px;
+$border-width: 18px;
 
 $default-border-color: black;
 $default-border-style: solid;

@@ -41,16 +41,14 @@
 {% set card__image__modifiers = card__image__modifiers|default([]) %}
 
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
-
   <div {{ bem('wrapper', card__modifiers, card__base_class) }} >
 
-  {% include "@atoms/images/image/responsive-image.twig" with {
-    image_src: card__image__src,
-    responsive_image__blockname: card__base_class,
-  } %}
+    {% include "@atoms/images/image/responsive-image.twig" with {
+      image_src: card__image__src,
+      responsive_image__blockname: card__base_class,
+    } %}
 
     <div {{ bem('item_content', card__modifiers, card__base_class) }} >
-
       {% include "@atoms/text/heading/heading.twig" with {
         heading__level: 3,
         heading__base_class: card__heading__base_class|default('heading'),
@@ -68,7 +66,6 @@
         } %}
 
           {% block list_content %}
-
             {% for item in card__items %}
 
               {% embed "@atoms/lists/list-item.twig" with {
@@ -94,11 +91,9 @@
             {% endfor %}
           {% endblock %}
        {% endembed %}
-
       </div>
 
       <div {{ bem('link', card__modifiers, card__base_class) }} >
-
         {% include "@atoms/images/icon/icon.twig" with {
           icon__name: "arrow-right",
         } %}
@@ -107,7 +102,6 @@
           link__content: card__link_text,
           link__url: card__link__url,
         } %}
-
       </div>
     </div>
   </div>

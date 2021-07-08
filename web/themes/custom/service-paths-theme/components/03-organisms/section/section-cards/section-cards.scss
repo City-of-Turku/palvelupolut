@@ -1,8 +1,8 @@
 .section-cards {
   .heading {
     margin-bottom: space(1.5);
-    letter-spacing: -0.4px;
-    line-height: 38px;
+    letter-spacing: $letter-spacing--xs;
+    line-height: $line-height--heading-large;
   }
 
   .card__image {
@@ -13,12 +13,12 @@
     margin: 0 0 space(4.75);
     font-size: $font-size--base;
     font-weight: bold;
-    letter-spacing: 0.25px;
-    line-height: 27px;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--heading-medium;
     .icon {
-      margin-right: 20px;
+      margin-right: space(1.25);
       position: relative;
-      top: 3px;
+      top: space(0.188);
     }
   }
 
@@ -40,7 +40,7 @@
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-    grid-gap: 24px;
+    grid-gap: space(1.5);
   }
 
   &--large {
