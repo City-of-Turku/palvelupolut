@@ -13,25 +13,19 @@
 {% set section_icon_grid__modifiers = section_icon_grid__modifiers|default([]) %}
 
 <div {{ bem(section_icon_grid__base_class, section_icon_grid__modifiers, section_icon_grid__blockname) }}>
-
   {% include "@atoms/text/heading/heading.twig" with {
     "heading": section_icon_grid__title,
     "heading__level": section_icon_grid__title_level|default("2"),
   } %}
 
   <div {{ bem("items", [], section_icon_grid__base_class) }}>
-
     {% for item in section_icon_grid__items %}
-
       {% include "@molecules/icon-grid/icon-grid.twig" with {
         icon_grid__modifiers: icon_grid_modifiers,
         icon_grid__title: item.title,
         icon_grid__lead_text: item.lead_text,
         icon_grid__icon: item.icon,
       } %}
-
     {% endfor %}
-
   </div>
-
 </div>

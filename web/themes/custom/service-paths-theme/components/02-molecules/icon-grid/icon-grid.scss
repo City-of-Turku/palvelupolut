@@ -3,9 +3,9 @@
   display: flex;
 
   &__icon {
-    width: 32px;
-    height: 32px;
-    margin-right: 20px;
+    width: space(2);
+    height: space(2);
+    margin-right: space(1.25);
   }
 
   &__title {
@@ -16,7 +16,7 @@
 
   &__inner {
     font-size: $font-size--small-1;
-    letter-spacing: 0;
+    letter-spacing: $letter-spacing--none;
     line-height: $line-height--narrow;
   }
 }
