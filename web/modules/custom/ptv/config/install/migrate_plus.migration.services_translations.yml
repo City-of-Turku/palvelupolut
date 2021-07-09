@@ -28,6 +28,38 @@ process:
     plugin: default_value
     default_value: basic_html
 
+  field_requirements/value: requirements
+  field_requirements/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_tags:
+    plugin: entity_generate
+    source: ontology_terms
+    entity_type: taxonomy_term
+    bundle: tags
+    property: name
+    values:
+      langcode: langcode
+
+  field_target_groups:
+    plugin: entity_generate
+    source: target_groups
+    entity_type: taxonomy_term
+    bundle: target_groups
+    property: name
+    values:
+      langcode: langcode
+
+  field_service_classes:
+    plugin: entity_generate
+    source: service_classes
+    entity_type: taxonomy_term
+    bundle: service_classes
+    property: name
+    values:
+      langcode: langcode
+
   path/pathauto:
     plugin: default_value
     default_value: 1

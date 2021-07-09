@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin h1(
   $font-family: $font-family--heading,
   $font-size: $font-size--h1,
@@ -43,7 +45,7 @@
   $color-link: inherit,
   $color-link-hover: color(text-inverse),
   $font-weight: 700,
-  $margin: 0 0 space(3/2)
+  $margin: 0 0 space(math.div(3, 2))
 ) {
   color: $color;
   font-family: $font-family;
@@ -112,7 +114,7 @@
   $color: color(text),
   $color-link: inherit,
   $color-link-hover: color(text-inverse),
-  $font-weight: 600,
+  $font-weight: 700,
   $margin: 0 0 space()
 ) {
   color: $color;
@@ -141,12 +143,13 @@
 @mixin h5(
   $font-family: $font-family--heading,
   $font-size: $font-size--h5,
+  $font-size-small: $font-size--h5--small,
   $letter-spacing: 0.05em,
   $line-height: 1.5,
   $color: color(text),
   $color-link: inherit,
   $color-link-hover: color(text-inverse),
-  $font-weight: 600,
+  $font-weight: 700,
   $margin: 0 0 space()
 ) {
   color: $color;
@@ -168,11 +171,38 @@
   }
 }
 
-@mixin label(
+@mixin h6(
+  $font-family: $font-family--heading,
+  $font-size: $font-size--h6,
+  $font-size-small: $font-size--h6--small,
+  $letter-spacing: 0.05em,
+  $line-height: 1.5,
   $color: color(text),
-  $margin: 0,
-  $padding: space(1/4) 0
+  $color-link: inherit,
+  $color-link-hover: color(text-inverse),
+  $font-weight: 700,
+  $margin: 0 0 space()
 ) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin label($color: color(text), $margin: 0, $padding: space(math.div(1, 4)) 0) {
   margin: $margin;
   padding: $padding; // Align vertically with body text.
   line-height: $line-height--base;
@@ -184,7 +214,10 @@
   color: $color;
 }
 
-@mixin bold-highlight($font-weight: 700, $letter-spacing: $letter-spacing--medium) {
+@mixin bold-highlight(
+  $font-weight: 700,
+  $letter-spacing: $letter-spacing--medium
+) {
   font-family: $font-family--accent;
   font-weight: $font-weight;
   letter-spacing: $letter-spacing;

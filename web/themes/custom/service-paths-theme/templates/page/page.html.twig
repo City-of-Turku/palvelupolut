@@ -50,9 +50,18 @@
   {% block page_header %}
     {% embed "@organisms/header/header.twig" %}
 
-      {% block header %}
-        {{ page.header }}
+      {% block header_overlay %}
+
       {% endblock %}
+
+      {% block header_language_menu %}
+        {{ drupal_entity("block", "service_paths_theme_language_switcher") }}
+      {% endblock %}
+
+      {% block header_bottom %}
+        {{ drupal_entity("block", "service_paths_theme_breadcrumbs") }}
+      {% endblock %}
+
     {% endembed %}
   {% endblock %}
 

@@ -18,3 +18,26 @@ memcached:
 
 varnish:
   enabled: false
+
+php:
+  cron:
+    ptvcron1:
+      schedule: '10 * * * *'
+      command: |
+        drush migrate:reset-status services;
+        drush migrate:import services --limit=30;
+    ptvcron2:
+      schedule: '20 * * * *'
+      command: |
+        drush migrate:reset-status services_translations;
+        drush migrate:import services_translations --limit=30;
+    ptvcron3:
+      schedule: '30 * * * *'
+      command: |
+        drush migrate:reset-status service_channels;
+        drush migrate:import service_channels --limit=30;
+    ptvcron4:
+      schedule: '40 * * * *'
+      command: |
+        drush migrate:reset-status service_channels_translations;
+        drush migrate:import service_channels_translations --limit=30;

@@ -1,0 +1,21 @@
+uuid: ecf5b73b-1e7c-4d41-a3a8-cf8f4e79fb52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accessibility
+    - node.type.service_channel
+  module:
+    - text
+id: node.service_channel.field_accessibility
+field_name: field_accessibility
+entity_type: node
+bundle: service_channel
+label: Accessibility
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

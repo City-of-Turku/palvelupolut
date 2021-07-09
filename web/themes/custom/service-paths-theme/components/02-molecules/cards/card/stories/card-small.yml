@@ -1,7 +1,0 @@
-card__modifiers: ['small']
-card__image__src: 'card.jpg'
-card__heading: 'Wunder discussed the world of social media'
-card__link__url: '#'
-card__type: 'Blogs'
-card__category: ['Life at Wunder', 'Sustainable development', 'Digitalization']
-card__date: '1.9.2021'

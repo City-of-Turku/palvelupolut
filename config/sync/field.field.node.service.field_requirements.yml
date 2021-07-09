@@ -1,0 +1,21 @@
+uuid: 6ee181dc-af97-4b08-9d89-c8d9985be41c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_requirements
+    - node.type.service
+  module:
+    - text
+id: node.service.field_requirements
+field_name: field_requirements
+entity_type: node
+bundle: service
+label: Requirements
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

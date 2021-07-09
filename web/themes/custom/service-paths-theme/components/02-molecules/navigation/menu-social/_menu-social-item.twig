@@ -1,9 +1,0 @@
-{% set list__base_class = 'item' %}
-{% set list__modifiers = item_modifiers %}
-{% set list__blockname = menu_social__base_class %}
-{% set list_item__blockname = menu_social__base_class %}
-
-{% extends "@atoms/lists/list-item.twig" %}
-  {% block list_item_content %}
-    {% include "@molecules/navigation/menu-social/_menu-social-link.twig" %}
-  {% endblock %}

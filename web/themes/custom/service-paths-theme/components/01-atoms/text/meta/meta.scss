@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .meta {
   @include bold-highlight($letter-spacing: $letter-spacing--wide);
 
@@ -23,14 +25,14 @@
 
   &--light,
   &--dark {
-    padding: space(1/4) space();
+    padding: space(math.div(1, 4)) space();
 
     @include above($width-medium) {
-      padding: space(1/2) space();
+      padding: space(math.div(1, 2)) space();
     }
 
     .meta__separator {
-      padding: 0 space(1/3);
+      padding: 0 space(math.div(1, 3));
     }
   }
 

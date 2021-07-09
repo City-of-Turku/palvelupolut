@@ -10,6 +10,10 @@ dependencies:
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_lead_text
     - field.field.node.service.field_paragraphs
+    - field.field.node.service.field_requirements
+    - field.field.node.service.field_service_classes
+    - field.field.node.service.field_tags
+    - field.field.node.service.field_target_groups
     - node.type.service
   module:
     - user
@@ -30,4 +34,8 @@ hidden:
   field_lead_image: true
   field_lead_text: true
   field_paragraphs: true
+  field_requirements: true
+  field_service_classes: true
+  field_tags: true
+  field_target_groups: true
   langcode: true

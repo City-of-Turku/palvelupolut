@@ -1,6 +1,8 @@
-/* eslint-disable react/no-danger */
-import React from 'react';
+/* eslint-disable react/no-danger, react/prop-types */
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import { ToolbarContext } from '../../.storybook/mdxContainer';
 
 /**
  * Wrapper for components in Storybook so they get spacing for preview.
@@ -30,8 +32,8 @@ const ComponentWrapper = ({
     }}
     {...rest}
   >
-    {label && <h2 className="sb-story-label">Variant: {label}</h2>}
-    <div dangerouslySetInnerHTML={{ __html: markup }} />
+    {label && <h2 className="sb-story-label">Variant:{label}</h2>}
+    <div id="component-root" dangerouslySetInnerHTML={{ __html: markup }} />
   </div>
 );
 
@@ -121,4 +123,28 @@ CollectionWrapper.defaultProps = {
   layout: undefined,
 };
 
-export { CollectionWrapper, ComponentWrapper };
+/**
+ * Wrapper for a Documentation. It will only render when the global `locale`
+ * matches the passed `language` prop.
+ *
+ * @param {any} children
+ *   Child components.
+ * @param {string} language
+ *   Prefix of the language the documentation is written in (e.g., 'fi', 'en').
+ */
+const Docs = ({ language = 'en', children }) => {
+  const { locale } = useContext(ToolbarContext);
+  return <>{locale === language && children}</>;
+};
+
+Docs.propTypes = {
+  children: PropTypes.node,
+  language: PropTypes.string,
+};
+
+Docs.defaultProps = {
+  children: undefined,
+  language: 'en',
+};
+
+export { CollectionWrapper, ComponentWrapper, Docs };

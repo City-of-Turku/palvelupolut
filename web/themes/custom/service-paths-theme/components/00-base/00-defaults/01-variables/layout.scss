@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Spacing
 $space: 1rem;
 $spacexs: 0.0625rem;
@@ -18,7 +20,7 @@ $width-xxl: space(88); // 1408;
 :root {
   --space-elements: #{space(5)};
 
-  @media (max-width: #{$width-large - space(1/100)}) {
+  @media (max-width: #{$width-large - space(math.div(1, 100))}) {
     --space-elements: #{space(3)};
   }
 }
@@ -29,7 +31,7 @@ $width--page-wrapper: $width--page + ($width--page-padding * 2);
 
 $grid-gutter-width: space(2);
 $grid-columns: 12;
-$grid-column-width: ($width--page - ($grid-columns - 1) * $grid-gutter-width) / $grid-columns; // 5.5rem
+$grid-column-width: math.div(($width--page - ($grid-columns - 1) * $grid-gutter-width), $grid-columns); // 5.5rem
 
 @function grid-width($column-count, $include-trailing-gutter: false) {
   @if ($include-trailing-gutter) {
