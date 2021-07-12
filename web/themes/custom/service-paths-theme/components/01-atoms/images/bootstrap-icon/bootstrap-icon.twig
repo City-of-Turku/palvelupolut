@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ * - icon__base_class - base class name
+ * - icon__modifiers - modifiers for icons (array)
+ * - icon__blockname - blockname prepended to the base classname
+ * - icon__extra_class - extra class names
+ * - icon__name - the name of the icon
+ * - icon__role - a11y role
+ * - icon__title - a11y title
+ * - icon__desc - a11y description
+ * - icon__decorative - boolean, hides icon for screen readers if true
+ */
+#}
+{% set icon__base_class = icon__base_class|default("icon") %}
+{% set icon__modifiers = icon__modifiers|default([]) %}
+{% set icon__role = icon__role|default("img") %}
+
+{# If `directory` is defined, set the path relative for Drupal.
+ # Otherwise, set the path relative to the Component Library. #}
+{% set icon_url = directory ? "/" ~ directory ~ "/dist/" %}
+
+<svg {{ bem(icon__base_class, icon__modifiers, icon__blockname, icon__extra_class) }}
+
+  {% if icon__decorative %}
+    aria-hidden="true"
+  {% elseif icon__role %}
+    role="{{ icon__role }}"
+  {% endif %}
+
+  {% if icon__title %}
+    aria-labelledby="title-{{ icon__name }}"
+  {% endif %}
+
+  {% if icon__desc %}
+    aria-describedby="desc-{{ icon__name }}"
+  {% endif %}
+>
+  {% if icon__title %}
+    <title id="title-{{ icon__name }}">{{ icon__title }}</title>
+  {% endif %}
+
+  {% if icon__desc %}
+    <desc id="desc-{{ icon__name }}">{{ icon__desc }}</desc>
+  {% endif %}
+
+  <use xlink:href="sprites/bootstrap-icons.svg#{{ icon__name }}"></use>
+</svg>

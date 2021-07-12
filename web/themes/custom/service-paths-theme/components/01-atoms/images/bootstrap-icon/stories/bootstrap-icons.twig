@@ -1,0 +1,18 @@
+<div class="sg-images" id="icons">
+  {% for item in items %}
+    <div class="sg-images__item">
+      <div class="sg-images__image">
+        {% include "@atoms/images/bootstrap-icon/bootstrap-icon.twig" with {
+          icon__name: item.value,
+          icon__role: item.role,
+          icon__title: item.title,
+          icon__desc: item.desc,
+          icon__decorative: item.decorative,
+        } %}
+      </div>
+
+      <pre>{{ item.value }}</pre>
+    </div>
+  {% endfor %}
+</div>
+<br>
