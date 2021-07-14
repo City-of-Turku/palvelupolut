@@ -79,7 +79,7 @@
        {% endembed %}
       </div>
 
-      <div {{ bem('link', card__modifiers, card__base_class) }} aria-hidden="true">
+      <div {{ bem('link', card__modifiers, card__base_class) }} >
         {% include "@atoms/images/icon/icon.twig" with {
           icon__name: "arrow-right",
         } %}
@@ -91,9 +91,11 @@
       </div>
     </div>
 
-    {% include "@atoms/images/image/responsive-image.twig" with {
-      image_src: card__image__src,
-      responsive_image__blockname: card__base_class,
-    } %}
+    <div {{ bem("card-image", [], teaser__base_class) }} aria-hidden="true">
+      {% include "@atoms/images/image/responsive-image.twig" with {
+        image_src: card__image__src,
+        responsive_image__blockname: card__base_class,
+      } %}
+    </div>
   </div>
 </div>
