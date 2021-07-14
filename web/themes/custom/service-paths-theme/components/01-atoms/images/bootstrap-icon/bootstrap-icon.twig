@@ -1,48 +1,48 @@
 {#
 /**
  * Available variables:
- * - icon__base_class - base class name
- * - icon__modifiers - modifiers for icons (array)
- * - icon__blockname - blockname prepended to the base classname
- * - icon__extra_class - extra class names
- * - icon__name - the name of the icon
- * - icon__role - a11y role
- * - icon__title - a11y title
- * - icon__desc - a11y description
- * - icon__decorative - boolean, hides icon for screen readers if true
+ * - bootstrap_icon__base_class - base class name
+ * - bootstrap_icon__modifiers - modifiers for icons (array)
+ * - bootstrap_icon__blockname - blockname prepended to the base classname
+ * - bootstrap_icon__extra_class - extra class names
+ * - bootstrap_icon__name - the name of the icon
+ * - bootstrap_icon__role - a11y role
+ * - bootstrap_icon__title - a11y title
+ * - bootstrap_icon__desc - a11y description
+ * - bootstrap_icon__decorative - boolean, hides icon for screen readers if true
  */
 #}
-{% set icon__base_class = icon__base_class|default("icon") %}
-{% set icon__modifiers = icon__modifiers|default([]) %}
-{% set icon__role = icon__role|default("img") %}
+{% set bootstrap_icon__base_class = bootstrap_icon__base_class|default("bootstrap-icon") %}
+{% set bootstrap_icon__modifiers = bootstrap_icon__modifiers|default([]) %}
+{% set bootstrap_icon__role = bootstrap_icon__role|default("img") %}
 
 {# If `directory` is defined, set the path relative for Drupal.
  # Otherwise, set the path relative to the Component Library. #}
-{% set icon_url = directory ? "/" ~ directory ~ "/dist/" %}
+{% set bootstrap_icon_url = directory ? "/" ~ directory ~ "/dist/" %}
 
-<svg {{ bem(icon__base_class, icon__modifiers, icon__blockname, icon__extra_class) }}
+<svg {{ bem(bootstrap_icon__base_class, bootstrap_icon__modifiers, bootstrap_icon__blockname, bootstrap_icon__extra_class) }}
 
-  {% if icon__decorative %}
+  {% if bootstrap_icon__decorative %}
     aria-hidden="true"
-  {% elseif icon__role %}
-    role="{{ icon__role }}"
+  {% elseif bootstrap_icon__role %}
+    role="{{ bootstrap_icon__role }}"
   {% endif %}
 
-  {% if icon__title %}
-    aria-labelledby="title-{{ icon__name }}"
+  {% if bootstrap_icon__title %}
+    aria-labelledby="title-{{ bootstrap_icon__name }}"
   {% endif %}
 
-  {% if icon__desc %}
-    aria-describedby="desc-{{ icon__name }}"
+  {% if bootstrap_icon__desc %}
+    aria-describedby="desc-{{ bootstrap_icon__name }}"
   {% endif %}
 >
-  {% if icon__title %}
-    <title id="title-{{ icon__name }}">{{ icon__title }}</title>
+  {% if bootstrap_icon__title %}
+    <title id="title-{{ bootstrap_icon__name }}">{{ bootstrap_icon__title }}</title>
   {% endif %}
 
-  {% if icon__desc %}
-    <desc id="desc-{{ icon__name }}">{{ icon__desc }}</desc>
+  {% if bootstrap_icon__desc %}
+    <desc id="desc-{{ bootstrap_icon__name }}">{{ bootstrap_icon__desc }}</desc>
   {% endif %}
 
-  <use xlink:href="sprites/bootstrap-icons.svg#{{ icon__name }}"></use>
+  <use xlink:href="sprites/bootstrap-icons.svg#{{ bootstrap_icon__name }}"></use>
 </svg>
