@@ -23,8 +23,10 @@
             {% block list_item_content %}
               {% if loop.first %}
                 <a {{ bem('link', ['home'], breadcrumb__base_class) }} href="{{ item.url }}">
-                  {# icon goes here  #}
-
+                  {% include "@atoms/images/bootstrap-icon/bootstrap-icon.twig" with {
+                    bootstrap_icon__name: "house-fill",
+                  } %}
+                  
                   {% include "@atoms/visually-hidde/visually-hidden.twig" with {
                     visually_hidden__content: item.text,
                   } %}
