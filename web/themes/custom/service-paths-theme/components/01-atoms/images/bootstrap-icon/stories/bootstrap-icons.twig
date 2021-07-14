@@ -1,0 +1,18 @@
+<div class="sb-images" id="icons">
+  {% for item in items %}
+    <div class="sb-images__item">
+      <div class="sb-images__image">
+        {% include "@atoms/images/bootstrap-icon/bootstrap-icon.twig" with {
+          bootstrap_icon__name: item.value,
+          bootstrap_icon__role: item.role,
+          bootstrap_icon__title: item.title,
+          bootstrap_icon__desc: item.desc,
+          bootstrap_icon__decorative: item.decorative,
+        } %}
+      </div>
+
+      <pre>{{ item.value }}</pre>
+    </div>
+  {% endfor %}
+</div>
+<br>
