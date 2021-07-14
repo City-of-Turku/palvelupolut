@@ -1,0 +1,44 @@
+{#
+/**
+ * Available variables:
+ * - icon_grid__content - the content of the link (typically text)
+ * - icon_grid__url - the url this link should poing to
+ * - icon_grid__attributes - array of attribute,value pairs
+ * - icon_grid__base_class - the base class name
+ * - icon_grid__modifiers - array of modifiers to add to the base classname
+ * - icon_grid__blockname - blockname prepended to the base classname
+ * - icon_grid__icon_before - the name of the icon that will appear before the link text
+ * - icon_grid__icon_after - the name of the icon that will appear after the link text
+ *
+ * Available blocks:
+ * - icon_grid_content - used to replace the content of the link
+ *     Example: to insert the image component
+ */
+#}
+{% set icon_grid__base_class = "icon-grid-item" %}
+{% set icon_grid__modifiers = icon_grid__modifiers|default([]) %}
+
+<div {{ bem(icon_grid__base_class, icon_grid__modifiers, icon_grid__blockname) }} >
+  {% include "@atoms/images/icon/icon.twig" with {
+    icon__name: icon_grid__icon,
+    icon__base_class: "icon",
+    icon__blockname: icon_grid__base_class,
+    icon__decorative: true,
+  } %}
+
+  <div {{ bem("inner", [], icon_grid__base_class) }}>
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 3,
+      heading__base_class: "title",
+      heading__blockname: icon_grid__base_class,
+      heading: icon_grid__title,
+    } %}
+
+    {% include "@atoms/text/text-long/text-long.twig" with {
+      text_long__blockname: icon_grid__base_class,
+      text_long__base_class: "text",
+      text_long__content:  icon_grid__lead_text,
+    } %}
+  </div>
+
+</div>
