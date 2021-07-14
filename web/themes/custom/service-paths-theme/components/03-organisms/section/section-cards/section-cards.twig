@@ -39,24 +39,22 @@
   <div {{ bem("items", [], section_cards__base_class) }}>
     {% block section_cards_items %}
       {% for item in section_cards__items %}
-        {% embed "@organisms/section/section-cards/section-cards-item.twig" %}
-          {% block section_cards_item %}
-            {% if item.placeholder %}
+        {% block section_cards_item %}
+          {% if item.placeholder %}
 
-              {% include "@molecules/cards/card/card.twig" with {
-                card__modifiers: card_modifiers,
-                card__image__src: item.image__src,
-                card__heading: item.heading,
-                card__link__url: item.link__url,
-                card__link_text: item.link__text,
-                card__type: item.type,
-                card__items: item.card__items,
-              } %}
-            {% else %}
-              {{ item }}
-            {% endif %}
-          {% endblock %}
-        {% endembed %}
+            {% include "@molecules/cards/card/card.twig" with {
+              card__modifiers: card_modifiers,
+              card__image__src: item.image__src,
+              card__heading: item.heading,
+              card__link__url: item.link__url,
+              card__link_text: item.link__text,
+              card__type: item.type,
+              card__items: item.card__items,
+            } %}
+          {% else %}
+            {{ item }}
+          {% endif %}
+        {% endblock %}
       {% endfor %}
     {% endblock %}
   </div>
