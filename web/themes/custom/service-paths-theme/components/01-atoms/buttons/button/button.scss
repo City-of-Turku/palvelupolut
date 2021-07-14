@@ -8,10 +8,6 @@
     &--before {
       margin-right: space();
     }
-
-    &--after {
-      margin-left: space(math.div(1, 2));
-    }
   }
 
   &--small {
@@ -42,6 +38,5 @@
     @extend .visually-hidden;
 
     opacity: 0;
-    transform: translateY(space(- math.div(1, 4)));
   }
 }
