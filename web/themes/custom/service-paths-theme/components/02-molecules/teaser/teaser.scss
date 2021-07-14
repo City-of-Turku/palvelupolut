@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .teaser {
   position: relative;
   overflow: hidden;
@@ -37,7 +39,7 @@
 .teaser .text {
   font-size: $font-size--small-1;
   text-transform: uppercase;
-  margin-bottom: space(1/2);
+  margin-bottom: space(math.div(1, 2));
 }
 a.teaser__link {
   &::before {

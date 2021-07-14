@@ -17,12 +17,6 @@
         {% endblock %}
       </div>
 
-      <div {{ bem("item", ["menu"], header__base_class) }}>
-        {% block header_overlay %}
-          {% include "@organisms/header/header-overlay/header-overlay.twig" %}
-        {% endblock %}
-      </div>
-
       <div {{ bem("item", ["additional"], header__base_class, ["js-expand-content"]) }}>
         {% block header_language_menu %}
           {% include "@molecules/navigation/language-switcher/language-switcher.twig" %}

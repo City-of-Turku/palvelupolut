@@ -1,6 +1,6 @@
-process_step__title: "Process Steps Title"
-process_step__lead_text: "Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan."
-process_step__link: "Process Steps"
+process_step__title: 'Process Steps Title'
+process_step__lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan.'
+process_step__link: 'Process Steps'
 list_links__items:
   - title: 'Etsi päivähoitopaikkaa'
     url: '#'

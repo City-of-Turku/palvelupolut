@@ -5,13 +5,13 @@
   grid-template-columns: 60px auto;
   margin-bottom: space(2);
   grid-template-areas:
-        "number header"
-        "content content";
+    'number header'
+    'content content';
   @include above($width-large) {
     width: 50%;
     grid-template-areas:
-        "number header"
-        "number content";
+      'number header'
+      'number content';
   }
   .text {
     color: color(text-dark);
@@ -30,7 +30,7 @@
 }
 li.process_step__item {
   &::marker {
-    content: "";
+    content: '';
   }
   .icon {
     top: space(0.13);
@@ -55,7 +55,7 @@ span.process_step__number {
   line-height: space(2);
   height: space(3.7);
   width: space(3.7);
-  border: 1px solid rgba(255,255,255,0);
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: space(0.7);
   position: relative;
   display: flex;

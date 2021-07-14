@@ -2,12 +2,6 @@
   @include wrapper;
 
   &__main {
-    // @include background-full-width(
-    //   $width: 100vw,
-    //   $background: color(background),
-    //   $position: fixed
-    // );
-
     width: $width--page;
     max-width: calc(100% - #{$width--page-padding * 2});
     display: grid;
@@ -15,20 +9,6 @@
     align-items: center;
     padding: space(2) 0;
     z-index: z-index(middle);
-
-    &--compact {
-      padding: space(1/2) 0;
-
-      .header__item--branding {
-        max-height: 4rem;
-      }
-    }
-
-    // On small viewports position the dialog on the very top. On bigger viewports
-    // let it start below the Drupal toolbar.
-    @include below($width-large) {
-      top: 0;
-    }
   }
 
   &__item {
@@ -61,26 +41,6 @@
         @include below($width-large) {
           display: none;
         }
-      }
-    }
-
-    &.is-expanded {
-      .form--keyword,
-      .search-keyword {
-        @include background-full-width(
-          $width: 100vw,
-          $background: color(background),
-          $position: absolute,
-          $z-index: auto
-        );
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
       }
     }
   }

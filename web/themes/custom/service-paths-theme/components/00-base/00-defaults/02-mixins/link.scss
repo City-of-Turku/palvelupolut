@@ -1,5 +1,8 @@
-
-@mixin link($color: color(text), $underline-color: color(primary), $underline-width: -0.1875rem) {
+@mixin link(
+  $color: color(text),
+  $underline-color: color(primary),
+  $underline-width: -0.1875rem
+) {
   @include transition(box-shadow color);
 
   // The box shadow spread is reduced by 0.1rem to workaround Chrome showing a slight
@@ -15,7 +18,10 @@
   }
 }
 
-@mixin link--hover($effect-color: color(text), $text-color: color(text-inverse)) {
+@mixin link--hover(
+  $effect-color: color(text),
+  $text-color: color(text-inverse)
+) {
   box-shadow: inset 0 -6ex 0 0 $effect-color;
   color: $text-color;
 }

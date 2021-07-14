@@ -13,7 +13,7 @@ _core:
 id: service_paths_theme_footer
 theme: service_paths_theme
 region: header
-weight: -7
+weight: -6
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

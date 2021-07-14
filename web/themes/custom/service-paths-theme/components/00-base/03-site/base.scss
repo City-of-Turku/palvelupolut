@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 html {
   box-sizing: border-box;
 }
@@ -9,11 +11,6 @@ body {
   line-height: $line-height--base;
   color: color(text);
   background-color: color(background);
-
-  &[data-header-overlay-expanded='true'] {
-    height: 100vh;
-    overflow: hidden;
-  }
 }
 
 *,
@@ -85,7 +82,7 @@ table {
 }
 
 table caption {
-  margin-bottom: space(3/2);
+  margin-bottom: space(math.div(3, 2));
   font-family: $font-family--heading;
   font-size: $font-size--large-2;
   font-weight: 800;
@@ -94,13 +91,13 @@ table caption {
 
 th,
 td {
-  padding: space(1/2);
+  padding: space(math.div(1, 2));
   vertical-align: top;
   text-align: left;
   border: none;
 
   @include above($width-large) {
-    padding: space(1/2) space();
+    padding: space(math.div(1, 2)) space();
   }
 }
 

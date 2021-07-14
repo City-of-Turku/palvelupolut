@@ -1,0 +1,29 @@
+uuid: f2f28d1f-4b72-4c05-8839-ee038529e6a4
+langcode: fi
+status: true
+dependencies:
+  module:
+    - ptv
+title: 'Default cron handler'
+id: ptv_cron
+weight: 0
+module: ptv
+callback: ptv_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ */6 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

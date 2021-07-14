@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 @function flexbox-item-width($columns: 4) {
-  @return calc(#{100% / $columns} - #{$grid-gutter-width});
+  @return calc(#{math.div(100%, $columns)} - #{$grid-gutter-width});
 }
 
 @function z-index($layer: base, $adjustment: +0) {
