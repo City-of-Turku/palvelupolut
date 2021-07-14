@@ -1,4 +1,6 @@
+@use 'sass:math';
+
 .list-item {
-  margin-bottom: space(1/5);
-  padding-left: space(1/2);
+  margin-bottom: space(math.div(1, 5));
+  padding-left: space(math.div(1, 2));
 }

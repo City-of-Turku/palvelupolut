@@ -1,8 +1,17 @@
 module.exports = {
-  stories: ['../components/**/*.stories.js'],
+  stories: ['../components/**/*.stories.@(js|mdx)'],
   addons: [
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+      },
+    },
     '@storybook/addon-a11y',
-    '@storybook/addon-actions/register',
-    '@storybook/addon-links/register',
+    '@storybook/addon-controls',
+    '@storybook/addon-toolbars',
+    '@whitespace/storybook-addon-html',
   ],
 };

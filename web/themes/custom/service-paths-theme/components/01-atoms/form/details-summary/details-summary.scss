@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .details-summary {
   text-align: right;
 
@@ -6,10 +8,10 @@
 
     @include button-base;
 
-    padding: space(3/4) space();
+    padding: space(math.div(3, 4)) space();
 
     @include above($width-large) {
-      padding: space(3/4) space();
+      padding: space(math.div(3, 4)) space();
     }
 
     .icon {
@@ -20,7 +22,7 @@
       }
 
       &--after {
-        margin-left: space(1/2);
+        margin-left: space(math.div(1, 2));
       }
     }
 
@@ -36,8 +38,8 @@
     flex-flow: row wrap;
     align-items: center;
     padding: space() 0;
-    margin-right: space(-1/2);
-    margin-left: space(-1/2);
+    margin-right: space(- math.div(1, 2));
+    margin-left: space(- math.div(1, 2));
     margin-top: space();
     @include transition(
       transform opacity,
@@ -65,8 +67,8 @@
       height: 1px;
       background-color: color(border-separator);
       display: block;
-      right: space(1/2);
-      left: space(1/2);
+      right: space(math.div(1, 2));
+      left: space(math.div(1, 2));
 
       @include above($width-medium) {
         right: space(1);
@@ -81,12 +83,12 @@
 
     .details-summary:not([open]) > & {
       opacity: 0;
-      transform: translateY(space(-1/4));
+      transform: translateY(space(- math.div(1, 4)));
     }
 
     & > * {
       min-width: 14rem;
-      margin: space(1/2);
+      margin: space(math.div(1, 2));
 
       @include above($width-medium) {
         margin: space(1);

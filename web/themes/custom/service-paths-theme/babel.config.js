@@ -10,7 +10,7 @@ module.exports = (api) => {
         useBuiltIns: 'usage',
       },
     ],
-    'minify',
+    // 'minify',
   ];
 
   const comments = false;

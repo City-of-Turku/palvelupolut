@@ -38,10 +38,24 @@ process:
   field_description/format:
     plugin: default_value
     default_value: basic_html
+  field_accessibility/value: accessibility
+  field_accessibility/format:
+    plugin: default_value
+    default_value: basic_html
+  field_opening_hours: opening_hours
+  field_tags:
+    plugin: entity_generate
+    source: ontology_terms
+    entity_type: taxonomy_term
+    bundle: tags
+    property: name
+    values:
+      langcode: langcode
   field_email: email
   field_phone: phone
   field_webpage: webpage
   field_address: address
+  field_languages: langs
   path/pathauto:
     plugin: default_value
     default_value: 1

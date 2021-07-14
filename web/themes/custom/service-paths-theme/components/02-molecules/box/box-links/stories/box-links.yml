@@ -20,4 +20,4 @@ attachment_links__items:
     url: '#'
   - title: 'The name of the attachment'
     url: '#'
-box_links__cta: "Sähköiseen asiointiin"
+box_links__cta: 'Sähköiseen asiointiin'

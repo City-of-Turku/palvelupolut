@@ -1,7 +1,0 @@
-box_summary__cta: 'Register here'
-box_summary__cta__url: '#'
-box_summary__items:
-  - title: 'Event time'
-    description: '<p>Mon 23.11.2020 - Fri 27.11.2020</p><p>9:00 - 16:00</p>'
-  - title: 'Venue'
-    description: '<p><a href="#">Kirkkokatu 16 B</a></p><p>Perkkaa chapel</p>'

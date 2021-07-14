@@ -1,8 +1,7 @@
+@use 'sass:math';
+
 .link-cta {
-  @include button-base(
-    $colors: outline,
-    $colors-dark: outline-dark
-  );
+  @include button-base($colors: outline, $colors-dark: outline-dark);
 
   box-shadow: none;
 
@@ -10,7 +9,7 @@
     @include transition(transform);
 
     flex-shrink: 0;
-    margin-left: space(3/2);
+    margin-left: space(math.div(3, 2));
   }
 
   &:hover {

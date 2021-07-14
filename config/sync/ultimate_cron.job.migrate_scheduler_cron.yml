@@ -1,0 +1,17 @@
+uuid: c1f728c6-b547-4da1-a933-779c536681ce
+langcode: fi
+status: true
+dependencies:
+  module:
+    - migrate_scheduler
+title: 'Default cron handler'
+id: migrate_scheduler_cron
+weight: 0
+module: migrate_scheduler
+callback: migrate_scheduler_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

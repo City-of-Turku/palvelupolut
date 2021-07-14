@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .anchor-menu {
   margin-bottom: var(--space-elements);
   padding: space() 0;
@@ -30,7 +32,7 @@
   }
 
   &__menu-item {
-    margin-bottom: space(1/2);
+    margin-bottom: space(math.div(1, 2));
     padding: 0;
     font-weight: bold;
     letter-spacing: $letter-spacing--medium;
