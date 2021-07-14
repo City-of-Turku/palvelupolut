@@ -79,7 +79,7 @@
        {% endembed %}
       </div>
 
-      <div {{ bem('link', card__modifiers, card__base_class) }} >
+      <div {{ bem('link', card__modifiers, card__base_class) }} aria-hidden="true">
         {% include "@atoms/images/icon/icon.twig" with {
           icon__name: "arrow-right",
         } %}
