@@ -18,3 +18,15 @@ export const bootstrapIcons = () => (
     <ComponentWrapper markup={bootstrapIconTemplate(bootstrapIconData)} />
   </CollectionWrapper>
 );
+
+bootstrapIcons.parameters = {
+  a11y: {
+    disable: true,
+  },
+  docs: {
+    disable: true,
+  },
+  html: {
+    disable: true,
+  },
+};
