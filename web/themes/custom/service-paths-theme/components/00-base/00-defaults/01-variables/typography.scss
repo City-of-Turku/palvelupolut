@@ -1,7 +1,7 @@
 // Fonts
-$font-family--base: 'Mulish', sans-serif;
-$font-family--heading: 'Raleway', sans-serif;
-$font-family--accent: 'Raleway', sans-serif;
+$font-family--base: 'Lexend', sans-serif;
+$font-family--heading: 'Lexend', sans-serif;
+$font-family--accent: 'Lexend', sans-serif;
 
 $font-size--large-5: 1.8rem; // 30px
 $font-size--large-4: 1.7rem; // 26px
@@ -31,12 +31,13 @@ $letter-spacing--xs: -0.025em;
 $letter-spacing--medium: 0.05em;
 $letter-spacing--wide: 0.012em;
 $letter-spacing--large: 0.016em;
+$letter-spacing--none: 0;
 
 $line-height--heading-large: 2.375;
 $line-height--heading-medium: 1.6875;
-$line-height--heading: 1.6;
+$line-height--heading: 1.875;
 $line-height--base: 1.75;
-$line-height--narrow: 1.4;
+$line-height--narrow: 1.5;
 
 // Borders
 $border-width: 1.125rem;

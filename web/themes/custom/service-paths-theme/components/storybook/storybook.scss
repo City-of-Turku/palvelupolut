@@ -89,7 +89,7 @@
   color: var(--sg-pattern-color);
 }
 
-.sg-images {
+.sb-images {
   display: flex;
   flex-wrap: wrap;
 
@@ -121,6 +121,7 @@
     }
   }
 
+  .bootstrap-icon,
   .icon {
     height: 100px;
     width: 100px;

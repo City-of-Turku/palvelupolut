@@ -1,0 +1,34 @@
+.section-icon-grid__items {
+  display: flex;
+  flex-wrap: wrap;
+
+  .icon-grid-item {
+    margin-bottom: space(1.5);
+    padding-right: space(1.5);
+    font-size: $font-size--small-1;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--base;
+    width: 100%;
+
+    @include above($width-medium) {
+      width: 50%;
+    }
+
+    @include above($width-large) {
+      width: 33%;
+    }
+  }
+}
+.section-icon-grid {
+  padding: space(3);
+  background-color: color(background-light);
+  border-radius: $border-width;
+
+  .heading {
+    font-size: $font-size--large-3;
+    font-weight: bold;
+    letter-spacing: $letter-spacing--none;
+    line-height: $line-height--heading;
+    margin-bottom: space(2.5);
+  }
+}

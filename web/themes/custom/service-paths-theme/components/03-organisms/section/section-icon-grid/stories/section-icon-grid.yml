@@ -1,0 +1,18 @@
+section_icon_grid__title: "Lyhyesti"
+section_icon_grid__items:
+  - placeholder: true
+    title: 'Alue'
+    lead_text: 'Port Arthur'
+    icon: 'tag'
+  - placeholder: true
+    title: 'Päivähoitomuoto'
+    lead_text: 'Päiväkoti'
+    icon: 'globe'
+  - placeholder: true
+    title: 'Painotteisuus'
+    lead_text: 'Luonto'
+    icon: 'topic'
+  - placeholder: true
+    title: 'Palvelusta vastaa'
+    lead_text: 'Turun kaupunki, kunallinen'
+    icon: 'search'

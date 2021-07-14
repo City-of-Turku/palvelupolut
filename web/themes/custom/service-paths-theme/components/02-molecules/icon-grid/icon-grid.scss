@@ -1,0 +1,22 @@
+.icon-grid-item {
+  position: relative;
+  display: flex;
+
+  &__icon {
+    width: space(2);
+    height: space(2);
+    margin-right: space(1.25);
+  }
+
+  &__title {
+    @include h5;
+
+    margin: 0;
+  }
+
+  &__inner {
+    font-size: $font-size--small-1;
+    letter-spacing: $letter-spacing--none;
+    line-height: $line-height--narrow;
+  }
+}
