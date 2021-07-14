@@ -6,6 +6,10 @@
   }
 }
 
+@mixin focus($width: $border-width, $color: color(primary)) {
+  outline: 0.063rem solid $color;
+}
+
 @mixin border(
   $width: $default-border-width,
   $color: $default-border-color,
