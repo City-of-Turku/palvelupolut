@@ -1,18 +1,13 @@
-@use 'sass:math';
-
 .button {
   @include button-base;
   @include transition(transform opacity, 0.5s, cubic-bezier(0.19, 1, 0.22, 1));
+  text-decoration: none;
 
   .icon {
     @include transition(transform);
 
     &--before {
       margin-right: space();
-    }
-
-    &--after {
-      margin-left: space(math.div(1, 2));
     }
   }
 
@@ -27,16 +22,15 @@
   &--minimal {
     background-color: transparent;
     color: color(text);
-    border: 0;
     text-decoration: underline;
-    padding: 0;
+    border: 0.063rem solid black;
+    padding: space(1/2);
 
     &:hover,
     &:focus {
       background-color: transparent;
       color: color(text);
-      border: 0;
-      text-decoration: underline;
+      border-color: black;
     }
   }
 
@@ -45,6 +39,5 @@
     @extend .visually-hidden;
 
     opacity: 0;
-    transform: translateY(space(- math.div(1, 4)));
   }
 }
