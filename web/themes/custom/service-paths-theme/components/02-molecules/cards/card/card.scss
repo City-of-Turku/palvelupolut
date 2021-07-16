@@ -7,6 +7,7 @@
   ul {
     padding: 0;
   }
+
   li {
     &::marker {
       content: '';
@@ -53,6 +54,7 @@
     .icon {
       margin-right: space(1);
     }
+
     .link {
       font-weight: bold;
       letter-spacing: $letter-spacing--wide;
