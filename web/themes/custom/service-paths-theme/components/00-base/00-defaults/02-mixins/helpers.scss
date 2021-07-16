@@ -7,7 +7,7 @@
 }
 
 @mixin focus($width: $border-width, $color: color(primary)) {
-  outline: $width solid $color;
+  outline: 0.063rem solid $color;
 }
 
 @mixin border(

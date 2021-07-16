@@ -26,6 +26,8 @@ palettes:
       - name: 'Background inverse'
       - name: 'Background section'
       - name: 'Background box'
+      - name: 'Background dark'
+      - name: 'Background light'
   - palette_heading: 'Status'
     colors:
       - name: 'Message'

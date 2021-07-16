@@ -1,0 +1,43 @@
+.selection_box {
+  &__inner {
+    .button.button--minimal {
+      margin-bottom: space(0.75);
+    }
+
+    a {
+      padding: 0;
+      font-size: $font-size--small-1;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--small;
+      line-height: $line-height--narrow;
+    }
+
+    .button__text {
+      font-size: $font-size--small-1;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--small;
+      line-height: $line-height--narrow;
+    }
+  }
+
+  &__selection-link {
+    align-items: center;
+    display: flex;
+
+    svg {
+      margin-right: space();
+      width: space();
+      height: space();
+    }
+
+    &__title {
+      margin-bottom: space(1);
+    }
+  }
+
+  &__wrapper {
+    padding: space(2);
+    background-color: color(background-light);
+    border-radius: $border-width;
+  }
+}
