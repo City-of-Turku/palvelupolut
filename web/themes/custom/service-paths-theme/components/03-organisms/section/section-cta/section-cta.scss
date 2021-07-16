@@ -2,10 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
   @include above($width-medium) {
     flex-direction: row;
     padding: space(6) 0;
   }
+
   .cta {
     flex: 33%;
     margin-bottom: space(2);

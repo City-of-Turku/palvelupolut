@@ -27,15 +27,14 @@
     {% include "@atoms/buttons/button/button.twig" with {
       button__content: selection_box__open_text,
       button__type: "button",
-      button__icon_before: "plus",
+      button__icon_before: "heart",
       button__modifiers: ["minimal"]
     } %}
 
     <div {{ bem("selection-link", [], selection_box__base_class) }}>
-      {% include "@atoms/images/icon/icon.twig" with {
-        icon__name: "search",
-        icon__base_class: "icon",
-        icon__blockname: selection_box__base_class,
+      {% include "@atoms/images/bootstrap-icon/bootstrap-icon.twig" with {
+        bootstrap_icon__name: "search",
+        bootstrap_icon__blockname: selection_box__base_class,
       } %}
 
       {% include "@atoms/links/link/link.twig" with {

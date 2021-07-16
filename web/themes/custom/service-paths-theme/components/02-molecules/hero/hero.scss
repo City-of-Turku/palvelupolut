@@ -6,10 +6,12 @@
   display: flex;
   padding: space(2) space(1);
   flex-direction: column;
+
   @include above($width-large) {
     flex-direction: row;
     padding: space(3) space(5);
   }
+
   &--light {
     background: color(background-section-dark);
     h1 {
@@ -19,6 +21,7 @@
       color: color(text);
     }
   }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -34,10 +37,12 @@
     }
   }
 }
+
 .hero__bg {
   align-self: center;
   flex: none;
 }
+
 .hero__bg img {
   width: 285px;
   height: 285px;
@@ -48,6 +53,7 @@
     height: 375px;
   }
 }
+
 .hero__title {
   color: color(text-inverse);
 }

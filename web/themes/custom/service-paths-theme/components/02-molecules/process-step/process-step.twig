@@ -49,9 +49,8 @@
             {% block list_item_content %}
               {% set link_modifiers = process_step__link_modifiers|default([]) %}
 
-              {% include "@atoms/images/icon/icon.twig" with {
-                icon__name: "arrow-right",
-                icon__base_class: "icon",
+              {% include "@atoms/images/bootstrap-icon/bootstrap-icon.twig" with {
+                bootstrap_icon__name: "arrow-right",
               } %}
 
               {% include "@atoms/links/link/link.twig" with {

@@ -1,10 +1,10 @@
 .accordion {
   margin-bottom: var(--space-elements);
-}
 
-.accordion__heading {
-  margin: 0 0 space(3);
-  font-size: $font-size--large-4;
+  &__heading {
+    margin: 0 0 space(3);
+    font-size: $font-size--large-4;
+  }
 }
 
 .accordion-item {
@@ -49,10 +49,6 @@
   }
 
   &[open] {
-    .accordion-item__heading {
-      background: color(background-section);
-    }
-
     .accordion-item__icon {
       background-image: data-url($image-inline--svg-collapse-close, svg);
     }

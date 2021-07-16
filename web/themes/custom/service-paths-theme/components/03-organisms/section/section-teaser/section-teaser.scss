@@ -8,6 +8,7 @@
     flex-direction: row;
     padding: space(5) space(2);
   }
+
   @include above($width-xl) {
     padding: space(5) space(3);
   }
