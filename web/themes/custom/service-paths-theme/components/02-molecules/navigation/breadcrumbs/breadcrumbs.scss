@@ -21,6 +21,11 @@ $color-breadcrumb-active: color(text);
   font-weight: bold;
   letter-spacing: $letter-spacing--large;
   line-height: $line-height--small;
+  font-size: $font-size--small-2;
+  @include above($width-medium) {
+    letter-spacing: $letter-spacing--large;
+    font-size: $font-size--base;
+  }
 }
 
 .breadcrumb__link:hover {
@@ -47,4 +52,10 @@ $color-breadcrumb-active: color(text);
 
 .breadcrumb_link:active {
   color: $color-breadcrumb-active;
+}
+.breadcrumb__link--Home {
+  &:hover {
+    box-shadow: none;
+    color: black;
+  }
 }
