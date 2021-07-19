@@ -81,6 +81,7 @@ ul.box-links__attachment-links {
     'links'
     'attachment'
     'cta';
+
   @include above($width-medium) {
     grid-template-columns: 50% 50%;
     grid-gap: space(2);
@@ -88,6 +89,7 @@ ul.box-links__attachment-links {
       'links attachment'
       'cta attachment';
   }
+
   @include above($width-large) {
     grid-gap: space(4);
   }

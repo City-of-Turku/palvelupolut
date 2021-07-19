@@ -2,6 +2,12 @@
   &__inner {
     .button.button--minimal {
       margin-bottom: space(0.75);
+
+      svg {
+        margin-right: space();
+        width: space();
+        height: space();
+      }
     }
 
     a {

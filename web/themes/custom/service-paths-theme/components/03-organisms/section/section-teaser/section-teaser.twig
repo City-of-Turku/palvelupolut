@@ -16,7 +16,6 @@
 {% set section_teaser__modifiers = section_teaser__modifiers|default([]) %}
 
 <div {{ bem(section_teaser__base_class, section_teaser__modifiers) }}>
-
   {% for item in section_teaser__items %}
     {% include "@molecules/teaser/teaser.twig" with {
       teaser__modifiers: cta_modifiers,
@@ -26,5 +25,4 @@
       teaser__link: item.link,
     } %}
   {% endfor %}
-
 </div>

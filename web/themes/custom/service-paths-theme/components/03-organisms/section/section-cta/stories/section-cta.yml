@@ -3,7 +3,7 @@ section_cta__items:
     title: 'Etsi päivähoitopaikkaa'
     lead_text: 'Hakutoiminto auttaa löytämään parhaat vaihtoehdot läheltäsi. Hakutuloksia on helppo suodattaa.'
     link: 'test link'
-    icon: 'search'
+    icon: 'question'
   - placeholder: true
     title: 'Usein kysytyt kysymykset'
     lead_text: 'Täältä löydät nopeat vastaukset yleisimpiin varhaiskasvatukseen liittyviin kysymyksiin, joita muutkin vanhemmat ovat pohtineet.'
@@ -13,4 +13,4 @@ section_cta__items:
     title: 'Varhaiskasvatuksen vaihtoehdot'
     lead_text: 'Mitä vaihtoehtoja Turussa on lapselleni? Täältä löydät nopean katsauksen ja lisätiedot.'
     link: 'test link2'
-    icon: 'search'
+    icon: 'signpost-2-fill'
