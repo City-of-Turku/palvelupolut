@@ -28,6 +28,7 @@ palettes:
       - name: 'Background box'
       - name: 'Background dark'
       - name: 'Background light'
+      - name: 'Background footer'
   - palette_heading: 'Status'
     colors:
       - name: 'Message'

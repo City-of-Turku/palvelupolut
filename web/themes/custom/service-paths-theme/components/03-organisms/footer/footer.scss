@@ -1,79 +1,14 @@
 .footer {
   font-size: $font-size--small-1;
-  background-color: color(primary);
   color: color(text-inverse);
-
-  a:not(.footer-branding) {
-    @include link(
-      $color: color(text-inverse),
-      $underline-color: color(text-inverse),
-      $underline-width: -0.1rem
-    );
-
-    color: color(text-inverse);
-    line-height: initial;
-
-    &:hover {
-      @include link--hover(
-        $effect-color: color(text-inverse),
-        $text-color: color(text)
-      );
-    }
-
-    &:focus {
-      @include focus($color: color(text-inverse));
-    }
-  }
-
-  .footer-branding {
-    display: inline-block;
-    padding: 0;
-
-    &:hover,
-    &:focus {
-      @include focus($color: color(text-inverse));
-    }
-  }
+  background: color(background-footer);
 
   &__inner {
     @include wrapper;
 
-    display: grid;
-    grid-gap: calc(#{$grid-gutter-width} * 2);
-    grid-template-columns: 1fr;
-    padding: space(4) $width--page-padding;
-
-    @include above($width-large) {
-      grid-template-columns: 1fr 3fr 2fr;
-      grid-template-rows: auto auto;
-
-      .footer__legal {
-        order: 1;
-      }
-
-      .footer__social-menu {
-        order: 2;
-      }
-    }
-
-    @include above($width-xxl) {
-      grid-column-gap: $grid-gutter-width;
-      grid-template-columns: 1fr 2fr 1fr;
-    }
-  }
-
-  &__contact {
-    p:first-child {
-      margin-top: 0;
-    }
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .social-menu {
-    a {
-      @include link-reset;
-    }
+    display: flex;
+    justify-content: space-between;
+    padding-top: space(2);
+    padding-bottom: space(2);
   }
 }
