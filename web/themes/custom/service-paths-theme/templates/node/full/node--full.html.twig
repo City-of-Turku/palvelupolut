@@ -77,10 +77,6 @@
 {# Truncate the field value to 1500 characters. #}
 {% set shared_text = content.field_teaser[:1500]|field_value|first["#text"] %}
 
-{% set with_tags =
-  content.field_global_theme|render|trim
-%}
-
 <article {{ bem("node", [node.bundle|clean_class, "full"]) }}>
   {{ title_prefix }}
   {{ title_suffix }}
@@ -96,14 +92,6 @@
       } %}
 
       {{ content.field_contact_reference }}
-
-      {% if with_tags %}
-        {% embed "@molecules/tags/tags.twig" %}
-          {% block tags_content %}
-            {{ content.field_global_theme }}
-          {% endblock %}
-        {% endembed %}
-      {% endif %}
 
       {% include "@molecules/share/share.twig" with {
         share__modifiers: ["vertical"],
