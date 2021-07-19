@@ -82,13 +82,7 @@
   "field_tags",
 ] %}
 
-
-{% set with_tags =
-  content.field_tags|render|trim
-%}
-
 {% set page_sidebar = true %}
-
 
 <article {{ bem("node", [node.bundle|clean_class, "full"]) }}>
   {{ title_prefix }}
@@ -122,16 +116,6 @@
         link__url: "#main-content",
         link__modifiers: ["back-to-top"],
       } %}
-
-
-      {% if with_tags %}
-        {% embed "@molecules/tags/tags.twig" %}
-          {% block tags_content %}
-            {{ content.field_tags }}
-          {% endblock %}
-        {% endembed %}
-      {% endif %}
-
     {% endblock %}
 
     {% block page_sidebar_post_content %}
