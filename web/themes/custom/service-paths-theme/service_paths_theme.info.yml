@@ -7,11 +7,9 @@ core_version_requirement: ^8 || ^9
 logo: images/logo.png
 
 regions:
-  header: Header
   pre_content: Pre Content
   content: Content
   post_content: Post Content
-  footer: Footer
   # A hidden region to place blocks that are printed programmatically elsewhere.
   hidden: Not rendered (used only for config)
 

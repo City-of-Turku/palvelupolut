@@ -28,23 +28,14 @@
  *   comment/reply/12345).
  *
  * Regions:
- * - page.header: Items for the header region.
- * - page.primary_menu: Items for the primary menu region.
- * - page.secondary_menu: Items for the secondary menu region.
- * - page.highlighted: Items for the highlighted content region.
- * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.pre_content: Items that appear before the main content.
  * - page.content: The main content of the current page.
- * - page.sidebar_first: Items for the first sidebar.
- * - page.sidebar_second: Items for the second sidebar.
- * - page.footer: Items for the footer region.
- * - page.breadcrumb: Items for the breadcrumb region.
+ * - page.post_content: Items that appear after the main content.
  *
  * @see template_preprocess_page()
  * @see html.html.twig
  */
 #}
-
-{% set page_hero = page.hero %}
 
 {% extends "@templates/page/page.twig" %}
   {% block page_header %}
@@ -60,17 +51,8 @@
   {% endblock %}
 
   {% block page_pre_content %}
-    {{ page.pre_content }}
-  {% endblock %}
-
-  {% block page_system %}
-    {{ page.highlighted }}
-    {{ page.help }}
     {{ messages }}
-  {% endblock %}
-
-  {% block page_hero %}
-    {{ page.hero }}
+    {{ page.pre_content }}
   {% endblock %}
 
   {% block page_main %}
@@ -85,12 +67,4 @@
 
   {% block page_post_content %}
     {{ page.post_content }}
-  {% endblock %}
-
-  {% block page_footer %}
-    {% embed "@organisms/footer/footer.twig" %}
-      {% block legal__menu %}
-        {{ drupal_entity("block", "wunder_footer_legal") }}
-      {% endblock %}
-    {% endembed %}
   {% endblock %}

@@ -8,9 +8,7 @@
  *
  * Blocks:
  * - page_header: the site header
- * - page_system: Drupal status messages
  * - page_pre_content: appears before the main page content
- * - page_hero: the page hero
  * - page_content: the main page content
  * - page_post_content: content that appears after the main content
  * - page_footer: footer content
@@ -24,18 +22,10 @@
     {% include "@organisms/header/header.twig" %}
   {% endblock %}
 
-  {% block page_system %}{% endblock %}
-
   {% block page_pre_content %}{% endblock %}
 
   {# The ID attribute is the target of the skip to main content link. #}
   <main id="main-content" {{ bem("main", [], page__base_class) }}>
-    {% if page_hero %}
-      <div {{ bem("hero", [], page__base_class) }}>
-        {% block page_hero %}{% endblock %}
-      </div>
-    {% endif %}
-
     {% block page_main %}
       {% include "@templates/page/page-content.twig" %}
     {% endblock %}
