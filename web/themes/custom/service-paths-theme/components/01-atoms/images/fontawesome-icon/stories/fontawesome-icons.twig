@@ -1,0 +1,18 @@
+<div class="sb-images" id="icons">
+  {% for item in items %}
+    <div class="sb-images__item">
+      <div class="sb-images__image">
+        {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+          fontawesome_icon__name: item.value,
+          fontawesome_icon__role: item.role,
+          fontawesome_icon__title: item.title,
+          fontawesome_icon__desc: item.desc,
+          fontawesome_icon__decorative: item.decorative,
+        } %}
+      </div>
+
+      <pre>{{ item.value }}</pre>
+    </div>
+  {% endfor %}
+</div>
+<br>
