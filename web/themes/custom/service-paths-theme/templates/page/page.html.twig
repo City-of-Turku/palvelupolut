@@ -49,11 +49,6 @@
 {% extends "@templates/page/page.twig" %}
   {% block page_header %}
     {% embed "@organisms/header/header.twig" %}
-
-      {% block header_overlay %}
-
-      {% endblock %}
-
       {% block header_language_menu %}
         {{ drupal_entity("block", "service_paths_theme_language_switcher") }}
       {% endblock %}
@@ -61,7 +56,6 @@
       {% block header_bottom %}
         {{ drupal_entity("block", "service_paths_theme_breadcrumbs") }}
       {% endblock %}
-
     {% endembed %}
   {% endblock %}
 
@@ -95,14 +89,8 @@
 
   {% block page_footer %}
     {% embed "@organisms/footer/footer.twig" %}
-      {% block footer__menu %}
-        {{ drupal_entity("block", "wunder_footer") }}
-      {% endblock %}
       {% block legal__menu %}
         {{ drupal_entity("block", "wunder_footer_legal") }}
-      {% endblock %}
-      {% block footer__contact %}
-        {{ drupal_entity("block", "wunder_footer_contact_details") }}
       {% endblock %}
     {% endembed %}
   {% endblock %}
