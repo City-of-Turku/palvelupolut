@@ -80,7 +80,7 @@
 
   {% embed "@molecules/hero/hero.twig" with {
     hero__modifiers: ["light"],
-    hero__title: content.field_heading,
+    hero__title: content.field_heading|default(label),
     hero__lead_text: content.field_lead_text,
   } %}
     {% block hero_image %}

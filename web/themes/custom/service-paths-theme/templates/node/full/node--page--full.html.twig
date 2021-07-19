@@ -69,15 +69,9 @@
 
 {% set page_content__modifiers = ['full-width', 'with-sidebar'] %}
 
-
 {% extends "@service_paths_theme/node/node.html.twig" %}
-
   {% block page_content %}
-
     {{ content }}
-
   {% endblock %}
 
-  {% block page_sidebar_post_content %}
-
-  {% endblock %}
+  {% block page_sidebar_post_content %}{% endblock %}
