@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ * - fontawesome_icon__base_class - base class name
+ * - fontawesome_icon__modifiers - modifiers for icons (array)
+ * - fontawesome_icon__blockname - blockname prepended to the base classname
+ * - fontawesome_icon__extra_class - extra class names
+ * - fontawesome_icon__name - the name of the icon
+ * - fontawesome_icon__role - a11y role
+ * - fontawesome_icon__title - a11y title
+ * - fontawesome_icon__desc - a11y description
+ * - fontawesome_icon__decorative - boolean, hides icon for screen readers if true
+ */
+#}
+{% set fontawesome_icon__base_class = fontawesome_icon__base_class|default("fontawesome-icon") %}
+{% set fontawesome_icon__modifiers = fontawesome_icon__modifiers|default([]) %}
+{% set fontawesome_icon__role = fontawesome_icon__role|default("img") %}
+
+{# If `directory` is defined, set the path relative for Drupal.
+ # Otherwise, set the path relative to the Component Library. #}
+{% set fontawesome_icon_url = directory ? "/" ~ directory ~ "/dist/" %}
+
+<svg {{ bem(fontawesome_icon__base_class, fontawesome_icon__modifiers, fontawesome_icon__blockname, fontawesome_icon__extra_class) }}
+
+  {% if fontawesome_icon__decorative %}
+    aria-hidden="true"
+  {% elseif fontawesome_icon__role %}
+    role="{{ fontawesome_icon__role }}"
+  {% endif %}
+
+  {% if fontawesome_icon__title %}
+    aria-labelledby="title-{{ fontawesome_icon__name }}"
+  {% endif %}
+
+  {% if fontawesome_icon__desc %}
+    aria-describedby="desc-{{ fontawesome_icon__name }}"
+  {% endif %}
+>
+  {% if fontawesome_icon__title %}
+    <title id="title-{{ fontawesome_icon__name }}">{{ fontawesome_icon__title }}</title>
+  {% endif %}
+
+  {% if fontawesome_icon__desc %}
+    <desc id="desc-{{ fontawesome_icon__name }}">{{ fontawesome_icon__desc }}</desc>
+  {% endif %}
+
+  <use xlink:href="sprites/fontawesome-solid.svg#{{ fontawesome_icon__name }}"></use>
+</svg>

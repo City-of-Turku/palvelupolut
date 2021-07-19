@@ -19,10 +19,10 @@
 {% set icon_grid__modifiers = icon_grid__modifiers|default([]) %}
 
 <div {{ bem(icon_grid__base_class, icon_grid__modifiers, icon_grid__blockname) }} >
-  {% include "@atoms/images/bootstrap-icon/bootstrap-icon.twig" with {
-    bootstrap_icon__name: icon_grid__icon,
-    bootstrap_icon__blockname: icon_grid__base_class,
-    bootstrap_icon__decorative: true,
+  {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+    fontawesome_icon__name: icon_grid__icon,
+    fontawesome_icon__blockname: icon_grid__base_class,
+    fontawesome_icon__decorative: true,
   } %}
 
   <div {{ bem("inner", [], icon_grid__base_class) }}>

@@ -4,22 +4,22 @@ import {
   ComponentWrapper,
 } from '../../../../storybook/storybook';
 
-import bootstrapIconTemplate from './bootstrap-icons.twig';
+import fontawesomeIconTemplate from './fontawesome-icons.twig';
 
-import bootstrapIconData from './bootstrap-icons.yml';
+import fontawesomeIconData from './fontawesome-icons.yml';
 
 /**
  * Storybook Definition.
  */
 export default { title: 'Atoms/Images' };
 
-export const bootstrapIcons = () => (
+export const fontawesomeIcons = () => (
   <CollectionWrapper>
-    <ComponentWrapper markup={bootstrapIconTemplate(bootstrapIconData)} />
+    <ComponentWrapper markup={fontawesomeIconTemplate(fontawesomeIconData)} />
   </CollectionWrapper>
 );
 
-bootstrapIcons.parameters = {
+fontawesomeIcons.parameters = {
   a11y: {
     disable: true,
   },
