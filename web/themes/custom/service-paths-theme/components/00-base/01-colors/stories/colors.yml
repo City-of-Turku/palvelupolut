@@ -3,12 +3,26 @@ palettes:
     colors:
       - name: 'Text'
       - name: 'Text dark'
+      - name: 'Text inverse'
+      - name: 'Text error'
   - palette_heading: 'Border'
     colors:
       - name: 'Border primary'
+      - name: 'Border separator'
   - palette_heading: 'Background'
     colors:
       - name: 'Background'
+      - name: 'Background inverse'
       - name: 'Background dark'
       - name: 'Background light'
+      - name: 'Background section'
       - name: 'Background section dark'
+  - palette_heading: 'Accents'
+    colors:
+      - name: 'Primary'
+      - name: 'Accent'
+  - palette_heading: 'Status'
+    colors:
+      - name: 'Status warning'
+      - name: 'Status error'
+      - name: 'Status message'

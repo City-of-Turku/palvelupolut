@@ -37,7 +37,7 @@
     font-weight: 700;
     font-size: $font-size--small-3;
     text-transform: uppercase;
-    color: color(text-meta);
+    color: color(text);
   }
 
   &--icon {
@@ -81,21 +81,32 @@
   }
 
   &--back-to-top {
-    @include label;
-    @include bold-highlight;
-
-    align-items: center;
-    display: flex;
     width: max-content;
-    margin: space() 0 0 auto;
-    box-shadow: none;
+    position: sticky;
+    bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: space();
+    padding: 0.5rem;
+    padding-bottom: 0;
+    font-size: $font-size--small-2;
+    font-weight: bold;
+    letter-spacing: $letter-spacing--small;
+    background: rgba(255, 255, 255, 0.75);
 
     .icon {
       @include transition(transform);
 
-      width: 1.25em;
-      height: 1.25em;
-      margin-left: space();
+      order: -1;
+      width: 3.2em;
+      height: 3.2em;
+      margin: auto;
+      padding: 0.75em;
+      border-radius: 50%;
+      color: color(text-inverse);
+      background: color(text);
     }
 
     &:hover {
@@ -257,14 +268,7 @@
 
   &:hover {
     .link__suffix {
-      color: color(text-meta-inverse);
+      color: color(text-inverse);
     }
   }
-}
-
-hr.back-to-top {
-  border: none;
-  border-bottom: $border-width solid color(primary);
-  margin-bottom: space();
-  margin-top: space(math.div(1, 4));
 }

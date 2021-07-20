@@ -1,3 +1,19 @@
+{#
+/**
+ * @file
+ * Theme implementation to display page layout
+ *
+ * Variables:
+ * - page_hero: Content of the page hero
+ *
+ * Blocks:
+ * - page_header: the site header
+ * - page_messages: appears before the main page content
+ * - page_content: the main page content
+ * - page_post_content: content that appears after the main content
+ * - page_footer: footer content
+ */
+#}
 {% set page__base_class = page__base_class|default('page') %}
 {% set page__modifiers = page__modifiers|default([]) %}
 
@@ -6,23 +22,19 @@
     {% include "@organisms/header/header.twig" %}
   {% endblock %}
 
-  {% block page_system %}{% endblock %}
-
-  {% block page_pre_content %}{% endblock %}
+  {% block page_messages %}{% endblock %}
 
   {# The ID attribute is the target of the skip to main content link. #}
   <main id="main-content" {{ bem("main", [], page__base_class) }}>
-    {% if page_hero %}
-      <div {{ bem("hero", [], page__base_class) }}>
-        {% block page_hero %}{% endblock %}
-      </div>
-    {% endif %}
-
     {% block page_main %}
       {% include "@templates/page/page-content.twig" %}
     {% endblock %}
 
-    {% block page_post_content %}{% endblock %}
+    {% include "@atoms/links/link/link.twig" with {
+      link__content: "Back to top"|t,
+      link__url: "#main-content",
+      link__modifiers: ["back-to-top"],
+    } %}
   </main>
 
   {% block page_footer %}

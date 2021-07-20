@@ -18,7 +18,7 @@
 
 {# If `directory` is defined, set the path relative for Drupal.
  # Otherwise, set the path relative to the Component Library. #}
-{% set fontawesome_icon_url = directory ? "/" ~ directory ~ "/dist/" %}
+{% set fontawesome_icon__base_url = directory ? "/" ~ directory ~ "/images/" %}
 
 <svg {{ bem(fontawesome_icon__base_class, fontawesome_icon__modifiers, fontawesome_icon__blockname, fontawesome_icon__extra_class) }}
 
@@ -44,5 +44,5 @@
     <desc id="desc-{{ fontawesome_icon__name }}">{{ fontawesome_icon__desc }}</desc>
   {% endif %}
 
-  <use xlink:href="sprites/fontawesome-solid.svg#{{ fontawesome_icon__name }}"></use>
+  <use xlink:href="{{ fontawesome_icon__base_url }}sprites/fontawesome-solid.svg#{{ fontawesome_icon__name }}"></use>
 </svg>

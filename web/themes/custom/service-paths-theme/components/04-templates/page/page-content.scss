@@ -4,17 +4,13 @@
   position: relative;
 
   &__content {
-    grid-column-start: 2;
     grid-row: 1 / span 3;
-    max-width: $width--content-narrow;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   &__sidebar-pre-content,
   &__sidebar-post-content {
-    grid-column-start: 4;
+    grid-column-start: 2;
 
     @include above($width-large) {
       --space-elements: #{space(2)};
@@ -25,31 +21,12 @@
     grid-column: 1 / -1;
   }
 
-  &--full-width {
-    .page-content__content {
-      max-width: $width--page;
-    }
-  }
-
   &--with-sidebar {
     @include above($width-large) {
       display: grid;
-      grid-template-columns: 0 auto $grid-column-width $width--sidebar 0;
+      grid-template-columns: auto $width--sidebar;
       grid-template-rows: auto auto;
-      // Unfortunately the prototype layout is based on a mix of columns and gutters and column-gap must be zero.
-      column-gap: 0;
-
-      &__content {
-        max-width: none;
-      }
-    }
-
-    @include above($width-xl) {
-      grid-template-columns: $grid-column-width auto $grid-column-width $width--sidebar $grid-column-width;
-    }
-
-    @include above($width-xxl) {
-      grid-template-columns: $grid-column-width auto #{grid-width(1) + grid-gutter-width(2)} $width--sidebar $grid-column-width;
+      column-gap: $grid-gutter-width;
     }
   }
 }

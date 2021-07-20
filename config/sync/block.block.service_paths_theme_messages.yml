@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: service_paths_theme_messages
 theme: service_paths_theme
-region: header
-weight: -3
+region: messages
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:

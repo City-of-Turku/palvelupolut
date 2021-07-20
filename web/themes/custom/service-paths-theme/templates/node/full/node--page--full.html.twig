@@ -67,17 +67,11 @@
  */
 #}
 
-{% set page_content__modifiers = ['full-width', 'with-sidebar'] %}
+{% set page_sidebar = true %}
 
-
-{% extends "@service_paths_theme/node/node.html.twig" %}
-
+{% extends "@service_paths_theme/node/full/node--full.html.twig" %}
   {% block page_content %}
-
     {{ content }}
-
   {% endblock %}
 
-  {% block page_sidebar_post_content %}
-
-  {% endblock %}
+  {% block page_sidebar_post_content %}{% endblock %}
