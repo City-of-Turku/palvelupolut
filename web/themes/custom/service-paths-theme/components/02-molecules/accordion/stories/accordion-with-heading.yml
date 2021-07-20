@@ -1,3 +1,4 @@
+accordion__heading: 'Heading of the accordion'
 accordion__items:
   - accordion__summary: 'Title of the accordion item 1'
     accordion__content: 'The detail of the accordion item.'
