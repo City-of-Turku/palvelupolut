@@ -45,7 +45,6 @@ $grid-column-width: math.div(($width--page - ($grid-columns - 1) * $grid-gutter-
 }
 
 $width--content: grid-width(10) + grid-gutter-width(2);
-$width--content-narrow: grid-width(8); // 928
 $width--sidebar: grid-width(3, true); // ~360
 
 $z-index: (
