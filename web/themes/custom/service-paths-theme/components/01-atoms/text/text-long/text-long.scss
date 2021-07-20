@@ -7,10 +7,6 @@
     @extend .paragraph;
   }
 
-  blockquote {
-    @extend .blockquote;
-  }
-
   ol,
   ul {
     display: inline-block;

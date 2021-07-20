@@ -24,14 +24,5 @@ export const Palettes = () => (
         label="Light theme (default)"
       />
     </CollectionWrapper>
-    <CollectionWrapper negative>
-      <ComponentWrapper
-        markup={colors({
-          ...colorsData,
-          colors_theme: 'dark',
-        })}
-        label="Dark theme"
-      />
-    </CollectionWrapper>
   </>
 );

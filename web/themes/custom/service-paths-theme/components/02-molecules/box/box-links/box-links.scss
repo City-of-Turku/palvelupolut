@@ -1,5 +1,6 @@
 .box-links {
   background: color(background-section);
+  border-radius: $border-width;
 
   a {
     font-size: $font-size--base;
@@ -30,18 +31,6 @@
 
   .text-long {
     margin-bottom: space(2);
-  }
-
-  .link-cta {
-    color: black;
-    background: color(background-section);
-    grid-area: cta;
-    border-color: black;
-    border: 1px solid;
-    border-radius: 10px;
-    justify-content: center;
-    max-width: fit-content;
-    word-break: break-word;
   }
 
   .box-links__box-links {

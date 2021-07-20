@@ -6,18 +6,14 @@ $button-colors: (
   primary: (
     text: var(--color-text-inverse),
     text-hover: var(--color-text-inverse),
-    bg: var(--color-background-inverse),
-    bg-hover: var(--color-accent),
-    border: var(--color-background-inverse),
-    border-hover: var(--color-accent),
+    bg: var(--color-background-dark),
+    border: var(--color-background-dark),
   ),
   primary-dark: (
     text: var(--color-text),
     text-hover: var(--color-text-inverse),
     bg: var(--color-background),
-    bg-hover: var(--color-accent),
     border: var(--color-background),
-    border-hover: var(--color-accent),
   ),
   outline: (
     text: var(--color-text),
@@ -69,6 +65,7 @@ $button-colors: (
   $display: inline-flex
 ) {
   border: 4px solid;
+  border-radius: 11px;
 
   @include button-medium;
   @include button-colors($colors);
@@ -81,9 +78,10 @@ $button-colors: (
   display: $display;
   align-items: center;
   font-family: $font-family--base;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
+  font-size: $font-size--small-1;
+  font-weight: bold;
+  letter-spacing: $letter-spacing--none;
+  line-height: $line-height--narrow;
 
   &:focus {
     @include focus;
