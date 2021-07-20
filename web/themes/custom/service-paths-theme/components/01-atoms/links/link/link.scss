@@ -5,10 +5,8 @@
 
   position: relative;
 
-  .icon {
+  .fontawesome-icon {
     &--before {
-      width: 1.25em;
-      height: 1.25em;
       margin-right: space();
     }
 
@@ -17,11 +15,8 @@
     }
 
     &--external-link {
-      position: relative;
-      width: 0.5rem;
-      height: 0.5rem;
-      right: 0;
-      top: -0.35rem;
+      width: 0.75rem;
+      height: 0.75rem;
       margin-left: space(math.div(1, 4));
     }
   }
@@ -64,7 +59,7 @@
     box-shadow: none;
     border-bottom: 3px solid color(border-primary);
 
-    .icon {
+    .fontawesome-icon {
       @include transition(transform);
 
       width: 1.5em;
@@ -74,7 +69,7 @@
     &:hover {
       padding-right: calc(#{space(math.div(1, 4))} + 0.75em);
 
-      .icon {
+      .fontawesome-icon {
         transform: translateX(50%);
       }
     }
@@ -96,7 +91,7 @@
     letter-spacing: $letter-spacing--small;
     background: rgba(255, 255, 255, 0.75);
 
-    .icon {
+    .fontawesome-icon {
       @include transition(transform);
 
       order: -1;
@@ -110,7 +105,7 @@
     }
 
     &:hover {
-      .icon {
+      .fontawesome-icon {
         transform: translateY(-50%);
       }
     }
@@ -132,11 +127,11 @@
       cubic-bezier(0.19, 1, 0.22, 1)
     );
 
-    .icon--before {
+    .fontawesome-icon--before {
       margin-right: space(math.div(3, 4));
     }
 
-    .icon--after {
+    .fontawesome-icon--after {
       margin-left: auto;
       box-sizing: content-box; // Do not allow padding to reduce the default content box size.
       padding-left: space(
@@ -186,7 +181,7 @@
       padding: space(1 + math.div(3, 4)) space(2);
     }
 
-    .icon {
+    .fontawesome-icon {
       @include transition(transform);
 
       flex: 0 0 2rem;
@@ -240,6 +235,7 @@
       position: relative;
       top: 1px;
       width: auto;
+
       &:first-child {
         border-left: 1px solid color(primary);
       }

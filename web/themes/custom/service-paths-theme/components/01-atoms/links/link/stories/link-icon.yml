@@ -1,5 +1,5 @@
 link__url: 'https://wunder.io'
 link__content: 'This is my link text'
-link__icon_before: 'attachment'
+link__icon_before: 'file-alt'
 link__modifiers:
   - 'icon'
