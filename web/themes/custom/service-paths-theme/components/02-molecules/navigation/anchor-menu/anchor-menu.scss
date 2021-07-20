@@ -3,9 +3,6 @@
 .anchor-menu {
   margin-bottom: var(--space-elements);
   padding: space() 0;
-  border: 1px solid color(border-primary);
-  border-left: none;
-  border-right: none;
 
   .link {
     width: fit-content;
@@ -19,7 +16,7 @@
     color: color(text-dark);
 
     .icon {
-      margin-right: space(1);
+      margin-right: space(1.5);
     }
 
     &:hover {
@@ -32,9 +29,11 @@
   }
 
   &__menu-item {
-    margin-bottom: space(math.div(1, 2));
+    margin-bottom: space(1);
     padding: 0;
     font-weight: bold;
-    letter-spacing: $letter-spacing--medium;
+    letter-spacing: $letter-spacing--none;
+    font-size: $font-size--large-2;
+    line-height: $line-height--base;
   }
 }
