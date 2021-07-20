@@ -24,6 +24,7 @@ visibility:
     id: 'entity_bundle:node'
     bundles:
       page: page
+      service: service
       service_channel: service_channel
     negate: true
     context_mapping:

@@ -82,41 +82,39 @@
 
 {% set page_sidebar = true %}
 
-<div
-  {{ title_prefix }}
-  {{ title_suffix }}
+{{ title_prefix }}
+{{ title_suffix }}
 
-  {% embed "@molecules/hero/hero.twig" with {
-    hero__title: content.field_heading|default(label),
-    hero__lead_text: content.field_lead_text,
-  } %}
-    {% block hero_image %}
-      {{ content.field_lead_image }}
-    {% endblock %}
-  {% endembed %}
+{% embed "@molecules/hero/hero.twig" with {
+  hero__title: content.field_heading|render|trim ? content.field_heading : label,
+  hero__lead_text: content.field_lead_text,
+} %}
+  {% block hero_image %}
+    {{ content.field_lead_image }}
+  {% endblock %}
+{% endembed %}
 
 
-  {% embed "@templates/page/page-content.twig" %}
-    {% block page_content %}
+{% embed "@templates/page/page-content.twig" %}
+  {% block page_content %}
 
-      {{ content|without(excluded_fields) }}
+    {{ content|without(excluded_fields) }}
 
-      {% if content.field_description_custom|render %}
-        {{ content.field_description_custom }}
-      {% else %}
-        {{ content.field_description }}
-      {% endif %}
-    {% endblock %}
+    {% if content.field_description_custom|render %}
+      {{ content.field_description_custom }}
+    {% else %}
+      {{ content.field_description }}
+    {% endif %}
+  {% endblock %}
 
-    {% block page_sidebar_post_content %}
-      {{ content.field_service_classes }}
-      {{ content.field_target_groups }}
-      {{ content.field_requirements }}
-      {{ content.service_channels_embed }}
-    {% endblock %}
+  {% block page_sidebar_post_content %}
+    {{ content.field_service_classes }}
+    {{ content.field_target_groups }}
+    {{ content.field_requirements }}
+    {{ content.service_channels_embed }}
+  {% endblock %}
 
-    {% block page_content_post_content %}
-      {{ content.field_paragraphs_bottom }}
-    {% endblock %}
-  {% endembed %}
-</div>
+  {% block page_content_post_content %}
+    {{ content.field_paragraphs_bottom }}
+  {% endblock %}
+{% endembed %}
