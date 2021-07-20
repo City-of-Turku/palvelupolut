@@ -10,7 +10,7 @@ $space: 1rem;
 
 // Layout
 $width-xs: space(20); // 320
-$width-small: space(25); // 480
+$width-small: space(30); // 480
 $width-medium: space(45); // 720;
 $width-large: space(57.5); // 920;
 $width-xl: space(76.5); // 1224;
@@ -27,6 +27,7 @@ $width-xxl: space(88); // 1408;
 }
 
 $width--page: $width-xxl;
+$width--backdrop: calc(#{$width--page} + #{space(12)});
 $width--page-wrapper: calc(#{$width--page} + var(--space-page-padding) * 2);
 
 $grid-gutter-width: space(2);
