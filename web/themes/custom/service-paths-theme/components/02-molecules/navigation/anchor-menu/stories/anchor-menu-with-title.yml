@@ -1,0 +1,8 @@
+anchor_menu__title: 'On this page:'
+anchor_menu__items:
+  - title: 'Anchor 1'
+    url: '#'
+  - title: 'Anchor 2'
+    url: '#'
+  - title: 'Anchor 3'
+    url: '#'

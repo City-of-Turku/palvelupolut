@@ -15,7 +15,9 @@
     line-height: 30px;
     color: color(text-dark);
 
-    .icon {
+    .fontawesome-icon {
+      width: 1.25em;
+      height: 1.25em;
       margin-right: space(1.5);
     }
 
@@ -28,8 +30,8 @@
     @include list-reset;
   }
 
-  &__menu-item {
-    margin-bottom: space(1);
+  &__item {
+    margin-bottom: space(1.5);
     padding: 0;
     font-weight: bold;
     letter-spacing: $letter-spacing--none;

@@ -47,9 +47,8 @@
     {% block list_item_content %}
       {% set link_modifiers = box_links__link_modifiers|default([]) %}
 
-      {% include "@atoms/images/icon/icon.twig" with {
-        icon__name: "attachment",
-        icon__base_class: "icon",
+      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+        fontawesome_icon__name: "attachment",
       } %}
 
       {% include "@atoms/links/link/link.twig" with {
