@@ -16,13 +16,15 @@
 {% set section_teaser__modifiers = section_teaser__modifiers|default([]) %}
 
 <div {{ bem(section_teaser__base_class, section_teaser__modifiers) }}>
-  {% for item in section_teaser__items %}
-    {% include "@molecules/teaser/teaser.twig" with {
-      teaser__modifiers: cta_modifiers,
-      teaser__title: item.title,
-      teaser__lead_text: item.lead_text,
-      teaser__image: item.image,
-      teaser__link: item.link,
-    } %}
-  {% endfor %}
+  {% block section_teaser_items %}
+    {% for item in section_teaser__items %}
+      {% include "@molecules/teaser/teaser.twig" with {
+        teaser__modifiers: cta_modifiers,
+        teaser__title: item.title,
+        teaser__lead_text: item.lead_text,
+        teaser__image: item.image,
+        teaser__link: item.link,
+      } %}
+    {% endfor %}
+  {% endblock %}
 </div>
