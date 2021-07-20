@@ -66,22 +66,12 @@
  * @see template_preprocess_node()
  */
 #}
-{% set excluded_fields = [
-  "field_heading",
-  "field_lead_image",
-  "field_lead_text",
-  "field_paragraphs_bottom",
-  "field_paragraphs_sidebar"
-] %}
 
-<article {{ bem("node", [node.bundle|clean_class]) }}>
+<article>
   {{ title_prefix }}
   {{ title_suffix }}
 
-  {% embed "@templates/page/page-content.twig" with {
-    page_sidebar: content.field_paragraphs_sidebar|render|trim is not empty,
-  } %}
-
+  {% embed "@templates/page/page-content.twig" %}
     {% block page_content %}
       {% if not page %}
         {% include "@atoms/text/heading/heading.twig" with {
@@ -94,15 +84,7 @@
         } %}
       {% endif %}
 
-      {{ content|without(excluded_fields) }}
-    {% endblock %}
-
-    {% block page_sidebar_post_content %}
-      {{ content.field_paragraphs_sidebar }}
-    {% endblock %}
-
-    {% block page_content_post_content %}
-      {{ content.field_paragraphs_bottom }}
+      {{ content }}
     {% endblock %}
   {% endembed %}
 </article>

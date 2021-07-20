@@ -8,7 +8,7 @@
  *
  * Blocks:
  * - page_header: the site header
- * - page_pre_content: appears before the main page content
+ * - page_messages: appears before the main page content
  * - page_content: the main page content
  * - page_post_content: content that appears after the main content
  * - page_footer: footer content
@@ -22,7 +22,7 @@
     {% include "@organisms/header/header.twig" %}
   {% endblock %}
 
-  {% block page_pre_content %}{% endblock %}
+  {% block page_messages %}{% endblock %}
 
   {# The ID attribute is the target of the skip to main content link. #}
   <main id="main-content" {{ bem("main", [], page__base_class) }}>

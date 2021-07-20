@@ -84,21 +84,19 @@
 
 {% set page_sidebar = true %}
 
-<article {{ bem("node", [node.bundle|clean_class, "full"]) }}>
+<div>
   {{ title_prefix }}
   {{ title_suffix }}
 
-  {% if content.field_lead_image|render or content.field_heading|render %}
-    {% embed "@molecules/hero/hero.twig" with {
-      hero__modifiers: ["light"],
-      hero__title: content.field_heading,
-      hero__lead_text: content.field_lead_text,
-    } %}
-      {% block hero_image %}
-        {{ content.field_lead_image }}
-      {% endblock %}
-    {% endembed %}
-  {% endif %}
+  {% embed "@molecules/hero/hero.twig" with {
+    hero__modifiers: ["light"],
+    hero__title: content.field_heading|default(label),
+    hero__lead_text: content.field_lead_text,
+  } %}
+    {% block hero_image %}
+      {{ content.field_lead_image }}
+    {% endblock %}
+  {% endembed %}
 
   {% embed "@templates/page/page-content.twig" %}
     {% block page_content %}
@@ -125,4 +123,4 @@
       {{ content.field_paragraphs_bottom }}
     {% endblock %}
   {% endembed %}
-</article>
+</div>

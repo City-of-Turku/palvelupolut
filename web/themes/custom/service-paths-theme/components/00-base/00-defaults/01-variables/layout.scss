@@ -27,7 +27,7 @@ $width-xxl: space(88); // 1408;
 }
 
 $width--page: $width-xxl;
-$width--backdrop: calc(#{$width--page} + #{space(12)});
+$width--backdrop: calc(#{$width--page} + #{space(20)});
 $width--page-wrapper: calc(#{$width--page} + var(--space-page-padding) * 2);
 
 $grid-gutter-width: space(2);
