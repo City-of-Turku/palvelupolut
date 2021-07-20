@@ -1,7 +1,6 @@
 // Import variables.
 @use 'sass:math';
 @import '../00-base/**/*.scss';
-@import '../01-atoms/images/image-inline/image-inline';
 
 :root {
   --sg-pattern-color: #656565;
@@ -84,14 +83,6 @@
 
     &--small {
       background-size: 35%;
-    }
-
-    &[data-image='image-inline--svg-collapse-open'] {
-      background-image: data-url($image-inline--svg-collapse-open, svg);
-    }
-
-    &[data-image='image-inline--svg-collapse-close'] {
-      background-image: data-url($image-inline--svg-collapse-close, svg);
     }
   }
 
