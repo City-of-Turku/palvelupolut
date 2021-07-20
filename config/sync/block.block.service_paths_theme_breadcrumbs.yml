@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: service_paths_theme_breadcrumbs
 theme: service_paths_theme
-region: hidden
-weight: -3
+region: config
+weight: -2
 provider: null
 plugin: system_breadcrumb_block
 settings:
