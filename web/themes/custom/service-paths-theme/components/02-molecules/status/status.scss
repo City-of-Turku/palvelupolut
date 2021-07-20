@@ -1,16 +1,14 @@
-@use 'sass:math';
-
-.status__list {
-  @include list-reset;
-
-  margin-bottom: space();
-}
-
 .status {
+  @include wrapper($margin: 0 auto space(2));
+
   display: block;
-  margin-bottom: space(math.div(1, 2));
-  padding: space(math.div(1, 2));
   text-align: center;
+
+  &__list {
+    @include list-reset;
+
+    margin-bottom: space();
+  }
 
   &--warning {
     color: color(primary);
