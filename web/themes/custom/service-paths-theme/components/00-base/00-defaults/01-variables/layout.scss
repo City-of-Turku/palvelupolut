@@ -2,7 +2,6 @@
 
 // Spacing
 $space: 1rem;
-$spacexs: 0.0625rem;
 
 // Functions should go into their own file but space() and grid-width() will be used to define layout variables.
 @function space($multiplier: 1) {
@@ -19,15 +18,16 @@ $width-xxl: space(88); // 1408;
 
 :root {
   --space-elements: #{space(5)};
+  --space-page-padding: #{space(2)};
 
   @media (max-width: #{$width-large - space(math.div(1, 100))}) {
     --space-elements: #{space(3)};
+    --space-page-padding: #{space()};
   }
 }
 
 $width--page: $width-xxl;
-$width--page-padding: space();
-$width--page-wrapper: $width--page + ($width--page-padding * 2);
+$width--page-wrapper: calc(#{$width--page} + var(--space-page-padding) * 2);
 
 $grid-gutter-width: space(2);
 $grid-columns: 12;
@@ -45,6 +45,7 @@ $grid-column-width: math.div(($width--page - ($grid-columns - 1) * $grid-gutter-
 }
 
 $width--content: grid-width(10) + grid-gutter-width(2);
+$width--content-narrow: grid-width(8); // 928
 $width--sidebar: grid-width(3, true); // ~360
 
 $z-index: (

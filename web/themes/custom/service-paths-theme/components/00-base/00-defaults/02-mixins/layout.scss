@@ -24,8 +24,8 @@
  * Add horizontal gutter to outer containers.
  */
 @mixin wrapper-padding {
-  padding-left: $width--page-padding;
-  padding-right: $width--page-padding;
+  padding-left: var(--space-page-padding);
+  padding-right: var(--space-page-padding);
 }
 
 /*
