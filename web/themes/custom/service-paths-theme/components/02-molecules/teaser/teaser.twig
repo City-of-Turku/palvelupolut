@@ -12,37 +12,35 @@
 * @ingroup themeable
 */
 #}
-{% set teaser__base_class = "teaser" %}
+{% set teaser__base_class = 'teaser' %}
 {% set teaser__modifiers = teaser__modifiers|default([]) %}
 
 <div {{ bem(teaser__base_class, teaser__modifiers) }}>
-
-   <div {{ bem("bg", [], teaser__base_class) }} aria-hidden="true">
+   <div {{ bem('bg', [], teaser__base_class) }} aria-hidden="true">
     {% block teaser_image %}
-      {% include "@atoms/images/image/responsive-image.twig" with teaser__image %}
+      {% include '@atoms/images/image/responsive-image.twig' with teaser__image %}
     {% endblock %}
   </div>
-  <div {{ bem("inner", [], teaser__base_class) }}>
 
-    {% include "@atoms/text/text-long/text-long.twig" with {
-      text_long__base_class: "text",
+  <div {{ bem('inner', [], teaser__base_class) }}>
+    {% include '@atoms/text/text-long/text-long.twig' with {
+      text_long__base_class: 'text',
       text_long__content:  teaser__lead_text,
       text_long__blockname: teaser__base_class,
     } %}
 
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 4,
-    heading__base_class: "title",
-    heading__blockname: teaser__base_class,
-    heading: teaser__title,
-  } %}
+    {% include '@atoms/text/heading/heading.twig' with {
+      heading__level: 4,
+      heading__base_class: 'title',
+      heading__blockname: teaser__base_class,
+      heading: teaser__title,
+    } %}
 
-  {% include "@atoms/links/link/link.twig" with {
-    link__base_class: "link",
-    link__url: teaser__link,
-    link__icon_before: "arrow-right",
-    link__blockname: teaser__base_class,
-  } %}
-
+    {% include '@atoms/links/link/link.twig' with {
+      link__base_class: 'link',
+      link__url: teaser__link,
+      link__icon_before: 'arrow-right',
+      link__blockname: teaser__base_class,
+    } %}
   </div>
 </div>

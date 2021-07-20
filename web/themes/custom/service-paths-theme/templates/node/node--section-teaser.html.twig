@@ -67,10 +67,14 @@
  */
 #}
 
-{% include "@molecules/teaser/teaser.twig" with {
+{% embed "@molecules/teaser/teaser.twig" with {
   teaser__modifiers: cta_modifiers,
   teaser__title: label,
   teaser__lead_text: node.type.entity.label,
   teaser__link: url,
 } %}
+  {% block teaser_image %}
+    {{ content.field_lead_image }}
+  {% endblock %}
+{% endembed %}
 
