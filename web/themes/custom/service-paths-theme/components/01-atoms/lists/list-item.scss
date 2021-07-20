@@ -4,3 +4,6 @@
   margin-bottom: space(math.div(1, 5));
   padding-left: space(math.div(1, 2));
 }
+.list-unordered {
+  list-style-type: disc;
+}

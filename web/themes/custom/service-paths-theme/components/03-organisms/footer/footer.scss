@@ -1,7 +1,7 @@
 .footer {
   font-size: $font-size--small-1;
   color: color(text-inverse);
-  background: color(background-footer);
+  background: color(background-dark);
 
   &__inner {
     @include wrapper;

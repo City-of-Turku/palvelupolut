@@ -37,7 +37,7 @@
     font-weight: 700;
     font-size: $font-size--small-3;
     text-transform: uppercase;
-    color: color(text-meta);
+    color: color(text);
   }
 
   &--icon {
@@ -268,7 +268,7 @@
 
   &:hover {
     .link__suffix {
-      color: color(text-meta-inverse);
+      color: color(text-inverse);
     }
   }
 }

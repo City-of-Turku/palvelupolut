@@ -26,7 +26,7 @@
 
 @mixin background-full-width(
   $width: $width--backdrop,
-  $background: color(background-box),
+  $background: color(background-light),
   $position: relative,
   $z-index: -1
 ) {

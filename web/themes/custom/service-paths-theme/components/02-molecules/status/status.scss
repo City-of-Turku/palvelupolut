@@ -14,16 +14,15 @@
 
   &--warning {
     color: color(primary);
-    background-color: color(warning);
+    background-color: color(status-warning);
   }
 
   &--error {
-    color: color(error-text);
-    background-color: color(error);
+    color: color(text-error);
+    background-color: color(status-error);
   }
 
   &--status {
-    color: color(message-text);
-    background-color: color(message);
+    background-color: color(status-message);
   }
 }

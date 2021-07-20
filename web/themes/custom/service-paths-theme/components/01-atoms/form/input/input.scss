@@ -4,7 +4,7 @@
   padding: 0.6em;
   border: none;
   border-bottom: $border-width solid color(primary);
-  background-color: color(background-box);
+  background-color: color(background-light);
 
   &:focus {
     @include focus;
@@ -41,10 +41,10 @@
 
   &--error {
     background-color: color(error);
-    border-bottom: $border-width solid color(error-text);
+    border-bottom: $border-width solid color(text-error);
 
     &::placeholder {
-      color: color(error-text);
+      color: color(text-error);
     }
   }
 
