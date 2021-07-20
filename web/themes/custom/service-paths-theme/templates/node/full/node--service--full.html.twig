@@ -108,12 +108,6 @@
       {% else %}
         {{ content.field_description }}
       {% endif %}
-
-      {% include "@atoms/links/link/link.twig" with {
-        link__content: "Back to top"|t,
-        link__url: "#main-content",
-        link__modifiers: ["back-to-top"],
-      } %}
     {% endblock %}
 
     {% block page_sidebar_post_content %}
