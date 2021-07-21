@@ -1,11 +1,10 @@
-@use 'sass:math';
-
 .teaser {
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   text-align: center;
+
   @include above($width-large) {
     flex-direction: row;
     text-align: left;
@@ -18,42 +17,54 @@
     bottom: 0;
     flex: auto;
   }
+
+  &__title {
+    a {
+      box-shadow: none;
+      color: color(text-dark);
+
+      &::before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+  }
 }
+
 .teaser__bg {
   display: flex;
   align-items: center;
   align-self: center;
 }
+
 .teaser__bg img {
   min-width: 100px;
   max-width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+
   @include above($width-large) {
     min-width: 128px;
     max-width: 128px;
     height: 128px;
   }
 }
-.teaser .text {
+
+.teaser .label {
   font-size: $font-size--small-1;
   text-transform: uppercase;
   margin-bottom: space(math.div(1, 2));
 }
-a.teaser__link {
-  &::before {
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-}
+
 a.teaser__link.teaser__link--with-icon {
   box-shadow: none;
-  color: black;
+  color: color(text-dark);
   svg {
     width: 25px;
     height: 25px;

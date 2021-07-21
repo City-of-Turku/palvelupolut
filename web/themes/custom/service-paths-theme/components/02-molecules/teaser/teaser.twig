@@ -23,10 +23,10 @@
   </div>
 
   <div {{ bem('inner', [], teaser__base_class) }}>
-    {% include '@atoms/text/text-long/text-long.twig' with {
-      text_long__base_class: 'text',
-      text_long__content:  teaser__lead_text,
-      text_long__blockname: teaser__base_class,
+    {% include '@atoms/text/label/label.twig' with {
+      label__base_class: 'label',
+      label__content:  teaser__lead_text,
+      label__blockname: teaser__base_class,
     } %}
 
     {% include '@atoms/text/heading/heading.twig' with {
@@ -34,11 +34,11 @@
       heading__base_class: 'title',
       heading__blockname: teaser__base_class,
       heading: teaser__title,
+      heading__url: teaser__link,
     } %}
 
     {% include '@atoms/links/link/link.twig' with {
       link__base_class: 'link',
-      link__url: teaser__link,
       link__icon_before: 'arrow-right',
       link__blockname: teaser__base_class,
     } %}
