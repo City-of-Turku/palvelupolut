@@ -93,7 +93,7 @@
     {% embed "@molecules/hero/hero.twig" with {
       hero__modifiers: hero__modifiers|default(["light"]),
       hero__title: content.field_heading|render|trim ? content.field_heading : label,
-      hero__lead_text: content.field_lead_text,
+      hero__lead_text: content.field_lead_text|field_value,
     } %}
       {% block hero_image %}
         {{ content.field_lead_image }}

@@ -5,6 +5,10 @@
   margin-bottom: space(4);
   padding: space(2) 0;
 
+  .text-long {
+    font-size: $font-size--large-2;
+  }
+
   &__inner {
     z-index: 2;
     color: color(text-inverse);
@@ -49,6 +53,10 @@
 
   &__title {
     color: color(text-inverse);
+
+    @include above($width-large) {
+      margin-bottom: space(2.5);
+    }
   }
 
   @include above($width-large) {
@@ -60,15 +68,12 @@
 
   &--light {
     &::before {
-      background: color(background-section-dark);
+      background: color(background-section);
     }
 
-    h1 {
+    .hero__inner,
+    .hero__title {
       color: color(text-dark);
-    }
-
-    .text {
-      color: color(text);
     }
   }
 }
