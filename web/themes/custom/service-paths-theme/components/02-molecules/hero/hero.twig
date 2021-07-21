@@ -26,9 +26,7 @@
 
     {% if hero__lead_text %}
       {% include "@atoms/text/text-long/text-long.twig" with {
-        text_long__base_class: "text",
         text_long__content:  hero__lead_text,
-        text_long__blockname: hero__base_class,
       } %}
     {% endif %}
   </div>

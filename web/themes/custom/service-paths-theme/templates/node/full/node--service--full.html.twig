@@ -68,36 +68,36 @@
 #}
 
 {% set excluded_fields = [
-  "field_description",
-  "field_description_custom",
   "field_heading",
   "field_lead_image",
   "field_lead_text",
+  "field_description",
+  "field_description_custom",
   "field_service_classes",
   "field_target_groups",
   "field_requirements",
-  "field_tags",
   "service_channels_embed",
+  "field_tags",
 ] %}
 
-{% set page_sidebar = true %}
-
-{{ title_prefix }}
-{{ title_suffix }}
-
-{% embed "@molecules/hero/hero.twig" with {
-  hero__title: content.field_heading|render|trim ? content.field_heading : label,
-  hero__lead_text: content.field_lead_text,
+{% embed "@templates/page/page-content.twig" with {
+  page_sidebar: false,
 } %}
-  {% block hero_image %}
-    {{ content.field_lead_image }}
+  {% block page_content_pre_content %}
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {% embed "@molecules/hero/hero.twig" with {
+      hero__title: content.field_heading|render|trim ? content.field_heading : label,
+      hero__lead_text: content.field_lead_text|field_value,
+    } %}
+      {% block hero_image %}
+        {{ content.field_lead_image }}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}
-{% endembed %}
 
-
-{% embed "@templates/page/page-content.twig" %}
   {% block page_content %}
-
     {{ content|without(excluded_fields) }}
 
     {% if content.field_description_custom|render %}
@@ -112,9 +112,5 @@
     {{ content.field_target_groups }}
     {{ content.field_requirements }}
     {{ content.service_channels_embed }}
-  {% endblock %}
-
-  {% block page_content_post_content %}
-    {{ content.field_paragraphs_bottom }}
   {% endblock %}
 {% endembed %}
