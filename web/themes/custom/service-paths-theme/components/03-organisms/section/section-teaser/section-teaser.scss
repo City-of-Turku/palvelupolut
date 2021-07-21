@@ -4,6 +4,8 @@
   background: color(background-section-dark);
   flex-wrap: wrap;
   flex-direction: column;
+  margin-bottom: var(--space-elements);
+
   @include above($width-large) {
     flex-direction: row;
     padding: space(5) space(2);

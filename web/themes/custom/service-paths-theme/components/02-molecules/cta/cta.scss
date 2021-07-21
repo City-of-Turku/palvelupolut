@@ -9,6 +9,11 @@
     margin-top: space(0.75);
     position: unset;
     text-align: center;
+    svg {
+      width: space(1.5);
+      height: space(1.5);
+      margin-right: 0;
+    }
     .icon--before {
       margin-right: 0;
     }

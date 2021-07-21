@@ -1,3 +1,4 @@
+process_step__heading: "Heading"
 section_process_steps__items:
   - placeholder: true
     title: 'Etsi sopivat vaihtoehdot'

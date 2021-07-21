@@ -1,6 +1,14 @@
 .section-process-steps {
-  display: flex;
-  flex-wrap: wrap;
   background: color(background-section);
   padding: space(3);
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .heading {
+    margin-bottom: var(--space-elements);
+    font-weight: bold;
+    letter-spacing: -$letter-spacing--large;
+    line-height: $line-height--heading;
+  }
 }

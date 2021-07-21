@@ -1,9 +1,13 @@
 .accordion {
-  margin-bottom: var(--space-elements);
+  margin: var(--space-elements) 0;
 
-  &__heading {
-    margin: 0 0 space(3);
-    font-size: $font-size--large-4;
+  .heading {
+    margin: 0 0 space(2.5);
+    font-size: $font-size--large-3;
+
+    @include above($width-medium) {
+      font-size: $font-size--large-5;
+    }
   }
 }
 
