@@ -13,12 +13,22 @@
 {% set section_process_steps__modifiers = section_process_steps__modifiers|default([]) %}
 
 <div {{ bem(section_process_steps__base_class, section_process_steps__modifiers, section_process_steps__blockname) }}>
-  {% for item in section_process_steps__items %}
-    {% include "@molecules/process-step/process-step.twig" with {
-      process_step__modifiers: process_step_modifiers,
-      process_step__title: item.title,
-      process_step__lead_text: item.lead_text,
-      list_links__items: item.list_links__items,
+  {% if process_step__heading %}
+    {% include '@atoms/text/heading/heading.twig' with {
+      heading__level: process_step__heading_level|default('2'),
+      heading: process_step__heading,
+      heading__blockname: process_step__base_class,
     } %}
-  {% endfor %}
+  {% endif %}
+
+  <div {{ bem("process-steps", [], process_step__base_class) }}>
+    {% for item in section_process_steps__items %}
+      {% include "@molecules/process-step/process-step.twig" with {
+        process_step__modifiers: process_step_modifiers,
+        process_step__title: item.title,
+        process_step__lead_text: item.lead_text,
+        list_links__items: item.list_links__items,
+      } %}
+    {% endfor %}
+  </div>
 </div>
