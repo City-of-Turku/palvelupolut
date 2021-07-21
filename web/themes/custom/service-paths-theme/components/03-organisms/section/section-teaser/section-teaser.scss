@@ -5,6 +5,12 @@
   flex-wrap: wrap;
   flex-direction: column;
   padding: space(2) 0;
+  margin-bottom: var(--space-elements);
+
+  @include above($width-large) {
+    flex-direction: row;
+    padding: space(5) space(2);
+  }
 
   .teaser {
     @include above($width-large) {

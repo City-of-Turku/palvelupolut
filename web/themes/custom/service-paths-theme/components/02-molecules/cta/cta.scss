@@ -9,6 +9,13 @@
     margin-top: space(0.75);
     position: unset;
     text-align: center;
+
+    svg {
+      width: space(1.5);
+      height: space(1.5);
+      margin-right: 0;
+    }
+
     .icon--before {
       margin-right: 0;
     }
@@ -53,5 +60,10 @@
     width: space(8);
     height: space(8);
     padding: space(2.1875);
+  }
+
+  &__text {
+    order: 3;
+    text-align: center;
   }
 }

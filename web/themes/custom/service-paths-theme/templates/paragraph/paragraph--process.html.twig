@@ -42,10 +42,10 @@
 {% set section_process_steps__base_class = section_process_steps__base_class|default("section-process-steps") %}
 {% set section_process_steps__modifiers = section_process_steps__modifiers|default([]) %}
 
-<h2>{{ content.field_paragraph_heading }}</h2>
 
 <div {{ bem(section_process_steps__base_class, section_process_steps__modifiers, section_process_steps__blockname) }}>
 
+  {{ content.field_paragraph_heading }}
   {{ content.field_process_steps }}
 
 </div>
