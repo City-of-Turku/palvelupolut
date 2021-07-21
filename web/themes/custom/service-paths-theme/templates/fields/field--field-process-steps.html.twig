@@ -37,13 +37,11 @@
  * @see template_preprocess_field()
  */
 #}
-<div {{ bem("process-steps", [], process_step__base_class) }}>
-  {% for item in items %}
-    {% include "@molecules/process-step/process-step.twig" with {
-        process_step__modifiers: process_step_modifiers,
-        process_step__title: item.content['#paragraph'].field_step_title.value,
-        process_step__lead_text: item.content['#paragraph'].field_step_text.value,
-        list_links__items: item.content['#paragraph'].field_link,
-      } %}
-  {% endfor %}
-</div>
+{% for item in items %}
+  {% include "@molecules/process-step/process-step.twig" with {
+      process_step__modifiers: process_step_modifiers,
+      process_step__title: item.content['#paragraph'].field_step_title.value,
+      process_step__lead_text: item.content['#paragraph'].field_step_text.value,
+      list_links__items: item.content['#paragraph'].field_link,
+    } %}
+{% endfor %}
