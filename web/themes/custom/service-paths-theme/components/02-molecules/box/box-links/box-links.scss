@@ -8,8 +8,10 @@
 
   svg {
     margin-right: space();
-    width: 24px;
-    height: 24px;
+    width: space(1.5);
+    height: space(1.5);
+    position: relative;
+    top: space(1/4);
   }
 
   margin: 0 0 var(--space-elements);
@@ -25,7 +27,7 @@
     font-size: $font-size--large-4;
     font-weight: bold;
     letter-spacing: 0;
-    line-height: 33px;
+    line-height: $line-height--heading;
     margin-bottom: space(2);
   }
 

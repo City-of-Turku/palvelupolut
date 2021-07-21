@@ -43,8 +43,11 @@
     font-size: $font-size--small-1;
     padding-left: 2.3rem;
     margin-top: space(math.div(1, 2));
-    letter-spacing: 0.25px;
-    line-height: 22px;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
+    p {
+      margin: 0;
+    }
   }
 
   &__title {
