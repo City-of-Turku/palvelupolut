@@ -13,4 +13,20 @@
       margin-bottom: 0;
     }
   }
+
+  &--vertical {
+    background: color(background-section);
+    padding: space(5) space(10);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    h2 {
+      flex: 100%;
+    }
+    
+    .contact-card {
+      flex: auto;
+    }
+  }
 }
