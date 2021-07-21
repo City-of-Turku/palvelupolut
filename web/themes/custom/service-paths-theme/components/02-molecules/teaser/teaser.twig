@@ -4,10 +4,12 @@
 * Theme implementation to display site teaser content
 *
 * Variables:
-* - teaser__meta: Meta information, e.g. node type and publication date
+* - teaser__link: The link to the full content
 * - teaser__title: Title (h1) text.
-* - teaser__image: Background image URL.
 * - teaser__lead_text: Copy text to show on the teaser.
+*
+* Blocks:
+* - teaser__image: Background image.
 *
 * @ingroup themeable
 */
@@ -16,7 +18,7 @@
 {% set teaser__modifiers = teaser__modifiers|default([]) %}
 
 <div {{ bem(teaser__base_class, teaser__modifiers) }}>
-   <div {{ bem('bg', [], teaser__base_class) }} aria-hidden="true">
+   <div {{ bem('image', [], teaser__base_class) }} aria-hidden="true">
     {% block teaser_image %}
       {% include '@atoms/images/image/responsive-image.twig' with teaser__image %}
     {% endblock %}
@@ -25,7 +27,7 @@
   <div {{ bem('inner', [], teaser__base_class) }}>
     {% include '@atoms/text/text-long/text-long.twig' with {
       text_long__base_class: 'text',
-      text_long__content:  teaser__lead_text,
+      text_long__content: teaser__lead_text,
       text_long__blockname: teaser__base_class,
     } %}
 
