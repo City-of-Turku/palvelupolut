@@ -3,8 +3,12 @@
 
   position: relative;
 
+  &__pre-content {
+    grid-column: 1 / -1;
+  }
+
   &__content {
-    grid-row: 1 / span 3;
+    grid-row: 2 / span 3;
     width: 100%;
   }
 
@@ -25,7 +29,7 @@
     @include above($width-large) {
       display: grid;
       grid-template-columns: auto $width--sidebar;
-      grid-template-rows: auto auto;
+      grid-template-rows: auto;
       column-gap: $grid-gutter-width;
     }
   }

@@ -2,9 +2,12 @@
 
 .text-long {
   margin-bottom: space(2);
+  font-size: $font-size--base;
 
   p {
     @extend .paragraph;
+
+    font-size: inherit;
   }
 
   ol,

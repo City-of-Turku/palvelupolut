@@ -4,10 +4,12 @@
 * Theme implementation to display site teaser content
 *
 * Variables:
-* - teaser__meta: Meta information, e.g. node type and publication date
+* - teaser__link: The link to the full content
 * - teaser__title: Title (h1) text.
-* - teaser__image: Background image URL.
 * - teaser__lead_text: Copy text to show on the teaser.
+*
+* Blocks:
+* - teaser__image: Background image.
 *
 * @ingroup themeable
 */
@@ -16,17 +18,17 @@
 {% set teaser__modifiers = teaser__modifiers|default([]) %}
 
 <div {{ bem(teaser__base_class, teaser__modifiers) }}>
-   <div {{ bem('bg', [], teaser__base_class) }} aria-hidden="true">
+   <div {{ bem('image', [], teaser__base_class) }} aria-hidden="true">
     {% block teaser_image %}
       {% include '@atoms/images/image/responsive-image.twig' with teaser__image %}
     {% endblock %}
   </div>
 
   <div {{ bem('inner', [], teaser__base_class) }}>
-    {% include '@atoms/text/text-long/text-long.twig' with {
-      text_long__base_class: 'text',
-      text_long__content:  teaser__lead_text,
-      text_long__blockname: teaser__base_class,
+    {% include '@atoms/text/label/label.twig' with {
+      label__base_class: 'label',
+      label__content:  teaser__lead_text,
+      label__blockname: teaser__base_class,
     } %}
 
     {% include '@atoms/text/heading/heading.twig' with {
@@ -34,13 +36,11 @@
       heading__base_class: 'title',
       heading__blockname: teaser__base_class,
       heading: teaser__title,
+      heading__url: teaser__link,
     } %}
 
-    {% include '@atoms/links/link/link.twig' with {
-      link__base_class: 'link',
-      link__url: teaser__link,
-      link__icon_before: 'arrow-right',
-      link__blockname: teaser__base_class,
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: "arrow-right",
     } %}
   </div>
 </div>

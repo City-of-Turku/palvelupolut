@@ -1,20 +1,25 @@
 .section-teaser {
+  @include background-full-width($background: color(background-section));
+
   display: flex;
-  padding: space(2);
-  background: color(background-section-dark);
   flex-wrap: wrap;
   flex-direction: column;
+  padding: space(2) 0;
+  margin-bottom: var(--space-elements);
+
   @include above($width-large) {
     flex-direction: row;
     padding: space(5) space(2);
   }
 
-  @include above($width-xl) {
-    padding: space(5) space(3);
+  .teaser {
+    @include above($width-large) {
+      width: 50%;
+    }
   }
-}
-.section-teaser .teaser {
+
   @include above($width-large) {
-    width: 50%;
+    flex-direction: row;
+    padding: space(5) 0;
   }
 }
