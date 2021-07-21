@@ -1,6 +1,12 @@
 {% extends "@templates/page/page.twig" %}
   {% block page_main %}
     {% embed "@templates/page/page-content.twig" %}
+      {% block page_content_pre_content %}
+        {% include "@templates/place-holder.twig" with {
+          "place_holder": "Page Content Pre Content",
+        } %}
+      {% endblock %}
+
       {% block page_content %}
         {% include "@templates/place-holder.twig" with {
           "place_holder": "Primary Content",
