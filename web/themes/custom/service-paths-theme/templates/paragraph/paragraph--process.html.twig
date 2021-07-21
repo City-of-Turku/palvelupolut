@@ -42,14 +42,10 @@
 {% set section_process_steps__base_class = section_process_steps__base_class|default("section-process-steps") %}
 {% set section_process_steps__modifiers = section_process_steps__modifiers|default([]) %}
 
+
 <div {{ bem(section_process_steps__base_class, section_process_steps__modifiers, section_process_steps__blockname) }}>
 
-  {% include '@atoms/text/heading/heading.twig' with {
-    heading__level: process_steps__heading_level|default('2'),
-    heading: content.field_paragraph_heading,
-    heading__blockname: process_steps__base_class,
-  } %}
-
+  {{ content.field_paragraph_heading }}
   {{ content.field_process_steps }}
 
 </div>
