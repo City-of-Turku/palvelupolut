@@ -59,10 +59,10 @@
 <a
   {{ bem(link__base_class, link__modifiers, link__blockname, link__extra_classes) }}
   {% for attribute, value in link__attributes %}
-    {{ attribute }}='{{ value }}'
+    {{ attribute }}="{{ value }}"
   {% endfor %}
   {% if link__url %}
-    href='{{ link__url }}'
+    href="{{ link__url }}"
   {% endif %}
 >
   {% if link__icon_before %}
