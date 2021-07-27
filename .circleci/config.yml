@@ -58,6 +58,7 @@ workflows:
           context: silta_dev
           codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static
+          release-suffix: sb
           codebase-build:
             - silta/npm-install-build:
                 build-command: npm run build && npm run build-storybook
