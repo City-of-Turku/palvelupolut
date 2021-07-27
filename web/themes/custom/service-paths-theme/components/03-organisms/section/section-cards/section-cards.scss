@@ -9,23 +9,6 @@
     width: 100%;
   }
 
-  .section-cards__link-with-icon {
-    margin: 0 0 space(4.75);
-    font-size: $font-size--base;
-    font-weight: bold;
-    letter-spacing: $letter-spacing--large;
-    line-height: $line-height--heading-medium;
-    .icon {
-      margin-right: space(1.25);
-      position: relative;
-      top: space(0.188);
-    }
-  }
-
-  @include above($width-large) {
-    grid-template-columns: auto auto;
-  }
-
   > .link {
     justify-self: center;
 
@@ -36,6 +19,20 @@
     }
   }
 
+  &__link-with-icon {
+    margin: 0 0 space(4.75);
+    font-size: $font-size--base;
+    font-weight: bold;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--heading-medium;
+
+    .icon {
+      margin-right: space(1.25);
+      position: relative;
+      top: space(0.188);
+    }
+  }
+
   &__items {
     display: grid;
     grid-column: 1 / -1;
@@ -43,5 +40,7 @@
     grid-gap: space(1.5);
   }
 
+  @include above($width-large) {
+    grid-template-columns: auto auto;
   }
 }
