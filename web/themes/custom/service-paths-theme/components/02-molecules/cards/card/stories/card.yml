@@ -1,0 +1,11 @@
+card__image__src: 'hero.jpg'
+card__heading: 'Päiväkoti Taikametsä'
+card__link__url: '#'
+card__link_text: 'Tutustu kohteeseen'
+card__items:
+  - lead_text: 'Palvelusta vastaa'
+    icon: 'globe'
+  - lead_text: 'Hoitomuoto'
+    icon: 'filter'
+  - lead_text: 'Kielet'
+    icon: 'globe'
