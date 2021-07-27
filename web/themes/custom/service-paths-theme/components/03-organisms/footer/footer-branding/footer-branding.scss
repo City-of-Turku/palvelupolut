@@ -1,0 +1,12 @@
+.footer-branding {
+  padding: 0;
+  color: color(text-inverse);
+
+  .svg {
+    max-width: 8rem;
+  }
+
+  &:focus {
+    @include focus($color: color(text-inverse));
+  }
+}

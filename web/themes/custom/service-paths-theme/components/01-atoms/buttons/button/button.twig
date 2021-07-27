@@ -28,10 +28,10 @@
   {{ bem(button__base_class, button__modifiers, button__blockname, button__extra_classes) }}
 >
   {% if button__icon_before %}
-    {% include "@atoms/images/icon/icon.twig" with {
-      icon__name: button__icon_before,
-      icon__modifiers: button__icon_before_modifiers,
-      icon__decorative: true,
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: button__icon_before,
+      fontawesome_icon__modifiers: button__icon_before_modifiers,
+      fontawesome_icon__decorative: true,
     } %}
   {% endif %}
 

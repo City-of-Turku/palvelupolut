@@ -13,7 +13,7 @@
 {% set text_long__base_class = text_long__base_class|default('text-long') %}
 {% set text_long__modifiers = text_long__modifiers|default([]) %}
 
-<div {{ bem(text_long__base_class, text_long__modifiers) }}>
+<div {{ bem(text_long__base_class, text_long__modifiers, text_long__blockname) }}>
   {% block text_long_content %}
     {{ text_long__content }}
   {% endblock %}

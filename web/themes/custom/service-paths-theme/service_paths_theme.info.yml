@@ -7,13 +7,10 @@ core_version_requirement: ^8 || ^9
 logo: images/logo.png
 
 regions:
-  header: Header
-  pre_content: Pre Content
+  messages: Messages
   content: Content
-  post_content: Post Content
-  footer: Footer
   # A hidden region to place blocks that are printed programmatically elsewhere.
-  hidden: Not rendered (used only for config)
+  config: Not rendered (used only for config)
 
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)

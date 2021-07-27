@@ -20,7 +20,7 @@
   <span {{ bem("number", [], process_step__base_class) }}> {{ loop.index }} </span>
 
   {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 2,
+    heading__level: 3,
     heading__base_class: "title",
     heading__blockname: process_step__base_class,
     heading: process_step__title,
@@ -49,9 +49,8 @@
             {% block list_item_content %}
               {% set link_modifiers = process_step__link_modifiers|default([]) %}
 
-              {% include "@atoms/images/icon/icon.twig" with {
-                icon__name: "arrow-right",
-                icon__base_class: "icon",
+              {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+                fontawesome_icon__name: "arrow-right",
               } %}
 
               {% include "@atoms/links/link/link.twig" with {

@@ -67,17 +67,51 @@
  */
 #}
 
-{% set page_content__modifiers = ['full-width', 'with-sidebar'] %}
+{% set excluded_fields = [
+  "field_heading",
+  "field_lead_text",
+  "field_lead_image",
+  "field_paragraphs_sidebar",
+] %}
+
+{% set menu_items = [] %}
+{% for i in content.field_paragraphs['#items']|keys %}
+  {% set menu_items = menu_items|merge([{
+    title: node.field_paragraphs[i].entity.field_paragraph_heading.value,
+    url: '#pg' ~ node.field_paragraphs[i].entity.id()
+  }]) %}
+{% endfor %}
 
 
-{% extends "@service_paths_theme/node/node.html.twig" %}
+{% embed "@templates/page/page-content.twig" with {
+  page_sidebar: true
+} %}
+  {% block page_content_pre_content %}
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {% embed "@molecules/hero/hero.twig" with {
+      hero__modifiers: hero__modifiers|default(["light"]),
+      hero__title: content.field_heading|render|trim ? content.field_heading : label,
+      hero__lead_text: content.field_lead_text|field_value,
+    } %}
+      {% block hero_image %}
+        {{ content.field_lead_image }}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
 
   {% block page_content %}
+    {% if node.field_show_toc.value == '1' %}
+      {% include "@molecules/navigation/anchor-menu/anchor-menu.twig" with {
+        anchor_menu__items: menu_items
+      } %}
+    {% endif %}
 
-    {{ content }}
-
+    {{ content|without(excluded_fields) }}
   {% endblock %}
 
   {% block page_sidebar_post_content %}
-
+    {{ content.field_paragraphs_sidebar }}
   {% endblock %}
+{% endembed %}

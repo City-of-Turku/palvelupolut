@@ -16,44 +16,44 @@
  *     Example: to insert the image component
  */
 #}
-{% set link__base_class = link__base_class|default("link") %}
+{% set link__base_class = link__base_class|default('link') %}
 {% set link__modifiers = link__modifiers|default([]) %}
 {% set link__attributes = link__attributes|default([]) %}
-{% set link__icon_before_modifiers = link__icon_before_modifiers|default(["before"]) %}
-{% set link__icon_after_modifiers = link__icon_after_modifiers|default(["after"]) %}
-{% set link_with_arrow = "action" in link__modifiers or "quick" in link__modifiers or "inverse" in link__modifiers %}
-{% set back_to_top_link = "back-to-top" in link__modifiers %}
+{% set link__icon_before_modifiers = link__icon_before_modifiers|default(['before']) %}
+{% set link__icon_after_modifiers = link__icon_after_modifiers|default(['after']) %}
+{% set link_with_arrow = 'action' in link__modifiers or 'quick' in link__modifiers or 'inverse' in link__modifiers %}
+{% set back_to_top_link = 'back-to-top' in link__modifiers %}
 {% set presentation_link = not link__url %}
-{% set external_link = "external" in link__modifiers %}
+{% set external_link = 'external' in link__modifiers %}
 
 {% if link_with_arrow  and not external_link %}
-  {% set link__icon_after = "arrow-right" %}
+  {% set link__icon_after = 'arrow-right' %}
   {% set link__icon_after_decorative = true %}
 {% endif %}
 
 {% if back_to_top_link %}
-  {% set link__icon_after = "arrow-up" %}
+  {% set link__icon_after = 'arrow-up' %}
   {% set link__icon_after_decorative = true %}
 {% endif %}
 
 {% if external_link %}
   {% set external_attributes = {
-    rel: "noopener",
-    target: "_blank",
+    rel: 'noopener',
+    target: '_blank',
   } %}
   {% set link__attributes = link__attributes|merge(external_attributes) %}
 {% endif %}
 
 {% if presentation_link %}
   {% set presentation_attributes = {
-    role: "presentation",
-    tabindex: "-1",
+    role: 'presentation',
+    tabindex: '-1',
   } %}
   {% set link__attributes = link__attributes|merge(presentation_attributes) %}
 {% endif %}
 
 {% if link__icon_before or link__icon_after %}
-  {% set link__modifiers = link__modifiers|merge(["with-icon"]) %}
+  {% set link__modifiers = link__modifiers|merge(['with-icon']) %}
 {% endif %}
 
 <a
@@ -66,10 +66,10 @@
   {% endif %}
 >
   {% if link__icon_before %}
-    {% include "@atoms/images/icon/icon.twig" with {
-      icon__name: link__icon_before,
-      icon__modifiers: link__icon_before_modifiers,
-      icon__decorative: link__icon_before_decorative,
+    {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
+      fontawesome_icon__name: link__icon_before,
+      fontawesome_icon__modifiers: link__icon_before_modifiers,
+      fontawesome_icon__decorative: link__icon_before_decorative,
     } %}
   {% endif %}
 
@@ -78,32 +78,28 @@
   {% endblock %}
 
   {% if link__icon_after %}
-    {% include "@atoms/images/icon/icon.twig" with {
-      icon__name: link__icon_after,
-      icon__modifiers: link__icon_after_modifiers,
-      icon__decorative: link__icon_after_decorative,
+    {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
+      fontawesome_icon__name: link__icon_after,
+      fontawesome_icon__modifiers: link__icon_after_modifiers,
+      fontawesome_icon__decorative: link__icon_after_decorative,
     } %}
   {% endif %}
 
   {% if external_link %}
-    {% include "@atoms/images/icon/icon.twig" with {
-      icon__name: "external-link",
-      icon__decorative: true,
-      icon__modifiers: ["external-link"],
+    {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
+      fontawesome_icon__name: 'external-link-alt',
+      fontawesome_icon__decorative: true,
+      fontawesome_icon__modifiers: ['external-link'],
     } %}
 
-    {% include "@atoms/visually-hidden/visually-hidden.twig" with {
-      visually_hidden__content: " (opens in a new window, goes to a different website)"|t,
+    {% include '@atoms/visually-hidden/visually-hidden.twig' with {
+      visually_hidden__content: ' (opens in a new window, goes to a different website)'|t,
     } %}
   {% endif %}
 
   {% if link__suffix %}
-    <span {{ bem("suffix", [], link__base_class) }}>
+    <span {{ bem('suffix', [], link__base_class) }}>
       {{ link__suffix }}
     </span>
   {% endif %}
 </a>
-
-{% if back_to_top_link %}
-  <hr class="back-to-top">
-{% endif %}

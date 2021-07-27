@@ -38,13 +38,10 @@
  */
 #}
 
-{% set section_teaser__base_class = section_teaser__base_class|default("section-teaser") %}
-{% set section_teaser__modifiers = section_teaser__modifiers|default([]) %}
-
-<div {{ bem(section_teaser__base_class, section_teaser__modifiers) }}>
-
-  {% for item in items %}
-    {{ item }}
-  {% endfor %}
-
-</div>
+{% embed "@organisms/section/section-teaser/section-teaser.twig" %}
+  {% block section_teaser_items %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

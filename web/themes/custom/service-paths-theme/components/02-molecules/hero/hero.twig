@@ -26,14 +26,12 @@
 
     {% if hero__lead_text %}
       {% include "@atoms/text/text-long/text-long.twig" with {
-        text_long__base_class: "text",
         text_long__content:  hero__lead_text,
-        text_long__blockname: hero__base_class,
       } %}
     {% endif %}
   </div>
 
-  <div {{ bem("bg", [], hero__base_class) }} aria-hidden="true">
+  <div {{ bem("image", [], hero__base_class) }} aria-hidden="true">
     {% block hero_image %}
       {% include "@atoms/images/image/responsive-image.twig" with hero__image %}
     {% endblock %}

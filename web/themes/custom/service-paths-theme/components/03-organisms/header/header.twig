@@ -1,3 +1,15 @@
+{#
+/**
+ * @file
+ * Theme implementation to display site header
+ *
+ * Blocks:
+ * - header_branding: Site logo.
+ * - header_language_menu: The language switcher.
+ * - header_bottom: Content for the breadrumbc etc.
+ *
+ */
+#}
 {% set header__base_class = "header" %}
 
 <header {{ bem(header__base_class) }}>
@@ -9,26 +21,23 @@
     {{ "Skip to main content"|t }}
   </a>
 
-  <div {{ bem("inner", [], header__base_class) }}>
-    <div {{ bem("main", [], header__base_class) }}>
-      <div {{ bem("item", ["branding"], header__base_class) }}>
-        {% block header_branding %}
-          {% include "@organisms/header/header-branding/header-branding.twig" %}
-        {% endblock %}
-      </div>
-
-      <div {{ bem("item", ["additional"], header__base_class, ["js-expand-content"]) }}>
-        {% block header_language_menu %}
-          {% include "@molecules/navigation/language-switcher/language-switcher.twig" %}
-        {% endblock %}
-
-      </div>
-    </div>
-
-    <div {{ bem("bottom", [], header__base_class) }}>
-      {% block header_bottom %}
-        {% include "@molecules/navigation/breadcrumbs/breadcrumbs.twig" %}
+  <div {{ bem("main", [], header__base_class) }}>
+    <div {{ bem("item", ["branding"], header__base_class) }}>
+      {% block header_branding %}
+        {% include "@organisms/header/header-branding/header-branding.twig" %}
       {% endblock %}
     </div>
+
+    <div {{ bem("item", ["language-switcher"], header__base_class) }}>
+      {% block header_language_menu %}
+        {% include "@molecules/navigation/language-switcher/language-switcher.twig" %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <div {{ bem("bottom", [], header__base_class) }}>
+    {% block header_bottom %}
+      {% include "@molecules/navigation/breadcrumbs/breadcrumbs.twig" %}
+    {% endblock %}
   </div>
 </header>

@@ -19,9 +19,8 @@
 {% set cta__modifiers = cta__modifiers|default([]) %}
 
 <div {{ bem(cta__base_class, cta__modifiers, cta__blockname) }} >
-
   {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 2,
+    heading__level: 3,
     heading__base_class: "title",
     heading__blockname: cta__base_class,
     heading: cta__title,
@@ -33,16 +32,16 @@
     text_long__content:  cta__lead_text,
   } %}
 
-  {% include "@atoms/images/icon/icon.twig" with {
-    icon__name: cta__icon,
-    icon__base_class: "icon",
-    icon__blockname: cta__base_class,
-  } %}
+  <div {{ bem("icon-wrapper", [], cta__base_class) }}>
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: cta__icon,
+      fontawesome_icon__blockname: cta__base_class,
+    } %}
+  </div>
 
   {% include "@atoms/links/link/link.twig" with {
     link__base_class: "link",
     link__url: cta__link,
     link__icon_before: "arrow-right",
   } %}
-
 </div>

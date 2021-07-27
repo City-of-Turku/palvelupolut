@@ -40,9 +40,8 @@
             {% block list_item_content %}
               {% set link_modifiers = box_links__link_modifiers|default([]) %}
 
-              {% include "@atoms/images/icon/icon.twig" with {
-                icon__name: item.icon,
-                icon__base_class: "icon",
+              {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+                fontawesome_icon__name: item.icon,
               } %}
 
               {% include "@atoms/links/link/link.twig" with {
@@ -72,9 +71,8 @@
             {% block list_item_content %}
               {% set link_modifiers = box_links__link_modifiers|default([]) %}
 
-              {% include "@atoms/images/icon/icon.twig" with {
-                icon__name: "attachment",
-                icon__base_class: "icon",
+              {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+                fontawesome_icon__name: "paperclip",
               } %}
 
               {% include "@atoms/links/link/link.twig" with {
@@ -89,11 +87,5 @@
         {% endfor %}
       {% endblock %}
     {% endembed %}
-
-    {% include "@atoms/links/link-cta/link-cta.twig" with {
-      link_cta__url:  box_links__cta__url,
-      link_cta__content:  box_links__cta,
-      link_cta__icon_before: "globe",
-    } %}
   </div>
 </div>

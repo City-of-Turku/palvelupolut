@@ -3,7 +3,7 @@
   font-weight: 600;
 
   &--error {
-    color: color(error-text);
+    color: color(text-error);
   }
 
   &--text {
@@ -58,7 +58,7 @@
     }
 
     .label--error & {
-      border-color: color(error-text);
+      border-color: color(text-error);
     }
   }
 

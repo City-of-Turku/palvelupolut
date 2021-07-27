@@ -8,8 +8,8 @@ dependencies:
     - service_paths_theme
 id: service_paths_theme_language_switcher
 theme: service_paths_theme
-region: header
-weight: 1
+region: config
+weight: -3
 provider: null
 plugin: 'language_block:language_content'
 settings:

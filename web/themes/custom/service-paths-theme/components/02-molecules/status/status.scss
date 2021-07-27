@@ -1,29 +1,26 @@
-@use 'sass:math';
-
-.status__list {
-  @include list-reset;
-
-  margin-bottom: space();
-}
-
 .status {
+  @include wrapper($margin: 0 auto space(2));
+
   display: block;
-  margin-bottom: space(math.div(1, 2));
-  padding: space(math.div(1, 2));
   text-align: center;
+
+  &__list {
+    @include list-reset;
+
+    margin-bottom: space();
+  }
 
   &--warning {
     color: color(primary);
-    background-color: color(warning);
+    background-color: color(status-warning);
   }
 
   &--error {
-    color: color(error-text);
-    background-color: color(error);
+    color: color(text-error);
+    background-color: color(status-error);
   }
 
   &--status {
-    color: color(message-text);
-    background-color: color(message);
+    background-color: color(status-message);
   }
 }

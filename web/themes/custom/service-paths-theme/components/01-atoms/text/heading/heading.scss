@@ -29,7 +29,7 @@
   }
 
   &--title-section-small {
-    @include label($margin: 0 0 space(), $color: color(text-meta));
+    @include label($margin: 0 0 space(), $color: color(text));
   }
 
   &--heavy {

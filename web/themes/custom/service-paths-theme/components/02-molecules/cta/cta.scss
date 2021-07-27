@@ -9,9 +9,17 @@
     margin-top: space(0.75);
     position: unset;
     text-align: center;
+
+    svg {
+      width: space(1.5);
+      height: space(1.5);
+      margin-right: 0;
+    }
+
     .icon--before {
       margin-right: 0;
     }
+
     &::before {
       content: '';
       height: 100%;
@@ -21,6 +29,7 @@
       width: 100%;
     }
   }
+
   .cta__title {
     text-align: center;
     order: 2;
@@ -28,15 +37,7 @@
     margin-bottom: space(1);
     margin-top: space(2.125);
   }
-  .cta__icon {
-    order: 1;
-    align-self: center;
-    background: color(background-section-dark);
-    border-radius: 50%;
-    width: 128px;
-    height: 128px;
-    padding: space(2.1875);
-  }
+
   .text {
     text-align: center;
     order: 3;
@@ -44,5 +45,25 @@
     color: color(text-dark);
     letter-spacing: $letter-spacing--large;
     line-height: 28px;
+  }
+
+  &__icon-wrapper {
+    border-radius: 50%;
+    order: 1;
+    align-self: center;
+    background: color(background-section-dark);
+    width: space(8);
+    height: space(8);
+  }
+
+  &__fontawesome-icon {
+    width: space(8);
+    height: space(8);
+    padding: space(2.1875);
+  }
+
+  &__text {
+    order: 3;
+    text-align: center;
   }
 }

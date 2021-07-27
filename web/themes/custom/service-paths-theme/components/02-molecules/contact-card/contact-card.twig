@@ -41,12 +41,9 @@
         } %}
           {% block list_item_content %}
             {% set link_modifiers = contact_card__link_modifiers|default([]) %}
-
               <div {{ bem("link-with-icon", [], contact_card__base_class) }}>
-
-                {% include "@atoms/images/icon/icon.twig" with {
-                  icon__name: item.icon,
-                  icon__base_class: "icon",
+                {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+                  fontawesome_icon__name: item.icon,
                 } %}
 
                 {% if item.link_title %}
@@ -63,19 +60,15 @@
                     {{ item.info_title }}
                   </div>
                 {% endif %}
-
               </div>
-
             {% include "@atoms/text/text-long/text-long.twig" with {
               text_long__blockname: contact_card__base_class,
               text_long__base_class: "text",
               text_long__content:  item.text,
             } %}
-
           {% endblock %}
         {% endembed %}
       {% endfor %}
     {% endblock %}
   {% endembed %}
-
 </div>

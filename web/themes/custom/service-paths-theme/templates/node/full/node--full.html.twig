@@ -68,53 +68,35 @@
 #}
 
 {% set excluded_fields = [
-  "field_contact_reference",
-  "field_global_theme",
-  "field_paragraphs_bottom",
+  "field_heading",
+  "field_lead_text",
+  "field_lead_image",
+  "field_paragraphs_sidebar",
 ] %}
 
-{% set shared_url = url("entity.node.canonical", { "node": node.id })["#markup"] %}
-{# Truncate the field value to 1500 characters. #}
-{% set shared_text = content.field_teaser[:1500]|field_value|first["#text"] %}
+{% embed "@templates/page/page-content.twig" with {
+  page_sidebar: true
+} %}
+  {% block page_content_pre_content %}
+    {{ title_prefix }}
+    {{ title_suffix }}
 
-{% set with_tags =
-  content.field_global_theme|render|trim
-%}
+    {% embed "@molecules/hero/hero.twig" with {
+      hero__modifiers: hero__modifiers|default(["light"]),
+      hero__title: content.field_heading|render|trim ? content.field_heading : label,
+      hero__lead_text: content.field_lead_text|field_value,
+    } %}
+      {% block hero_image %}
+        {{ content.field_lead_image }}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
 
-<article {{ bem("node", [node.bundle|clean_class, "full"]) }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
+  {% block page_content %}
+    {{ content|without(excluded_fields) }}
+  {% endblock %}
 
-  {% embed "@templates/page/page-content.twig" %}
-    {% block page_content %}
-      {{ content|without(excluded_fields) }}
-
-      {% include "@atoms/links/link/link.twig" with {
-        link__content: "Back to top"|t,
-        link__url: "#main-content",
-        link__modifiers: ["back-to-top"],
-      } %}
-
-      {{ content.field_contact_reference }}
-
-      {% if with_tags %}
-        {% embed "@molecules/tags/tags.twig" %}
-          {% block tags_content %}
-            {{ content.field_global_theme }}
-          {% endblock %}
-        {% endembed %}
-      {% endif %}
-
-      {% include "@molecules/share/share.twig" with {
-        share__modifiers: ["vertical"],
-        share__shared_url: shared_url,
-        share__shared_text: shared_text,
-      } %}
-
-    {% endblock %}
-
-    {% block page_content_post_content %}
-      {{ content.field_paragraphs_bottom }}
-    {% endblock %}
-  {% endembed %}
-</article>
+  {% block page_sidebar_post_content %}
+    {{ content.field_paragraphs_sidebar }}
+  {% endblock %}
+{% endembed %}

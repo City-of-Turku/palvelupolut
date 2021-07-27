@@ -1,7 +1,6 @@
 // Import variables.
 @use 'sass:math';
 @import '../00-base/**/*.scss';
-@import '../01-atoms/images/image-inline/image-inline';
 
 :root {
   --sg-pattern-color: #656565;
@@ -24,7 +23,7 @@
   padding: 1rem 2rem;
   transition: all 0.4s;
   flex: 1 1 20%;
-  min-width: 150px;
+  min-width: 250px;
   min-height: 150px;
   display: flex;
   justify-content: center;
@@ -51,32 +50,6 @@
       background-color: color($name);
       color: set-color($color);
     }
-    &-error {
-      color: color(error-text);
-    }
-    &-message {
-      color: color(message-text);
-    }
-  }
-}
-
-// Style dark color swatches
-@each $name, $color in $darkColors {
-  .cl-colors__item--dark {
-    &-#{$name} {
-      background-color: color($name);
-      color: set-color(
-        $color,
-        $text-primary: text-inverse,
-        $text-secondary: text
-      );
-    }
-    &-error {
-      color: color(error-text);
-    }
-    &-message {
-      color: color(message-text);
-    }
   }
 }
 
@@ -94,7 +67,7 @@
   flex-wrap: wrap;
 
   &__item {
-    border: 1px solid color(border-box);
+    border: 1px solid color(border-primary);
     margin: space(math.div(1, 4));
   }
 
@@ -111,17 +84,9 @@
     &--small {
       background-size: 35%;
     }
-
-    &[data-image='image-inline--svg-collapse-open'] {
-      background-image: data-url($image-inline--svg-collapse-open, svg);
-    }
-
-    &[data-image='image-inline--svg-collapse-close'] {
-      background-image: data-url($image-inline--svg-collapse-close, svg);
-    }
   }
 
-  .bootstrap-icon,
+  .fontawesome-icon,
   .icon {
     height: 100px;
     width: 100px;
@@ -168,7 +133,7 @@
 }
 
 .demo-motion {
-  background-color: color(secondary);
+  background-color: color(background-light);
   border-radius: 2px;
   cursor: pointer;
   padding: 3rem;

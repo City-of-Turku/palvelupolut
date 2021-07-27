@@ -10,7 +10,7 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: service_paths_theme_branding
 theme: service_paths_theme
-region: header
+region: config
 weight: -4
 provider: null
 plugin: system_branding_block

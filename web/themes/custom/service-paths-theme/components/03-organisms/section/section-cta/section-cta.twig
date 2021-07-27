@@ -16,7 +16,6 @@
 {% set section_cta__modifiers = section_grid__modifiers|default([]) %}
 
 <div {{ bem(section_cta__base_class, section_cta__modifiers) }}>
-
   {% for item in section_cta__items %}
     {% include "@molecules/cta/cta.twig" with {
       cta__modifiers: cta_modifiers,
@@ -26,5 +25,4 @@
       cta__icon: item.icon,
     } %}
   {% endfor %}
-
 </div>
