@@ -36,10 +36,10 @@
     font-size: $font-size--small-2;
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
-    margin-bottom: space(1/4);
+    margin-bottom: space(0.25);
     .icon {
       position: relative;
-      top: space(1/8);
+      top: space(0.125);
       margin-right: space(0.75);
     }
   }
