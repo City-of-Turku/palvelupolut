@@ -7,6 +7,7 @@ import {
 import sectionContactCardsTemplate from '../section-contact-cards.twig';
 
 import sectionContactCardsData from './section-contact-cards.yml';
+import sectionContactCardsVerticalData from './section-contact-cards-vertical.yml';
 
 /**
  * Storybook Definition.
@@ -18,6 +19,10 @@ export const sectionContactCards = () => (
     <ComponentWrapper
       markup={sectionContactCardsTemplate(sectionContactCardsData)}
       label="Section contact cards"
+    />
+    <ComponentWrapper
+      markup={sectionContactCardsTemplate(sectionContactCardsVerticalData)}
+      label="Section contact cards vertical"
     />
   </CollectionWrapper>
 );

@@ -1,7 +1,7 @@
 anchor_menu__items:
-  - title: 'Anchor 1'
+  - title: 'Päiväkodit'
     url: '#'
-  - title: 'Anchor 2'
+  - title: 'Perhepäivähoito'
     url: '#'
-  - title: 'Anchor 3'
+  - title: 'Avoin varhaiskasvatustoiminta'
     url: '#'
