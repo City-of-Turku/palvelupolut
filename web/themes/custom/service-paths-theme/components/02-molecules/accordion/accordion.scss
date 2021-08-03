@@ -1,5 +1,6 @@
 .accordion {
-  margin: var(--space-elements) 0;
+  margin-bottom: var(--space-elements);
+  max-width: 890px;
 
   .heading {
     margin: 0 0 space(2.5);
