@@ -1,6 +1,20 @@
 .section-process-steps {
-  background: color(background-section);
   padding: space(3);
+  position: relative;
+  margin-bottom: var(--space-elements);
+
+  &:before {
+    content: "";
+    width: calc(88rem + 22rem);
+    max-width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    background: var(--color-background-section);
+  }
 
   .process-steps {
     display: flex;
