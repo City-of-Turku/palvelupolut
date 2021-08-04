@@ -1,7 +1,12 @@
 .section-process-steps {
-  padding: space(3);
+  padding: space(2) 0;
   position: relative;
   margin-bottom: var(--space-elements);
+  display: flex;
+  flex-wrap: wrap;
+  @include above($width-medium) {
+    padding: space(3);
+  }
 
   &:before {
     content: "";
@@ -26,5 +31,6 @@
     font-weight: bold;
     letter-spacing: -$letter-spacing--large;
     line-height: $line-height--heading;
+    flex: 100%;
   }
 }
