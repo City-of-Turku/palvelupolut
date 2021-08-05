@@ -1,4 +1,6 @@
 .section-process-steps {
+  @include background-full-width($background: var(--color-background-section));
+
   padding: space(2) 0;
   position: relative;
   margin-bottom: var(--space-elements);
@@ -6,19 +8,6 @@
   flex-wrap: wrap;
   @include above($width-medium) {
     padding: space(3);
-  }
-
-  &:before {
-    content: "";
-    width: calc(88rem + 22rem);
-    max-width: 100vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: -1;
-    transform: translateX(-50%);
-    background: var(--color-background-section);
   }
 
   .process-steps {
