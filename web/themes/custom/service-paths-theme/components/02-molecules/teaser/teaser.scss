@@ -5,6 +5,7 @@
   flex-direction: column;
   text-align: center;
   margin-bottom: space(2);
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -26,6 +27,7 @@
     bottom: 0;
     padding-bottom: 0;
     flex: auto;
+
     @include above($width-large) {
       padding: space(1.5);
     }
@@ -77,8 +79,9 @@
     width: 1.5rem;
     height: 1.5rem;
     align-self: center;
+    
     @include above($width-large) {
-      align-self: unset;
+      align-self: start;
     }
   }
 
