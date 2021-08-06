@@ -13,6 +13,8 @@
   }
 
   .teaser {
+    margin-bottom: space(2);
+
     @include above($width-large) {
       width: 50%;
     }
