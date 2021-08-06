@@ -31,13 +31,46 @@ Using atomic design comes with several benefits:
 - Coherence: reusing the same components inevitably leads to having less variations of very similar components.
 - Efficieny: new components can be created by forming new groups of smaller components. Atomic design can also help to
   implement changes faster since changes are propagated across all the components that use the changed component.
-  A good structure is important however  since the opposite can also be true.
+  A good structure is important however since the opposite can also be true.
 
 </Docs>
 
 <Docs language="fi">
 
 # Komponenttirakenne
-...
+
+## _Atomic design_ -periaatteet
+
+Komponentit on rakennettu ja järjestetty _atomic design_ -periaatteiden mukaisesti. _Atomic design_ on metodiikka, jossa
+suunnitellut elementit pilkotaan pienimmiksi mahdollisiksi, uudelleenkäytettäviksi komponenteiksi, joista muut
+komponentit sitten rakennetaan.
+
+Pienimpiä mahdollisia uudelleenkäytettäviä koodinpätkiä kutsutaan atomeiksi. Niitä ovat esimerkiksi
+[otsikot](?path=/story/atoms-text--heading?path=/story/atoms-text--heading), [linkit](?path=/story/atoms-links--link),
+[painikkeet](?path=/story/atoms-button--button) ja muut pienet komponentit.
+
+![Atomic design building blocks](/documentation/atomic-design.png)
+
+Useita atomikomponentteja yhdistämällä saadaan komponentteja, joita kutsutaan molekyyleiksi. Esimerkiksi
+[hero-komponentti](?path=/story/molecules-hero--hero) on molekyyli, joka koostuu otsikko-atomista,
+tekstikappale-atomista ja kuva-atomista.
+
+Molekyylejä yhdistämällä saadaan organismeja. Tällainen on esimerkiksi
+[yhteystietokortteja listaava osio](?path=/story/organisms-section--section-cards).
+
+Storybookin [sivupalkin valikossa](?path=/story/documentation-interface--page#sidebar) komponentit on jaoteltu
+atomeihin, molekyyleihin ja organismeihin.
+
+## _Atomic design_ -metodin edut
+
+_Atomic design_ -metodin käytöstä on useita etuja:
+
+- Uudelleenkäytettävyys: kun komponentti on luotu, sitä voi käyttää uudelleen eri variaatioissa, sen sijaan, että joka
+variaatioon luotaisiin sama koodi uudestaan.
+- Yhtenäisyys: kun samaa komponenttia käytetään muiden komponenttien sekä eri variaatioiden pohjana, vältytään
+tahattomilta eroavaisuuksilta samankaltaisten elementtien välillä.
+- Tehokkuus: uusia komponentteja voi luoda yhdistämällä ja varioimalla jo olemassaolevia komponentteja. Jos johonkin
+komponenttiin halutaan muutoksia, ne saa kerralla tehtyä kaikkialle, jossa komponenttia käytetään. Järjestelmän rakenne
+tulee kuitenkin olla hyvä, jotta se toimii halutulla tavalla.
 
 </Docs>
