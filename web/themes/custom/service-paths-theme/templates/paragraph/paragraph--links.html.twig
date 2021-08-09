@@ -43,16 +43,9 @@
 {% set box_links__modifiers = box_links__modifiers|default([]) %}
 
 <div {{ bem(box_links__base_class, box_links__modifiers) }}>
-  {% if content.field_paragraph_heading|render %}
-    {% include "@atoms/text/heading/heading.twig" with {
-      "heading": content.field_paragraph_heading,
-      "heading__level": box_links__title_level|default('3'),
-      "heading__blockname": box_links__base_class,
-    } %}
-  {% endif %}
+  {{ content.field_paragraph_heading }}
 
   <div {{ bem("links", [], box_links__base_class) }}>
-
     {% embed "@atoms/lists/list-unordered.twig" with {
       list__base_class: "box-links",
       list__modifiers:  box_links__modifiers,
@@ -72,9 +65,5 @@
         {{ content.field_media }}
       {% endblock %}
     {% endembed %}
-
   </div>
-
 </div>
-
-

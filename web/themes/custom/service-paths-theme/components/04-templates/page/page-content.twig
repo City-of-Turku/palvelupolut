@@ -12,6 +12,8 @@
 
 {% if page_sidebar %}
   {% set page_content__modifiers = page_content__modifiers|merge(['with-sidebar']) %}
+{% else %}
+  {% set page_content__modifiers = page_content__modifiers|merge(['full-width']) %}
 {% endif %}
 
 

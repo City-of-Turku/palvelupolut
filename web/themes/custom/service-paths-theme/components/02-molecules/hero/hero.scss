@@ -2,7 +2,7 @@
   @include background-full-width($background: color(background-dark));
 
   position: relative;
-  margin-bottom: space(4);
+  margin-bottom: var(--space-elements);
   padding: space(2) 0;
 
   .text-long {

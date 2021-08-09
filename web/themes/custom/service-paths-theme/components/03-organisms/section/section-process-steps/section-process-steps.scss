@@ -1,6 +1,11 @@
 .section-process-steps {
-  background: color(background-section);
-  padding: space(3);
+  @include background-full-width($background: var(--color-background-section));
+
+  padding: space(2) 0;
+  position: relative;
+  margin-bottom: var(--space-elements);
+  display: flex;
+  flex-wrap: wrap;
 
   .process-steps {
     display: flex;
@@ -12,5 +17,10 @@
     font-weight: bold;
     letter-spacing: -$letter-spacing--large;
     line-height: $line-height--heading;
+    flex: 100%;
+  }
+
+  @include above($width-medium) {
+    padding: space(3);
   }
 }

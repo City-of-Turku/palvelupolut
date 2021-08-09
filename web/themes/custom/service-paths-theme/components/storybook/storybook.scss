@@ -67,7 +67,7 @@
   flex-wrap: wrap;
 
   &__item {
-    border: 1px solid color(border-primary);
+    border: 0.0625rem solid color(border-primary);
     margin: space(math.div(1, 4));
   }
 
@@ -134,7 +134,7 @@
 
 .demo-motion {
   background-color: color(background-light);
-  border-radius: 2px;
+  border-radius: 0.125rem;
   cursor: pointer;
   padding: 3rem;
   text-align: center;

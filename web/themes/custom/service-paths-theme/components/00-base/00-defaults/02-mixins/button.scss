@@ -64,7 +64,7 @@ $button-colors: (
   $colors-dark: primary-dark,
   $display: inline-flex
 ) {
-  border: 4px solid;
+  border: 0.25rem solid;
   border-radius: 11px;
 
   @include button-medium;
