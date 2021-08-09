@@ -56,11 +56,5 @@
   {% endblock %}
 
   {% block page_main %}
-    {% embed "@templates/page/page-content.twig" with {
-      page_sidebar: page_sidebar,
-    } %}
-      {% block page_content %}
-        {{ page.content }}
-      {% endblock %}
-    {% endembed %}
+    {{ page.content }}
   {% endblock %}
