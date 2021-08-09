@@ -6,9 +6,6 @@
   margin-bottom: var(--space-elements);
   display: flex;
   flex-wrap: wrap;
-  @include above($width-medium) {
-    padding: space(3);
-  }
 
   .process-steps {
     display: flex;
@@ -21,5 +18,9 @@
     letter-spacing: -$letter-spacing--large;
     line-height: $line-height--heading;
     flex: 100%;
+  }
+
+  @include above($width-medium) {
+    padding: space(3);
   }
 }
