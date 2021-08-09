@@ -23,6 +23,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      blog_post: blog_post
       page: page
       service: service
       service_channel: service_channel
