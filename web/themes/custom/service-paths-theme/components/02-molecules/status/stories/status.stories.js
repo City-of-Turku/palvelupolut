@@ -1,6 +1,10 @@
 import React from 'react';
+import {
+  CollectionWrapper,
+  ComponentWrapper,
+} from '../../../storybook/storybook';
 
-import status from '../status.twig';
+import statusTemplate from '../status.twig';
 
 import statusData from './status.yml';
 
@@ -9,6 +13,8 @@ import statusData from './status.yml';
  */
 export default { title: 'Molecules/Status' };
 
-export const statusExamples = () => (
-  <div dangerouslySetInnerHTML={{ __html: status(statusData) }} />
+export const Status = () => (
+  <CollectionWrapper>
+    <ComponentWrapper markup={statusTemplate(statusData)} />
+  </CollectionWrapper>
 );
