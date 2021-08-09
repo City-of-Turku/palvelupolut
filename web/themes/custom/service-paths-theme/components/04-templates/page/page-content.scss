@@ -33,4 +33,13 @@
       column-gap: $grid-gutter-width;
     }
   }
+
+  // Restrict accordion in width on full width pages.
+  &--full-width & {
+    .accordion {
+      @include above($width-large) {
+        max-width: calc(100% - #{$width--sidebar});
+      }
+    }
+  }
 }
