@@ -1,6 +1,6 @@
 .accordion {
   margin-bottom: var(--space-elements);
-  
+
   @include above($width-large) {
     max-width: calc(100% - #{$width--sidebar});
   }
@@ -16,10 +16,10 @@
 }
 
 .accordion-item {
-  border-top: 2px solid;
+  border-top: 0.125rem solid;
 
   &:last-child {
-    border-bottom: 2px solid;
+    border-bottom: 0.125rem solid;
   }
 
   .fontawesome-icon {
