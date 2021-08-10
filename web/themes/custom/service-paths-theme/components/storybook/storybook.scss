@@ -6,6 +6,7 @@
   --sg-pattern-color: #656565;
 }
 
+// Documentation.
 .sbdocs {
   a {
     box-shadow: none;
@@ -17,9 +18,38 @@
       text-decoration: underline;
     }
   }
+
+  &-img {
+    margin-top: space(1.5);
+    margin-bottom: space(1.5);
+
+    @include above($width-medium) {
+      &[src$='#right'],
+      &[src$='#left'] {
+        width: 55%;
+      }
+
+      &[src$='#left'] {
+        float: left;
+        clear: left;
+        margin-right: space(2);
+      }
+
+      &[src$='#right'] {
+        float: right;
+        clear: right;
+        margin-left: space(2);
+      }
+    }
+  }
+
+  &-h1,
+  &-h2 {
+    clear: both;
+  }
 }
 
-// These styles only affect the colors "Usage" page in the component library
+// The colors "Usage" page in the component library.
 .sb-colors {
   padding: 1rem;
 
