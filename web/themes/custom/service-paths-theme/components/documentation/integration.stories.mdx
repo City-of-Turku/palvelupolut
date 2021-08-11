@@ -139,8 +139,8 @@ hero__modifiers:
 ```
 
 
-By importing different data sets and passing them to the component we can showcase different use cases in Storybook. A
-more complex example can look like this:
+By importing different data sets and passing them to the component template we can showcase different use cases in
+Storybook. A more complex example can look like this:
 
 ```jsx
 // ... other imports
@@ -246,7 +246,7 @@ The integration of a component to another framework would be similar: import the
 
 The key differences between `include` vs `embed` vs `extends` statements:
 
-  - `include` and `embed` allow additional markup inside the host template.
+  - `include` and `embed` allow adding additional markup inside the host template.
   - `embed` and `extends` allow overriding [Twig blocks](https://twig.symfony.com/doc/3.x/functions/block.html).
 
 The most restrictive option is `extends` but it is also the recommended option in most cases. `extends` allows
