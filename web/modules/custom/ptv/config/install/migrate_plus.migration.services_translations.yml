@@ -33,6 +33,16 @@ process:
     plugin: default_value
     default_value: basic_html
 
+  field_user_instruction/value: user_instruction
+  field_user_instruction/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_charge_info/value: charge_info
+  field_charge_info/format:
+    plugin: default_value
+    default_value: basic_html
+
   field_tags:
     plugin: entity_generate
     source: ontology_terms

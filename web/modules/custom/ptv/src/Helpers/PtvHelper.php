@@ -19,8 +19,8 @@ class PtvHelper {
 
     $data = [];
     foreach ($config_data as $key => $name) {
-      // if ($key == '4866b3b3-5e1e-4ad0-9b7d-42b8ab6fd2ec') { // Service Channel Mäntymäen päiväkoti (Myllymäentie 42)
-      // if ($key == 'ff000abb-d4ba-4342-977b-743215b4d567') { // Service Varhaiskasvatuksen vuorohoito
+      // if ($key == 'e1d74431-eee4-485c-bcc2-27c69ec7462b') { // Service Channel Kastun päiväkoti (Pyörämäentie 4)
+      // if ($key == 'ff000abb-d4ba-4342-977b-743215b4d567') { // Service Varhaiskasvatuksen vuorohoito.
         foreach ($langcodes as $langcode) {
           $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
         }
@@ -52,9 +52,14 @@ class PtvHelper {
               case 'Summary':
                 $summary = $value->value;
                 break;
-
               case 'Description':
                 $description = $value->value;
+                break;
+              case 'UserInstruction':
+                $user_instruction = $value->value;
+                break;
+              case 'ChargeTypeAdditionalInfo':
+                $charge_info = $value->value;
                 break;
             }
           }
@@ -102,6 +107,8 @@ class PtvHelper {
               'langcode' => $value->language,
               'summary' => $summary,
               'description' => $description,
+              'user_instruction' => isset($user_instruction) ? $user_instruction : '',
+              'charge_info' => isset($charge_info) ? $charge_info : '',
               'ontology_terms' => $ontology_terms,
               'target_groups' => $target_groups,
               'requirements' => isset($requirements) ? $requirements : '',
@@ -120,7 +127,9 @@ class PtvHelper {
         }
         $address = [];
         $langs = [];
+        $phone_numbers = [];
         $ontology_terms = [];
+        $opening_hours = [];
 
         foreach ($object->serviceChannelDescriptions as $value) {
           if ($value->language == $langcode) {
@@ -143,9 +152,13 @@ class PtvHelper {
           }
         }
         if (isset($object->phoneNumbers)) {
+          $i = 0;
           foreach ($object->phoneNumbers as $value) {
             if ($value->language == $langcode) {
               $phone = $value->prefixNumber . ' ' . $value->number;
+              $phone_numbers[$i]['first'] = $value->additionalInformation;
+              $phone_numbers[$i]['second'] = $phone;
+              $i++;
             }
           }
         }
@@ -217,11 +230,17 @@ class PtvHelper {
         if (isset($object->serviceHours)) {
           $i = 0;
           foreach ($object->serviceHours as $serviceHours) {
-            foreach ($serviceHours->openingHour as $day) {
+            if ($serviceHours->validForNow) {
+              foreach ($serviceHours->openingHour as $day) {
                 $opening_hours[$i]['first'] = $day->dayFrom;
                 $opening_hours[$i]['first'] .= !empty($day->dayTo) ? ' - ' . $day->dayTo : '';
                 $opening_hours[$i]['second'] = $day->from . ' - ' . $day->to;
                 $i++;
+              }
+              if ($serviceHours->isAlwaysOpen) {
+                $opening_hours[$i]['first'] = 'Week';
+                $opening_hours[$i]['second'] = 'Always Open';
+              }
             }
           }
         }
@@ -237,13 +256,13 @@ class PtvHelper {
               'summary' => $summary,
               'description' => $description,
               'email' => isset($email) ? $email : '',
-              'phone' => isset($phone) ? $phone : '',
+              'phone_numbers' => $phone_numbers,
               'webpage' => isset($webpage) ? $webpage : '',
               'address' => isset($address) ? $address : '',
               'langs' => $langs,
               'accessibility' => $accessibility,
               'ontology_terms' => $ontology_terms,
-              'opening_hours' => $opening_hours
+              'opening_hours' => $opening_hours,
             ];
           }
         }

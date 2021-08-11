@@ -1,0 +1,21 @@
+uuid: d224b567-e48b-41e9-b7cc-bbd340ba027c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_instruction
+    - node.type.service
+  module:
+    - text
+id: node.service.field_user_instruction
+field_name: field_user_instruction
+entity_type: node
+bundle: service
+label: 'User Instruction'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

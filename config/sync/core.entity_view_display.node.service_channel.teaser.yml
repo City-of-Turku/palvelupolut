@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_sidebar
-    - field.field.node.service_channel.field_phone
+    - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
     - field.field.node.service_channel.field_webpage
@@ -44,7 +44,7 @@ hidden:
   field_opening_hours: true
   field_paragraphs: true
   field_paragraphs_sidebar: true
-  field_phone: true
+  field_phone_numbers: true
   field_services: true
   field_tags: true
   field_webpage: true

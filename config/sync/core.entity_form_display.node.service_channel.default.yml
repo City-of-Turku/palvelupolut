@@ -14,7 +14,7 @@ dependencies:
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_sidebar
-    - field.field.node.service_channel.field_phone
+    - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
     - field.field.node.service_channel.field_webpage
@@ -81,6 +81,7 @@ third_party_settings:
         - field_webpage
         - field_email
         - field_phone
+        - field_phone_numbers
         - field_address
         - field_accessibility
         - field_opening_hours
@@ -123,7 +124,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_accessibility:
-    weight: 16
+    weight: 17
     settings:
       rows: 5
       placeholder: ''
@@ -131,7 +132,7 @@ content:
     type: text_textarea
     region: content
   field_address:
-    weight: 15
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: address_default
@@ -163,7 +164,7 @@ content:
     type: string_textfield
     region: content
   field_languages:
-    weight: 19
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -184,7 +185,7 @@ content:
     type: text_textarea
     region: content
   field_opening_hours:
-    weight: 17
+    weight: 18
     settings:
       inline: true
       first:
@@ -230,13 +231,28 @@ content:
     third_party_settings: {  }
     type: paragraphs_classic_asymmetric
     region: content
-  field_phone:
-    weight: 14
+  field_phone_numbers:
+    weight: 15
     settings:
-      size: 60
-      placeholder: ''
+      inline: true
+      first:
+        type: textfield
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: textfield
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
     third_party_settings: {  }
-    type: string_textfield
+    type: double_field
     region: content
   field_services:
     weight: 10
@@ -249,7 +265,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_tags:
-    weight: 18
+    weight: 19
     settings:
       match_operator: CONTAINS
       match_limit: 10
