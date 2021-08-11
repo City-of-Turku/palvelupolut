@@ -189,6 +189,8 @@ class PtvHelper {
                 $address['country_code'] = 'FI';
               }
             }
+
+            $sentences = [];
             $i = 0;
             foreach ($value->entrances as $entrance) {
               foreach ($entrance->accessibilitySentences as $sentenceGroup) {
@@ -210,10 +212,12 @@ class PtvHelper {
               }
             }
             $accessibility = '';
-            foreach ($sentences as $key => $value) {
-              $accessibility .= '<h3>' . $value['group'] . '</h3>';
-              foreach ($value['sentences'] as $sentence) {
-                $accessibility .= '<p>' . $sentence . '</p>';
+            if (!empty($sentences)) {
+              foreach ($sentences as $key => $value) {
+                $accessibility .= '<h3>' . $value['group'] . '</h3>';
+                foreach ($value['sentences'] as $sentence) {
+                  $accessibility .= '<p>' . $sentence . '</p>';
+                }
               }
             }
           }
