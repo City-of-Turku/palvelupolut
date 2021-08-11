@@ -1,0 +1,309 @@
+import { Meta } from '@storybook/addon-docs';
+import { Docs } from '../storybook/storybook'
+
+<Meta title="Documentation/Component integration" />
+
+<Docs language="en">
+
+# Integration of the components
+
+_Note: This documentation page mainly focuses on developers._
+
+There are two parts when it comes to integrating components:
+1. **[Making a component visible in Storybook](#making-components-visible-in-storybook)**
+2. **[Integrating components with Drupal](#integrating-components-with-drupal)**
+
+> By default, when you create a new component neither Storybook nor Drupal is aware of it's existence.
+
+By adding a story to **Storybook** the component is made visible in Storybook.
+
+Integrating a component into **Drupal** means using it in some Drupal template. In other words, making Drupal render the
+component.
+
+## The structure of a component
+
+Components are located in the `./components` directory inside the Drupal theme. The components are written in
+[Twig](https://twig.symfony.com) and are intended to be used in Drupal, but they can be run in any framework that
+supports Twig.
+
+A component usually consists of the following:
+
+- A **Twig template**
+- An **SCSS stylesheet**
+- **JavaScript** logic
+- Storybook integration **metadata**
+
+Everything that makes up a component should be placed inside it's own directory named after the component.
+
+The component template contains the markup of the component with placeholders for data passed into it. A component can
+also include other components. For example, in Atomic Design a molecule component is made out of several atom components.
+
+Let's look at the _CTA_ component: it contains a heading, some text, an icon and a link. All of these are being reused
+and the component itself only adds some wrappers around the included components. The heading that is based on the
+_Heading_ component, the lead text is based on the _Long text_ component and so on.
+
+```twig
+<div {{ bem(cta__base_class, cta__modifiers, cta__blockname) }} >
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 3,
+    heading: cta__title,
+  } %}
+
+  {% include "@atoms/text/text-long/text-long.twig" with {
+    text_long__content:  cta__lead_text,
+  } %}
+
+  <div {{ bem("icon-wrapper", [], cta__base_class) }}>
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: cta__icon,
+    } %}
+  </div>
+
+  {% include "@atoms/links/link/link.twig" with {
+    link__url: cta__link,
+    link__icon_before: "arrow-right",
+  } %}
+</div>
+```
+
+## Making components visible in Storybook
+
+As mentioned, by default Storybook is not aware that a component exists. We need to add some Storybook specific metadata
+that describes the component to make it visible in Storybook.
+
+> Storybook metadata should always be placed in the `./stories` directory inside the component directory
+
+### Adding stories
+
+Each entry in Storybook is called **a story**. Since Storybook is a React based tool we use React to create a new story.
+Stories are put inside a file named `*.stories.js` where `*` is replaced with the name of your component. E.g.,
+`hero.stories.js` located in `./components/molecules/hero/stories`.
+
+### Parts of a story file
+
+The main parts when adding a story file are:
+
+ - **Importing** the component template and data that will be passed to it.
+ - **The default export**. It should be an object that has at least a `title` property with a string value. This will
+   determine the name of the component as well as the location of it inside the Storybook sidebar.
+ - **Named exports** will create sub-sections under the component name in the sidebar. These should be functions that
+   return a React component that will render the component markup.
+
+### Rendering a story
+
+A simple story file could look like this:
+
+```jsx
+import React from 'react';
+import heroTemplate from '../hero.twig';
+import heroData from './hero.yml';
+
+/**
+ * Storybook Definition.
+ */
+export default { title: 'Molecules/Hero' };
+
+export const Hero = () => {
+  const markup = heroTemplate(heroData);
+  return (
+    <div dangerouslySetInnerHTML={{ __html: markup }} />
+  );
+};
+
+```
+
+> The actual Hero story looks a bit different than this simplified example. Mainly we add some convenience wrappers
+> around our components.
+
+That is enough to make a component visible in Storybook. We import our component's Twig template as well as some example
+data stored in a YAML file that we pass to the component. The `Hero` export will render a div and set it's HTML contents
+to be the rendered result of the Twig template with the example data passed into it.
+
+### Passing data to stories
+
+Notice in the example above that we import a YAML file. Example data that we want to pass to our components is stored
+in YAML files.
+
+Data for the Hero stored inside `hero.yml` could look like this:
+
+```yml
+hero__title: 'Päivähoito Turussa'
+hero__lead_text:
+  'Varhaiskasvatuksen palvelut on tarkoitettu kaikille alle kouluikäisille lapsille Turussa.
+  Tältä sivulta löydät kaiken tarvitsemasi tiedon vaihtoehdoista ja hakuprosessista.  Löydetään
+  yhdessä lapsellesi sopivin vaihtoehto!'
+hero__image:
+  image_src: '/hero.jpg'
+hero__modifiers:
+  - 'dark'
+```
+
+
+By importing different data sets and passing them to the component we can showcase different use cases in Storybook. A
+more complex example can look like this:
+
+```jsx
+// ... other imports
+
+import headerTemplate from '../header.twig';
+
+import breadcrumbData from '../../../02-molecules/navigation/breadcrumbs/stories/breadcrumbs.yml';
+import languageMenuData from '../../../02-molecules/navigation/language-switcher/stories/language-switcher.yml';
+
+/**
+ * Storybook Definition.
+ */
+export default { title: 'Organisms/Header' };
+
+export const header = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: headerTemplate({
+        ...languageMenuData,
+        ...breadcrumbData,
+      }),
+    }}
+  />
+);
+```
+
+### Story templates
+
+Sometimes it's necessary to wrap a component inside another component when displaying the component story. For instance,
+when displaying a grid layout it might make sense to display it inside the page layout. This can be
+achieved by adding a Twig template whose only purpose is to create the necessary markup for the story.
+
+Inside that template both the page layout and the grid would be imported and the grid would then be rendered inside
+the page layout by using Twig blocks or passing it as a variable to the page layout.
+
+```twig
+{% embed "page-layout.twig" %}
+  {% block page_content %}
+    {% include "grid.twig" %}
+  {% endblock %}
+{% endembed %}
+```
+
+_Note: Twig templates that are used only in Storybook should always be placed inside the `./stories` directory._
+
+### Going further
+
+Inspect some existing story definition files or consult the official
+[Storybook documentation](https://storybook.js.org/docs/react/writing-stories/introduction) to learn more about creating
+stories.
+
+
+## Integrating components with Drupal
+
+Integrating a component with Drupal requires two steps:
+
+  1. [Connecting a Drupal template with the component](#connecting-a-drupal-template-with-the-component)
+  2. [Mapping Twig variables](#mapping-twig-variables)
+
+The components live inside the `./components` directory inside the Drupal theme. Integrating a component
+with Drupal means wiring it up with a Drupal template from the `./templates` directory. So, whenever Drupal renders a
+Drupal template it renders the component.
+
+![The connection between Drupal and Storybook](/documentation/drupal.jpg)
+
+### Differences with regular Drupal Twig templates
+
+The components behave like regular Drupal Twig templates with a few differences:
+
+  - Since the components are located outside of the `./templates` directory Drupal is not aware of them and ignores them
+    by default.
+  - The components do not contain Drupal specific markup. They are built from the perspective of a site builder.
+    Components are written from the ground up to only contain the necessary markup instead of taking the default markup
+    and adjusting that. This makes them better fit their intended purpose but also means that variables need to be mapped.
+
+### Connecting a Drupal template with the component
+
+Let's say we have a Hero component that needs to be connected with Drupal. To do this we need to find out which Drupal
+template should be rendering our component and include our component inside that template. This could be a paragraph and
+so we would include our `/components/hero/hero.twig` inside `./templates/paragraph--hero.html.twig`
+
+![Connecting a Storybook component with Drupal](/documentation/templates.jpg)
+
+Whenever a paragraph of type hero is being rendered Drupal will now display our component. The last remaining step is
+to pass data from Drupal to the component.
+
+> **NB:** no markup should be added to Drupal templates inside `./templates`. All markup should come from the components.
+
+> Twig namespaces of either `@atoms`, `@molecules`, `@organisms` or `@template` can be used to reference the component.
+
+For instance, connecting the CTA component to a Drupal template could look like this:
+
+```twig
+{% include "@molecules/cta/cta.twig" with {
+  "cta__title": content.field_cta_title,
+  "cta__lead_text": content.field_cta_text,
+} %}
+```
+
+The integration of a component to another framework would be similar: import the template and pass the necessary data.
+
+#### Twig `include` vs `embed` vs `extends`
+
+The key differences between `include` vs `embed` vs `extends` statements:
+
+  - `include` and `embed` allow additional markup inside the host template.
+  - `embed` and `extends` allow overriding [Twig blocks](https://twig.symfony.com/doc/3.x/functions/block.html).
+
+The most restrictive option is `extends` but it is also the recommended option in most cases. `extends` allows
+overriding Twig blocks and overriding variables by setting them to a different value in the host template.
+
+### Mapping Twig variables
+
+The components expect data to be passed in a certain way. Making sure that data from Drupal matches the expected format
+of the component is called mapping. Mapping is required almost in all cases.
+
+The simplest use case is when data only needs to be assigned to the correct variable. Taking another look at the CTA
+example:
+
+```twig
+{% include "@molecules/cta/cta.twig" with {
+  "cta__title": content.field_cta_title,
+  "cta__lead_text": content.field_cta_text|field_value,
+} %}
+```
+
+Here we pass the CTA title field to the `cta__title` variable and the value of the Lead text field to `cta__lead_text`.
+Notice that we apply a Twig filter in the case of the lead text.
+
+#### Passing a primitive value vs passing a field render array
+
+Passing `content.field_cta_text|field_value` instead of `content.field_cta_text` is quite different.
+
+- **Passing a primitive value**. In the first case the `field_value` Twig filter is applied. Simplifying things a bit, it
+  returns only the value of the field. In case of long text field this would be a string value. The filter is added by
+  the [Twig Field Value](https://www.drupal.org/project/twig_field_value) contributed module.
+- **Passing a render array**. When we pass `content.field_cta_text` to a component and the component prints that value
+  it will start the Drupal rendering process. This means preprocess functions will run and the Drupal templates that
+  are associated with the render array will be printed as well.
+
+#### Some hints
+
+**Getting the URL of a link field**
+
+The [Twig Field Value](https://www.drupal.org/project/twig_field_value) Drupal module is used to get the value of
+the field.
+```twig
+{% set card__url = content.field_link|field_value|first["#url"] %}
+```
+
+**Checking if a field has a value**
+
+Oftentimes it's not enough to just check if a field's value has a truthy value.
+```twig
+{% set has_sidebar = content.field_paragraphs_sidebar|render|trim is not empty %}
+```
+
+</Docs>
+
+<Docs language="fi">
+
+# Drupal-integraatio
+
+![Yhteys Drupalin ja Storybookin välillä](/documentation/drupal.jpg)
+
+</Docs>
