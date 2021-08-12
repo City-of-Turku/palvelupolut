@@ -1,31 +1,29 @@
 .process-step {
   position: relative;
-  display: grid;
-  flex-direction: row;
-  grid-template-columns: space(3.75) auto;
   margin-bottom: space(2);
-  grid-template-areas:
-    'number header'
-    'content content';
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: space(5.2) auto;
+  grid-template-areas: "number title"
+    "text text"
+    "link link" ;
 
   @include above($width-large) {
-    width: 50%;
-    grid-template-areas:
-      'number header'
-      'number content';
+    flex-direction: row;
+    grid-template-areas: "number title link"
+      "number text link";
   }
 
-  .text {
+  &__text {
     color: color(text-dark);
-    font-size: $font-size--base;
+    font-size: $font-size--small-1;
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
-  }
+    grid-area: text;
 
-  &__title {
-    margin-bottom: space(1.6);
-    grid-area: header;
-    padding-left: space(2);
+    @include above($width-large) {
+      font-size: $font-size--base;
+    }
   }
 
   &__link {
@@ -45,15 +43,34 @@
 
   &__link-list {
     padding: 0;
+    grid-area: link;
+
+    @include above($width-large) {
+      width: $width--sidebar;
+      margin-left: space(4);
+    }
   }
 
-  &__item a {
-    margin-left: space(0.6);
-    color: color(text-dark);
-    font-size: $font-size--base;
-    font-weight: bold;
-    letter-spacing: $letter-spacing--large;
-    line-height: $line-height--narrow;
+  &__title {
+    grid-area: title;
+    align-self: center;
+  }
+
+  &__item {
+    margin-bottom: space(1);
+
+    a {
+      margin-left: space(0.6);
+      color: color(text-dark);
+      font-size: $font-size--small-2;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--narrow;
+
+      @include above($width-large) {
+        font-size: $font-size--base;
+      }
+    }
   }
 
   &__number {
@@ -63,6 +80,7 @@
     line-height: space(2);
     height: space(3.7);
     width: space(3.7);
+    min-width: space(3.7);
     border: 0.0625rem solid rgba(255, 255, 255, 0);
     border-radius: space(0.7);
     position: relative;
@@ -79,8 +97,7 @@
     }
   }
 
-  &__inner,
-  &__title {
+  &__inner {
     flex: 100%;
 
     @include above($width-large) {
