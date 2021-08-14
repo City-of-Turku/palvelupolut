@@ -9,6 +9,10 @@ import { Docs } from '../storybook/storybook'
 
 _Note: This documentation page mainly focuses on developers._
 
+> The components are written in [Twig](https://twig.symfony.com) and are intended to be used in Drupal, but they can be
+> run in any framework that supports Twig. This documentation concentrates on the integration of the components in
+> Drupal.
+
 There are two parts when it comes to integrating components:
 1. **[Making a component visible in Storybook](#making-components-visible-in-storybook)**
 2. **[Integrating components with Drupal](#integrating-components-with-drupal)**
@@ -22,15 +26,13 @@ component.
 
 ## The structure of a component
 
-Components are located in the `./components` directory inside the Drupal theme. The components are written in
-[Twig](https://twig.symfony.com) and are intended to be used in Drupal, but they can be run in any framework that
-supports Twig.
+Components are located in the `./components` directory inside the Drupal theme.
 
 A component usually consists of the following:
 
 - A **Twig template**
 - An **SCSS stylesheet**
-- **JavaScript** logic
+- **JavaScript** logic if needed by the component
 - Storybook integration **metadata**
 
 Everything that makes up a component should be placed inside it's own directory named after the component.
@@ -116,7 +118,7 @@ export const Hero = () => {
 > around our components.
 
 That is enough to make a component visible in Storybook. We import our component's Twig template as well as some example
-data stored in a YAML file that we pass to the component. The `Hero` export will render a div and set it's HTML contents
+data stored in a YAML file that we pass to the component. The `Hero` export will render a div and set its HTML contents
 to be the rendered result of the Twig template with the example data passed into it.
 
 ### Passing data to stories
@@ -249,9 +251,6 @@ The key differences between `include` vs `embed` vs `extends` statements:
   - `include` and `embed` allow adding additional markup inside the host template.
   - `embed` and `extends` allow overriding [Twig blocks](https://twig.symfony.com/doc/3.x/functions/block.html).
 
-The most restrictive option is `extends` but it is also the recommended option in most cases. `extends` allows
-overriding Twig blocks and overriding variables by setting them to a different value in the host template.
-
 ### Mapping Twig variables
 
 The components expect data to be passed in a certain way. Making sure that data from Drupal matches the expected format
@@ -304,6 +303,291 @@ Oftentimes it's not enough to just check if a field's value has a truthy value.
 
 # Drupal-integraatio
 
+_Huomio: Tämä osa koskee ensisijaisesti kehittäjiä._
+
+> Komponentit on kirjoitettu [Twig](https://twig.symfony.com)-kielellä, ja ne on sellaisenaan tarkoitettu käytettäviksi
+> Drupalissa. Niitä voidaan kuitenkin käyttää missä tahansa ohjelmistokehyksessä, joka tukee Twigiä. Tämä dokumentaatio
+> keskittyy komponenttien käyttöön Drupalissa.
+
+Komponenttien integrointi vaatii kaksi vaihetta:
+1. **[Komponentin lisääminen Storybookiin](#komponenttien-lisääminen-storybookiin)**
+2. **[Komponentin käyttäminen Drupalissa](#komponenttien-käyttäminen-drupalissa)**
+
+> Kun uusi komponentti luodaan, se ei ole näkyvissä Storybookille eikä Drupalille.
+
+Kun komponentti lisätään **Storybookiin**, se näkyy Storybookin käyttöliittymässä.
+
+Komponentin käyttäminen **Drupalissa** tarkoittaa sitä, että komponentin pohjaa käytetään jossakin Drupalin pohjassa
+(_templatessa_).
+
+## Komponentin rakenne
+
+Komponentit sijaitsevat Drupal-teeman `./components`-hakemistossa.
+
+Komponentti koostuu tavallisesti seuraavista osista:
+
+- **Twig-pohjasta**
+- **SCSS-tyylitiedostosta**
+- **JavaScript**-logiikasta, jos komponentti tarvitsee sitä
+- **metatiedoista** Storybook-integrointia varten
+
+Komponentin kaikkien osien tulee sijaita omassa hakemistossaan, joka on nimetty komponentin mukaan.
+
+Komponentin pohja sisältää komponentin rakenteen sekä muuttujia, joihin sisältö (teksti, kuvat ym.) viedään. Komponentti
+voi myös sisältää muita komponentteja. Esimerkiksi _Atomic design_ -metodiikan mukainen molekyyli-komponentti sisältää
+useita atomi-komponentteja.
+
+Esimerkki: CTA-komponentti koostuu otsikosta, tekstistä, ikonista ja linkistä. Kaikki nämä ovat omia komponenttejaan, ja
+CTA-komponentin pohja yhdistää ne ja lisää niiden ympärille `<div>`-tagin ja tarvitsemansa luokat:
+
+```twig
+<div {{ bem(cta__base_class, cta__modifiers, cta__blockname) }} >
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 3,
+    heading: cta__title,
+  } %}
+
+  {% include "@atoms/text/text-long/text-long.twig" with {
+    text_long__content:  cta__lead_text,
+  } %}
+
+  <div {{ bem("icon-wrapper", [], cta__base_class) }}>
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: cta__icon,
+    } %}
+  </div>
+
+  {% include "@atoms/links/link/link.twig" with {
+    link__url: cta__link,
+    link__icon_before: "arrow-right",
+  } %}
+</div>
+```
+
+## Komponenttien lisääminen Storybookiin
+
+Kuten mainittu, Storybook ei automaattisesti näe komponenttia. Komponenttiin täytyy lisätä metatietoja, joiden avulla
+se lisätään näkyviin Storybookiin.
+
+> Storybook-metatietojen tulisi aina sijaita komponentin hakemiston sisällä olevassa `./stories`-hakemistossa.
+
+### Tarinan lisääminen
+
+Storybookin sisällön elementtejä kutsutaan tarinoiksi (_story_). Storybook on React-pohjainen työkalu, ja uudet tarinat
+kirjoitetaankin Reactilla. React-tiedoston nimi on `*.stories.js`, jossa `*` vastaa komponentin nimeä. Esimerkiksi
+_hero_-komponentin React-tiedosto on nimeltään `hero.stories.js`, ja se sijaitsee hakemistossa
+`./components/molecules/hero/stories`.
+
+### React-tiedoston rakenne
+
+Uuden tarinan lisäämiseksi React-tiedoston tulee sisältää seuraavat kohdat:
+
+- `import`-lauseke, jolla komponenttipohja ja siinä käytettävä data tuodaan.
+- `export default`, jonka tulee olla olio, joka sisältää vähintään `title`-kentän ja merkkijonon sen arvona. Tämä
+  määrittelee komponentin nimen sekä sen sijainnin Storybookin sivupalkissa.
+- `export`-lausekkeet, joilla luodaan komponentti ja joita voi olla yksi tai useampi samassa tiedostossa. Niiden tulee
+  olla funktioita, jotka palauttavat ja renderöivät komponentin pohjan. Tässä luodut komponentit näkyvät alaosioina
+  Storybookin sivupalkissa.
+
+### Tarinan renderöinti
+
+Yksinkertainen tarinan React-tiedosto voi näyttää tältä:
+
+```jsx
+import React from 'react';
+import heroTemplate from '../hero.twig';
+import heroData from './hero.yml';
+
+/**
+ * Storybook Definition.
+ */
+export default { title: 'Molecules/Hero' };
+
+export const Hero = () => {
+  const markup = heroTemplate(heroData);
+  return (
+    <div dangerouslySetInnerHTML={{ __html: markup }} />
+  );
+};
+
+```
+
+> Tämä on yksinkertaistettu esimerkki, josta varsinainen _hero_-tarina poikkeaa hieman. Siinä komponentin ympärille on
+> lisätty elementtejä, joilla parannetaan sen luettavuutta Storybookissa.
+
+Tämä riittää siihen, että komponentti on näkyvissä Storybookin käyttöliittymässä. Tiedostossa tuodaan komponentin
+Twig-pohja sekä esimerkkidataa YAML-tiedostosta. `Hero`-funktion vieminen `export`-lausekkeella renderöi `div`-tagin ja
+sen sisälle komponentin pohjan, jossa on käytetty esimerkkidataa.
+
+### Datan vieminen tarinoihin
+
+Ylläoleva esimerkkitiedosto sisältää YAML-tiedoston tuonnin. Tarinoissa käytettävä esimerkkidata kirjoitetaan
+YAML-tiedostoihin.
+
+_Hero_-komponentin datatiedosto on nimeltään `hero.yml`, ja se voi olla esimerkiksi tällainen:
+
+```yml
+hero__title: 'Päivähoito Turussa'
+hero__lead_text:
+  'Varhaiskasvatuksen palvelut on tarkoitettu kaikille alle kouluikäisille lapsille Turussa.
+  Tältä sivulta löydät kaiken tarvitsemasi tiedon vaihtoehdoista ja hakuprosessista.  Löydetään
+  yhdessä lapsellesi sopivin vaihtoehto!'
+hero__image:
+  image_src: '/hero.jpg'
+hero__modifiers:
+  - 'dark'
+```
+
+Tuomalla erilaisia tietojoukkoja ja lisäämällä ne komponenttimalliin voimme näyttää erilaisia käyttötapoja
+Storybookissa. Monimutkaisempi esimerkki voi näyttää tältä:
+
+```jsx
+// ... other imports
+
+import headerTemplate from '../header.twig';
+
+import breadcrumbData from '../../../02-molecules/navigation/breadcrumbs/stories/breadcrumbs.yml';
+import languageMenuData from '../../../02-molecules/navigation/language-switcher/stories/language-switcher.yml';
+
+/**
+ * Storybook Definition.
+ */
+export default { title: 'Organisms/Header' };
+
+export const header = () => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: headerTemplate({
+        ...languageMenuData,
+        ...breadcrumbData,
+      }),
+    }}
+  />
+);
+```
+
+### Tarinan pohja
+
+Joskus on välttämätöntä tai hyödyllistä esittää komponentti toisen komponentin sisällä Storybookissa. Esimerkiksi
+ruudukkoasettelu-komponentti saattaa olla järkevää näyttää sivun asettelun sisällä. Tämä voidaan toteuttaa luomalla
+Twig-pohja, jonka ainoa tarkoitus on parantaa tarinan luettavuutta Storybookissa.
+
+_Huomio: Twig-pohjien, joita käytetään vain Storybookissa, tulee sijaita `./stories`-hakemistossa._
+
+
+### Lisätietoja
+
+Storybook-tarinoiden luomisesta voi oppia lisää tutkimalla olemassaolevia tarinatiedostoja tai virallista
+[Storybookin dokumentaatiota](https://storybook.js.org/docs/react/writing-stories/introduction).
+
+
+## Komponenttien käyttäminen Drupalissa
+
+Komponentin vienti Drupaliin sisältää kaksi vaihetta:
+
+  1. [Drupal-pohjan yhdistäminen komponenttiin](#drupal-pohjan-yhdistäminen-komponenttiin)
+  2. [Twig-muuttujien kartoittaminen](#twig-muuttujien-kartoitus)
+
+Komponentit sijaitsevat Drupal-teeman `./components`-hakemistossa. Komponentin käyttäminen Drupalissa tarkoittaa sitä,
+että se yhdistetään `./templates`-hakemistossa sijaitseviin Drupal-pohjiin. Kun Drupal renderöi Drupal-pohjan, se
+renderöi siis komponentin.
+
 ![Yhteys Drupalin ja Storybookin välillä](/documentation/drupal.jpg)
+
+### Erot tavallisiin Drupalin Twig-pohjiin
+
+Komponentti käyttäytyy kuten tavallinen Drupalin Twig-pohja, mutta siinä on muutamia eroja:
+
+  - Drupal ei tiedä komponenttien Twig-pohjien olemassaolosta, koska ne sijaitsevat teeman `./templates`-hakemiston
+    ulkopuolella.
+  - Komponentit eivät sisällä Drupal -spesifisiä merkintöjä. Ne on rakennettu sivuston rakentajan näkökulmasta.
+    Komponentit on kirjoitettu tyhjästä siten, että niissä on vain tarvittavat elementit. Tämä tekee niistä paremmin
+    soveltuvia käyttötarkoitukseensa, mutta tarkoittaa myös sitä, että muuttujat on kartoitettava.
+
+### Drupal-pohjan yhdistäminen komponenttiin
+
+Käytämme esimerkkinä _hero_-komponenttia, joka pitää yhdistää Drupaliin. Tätä varten pitää ottaa selvää, mikä
+Drupal-pohja renderöi elementin, ja sisällyttää komponentti tähän pohjaan. Jos _hero_ on Drupalissa rakennettu
+paragrafilla, Drupal-pohja voi olla esimerkiksi `./templates/paragraph--hero.html.twig`. Tähän pohjaan sisällytetään
+komponentin pohja `./templates/paragraph--hero.html.twig`.
+
+![Storybook-komponentin yhdistäminen Drupaliin](/documentation/templates.jpg)
+
+Tällä tavoin aina, kun _hero_-paragrafi renderöidään, Drupal näyttää komponentin. Seuraavaksi pitää viedä Drupalin data
+komponenttiin.
+
+> **Huomio:** `./templates`-hakemiston Drupal-pohjiin ei tule lisätä HTML-merkintöjä. Kaikki elementit tulevat
+> komponenteista.
+
+> Komponentteihin voi viitata käyttämällä nimiavaruuksia `@atoms`, `@molecules`, `@organisms` ja `@template`.
+
+Esimerkiksi Drupal-pohja `/templates/paragraph/paragraph--cta.html.twig`, johon yhdistetään _CTA_-komponentti, voi
+näyttää tältä:
+
+```twig
+{% include "@molecules/cta/cta.twig" with {
+  "cta__title": content.field_cta_title,
+  "cta__lead_text": content.field_cta_text,
+} %}
+```
+
+Komponentin käyttö toisessa ohjelmistokehyksessä kuin Drupalissa sisältää samat vaiheet: pohjan ja datan viennin
+sovelluksen käyttämiin pohjiin.
+
+#### Twig `include` vs. `embed` vs. `extends`
+
+Twigin `include`-, `embed`- ja `extends`-lauseiden eroja ovat mm.:
+
+  - `include` ja `embed` mahdollistavat ylimääräisen HTML-elementtien lisäämisen lauseiden ympärille, mikä ei ole
+    suositeltavaa, kun Storybook-komponentteja sisällytetään Drupal-pohjiin.
+  - `embed` ja `extends` mahdollistavat [Twig-lohkojen](https://twig.symfony.com/doc/3.x/functions/block.html)
+    ohittamisen ja uudelleenkirjoittamisen.
+
+### Twig-muuttujien kartoitus
+
+Komponentit edellyttävät tietojen välittämistä tietyllä tavalla. Sen varmistamista, että Drupalin tuottamat tiedot
+vastaavat odotettua muotoa, kutsutaan kartoitukseksi. Kartoitusta tarvitaan lähes kaikissa tapauksissa.
+
+Yksinkertaisimmillaan riittää, että tiedot vaiin osoitetaan oikealle muuttujalle. Esimerkkinä voidaan jälleen käyttää
+Drupal-pohjaa, joka sisältää _CTA_-komponentin:
+
+
+```twig
+{% include "@molecules/cta/cta.twig" with {
+  "cta__title": content.field_cta_title,
+  "cta__lead_text": content.field_cta_text|field_value,
+} %}
+```
+
+Siinä komponentin `cta.twig`-pohjassa luodulle `cta__title`-muuttujalle annetaan arvoksi Drupalin CTA-elementin
+otsikkokenttä. `cta__lead_text`-muuttujalle annetaan arvoksi Drupalin johdantotekstikentän arvo. Huomioi, että
+johdantotekstissä käytetään Twig-suodatinta `field_value`.
+
+#### Kentän arvon välittäminen vs. kentän renderöintitaulukon välittäminen
+
+  - Muuttujalle voidaan välittää pelkkä kentän arvo käyttämällä Twigin `field_value`-suodatinta, jonka voi ottaa
+    käyttöön [Twig Field Value](https://www.drupal.org/project/twig_field_value) -moduulilla:
+    `content.field_cta_text|field_value` Jos suodatinta käyttää esimerkiksi tekstikentässä, Twig renderöi vain kentän
+    tuottaman merkkijonon.
+  - Jos muuttujalle välittää kentän renderöintitaulukon, se käynnistää Drupalin renderöintiprosessin. Tästä seuraa se,
+    että Drupal ajaa esiprosessointifunktiot ja tulostaa kaikki renderöintitaulukkoon liittyvät Drupal-pohjat.
+
+#### Vinkkejä
+
+**Linkkikentän URL:n välittäminen**
+
+Kentän arvon saamiseksi käytetään [Twig Field Value](https://www.drupal.org/project/twig_field_value) -moduulia:
+
+```twig
+{% set card__url = content.field_link|field_value|first["#url"] %}
+```
+
+**Sen tarkistaminen, onko kentällä arvo**
+
+Joskus ei riitä, että tarkistaa, onko kentän totuusarvo `true`.
+
+```twig
+{% set has_sidebar = content.field_paragraphs_sidebar|render|trim is not empty %}
+```
 
 </Docs>

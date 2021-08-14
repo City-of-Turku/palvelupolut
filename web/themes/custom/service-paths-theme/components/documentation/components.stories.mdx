@@ -25,7 +25,7 @@ Components can also be very small pieces of functionality, e.g., a button or a h
 A component usually contains a template, unique styles and sometimes also logic.
 
 - **The template** provides the markup. Being a template it contains placeholders that can be filled with different data.
-- **Styles** give the component it's layout and unique appearance.
+- **Styles** give the component its layout and unique appearance.
 - **JavaScript** adds interactivity or other logic to the component.
 
 In other words, a component contains everything necessary to build it.
@@ -35,10 +35,9 @@ other projects the basic structure would be similar.
 
 ## Organisation of components
 
-[The sidebar](?path=/story/documentation-interface--page#sidebar) is used to organise components in groups. Various
-ways of organising components exist. **Atomic Design** is one way that has seen widespread use and that proves useful
-especially in larger projects. As the name suggests Atomic Design goes beyond just stating how components should be
-organised. It is a set of principles that state how components should be designed.
+Various ways of organising components exist. **Atomic Design** is one way that has seen widespread use and that proves
+useful especially in larger projects. As the name suggests Atomic Design goes beyond just stating how components should
+be organised. It is a set of principles that state how components should be designed.
 
 ### Atomic Design principles
 
@@ -54,15 +53,17 @@ Multiple **molecules** can form an **organism** and so on.
 **Atoms** include components like [headings](?path=/story/atoms-text--heading), [links](?path=/story/atoms-links--link),
 [buttons](?path=/story/atoms-button--button) and other small components.
 
-Putting several atoms together we can create larger components called **molecules**. For instance the
-[Hero component](?path=/story/molecules-hero--hero) is a molecule that consists of a heading, long text and image atoms.
+Putting several atoms together we can create larger components, **molecules**. For instance the
+[Hero component](?path=/story/molecules-hero--hero) is a molecule that consists of a
+[heading](?path=/story/atoms-text--heading), [long text](?path=/story/atoms-text--text-long) and
+[image](?path=/story/atoms-images--image) atoms.
 You can see this structure being reflected in the [sidebar menu](?path=/story/documentation-interface--page#sidebar).
 
 ### Benefits of Atomic design
 
 Using atomic design comes with several benefits:
 
-- **Reuse**: components are being reused instead of creating new components for every variation. This reduces less
+- **Reuse**: components are being reused instead of creating new components for every variation. This reduces
   duplicate code.
 - **Coherence**: reusing the same components leads to having less variations of similar components. When Atomic Design is
   applied already at the design stage it gives designers the same benefits.
@@ -76,38 +77,69 @@ Using atomic design comes with several benefits:
 
 # Komponenttirakenne
 
-## _Atomic design_ -periaatteet
+Johdanto komponentteihin, niiden rakenteeseen ja järjestykseen.
 
-Komponentit on rakennettu ja järjestetty _atomic design_ -periaatteiden mukaisesti. _Atomic design_ on metodiikka, jossa
-suunnitellut elementit pilkotaan pienimmiksi mahdollisiksi, uudelleenkäytettäviksi komponenteiksi, joista muut
-komponentit sitten rakennetaan.
+## Mitä komponentit ovat
 
-Pienimpiä mahdollisia uudelleenkäytettäviä koodinpätkiä kutsutaan atomeiksi. Niitä ovat esimerkiksi
-[otsikot](?path=/story/atoms-text--heading?path=/story/atoms-text--heading), [linkit](?path=/story/atoms-links--link),
-[painikkeet](?path=/story/atoms-button--button) ja muut pienet komponentit.
+Komponentit ovat sivuston tai sovelluksen rakennuspalikoita. Tavallisesti komponenttia määrittelee jokin
+ominaisuus, joka erottaa sen muista komponenteista. Komponentteja voivat olla esimerkiksi _hero_, _valikko_ ja _kuva_.
 
-![Atomic design building blocks](/documentation/atomic-design.png)
+Kun tätä periaatetta soveltaa koko kehitysprosessiin – alkaen käytettävyystutkimuksesta suunnitteluun ja koodin
+kirjoittamiseen – se auttaa luomaan loogisen ja hyvin jäsennetyn rakenteen.
 
-Useita atomikomponentteja yhdistämällä saadaan komponentteja, joita kutsutaan molekyyleiksi. Esimerkiksi
-[hero-komponentti](?path=/story/molecules-hero--hero) on molekyyli, joka koostuu otsikko-atomista,
-tekstikappale-atomista ja kuva-atomista.
+Komponentit voivat olla myös hyvin pieniä toiminnallisuuden osasia, kuten _painike_ tai _otsikko_. Näin usein onkin, kun
+suunnittelu perustuu [_atomic design_ -metodiikkaan](#atomic-design-periaatteet).
 
-Molekyylejä yhdistämällä saadaan organismeja. Tällainen on esimerkiksi
-[yhteystietokortteja listaava osio](?path=/story/organisms-section--section-cards).
+## Komponentin rakenne
 
-Storybookin [sivupalkin valikossa](?path=/story/documentation-interface--page#sidebar) komponentit on jaoteltu
-atomeihin, molekyyleihin ja organismeihin.
+Yksittäinen komponentti koostuu tavallisesti pohjasta, tyyleistä ja joskus myös toiminnallisuudesta.
 
-## _Atomic design_ -metodin edut
+- **Pohja** määrittelee komponentin rakenteen. Se sisältää paikkamerkkejä, jotka voidaan täyttää eri tiedoilla.
+- **Tyylit** määrittelevät komponentin ulkoasun.
+- **JavaScript** tuo komponenttiin vuorovaikutteisuutta tai muita toiminnallisuuksia.
+
+Komponentti sisältää siis kaiken, mikä sen rakentamiseen tarvitaan.
+
+Drupal-projekteissa komponentti sisältää Twig-pohjan, tyylitiedoston ja tarvittaessa JavaScript-tiedoston. Muissa
+projekteissa perusrakenne on samanlainen.
+
+## Komponenttien järjestys
+
+Komponentteja voidaan järjestää toisiinsa nähden eri tavoin. _Atomic design_ -metodiikka on yksi tapa, jota on käytetty
+laajasti, ja joka on osoittautunut hyödylliseksi erityisesti suurissa projekteissa. Kuten nimi osoittaa, _Atomic design_
+ei ota kantaa pelkästään komponenttien järjestykseen, vaan sen periaatteet koskevat koko komponenttien
+suunnitteluprosessia.
+
+### _Atomic design_ -periaatteet
+
+_Atomic design_ -metodiikan perusajatus on se, että kaikki voidaan rakentaa pienistä, uudelleenkäytettävistä
+komponenteista. Pieniä komponentteja yhdistelemällä voidaan luoda suurempia komponentteja, joita taas voi yhdistää
+uusiksi komponenteiksi.
+
+Pienimpiä rakennuspalikoita kutsutaan **atomeiksi**. Useaa atomia yhdistelemällä rakennetaan **molekyylejä**.
+Molekyyleistä voi rakentaa **organismeja**, ja niin edelleen.
+
+![_Atomic design_ rakennuspalikat-](/documentation/atomic-design.png)
+
+Pienet komponentit, kuten [otsikot](?path=/story/atoms-text--heading), [linkit](?path=/story/atoms-links--link) ja
+painikkeet (?path=/story/atoms-button--button), kuuluvat **atomeihin**. Näistä voi rakentaa suurempia komponentteja,
+**molekyylejä**. Esimerkiksi [hero-komponentti](?path=/story/molecules-hero--hero&globals=locale:fi) on molekyyli, joka
+koostuu [otsikko-atomista](?path=/story/atoms-text--heading&globals=locale:fi),
+[tekstikappale-atomista](?path=/story/atoms-text--text-long&globals=locale:fi) ja
+[kuva-atomista](?path=/story/atoms-images--image&globals=locale:fi).
+[Sivupalkki](?path=/story/documentation-interface--page&globals=locale:fi#sivupalkki) on ryhmitelty tämän rakenteen
+mukaan.
+
+### _Atomic design_ -metodin edut
 
 _Atomic design_ -metodin käytöstä on useita etuja:
 
-- Uudelleenkäytettävyys: kun komponentti on luotu, sitä voi käyttää uudelleen eri variaatioissa, sen sijaan, että joka
-variaatioon luotaisiin sama koodi uudestaan.
-- Yhtenäisyys: kun samaa komponenttia käytetään muiden komponenttien sekä eri variaatioiden pohjana, vältytään
-tahattomilta eroavaisuuksilta samankaltaisten elementtien välillä.
-- Tehokkuus: uusia komponentteja voi luoda yhdistämällä ja varioimalla jo olemassaolevia komponentteja. Jos johonkin
-komponenttiin halutaan muutoksia, ne saa kerralla tehtyä kaikkialle, jossa komponenttia käytetään. Järjestelmän rakenne
-tulee kuitenkin olla hyvä, jotta se toimii halutulla tavalla.
+- **Uudelleenkäytettävyys:** kun komponentti on luotu, sitä voi käyttää uudelleen eri variaatioissa, sen sijaan, että
+  joka variaatioon luotaisiin sama koodi uudestaan. Tämä vähentää koodin määrää ja ylläpidettävää koodia.
+- **Yhtenäisyys:** kun samaa komponenttia käytetään muiden komponenttien sekä eri variaatioiden pohjana, vältytään
+  tahattomilta eroavaisuuksilta samankaltaisten elementtien välillä. Tästä on hyötyä myös suunnitteluvaiheessa.
+- **Tehokkuus:** uusia komponentteja voi luoda yhdistämällä ja varioimalla jo olemassaolevia komponentteja. Jos johonkin
+  komponenttiin halutaan muutoksia, ne saa kerralla tehtyä kaikkialle, jossa komponenttia käytetään. Järjestelmän
+  rakenteen tulee kuitenkin olla harkittu, jotta se toimii halutulla tavalla.
 
 </Docs>
