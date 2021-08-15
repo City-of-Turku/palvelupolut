@@ -66,11 +66,13 @@
       height: 100px;
       object-fit: cover;
       border-radius: 50%;
+      margin-bottom: space();
 
       @include above($width-large) {
         min-width: 128px;
         max-width: 128px;
         height: 128px;
+        margin-bottom: 0;
       }
     }
   }
