@@ -18,9 +18,9 @@
     }
 
     .date {
-      border-left: 1px solid black;
-      margin-left: space(1/2);
-      padding-left: space(1/2);
+      border-right: 1px solid black;
+      margin-right: space(1/2);
+      padding-right: space(1/2);
     }
   }
 
@@ -61,25 +61,25 @@
     align-self: center;
 
     img {
-      min-width: 100px;
-      max-width: 100px;
-      height: 100px;
+      min-width: space(6.25);
+      max-width: space(6.25);
+      height: space(6.25);
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: space();
 
       @include above($width-large) {
-        min-width: 128px;
-        max-width: 128px;
-        height: 128px;
+        min-width: space(8);
+        max-width: space(8);
+        height: space(8);
         margin-bottom: 0;
       }
     }
   }
 
   .fontawesome-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: space(1.5);
+    height: space(1.5);
   }
 
   @include above($width-large) {
