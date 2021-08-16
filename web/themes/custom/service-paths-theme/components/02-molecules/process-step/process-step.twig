@@ -19,8 +19,9 @@
 
   <span {{ bem("number", [], process_step__base_class) }}> {{ loop.index }} </span>
 
-{#  <div {{ bem("inner", [], process_step__base_class) }}>#}
-    {% include "@atoms/text/heading/heading.twig" with {
+  <span {{ bem("line", [], process_step__base_class) }}></span>
+
+  {% include "@atoms/text/heading/heading.twig" with {
       heading__level: 3,
       heading__base_class: "title",
       heading__blockname: process_step__base_class,
@@ -32,7 +33,6 @@
       text_long__content:  process_step__lead_text,
       text_long__blockname: process_step__base_class,
     } %}
-{#  </div>#}
 
   {% embed "@atoms/lists/list-unordered.twig" with {
     list__base_class: "link-list",

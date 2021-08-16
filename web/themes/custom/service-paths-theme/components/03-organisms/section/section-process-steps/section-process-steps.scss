@@ -1,6 +1,7 @@
 .section-process-steps {
   background: color(background-section);
   padding: space(3);
+  margin-bottom: var(--space-elements);
 
   .process-steps {
     display: flex;
