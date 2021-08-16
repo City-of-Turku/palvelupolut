@@ -1,9 +1,15 @@
 .box-links {
   margin: 0 0 var(--space-elements);
-  padding: space(2);
-  padding-bottom: space();
-  background: color(background-section);
-  border-radius: $border-width;
+
+  .button {
+    margin-top: space(2);
+    padding: space(0.75) space(1.25);
+    svg {
+      width: space(0.75);
+      height: space(1);
+      top: 0;
+    }
+  }
 
   a {
     font-size: $font-size--base;
@@ -44,22 +50,12 @@
   }
 
   &__links {
-    display: grid;
-    flex-direction: row;
-    grid-gap: space(2);
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
     margin-bottom: space(2);
-    grid-template-areas:
-      'links'
-      'attachment'
-      'cta';
 
     @include above($width-medium) {
-      grid-template-columns: 50% 50%;
-      grid-gap: space(2);
-      grid-template-areas:
-        'links attachment'
-        'cta attachment';
+
     }
 
     @include above($width-large) {
@@ -84,10 +80,5 @@
     a {
       box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
     }
-  }
-
-  @include above($width-small) {
-    padding: space(3);
-    padding-bottom: space(2);
   }
 }

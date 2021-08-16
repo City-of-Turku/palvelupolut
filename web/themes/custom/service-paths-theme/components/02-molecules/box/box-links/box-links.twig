@@ -87,5 +87,12 @@
         {% endfor %}
       {% endblock %}
     {% endembed %}
+
+    {% include "@atoms/buttons/button/button.twig" with {
+      button__content: box_links__open_text,
+      button__type: "button",
+      button__icon_before: "mouse-pointer",
+      button__modifiers: ["minimal"],
+    } %}
   </div>
 </div>
