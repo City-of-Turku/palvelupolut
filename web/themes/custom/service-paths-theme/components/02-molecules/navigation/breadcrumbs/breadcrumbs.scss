@@ -24,15 +24,10 @@
     display: inline-flex;
     align-items: center;
 
-    .fontawesome-icon {
-      width: 1.25em;
-      height: 1.25em;
-    }
-
     &:not(:last-child)::after {
       color: color(background-section-dark);
       content: '/';
-      margin: 0 0.75rem;
+      margin: 0 space(0.75);
     }
   }
 
@@ -41,11 +36,6 @@
 
     &--home {
       line-height: 1;
-
-      //&:hover {
-      //  box-shadow: none;
-      //  color: black;
-      //}
     }
   }
 }
