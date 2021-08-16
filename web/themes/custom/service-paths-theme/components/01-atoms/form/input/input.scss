@@ -60,7 +60,7 @@
 
     &:not(.input--submit) {
       padding: 0.9em 1em;
-      border: 1px solid color(border-primary);
+      border: 0.0625rem solid color(border-primary);
       background-color: color(background);
     }
   }

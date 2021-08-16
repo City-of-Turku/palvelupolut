@@ -37,23 +37,23 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: 2px;
+        bottom: 0.125rem;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 0.1875rem;
         background-color: color(accent);
       }
 
       &::before {
         opacity: 0;
-        transform: translateY(4px);
+        transform: translateY(0.25rem);
         transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275),
           opacity 0s;
       }
 
       &::after {
         opacity: 0;
-        transform: translateY(4px);
+        transform: translateY(0.25rem);
         transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
           opacity 0.2s;
       }
@@ -83,10 +83,10 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: 2px;
+        bottom: 0.125rem;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 0.1875rem;
         background-color: color(accent);
         opacity: 1;
       }

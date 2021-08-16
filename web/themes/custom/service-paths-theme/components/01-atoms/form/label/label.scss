@@ -32,7 +32,7 @@
   &__checkbox,
   &__radio {
     background-color: color(text-inverse);
-    border: 2px solid color(text);
+    border: 0.125rem solid color(text);
     width: 1.2em;
     height: 1.2em;
     margin-right: space();
@@ -47,13 +47,13 @@
     input:focus + .label &,
     input:checked:focus + .label > & {
       border-color: color(accent);
-      box-shadow: inset 0 0 0 2px color(accent);
+      box-shadow: inset 0 0 0 0.125rem color(accent);
     }
 
     input:checked + .label > &,
     input:checked + .label:hover > & {
       border-color: color(text);
-      box-shadow: inset 0 0 0 2px color(text);
+      box-shadow: inset 0 0 0 0.125rem color(text);
       background-color: color(text);
     }
 

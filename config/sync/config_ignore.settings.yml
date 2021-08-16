@@ -3,4 +3,4 @@ ignored_config_entities:
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 langcode: fi
-enable_export_filtering: 1
+enable_export_filtering: true

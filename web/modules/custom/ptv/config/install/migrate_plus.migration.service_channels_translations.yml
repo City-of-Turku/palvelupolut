@@ -49,7 +49,7 @@ process:
       langcode: langcode
 
   field_email: email
-  field_phone: phone
+  field_phone_numbers: phone_numbers
   field_webpage: webpage
   field_address: address
   field_languages: langs

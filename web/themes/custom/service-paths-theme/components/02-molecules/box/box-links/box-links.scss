@@ -21,7 +21,8 @@
     margin-bottom: space(2);
   }
 
-  &__heading {
+  &__heading,
+  .heading {
     font-size: $font-size--large-4;
     font-weight: bold;
     letter-spacing: 0;

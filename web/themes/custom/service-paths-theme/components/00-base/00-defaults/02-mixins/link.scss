@@ -28,7 +28,7 @@
  * Mixin - Link-reset
  * Reset the link style.
  */
-@mixin link-reset($padding: 0) {
+@mixin link-reset() {
   box-shadow: none;
   color: currentColor;
 

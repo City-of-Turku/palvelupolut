@@ -41,3 +41,13 @@ php:
       command: |
         drush migrate:reset-status service_channels_translations;
         drush migrate:import service_channels_translations --limit=30;
+    ptvcron5:
+      schedule: '0 1 * * *'
+      command: |
+        drush migrate:reset-status services_translations;
+        drush migrate:import services_translations --update;
+    ptvcron6:
+      schedule: '0 3 * * *'
+      command: |
+        drush migrate:reset-status service_channels_translations;
+        drush migrate:import service_channels_translations --update;

@@ -2,7 +2,7 @@ $color-place-holder: $gray-light;
 
 .place-holder {
   padding: 50px;
-  border: 4px dashed $color-place-holder;
+  border: 0.25rem dashed $color-place-holder;
   color: $color-place-holder;
 
   &__content {

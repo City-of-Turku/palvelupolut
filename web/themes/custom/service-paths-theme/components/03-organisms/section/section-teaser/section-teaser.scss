@@ -1,5 +1,5 @@
 .section-teaser {
-  @include background-full-width($background: color(background-section));
+  @include background-full-width($background: color(background-section-dark));
 
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +13,8 @@
   }
 
   .teaser {
+    margin-bottom: space(2);
+
     @include above($width-large) {
       width: 50%;
     }

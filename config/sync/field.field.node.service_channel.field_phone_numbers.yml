@@ -1,0 +1,39 @@
+uuid: 742adb87-94ba-462a-9a50-c721034ec10f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_numbers
+    - node.type.service_channel
+  module:
+    - double_field
+id: node.service_channel.field_phone_numbers
+field_name: field_phone_numbers
+entity_type: node
+bundle: service_channel
+label: 'Phone Numbers'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: Description
+    required: false
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    label: Number
+    required: true
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

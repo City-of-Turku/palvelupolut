@@ -1,4 +1,8 @@
 services:
-    ptv.api_service:
-      class: Drupal\ptv\Services\PtvApiService
-      arguments: ['@language_manager']
+  ptv.api_service:
+    class: Drupal\ptv\Services\PtvApiService
+    arguments: ['@language_manager']
+  ptv.migration_events:
+    class: Drupal\ptv\EventSubscriber\PtvMigrationEvents
+    tags:
+      - { name: event_subscriber }
