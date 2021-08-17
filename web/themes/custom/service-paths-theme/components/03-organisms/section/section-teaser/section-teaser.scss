@@ -19,9 +19,4 @@
       width: 50%;
     }
   }
-
-  @include above($width-large) {
-    flex-direction: row;
-    padding: space(5) 0;
-  }
 }

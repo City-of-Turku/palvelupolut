@@ -4,9 +4,10 @@
   .button {
     margin-top: space(2);
     padding: space(0.75) space(1.25);
+    width: fit-content;
     svg {
       width: space(0.75);
-      height: space(1);
+      height: space(1.5);
       top: 0;
     }
   }
@@ -38,15 +39,10 @@
 
   &__box-links {
     margin: 0;
-    grid-area: links;
     padding: 0;
 
     .link {
-      box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
-
-      &:hover {
-        box-shadow: inset 0 -6ex 0 0 var(--color-text);
-      }
+      @include link-focus;
     }
   }
 
@@ -54,14 +50,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: space(2);
-
-    @include above($width-medium) {
-
-    }
-
-    @include above($width-large) {
-      grid-gap: space(4);
-    }
   }
 
   &__item {
@@ -75,11 +63,10 @@
 
   &__attachment-links {
     padding: 0;
-    grid-area: attachment;
     margin: 0;
 
     a {
-      box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
+      @include link-focus;
     }
   }
 }

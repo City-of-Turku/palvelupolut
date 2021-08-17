@@ -18,6 +18,13 @@
   border: $color $style $width;
 }
 
+@mixin link-focus($width: $border-width) {
+  box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
+  &:hover {
+    box-shadow: inset 0 -6ex 0 0 var(--color-text);
+  }
+}
+
 @mixin list-reset {
   list-style: none;
   margin: 0;
