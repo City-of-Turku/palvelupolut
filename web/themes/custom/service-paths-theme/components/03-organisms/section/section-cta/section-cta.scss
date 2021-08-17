@@ -12,12 +12,9 @@
     flex: 33%;
     padding: 0 space(1);
     margin-bottom: space(2);
+    margin-right: space(2);
 
     &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include above($width-large) {
       margin-bottom: 0;
     }
   }

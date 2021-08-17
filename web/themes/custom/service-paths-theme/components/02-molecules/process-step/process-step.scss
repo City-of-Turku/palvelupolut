@@ -1,31 +1,59 @@
 .process-step {
   position: relative;
-  display: grid;
-  flex-direction: row;
-  grid-template-columns: space(3.75) auto;
   margin-bottom: space(2);
-  grid-template-areas:
-    'number header'
-    'content content';
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: space(5.2) auto;
+  grid-template-areas: "number title"
+    "text text"
+    "link link" ;
 
   @include above($width-large) {
-    width: 50%;
-    grid-template-areas:
-      'number header'
-      'number content';
+    flex-direction: row;
+    grid-template-areas: "number title link"
+      "number text link";
   }
 
-  .text {
+  &__item {
+    display: flex;
+    svg {
+      width: space(1.5);
+      height: space(1.5);
+      min-width: space(1.5);
+      margin-right: space(1.25);
+    }
+  }
+
+  &__line {
+    width: space(0.06);
+    position: absolute;
+    height: 100%;
+    border: space(0.125) dashed color(border-primary);
+    top: space(2.6);
+    left: space(1.8);
+    display: none;
+
+    @include above($width-large) {
+      display: block;
+    }
+  }
+
+  &:last-child {
+    .process-step__line {
+      display: none;
+    }
+  }
+
+  &__text {
     color: color(text-dark);
-    font-size: $font-size--base;
+    font-size: $font-size--small-1;
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
-  }
+    grid-area: text;
 
-  &__title {
-    margin-bottom: space(1.6);
-    grid-area: header;
-    padding-left: space(2);
+    @include above($width-large) {
+      font-size: $font-size--base;
+    }
   }
 
   &__link {
@@ -45,15 +73,35 @@
 
   &__link-list {
     padding: 0;
+    grid-area: link;
+
+    @include above($width-large) {
+      width: $width--sidebar;
+      margin-left: space(4);
+    }
   }
 
-  &__item a {
-    margin-left: space(0.6);
-    color: color(text-dark);
-    font-size: $font-size--base;
-    font-weight: bold;
-    letter-spacing: $letter-spacing--large;
-    line-height: $line-height--narrow;
+  &__title {
+    grid-area: title;
+    align-self: center;
+  }
+
+  &__item {
+    margin-bottom: space(1);
+
+    a {
+      color: color(text-dark);
+      font-size: $font-size--small-2;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--narrow;
+      text-decoration: underline;
+      box-shadow: none;
+
+      @include above($width-large) {
+        font-size: $font-size--base;
+      }
+    }
   }
 
   &__number {
@@ -63,6 +111,7 @@
     line-height: space(2);
     height: space(3.7);
     width: space(3.7);
+    min-width: space(3.7);
     border: 0.0625rem solid rgba(255, 255, 255, 0);
     border-radius: space(0.7);
     position: relative;
@@ -73,14 +122,14 @@
     flex: space(4.4);
     grid-area: number;
     margin-bottom: space(1);
+    z-index: 1;
 
     @include above($width-large) {
       margin-bottom: 0;
     }
   }
 
-  &__inner,
-  &__title {
+  &__inner {
     flex: 100%;
 
     @include above($width-large) {
@@ -93,5 +142,3 @@
     grid-area: content;
   }
 }
-
-
