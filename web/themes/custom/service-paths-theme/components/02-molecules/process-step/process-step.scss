@@ -14,11 +14,21 @@
       "number text link";
   }
 
+  &__item {
+    display: flex;
+    svg {
+      width: space(1.5);
+      height: space(1.5);
+      min-width: space(1.5);
+      margin-right: space(1.25);
+    }
+  }
+
   &__line {
-    width: 1px;
+    width: space(0.06);
     position: absolute;
     height: 100%;
-    border: 2px dashed color(border-primary);
+    border: space(0.125) dashed color(border-primary);
     top: space(2.5);
     left: space(1.7);
     display: none;
@@ -80,12 +90,13 @@
     margin-bottom: space(1);
 
     a {
-      margin-left: space(0.6);
       color: color(text-dark);
       font-size: $font-size--small-2;
       font-weight: bold;
       letter-spacing: $letter-spacing--large;
       line-height: $line-height--narrow;
+      text-decoration: underline;
+      box-shadow: none;
 
       @include above($width-large) {
         font-size: $font-size--base;
