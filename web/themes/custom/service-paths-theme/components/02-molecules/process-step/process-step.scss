@@ -29,8 +29,8 @@
     position: absolute;
     height: 100%;
     border: space(0.125) dashed color(border-primary);
-    top: space(2.5);
-    left: space(1.7);
+    top: space(2.6);
+    left: space(1.8);
     display: none;
 
     @include above($width-large) {
