@@ -12,21 +12,21 @@
 * @ingroup themeable
 */
 #}
-{% set process_step__base_class = "process_step" %}
+{% set process_step__base_class = "process-step" %}
 {% set process_step__modifiers = process_step__modifiers|default([]) %}
 
 <div {{ bem(process_step__base_class, process_step__modifiers) }}>
 
   <span {{ bem("number", [], process_step__base_class) }}> {{ loop.index }} </span>
 
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 3,
-    heading__base_class: "title",
-    heading__blockname: process_step__base_class,
-    heading: process_step__title,
-  } %}
+  <span {{ bem("line", [], process_step__base_class) }}></span>
 
-  <div {{ bem("inner", [], process_step__base_class) }}>
+  {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 3,
+      heading__base_class: "title",
+      heading__blockname: process_step__base_class,
+      heading: process_step__title,
+    } %}
 
     {% include "@atoms/text/text-long/text-long.twig" with {
       text_long__base_class: "text",
@@ -34,37 +34,36 @@
       text_long__blockname: process_step__base_class,
     } %}
 
-    {% embed "@atoms/lists/list-unordered.twig" with {
-      list__base_class: "link-list",
-      list__modifiers: process_step__modifiers,
-      list__blockname: process_step__base_class,
-    } %}
-      {% block list_content %}
+  {% embed "@atoms/lists/list-unordered.twig" with {
+    list__base_class: "link-list",
+    list__modifiers: process_step__modifiers,
+    list__blockname: process_step__base_class,
+  } %}
+    {% block list_content %}
 
-        {% for item in list_links__items %}
-          {% embed "@atoms/lists/list-item.twig" with {
-            list_item__base_class: "item",
-            list_item__blockname: process_step__base_class,
-          } %}
-            {% block list_item_content %}
-              {% set link_modifiers = process_step__link_modifiers|default([]) %}
+      {% for item in list_links__items %}
+        {% embed "@atoms/lists/list-item.twig" with {
+          list_item__base_class: "item",
+          list_item__blockname: process_step__base_class,
+        } %}
+          {% block list_item_content %}
+            {% set link_modifiers = process_step__link_modifiers|default([]) %}
 
-              {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-                fontawesome_icon__name: "arrow-right",
-              } %}
+            {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+              fontawesome_icon__name: "arrow-right",
+            } %}
 
-              {% include "@atoms/links/link/link.twig" with {
-                link__content: item.title,
-                link__url: item.url,
-                link__attributes: item.attributes,
-                link__suffix: item.suffix,
-              } %}
+            {% include "@atoms/links/link/link.twig" with {
+              link__content: item.title,
+              link__url: item.url,
+              link__attributes: item.attributes,
+              link__suffix: item.suffix,
+            } %}
 
-            {% endblock %}
-          {% endembed %}
-        {% endfor %}
-      {% endblock %}
-    {% endembed %}
-  </div>
+          {% endblock %}
+        {% endembed %}
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
 
 </div>

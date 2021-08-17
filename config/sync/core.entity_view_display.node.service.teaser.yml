@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.service.field_charge_info
     - field.field.node.service.field_description
     - field.field.node.service.field_description_custom
     - field.field.node.service.field_heading
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
+    - field.field.node.service.field_user_instruction
     - node.type.service
   module:
     - user
@@ -27,7 +29,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  service_channels_embed:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
+  field_charge_info: true
   field_description: true
   field_description_custom: true
   field_heading: true
@@ -38,4 +46,5 @@ hidden:
   field_service_classes: true
   field_tags: true
   field_target_groups: true
+  field_user_instruction: true
   langcode: true

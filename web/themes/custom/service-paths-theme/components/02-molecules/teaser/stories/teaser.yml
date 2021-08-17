@@ -3,3 +3,4 @@ teaser__lead_text: 'Blogikirjoitus'
 teaser__image:
   image_src: '/hero.jpg'
 teaser__link: 'www.google.com'
+teaser__date: '1.8.2021'

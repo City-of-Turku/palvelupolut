@@ -44,7 +44,7 @@
   <div {{ bem('wrapper', card__modifiers, card__base_class) }} >
     <div {{ bem('item_content', card__modifiers, card__base_class) }} >
       {% include "@atoms/text/heading/heading.twig" with {
-        heading__level: 3,
+        heading__level: card__heading_level|default(3),
         heading__base_class: card__heading__base_class|default('heading'),
         heading__modifiers: card__heading__modifiers,
         heading__blockname: card__base_class,
@@ -82,6 +82,7 @@
       <div {{ bem('link', card__modifiers, card__base_class) }} >
         {% include "@atoms/images/icon/icon.twig" with {
           icon__name: "arrow-right",
+          icon__decorative: true,
         } %}
 
         {% include "@atoms/links/link/link.twig" with {

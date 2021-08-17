@@ -7,37 +7,139 @@ import { Docs } from '../storybook/storybook'
 
 # Component structure
 
-## Atomic Design principles
+Learn what components are and how they are organised.
 
-Atomic design principles have been implemented and are used to structure the components.
-The main idea behind atomic design is that everything should be split up into the smallest possible reusable components
-and then built up again. The smallest reusable pieces of code are the basic building blocks in atomic design. Since they
-are not split into any smaller components they are usually called atoms. These include things like
-[headings](?path=/story/atoms-text--heading), [links](?path=/story/atoms-links--link),
-[buttons](?path=/story/atoms-button--button) and other small components.
+## What are components
+
+Components are the building blocks that make a site or app. Usually components encapsulate a certain kind of
+functionality that makes them unique from other components. Example components include a hero, a menu or an image.
+
+When this core concept is applied throughout the whole development process it creates a logical and well organised
+structure. Starting from usability research, to design, to implementation in code.
+
+Components can also be very small pieces of functionality, e.g., a button or a heading. This is especially true when
+[atomic design principles](#atomic-design-principles) are used.
+
+## Structure of a single component
+
+A component usually contains a template, unique styles and sometimes also logic.
+
+- **The template** provides the markup. Being a template it contains placeholders that can be filled with different data.
+- **Styles** give the component its layout and unique appearance.
+- **JavaScript** adds interactivity or other logic to the component.
+
+In other words, a component contains everything necessary to build it.
+
+In Drupal based projects a component consists of a Twig template, a stylesheet and JavaScript if necessary. In
+other projects the basic structure would be similar.
+
+## Organisation of components
+
+Various ways of organising components exist. **Atomic Design** is one way that has seen widespread use and that proves
+useful especially in larger projects. As the name suggests Atomic Design goes beyond just stating how components should
+be organised. It is a set of principles that state how components should be designed.
+
+### Atomic Design principles
+
+The main idea behind atomic design is that everything can be built from small, reusable components. Adding multiple
+small components together we can create another bigger component. Doing this with different sets of small components
+leads to new variations, creating a new bigger component.
+
+Atomic Design calls the smallest building blocks **atoms**. Adding multiple atoms together creates a **molecule**.
+Multiple **molecules** can form an **organism** and so on.
 
 ![Atomic design building blocks](/documentation/atomic-design.png)
 
-Putting several small components together we can create larger things called molecules. For instance the
-[Hero component](?path=/story/molecules-hero--hero) is a molecule that consists of a heading, long text and image atoms.
-Adding molecules together we get organisms and so on. You can see this structure being reflected in the
-[sidebar menu](?path=/story/documentation-interface--page#sidebar).
+**Atoms** include components like [headings](?path=/story/atoms-text--heading), [links](?path=/story/atoms-links--link),
+[buttons](?path=/story/atoms-button--button) and other small components.
 
-## Benefits of using Atomic design
+Putting several atoms together we can create larger components, **molecules**. For instance the
+[Hero component](?path=/story/molecules-hero--hero) is a molecule that consists of a
+[heading](?path=/story/atoms-text--heading), [long text](?path=/story/atoms-text--text-long) and
+[image](?path=/story/atoms-images--image) atoms.
+You can see this structure being reflected in the [sidebar menu](?path=/story/documentation-interface--page#sidebar).
+
+### Benefits of Atomic design
 
 Using atomic design comes with several benefits:
 
-- Reuse: components are being reused instead of creating new components for every variation.
-- Coherence: reusing the same components inevitably leads to having less variations of very similar components.
-- Efficieny: new components can be created by forming new groups of smaller components. Atomic design can also help to
-  implement changes faster since changes are propagated across all the components that use the changed component.
-  A good structure is important however  since the opposite can also be true.
+- **Reuse**: components are being reused instead of creating new components for every variation. This reduces
+  duplicate code.
+- **Coherence**: reusing the same components leads to having less variations of similar components. When Atomic Design is
+  applied already at the design stage it gives designers the same benefits.
+- **Efficiency**: new components are created by reusing smaller components. Atomic Design can help implementing changes
+  faster since they are propagated across all the components where a component is being reused.
+  It is critical however to have a good structure since the opposite can also be true.
 
 </Docs>
 
 <Docs language="fi">
 
 # Komponenttirakenne
-...
+
+Johdanto komponentteihin, niiden rakenteeseen ja järjestykseen.
+
+## Mitä komponentit ovat
+
+Komponentit ovat sivuston tai sovelluksen rakennuspalikoita. Tavallisesti komponenttia määrittelee jokin
+ominaisuus, joka erottaa sen muista komponenteista. Komponentteja voivat olla esimerkiksi _hero_, _valikko_ ja _kuva_.
+
+Kun tätä periaatetta soveltaa koko kehitysprosessiin – alkaen käytettävyystutkimuksesta suunnitteluun ja koodin
+kirjoittamiseen – se auttaa luomaan loogisen ja hyvin jäsennetyn rakenteen.
+
+Komponentit voivat olla myös hyvin pieniä toiminnallisuuden osasia, kuten _painike_ tai _otsikko_. Näin usein onkin, kun
+suunnittelu perustuu [_atomic design_ -metodiikkaan](#atomic-design-periaatteet).
+
+## Komponentin rakenne
+
+Yksittäinen komponentti koostuu tavallisesti pohjasta, tyyleistä ja joskus myös toiminnallisuudesta.
+
+- **Pohja** määrittelee komponentin rakenteen. Se sisältää paikkamerkkejä, jotka voidaan täyttää eri tiedoilla.
+- **Tyylit** määrittelevät komponentin ulkoasun.
+- **JavaScript** tuo komponenttiin vuorovaikutteisuutta tai muita toiminnallisuuksia.
+
+Komponentti sisältää siis kaiken, mikä sen rakentamiseen tarvitaan.
+
+Drupal-projekteissa komponentti sisältää Twig-pohjan, tyylitiedoston ja tarvittaessa JavaScript-tiedoston. Muissa
+projekteissa perusrakenne on samanlainen.
+
+## Komponenttien järjestys
+
+Komponentteja voidaan järjestää toisiinsa nähden eri tavoin. _Atomic design_ -metodiikka on yksi tapa, jota on käytetty
+laajasti, ja joka on osoittautunut hyödylliseksi erityisesti suurissa projekteissa. Kuten nimi osoittaa, _Atomic design_
+ei ota kantaa pelkästään komponenttien järjestykseen, vaan sen periaatteet koskevat koko komponenttien
+suunnitteluprosessia.
+
+### _Atomic design_ -periaatteet
+
+_Atomic design_ -metodiikan perusajatus on se, että kaikki voidaan rakentaa pienistä, uudelleenkäytettävistä
+komponenteista. Pieniä komponentteja yhdistelemällä voidaan luoda suurempia komponentteja, joita taas voi yhdistää
+uusiksi komponenteiksi.
+
+Pienimpiä rakennuspalikoita kutsutaan **atomeiksi**. Useaa atomia yhdistelemällä rakennetaan **molekyylejä**.
+Molekyyleistä voi rakentaa **organismeja**, ja niin edelleen.
+
+![_Atomic design_ rakennuspalikat-](/documentation/atomic-design.png)
+
+Pienet komponentit, kuten [otsikot](?path=/story/atoms-text--heading), [linkit](?path=/story/atoms-links--link) ja
+painikkeet (?path=/story/atoms-button--button), kuuluvat **atomeihin**. Näistä voi rakentaa suurempia komponentteja,
+**molekyylejä**. Esimerkiksi [hero-komponentti](?path=/story/molecules-hero--hero&globals=locale:fi) on molekyyli, joka
+koostuu [otsikko-atomista](?path=/story/atoms-text--heading&globals=locale:fi),
+[tekstikappale-atomista](?path=/story/atoms-text--text-long&globals=locale:fi) ja
+[kuva-atomista](?path=/story/atoms-images--image&globals=locale:fi).
+[Sivupalkki](?path=/story/documentation-interface--page&globals=locale:fi#sivupalkki) on ryhmitelty tämän rakenteen
+mukaan.
+
+### _Atomic design_ -metodin edut
+
+_Atomic design_ -metodin käytöstä on useita etuja:
+
+- **Uudelleenkäytettävyys:** kun komponentti on luotu, sitä voi käyttää uudelleen eri variaatioissa, sen sijaan, että
+  joka variaatioon luotaisiin sama koodi uudestaan. Tämä vähentää koodin määrää ja ylläpidettävää koodia.
+- **Yhtenäisyys:** kun samaa komponenttia käytetään muiden komponenttien sekä eri variaatioiden pohjana, vältytään
+  tahattomilta eroavaisuuksilta samankaltaisten elementtien välillä. Tästä on hyötyä myös suunnitteluvaiheessa.
+- **Tehokkuus:** uusia komponentteja voi luoda yhdistämällä ja varioimalla jo olemassaolevia komponentteja. Jos johonkin
+  komponenttiin halutaan muutoksia, ne saa kerralla tehtyä kaikkialle, jossa komponenttia käytetään. Järjestelmän
+  rakenteen tulee kuitenkin olla harkittu, jotta se toimii halutulla tavalla.
 
 </Docs>

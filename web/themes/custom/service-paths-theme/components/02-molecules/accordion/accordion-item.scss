@@ -1,0 +1,43 @@
+.accordion-item {
+  border-top: 0.125rem solid;
+
+  &:last-child {
+    border-bottom: 0.125rem solid;
+  }
+
+  .fontawesome-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  &__heading {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: space() 0;
+    font-size: $font-size--large-2;
+    font-family: $font-family--accent;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 30px;
+
+    &::marker {
+      display: none;
+    }
+  }
+
+  &__content {
+    padding: space() 0;
+
+    .text-long {
+      margin-bottom: 0;
+    }
+  }
+
+  &[open] {
+    .fontawesome-icon {
+      transform: rotate(180deg);
+    }
+  }
+}

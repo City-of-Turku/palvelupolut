@@ -23,20 +23,19 @@
 #}
 {% set status__base_class = 'status' %}
 {% set status_type = {
-  error: "Error message"|t,
-  warning: "Warning message"|t,
-  status: "Status message"|t
+  error: 'Error message'|t,
+  warning: 'Warning message'|t,
+  status: 'Status message'|t
 } %}
 
 {% for type, messages in message_list %}
-
-  {% set role = (type == 'error') ? "alert" : "status" %}
+  {% set role = (type == 'error') ? 'alert' : 'status' %}
 
   <div{% if not presentational %} role="{{ role }}"{% endif %} aria-label="{{ status_type[type] }}"{{ attributes|without('role', 'aria-label') }}>
-      <ul {{ bem('list', [], status__base_class)}}>
-        {% for message in messages %}
-          <li {{ bem(status__base_class, [type])}}>{{ message }}</li>
-        {% endfor %}
-      </ul>
+    <ul {{ bem('list', [], status__base_class)}}>
+      {% for message in messages %}
+        <li {{ bem(status__base_class, [type])}}>{{ message }}</li>
+      {% endfor %}
+    </ul>
   </div>
 {% endfor %}

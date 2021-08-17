@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.service.field_charge_info
     - field.field.node.service.field_description
     - field.field.node.service.field_description_custom
     - field.field.node.service.field_heading
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
+    - field.field.node.service.field_user_instruction
     - node.type.service
   module:
     - field_group
@@ -71,6 +73,8 @@ third_party_settings:
       children:
         - field_description
         - field_requirements
+        - field_user_instruction
+        - field_charge_info
         - field_tags
         - field_target_groups
         - field_service_classes
@@ -110,6 +114,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_charge_info:
+    weight: 6
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_description:
     weight: 3
     settings:
@@ -174,7 +186,7 @@ content:
     type: text_textarea
     region: content
   field_service_classes:
-    weight: 7
+    weight: 9
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -184,7 +196,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_tags:
-    weight: 5
+    weight: 7
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -194,7 +206,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_target_groups:
-    weight: 6
+    weight: 8
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -202,6 +214,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_user_instruction:
+    weight: 5
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   langcode:
     type: language_select

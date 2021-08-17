@@ -1,0 +1,21 @@
+uuid: 9ba5bf72-cf40-48e7-830d-a56c4c77d968
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_charge_info
+    - node.type.service
+  module:
+    - text
+id: node.service.field_charge_info
+field_name: field_charge_info
+entity_type: node
+bundle: service
+label: 'Charge Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

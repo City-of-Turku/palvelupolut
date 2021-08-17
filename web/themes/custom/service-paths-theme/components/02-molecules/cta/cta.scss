@@ -2,6 +2,17 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: space(2);
+  align-items: center;
+  text-align: center;
+
+  @include above($width-large) {
+    align-items: start;
+    text-align: left;
+    flex-direction: row;
+    max-width: 50%;
+  }
+
   .link {
     color: black;
     box-shadow: none;
@@ -31,16 +42,12 @@
   }
 
   .cta__title {
-    text-align: center;
-    order: 2;
-    line-height: 33px;
-    margin-bottom: space(1);
-    margin-top: space(2.125);
+    line-height: $line-height--heading;
+    margin-bottom: space(0.5);
   }
 
   .text {
     text-align: center;
-    order: 3;
     font-size: $font-size--small-1;
     color: color(text-dark);
     letter-spacing: $letter-spacing--large;
@@ -49,21 +56,24 @@
 
   &__icon-wrapper {
     border-radius: 50%;
-    order: 1;
-    align-self: center;
     background: color(background-section-dark);
-    width: space(8);
-    height: space(8);
+    width: space(5.5);
+    height: space(5.5);
+    margin-bottom: space(1.5);
+    order: 1;
   }
 
   &__fontawesome-icon {
-    width: space(8);
-    height: space(8);
-    padding: space(2.1875);
+    width: space(5.5);
+    height: space(5.5);
+    padding: space(2);
   }
 
-  &__text {
-    order: 3;
-    text-align: center;
+  &__inner {
+    order: 2;
+
+    @include above($width-large) {
+      margin-left: space(2);
+    }
   }
 }

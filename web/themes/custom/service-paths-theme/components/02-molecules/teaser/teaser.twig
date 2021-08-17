@@ -25,12 +25,6 @@
   </div>
 
   <div {{ bem('inner', [], teaser__base_class) }}>
-    {% include '@atoms/text/label/label.twig' with {
-      label__base_class: 'label',
-      label__content:  teaser__lead_text,
-      label__blockname: teaser__base_class,
-    } %}
-
     {% include '@atoms/text/heading/heading.twig' with {
       heading__level: 4,
       heading__base_class: 'title',
@@ -39,8 +33,18 @@
       heading__url: teaser__link,
     } %}
 
-    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-      fontawesome_icon__name: "arrow-right",
-    } %}
+    <div {{ bem('meta', [], teaser__base_class) }}>
+      {% include '@atoms/text/label/label.twig' with {
+        label__base_class: 'date',
+        label__content:  teaser__date,
+        label__blockname: teaser__base_class,
+      } %}
+
+      {% include '@atoms/text/label/label.twig' with {
+        label__base_class: 'label',
+        label__content:  teaser__lead_text,
+        label__blockname: teaser__base_class,
+      } %}
+    </div>
   </div>
 </div>

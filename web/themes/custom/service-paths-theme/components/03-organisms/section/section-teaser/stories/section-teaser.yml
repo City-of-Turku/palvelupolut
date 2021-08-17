@@ -4,10 +4,12 @@ section_teaser__items:
     lead_text: 'Blogikirjoitus'
     image:
       image_src: '/hero.jpg'
-    link: "test link'"
+    link: 'test link'
+    date: '1.8.2021'
   - placeholder: true
     title: 'Kirjoitus toisen perheen näkökulmasta'
     lead_text: 'Blogikirjoitus'
     image:
       image_src: '/hero.jpg'
     link: 'test link2'
+    date: '1.8.2021'

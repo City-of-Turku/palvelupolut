@@ -4,6 +4,25 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-bottom: space(2);
+
+  &__meta {
+    display: flex;
+    font-size: $font-size--small-2;
+    font-weight: 600;
+    line-height: $line-height--xs;
+    align-self: center;
+
+    @include above($width-large) {
+      align-self: start;
+    }
+
+    .date {
+      border-right: 1px solid black;
+      margin-right: space(1/2);
+      padding-right: space(1/2);
+    }
+  }
 
   &__text {
     font-size: $font-size--small-1;
@@ -13,14 +32,10 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    padding: space(1.5);
+    padding: 0 space(1.5);
     z-index: 2;
     bottom: 0;
     flex: auto;
-    .label {
-      margin-bottom: space(0.625);
-      text-transform: uppercase;
-    }
   }
 
   &__title {
@@ -46,23 +61,25 @@
     align-self: center;
 
     img {
-      min-width: 100px;
-      max-width: 100px;
-      height: 100px;
+      min-width: space(6.25);
+      max-width: space(6.25);
+      height: space(6.25);
       object-fit: cover;
       border-radius: 50%;
+      margin-bottom: space();
 
       @include above($width-large) {
-        min-width: 128px;
-        max-width: 128px;
-        height: 128px;
+        min-width: space(8);
+        max-width: space(8);
+        height: space(8);
+        margin-bottom: 0;
       }
     }
   }
 
   .fontawesome-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: space(1.5);
+    height: space(1.5);
   }
 
   @include above($width-large) {

@@ -1,7 +1,5 @@
-@use 'sass:math';
-
 .text-long {
-  margin-bottom: space(2);
+  margin-bottom: var(--space-elements);
   font-size: $font-size--base;
 
   p {
@@ -24,14 +22,14 @@
   }
 
   h2 {
-    margin: space(math.div(5, 2)) 0 space(math.div(3, 4));
+    margin: space(2.5) 0 space(0.75);
   }
 
   h3 {
-    margin: space(math.div(3, 2)) 0 space(math.div(1, 2));
+    margin: space(1.5) 0 space(0.5);
   }
 
   h4 {
-    margin: space() 0 space(math.div(3, 8));
+    margin: space() 0 space(0.375);
   }
 }
