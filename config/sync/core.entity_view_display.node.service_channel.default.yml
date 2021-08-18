@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
+    - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_services
@@ -33,14 +34,14 @@ bundle: service_channel
 mode: default
 content:
   field_accessibility:
-    weight: 12
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_address:
-    weight: 5
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -61,7 +62,7 @@ content:
     type: email_mailto
     region: content
   field_heading:
-    weight: 10
+    weight: 9
     label: hidden
     settings:
       link_to_entity: false
@@ -69,14 +70,14 @@ content:
     type: string
     region: content
   field_languages:
-    weight: 11
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_lead_image:
-    weight: 8
+    weight: 7
     label: hidden
     settings:
       link: true
@@ -85,14 +86,14 @@ content:
     type: entity_reference_entity_view
     region: content
   field_lead_text:
-    weight: 9
+    weight: 8
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_opening_hours:
-    weight: 14
+    weight: 13
     label: hidden
     settings:
       inline: true
@@ -114,6 +115,24 @@ content:
     type: double_field_unformatted_list
     region: content
   field_paragraphs:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_paragraphs_contacts:
+    type: entity_reference_revisions_entity_view
+    weight: 14
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraphs_sidebar:
     weight: 6
     label: hidden
     settings:
@@ -122,17 +141,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
-  field_paragraphs_sidebar:
-    weight: 7
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_phone_numbers:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       inline: true
@@ -154,15 +164,16 @@ content:
     type: double_field_unformatted_list
     region: content
   field_services:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 15
     region: content
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: section_teaser
+      link: false
     third_party_settings: {  }
   field_tags:
-    weight: 13
+    weight: 12
     label: above
     settings:
       link: true

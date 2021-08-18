@@ -1,0 +1,67 @@
+uuid: fb2bc1f5-d277-4e1b-b2bd-c7b3419a90d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs_contacts
+    - node.type.service_channel
+    - paragraphs.paragraphs_type.contacts_section
+  module:
+    - entity_reference_revisions
+id: node.service_channel.field_paragraphs_contacts
+field_name: field_paragraphs_contacts
+entity_type: node
+bundle: service_channel
+label: 'Contact Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contacts_section: contacts_section
+    target_bundles_drag_drop:
+      accordion:
+        weight: 15
+        enabled: false
+      accordion_item:
+        weight: 16
+        enabled: false
+      contact_card:
+        weight: 17
+        enabled: false
+      contacts_section:
+        enabled: true
+        weight: 14
+      cta:
+        weight: 18
+        enabled: false
+      cta_grid:
+        weight: 19
+        enabled: false
+      general:
+        weight: 20
+        enabled: false
+      icon:
+        weight: 21
+        enabled: false
+      icons_grid:
+        weight: 22
+        enabled: false
+      links:
+        weight: 23
+        enabled: false
+      process:
+        weight: 24
+        enabled: false
+      references:
+        weight: 25
+        enabled: false
+      step:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

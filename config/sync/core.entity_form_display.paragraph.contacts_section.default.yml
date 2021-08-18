@@ -1,0 +1,39 @@
+uuid: 3159171c-bc32-49df-875f-3b77c6852e4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contacts_section.field_cards
+    - field.field.paragraph.contacts_section.field_paragraph_heading
+    - paragraphs.paragraphs_type.contacts_section
+  module:
+    - paragraphs_asymmetric_translation_widgets
+id: paragraph.contacts_section.default
+targetEntityType: paragraph
+bundle: contacts_section
+mode: default
+content:
+  field_cards:
+    type: paragraphs_classic_asymmetric
+    weight: 1
+    settings:
+      title: Card
+      title_plural: Cards
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: contact_card
+    third_party_settings: {  }
+    region: content
+  field_paragraph_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

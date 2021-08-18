@@ -1,0 +1,64 @@
+uuid: ac74b5e6-78f8-48fd-827b-d157167b599a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icons_grid_items
+    - paragraphs.paragraphs_type.icon
+    - paragraphs.paragraphs_type.icons_grid
+  module:
+    - entity_reference_revisions
+id: paragraph.icons_grid.field_icons_grid_items
+field_name: field_icons_grid_items
+entity_type: paragraph
+bundle: icons_grid
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      icon: icon
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_item:
+        weight: 15
+        enabled: false
+      contact_card:
+        weight: 16
+        enabled: false
+      cta:
+        weight: 17
+        enabled: false
+      cta_grid:
+        weight: 18
+        enabled: false
+      general:
+        weight: 19
+        enabled: false
+      icon:
+        enabled: true
+        weight: 13
+      icons_grid:
+        weight: 20
+        enabled: false
+      links:
+        weight: 21
+        enabled: false
+      process:
+        weight: 22
+        enabled: false
+      references:
+        weight: 23
+        enabled: false
+      step:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

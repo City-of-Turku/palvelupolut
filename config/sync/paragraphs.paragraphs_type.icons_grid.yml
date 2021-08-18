@@ -1,0 +1,10 @@
+uuid: 4439378e-c25d-4b79-a40d-db6b8e824f6c
+langcode: en
+status: true
+dependencies: {  }
+id: icons_grid
+label: 'Icons Grid'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

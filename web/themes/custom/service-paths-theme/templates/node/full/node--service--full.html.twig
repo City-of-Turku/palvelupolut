@@ -72,10 +72,8 @@
   "field_lead_image",
   "field_lead_text",
   "field_description",
-  "field_description_custom",
   "field_service_classes",
   "field_target_groups",
-  "field_requirements",
   "service_channels_embed",
   "field_tags",
 ] %}
@@ -98,13 +96,10 @@
   {% endblock %}
 
   {% block page_content %}
+    {{ content.field_description }}
+
     {{ content|without(excluded_fields) }}
 
-    {% if content.field_description_custom|render %}
-      {{ content.field_description_custom }}
-    {% else %}
-      {{ content.field_description }}
-    {% endif %}
   {% endblock %}
 
   {% block page_sidebar_post_content %}

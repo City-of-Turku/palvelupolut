@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
+    - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_services
@@ -36,6 +37,7 @@ third_party_settings:
         - group_paragraphs
         - group_sidebar
         - group_ptv
+        - group_contacts
       parent_name: ''
       weight: 2
       format_type: tabs
@@ -80,7 +82,6 @@ third_party_settings:
         - field_description
         - field_webpage
         - field_email
-        - field_phone
         - field_phone_numbers
         - field_address
         - field_accessibility
@@ -92,11 +93,11 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
-        required_fields: true
+        id: ''
+        classes: ''
+        required_fields: false
       label: PTV
     group_sidebar:
       children:
@@ -112,6 +113,20 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: Sidebar
+    group_contacts:
+      children:
+        - field_paragraphs_contacts
+      parent_name: group_tabs
+      weight: 26
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Contact Information'
 id: node.service_channel.default
 targetEntityType: node
 bundle: service_channel
@@ -218,6 +233,18 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: paragraphs_classic_asymmetric
+    region: content
+  field_paragraphs_contacts:
+    type: paragraphs_classic_asymmetric
+    weight: 11
+    settings:
+      title: 'Contact Section'
+      title_plural: 'Contact Sections'
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: contacts_section
+    third_party_settings: {  }
     region: content
   field_paragraphs_sidebar:
     weight: 12

@@ -1,0 +1,67 @@
+uuid: 3fdebf1a-3050-49c8-8fb0-9a624ad8dcb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.contact_card
+    - paragraphs.paragraphs_type.contacts_section
+  module:
+    - entity_reference_revisions
+id: paragraph.contacts_section.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: contacts_section
+label: Cards
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact_card: contact_card
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_item:
+        weight: 15
+        enabled: false
+      contact_card:
+        enabled: true
+        weight: 16
+      contacts_section:
+        weight: 17
+        enabled: false
+      cta:
+        weight: 18
+        enabled: false
+      cta_grid:
+        weight: 19
+        enabled: false
+      general:
+        weight: 20
+        enabled: false
+      icon:
+        weight: 21
+        enabled: false
+      icons_grid:
+        weight: 22
+        enabled: false
+      links:
+        weight: 23
+        enabled: false
+      process:
+        weight: 24
+        enabled: false
+      references:
+        weight: 25
+        enabled: false
+      step:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

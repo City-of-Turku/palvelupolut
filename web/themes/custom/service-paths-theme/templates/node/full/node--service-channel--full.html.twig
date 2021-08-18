@@ -80,6 +80,7 @@
   "field_location",
   "field_paragraphs_sidebar",
   "field_tags",
+  "field_paragraphs_contacts"
 ] %}
 
 {% embed "@templates/page/page-content.twig" with {
@@ -101,11 +102,7 @@
   {% endblock %}
 
   {% block page_content %}
-    {% if content.field_description_custom|render %}
-      {{ content.field_description_custom }}
-    {% else %}
-      {{ content.field_description }}
-    {% endif %}
+    {{ content.field_description }}
 
     {{ content|without(excluded_fields) }}
   {% endblock %}
@@ -118,4 +115,22 @@
     {{ content.field_location }}
     {{ content.field_paragraphs_sidebar }}
   {% endblock %}
+
+  {% block page_content_post_content %}
+    {% set section_contact_cards__base_class = section_contact_cards__base_class|default("section-contact-cards") %}
+    {% set section_contact_cards__modifiers = section_contact_cards__modifiers|default(["vertical"]) %}
+
+    <div {{ bem(section_contact_cards__base_class, section_contact_cards__modifiers, section_contact_cards__blockname) }}>
+      {% include "@atoms/text/heading/heading.twig" with {
+        heading__level: 2,
+        heading__base_class: "title",
+        heading__blockname: contact__base_class,
+        heading: 'test',
+      } %}
+
+      {{ content.field_paragraphs_contacts }}
+
+    </div>
+  {% endblock %}
+
 {% endembed %}

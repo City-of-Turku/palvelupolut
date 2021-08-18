@@ -67,14 +67,17 @@
  */
 #}
 
+{% set date = node.createdtime|format_date('short') %}
+
 {% embed "@molecules/teaser/teaser.twig" with {
   teaser__modifiers: cta_modifiers,
   teaser__title: label,
   teaser__lead_text: node.type.entity.label,
   teaser__link: url,
+  teaser__date: date
 } %}
   {% block teaser_image %}
     {{ content.field_lead_image }}
+    {{ content.field_image }}
   {% endblock %}
 {% endembed %}
-

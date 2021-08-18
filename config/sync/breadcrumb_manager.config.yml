@@ -1,0 +1,20 @@
+title_resolvers:
+  menu_link_title:
+    enabled: '1'
+    weight: '0'
+  request_title:
+    enabled: '1'
+    weight: '1'
+  raw_path_component:
+    weight: '100'
+    enabled: 0
+excluded_paths: /user
+show_front: 0
+show_home: 1
+home: ''
+show_current: 1
+show_current_as_link: 0
+show_fake_segments: 0
+_core:
+  default_config_hash: EZ9jb_GQzdqbQJmRqLhBrCq5mTFvLolB2-atGiivnw4
+langcode: fi

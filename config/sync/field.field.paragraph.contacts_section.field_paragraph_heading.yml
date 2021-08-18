@@ -1,0 +1,19 @@
+uuid: 3ac900e0-3e9c-4859-9856-f77be5ac9a4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_heading
+    - paragraphs.paragraphs_type.contacts_section
+id: paragraph.contacts_section.field_paragraph_heading
+field_name: field_paragraph_heading
+entity_type: paragraph
+bundle: contacts_section
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

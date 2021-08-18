@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+
+
+{% set section_cards__base_class = section_cards__base_class|default('section-cards') %}
+{% set section_cards__modifiers = section_cards__modifiers|default([]) %}
+
+<div {{ bem(section_cards__base_class, section_cards__modifiers) }}>
+	{% if title %}
+		{% include '@atoms/text/heading/heading.twig' with {
+      heading: title,
+      heading__level: section_cards__title_level|default('2'),
+    } %}
+	{% endif %}
+
+	<div {{ bem('items', [], section_cards__base_class) }}>
+		{% block section_cards_items %}
+			{% for row in rows %}
+				{% block section_cards_item %}
+						{{- row.content -}}
+				{% endblock %}
+			{% endfor %}
+		{% endblock %}
+	</div>
+
+</div>
