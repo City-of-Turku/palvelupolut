@@ -21,7 +21,7 @@ $width-xxl: space(88); // 1408;
   --space-page-padding: #{space(2)};
 
   @media (max-width: #{$width-large - space(math.div(1, 100))}) {
-    --space-elements: #{space(3)};
+    --space-elements: #{space(2)};
     --space-page-padding: #{space()};
   }
 }

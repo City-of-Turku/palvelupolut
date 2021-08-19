@@ -17,10 +17,14 @@
   }
 
   .heading {
-    margin-bottom: space(2);
+    margin-bottom: space(1.5);
     font-weight: bold;
     letter-spacing: -$letter-spacing--large;
     line-height: $line-height--heading;
     flex: 100%;
+
+    @include above($width-large) {
+      margin-bottom: space(2);
+    }
   }
 }
