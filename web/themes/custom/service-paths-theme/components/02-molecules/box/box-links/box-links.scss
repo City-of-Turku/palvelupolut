@@ -2,14 +2,7 @@
   margin: 0 0 var(--space-elements);
 
   .button {
-    margin-top: space(2);
-    padding: space(0.75) space(1.25);
-    width: fit-content;
-    svg {
-      width: space(0.75);
-      height: space(1.5);
-      top: 0;
-    }
+    @include button-with-icon;
   }
 
   a {

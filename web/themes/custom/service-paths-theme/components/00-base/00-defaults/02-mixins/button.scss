@@ -88,6 +88,17 @@ $button-colors: (
   }
 }
 
+@mixin button-with-icon () {
+  margin-top: space(2);
+  padding: space(0.75) space(1.25);
+  width: fit-content;
+  svg {
+    width: space(0.75);
+    height: space(1.5);
+    top: 0;
+  }
+}
+
 // Button size variations
 @mixin button-medium {
   line-height: 1.4;
