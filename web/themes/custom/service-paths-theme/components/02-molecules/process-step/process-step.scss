@@ -1,9 +1,9 @@
 .process-step {
   position: relative;
-  margin-bottom: space(2);
+  margin-bottom: space(3);
   flex-direction: column;
   display: grid;
-  grid-template-columns: space(5.2) auto;
+  grid-template-columns: space(5.75) auto;
   grid-template-areas: "number title"
     "text text"
     "link link" ;
@@ -12,6 +12,10 @@
     flex-direction: row;
     grid-template-areas: "number title link"
       "number text link";
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
   &__item {
@@ -29,7 +33,7 @@
     position: absolute;
     height: 100%;
     border: space(0.125) dashed color(border-primary);
-    top: space(2.6);
+    top: space(3);
     left: space(1.8);
     display: none;
 
@@ -83,7 +87,9 @@
 
   &__title {
     grid-area: title;
-    align-self: center;
+    margin-top: space();
+    margin-bottom: space(0.75);
+    letter-spacing: $letter-spacing--none;
   }
 
   &__item {

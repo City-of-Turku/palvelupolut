@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.service.field_charge_info
     - field.field.node.service.field_description
-    - field.field.node.service.field_description_custom
     - field.field.node.service.field_heading
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_lead_text
@@ -24,22 +23,19 @@ targetEntityType: node
 bundle: service
 mode: teaser
 content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+  field_lead_image:
+    type: entity_reference_entity_view
+    weight: 0
     region: content
-  service_channels_embed:
-    weight: 10
-    settings: {  }
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    region: content
 hidden:
   field_charge_info: true
   field_description: true
-  field_description_custom: true
   field_heading: true
-  field_lead_image: true
   field_lead_text: true
   field_paragraphs: true
   field_requirements: true
@@ -48,3 +44,5 @@ hidden:
   field_target_groups: true
   field_user_instruction: true
   langcode: true
+  links: true
+  service_channels_embed: true

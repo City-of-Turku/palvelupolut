@@ -1,0 +1,22 @@
+uuid: d15b7eb2-f2b7-4186-afd3-7eb156bed1be
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_service_channel
+label: 'Node: Service Channel'
+type: 'canonical_entities:node'
+pattern: 'service-channels/[node:title]'
+selection_criteria:
+  993256da-105a-42cb-b248-be216de2b51b:
+    id: node_type
+    bundles:
+      service_channel: service_channel
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 993256da-105a-42cb-b248-be216de2b51b
+selection_logic: and
+weight: -5
+relationships: {  }

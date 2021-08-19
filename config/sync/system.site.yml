@@ -5,7 +5,7 @@ slogan: ''
 page:
   403: ''
   404: ''
-  front: /services
+  front: /node/1249
 admin_compact_mode: false
 weight_select_max: 100
 langcode: fi

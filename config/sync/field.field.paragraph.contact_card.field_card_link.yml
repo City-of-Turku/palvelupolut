@@ -1,0 +1,23 @@
+uuid: f6b42307-939d-4cef-bab0-00442e158909
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_link
+    - paragraphs.paragraphs_type.contact_card
+  module:
+    - link
+id: paragraph.contact_card.field_card_link
+field_name: field_card_link
+entity_type: paragraph
+bundle: contact_card
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

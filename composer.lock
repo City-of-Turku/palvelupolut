@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f6b78a6777c5ac0645ff4cf888765db",
+    "content-hash": "b3616799b583c4a6744b80072117c771",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2449,6 +2449,73 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/better_exposed_filters",
                 "issues": "https://www.drupal.org/project/issues/better_exposed_filters"
+            }
+        },
+        {
+            "name": "drupal/breadcrumb_manager",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/breadcrumb_manager.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/breadcrumb_manager-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "8ca5b5e4de778aaf4e6423fb7f04d9b9a6a60ad5"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/context": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1628236536",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "aronne",
+                    "homepage": "https://www.drupal.org/user/805228"
+                },
+                {
+                    "name": "bmeme",
+                    "homepage": "https://www.drupal.org/user/1396682"
+                },
+                {
+                    "name": "g0blin79",
+                    "homepage": "https://www.drupal.org/user/831030"
+                },
+                {
+                    "name": "nikolas.costa",
+                    "homepage": "https://www.drupal.org/user/2846635"
+                },
+                {
+                    "name": "robertom",
+                    "homepage": "https://www.drupal.org/user/1135096"
+                }
+            ],
+            "description": "A fully autonomous breadcrumb management module, based on paths.",
+            "homepage": "https://www.drupal.org/project/breadcrumb_manager",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/breadcrumb_manager",
+                "issues": "https://www.drupal.org/project/issues/breadcrumb_manager"
             }
         },
         {

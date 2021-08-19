@@ -1,0 +1,39 @@
+uuid: 13f10738-1012-4c16-a181-e032cf3a6670
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icons_grid.field_icons_grid_items
+    - field.field.paragraph.icons_grid.field_paragraph_heading
+    - paragraphs.paragraphs_type.icons_grid
+  module:
+    - paragraphs_asymmetric_translation_widgets
+id: paragraph.icons_grid.default
+targetEntityType: paragraph
+bundle: icons_grid
+mode: default
+content:
+  field_icons_grid_items:
+    type: paragraphs_classic_asymmetric
+    weight: 1
+    settings:
+      title: Icon
+      title_plural: Icons
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: icon
+    third_party_settings: {  }
+    region: content
+  field_paragraph_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

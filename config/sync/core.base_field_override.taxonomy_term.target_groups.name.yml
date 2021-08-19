@@ -1,0 +1,18 @@
+uuid: 2ea8a1e9-7c48-4ed9-bca6-eaab743dfc33
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.target_groups
+id: taxonomy_term.target_groups.name
+field_name: name
+entity_type: taxonomy_term
+bundle: target_groups
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

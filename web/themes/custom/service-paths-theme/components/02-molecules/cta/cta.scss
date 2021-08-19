@@ -43,7 +43,9 @@
 
   .cta__title {
     line-height: $line-height--heading;
-    margin-bottom: space(0.5);
+    margin-bottom: space(0.75);
+    font-weight: bold;
+    letter-spacing: 0;
   }
 
   .text {
@@ -73,7 +75,7 @@
     order: 2;
 
     @include above($width-large) {
-      margin-left: space(2);
+      margin-left: space(1.5);
     }
   }
 }

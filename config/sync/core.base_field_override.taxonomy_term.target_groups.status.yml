@@ -1,0 +1,22 @@
+uuid: 3fb001ad-3c28-4fa9-b281-dc6e829cebf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.target_groups
+id: taxonomy_term.target_groups.status
+field_name: status
+entity_type: taxonomy_term
+bundle: target_groups
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

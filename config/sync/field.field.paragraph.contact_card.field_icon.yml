@@ -1,0 +1,29 @@
+uuid: 3fafa2b7-5742-44e4-9340-7cdffc4cf642
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.contact_card
+    - taxonomy.vocabulary.icons
+id: paragraph.contact_card.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: contact_card
+label: Icon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      icons: icons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

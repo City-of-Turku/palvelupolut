@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.service.field_charge_info
     - field.field.node.service.field_description
-    - field.field.node.service.field_description_custom
     - field.field.node.service.field_heading
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_lead_text
@@ -89,20 +88,6 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: PTV
-    group_rewrite:
-      children:
-        - field_description_custom
-      parent_name: group_tabs
-      weight: 18
-      format_type: tab
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: Rewrite
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -124,16 +109,6 @@ content:
     region: content
   field_description:
     weight: 3
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
-    type: text_textarea_with_summary
-    region: content
-  field_description_custom:
-    weight: 10
     settings:
       rows: 9
       summary_rows: 3

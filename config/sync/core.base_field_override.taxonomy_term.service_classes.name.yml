@@ -1,0 +1,18 @@
+uuid: 795f4cc9-19fe-4043-909d-d04443495e98
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.service_classes
+id: taxonomy_term.service_classes.name
+field_name: name
+entity_type: taxonomy_term
+bundle: service_classes
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
