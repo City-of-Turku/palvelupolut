@@ -1,0 +1,19 @@
+uuid: a31f107a-2ca9-44d2-9480-93b4a93e2b45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contacts_heading
+    - node.type.service_channel
+id: node.service_channel.field_contacts_heading
+field_name: field_contacts_heading
+entity_type: node
+bundle: service_channel
+label: 'Contacts Heading'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

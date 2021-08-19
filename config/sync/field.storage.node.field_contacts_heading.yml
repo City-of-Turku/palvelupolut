@@ -1,0 +1,21 @@
+uuid: cd08147c-0278-489c-b25e-d271d906b4b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_contacts_heading
+field_name: field_contacts_heading
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

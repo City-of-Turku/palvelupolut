@@ -80,7 +80,9 @@
   "field_location",
   "field_paragraphs_sidebar",
   "field_tags",
-  "field_paragraphs_contacts"
+  "field_paragraphs_contacts",
+  "field_contacts_heading",
+  "field_services"
 ] %}
 
 {% embed "@templates/page/page-content.twig" with {
@@ -125,12 +127,15 @@
         heading__level: 2,
         heading__base_class: "title",
         heading__blockname: contact__base_class,
-        heading: 'test',
+        heading: content.field_contacts_heading,
       } %}
 
       {{ content.field_paragraphs_contacts }}
 
     </div>
+
+    {{ content.field_services }}
+
   {% endblock %}
 
 {% endembed %}

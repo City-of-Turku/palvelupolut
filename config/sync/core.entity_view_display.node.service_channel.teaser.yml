@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.service_channel.field_accessibility
     - field.field.node.service_channel.field_address
+    - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
     - field.field.node.service_channel.field_heading
@@ -36,6 +37,7 @@ content:
 hidden:
   field_accessibility: true
   field_address: true
+  field_contacts_heading: true
   field_description: true
   field_email: true
   field_heading: true

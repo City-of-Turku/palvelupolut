@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.service_channel.field_accessibility
     - field.field.node.service_channel.field_address
+    - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
     - field.field.node.service_channel.field_heading
@@ -46,6 +47,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: address_default
+    region: content
+  field_contacts_heading:
+    weight: 16
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_description:
     weight: 0
