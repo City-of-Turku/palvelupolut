@@ -73,8 +73,8 @@
   &__heading {
     font-size: $font-size--base;
     font-weight: 800;
-    letter-spacing: 0.56px;
-    line-height: 24px;
-    margin-bottom: space();
+    letter-spacing: $letter-spacing--none;
+    line-height: $line-height--heading;
+    margin-bottom: space(1.5);
   }
 }
