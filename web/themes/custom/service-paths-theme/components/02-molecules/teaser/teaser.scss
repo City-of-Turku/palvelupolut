@@ -39,6 +39,8 @@
   }
 
   &__title {
+    margin-bottom: space(0.5);
+
     a {
       box-shadow: none;
       color: color(text-dark);

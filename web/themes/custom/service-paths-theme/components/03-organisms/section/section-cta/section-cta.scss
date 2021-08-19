@@ -11,7 +11,10 @@
   .cta {
     flex: 31%;
     margin-bottom: space(2);
-    margin-right: space(1.5);
+
+    @include above($width-large) {
+      margin-right: space(1.5);
+    }
 
     &:last-child {
       margin-bottom: 0;

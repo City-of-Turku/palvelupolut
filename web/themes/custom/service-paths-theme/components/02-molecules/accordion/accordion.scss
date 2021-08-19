@@ -2,10 +2,11 @@
   margin-bottom: var(--space-elements);
 
   .heading {
-    margin: 0 0 space(2);
+    margin: 0 0 space(1.5);
     font-size: $font-size--large-3;
 
     @include above($width-medium) {
+      margin: 0 0 space(2);
       font-size: $font-size--large-5;
     }
   }

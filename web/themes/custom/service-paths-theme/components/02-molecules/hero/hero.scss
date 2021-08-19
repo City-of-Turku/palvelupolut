@@ -53,6 +53,7 @@
 
   &__title {
     color: color(text-inverse);
+    margin-bottom: space(1.5);
 
     @include above($width-large) {
       margin-bottom: space(2);

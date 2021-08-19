@@ -1,17 +1,17 @@
 .process-step {
   position: relative;
-  margin-bottom: space(3);
-  flex-direction: column;
+  margin-bottom: space(2);
   display: grid;
-  grid-template-columns: space(5.75) auto;
+  grid-template-columns: space(4.75) auto;
   grid-template-areas: "number title"
-    "text text"
-    "link link" ;
+    "number text"
+    "number link" ;
 
   @include above($width-large) {
-    flex-direction: row;
+    grid-template-columns: space(5.75) auto;
     grid-template-areas: "number title link"
       "number text link";
+    margin-bottom: space(3);
   }
 
   &:last-child {
@@ -35,11 +35,6 @@
     border: space(0.125) dashed color(border-primary);
     top: space(3);
     left: space(1.8);
-    display: none;
-
-    @include above($width-large) {
-      display: block;
-    }
   }
 
   &:last-child {
@@ -78,6 +73,7 @@
   &__link-list {
     padding: 0;
     grid-area: link;
+    margin-bottom: 0;
 
     @include above($width-large) {
       width: $width--sidebar;
@@ -87,13 +83,22 @@
 
   &__title {
     grid-area: title;
-    margin-top: space();
-    margin-bottom: space(0.75);
+    margin-top: 0;
+    margin-bottom: space();
     letter-spacing: $letter-spacing--none;
+
+    @include above($width-large) {
+      margin-top: space();
+      margin-bottom: space(0.75);
+    }
   }
 
   &__item {
     margin-bottom: space(1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     a {
       color: color(text-dark);
@@ -137,14 +142,11 @@
 
   &__inner {
     flex: 100%;
+    grid-area: content;
 
     @include above($width-large) {
       padding-left: space(2);
       margin-right: space(2);
     }
-  }
-
-  &__inner {
-    grid-area: content;
   }
 }
