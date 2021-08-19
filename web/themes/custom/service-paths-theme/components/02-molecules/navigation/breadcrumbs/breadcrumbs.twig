@@ -21,22 +21,10 @@
             list_item__blockname: breadcrumb__base_class,
           } %}
             {% block list_item_content %}
-              {% if loop.first %}
-                <a {{ bem('link', ['home'], breadcrumb__base_class) }} href="{{ item.url }}">
-                  {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-                    fontawesome_icon__name: "home",
-                  } %}
-
-                  {% include "@atoms/visually-hidden/visually-hidden.twig" with {
-                    visually_hidden__content: item.text,
-                  } %}
-                </a>
+              {% if item.url %}
+                <a {{ bem("link", [], breadcrumb__base_class) }} href="{{ item.url }}">{{ item.text }}</a>
               {% else %}
-                {% if item.url %}
-                  <a {{ bem("link", [], breadcrumb__base_class) }} href="{{ item.url }}">{{ item.text }}</a>
-                {% else %}
-                  {{ item.text }}
-                {% endif %}
+                {{ item.text }}
               {% endif %}
             {% endblock %}
           {% endembed %}

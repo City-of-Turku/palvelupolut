@@ -1,9 +1,9 @@
 .box-links {
   margin: 0 0 var(--space-elements);
-  padding: space(2);
-  padding-bottom: space();
-  background: color(background-section);
-  border-radius: $border-width;
+
+  .button {
+    @include button-with-icon;
+  }
 
   a {
     font-size: $font-size--base;
@@ -32,40 +32,17 @@
 
   &__box-links {
     margin: 0;
-    grid-area: links;
     padding: 0;
 
     .link {
-      box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
-
-      &:hover {
-        box-shadow: inset 0 -6ex 0 0 var(--color-text);
-      }
+      @include link-focus;
     }
   }
 
   &__links {
-    display: grid;
-    flex-direction: row;
-    grid-gap: space(2);
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
     margin-bottom: space(2);
-    grid-template-areas:
-      'links'
-      'attachment'
-      'cta';
-
-    @include above($width-medium) {
-      grid-template-columns: 50% 50%;
-      grid-gap: space(2);
-      grid-template-areas:
-        'links attachment'
-        'cta attachment';
-    }
-
-    @include above($width-large) {
-      grid-gap: space(4);
-    }
   }
 
   &__item {
@@ -79,16 +56,10 @@
 
   &__attachment-links {
     padding: 0;
-    grid-area: attachment;
     margin: 0;
 
     a {
-      box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
+      @include link-focus;
     }
-  }
-
-  @include above($width-small) {
-    padding: space(3);
-    padding-bottom: space(2);
   }
 }
