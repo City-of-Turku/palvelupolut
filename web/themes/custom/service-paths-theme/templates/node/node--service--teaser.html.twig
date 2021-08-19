@@ -98,8 +98,13 @@
 			</div>
 		</div>
 
-		<div {{ bem("card-image", [], teaser__base_class) }} aria-hidden="true">
-			{{ content.field_lead_image }}
-		</div>
+    {% set image_url = file_url(content.field_lead_image[0]['#media'].field_media_image.entity.uri.value|image_style('crop_650x350')) %}
+
+    <div {{ bem("card-image", [], teaser__base_class) }} aria-hidden="true">
+      {% include "@atoms/images/image/responsive-image.twig" with {
+        image_src: image_url,
+        responsive_image__blockname: card__base_class,
+      } %}
+    </div>
 	</div>
 </div>

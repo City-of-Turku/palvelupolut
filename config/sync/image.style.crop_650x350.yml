@@ -1,0 +1,17 @@
+uuid: 6729f398-58b7-4b07-9f06-83e2696ab292
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: crop_650x350
+label: 'Crop 650x350'
+effects:
+  3e8e964e-8376-4b41-8352-31e5bf577fe7:
+    uuid: 3e8e964e-8376-4b41-8352-31e5bf577fe7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 650
+      height: 350
+      crop_type: focal_point
