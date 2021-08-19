@@ -17,7 +17,7 @@ $width-xl: space(76.5); // 1224;
 $width-xxl: space(88); // 1408;
 
 :root {
-  --space-elements: #{space(5)};
+  --space-elements: #{space(4)};
   --space-page-padding: #{space(2)};
 
   @media (max-width: #{$width-large - space(math.div(1, 100))}) {
