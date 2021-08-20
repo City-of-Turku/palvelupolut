@@ -1,0 +1,21 @@
+uuid: 98e24753-92c6-48e2-8255-7238b1c92350
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_requirements_heading
+field_name: field_requirements_heading
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

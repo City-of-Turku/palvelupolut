@@ -10,7 +10,7 @@ class PtvHelper {
   /**
    * Returns an array.
    *
-   * @return array|mixed|string[][]
+   * @return array
    */
   public function prepareMigrateIterator($config, $key, $langcodes) {
 
@@ -267,6 +267,7 @@ class PtvHelper {
               'accessibility' => $accessibility,
               'ontology_terms' => $ontology_terms,
               'opening_hours' => $opening_hours,
+              'channel_type' => $object->serviceChannelType,
             ];
           }
         }

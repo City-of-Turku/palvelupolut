@@ -39,10 +39,12 @@
  */
 #}
 
+{% set pgId = paragraph.id() %}
+
 {% set accordion__base_class = accordion__base_class|default('accordion') %}
 {% set accordion__modifiers = accordion__modifiers|default([]) %}
 
-<div {{ bem(accordion__base_class, accordion__modifiers) }}>
+<div id="pg{{ pgId }}" {{ bem(accordion__base_class, accordion__modifiers) }}>
 
 	{% if content.field_paragraph_heading|render %}
 		{% include '@atoms/text/heading/heading.twig' with {

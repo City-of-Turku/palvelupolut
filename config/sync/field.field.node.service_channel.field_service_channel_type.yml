@@ -1,0 +1,21 @@
+uuid: 9ec7a233-9575-4a22-a9eb-0e61437a18ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_channel_type
+    - node.type.service_channel
+  module:
+    - options
+id: node.service_channel.field_service_channel_type
+field_name: field_service_channel_type
+entity_type: node
+bundle: service_channel
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -53,6 +53,7 @@ process:
   field_webpage: webpage
   field_address: address
   field_languages: langs
+  field_service_channel_type: channel_type
 
   path/pathauto:
     plugin: default_value

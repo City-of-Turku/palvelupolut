@@ -36,11 +36,12 @@
  * @ingroup themeable
  */
 #}
+{% set pgId = paragraph.id() %}
 
 {% set section_icon_grid__base_class = section_icon_grid__base_class|default("section-icon-grid") %}
 {% set section_icon_grid__modifiers = section_icon_grid__modifiers|default([]) %}
 
-<div {{ bem(section_icon_grid__base_class, section_icon_grid__modifiers, section_icon_grid__blockname) }}>
+<div id="pg{{ pgId }}" {{ bem(section_icon_grid__base_class, section_icon_grid__modifiers, section_icon_grid__blockname) }}>
 	{% include "@atoms/text/heading/heading.twig" with {
     "heading": paragraph.field_paragraph_heading.value,
     "heading__level": section_icon_grid__title_level|default("2"),

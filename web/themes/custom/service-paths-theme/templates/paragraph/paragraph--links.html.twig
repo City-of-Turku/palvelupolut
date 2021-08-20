@@ -39,10 +39,12 @@
  */
 #}
 
+{% set pgId = paragraph.id() %}
+
 {% set box_links__base_class = box_links__base_class|default('box-links') %}
 {% set box_links__modifiers = box_links__modifiers|default([]) %}
 
-<div {{ bem(box_links__base_class, box_links__modifiers) }}>
+<div id="pg{{ pgId }}" {{ bem(box_links__base_class, box_links__modifiers) }}>
   {{ content.field_paragraph_heading }}
 
   <div {{ bem("links", [], box_links__base_class) }}>

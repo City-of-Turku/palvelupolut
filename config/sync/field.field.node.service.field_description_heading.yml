@@ -1,0 +1,19 @@
+uuid: 8141012f-b7f0-4fe4-b624-e372e7c201a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_heading
+    - node.type.service
+id: node.service.field_description_heading
+field_name: field_description_heading
+entity_type: node
+bundle: service
+label: 'Description Heading'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

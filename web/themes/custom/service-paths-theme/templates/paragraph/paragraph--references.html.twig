@@ -39,7 +39,10 @@
  */
 #}
 
+{% set pgId = paragraph.id() %}
+
+<div id="pg{{ pgId }}">
 
   {{ content.field_paragraph_content_ref }}
 
-
+</div>

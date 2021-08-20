@@ -1,5 +1,5 @@
 uuid: feb85a2b-e289-4ab2-93b7-6fbb4f7e17ce
-langcode: fi
+langcode: zxx
 status: true
 dependencies: {  }
 _core:
@@ -7,4 +7,4 @@ _core:
 id: short
 label: 'Short date'
 locked: false
-pattern: j.n.Y
+pattern: 'd.m.Y - H:i'

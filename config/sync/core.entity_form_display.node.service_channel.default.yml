@@ -8,15 +8,14 @@ dependencies:
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
-    - field.field.node.service_channel.field_heading
     - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
-    - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
     - field.field.node.service_channel.field_webpage
@@ -80,6 +79,7 @@ third_party_settings:
       label: Paragraphs
     group_ptv:
       children:
+        - field_service_channel_type
         - field_description
         - field_webpage
         - field_email
@@ -141,7 +141,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_accessibility:
-    weight: 17
+    weight: 26
     settings:
       rows: 5
       placeholder: ''
@@ -149,7 +149,7 @@ content:
     type: text_textarea
     region: content
   field_address:
-    weight: 16
+    weight: 25
     settings: {  }
     third_party_settings: {  }
     type: address_default
@@ -163,7 +163,7 @@ content:
     type: string_textfield
     region: content
   field_description:
-    weight: 11
+    weight: 21
     settings:
       rows: 9
       summary_rows: 3
@@ -173,23 +173,15 @@ content:
     type: text_textarea_with_summary
     region: content
   field_email:
-    weight: 13
+    weight: 23
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: email_default
     region: content
-  field_heading:
-    weight: 7
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_languages:
-    weight: 20
+    weight: 29
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -201,16 +193,8 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
-  field_lead_text:
-    weight: 8
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_opening_hours:
-    weight: 18
+    weight: 27
     settings:
       inline: true
       first:
@@ -269,7 +253,7 @@ content:
     type: paragraphs_classic_asymmetric
     region: content
   field_phone_numbers:
-    weight: 15
+    weight: 24
     settings:
       inline: true
       first:
@@ -291,6 +275,12 @@ content:
     third_party_settings: {  }
     type: double_field
     region: content
+  field_service_channel_type:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_services:
     weight: 10
     settings:
@@ -302,7 +292,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_tags:
-    weight: 19
+    weight: 28
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -312,7 +302,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_webpage:
-    weight: 12
+    weight: 22
     settings:
       placeholder_url: ''
       placeholder_title: ''

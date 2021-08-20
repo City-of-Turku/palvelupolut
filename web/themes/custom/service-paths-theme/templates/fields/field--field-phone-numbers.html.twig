@@ -38,13 +38,26 @@
  */
 #}
 
-{% set section_teaser__base_class = section_teaser__base_class|default("section-teaser") %}
-{% set section_teaser__modifiers = section_teaser__modifiers|default([]) %}
+{% set cards = [] %}
 
+{% for item in items %}
 
-<div {{ bem(section_teaser__base_class, section_teaser__modifiers) }}>
+  {% set first = item.content['#item'].getValue.first %}
+  {% set second = item.content['#item'].getValue.second %}
 
-  {% for item in items %}
-    {{ item.content }}
-  {% endfor %}
-</div>
+  {% set data = {
+      "info_title": second,
+      "text" : first,
+      "icon": "phone",
+    }
+  %}
+
+  {% set cards = cards|merge([data]) %}
+
+{% endfor %}
+
+{% include "@molecules/contact-card/contact-card.twig" with {
+  section_contact_cards__modifiers: process_step_modifiers,
+  contact_card__title: 'Phone Numbers'|t,
+  contact_card__items: cards,
+} %}

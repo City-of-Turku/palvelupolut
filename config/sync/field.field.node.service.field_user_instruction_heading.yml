@@ -1,15 +1,15 @@
-uuid: 7c16aeee-86bc-47c9-8366-8090276ba18c
+uuid: f01040bf-6884-4c73-a98c-6527894576ad
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_heading
+    - field.storage.node.field_user_instruction_heading
     - node.type.service
-id: node.service.field_heading
-field_name: field_heading
+id: node.service.field_user_instruction_heading
+field_name: field_user_instruction_heading
 entity_type: node
 bundle: service
-label: Heading
+label: 'User Instruction Heading'
 description: ''
 required: false
 translatable: true

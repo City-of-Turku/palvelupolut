@@ -67,7 +67,7 @@
  */
 #}
 
-{% set date = node.createdtime|format_date('short') %}
+{% set date = node.createdtime|format_date('date') %}
 
 {% embed "@molecules/teaser/teaser.twig" with {
   teaser__modifiers: cta_modifiers,

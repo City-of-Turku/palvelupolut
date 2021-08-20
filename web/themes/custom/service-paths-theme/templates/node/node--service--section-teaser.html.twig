@@ -67,98 +67,14 @@
  */
 #}
 
-{% set excluded_fields = [
-  "field_heading",
-  "field_lead_image",
-  "field_lead_text",
-  "field_description",
-  "field_description_custom",
-  "field_address",
-  "field_email",
-  "field_phone",
-  "field_webpage",
-  "field_location",
-  "field_paragraphs_sidebar",
-  "field_tags",
-  "field_paragraphs_contacts",
-  "field_contacts_heading",
-  "field_services"
-] %}
 
-{% embed "@templates/page/page-content.twig" with {
-  page_sidebar: true,
+{% embed "@molecules/teaser/teaser.twig" with {
+  teaser__modifiers: cta_modifiers,
+  teaser__title: label,
+  teaser__link: url,
 } %}
-  {% block page_content_pre_content %}
-    {{ title_prefix }}
-    {{ title_suffix }}
-
-    {% embed "@molecules/hero/hero.twig" with {
-      hero__modifiers: hero__modifiers|default(["light"]),
-      hero__title: label,
-      hero__lead_text: node.field_description.summary,
-    } %}
-      {% block hero_image %}
-        {{ content.field_lead_image }}
-      {% endblock %}
-    {% endembed %}
+  {% block teaser_image %}
+    {{ content.field_lead_image }}
+    {{ content.field_image }}
   {% endblock %}
-
-  {% block page_content %}
-    {{ content.field_description }}
-
-    {{ content.field_paragraphs }}
-  {% endblock %}
-
-  {% block page_sidebar_post_content %}
-    {{ content.field_paragraphs_sidebar }}
-  {% endblock %}
-
-  {% block page_content_post_content %}
-    {% set section_contact_cards__base_class = section_contact_cards__base_class|default("section-contact-cards") %}
-    {% set section_contact_cards__modifiers = section_contact_cards__modifiers|default(["vertical"]) %}
-
-    <div {{ bem(section_contact_cards__base_class, section_contact_cards__modifiers, section_contact_cards__blockname) }}>
-      {% include "@atoms/text/heading/heading.twig" with {
-        heading__level: 2,
-        heading__base_class: "title",
-        heading__blockname: contact__base_class,
-        heading: content.field_contacts_heading,
-      } %}
-
-      {% set main_cards = [] %}
-      {% set main_cards = main_cards|merge([{
-        "info_title": "Address"|t,
-        'text': content.field_address,
-        'icon': 'map-marker-alt',
-      }]) %}
-      {% set main_cards = main_cards|merge([{
-        'link_title': node.field_email.value,
-        'url': 'mailto:' ~ node.field_email.value,
-        'icon': 'at',
-      }]) %}
-      {% set main_cards = main_cards|merge([{
-        'link_title': node.field_webpage.title,
-        'url': node.field_webpage.0.url.toString,
-        'icon': 'globe',
-      }]) %}
-
-      {% include "@molecules/contact-card/contact-card.twig" with {
-        section_contact_cards__modifiers: process_step_modifiers,
-        contact_card__title: '',
-        contact_card__items: main_cards,
-      } %}
-
-
-      {{ content.field_location }}
-      {{ content.field_phone_numbers }}
-      {{ content.field_opening_hours }}
-
-      {{ content.field_paragraphs_contacts }}
-
-    </div>
-
-    {{ content.field_services }}
-
-  {% endblock %}
-
 {% endembed %}

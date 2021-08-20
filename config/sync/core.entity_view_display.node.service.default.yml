@@ -4,16 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.service.field_charge_info
+    - field.field.node.service.field_charge_info_heading
     - field.field.node.service.field_description
-    - field.field.node.service.field_heading
+    - field.field.node.service.field_description_heading
     - field.field.node.service.field_lead_image
-    - field.field.node.service.field_lead_text
     - field.field.node.service.field_paragraphs
+    - field.field.node.service.field_paragraphs_sidebar
     - field.field.node.service.field_requirements
+    - field.field.node.service.field_requirements_heading
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
+    - field.field.node.service.field_user_instruction_heading
     - node.type.service
   module:
     - entity_reference_revisions
@@ -26,10 +29,18 @@ mode: default
 content:
   field_charge_info:
     weight: 6
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_charge_info_heading:
+    weight: 15
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_description:
     weight: 3
@@ -38,8 +49,8 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_heading:
-    weight: 0
+  field_description_heading:
+    weight: 12
     label: hidden
     settings:
       link_to_entity: false
@@ -55,13 +66,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_lead_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_paragraphs:
     weight: 7
     label: hidden
@@ -71,12 +75,29 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_paragraphs_sidebar:
+    weight: 16
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
   field_requirements:
     weight: 4
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_requirements_heading:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_service_classes:
     weight: 10
@@ -104,10 +125,18 @@ content:
     region: content
   field_user_instruction:
     weight: 5
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_user_instruction_heading:
+    weight: 14
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   service_channels_embed:
     weight: 11

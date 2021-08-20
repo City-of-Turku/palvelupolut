@@ -9,15 +9,14 @@ dependencies:
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
-    - field.field.node.service_channel.field_heading
     - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
-    - field.field.node.service_channel.field_lead_text
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
     - field.field.node.service_channel.field_webpage
@@ -40,15 +39,14 @@ hidden:
   field_contacts_heading: true
   field_description: true
   field_email: true
-  field_heading: true
   field_languages: true
   field_lead_image: true
-  field_lead_text: true
   field_opening_hours: true
   field_paragraphs: true
   field_paragraphs_contacts: true
   field_paragraphs_sidebar: true
   field_phone_numbers: true
+  field_service_channel_type: true
   field_services: true
   field_tags: true
   field_webpage: true
