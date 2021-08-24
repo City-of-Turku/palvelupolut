@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_service_channel_type
     - node.type.service_channel
   module:
+    - better_exposed_filters
     - eva
     - node
     - options
@@ -527,6 +528,7 @@ display:
         filters: false
         filter_groups: false
         title: false
+        exposed_form: false
       row:
         type: 'entity:node'
         options:
@@ -652,11 +654,94 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
+        field_service_channel_type_value:
+          id: field_service_channel_type_value
+          table: node__field_service_channel_type
+          field: field_service_channel_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_service_channel_type_value_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: field_service_channel_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
       filter_groups:
         operator: AND
         groups:
           1: AND
       title: 'Service Points'
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Filter
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              field_ptv_id_value:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_service_channel_type_value:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,39 @@
+uuid: 9739d025-0120-467c-bb00-33412408ddfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.service_channel
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    skip_not_empty_value: false
+    disabled: false
+    hidden: false
+    providers:
+      - openstreetmap
+    dumper: wkt
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+    field: field_address
+    delta_handling: default
+id: node.service_channel.field_location
+field_name: field_location
+entity_type: node
+bundle: service_channel
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  backend: geofield_backend_default
+field_type: geofield

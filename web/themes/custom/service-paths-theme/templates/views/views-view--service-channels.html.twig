@@ -39,14 +39,9 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% if title %}
-    {% include '@atoms/text/heading/heading.twig' with {
-      heading: title,
-      heading__level: section_cards__title_level|default('2'),
-    } %}
-  {% endif %}
   {{ title_suffix }}
   {% if header %}
     <div class="view-header">
@@ -54,7 +49,18 @@
     </div>
   {% endif %}
   {% if exposed %}
-    <div class="view-filters">
+
+    {% set selection_box__base_class = "selection_box" %}
+    {% set selection_box__modifiers = selection_box__modifiers|default([]) %}
+
+    <div {{ bem("wrapper", [], selection_box__base_class) }}>
+      {% include "@atoms/text/heading/heading.twig" with {
+        heading__level: 2,
+        heading__base_class: "title",
+        heading__blockname: selection_box__base_class,
+        heading: 'Service Points'|t,
+      } %}
+
       {{ exposed }}
     </div>
   {% endif %}

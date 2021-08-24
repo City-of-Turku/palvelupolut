@@ -19,7 +19,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   first:
-    label: Day/s
+    label: 'Day/s or Title'
     required: true
     list: false
     allowed_values: {  }
@@ -29,7 +29,7 @@ settings:
     off_label: 'Off'
   second:
     label: Hours
-    required: true
+    required: false
     list: false
     allowed_values: {  }
     max: null

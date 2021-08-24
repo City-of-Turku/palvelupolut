@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.service_channel.field_email
     - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
+    - field.field.node.service_channel.field_location
     - field.field.node.service_channel.field_opening_hours
     - field.field.node.service_channel.field_paragraphs
     - field.field.node.service_channel.field_paragraphs_contacts
@@ -25,6 +26,7 @@ dependencies:
     - address
     - double_field
     - entity_reference_revisions
+    - leaflet
     - link
     - options
     - text
@@ -85,6 +87,78 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_location:
+    weight: 16
+    label: hidden
+    settings:
+      multiple_map: false
+      popup_content: ''
+      leaflet_map: 'OSM Mapnik'
+      height: 300
+      height_unit: px
+      hide_empty_map: true
+      disable_wheel: true
+      reset_map:
+        position: topright
+        control: false
+      map_position:
+        center:
+          lat: !!float 0
+          lon: !!float 0
+        zoom: 14
+        minZoom: 1
+        maxZoom: 18
+        zoomFiner: 0
+        force: false
+      weight: ''
+      icon:
+        iconType: html
+        iconUrl: ''
+        shadowUrl: ''
+        className: ''
+        html: '<i class="fa fa-map-marker fa-3x"></i>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+        iconSize:
+          x: '20'
+          'y': '20'
+        iconAnchor:
+          x: '9'
+          'y': '37'
+        shadowSize:
+          x: ''
+          'y': ''
+        shadowAnchor:
+          x: ''
+          'y': ''
+        popupAnchor:
+          x: ''
+          'y': ''
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      geocoder:
+        settings:
+          position: topright
+          input_size: 25
+          providers:
+            openstreetmap:
+              weight: 0
+              checked: false
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          options: ''
+          popup: false
+        control: false
+      popup: false
+      fullscreen_control: false
+      gesture_handling: false
+      leaflet_markercluster:
+        control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
+        include_path: false
+    third_party_settings: {  }
+    type: leaflet_formatter_default
     region: content
   field_opening_hours:
     weight: 11

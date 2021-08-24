@@ -5,6 +5,8 @@
  * Contains ptv.module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * PTV Cron.
  */
@@ -21,5 +23,50 @@ function ptv_cron() {
     $config->set('services', $services);
     $config->set('service_channels', $service_channels);
     $config->save();
+  }
+}
+
+
+function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+  // Service
+  if ($node->bundle() == 'service') {
+    $ptv_fields = [
+      'field_charge_info',
+      'field_description',
+      'field_ptv_id',
+      'field_requirements',
+      'field_service_classes',
+      'field_tags',
+      'field_target_groups',
+      'field_user_instruction'
+    ];
+    if (!$node->field_ptv_id->isEmpty()) {
+      foreach ($ptv_fields as $field) {
+        $form[$field]['widget']['#disabled'] = TRUE;
+      }
+    }
+  }
+  // Service Channel
+  if ($node->bundle() == 'service_channel') {
+    $ptv_fields = [
+      'field_accessibility',
+      'field_address',
+      'field_description',
+      'field_email',
+      'field_languages',
+      'field_opening_hours',
+      'field_phone_numbers',
+      'field_ptv_id',
+      'field_service_channel_type',
+      'field_services',
+      'field_tags',
+      'field_webpage',
+    ];
+    if (!$node->field_ptv_id->isEmpty()) {
+      foreach ($ptv_fields as $field) {
+        $form[$field]['widget']['#disabled'] = TRUE;
+      }
+    }
   }
 }
