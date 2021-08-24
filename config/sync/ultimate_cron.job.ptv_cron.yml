@@ -1,6 +1,6 @@
 uuid: f2f28d1f-4b72-4c05-8839-ee038529e6a4
 langcode: fi
-status: true
+status: false
 dependencies:
   module:
     - ptv
@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: ptv_cron
 weight: 0
 module: ptv
-callback: ptv_cron
+callback: _ptv_config_update_cron
 scheduler:
   id: simple
   configuration:

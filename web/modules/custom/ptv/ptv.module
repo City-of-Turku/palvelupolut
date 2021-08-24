@@ -10,7 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * PTV Cron.
  */
-function ptv_cron() {
+function _ptv_config_update_cron() {
   // $ptv_service = \Drupal::service('ptv.api_service');
   // $config = \Drupal::configFactory()->getEditable('ptv.settings');
   // if ($config->get('municipality')) {
