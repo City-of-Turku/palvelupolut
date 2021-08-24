@@ -1,5 +1,5 @@
 .box-links {
-  margin: 0 0 var(--space-elements);
+  margin: var(--space-elements) 0;
 
   .button {
     @include button-with-icon;
@@ -27,7 +27,11 @@
     font-weight: bold;
     letter-spacing: 0;
     line-height: $line-height--heading;
-    margin-bottom: space(2);
+    margin-bottom: space(1.5);
+
+    @include above($width-large) {
+      margin-bottom: space(2);
+    }
   }
 
   &__box-links {
@@ -47,7 +51,11 @@
 
   &__item {
     padding: 0;
-    margin-bottom: space();
+    margin-bottom: space(0.75);
+
+    @include above($width-large) {
+      margin-bottom: space();
+    }
 
     &::marker {
       content: '';
