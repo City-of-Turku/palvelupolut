@@ -1,5 +1,9 @@
 .accordion {
-  margin-bottom: var(--space-elements);
+  margin: var(--space-elements) 0;
+
+  @include above($width-large) {
+    max-width: calc(100% - #{$width--sidebar});
+  }
 
   .heading {
     margin: 0 0 space(1.5);
