@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_paragraphs
     - field.field.node.service.field_paragraphs_sidebar
+    - field.field.node.service.field_ptv_id
     - field.field.node.service.field_requirements
     - field.field.node.service.field_requirements_heading
     - field.field.node.service.field_service_classes
@@ -82,6 +83,7 @@ third_party_settings:
         - field_tags
         - field_target_groups
         - field_service_classes
+        - field_ptv_id
       parent_name: group_tabs
       weight: 18
       format_type: tab
@@ -182,6 +184,14 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: paragraphs_classic_asymmetric
+    region: content
+  field_ptv_id:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_requirements:
     weight: 29

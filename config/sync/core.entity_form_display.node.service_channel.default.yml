@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
@@ -49,8 +50,6 @@ third_party_settings:
       label: Tabs
     group_hero:
       children:
-        - field_heading
-        - field_lead_text
         - field_lead_image
       parent_name: group_tabs
       weight: 22
@@ -89,6 +88,7 @@ third_party_settings:
         - field_opening_hours
         - field_tags
         - field_languages
+        - field_ptv_id
       parent_name: group_tabs
       weight: 25
       format_type: tab
@@ -136,7 +136,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -275,6 +275,14 @@ content:
     third_party_settings: {  }
     type: double_field
     region: content
+  field_ptv_id:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_service_channel_type:
     weight: 20
     settings: {  }
@@ -282,7 +290,7 @@ content:
     type: options_select
     region: content
   field_services:
-    weight: 10
+    weight: 11
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -318,7 +326,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -326,21 +334,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -352,7 +360,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

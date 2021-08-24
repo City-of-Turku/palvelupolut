@@ -44,10 +44,24 @@
 
   {% set first = item.content['#item'].getValue.first %}
   {% set second = item.content['#item'].getValue.second %}
+  {% set phone_nr = item.content['#item'].getValue.second|replace({'+358 ': '0'}) %}
+  {% set first_part = phone_nr|slice(0,2) %}
+
+  {% if first_part starts with '02' or first_part starts with '09' %}
+    {% set second_part = phone_nr|slice(2,3) %}
+    {% set third_part = phone_nr|slice(5) %}
+  {% else %}
+    {% set first_part = phone_nr|slice(0,3) %}
+    {% set second_part = phone_nr|slice(3,3) %}
+    {% set third_part = phone_nr|slice(6) %}
+  {% endif %}
+
+  {% set phone_nr = first_part ~ ' ' ~ second_part ~ ' ' ~ third_part %}
 
   {% set data = {
-      "info_title": second,
-      "text" : first,
+      "link_title": phone_nr,
+      "text": first,
+      "url": 'mailto:' ~ second,
       "icon": "phone",
     }
   %}

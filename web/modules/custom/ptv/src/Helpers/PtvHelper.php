@@ -19,8 +19,9 @@ class PtvHelper {
 
     $data = [];
     foreach ($config_data as $key => $name) {
-      // if ($key == 'e1d74431-eee4-485c-bcc2-27c69ec7462b') { // Service Channel Kastun päiväkoti (Pyörämäentie 4)
-      // if ($key == 'ff000abb-d4ba-4342-977b-743215b4d567') { // Service Varhaiskasvatuksen vuorohoito.
+      // Service Channel Kastun päiväkoti (Pyörämäentie 4)
+      // if ($key == '552b8911-9117-472c-81eb-bf0fcd9b14e3') {
+        // if ($key == 'e268fd9e-89b6-447c-b5e4-2b82c3a1137c') { // Service Varhaiskasvatuksen vuorohoito.
         foreach ($langcodes as $langcode) {
           $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
         }
@@ -40,24 +41,37 @@ class PtvHelper {
 
     $ptv_service = \Drupal::service('ptv.api_service');
     $data = [];
+    $translations = [];
     switch ($key) {
       case 'services':
         $object = $ptv_service->getService($id);
         $ontology_terms = [];
         $target_groups = [];
         $service_classes = [];
+        foreach ($object->serviceNames as $value) {
+          if ($value->language == 'fi') {
+            $name = $value->value;
+          }
+          if ($value->language == $langcode) {
+            $name = $value->value;
+            break;
+          }
+        }
         foreach ($object->serviceDescriptions as $value) {
           if ($value->language == $langcode) {
             switch ($value->type) {
               case 'Summary':
                 $summary = $value->value;
                 break;
+
               case 'Description':
                 $description = $value->value;
                 break;
+
               case 'UserInstruction':
                 $user_instruction = $value->value;
                 break;
+
               case 'ChargeTypeAdditionalInfo':
                 $charge_info = $value->value;
                 break;
@@ -98,29 +112,35 @@ class PtvHelper {
             }
           }
         }
-        foreach ($object->serviceNames as $value) {
-          if ($value->language == $langcode) {
-            $name = $value->value;
-            $data = [
-              'id' => $id,
-              'name' => $name,
-              'langcode' => $value->language,
-              'summary' => $summary,
-              'description' => $description,
-              'user_instruction' => isset($user_instruction) ? $user_instruction : '',
-              'charge_info' => isset($charge_info) ? $charge_info : '',
-              'ontology_terms' => $ontology_terms,
-              'target_groups' => $target_groups,
-              'requirements' => isset($requirements) ? $requirements : '',
-              'service_classes' => $service_classes,
-            ];
-          }
-        }
+
+        $data = [
+          'id' => $id,
+          'name' => $name,
+          'langcode' => $langcode,
+          'summary' => $summary,
+          'description' => $description,
+          'user_instruction' => isset($user_instruction) ? $user_instruction : '',
+          'charge_info' => isset($charge_info) ? $charge_info : '',
+          'ontology_terms' => $ontology_terms,
+          'target_groups' => $target_groups,
+          'requirements' => isset($requirements) ? $requirements : '',
+          'service_classes' => $service_classes,
+        ];
+
         break;
 
       case 'service_channels':
 
         $object = $ptv_service->getServiceChannel($id);
+        foreach ($object->serviceChannelNames as $value) {
+          if ($value->language == 'fi') {
+            $name = $value->value;
+          }
+          if ($value->language == $langcode) {
+            $name = $value->value;
+            break;
+          }
+        }
         $services = [];
         foreach ($object->services as $value) {
           $services[] = $value->service->id;
@@ -130,6 +150,7 @@ class PtvHelper {
         $phone_numbers = [];
         $ontology_terms = [];
         $opening_hours = [];
+        $accessibility = '';
 
         foreach ($object->serviceChannelDescriptions as $value) {
           if ($value->language == $langcode) {
@@ -211,7 +232,7 @@ class PtvHelper {
                 $i++;
               }
             }
-            $accessibility = '';
+
             if (!empty($sentences)) {
               foreach ($sentences as $key => $value) {
                 $accessibility .= '<h3>' . $value['group'] . '</h3>';
@@ -235,42 +256,60 @@ class PtvHelper {
           $i = 0;
           foreach ($object->serviceHours as $serviceHours) {
             if ($serviceHours->validForNow) {
-              foreach ($serviceHours->openingHour as $day) {
-                $opening_hours[$i]['first'] = $day->dayFrom;
-                $opening_hours[$i]['first'] .= !empty($day->dayTo) ? ' - ' . $day->dayTo : '';
-                $opening_hours[$i]['second'] = $day->from . ' - ' . $day->to;
-                $i++;
+              foreach ($serviceHours->additionalInformation as $key => $value) {
+                if ($value->language == $langcode) {
+                  $opening_hours[$i]['first'] = $value->value;
+                  $i++;
+                }
               }
               if ($serviceHours->isAlwaysOpen) {
                 $opening_hours[$i]['first'] = 'Week';
                 $opening_hours[$i]['second'] = 'Always Open';
+                continue;
               }
+              $save_time = NULL;
+              $h=0;
+              $times = [];
+              foreach ($serviceHours->openingHour as $day) {
+                $time = substr($day->from, 0, -3) . ' - ' . substr($day->to, 0, -3);
+                $weekday = $day->dayFrom;
+                $weekday .= !empty($day->dayTo) ? ' - ' . $day->dayTo : '';
+                $times[$h][$time][] = $weekday;
+                if ($save_time && $save_time != $time) {
+                  $h++;
+                }
+                $save_time = $time;
+              }
+              foreach ($times as $key => $days) {
+                $final_time = array_key_first($days);
+                $days_array = current($days);
+                $final_days = $days_array[0] . ' - ' . array_pop($days_array);
+                $opening_hours[$i]['first'] = $final_days;
+                $opening_hours[$i]['second'] = $final_time;
+                $i++;
+              }
+
             }
           }
         }
 
-        foreach ($object->serviceChannelNames as $value) {
-          if ($value->language == $langcode) {
-            $name = $value->value;
-            $data = [
-              'id' => $id,
-              'name' => $name,
-              'langcode' => $value->language,
-              'services' => $services,
-              'summary' => $summary,
-              'description' => $description,
-              'email' => isset($email) ? $email : '',
-              'phone_numbers' => $phone_numbers,
-              'webpage' => isset($webpage) ? $webpage : '',
-              'address' => isset($address) ? $address : '',
-              'langs' => $langs,
-              'accessibility' => $accessibility,
-              'ontology_terms' => $ontology_terms,
-              'opening_hours' => $opening_hours,
-              'channel_type' => $object->serviceChannelType,
-            ];
-          }
-        }
+        $data = [
+          'id' => $id,
+          'name' => $name,
+          'langcode' => $langcode,
+          'services' => $services,
+          'summary' => $summary,
+          'description' => $description,
+          'email' => isset($email) ? $email : '',
+          'phone_numbers' => $phone_numbers,
+          'webpage' => isset($webpage) ? $webpage : '',
+          'address' => isset($address) ? $address : '',
+          'langs' => $langs,
+          'accessibility' => $accessibility,
+          'ontology_terms' => $ontology_terms,
+          'opening_hours' => $opening_hours,
+          'channel_type' => $object->serviceChannelType,
+        ];
 
         break;
 

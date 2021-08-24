@@ -21,6 +21,7 @@ process:
     plugin: default_value
     default_value: service
   title: name
+  field_ptv_id: id
   path/pathauto:
     plugin: default_value
     default_value: 1

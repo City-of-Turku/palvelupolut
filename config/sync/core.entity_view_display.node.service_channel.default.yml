@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
@@ -34,7 +35,7 @@ bundle: service_channel
 mode: default
 content:
   field_accessibility:
-    weight: 11
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -48,7 +49,7 @@ content:
     type: address_default
     region: content
   field_contacts_heading:
-    weight: 16
+    weight: 14
     label: hidden
     settings:
       link_to_entity: false
@@ -70,7 +71,7 @@ content:
     type: email_mailto
     region: content
   field_languages:
-    weight: 10
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -86,7 +87,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_opening_hours:
-    weight: 13
+    weight: 11
     label: hidden
     settings:
       inline: true
@@ -118,7 +119,7 @@ content:
     region: content
   field_paragraphs_contacts:
     type: entity_reference_revisions_entity_view
-    weight: 14
+    weight: 12
     label: hidden
     settings:
       view_mode: default
@@ -157,7 +158,7 @@ content:
     type: double_field_unformatted_list
     region: content
   field_service_channel_type:
-    weight: 17
+    weight: 15
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -165,7 +166,7 @@ content:
     region: content
   field_services:
     type: entity_reference_entity_view
-    weight: 15
+    weight: 13
     region: content
     label: hidden
     settings:
@@ -173,7 +174,7 @@ content:
       link: false
     third_party_settings: {  }
   field_tags:
-    weight: 12
+    weight: 10
     label: above
     settings:
       link: true
@@ -193,5 +194,6 @@ content:
     type: link
     region: content
 hidden:
+  field_ptv_id: true
   langcode: true
   links: true

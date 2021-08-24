@@ -144,11 +144,30 @@ class PtvApiService {
    */
   public function getServiceChannelsByOrganization($organization) {
     $response = $this->request('GET', 'ServiceChannel/organization/' . $organization);
+    $multiple_pages = FALSE;
+    if ($response && isset($response->pageCount) && $response->pageCount > 1) {
+      $multiple_pages = TRUE;
+      $page_count = $response->pageCount;
+    }
 
     $results = [];
-    if ($response && !empty($response->itemList)) {
-      foreach ($response->itemList as $item) {
-        $results[$item->id] = $item->name;
+    if ($multiple_pages) {
+      $active_page = 1;
+      while ($active_page <= $page_count) {
+        $response = $this->request('GET', 'ServiceChannel/organization/' . $organization . '?page=' . $active_page);
+        if ($response && !empty($response->itemList)) {
+          foreach ($response->itemList as $item) {
+            $results[$item->id] = $item->name;
+          }
+        }
+        $active_page++;
+      }
+    }
+    else {
+      if ($response && !empty($response->itemList)) {
+        foreach ($response->itemList as $item) {
+          $results[$item->id] = $item->name;
+        }
       }
     }
     asort($results);

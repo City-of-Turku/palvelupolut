@@ -25,6 +25,7 @@ process:
     plugin: migration_lookup
     source: services
     migration: services
+  field_ptv_id: id
   path/pathauto:
     plugin: default_value
     default_value: 1

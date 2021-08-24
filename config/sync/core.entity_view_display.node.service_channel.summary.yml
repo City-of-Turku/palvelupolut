@@ -1,9 +1,9 @@
-uuid: 5f7494a3-700b-496a-824a-d5469ac9a883
+uuid: 56f3ad06-337a-412c-b69b-1c855c3ecd50
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.summary
     - field.field.node.service_channel.field_accessibility
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
@@ -23,37 +23,69 @@ dependencies:
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
+    - address
+    - link
+    - options
+    - text
     - user
-id: node.service_channel.teaser
+id: node.service_channel.summary
 targetEntityType: node
 bundle: service_channel
-mode: teaser
+mode: summary
 content:
-  field_lead_image:
-    type: entity_reference_entity_view
-    weight: 0
+  field_address:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_plain
     region: content
+  field_description:
+    weight: 0
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      trim_length: 600
     third_party_settings: {  }
+    type: text_summary_or_trimmed
+    region: content
+  field_email:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_service_channel_type:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_webpage:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
 hidden:
   field_accessibility: true
-  field_address: true
   field_contacts_heading: true
-  field_description: true
-  field_email: true
   field_languages: true
+  field_lead_image: true
   field_opening_hours: true
   field_paragraphs: true
   field_paragraphs_contacts: true
   field_paragraphs_sidebar: true
   field_phone_numbers: true
   field_ptv_id: true
-  field_service_channel_type: true
   field_services: true
   field_tags: true
-  field_webpage: true
   langcode: true
   links: true
