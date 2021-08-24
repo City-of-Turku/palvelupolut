@@ -1,5 +1,6 @@
 .section-contact-cards {
   position: relative;
+  margin: var(--space-elements) 0;
 
   h2 {
     font-size: $font-size--large-4;
@@ -10,6 +11,10 @@
 
   .contact-card {
     margin-bottom: space(3);
+
+    &__text {
+      margin-left: 2.25rem;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -37,7 +42,11 @@
 
     h2 {
       flex: 100%;
-      margin-bottom: space(2);
+      margin-bottom: space(1.5);
+
+      @include above($width-large) {
+        margin-bottom: space(2);
+      }
     }
 
     .contact-card {

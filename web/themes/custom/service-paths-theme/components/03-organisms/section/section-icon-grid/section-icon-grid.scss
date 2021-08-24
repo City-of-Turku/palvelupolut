@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 
   .icon-grid-item {
-    margin-bottom: space(1.5);
+    margin-bottom: space(0.75);
     padding-right: space(1.5);
     font-size: $font-size--small-1;
     letter-spacing: $letter-spacing--large;
@@ -16,20 +16,30 @@
 
     @include above($width-large) {
       width: 33%;
+      margin-bottom: space(1.5);
     }
   }
 }
 
 .section-icon-grid {
-  padding: space(3);
+  padding: space(2);
   background-color: color(background-light);
   border-radius: $border-width;
+  margin: var(--space-elements) 0;
+
+  @include above($width-large) {
+    padding: space(3);
+  }
 
   .heading {
     font-size: $font-size--large-3;
     font-weight: bold;
     letter-spacing: $letter-spacing--none;
     line-height: $line-height--heading;
-    margin-bottom: space(2.5);
+    margin-bottom: space(1.5);
+
+    @include above($width-large) {
+      margin-bottom: space(2);
+    }
   }
 }

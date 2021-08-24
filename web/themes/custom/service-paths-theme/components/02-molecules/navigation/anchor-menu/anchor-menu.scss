@@ -1,8 +1,7 @@
 @use 'sass:math';
 
 .anchor-menu {
-  margin-bottom: var(--space-elements);
-  padding: space() 0;
+  margin: var(--space-elements) 0;
 
   .link {
     width: fit-content;
@@ -18,7 +17,11 @@
     .fontawesome-icon {
       width: 1.25em;
       height: 1.25em;
-      margin-right: space(1.5);
+      margin-right: space(1);
+
+      @include above($width-large) {
+        margin-right: space(1.5);
+      }
     }
 
     &:hover {
@@ -31,11 +34,15 @@
   }
 
   &__item {
-    margin-bottom: space(1.5);
+    margin-bottom: space(1);
     padding: 0;
     font-weight: bold;
     letter-spacing: $letter-spacing--none;
     font-size: $font-size--large-2;
     line-height: $line-height--base;
+
+    @include above($width-large) {
+      margin-bottom: space(1.5);
+    }
   }
 }

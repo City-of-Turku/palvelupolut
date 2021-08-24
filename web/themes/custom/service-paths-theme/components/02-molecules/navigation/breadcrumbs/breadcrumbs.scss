@@ -24,10 +24,12 @@
     display: inline-flex;
     align-items: center;
 
-    &:not(:last-child)::after {
-      color: color(background-section-dark);
-      content: '/';
+    svg {
       margin: 0 space(0.75);
+    }
+
+    &:last-child svg {
+      display: none;
     }
   }
 
