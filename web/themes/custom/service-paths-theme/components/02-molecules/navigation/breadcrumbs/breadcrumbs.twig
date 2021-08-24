@@ -26,6 +26,9 @@
               {% else %}
                 {{ item.text }}
               {% endif %}
+              {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
+                fontawesome_icon__name: 'chevron-right'
+              } %}
             {% endblock %}
           {% endembed %}
         {% endfor %}
