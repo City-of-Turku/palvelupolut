@@ -9,6 +9,24 @@
     width: 1.5em;
     height: 1.5em;
   }
+  
+  &--warning {
+    color: color(text-error);
+
+    .accordion-item__content {
+      color: color(text-dark);
+    }
+
+    .accordion-item__warning-accordion-heading {
+      .fontawesome-icon {
+        width: space(1.25);
+        height: space(1.25);
+        top: space(0.125);
+        position: relative;
+        margin-right: space(1);
+      }
+    }
+  }
 
   &__heading {
     justify-content: space-between;
@@ -38,6 +56,12 @@
   &[open] {
     .fontawesome-icon {
       transform: rotate(180deg);
+    }
+
+    .accordion-item__warning-accordion-heading {
+      .fontawesome-icon {
+        transform: none;
+      }
     }
   }
 }
