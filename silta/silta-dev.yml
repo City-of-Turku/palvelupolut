@@ -19,35 +19,35 @@ memcached:
 varnish:
   enabled: false
 
-php:
-  cron:
-    ptvcron1:
-      schedule: '0 1 * * *'
-      command: |
-        drush migrate:reset-status services;
-        drush migrate:import services;
-    ptvcron2:
-      schedule: '10 1 * * *'
-      command: |
-        drush migrate:reset-status services_translations;
-        drush migrate:import services_translations;
-    ptvcron3:
-      schedule: '0 3 * * *'
-      command: |
-        drush migrate:reset-status service_channels;
-        drush migrate:import service_channels;
-    ptvcron4:
-      schedule: '10 3 * * *'
-      command: |
-        drush migrate:reset-status service_channels_translations;
-        drush migrate:import service_channels_translations;
-    ptvcron5:
-      schedule: '30 1 * * *'
-      command: |
-        drush migrate:reset-status services_translations;
-        drush migrate:import services_translations --update;
-    ptvcron6:
-      schedule: '30 3 * * *'
-      command: |
-        drush migrate:reset-status service_channels_translations;
-        drush migrate:import service_channels_translations --update;
+# php:
+#   cron:
+#     ptvcron1:
+#       schedule: '0 1 * * *'
+#       command: |
+#         drush migrate:reset-status services;
+#         drush migrate:import services;
+#     ptvcron2:
+#       schedule: '10 1 * * *'
+#       command: |
+#         drush migrate:reset-status services_translations;
+#         drush migrate:import services_translations;
+#     ptvcron3:
+#       schedule: '0 3 * * *'
+#       command: |
+#         drush migrate:reset-status service_channels;
+#         drush migrate:import service_channels;
+#     ptvcron4:
+#       schedule: '10 3 * * *'
+#       command: |
+#         drush migrate:reset-status service_channels_translations;
+#         drush migrate:import service_channels_translations;
+#     ptvcron5:
+#       schedule: '30 1 * * *'
+#       command: |
+#         drush migrate:reset-status services_translations;
+#         drush migrate:import services_translations --update;
+#     ptvcron6:
+#       schedule: '30 3 * * *'
+#       command: |
+#         drush migrate:reset-status service_channels_translations;
+#         drush migrate:import service_channels_translations --update;
