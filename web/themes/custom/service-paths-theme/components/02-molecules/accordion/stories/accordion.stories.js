@@ -8,6 +8,7 @@ import accordionTemplate from '../accordion.twig';
 
 import accordionData from './accordion.yml';
 import accordionWithHeadingData from './accordion-with-heading.yml';
+import warningAccordionData from './warning-accordion.yml';
 
 /**
  * Storybook Definition.
@@ -23,6 +24,10 @@ export const accordion = () => (
     <ComponentWrapper
       markup={accordionTemplate(accordionWithHeadingData)}
       label="Accordion, with heading"
+    />
+    <ComponentWrapper
+      markup={accordionTemplate(warningAccordionData)}
+      label="Warning accordion"
     />
   </CollectionWrapper>
 );
