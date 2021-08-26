@@ -13,3 +13,58 @@
     padding-bottom: space(2);
   }
 }
+
+.page-content__post-content {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+
+  @include above($width-large) {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .section-contact-cards--vertical {
+    padding: 0;
+
+    .contact-card {
+      flex: 100%;
+
+      @include above($width-large) {
+        flex: 30%;
+        margin-right: space(4);
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    width: calc(88rem + 22rem);
+    max-width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    background: var(--color-background-section);
+  }
+
+  .leaflet-container {
+    margin: space(2) 0;
+    width: 400px;
+    justify-self: center;
+
+    @include above($width-large) {
+      margin: space(8) 0;
+    }
+
+    .leaflet-control-zoom-in,
+    .leaflet-control-zoom-out {
+      box-shadow: none;
+    }
+
+    .leaflet-control-attribution {
+      display: none;
+    }
+  }
+}
