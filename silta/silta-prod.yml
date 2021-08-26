@@ -1,4 +1,9 @@
 
+# Values in this file override the default values of our helm chart.
+#
+# See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
+# for all possible options.
+
 # Enable autoscaling for production.
 autoscaling:
   enabled: true
@@ -28,16 +33,37 @@ nginx:
     requests:
       cpu: 50m
       memory: 50M
-# Uncomment these lines to disable basic auth protection.
-# basicauth:
-#   enabled: false
+  basicauth:
+    enabled: false
+  # redirects:
+  #   - description: 'Redirect all traffic to without www.'
+  #     from: '~://www.palvelupolut.fi'
+  #     to:  https://palvelupolut.fi$request_uri
 
-# Connect to an externally hosted database.
-#  env:
-#    DB_HOST: 'hosted.database.server.com'
-#    DB_NAME: 'drupal-1A4G3C'
-#    DB_USER: 'drupal'
-#    DB_PASS: 'never store passwords'
-# Disable the built-in database when using an external database.
-#mariadb:
-#  enabled: false
+exposeDomains:
+  - hostname: palvelupolut.silta.wdr.io
+    ssl:
+      enabled: true
+      issuer: letsencrypt
+  # - hostname: palvelupolut.fi
+  #   ssl:
+  #     enabled: true
+  #     issuer: letsencrypt
+  # - hostname: www.palvelupolut.fi
+  #   ssl:
+  #     enabled: true
+  #     issuer: letsencrypt
+
+mariadb:
+  master:
+    persistence:
+      size: 10G
+
+varnish:
+  enabled: true
+
+mailhog:
+  enabled: false
+
+smtp:
+  enabled: true
