@@ -3,18 +3,23 @@
 
   .button {
     @include button-with-icon;
+
+    svg {
+      margin-right: space();
+      width: space(1.25);
+      height: space(1.25);
+      position: relative;
+    }
+
+    .fontawesome-icon--after {
+      width: space(.75);
+      height: space(.75);
+      margin-left: space(.75);
+    }
   }
 
   a {
     font-size: $font-size--base;
-  }
-
-  svg {
-    margin-right: space();
-    width: space(1.5);
-    height: space(1.5);
-    position: relative;
-    top: space(0.25);
   }
 
   .text-long {
