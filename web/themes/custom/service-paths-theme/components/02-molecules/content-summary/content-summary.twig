@@ -16,57 +16,48 @@
 {% set content_summary__modifiers = content_summary__modifiers|default([]) %}
 
 <div {{ bem(content_summary__base_class, content_summary__modifiers) }}>
-
   <div {{ bem("column", [], content_summary__base_class) }}  >
-
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 3,
-    heading__base_class: "title",
-    heading__blockname: content_summary_base_class,
-    heading: content_summary__title,
-  } %}
-
-  <div {{ bem("link", [], content_summary__base_class) }} >
-    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-      fontawesome_icon__name: "arrow-right",
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 3,
+      heading__base_class: "title",
+      heading__blockname: content_summary_base_class,
+      heading: content_summary__title,
     } %}
 
-    {% include "@atoms/links/link/link.twig" with {
-      link__content: content_summary__link_text,
-      link__url: content_summary__link_url,
-    } %}
-  </div>
+    <div {{ bem("link", [], content_summary__base_class) }} >
+      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+        fontawesome_icon__name: "arrow-right",
+      } %}
 
+      {% include "@atoms/links/link/link.twig" with {
+        link__content: content_summary__link_text,
+        link__url: content_summary__link_url,
+      } %}
+    </div>
   </div>
 
   <div {{ bem("column", [], content_summary__base_class) }} >
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 5,
+      heading__base_class: "heading",
+      heading__blockname: content_summary_base_class,
+      heading: content_summary__heading,
+    } %}
 
-
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 5,
-    heading__base_class: "heading",
-    heading__blockname: content_summary_base_class,
-    heading: content_summary__heading,
-  } %}
-
-  {% include "@atoms/text/text-long/text-long.twig" with {
-    text_long__base_class: "text",
-    text_long__content:  content_summary__lead_text,
-    text_long__blockname: content_summary__base_class,
-  } %}
-
+    {% include "@atoms/text/text-long/text-long.twig" with {
+      text_long__base_class: "text",
+      text_long__content:  content_summary__lead_text,
+      text_long__blockname: content_summary__base_class,
+    } %}
   </div>
 
   <div {{ bem("column", [], content_summary__base_class) }}  >
-
-
-  {% include "@atoms/buttons/button/button.twig" with {
-    button__content: content_summary__open_text,
-    button__type: "button",
-    button__icon_after: content_summary__icon_after,
-    button__icon_before: content_summary__icon_before,
-    button__modifiers: ["minimal"],
-  } %}
+    {% include "@atoms/buttons/button/button.twig" with {
+      button__content: content_summary__open_text,
+      button__type: "button",
+      button__icon_after: content_summary__icon_after,
+      button__icon_before: content_summary__icon_before,
+      button__modifiers: ["minimal"],
+    } %}
   </div>
-
 </div>
