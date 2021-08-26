@@ -5,22 +5,27 @@ dependencies:
   config:
     - field.field.node.service.field_charge_info
     - field.field.node.service.field_charge_info_heading
+    - field.field.node.service.field_charge_info_links
     - field.field.node.service.field_description
     - field.field.node.service.field_description_heading
+    - field.field.node.service.field_description_links
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_paragraphs
     - field.field.node.service.field_paragraphs_sidebar
     - field.field.node.service.field_ptv_id
     - field.field.node.service.field_requirements
     - field.field.node.service.field_requirements_heading
+    - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
     - field.field.node.service.field_user_instruction_heading
+    - field.field.node.service.field_user_instruction_links
     - node.type.service
   module:
     - entity_reference_revisions
+    - linkit
     - text
     - user
 id: node.service.default
@@ -36,12 +41,25 @@ content:
     type: text_default
     region: content
   field_charge_info_heading:
-    weight: 13
+    weight: 14
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_charge_info_links:
+    weight: 17
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   field_description:
     weight: 1
@@ -57,6 +75,19 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_description_links:
+    weight: 11
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   field_lead_image:
     weight: 0
@@ -77,7 +108,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_paragraphs_sidebar:
-    weight: 14
+    weight: 15
     label: hidden
     settings:
       view_mode: default
@@ -93,12 +124,25 @@ content:
     type: text_default
     region: content
   field_requirements_heading:
-    weight: 11
+    weight: 12
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_requirements_links:
+    weight: 16
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   field_service_classes:
     weight: 8
@@ -132,12 +176,25 @@ content:
     type: text_default
     region: content
   field_user_instruction_heading:
-    weight: 12
+    weight: 13
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_user_instruction_links:
+    weight: 18
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   service_channels_embed:
     weight: 9

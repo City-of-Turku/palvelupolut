@@ -5,7 +5,7 @@
 
 <details {{ bem(accordion_item__base_class, accordion_item__modifiers) }}>
   <summary {{ bem('heading', [], accordion_item__base_class, accordion_item__modifiers) }}>
-    {% if accordion_item__modifiers|default(['warning'])  %}
+    {% if 'warning' in accordion_item__modifiers %}
       <div {{ bem('warning-accordion-heading', [], accordion_item__base_class) }}>
         {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
           fontawesome_icon__name: 'exclamation-triangle'

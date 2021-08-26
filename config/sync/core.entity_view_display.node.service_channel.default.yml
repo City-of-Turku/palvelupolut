@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
+    - field.field.node.service_channel.field_warning
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
@@ -254,6 +255,28 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_warning:
+    weight: 17
+    label: hidden
+    settings:
+      inline: true
+      first:
+        hidden: false
+        link: false
+        format_type: medium
+        thousand_separator: ''
+        decimal_separator: .
+        scale: 2
+      second:
+        hidden: false
+        link: false
+        format_type: medium
+        thousand_separator: ''
+        decimal_separator: .
+        scale: 2
+    third_party_settings: {  }
+    type: double_field_unformatted_list
     region: content
   field_webpage:
     weight: 1
