@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ * - section_content_summary__base_class - the base classname
+ * - section_content_summary__modifiers - array of modifiers to add to the base classname
+ * - section_content_summary__blockname - a class that will prepend all other classes
+ *
+ * Available blocks:
+ * - section_content_summary_item - the content of the section item.
+ */
+#}
+{% set section_content_summary__base_class = section_content_summary__base_class|default("section-content-summary") %}
+{% set section_content_summary__modifiers = section_content_summary__modifiers|default([]) %}
+
+<div {{ bem(section_content_summary__base_class, section_content_summary__modifiers, section_content_summary__blockname) }}>
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 2,
+    heading__base_class: "title",
+    heading__blockname: content_summary__base_class,
+    heading: section_content_summary__title,
+  } %}
+
+  <div {{ bem("inner", [], section_content_summary__base_class) }}>
+  {% for item in section_content_summary__items %}
+    {% include "@molecules/content-summary/content-summary.twig" with {
+      content_summary___modifiers: content_summary_modifiers,
+      content_summary__title: item.title,
+      content_summary__heading: item.heading,
+      content_summary__lead_text: item.lead_text,
+      content_summary__link_text: item.link_text,
+      content_summary__link_url: item.link_url,
+      content_summary__open_text: item.open_text,
+      content_summary__icon_before: item.icon_before,
+      content_summary__icon_after: item.icon_after,
+    } %}
+  {% endfor %}
+  </div>
+  <div {{ bem("read-more-link", [], content_summary__base_class) }} >
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: "arrow-right",
+    } %}
+
+    {% include "@atoms/links/link/link.twig" with {
+      link__content: section_content_summary__link_text,
+      link__url: section_content_summary__link_url,
+    } %}
+  </div>
+</div>
