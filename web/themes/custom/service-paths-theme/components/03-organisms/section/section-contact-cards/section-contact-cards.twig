@@ -13,12 +13,14 @@
 {% set section_contact_cards__modifiers = section_contact_cards__modifiers|default([]) %}
 
 <div {{ bem(section_contact_cards__base_class, section_contact_cards__modifiers, section_contact_cards__blockname) }}>
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 2,
-    heading__base_class: "title",
-    heading__blockname: contact__base_class,
-    heading: section_contact_cards__title,
-  } %}
+  {% if section_contact_cards__title %}
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 2,
+      heading__base_class: "title",
+      heading__blockname: contact__base_class,
+      heading: section_contact_cards__title,
+    } %}
+  {% endif %}
 
   {% for item in section_contact_cards__items %}
     {% include "@molecules/contact-card/contact-card.twig" with {
