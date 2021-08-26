@@ -41,7 +41,7 @@ nginx:
   #     to:  https://palvelupolut.fi$request_uri
 
 exposeDomains:
-  - hostname: palvelupolut.silta.wdr.io
+  - hostname: palvelupolut.finland.wdr.io
     ssl:
       enabled: true
       issuer: letsencrypt
