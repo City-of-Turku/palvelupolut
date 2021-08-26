@@ -23,25 +23,27 @@
     heading: selection_box__title,
   } %}
 
+  {% include "@molecules/form-elements/text-element/text-element.twig" with {
+    text_element__label: input__label,
+    text_element__content: input__content,
+    text_element__placeholder: input__placeholder,
+    text_element__description: input__description,
+  } %}
+
   <div {{ bem("inner", [], selection_box__base_class) }}>
-    {% include "@atoms/buttons/button/button.twig" with {
-      button__content: selection_box__open_text,
-      button__type: "button",
-      button__icon_before: "heart",
-      button__modifiers: ["minimal"]
+    {% include "@atoms/text/heading/heading.twig" with {
+      "heading": checkbox_list__title,
+      "heading__level": "4",
+      heading__base_class: "title",
+      heading__blockname: checkbox_list__base_class,
     } %}
 
-    <div {{ bem("selection-link", [], selection_box__base_class) }}>
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: "search",
-        fontawesome_icon__blockname: selection_box__base_class,
+    {% for item in checkbox_list__items %}
+      {% include "@molecules/form-elements/checkbox-element/checkbox-element.twig" with {
+        checkbox_element__id: item.id,
+        checkbox_element__label: item.label,
+        checkbox_element__description: item.description,
       } %}
-
-      {% include "@atoms/links/link/link.twig" with {
-        link__content: selection_box__link_title,
-        link__url: selection_box__url,
-        icon__name: link__icon_before,
-      } %}
-    </div>
+    {% endfor %}
   </div>
 </div>

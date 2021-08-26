@@ -133,6 +133,7 @@ class PtvHelper {
 
         $object = $ptv_service->getServiceChannel($id);
         foreach ($object->serviceChannelNames as $value) {
+          $name = $value->value;
           if ($value->language == 'fi') {
             $name = $value->value;
           }
@@ -295,11 +296,11 @@ class PtvHelper {
 
         $data = [
           'id' => $id,
-          'name' => $name,
+          'name' => isset($name) ? $name : $id,
           'langcode' => $langcode,
           'services' => $services,
-          'summary' => $summary,
-          'description' => $description,
+          'summary' => isset($summary) ? $summary : '',
+          'description' => isset($description) ? $description : '',
           'email' => isset($email) ? $email : '',
           'phone_numbers' => $phone_numbers,
           'webpage' => isset($webpage) ? $webpage : '',

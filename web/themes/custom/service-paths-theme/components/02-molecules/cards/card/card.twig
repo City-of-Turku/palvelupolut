@@ -80,9 +80,8 @@
       </div>
 
       <div {{ bem('link', card__modifiers, card__base_class) }} >
-        {% include "@atoms/images/icon/icon.twig" with {
-          icon__name: "arrow-right",
-          icon__decorative: true,
+        {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+          fontawesome_icon__name: "arrow-right",
         } %}
 
         {% include "@atoms/links/link/link.twig" with {

@@ -1,0 +1,19 @@
+uuid: 819ee16f-0c0c-45a2-bbd0-d1cc4add431c
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_charge_info_links
+field_name: field_charge_info_links
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

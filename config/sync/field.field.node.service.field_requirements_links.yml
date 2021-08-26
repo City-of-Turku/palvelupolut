@@ -1,0 +1,23 @@
+uuid: 7a04c44e-56c6-4fc6-a17a-559d4c769874
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_requirements_links
+    - node.type.service
+  module:
+    - link
+id: node.service.field_requirements_links
+field_name: field_requirements_links
+entity_type: node
+bundle: service
+label: 'Requirements Links'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -6,19 +6,23 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.service.field_charge_info
     - field.field.node.service.field_charge_info_heading
+    - field.field.node.service.field_charge_info_links
     - field.field.node.service.field_description
     - field.field.node.service.field_description_heading
+    - field.field.node.service.field_description_links
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_paragraphs
     - field.field.node.service.field_paragraphs_sidebar
     - field.field.node.service.field_ptv_id
     - field.field.node.service.field_requirements
     - field.field.node.service.field_requirements_heading
+    - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
     - field.field.node.service.field_user_instruction_heading
+    - field.field.node.service.field_user_instruction_links
     - node.type.service
   module:
     - user
@@ -39,18 +43,22 @@ content:
 hidden:
   field_charge_info: true
   field_charge_info_heading: true
+  field_charge_info_links: true
   field_description: true
   field_description_heading: true
+  field_description_links: true
   field_paragraphs: true
   field_paragraphs_sidebar: true
   field_ptv_id: true
   field_requirements: true
   field_requirements_heading: true
+  field_requirements_links: true
   field_service_classes: true
   field_tags: true
   field_target_groups: true
   field_user_instruction: true
   field_user_instruction_heading: true
+  field_user_instruction_links: true
   langcode: true
   links: true
   service_channels_embed: true

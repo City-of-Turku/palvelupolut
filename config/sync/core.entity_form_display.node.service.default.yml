@@ -5,22 +5,27 @@ dependencies:
   config:
     - field.field.node.service.field_charge_info
     - field.field.node.service.field_charge_info_heading
+    - field.field.node.service.field_charge_info_links
     - field.field.node.service.field_description
     - field.field.node.service.field_description_heading
+    - field.field.node.service.field_description_links
     - field.field.node.service.field_lead_image
     - field.field.node.service.field_paragraphs
     - field.field.node.service.field_paragraphs_sidebar
     - field.field.node.service.field_ptv_id
     - field.field.node.service.field_requirements
     - field.field.node.service.field_requirements_heading
+    - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
     - field.field.node.service.field_user_instruction_heading
+    - field.field.node.service.field_user_instruction_links
     - node.type.service
   module:
     - field_group
+    - linkit
     - media_library
     - paragraphs_asymmetric_translation_widgets
     - path
@@ -74,12 +79,16 @@ third_party_settings:
       children:
         - field_description_heading
         - field_description
+        - field_description_links
         - field_requirements_heading
         - field_requirements
+        - field_requirements_links
         - field_user_instruction_heading
         - field_user_instruction
+        - field_user_instruction_links
         - field_charge_info_heading
         - field_charge_info
+        - field_charge_info_links
         - field_tags
         - field_target_groups
         - field_service_classes
@@ -116,12 +125,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_charge_info:
-    weight: 33
+    weight: 36
     settings:
       rows: 3
       placeholder: ''
@@ -129,12 +138,21 @@ content:
     type: text_textarea
     region: content
   field_charge_info_heading:
-    weight: 32
+    weight: 35
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_charge_info_links:
+    weight: 37
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   field_description:
     weight: 27
@@ -153,6 +171,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_description_links:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   field_lead_image:
     weight: 12
@@ -186,7 +213,7 @@ content:
     type: paragraphs_classic_asymmetric
     region: content
   field_ptv_id:
-    weight: 37
+    weight: 41
     settings:
       size: 60
       placeholder: ''
@@ -194,7 +221,7 @@ content:
     type: string_textfield
     region: content
   field_requirements:
-    weight: 29
+    weight: 30
     settings:
       rows: 5
       placeholder: ''
@@ -202,15 +229,24 @@ content:
     type: text_textarea
     region: content
   field_requirements_heading:
-    weight: 28
+    weight: 29
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_requirements_links:
+    weight: 31
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
+    region: content
   field_service_classes:
-    weight: 36
+    weight: 40
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -220,7 +256,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_tags:
-    weight: 34
+    weight: 38
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -230,7 +266,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_target_groups:
-    weight: 35
+    weight: 39
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -240,7 +276,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_user_instruction:
-    weight: 31
+    weight: 33
     settings:
       rows: 3
       placeholder: ''
@@ -248,12 +284,21 @@ content:
     type: text_textarea
     region: content
   field_user_instruction_heading:
-    weight: 30
+    weight: 32
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_user_instruction_links:
+    weight: 34
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   langcode:
     type: language_select
@@ -264,7 +309,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -272,21 +317,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 9
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 10
     region: content
     third_party_settings: {  }
   title:
@@ -298,13 +343,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 6
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
