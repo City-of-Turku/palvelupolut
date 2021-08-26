@@ -42,11 +42,11 @@
     </span>
   {% endblock %}
 
-  {% if button__icon %}
-    {% include "@atoms/images/icon/icon.twig" with {
-      icon__name: button__icon,
-      icon__modifiers: button__icon_after_modifiers,
-      icon__decorative: true,
+  {% if button__icon_after %}
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: button__icon_after,
+      fontawesome_icon__modifiers: button__icon_after_modifiers,
+      fontawesome_icon__decorative: true,
     } %}
   {% endif %}
 </button>

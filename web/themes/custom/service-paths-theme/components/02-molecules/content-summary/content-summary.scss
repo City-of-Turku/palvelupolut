@@ -1,0 +1,84 @@
+.content-summary{
+  display: flex;
+  flex-wrap: wrap;
+
+  &__text {
+    font-family: 'Lexend', serif;
+    font-size: $font-size--small-2;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
+  }
+
+  &__link {
+    .fontawesome-icon {
+      width: space(.75);
+      height: space(.75);
+    }
+  }
+
+  &__column {
+    margin-bottom: space(2);
+
+    @include above($width-large) {
+      flex: 1;
+      margin-right: space(2);
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .title {
+      font-family: 'Lexend', serif;
+      font-size: $font-size--large-2;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--none;
+      line-height: $line-height--narrow;
+    }
+
+    .heading {
+      font-family: 'Lexend', serif;
+      font-size: $font-size--small-2;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--narrow;
+      margin-bottom: space(.25);
+    }
+
+    .link {
+      font-family: 'Lexend', serif;
+      font-size: $font-size--small-4;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--small;
+    }
+  }
+  .button {
+    @include button-with-icon;
+
+    margin-top: 0;
+
+    &__text {
+      font-family: 'Lexend', serif;
+      font-size: $font-size--small-4;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--small;
+      text-align: center;
+    }
+
+    svg {
+      margin-right: space();
+      width: space(1.25);
+      height: space(1.25);
+      position: relative;
+    }
+
+    .fontawesome-icon--after {
+      width: space(.75);
+      height: space(.75);
+      margin-left: space(.75);
+    }
+  }
+}
