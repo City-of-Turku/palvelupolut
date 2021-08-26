@@ -1,10 +1,15 @@
 .input {
   width: 100%;
-  max-width: 19rem;
+  max-width: space(19);
   padding: 0.6em;
-  border: none;
-  border-bottom: $border-width solid color(primary);
-  background-color: color(background-light);
+  padding-left: 1.5rem;
+  background-color: color(background);
+  border: 1px solid color(text);
+  border-radius: space(.75);
+  font-size: $font-size--large-2;
+  letter-spacing: $letter-spacing--medium;
+  line-height: $line-height--heading-medium;
+
 
   &:focus {
     @include focus;

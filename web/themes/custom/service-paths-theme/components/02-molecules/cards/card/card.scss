@@ -51,8 +51,10 @@
 
   &__link {
     font-size: $font-size--small-2;
-    .icon {
-      margin-right: space(1);
+    .fontawesome-icon {
+      position: relative;
+      top: 0.125rem;
+      margin-right: 0.75rem;
     }
 
     .link {
