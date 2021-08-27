@@ -5,6 +5,21 @@
   display: flex;
   flex-direction: column;
 
+  &__more-link {
+    .link {
+      font-family: 'Lexend', serif;
+      font-size: $font-size--small-4;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--small;
+    }
+
+    .fontawesome-icon {
+      width: space(.75);
+      height: space(.75);
+    }
+  }
+
   li {
     &::marker {
       content: '';
@@ -16,32 +31,7 @@
     margin: 0;
   }
 
-  .fontawesome-icon {
-    margin-right: space();
-    width: space(1.25);
-    height: space(1.25);
-    position: relative;
-  }
-
-  .link {
-    color: black;
-    font-size: $font-size--small-1;
-    font-weight: bold;
-    letter-spacing: 0.22px;
-    line-height: 24px;
-    box-shadow: none;
-    text-decoration: underline;
-
-    &:hover {
-      box-shadow: none;
-    }
-
-    .icon--before {
-      margin-right: 0;
-    }
-  }
-
-  .text {
+  &__text {
     font-size: $font-size--small-1;
     padding-left: 2.3rem;
     letter-spacing: $letter-spacing--large;
@@ -63,6 +53,31 @@
     margin-bottom: space();
     display: flex;
     flex-direction: column;
+
+    .fontawesome-icon {
+      margin-right: space();
+      width: space(1.25);
+      height: space(1.25);
+      position: relative;
+    }
+
+    .link {
+      color: black;
+      font-size: $font-size--small-1;
+      font-weight: bold;
+      letter-spacing: 0.22px;
+      line-height: 24px;
+      box-shadow: none;
+      text-decoration: underline;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .icon--before {
+        margin-right: 0;
+      }
+    }
   }
 
   &__link-with-icon {
