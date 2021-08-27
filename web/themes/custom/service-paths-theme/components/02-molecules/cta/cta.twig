@@ -32,6 +32,12 @@
       text_long__base_class: "text",
       text_long__content:  cta__lead_text,
     } %}
+
+    {% include "@atoms/links/link/link.twig" with {
+      link__base_class: "link",
+      link__url: cta__link,
+      link__icon_before: "arrow-right",
+    } %}
   </div>
 
   <div {{ bem("icon-wrapper", [], cta__base_class) }}>
