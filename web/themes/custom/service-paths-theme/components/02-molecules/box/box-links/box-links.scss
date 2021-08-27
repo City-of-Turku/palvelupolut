@@ -62,6 +62,18 @@
       margin-bottom: space();
     }
 
+    .fontawesome-icon {
+      margin-right: space();
+      width: space();
+      height: space();
+
+      @include above($width-large) {
+        margin-right: space(1.25);
+        width: space(1.25);
+        height: space(1.25);
+      }
+    }
+
     &::marker {
       content: '';
     }
