@@ -28,9 +28,14 @@
 
     .contact-card {
       flex: 100%;
+      margin-bottom: space(2);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       @include above($width-large) {
-        flex: 30%;
+        flex: 25%;
         margin-right: space(4);
       }
     }
