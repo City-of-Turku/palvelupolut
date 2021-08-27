@@ -16,6 +16,8 @@ section_contact_cards__items:
         icon: 'mailbox'
   - placeholder: true
     title: 'Etsi sopivat vaihtoehdot'
+    link_text: 'read more'
+    link_url: '/'
     contact__items:
       - link_title: 'Näytä kartalla'
         url: '#'
