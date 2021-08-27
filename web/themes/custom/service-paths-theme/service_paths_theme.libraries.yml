@@ -9,14 +9,10 @@ global:
     theme:
       dist/style.css: {}
 
-main-menu:
+contact-card:
   js:
-    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
+    components/02-molecules/contact-card/contact-card.js: {}
   dependencies:
-    - core/drupal
-
-tabs:
-  js:
-    dist/js/02-molecules/tabs/tabs.js: {}
-  dependencies:
+    - core/jquery
+    - core/jquery.once
     - core/drupal

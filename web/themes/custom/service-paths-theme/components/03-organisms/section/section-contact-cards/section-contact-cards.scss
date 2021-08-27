@@ -12,6 +12,10 @@
   .contact-card {
     margin-bottom: space(3);
 
+    &__text {
+      // margin-left: 2.25rem;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
