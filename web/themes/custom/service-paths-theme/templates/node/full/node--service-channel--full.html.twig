@@ -125,49 +125,59 @@
         heading: content.field_contacts_heading,
       } %}
 
-      {% set main_cards = [] %}
-      {% if content.field_address|render %}
-        {% set main_cards = main_cards|merge([{
-          "info_title": "Address"|t,
-          'text': content.field_address,
-          'icon': 'map-marker-alt',
-        }]) %}
-      {% endif %}
-      {% if node.field_email.value %}
-        {% set main_cards = main_cards|merge([{
-          'link_title': node.field_email.value,
-          'url': 'mailto:' ~ node.field_email.value,
-          'icon': 'at',
-        }]) %}
-      {% endif %}
-      {% if node.field_webpage.title %}
-        {% set main_cards = main_cards|merge([{
-          'link_title': node.field_webpage.title,
-          'url': node.field_webpage.0.url.toString,
-          'icon': 'globe',
-        }]) %}
-      {% endif %}
+      <div {{ bem("wrapper", [], section_contact_cards__base_class) }}>
+        <div {{ bem("inner", [], section_contact_cards__base_class) }}>
 
-      {% include "@molecules/contact-card/contact-card.twig" with {
-        section_contact_cards__modifiers: process_step_modifiers,
-        contact_card__title: '',
-        contact_card__items: main_cards,
-      } %}
+        {% set main_cards = [] %}
+        {% if content.field_address|render %}
+          {% set main_cards = main_cards|merge([{
+            "info_title": "Address"|t,
+            'text': content.field_address,
+            'icon': 'map-marker-alt',
+          }]) %}
+        {% endif %}
+        {% if node.field_email.value %}
+          {% set main_cards = main_cards|merge([{
+            'link_title': node.field_email.value,
+            'url': 'mailto:' ~ node.field_email.value,
+            'icon': 'at',
+          }]) %}
+        {% endif %}
+        {% if node.field_webpage.title %}
+          {% set main_cards = main_cards|merge([{
+            'link_title': node.field_webpage.title,
+            'url': node.field_webpage.0.url.toString,
+            'icon': 'globe',
+          }]) %}
+        {% endif %}
+
+        {% include "@molecules/contact-card/contact-card.twig" with {
+          section_contact_cards__modifiers: process_step_modifiers,
+          contact_card__title: '',
+          contact_card__items: main_cards,
+        } %}
+
+          {{ content.field_phone_numbers }}
+          {{ content.field_opening_hours }}
+          {{ content.field_paragraphs_contacts }}
+          {{ content.field_services }}
 
 
+        </div>
+        <div {{ bem("inner", [], section_contact_cards__base_class) }}>
 
-      {{ content.field_phone_numbers }}
-      {{ content.field_opening_hours }}
-      {{ content.field_accessibility }}
 
-      {{ content.field_paragraphs_contacts }}
+        {{ content.field_accessibility }}
+        </div>
+
+
+        <div {{ bem("inner", [], section_contact_cards__base_class) }}>
+
+      {{ content.field_location }}
+      </div>
+      </div>
 
     </div>
-
-    {{ content.field_location }}
-
-    {{ content.field_services }}
-
   {% endblock %}
 
 {% endembed %}

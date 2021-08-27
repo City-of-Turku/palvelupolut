@@ -1,6 +1,5 @@
 .section-contact-cards {
   position: relative;
-  margin: var(--space-elements) 0;
 
   h2 {
     font-size: $font-size--large-4;
@@ -12,23 +11,58 @@
   .contact-card {
     margin-bottom: space(3);
 
-    &__text {
-      // margin-left: 2.25rem;
-    }
-
     &:last-child {
       margin-bottom: 0;
     }
   }
 
   &--vertical {
-    padding: space(4) 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    padding: var(--space-elements) 0;
+
+    img {
+      width: 400px;
+      border-radius: 16px;
+    }
+
+    .section-contact-cards__wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      @include above($width-medium) {
+        flex-direction: row;
+      }
+
+      .contact-card {
+        @include above($width-large) {
+          flex: 33%;
+        }
+      }
+
+      .section-contact-cards__inner {
+        &:last-child {
+          display: flex;
+          justify-content: center;
+        }
+
+        @include above($width-medium) {
+          flex: 50%;
+        }
+
+        @include above($width-large) {
+          flex: 33%;
+        }
+      }
+
+      .section-contact-cards__map {
+        @include above($width-large) {
+          flex: 33%;
+        }
+      }
+    }
 
     &:before {
-      content: "";
+      content: '';
       width: calc(88rem + 22rem);
       max-width: 100vw;
       height: 100%;

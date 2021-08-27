@@ -22,13 +22,22 @@
     } %}
   {% endif %}
 
-  {% for item in section_contact_cards__items %}
-    {% include "@molecules/contact-card/contact-card.twig" with {
-      section_contact_cards__modifiers: process_step_modifiers,
-      contact_card__title: item.title,
-      contact_card__items: item.contact__items,
-      contact_card__link_url: item.link_url,
-      contact_card__link_text: item.link_text,
-    } %}
-  {% endfor %}
+  <div {{ bem("wrapper", [], section_contact_cards__base_class ) }}  >
+    {% for item in section_contact_cards__items %}
+      {% include "@molecules/contact-card/contact-card.twig" with {
+        section_contact_cards__modifiers: process_step_modifiers,
+        contact_card__title: item.title,
+        contact_card__items: item.contact__items,
+        contact_card__link_url: item.link_url,
+        contact_card__link_text: item.link_text,
+      } %}
+    {% endfor %}
+
+    <div {{ bem("map", [], section_contact_cards__base_class ) }}  >
+      {% include "@atoms/images/image/responsive-image.twig" with {
+        image_src: contact_card__image__src,
+        responsive_image__blockname: contact_card__base_class,
+      } %}
+    </div>
+  </div>
 </div>

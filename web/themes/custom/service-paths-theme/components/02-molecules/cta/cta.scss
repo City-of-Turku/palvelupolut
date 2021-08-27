@@ -21,10 +21,15 @@
     position: unset;
     text-align: center;
 
+    &:hover .fontawesome-icon {
+      transform: translateX(50%);
+    }
+
     svg {
       width: space(1.25);
       height: space(1.25);
       margin-right: 0;
+      transition: transform 0.3s ease-in-out 0s;
 
       @include above($width-large) {
         width: space(1.5);

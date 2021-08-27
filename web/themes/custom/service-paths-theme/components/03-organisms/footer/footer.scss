@@ -15,17 +15,9 @@
 }
 
 .page-content__post-content {
-  display: grid;
   position: relative;
-  grid-template-columns: 1fr;
-
-  @include above($width-large) {
-    grid-template-columns: 3fr 1fr;
-  }
 
   .section-contact-cards--vertical {
-    padding: 0;
-
     .contact-card {
       flex: 100%;
       margin-bottom: space(2);
@@ -58,9 +50,10 @@
     margin: space(2) 0;
     width: 400px;
     justify-self: center;
+    border-radius: 16px;
 
     @include above($width-large) {
-      margin: space(8) 0;
+      margin: 0;
     }
 
     .leaflet-control-zoom-in,

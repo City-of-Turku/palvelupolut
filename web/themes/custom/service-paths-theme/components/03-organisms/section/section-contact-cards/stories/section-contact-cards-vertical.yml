@@ -27,3 +27,4 @@ section_contact_cards__items:
         icon: 'map'
 section_contact_cards__modifiers:
   - 'vertical'
+contact_card__image__src: 'map.png'

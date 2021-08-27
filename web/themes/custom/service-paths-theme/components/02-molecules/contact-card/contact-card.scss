@@ -6,6 +6,7 @@
   flex-direction: column;
 
   &__more-link {
+    padding-left: space(2.3);
     .link {
       font-family: 'Lexend', serif;
       font-size: $font-size--small-4;
@@ -41,12 +42,15 @@
     p {
       margin: 0;
     }
+
     &.collapsible {
       max-height: 150px;
       overflow: hidden;
       position: relative;
+
       &.open {
         max-height: 100%;
+
         &::after {
           display: none;
         }
@@ -67,8 +71,8 @@
   &__title {
     font-size: $font-size--small-1;
     font-weight: 800;
-    letter-spacing: 0.56px;
-    line-height: 24px;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
   }
 
   &__item {
