@@ -40,37 +40,23 @@
 
 {% set cards = [] %}
 
-{% for i in content.field_paragraphs['#items']|keys %}
-	{% set menu_items = menu_items|merge([{
-    title: node.field_paragraphs[i].entity.field_paragraph_heading.value,
-    url: '#pg' ~ node.field_paragraphs[i].entity.id()
-  }]) %}
-{% endfor %}
+{% for item in items %}
 
+	{% set first = item.content['#item'].getValue.first %}
+	{% set second = item.content['#item'].getValue.second %}
 
-{% for item in content.field_cards['#items'] %}
-  {% if item.content['#paragraph'].field_card_link.0.url.toString %}
-    {% set data = {
-        "link_title": item.content['#paragraph'].field_card_title.value,
-        "url": item.content['#paragraph'].field_card_link.0.url.toString,
-        'text': item.content['#paragraph'].field_card_text.value,
-        "icon": item.content['#paragraph'].field_icon.entity.field_icon.icon_name,
-      }
-    %}
-  {% else %}
-    {% set data = {
-        "info_title": item.content['#paragraph'].field_card_title.value,
-        'text': item.content['#paragraph'].field_card_text.value,
-        "icon": item.content['#paragraph'].field_icon.entity.field_icon.icon_name,
-      }
-    %}
-  {% endif %}
+	{% set data = {
+      "info_title": 'Accessibility'|t,
+      "text" : item.content,
+      "icon": 'wheelchair',
+    }
+  %}
 
-  {% set cards = cards|merge([data]) %}
+	{% set cards = cards|merge([data]) %}
+
 {% endfor %}
 
 {% include "@molecules/contact-card/contact-card.twig" with {
   section_contact_cards__modifiers: process_step_modifiers,
-  contact_card__title: paragraph.field_paragraph_heading.value,
   contact_card__items: cards,
 } %}

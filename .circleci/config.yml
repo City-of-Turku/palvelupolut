@@ -40,6 +40,7 @@ workflows:
               only:
                 - master
 
+      # Drupal deployment to production cluster.
       - silta/drupal-build-deploy:
           # Extend the build-deploy configuration for the production environment.
           <<: *build-deploy
@@ -53,8 +54,6 @@ workflows:
       # Storybook deployment to development cluster.
       - silta/simple-build-deploy:
           name: build-storybook
-          # requires:
-          #   - validate
           context: silta_dev
           codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static
@@ -65,3 +64,18 @@ workflows:
           filters:
             branches:
               ignore: production
+
+      # Storybook deployment to production cluster.
+      - silta/simple-build-deploy:
+          name: build-storybook-prod
+          context: silta_finland
+          codebase_root: web/themes/custom/service-paths-theme
+          build_folder: storybook-static
+          release-suffix: sb
+          codebase-build:
+            - silta/npm-install-build:
+                build-command: npm run build && npm run build-storybook
+          silta_config: silta/silta.yml,silta/silta-storybook-prod.yml
+          filters:
+            branches:
+              only: production
