@@ -15,7 +15,7 @@
  *     Example: to insert the image component
  */
 #}
-{% set contact_card__base_class = "contact-card" %}
+{% set contact_card__base_class = contact_card__base_class|default("contact-card") %}
 {% set contact_card__modifiers = contact_card__modifiers|default([]) %}
 
 <div {{ bem(contact_card__base_class, contact_card__modifiers, contact_card__blockname) }} >
@@ -76,7 +76,7 @@
   {% if contact_card__link_url %}
     <div {{ bem("more-link", [], contact_card__base_class) }} >
       {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: "arrow-right",
+        fontawesome_icon__name: "arrow-down",
       } %}
 
       {% include "@atoms/links/link/link.twig" with {
