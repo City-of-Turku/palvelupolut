@@ -6,6 +6,7 @@
  * - button__blockname - blockname prepended to the base classname
  * - button__content - the content of the button (typically text)
  * - button__icon - the name of the icon to prepend the button
+ * - button__link - the link of the button
  *
  * Available blocks:
  * - button_content - used to replace the content of the button with something other than text
@@ -41,6 +42,12 @@
         {{ button__content }}
     </span>
   {% endblock %}
+
+  {% if button__link %}
+    {% include "@atoms/links/link/link.twig" with {
+      link__url: button__link,
+    } %}
+  {% endif %}
 
   {% if button__icon_after %}
     {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {

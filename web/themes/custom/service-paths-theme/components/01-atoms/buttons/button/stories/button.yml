@@ -1,2 +1,3 @@
 button__content: 'The button text'
 button__type: 'button'
+button__link: 'google.com'
