@@ -194,14 +194,6 @@
 
     <div id="pg-channels" {{ bem(section_contact_cards__base_class, section_contact_cards__modifiers) }}>
       {{ content.service_channels_embed }}
-
-      <div>
-        {% include "@atoms/links/link/link.twig" with {
-          link__modifiers: ['inverse'],
-          link__content: 'Service Points'|t,
-          link__url: '/service-points?service=' ~ node.field_ptv_id.value,
-        } %}
-      </div>
     </div>
 
   {% endblock %}

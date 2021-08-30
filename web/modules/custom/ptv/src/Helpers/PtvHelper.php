@@ -21,10 +21,10 @@ class PtvHelper {
     foreach ($config_data as $key => $name) {
       // Service Channel Kastun päiväkoti (Pyörämäentie 4)
       // if ($key == '552b8911-9117-472c-81eb-bf0fcd9b14e3') {
-        // if ($key == 'e268fd9e-89b6-447c-b5e4-2b82c3a1137c') { // Service Varhaiskasvatuksen vuorohoito.
-        foreach ($langcodes as $langcode) {
-          $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
-        }
+      // if ($key == 'e268fd9e-89b6-447c-b5e4-2b82c3a1137c') { // Service Varhaiskasvatuksen vuorohoito.
+      foreach ($langcodes as $langcode) {
+        $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
+      }
       // }
     }
 
@@ -118,7 +118,7 @@ class PtvHelper {
           'name' => $name,
           'langcode' => $langcode,
           'summary' => isset($summary) ? $summary : '',
-          'description' => isset($description) ? $description: '',
+          'description' => isset($description) ? $description : '',
           'user_instruction' => isset($user_instruction) ? $user_instruction : '',
           'charge_info' => isset($charge_info) ? $charge_info : '',
           'ontology_terms' => $ontology_terms,
@@ -236,7 +236,7 @@ class PtvHelper {
 
             if (!empty($sentences)) {
               foreach ($sentences as $key => $value) {
-                $accessibility .= '<h3>' . $value['group'] . '</h3>';
+                $accessibility .= '<h4>' . $value['group'] . '</h4>';
                 foreach ($value['sentences'] as $sentence) {
                   $accessibility .= '<p>' . $sentence . '</p>';
                 }
@@ -269,7 +269,7 @@ class PtvHelper {
                 continue;
               }
               $save_time = NULL;
-              $h=0;
+              $h = 0;
               $times = [];
               foreach ($serviceHours->openingHour as $day) {
                 $time = substr($day->from, 0, -3) . ' - ' . substr($day->to, 0, -3);

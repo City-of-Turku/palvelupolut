@@ -17,7 +17,7 @@ regions:
 libraries:
   - 'service_paths_theme/fonts'
   - 'service_paths_theme/global'
-  # - 'service_paths_theme/typekit'
+  - 'service_paths_theme/contact-card'
 
 
 # Libraries override allows you to remove libraries added by other projects.

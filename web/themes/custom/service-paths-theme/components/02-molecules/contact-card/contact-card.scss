@@ -5,6 +5,22 @@
   display: flex;
   flex-direction: column;
 
+  &__more-link {
+    padding-left: space(2.3);
+    .link {
+      font-family: 'Lexend', serif;
+      font-size: $font-size--small-4;
+      font-weight: bold;
+      letter-spacing: $letter-spacing--large;
+      line-height: $line-height--small;
+    }
+
+    .fontawesome-icon {
+      width: space(.75);
+      height: space(.75);
+    }
+  }
+
   li {
     &::marker {
       content: '';
@@ -16,51 +32,78 @@
     margin: 0;
   }
 
-  .fontawesome-icon {
-    margin-right: space();
-    width: space(1.25);
-    height: space(1.25);
-    position: relative;
-  }
-
-  .link {
-    color: black;
-    font-size: $font-size--small-1;
-    font-weight: bold;
-    letter-spacing: 0.22px;
-    line-height: 24px;
-
-    &:hover {
-      box-shadow: none;
-    }
-
-    .icon--before {
-      margin-right: 0;
-    }
-  }
-
-  .text {
+  &__text {
     font-size: $font-size--small-1;
     padding-left: 2.3rem;
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--small;
+    position: relative;
 
     p {
       margin: 0;
+    }
+
+    &.collapsible {
+      max-height: 150px;
+      overflow: hidden;
+      position: relative;
+
+      &.open {
+        max-height: 100%;
+
+        &::after {
+          display: none;
+        }
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        background: rgb(251,243,237);
+        background: linear-gradient(0deg, rgba(251,243,237,1) 0%, rgba(0,0,0,0) 38%);
+      }
     }
   }
 
   &__title {
     font-size: $font-size--small-1;
     font-weight: 800;
-    letter-spacing: 0.56px;
-    line-height: 24px;
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
   }
 
   &__item {
     margin-bottom: space();
     display: flex;
     flex-direction: column;
+
+    .fontawesome-icon {
+      margin-right: space();
+      width: space(1.25);
+      height: space(1.25);
+      position: relative;
+    }
+
+    .link {
+      color: black;
+      font-size: $font-size--small-1;
+      font-weight: bold;
+      letter-spacing: 0.22px;
+      line-height: 24px;
+      box-shadow: none;
+      text-decoration: underline;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .icon--before {
+        margin-right: 0;
+      }
+    }
   }
 
   &__link-with-icon {

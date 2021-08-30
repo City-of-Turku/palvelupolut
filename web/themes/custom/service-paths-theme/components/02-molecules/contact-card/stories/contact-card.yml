@@ -11,3 +11,5 @@ contact_card__items:
   - info_title: 'varhaiskasvatus@turku.fi'
     url: '#'
     icon: 'mailbox'
+contact_card__link_text: 'Read More'
+contact_card__link_url: '/'

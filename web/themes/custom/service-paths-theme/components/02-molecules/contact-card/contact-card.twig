@@ -15,17 +15,18 @@
  *     Example: to insert the image component
  */
 #}
-{% set contact_card__base_class = "contact-card" %}
+{% set contact_card__base_class = contact_card__base_class|default("contact-card") %}
 {% set contact_card__modifiers = contact_card__modifiers|default([]) %}
 
 <div {{ bem(contact_card__base_class, contact_card__modifiers, contact_card__blockname) }} >
-
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 4,
-    heading__base_class: "heading",
-    heading__blockname: contact_card__base_class,
-    heading: contact_card__title,
+  {% if contact_card__title %}
+    {% include "@atoms/text/heading/heading.twig" with {
+      heading__level: 4,
+      heading__base_class: "heading",
+      heading__blockname: contact_card__base_class,
+      heading: contact_card__title,
   } %}
+  {% endif %}
 
   {% embed "@atoms/lists/list-unordered.twig" with {
     list__base_class: "link-list",
@@ -71,4 +72,17 @@
       {% endfor %}
     {% endblock %}
   {% endembed %}
+
+  {% if contact_card__link_url %}
+    <div {{ bem("more-link", [], contact_card__base_class) }} >
+      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+        fontawesome_icon__name: "arrow-down",
+      } %}
+
+      {% include "@atoms/links/link/link.twig" with {
+        link__content: contact_card__link_text,
+        link__url: contact_card__link_url,
+      } %}
+    </div>
+  {% endif %}
 </div>

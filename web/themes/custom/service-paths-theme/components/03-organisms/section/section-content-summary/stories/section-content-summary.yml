@@ -1,0 +1,22 @@
+section_content_summary__title: "Section Content Summary"
+section_content_summary__items:
+  - placeholder: true
+    title: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
+    heading: 'Chatin palveluajat'
+    lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan.'
+    link__url: '#'
+    link_text: 'Tutustu kohteeseen'
+    open_text: "Siirry verkkoasiointtiin"
+    icon_before: "laptop"
+    icon_after: "external-link-alt"
+  - placeholder: true
+    title: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
+    heading: 'Chatin palveluajat'
+    lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan.'
+    link__url: '#'
+    link_text: 'Tutustu kohteeseen'
+    open_text: "Siirry verkkoasiointtiin"
+    icon_before: "laptop"
+    icon_after: "external-link-alt"
+section_content_summary__link_text: 'Read more'
+section_content_summary__link_url: '/front'
