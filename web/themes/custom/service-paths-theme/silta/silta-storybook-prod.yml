@@ -9,10 +9,10 @@ exposeDomains:
     ssl:
       enabled: true
       issuer: letsencrypt
-  # - hostname: storybook.palvelupolut.fi
-  #   ssl:
-  #     enabled: true
-  #     issuer: letsencrypt
+  - hostname: storybook.palvelupolut.fi
+    ssl:
+      enabled: true
+      issuer: letsencrypt
 
 nginx:
   basicauth:
