@@ -4,5 +4,6 @@ content_summary__lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin t
 content_summary__link_url: '#'
 content_summary__link_text: 'Tutustu kohteeseen'
 content_summary__open_text: "Siirry verkkoasiointtiin"
+content_summary__open_url: "#"
 content_summary__icon_before: "laptop"
 content_summary__icon_after:  "external-link-alt"

@@ -15,6 +15,9 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+
+{% set count_results = rows|length %}
+
 {% set section_content_summary__base_class = section_content_summary__base_class|default("section-content-summary") %}
 {% set section_content_summary__modifiers = section_content_summary__modifiers|default([]) %}
 
@@ -23,16 +26,13 @@
     heading__level: 2,
     heading__base_class: "title",
     heading__blockname: content_summary__base_class,
-    heading: title,
+    heading: title|striptags ~ '(' ~ count_results ~ ')',
   } %}
 
   {% set ptv_id = null %}
   {% set ptv_type = null %}
-
-
-
   <div {{ bem("inner", [], section_content_summary__base_class) }}>
-    {% for row in rows %}
+    {% for row in rows[:2] %}
       {% if row.content['#row']._relationship_entities.field_services.field_ptv_id.value and ptv_id is null %}
         {% set ptv_id = row.content['#row']._relationship_entities.field_services.field_ptv_id.value %}
       {% endif %}
@@ -44,20 +44,22 @@
     {% endfor %}
   </div>
 
-  <div {{ bem("read-more-link", [], content_summary__base_class) }}>
-    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-      fontawesome_icon__name: "arrow-right",
-    } %}
+  {% if rows|length > 2 %}
+    <div {{ bem("read-more-link", [], content_summary__base_class) }}>
+      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+        fontawesome_icon__name: "arrow-right",
+      } %}
 
-    {% if ptv_type is not null %}
-      {% set url = '/service-points?service=' ~ ptv_id ~ '&type[' ~ ptv_type ~ ']=' ~ ptv_type %}
-    {% else %}
-      {% set url = '/service-points?service=' ~ ptv_id %}
-    {% endif %}
+      {% if ptv_type is not null %}
+        {% set url = '/service-points?service=' ~ ptv_id ~ '&type[' ~ ptv_type ~ ']=' ~ ptv_type %}
+      {% else %}
+        {% set url = '/service-points?service=' ~ ptv_id %}
+      {% endif %}
 
-    {% include "@atoms/links/link/link.twig" with {
-      link__content: 'See all'|t,
-      link__url: url,
-    } %}
-  </div>
+      {% include "@atoms/links/link/link.twig" with {
+        link__content: 'See all'|t,
+        link__url: url,
+      } %}
+    </div>
+  {% endif %}
 </div>

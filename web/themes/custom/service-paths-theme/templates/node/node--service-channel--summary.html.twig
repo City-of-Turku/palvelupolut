@@ -89,8 +89,8 @@
     {% set button_url = node.field_webpage.0.url.toString %}
   {% endif %}
 {% elseif type == 'Phone' %}
-	{% set button = node.field_phone_numbers[0].value %}
-  {% set button_url = node.field_webpage.0.url.toString %}
+	{% set button = node.field_phone_numbers[0].second %}
+  {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second %}
 {% else %}
 	{% set button = type %}
   {% set button_url = url %}
