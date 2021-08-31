@@ -24,16 +24,18 @@
       heading: content_summary__title,
     } %}
 
-    <div {{ bem("link", [], content_summary__base_class) }} >
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: "arrow-right",
-      } %}
+    {% if content_summary__link_url %}
+      <div {{ bem("link", [], content_summary__base_class) }} >
+        {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+          fontawesome_icon__name: "arrow-right",
+        } %}
 
-      {% include "@atoms/links/link/link.twig" with {
-        link__content: content_summary__link_text,
-        link__url: content_summary__link_url,
-      } %}
-    </div>
+        {% include "@atoms/links/link/link.twig" with {
+          link__content: content_summary__link_text,
+          link__url: content_summary__link_url,
+        } %}
+      </div>
+    {% endif %}
   </div>
 
   <div {{ bem("column", [], content_summary__base_class) }} >
@@ -58,7 +60,8 @@
       button__icon_after: content_summary__icon_after,
       button__icon_before: content_summary__icon_before,
       button__modifiers: ["minimal"],
-      button__link: content_summary__open_url
+      button__link: content_summary__open_url,
+      button__link_modifiers: content_summary__button_link_modifiers,
     } %}
   </div>
 </div>

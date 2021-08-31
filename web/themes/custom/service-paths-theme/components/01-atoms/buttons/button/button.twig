@@ -45,6 +45,7 @@
 
   {% if button__link %}
     {% include "@atoms/links/link/link.twig" with {
+      link__modifiers: button__link_modifiers,
       link__url: button__link,
     } %}
   {% endif %}

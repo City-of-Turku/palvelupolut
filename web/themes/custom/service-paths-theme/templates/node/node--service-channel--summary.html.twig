@@ -78,9 +78,11 @@
 %}
 
 {% set type = node.field_service_channel_type.value ? node.field_service_channel_type.value : 'Link' %}
+{% set link_modifiers = [] %}
 
 {% if type == 'EChannel' %}
-  {% set button = type %}
+
+  {% set button = 'Go to online service'|t %}
   {% if node.field_webpage.title %}
     {% set button = node.field_webpage.title %}
   {% endif %}
@@ -88,12 +90,56 @@
   {% if node.field_webpage.0.url %}
     {% set button_url = node.field_webpage.0.url.toString %}
   {% endif %}
+
 {% elseif type == 'Phone' %}
-	{% set button = node.field_phone_numbers[0].second %}
+
+  {% set first = node.field_phone_numbers[0].first %}
+  {% set second = node.field_phone_numbers[0].second %}
+  {% set phone_nr = node.field_phone_numbers[0].second|replace({'+358 ': '0'}) %}
+  {% set first_part = phone_nr|slice(0,2) %}
+  {% if first_part starts with '02' or first_part starts with '09' %}
+    {% set second_part = phone_nr|slice(2,3) %}
+    {% set third_part = phone_nr|slice(5) %}
+  {% else %}
+    {% set first_part = phone_nr|slice(0,3) %}
+    {% set second_part = phone_nr|slice(3,3) %}
+    {% set third_part = phone_nr|slice(6) %}
+  {% endif %}
+  {% set button = first_part ~ ' ' ~ second_part ~ ' ' ~ third_part %}
   {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second %}
+
+{% elseif type == 'ServiceLocation' %}
+
+  {% set button = 'Go to service location'|t %}
+  {% set button_url = url %}
+
+{% elseif type == 'WebPage' %}
+
+  {% set button = 'Open webpage'|t %}
+  {% set button_url = url %}
+  {% if node.field_webpage.0.url %}
+    {% set button_url = node.field_webpage.0.url.toString %}
+    {% if node.field_webpage.0.url.external %}
+      {% set link_modifiers = link_modifiers|merge(['external']) %}
+    {% endif %}
+  {% endif %}
+
+{% elseif type == 'PrintableForm' %}
+
+  {% set button = 'Open file'|t %}
+  {% set button_url = url %}
+  {% if node.field_webpage.0.url %}
+    {% set button_url = node.field_webpage.0.url.toString %}
+    {% if node.field_webpage.0.url.external %}
+      {% set link_modifiers = link_modifiers|merge(['external']) %}
+    {% endif %}
+  {% endif %}
+
 {% else %}
+
 	{% set button = type %}
   {% set button_url = url %}
+
 {% endif %}
 
 
@@ -103,10 +149,11 @@
   content_summary__title: label,
   content_summary__heading: '',
   content_summary__lead_text: node.field_description.summary,
-  content_summary__link_text: 'Read more'|t,
-  content_summary__link_url: url,
+  content_summary__link_text: type == 'ServiceLocation' ? '' : 'Read more'|t,
+  content_summary__link_url: type == 'ServiceLocation' ? '' : url,
   content_summary__open_text: button,
   content_summary__open_url: button_url,
+  content_summary__button_link_modifiers: link_modifiers,
   content_summary__icon_before: type_mapping[type],
   content_summary__icon_after: '',
 } %}

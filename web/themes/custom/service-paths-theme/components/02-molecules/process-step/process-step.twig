@@ -47,13 +47,14 @@
           list_item__blockname: process_step__base_class,
         } %}
           {% block list_item_content %}
-            {% set link_modifiers = process_step__link_modifiers|default([]) %}
+            {% set link_modifiers = box_links__link_modifiers %}
 
             {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
               fontawesome_icon__name: "arrow-right",
             } %}
 
             {% include "@atoms/links/link/link.twig" with {
+              link__modifiers: link_modifiers,
               link__content: item.title,
               link__url: item.url,
               link__attributes: item.attributes,

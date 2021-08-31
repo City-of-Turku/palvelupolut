@@ -80,5 +80,11 @@
       height: space(.75);
       margin-left: space(.75);
     }
+
+    .link--external {
+      svg {
+        display: none;
+      }
+    }
   }
 }
