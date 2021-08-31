@@ -68,6 +68,23 @@ $settings['file_scan_ignore_directories'] = [
   'bower_components',
 ];
 
+// Warden settings.
+// Shared security token between the site and Warden server.
+$config['warden.settings']['warden_token'] = $_ENV['WARDEN_TOKEN'];
+// Location of the Warden server, no trailing slash.
+$config['warden.settings']['warden_server_host_path'] = 'https://warden.wunder.io';
+// Allow refreshing site data from the Warden server.
+$config['warden.settings']['warden_allow_requests'] = TRUE;
+// Basic HTTP authorization credentials.
+$config['warden.settings']['warden_http_username'] = 'warden';
+$config['warden.settings']['warden_http_password'] = 'wunder';
+// IP addresses of the Warden server allowed to make callback requests.
+$config['warden.settings']['warden_public_allow_ips'] = '35.228.188.78,35.228.81.50,10.0.0.0/8';
+// Define the module locations.
+$config['warden.settings']['warden_preg_match_custom'] = '{^modules\/custom\/*}';
+$config['warden.settings']['warden_preg_match_contrib'] = '{^modules\/contrib\/*}';
+$config['warden.settings']['warden_match_contrib'] = TRUE;
+
 /**
  * Load local development override configuration, if available.
  *
