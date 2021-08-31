@@ -11,25 +11,27 @@ use Drupal\Core\Form\FormStateInterface;
  * PTV Cron.
  */
 function _ptv_config_update_cron() {
-  // $ptv_service = \Drupal::service('ptv.api_service');
-  // $config = \Drupal::configFactory()->getEditable('ptv.settings');
-  // if ($config->get('municipality')) {
-  //   $services = [];
-  //   $service_channels = [];
-  //   foreach (array_filter($config->get('organizations')) as $key => $organization) {
-  //     $services += $ptv_service->getServicesByOrganization($organization);
-  //     $service_channels += $ptv_service->getServiceChannelsByOrganization($organization);
-  //   }
-  //   $config->set('services', $services);
-  //   $config->set('service_channels', $service_channels);
-  //   $config->save();
-  // }
+  $ptv_service = \Drupal::service('ptv.api_service');
+  $config = \Drupal::configFactory()->getEditable('ptv.settings');
+  if ($config->get('municipality')) {
+    $services = [];
+    $service_channels = [];
+    foreach (array_filter($config->get('organizations')) as $key => $organization) {
+      $services += $ptv_service->getServicesByOrganization($organization);
+      $service_channels += $ptv_service->getServiceChannelsByOrganization($organization);
+    }
+    $config->set('services', $services);
+    $config->set('service_channels', $service_channels);
+    $config->save();
+  }
 }
 
-
+/**
+ *
+ */
 function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $node = $form_state->getFormObject()->getEntity();
-  // Service
+  // Service.
   if ($node->bundle() == 'service') {
     $ptv_fields = [
       'field_charge_info',
@@ -39,7 +41,7 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       'field_service_classes',
       'field_tags',
       'field_target_groups',
-      'field_user_instruction'
+      'field_user_instruction',
     ];
     if (!$node->field_ptv_id->isEmpty()) {
       foreach ($ptv_fields as $field) {
@@ -47,7 +49,7 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       }
     }
   }
-  // Service Channel
+  // Service Channel.
   if ($node->bundle() == 'service_channel') {
     $ptv_fields = [
       'field_accessibility',

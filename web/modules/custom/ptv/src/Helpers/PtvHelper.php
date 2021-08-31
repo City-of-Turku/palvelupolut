@@ -29,14 +29,11 @@ class PtvHelper {
 
     $data = [];
     foreach ($config_data as $key => $name) {
-      // Service Channel Kastun päiväkoti (Pyörämäentie 4)
-      // if ($key == '552b8911-9117-472c-81eb-bf0fcd9b14e3') {
-      // if ($key == 'e268fd9e-89b6-447c-b5e4-2b82c3a1137c') { // Service Varhaiskasvatuksen vuorohoito.
-      if (in_array($key, $tmp_ids)) {
-        foreach ($langcodes as $langcode) {
-          $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
-        }
+      // If (in_array($key, $tmp_ids)) {.
+      foreach ($langcodes as $langcode) {
+        $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
       }
+      // }
     }
 
     return $data;

@@ -28,6 +28,38 @@ php:
   # Don't show errors in production.
   errorLevel: "hide"
 
+  cron:
+    ptvcron1:
+      schedule: '0 1 * * *'
+      command: |
+        drush migrate:reset-status services;
+        drush migrate:import services --limit=30;
+    ptvcron2:
+      schedule: '10 1 * * *'
+      command: |
+        drush migrate:reset-status services_translations;
+        drush migrate:import services_translations --limit=30;
+    ptvcron3:
+      schedule: '0 3 * * *'
+      command: |
+        drush migrate:reset-status service_channels;
+        drush migrate:import service_channels --limit=30;
+    ptvcron4:
+      schedule: '10 3 * * *'
+      command: |
+        drush migrate:reset-status service_channels_translations;
+        drush migrate:import service_channels_translations --limit=30;
+    ptvcron5:
+      schedule: '30 1 * * *'
+      command: |
+        drush migrate:reset-status services_translations;
+        drush migrate:import services_translations --update;
+    ptvcron6:
+      schedule: '30 3 * * *'
+      command: |
+        drush migrate:reset-status service_channels_translations;
+        drush migrate:import service_channels_translations --update;
+
 nginx:
   resources:
     requests:
