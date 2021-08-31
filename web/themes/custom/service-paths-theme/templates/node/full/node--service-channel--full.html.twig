@@ -86,7 +86,7 @@
 ] %}
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: true,
+  page_sidebar: content.field_paragraphs_sidebar|render ? true : false
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}
