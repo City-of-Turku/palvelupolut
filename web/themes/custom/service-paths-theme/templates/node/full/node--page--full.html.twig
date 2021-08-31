@@ -83,7 +83,7 @@
 {% endfor %}
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: content.field_paragraphs_sidebar|render ? true : false
+  page_sidebar: content.field_paragraphs_sidebar|render
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}

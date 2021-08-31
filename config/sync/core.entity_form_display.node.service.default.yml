@@ -36,7 +36,6 @@ third_party_settings:
       children:
         - group_hero
         - group_paragraphs
-        - group_sidebar
         - group_ptv
       parent_name: ''
       weight: 2
@@ -105,12 +104,11 @@ third_party_settings:
         required_fields: true
       label: PTV
     group_sidebar:
-      children:
-        - field_paragraphs_sidebar
-      parent_name: group_tabs
-      weight: 17
+      children: {  }
+      parent_name: ''
+      weight: 10
       format_type: tab
-      region: content
+      region: hidden
       format_settings:
         id: ''
         classes: ''
@@ -125,7 +123,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -190,18 +188,6 @@ content:
     region: content
   field_paragraphs:
     weight: 14
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: preview
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
-    type: paragraphs_classic_asymmetric
-    region: content
-  field_paragraphs_sidebar:
-    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -309,7 +295,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -317,21 +303,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -343,13 +329,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 8
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -357,4 +343,5 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_paragraphs_sidebar: true

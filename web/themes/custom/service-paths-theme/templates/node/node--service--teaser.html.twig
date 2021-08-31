@@ -67,44 +67,16 @@
  */
 #}
 
-{% set card__base_class = 'card' %}
-{% set card__type = card__type|default() %}
-{% set card__modifiers = card__modifiers|default([]) %}
-{% set card__extra_classes = card__extra_classes|default([]) %}
-{% set card__image__modifiers = card__image__modifiers|default([]) %}
+{% set image_url = '' %}
+{% if content.field_lead_image|render %}
+	{% set image_url = file_url(content.field_lead_image[0]['#media'].field_media_image.entity.uri.value|image_style('crop_650x350')) %}
+{% endif %}
 
-<div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
-	<div {{ bem('wrapper', card__modifiers, card__base_class) }}>
-		<div {{ bem('item_content', card__modifiers, card__base_class) }}>
-			{% include "@atoms/text/heading/heading.twig" with {
-        heading__level: card__heading_level|default(3),
-        heading__base_class: card__heading__base_class|default('heading'),
-        heading__modifiers: card__heading__modifiers,
-        heading__blockname: card__base_class,
-        heading: label,
-      } %}
-
-
-			<div {{ bem('link', card__modifiers, card__base_class) }}>
-				{% include "@atoms/images/icon/icon.twig" with {
-          icon__name: "arrow-right",
-          icon__decorative: true,
-        } %}
-
-				{% include "@atoms/links/link/link.twig" with {
-          link__content: 'Read more'|t,
-          link__url: url,
-        } %}
-			</div>
-		</div>
-
-    {% set image_url = file_url(content.field_lead_image[0]['#media'].field_media_image.entity.uri.value|image_style('crop_650x350')) %}
-
-    <div {{ bem("card-image", [], teaser__base_class) }} aria-hidden="true">
-      {% include "@atoms/images/image/responsive-image.twig" with {
-        image_src: image_url,
-        responsive_image__blockname: card__base_class,
-      } %}
-    </div>
-	</div>
-</div>
+{% include '@molecules/cards/card/card.twig' with {
+  card__modifiers: card_modifiers,
+  card__image__src: image_url,
+  card__heading: label,
+  card__link__url: url,
+  card__link_text: 'Read more'|t,
+  card__items: [],
+} %}
