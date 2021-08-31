@@ -6,13 +6,13 @@ grumphp:
   tasks:
     php_compatibility:
       run_on: ['web/modules/custom', 'web/themes/custom', 'web/sites']
-    check_file_permissions: ~
+    # check_file_permissions: ~
     php_check_syntax:
       run_on: ['web/modules/custom', 'web/themes/custom', 'web/sites']
     phpcs:
       standard: ['phpcs.xml']
-    php_stan:
-      run_on: ['web/modules/custom', 'web/themes/custom']
+    # php_stan:
+    #   run_on: ['web/modules/custom', 'web/themes/custom']
     ecs:
       run_on: ['web/modules/custom', 'web/themes/custom', 'web/sites']
     yaml_lint: ~
@@ -28,3 +28,4 @@ grumphp:
     - Wunderio\GrumPHP\Task\JsonLint\JsonLintExtensionLoader
   git_hook_variables:
     EXEC_GRUMPHP_COMMAND: lando php
+  process_timeout: 120

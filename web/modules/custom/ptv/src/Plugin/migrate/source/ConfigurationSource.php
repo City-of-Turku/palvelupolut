@@ -134,9 +134,7 @@ class ConfigurationSource extends SourcePluginBase {
     $langcode = $row->getSourceProperty('langcode');
     $data = $helper->prepareMigrateData($this->sourceKey, $langcode, $id);
     foreach ($data as $key => $value) {
-      // if (!in_array($key, array_keys($row->getSource()))) {
-        $row->setSourceProperty($key, $value);
-      // }
+      $row->setSourceProperty($key, $value);
     }
     return parent::prepareRow($row);
   }

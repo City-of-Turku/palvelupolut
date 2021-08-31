@@ -6,7 +6,7 @@ use Drupal\ptv\PtvClient;
 use Drupal\Core\Language\LanguageManagerInterface;
 
 /**
- * Class PtvApiService.
+ * Service for getting PTV data.
  */
 class PtvApiService {
 
@@ -25,6 +25,8 @@ class PtvApiService {
   protected $endpoint = NULL;
 
   /**
+   * Language Manager.
+   *
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   protected $languageManager;
@@ -33,6 +35,7 @@ class PtvApiService {
    * PTV Service constructor.
    *
    * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   Language Manager.
    */
   public function __construct(LanguageManagerInterface $language_manager) {
     $this->languageManager = $language_manager;
@@ -42,8 +45,6 @@ class PtvApiService {
 
   /**
    * Set the PTV client.
-   *
-   * @return void
    */
   public function setPtvClient(): void {
 
@@ -69,7 +70,7 @@ class PtvApiService {
    * @return mixed
    *   Object or Array if $returnAssoc is TRUE.
    */
-  public function request($method, $path, $parameters = NULL, $returnAssoc = FALSE) {
+  public function request($method, $path, array $parameters = [], $returnAssoc = FALSE) {
     return $this->client->handleRequest($method, $this->endpoint . $path, $options = [], $parameters, $returnAssoc);
   }
 
@@ -77,6 +78,7 @@ class PtvApiService {
    * Returns list of all municipalities.
    *
    * @return array
+   *   Returns Municipality codes.
    */
   public function getMunicipalitiesCodes() {
     $response = $this->request('GET', 'CodeList/GetMunicipalityCodes');
@@ -98,8 +100,6 @@ class PtvApiService {
 
   /**
    * Returns Services filtered by area.
-   *
-   * @return array
    */
   public function getServicesByAreaCode($area_type, $code) {
     $response = $this->request('GET', 'Service/area/' . $area_type . '/code/' . $code);
@@ -107,11 +107,6 @@ class PtvApiService {
     $results = [];
     if ($response && !empty($response->itemList)) {
       foreach ($response->itemList as $item) {
-        // foreach ($item->serviceNames as $value) {
-        //   if ($value->type == 'Name') {
-        //     $name = $value->value;
-        //   }
-        // }
         $results[$item->id] = $item->name;
       }
     }
@@ -121,8 +116,6 @@ class PtvApiService {
 
   /**
    * Returns Services of Organization.
-   *
-   * @return array
    */
   public function getServicesByOrganization($id) {
     $response = $this->request('GET', 'Organization/' . $id);
@@ -139,8 +132,6 @@ class PtvApiService {
 
   /**
    * Returns Service Channels filtered by area.
-   *
-   * @return array
    */
   public function getServiceChannelsByOrganization($organization) {
     $response = $this->request('GET', 'ServiceChannel/organization/' . $organization);
@@ -176,8 +167,6 @@ class PtvApiService {
 
   /**
    * Returns Organizations filtered by area.
-   *
-   * @return array
    */
   public function getOrganizationsByAreaCode($area_type, $code) {
     $response = $this->request('GET', 'Organization/area/' . $area_type . '/code/' . $code);
@@ -194,8 +183,6 @@ class PtvApiService {
 
   /**
    * Returns Service object.
-   *
-   * @return object
    */
   public function getService($id) {
     $response = $this->request('GET', 'Service/' . $id);
@@ -207,8 +194,6 @@ class PtvApiService {
 
   /**
    * Returns Service Channel object.
-   *
-   * @return object
    */
   public function getServiceChannel($id) {
     $response = $this->request('GET', 'ServiceChannel/' . $id);

@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
 /**
- * Class PtvClient.
+ * PTV client to handle requests to API.
  */
 class PtvClient {
 
@@ -23,14 +23,12 @@ class PtvClient {
    * @param array $config
    *   Guzzle HTTP configuration options.
    */
-  public function __construct($config = []) {
+  public function __construct(array $config = []) {
     $this->guzzle = new Client($config);
   }
 
   /**
-   * @inheritdoc
-   *
-   * @param array|null $parameters
+   * Request handler.
    */
   public function handleRequest(string $method, string $uri = '', array $options = [], ?array $parameters = [], bool $returnAssoc = FALSE) {
     if (!empty($parameters)) {

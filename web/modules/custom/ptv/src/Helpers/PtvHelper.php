@@ -11,6 +11,7 @@ class PtvHelper {
    * Returns an array.
    *
    * @return array
+   *   Returns array of items.
    */
   public function prepareMigrateIterator($config, $key, $langcodes) {
 
@@ -41,9 +42,7 @@ class PtvHelper {
   }
 
   /**
-   * Returns an array.
-   *
-   * @return array|mixed|string[][]
+   * Returns an array of item's data.
    */
   public function prepareMigrateData($key, $langcode, $id) {
 

@@ -27,7 +27,7 @@ function _ptv_config_update_cron() {
 }
 
 /**
- *
+ * Alter node forms.
  */
 function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $node = $form_state->getFormObject()->getEntity();

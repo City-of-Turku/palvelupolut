@@ -43,12 +43,6 @@ class SettingsForm extends ConfigFormBase {
     if ($config->get('municipality')) {
       $organizations = $ptv_service->getOrganizationsByAreaCode('Municipality', $config->get('municipality'));
 
-      // $form['organization'] = [
-      //   '#type' => 'select',
-      //   '#options' => $organizations,
-      //   '#title' => $this->t('Organization'),
-      //   '#default_value' => $config->get('organization'),
-      // ];
       $form['organizations'] = [
         '#type' => 'checkboxes',
         '#options' => $organizations,
@@ -105,8 +99,6 @@ class SettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
-   *
-   * @return void
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $settings = $this->config('ptv.settings');
