@@ -529,7 +529,7 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: service-points
+      path: service-channels
       style:
         type: default
         options:
@@ -768,7 +768,7 @@ display:
         operator: AND
         groups:
           1: AND
-      title: 'Service Points'
+      title: 'Service Channels'
       exposed_form:
         type: bef
         options:

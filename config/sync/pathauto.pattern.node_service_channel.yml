@@ -7,16 +7,16 @@ dependencies:
 id: node_service_channel
 label: 'Node: Service Channel'
 type: 'canonical_entities:node'
-pattern: 'service-points/[node:title]'
+pattern: 'service-channels/[node:title]'
 selection_criteria:
-  ac60d56a-8693-40c3-bf30-168bbeaf9352:
+  a837ecba-5a6f-4236-b676-2a88479d6346:
     id: node_type
     bundles:
       service_channel: service_channel
     negate: false
     context_mapping:
       node: node
-    uuid: ac60d56a-8693-40c3-bf30-168bbeaf9352
+    uuid: a837ecba-5a6f-4236-b676-2a88479d6346
 selection_logic: and
 weight: -5
 relationships: {  }

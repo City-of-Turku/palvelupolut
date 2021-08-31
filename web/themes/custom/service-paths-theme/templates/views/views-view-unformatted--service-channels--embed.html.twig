@@ -51,9 +51,9 @@
       } %}
 
       {% if ptv_type is not null %}
-        {% set url = '/service-points?service=' ~ ptv_id ~ '&type[' ~ ptv_type ~ ']=' ~ ptv_type %}
+        {% set url = '/service-channels?service=' ~ ptv_id ~ '&type[' ~ ptv_type ~ ']=' ~ ptv_type %}
       {% else %}
-        {% set url = '/service-points?service=' ~ ptv_id %}
+        {% set url = '/service-channels?service=' ~ ptv_id %}
       {% endif %}
 
       {% include "@atoms/links/link/link.twig" with {
