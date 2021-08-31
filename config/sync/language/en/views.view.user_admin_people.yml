@@ -2,7 +2,7 @@ label: People
 description: 'Find and manage people interacting with your site.'
 display:
   default:
-    display_title: Master
+    display_title: Default
     display_options:
       exposed_form:
         options:

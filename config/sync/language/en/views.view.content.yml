@@ -58,7 +58,7 @@ display:
       empty:
         area_text_custom:
           content: 'No content available.'
-    display_title: Master
+    display_title: Default
   page_1:
     display_options:
       menu:

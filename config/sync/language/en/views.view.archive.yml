@@ -2,7 +2,7 @@ label: Archive
 description: 'All content, by month.'
 display:
   default:
-    display_title: Master
+    display_title: Default
     display_options:
       title: 'Monthly archive'
       exposed_form:

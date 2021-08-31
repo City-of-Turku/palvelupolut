@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.service.field_description_heading
     - field.field.node.service.field_description_links
     - field.field.node.service.field_lead_image
+    - field.field.node.service.field_meta_tags
     - field.field.node.service.field_paragraphs
     - field.field.node.service.field_paragraphs_sidebar
     - field.field.node.service.field_ptv_id
@@ -26,6 +27,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - linkit
+    - metatag
     - text
     - user
 id: node.service.default
@@ -97,6 +99,13 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_meta_tags:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_paragraphs:
     weight: 5

@@ -2,7 +2,7 @@ label: 'Who''s new'
 description: 'Shows a list of the newest user accounts on the site.'
 display:
   default:
-    display_title: Master
+    display_title: Default
     display_options:
       exposed_form:
         options:

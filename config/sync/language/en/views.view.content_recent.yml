@@ -2,7 +2,7 @@ label: 'Recent content'
 description: 'Recent content.'
 display:
   default:
-    display_title: Master
+    display_title: Default
     display_options:
       exposed_form:
         options:

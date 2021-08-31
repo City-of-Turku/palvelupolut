@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_image
+    - field.field.node.blog_post.field_meta_tags
     - node.type.blog_post
   module:
+    - metatag
     - text
     - user
 id: node.blog_post.default
@@ -29,6 +31,13 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   links:
     weight: 100

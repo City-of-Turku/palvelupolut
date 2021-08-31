@@ -58,7 +58,7 @@ display:
       empty:
         area_text_custom:
           content: 'Inget innehåll tillgängligt.'
-    display_title: Huvud
+    display_title: Förvald
   page_1:
     display_options:
       menu:

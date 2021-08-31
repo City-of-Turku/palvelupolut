@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.section_teaser
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_image
+    - field.field.node.blog_post.field_meta_tags
     - node.type.blog_post
   module:
     - media
@@ -33,5 +34,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
   links: true

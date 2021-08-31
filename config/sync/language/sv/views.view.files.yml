@@ -2,7 +2,7 @@ label: Filer
 description: 'Hitta och hantera filer.'
 display:
   default:
-    display_title: Huvud
+    display_title: Förvald
     display_options:
       exposed_form:
         options:

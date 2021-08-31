@@ -2,7 +2,7 @@ label: 'Bibliotek med anpassade block'
 description: 'Hitta och hantera anpassade block.'
 display:
   default:
-    display_title: Huvud
+    display_title: Förvald
     display_options:
       exposed_form:
         options:

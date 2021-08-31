@@ -1,5 +1,4 @@
 cancel_confirm:
-  body: "[user:display-name],\r\n\r\nDet har gjorts en begäran om att ta bort ditt konto på [site:name].\r\n\r\nDu kan nu ta bort ditt konto på [site:url-brief] genom att klicka på denna länk eller genom att klippa ut och klistra in den i din webbläsare:\r\n\r\n[user:cancel-url]\r\n\r\nOBSERVERA: Borttagandet av ditt konto kan inte ångras.\r\n\r\nDen här länken  är giltig en dag och inget händer om den inte används.\r\n\r\n--  Administratörerna på [site:name]"
   subject: 'Begäran om avslutande av konto för [user:display-name] på [site:name]'
 password_reset:
   body: "[user:display-name],\r\n\r\nEn begäran om att återställa lösenordet för ditt kontot har gjorts på [site:name].\r\n\r\nDu kan nu logga in genom att klicka på länken eller kopiera och klistra in den i din webbläsare.\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan bara användas en gång och kommer ta dig till en sida där du kan ange ditt lösenord. Denna länk upphör efter en dag och inget kommer hända om du inte använder den.\r\n\r\n--  Administratörerna på [site:name]"
