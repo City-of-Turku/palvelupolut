@@ -17,15 +17,26 @@ class PtvHelper {
     $config = \Drupal::config($config);
     $config_data = $config->get($key);
 
+    $tmp_ids = [
+      'ff000abb-d4ba-4342-977b-743215b4d567',
+      'e1d74431-eee4-485c-bcc2-27c69ec7462b',
+      '353d9358-ed47-445c-889f-b505444fb216',
+      '70bef918-cd73-4a0d-90f1-52e6c835c9fa',
+      '552b8911-9117-472c-81eb-bf0fcd9b14e3',
+      '814d1a4c-2656-4348-b54b-8b04ede310ba',
+      'afa50539-473f-4823-baf4-d728a1bae7cb',
+    ];
+
     $data = [];
     foreach ($config_data as $key => $name) {
       // Service Channel Kastun päiväkoti (Pyörämäentie 4)
       // if ($key == '552b8911-9117-472c-81eb-bf0fcd9b14e3') {
       // if ($key == 'e268fd9e-89b6-447c-b5e4-2b82c3a1137c') { // Service Varhaiskasvatuksen vuorohoito.
-      foreach ($langcodes as $langcode) {
-        $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
+      if (in_array($key, $tmp_ids)) {
+        foreach ($langcodes as $langcode) {
+          $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
+        }
       }
-      // }
     }
 
     return $data;
