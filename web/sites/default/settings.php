@@ -70,7 +70,7 @@ $settings['file_scan_ignore_directories'] = [
 
 // Warden settings.
 // Shared security token between the site and Warden server.
-$config['warden.settings']['warden_token'] = $_ENV['WARDEN_TOKEN'];
+$config['warden.settings']['warden_token'] = '36a653f14544c7e7cae889360316e3addafae7b6eeac846f810215882b2799e6';
 // Location of the Warden server, no trailing slash.
 $config['warden.settings']['warden_server_host_path'] = 'https://warden.wunder.io';
 // Allow refreshing site data from the Warden server.
