@@ -39,9 +39,9 @@ nginx:
     - description: 'Redirect all traffic to without www.'
       from: '~://www.palvelupolut.fi'
       to:  https://palvelupolut.fi$request_uri
-    - description: 'Redirect all traffic from internal production branch to prod.'
-      from: '~://palvelupolut.finland.wdr.io'
-      to:  https://palvelupolut.fi$request_uri
+    # - description: 'Redirect all traffic from internal production branch to prod.'
+    #   from: '~://palvelupolut.finland.wdr.io'
+    #   to:  https://palvelupolut.fi$request_uri
 
 exposeDomains:
   - hostname: palvelupolut.finland.wdr.io
