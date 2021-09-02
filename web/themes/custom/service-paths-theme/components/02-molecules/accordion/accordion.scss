@@ -1,10 +1,6 @@
 .accordion {
   margin: var(--space-elements) 0;
 
-  @include above($width-large) {
-    max-width: calc(100% - #{$width--sidebar});
-  }
-
   .heading {
     margin: 0 0 space(1.5);
     font-size: $font-size--large-3;
@@ -13,5 +9,11 @@
       margin: 0 0 space(2);
       font-size: $font-size--large-5;
     }
+  }
+}
+
+.page-content--full-width .accordion {
+  @include above($width-large) {
+    max-width: calc(100% - #{$width--sidebar});
   }
 }
