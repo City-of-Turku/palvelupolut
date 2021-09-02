@@ -11,8 +11,8 @@ exposeDomains:
       issuer: letsencrypt
   - hostname: storybook.palvelupolut.fi
     ssl:
-      enabled: false
-      # issuer: letsencrypt
+      enabled: true
+      issuer: letsencrypt
 
 nginx:
   basicauth:
