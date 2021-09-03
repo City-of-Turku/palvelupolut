@@ -13,6 +13,11 @@
     font-size: $font-size--small-2;
     letter-spacing: $letter-spacing--large;
     color: color(text);
+    text-decoration: underline;
+
+    &:last-child {
+      text-decoration: none;
+    }
 
     @include above($width-medium) {
       font-size: $font-size--base;

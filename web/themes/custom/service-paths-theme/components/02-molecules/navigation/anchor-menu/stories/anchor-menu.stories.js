@@ -7,7 +7,6 @@ import {
 import anchorMenuTemplate from '../anchor-menu.twig';
 
 import anchorMenuData from './anchor-menu.yml';
-import anchorMenuWithTitleData from './anchor-menu-with-title.yml';
 
 /**
  * Storybook Definition.
@@ -19,10 +18,6 @@ export const anchorMenu = () => (
     <ComponentWrapper
       markup={anchorMenuTemplate(anchorMenuData)}
       label="Anchor menu"
-    />
-    <ComponentWrapper
-      markup={anchorMenuTemplate(anchorMenuWithTitleData)}
-      label="Anchor menu, with title"
     />
   </CollectionWrapper>
 );

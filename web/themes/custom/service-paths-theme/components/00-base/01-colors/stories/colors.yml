@@ -8,11 +8,9 @@ palettes:
   - palette_heading: 'Border'
     colors:
       - name: 'Border primary'
-      - name: 'Border separator'
   - palette_heading: 'Background'
     colors:
       - name: 'Background'
-      - name: 'Background inverse'
       - name: 'Background dark'
       - name: 'Background light'
       - name: 'Background section'

@@ -9,7 +9,7 @@
   font-size: $font-size--large-2;
   letter-spacing: $letter-spacing--medium;
   line-height: $line-height--heading-medium;
-
+  margin: 1px;
 
   &:focus {
     @include focus;
@@ -17,10 +17,14 @@
     background-color: color(background);
     border-color: color(accent);
     outline: none;
+    border: 2px solid var(--color-text);
+    font-weight: bold;
+    margin: 0;
   }
 
   &::placeholder {
-    color: $gray-dark;
+    color: color(text-dark);
+    font-weight: 300;
   }
 
   &.disabled {
@@ -46,7 +50,6 @@
 
   &--error {
     background-color: color(error);
-    border-bottom: $border-width solid color(text-error);
 
     &::placeholder {
       color: color(text-error);

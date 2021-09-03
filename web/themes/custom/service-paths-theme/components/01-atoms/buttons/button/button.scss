@@ -6,6 +6,10 @@
   cursor: pointer;
   position: relative;
 
+  &:hover {
+    box-shadow: 0 0 2px var(--color-text);
+  }
+
   a {
     position: absolute;
     transition: none;
@@ -34,7 +38,12 @@
   }
 
   &--inverse {
-    @include border($color: color(background));
+    background: color(background-section-dark);
+    color: color(text);
+    border-width: 1px;
+    &:hover {
+      color: color(text);
+    }
   }
 
   &--minimal {
@@ -49,6 +58,7 @@
       background-color: transparent;
       color: color(text);
       border-color: black;
+      box-shadow: 0 0 2px color(text);
     }
   }
 
