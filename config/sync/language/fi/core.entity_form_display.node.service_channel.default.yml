@@ -1,0 +1,8 @@
+third_party_settings:
+  field_group:
+    group_paragraphs:
+      label: Komponentit
+    group_sidebar:
+      label: Sivuvalikko
+    group_contacts:
+      label: Yhteystiedot

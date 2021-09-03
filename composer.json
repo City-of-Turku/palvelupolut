@@ -206,6 +206,9 @@
         },
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/core": {
+                "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch"
+            },
             "drupal/devel": {
                 "Brings back the Available Methods & Properties tabs for Kint dumps — Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
             },

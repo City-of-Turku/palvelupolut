@@ -1,0 +1,6 @@
+label: Aukioloajat
+settings:
+  first:
+    label: 'Päivä tai otsikko'
+  second:
+    label: Tunnit

@@ -43,12 +43,13 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: Paragraphs
+        id: ''
+        classes: ''
+        show_empty_fields: false
+      label: Komponentit
     group_sidebar:
       children:
         - field_paragraphs_sidebar
@@ -57,12 +58,13 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: Sidebar
+        id: ''
+        classes: ''
+        show_empty_fields: false
+      label: Sivupalkki
     group_hero:
       children:
         - field_heading
