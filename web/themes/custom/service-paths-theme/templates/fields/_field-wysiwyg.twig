@@ -57,7 +57,7 @@
     {% endif %}
 
     {% for item in items %}
-      {{ item.content }}
+      {{ item.content|nl2br }}
     {% endfor %}
   {% endblock %}
 {% endembed %}
