@@ -56,12 +56,14 @@ class PtvHelper {
         $target_groups = [];
         $service_classes = [];
         foreach ($object->serviceNames as $value) {
-          if ($value->language == 'fi') {
-            $name = $value->value;
-          }
-          if ($value->language == $langcode) {
-            $name = $value->value;
-            break;
+          if ($value->type == 'Name') {
+            if ($value->language == 'fi') {
+              $name = $value->value;
+            }
+            if ($value->language == $langcode) {
+              $name = $value->value;
+              break;
+            }
           }
         }
         foreach ($object->serviceDescriptions as $value) {
@@ -140,13 +142,15 @@ class PtvHelper {
 
         $object = $ptv_service->getServiceChannel($id);
         foreach ($object->serviceChannelNames as $value) {
-          $name = $value->value;
-          if ($value->language == 'fi') {
+          if ($value->type == 'Name') {
             $name = $value->value;
-          }
-          if ($value->language == $langcode) {
-            $name = $value->value;
-            break;
+            if ($value->language == 'fi') {
+              $name = $value->value;
+            }
+            if ($value->language == $langcode) {
+              $name = $value->value;
+              break;
+            }
           }
         }
         $services = [];

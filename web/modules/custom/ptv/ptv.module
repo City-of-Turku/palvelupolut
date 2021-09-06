@@ -47,6 +47,10 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       foreach ($ptv_fields as $field) {
         $form[$field]['widget']['#disabled'] = TRUE;
       }
+      $ptv_description = t('To edit fields in this group, visit
+        <a href="https://palvelutietovaranto.suomi.fi" target="_blank">
+        https://palvelutietovaranto.suomi.fi</a>');
+      $form['#fieldgroups']['group_ptv']->format_settings['description'] = '<p><strong>' . $ptv_description . '</strong></p>';
     }
   }
   // Service Channel.
@@ -61,7 +65,6 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       'field_phone_numbers',
       'field_ptv_id',
       'field_service_channel_type',
-      'field_services',
       'field_tags',
       'field_webpage',
     ];
@@ -69,6 +72,10 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       foreach ($ptv_fields as $field) {
         $form[$field]['widget']['#disabled'] = TRUE;
       }
+      $ptv_description = t('To edit fields in this group, visit
+        <a href="https://palvelutietovaranto.suomi.fi" target="_blank">
+        https://palvelutietovaranto.suomi.fi</a>');
+      $form['#fieldgroups']['group_ptv']->format_settings['description'] = '<p><strong>' . $ptv_description . '</strong></p>';
     }
   }
 }

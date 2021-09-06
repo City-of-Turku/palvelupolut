@@ -1,0 +1,6 @@
+label: Puhelinnumerot
+settings:
+  first:
+    label: Kuvaus
+  second:
+    label: Määrä
