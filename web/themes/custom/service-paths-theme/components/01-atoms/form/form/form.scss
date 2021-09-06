@@ -73,3 +73,17 @@
     visibility: hidden;
   }
 }
+.form {
+  legend {
+    text-transform: uppercase;
+    font-family: $font-family--heading;
+    font-size: $font-size--h4;
+    font-size-small: $font-size--h4--small;
+    letter-spacing: $letter-spacing--none;
+    line-height: 1.5;
+    color: color(text);
+    color-link-hover: color(text-inverse);
+    font-weight: 700;
+    margin: 0 0 space();
+  }
+}

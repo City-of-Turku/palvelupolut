@@ -20,6 +20,14 @@
 
   &__inner {
     margin-top: space(1.5);
+
+    .label {
+      text-transform: capitalize;
+    }
+
+    .title {
+      text-transform: uppercase;
+    }
   }
 
   .input--submit {
@@ -78,6 +86,7 @@
 
     &__title {
       margin-bottom: space(1);
+      text-transform: uppercase;
     }
   }
 }

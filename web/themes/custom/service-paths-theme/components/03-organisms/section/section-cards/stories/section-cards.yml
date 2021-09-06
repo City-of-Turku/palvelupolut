@@ -1,7 +1,4 @@
-#section_cards__title: '34 tulosta listana'
-#section_cards__link__title: 'Näytä kartalla'
-#section_cards__link__url: "test"
-#section_cards__link_icon: "filter"
+section_cards__title: '34 tulosta listana'
 section_cards__items:
   - placeholder: true
     image__src: 'hero.jpg'

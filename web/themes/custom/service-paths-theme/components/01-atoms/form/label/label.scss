@@ -1,6 +1,8 @@
 .label {
   display: block;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: $font-size--small-1;
 
   &--error {
     color: color(text-error);

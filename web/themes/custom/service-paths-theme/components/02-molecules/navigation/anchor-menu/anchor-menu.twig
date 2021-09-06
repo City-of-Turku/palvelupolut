@@ -17,15 +17,6 @@
 {% set anchor_menu__modifiers = anchor_menu__modifiers|default([]) %}
 
 <div {{ bem(anchor_menu__base_class, anchor_menu__modifiers) }}>
-  {% if anchor_menu__title %}
-    {% include "@atoms/text/heading/heading.twig" with {
-      "heading": anchor_menu__title,
-      "heading__level": anchor_menu__title__level|default(4),
-      "heading__base_class": "title",
-      "heading__blockname": anchor_menu__base_class,
-    } %}
-  {% endif %}
-
   {% embed "@atoms/lists/list-unordered.twig" with {
     list__base_class: "menu",
     list__modifier: anchor_menu__modifiers,
