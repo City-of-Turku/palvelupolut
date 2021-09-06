@@ -15,6 +15,12 @@
   &:hover {
     @include link--hover;
   }
+
+  &:focus {
+    @include link-focus;
+    outline: 1px solid color(accent);
+    outline-offset: 1px;
+  }
 }
 
 @mixin link--hover(

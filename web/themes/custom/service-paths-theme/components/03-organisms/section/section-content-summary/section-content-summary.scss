@@ -2,6 +2,11 @@
   position: relative;
   padding: space(2) 0;
 
+  .heading {
+    margin-bottom: space(2);
+    text-transform: uppercase;
+  }
+
   .read-more-link {
     font-size: $font-size--small-2;
     font-weight: bold;

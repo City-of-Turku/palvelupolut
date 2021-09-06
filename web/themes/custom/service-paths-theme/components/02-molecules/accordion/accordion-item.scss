@@ -46,7 +46,10 @@
   }
 
   &__content {
-    padding: space() 0;
+
+    p:first-child {
+      margin-top: 0;
+    }
 
     .text-long {
       margin-bottom: 0;

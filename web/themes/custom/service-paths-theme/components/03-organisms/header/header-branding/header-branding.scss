@@ -1,11 +1,17 @@
 .header-branding {
-  @include link-reset;
-
   display: block;
   max-width: 8rem;
+  box-shadow: none;
+  color: black;
 
-  &:focus {
-    @include focus;
+  &:focus:hover {
+    box-shadow: none;
+    color: black;
+  }
+
+  &:hover {
+    box-shadow: none;
+    color: black;
   }
 
   svg {
