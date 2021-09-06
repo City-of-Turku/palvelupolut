@@ -16,3 +16,4 @@ core/**/tests
 modules/contrib/**/tests
 sites/**/files
 Dockerfile
+themes/custom/service-paths-theme/silta

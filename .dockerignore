@@ -18,3 +18,4 @@ web/.dockerignore
 Dockerfile
 composer.lock
 silta/silta*.yml
+web/themes/custom/service-paths-theme/silta
