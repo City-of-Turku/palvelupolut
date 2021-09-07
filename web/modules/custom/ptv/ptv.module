@@ -79,3 +79,65 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ptv_preprocess_field(array &$vars) {
+  ptv_preprocess_text_fields($vars);
+}
+
+/**
+ * Parse text fields of service & service channel as markdown convert plain text html.
+ */
+function ptv_preprocess_text_fields(array &$vars) {
+  if ($vars['element']['#entity_type'] != 'node') {
+    return;
+  }
+
+  $bundle = $vars['element']['#bundle'];
+  $node = $vars['element']['#object'];
+  if (in_array($vars['element']['#bundle'], ['service', 'service_channel'])
+      && !$node->field_ptv_id->isEmpty()) {
+
+    switch ($bundle) {
+      case 'service':
+          $md_fields = [
+            'field_description',
+            'field_requirements',
+            'field_user_instruction',
+            'field_charge_info',
+          ];
+        break;
+
+      case 'service_channel':
+          $md_fields = [
+            'field_description',
+            'field_accessibility',
+          ];
+        break;
+    }
+
+    if (!class_exists('Parsedown')) {
+      return;
+    }
+
+    $pd = new Parsedown();
+
+    foreach ($md_fields as $field) {
+      if ($vars['field_name'] !== $field) {
+        continue;
+      }
+
+      foreach ($vars['items'] as $k => $item) {
+        if (isset($item['content'], $item['content']['#text'])) {
+          $vars['items'][$k]['content'] = [
+            '#type' => 'processed_text',
+            '#text' => $pd->text($item['content']['#text']),
+            '#format' => 'basic_html',
+          ];
+        }
+      }
+    }
+  }
+}

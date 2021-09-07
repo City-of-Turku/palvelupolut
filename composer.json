@@ -122,6 +122,7 @@
         "drupal/ultimate_cron": "2.0-alpha5",
         "drupal/warden": "^3.0.0-rc1",
         "drush/drush": "^10.3",
+        "erusev/parsedown": "^1.7",
         "fonticonpicker/fonticonpicker--fonticonpicker": "^3.1",
         "furf/jquery-ui-touch-punch": "dev-master",
         "geocoder-php/nominatim-provider": "^5.4",
