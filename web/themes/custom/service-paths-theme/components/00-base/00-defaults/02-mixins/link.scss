@@ -7,7 +7,7 @@
 
   // The box shadow spread is reduced by 0.1rem to workaround Chrome showing a slight
   // shadow on the y axis on some viewport widths.
-  box-shadow: inset 0 #{$underline-width - 0.1rem} 0 -0.1rem $underline-color;
+  box-shadow: inset 0 -0.1875rem 0 -0.1rem $underline-color;
   color: $color;
   text-decoration: none;
   font-weight: 700;
