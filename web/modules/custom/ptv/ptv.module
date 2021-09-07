@@ -88,7 +88,8 @@ function ptv_preprocess_field(array &$vars) {
 }
 
 /**
- * Parse text fields of service & service channel as markdown convert plain text html.
+ * Parse text fields of service & service channel as markdown convert plain
+ * text html.
  */
 function ptv_preprocess_text_fields(array &$vars) {
   if ($vars['element']['#entity_type'] != 'node') {
@@ -102,19 +103,19 @@ function ptv_preprocess_text_fields(array &$vars) {
 
     switch ($bundle) {
       case 'service':
-          $md_fields = [
-            'field_description',
-            'field_requirements',
-            'field_user_instruction',
-            'field_charge_info',
-          ];
+        $md_fields = [
+          'field_description',
+          'field_requirements',
+          'field_user_instruction',
+          'field_charge_info',
+        ];
         break;
 
       case 'service_channel':
-          $md_fields = [
-            'field_description',
-            'field_accessibility',
-          ];
+        $md_fields = [
+          'field_description',
+          'field_accessibility',
+        ];
         break;
     }
 
