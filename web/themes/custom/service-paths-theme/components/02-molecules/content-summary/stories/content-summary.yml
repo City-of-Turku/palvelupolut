@@ -7,3 +7,5 @@ content_summary__open_text: "Siirry verkkoasiointtiin"
 content_summary__open_url: "#"
 content_summary__icon_before: "laptop"
 content_summary__icon_after:  "external-link-alt"
+content_summary__number_heading: 'Puhelin'
+content_summary__number_lead_text: '02 334 4567'
