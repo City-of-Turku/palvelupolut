@@ -88,8 +88,7 @@ function ptv_preprocess_field(array &$vars) {
 }
 
 /**
- * Parse text fields of service & service channel as markdown convert plain
- * text html.
+ * Parse text fields of PTV CTs as markdown convert plain text html.
  */
 function ptv_preprocess_text_fields(array &$vars) {
   if ($vars['element']['#entity_type'] != 'node') {
