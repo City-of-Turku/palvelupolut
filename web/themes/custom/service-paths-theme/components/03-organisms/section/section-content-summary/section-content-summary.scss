@@ -42,11 +42,4 @@
     transform: translateX(-50%);
     background: var(--color-background-section);
   }
-
-  &__inner {
-    border-radius: space(.75);
-    background-color: color(background);
-    padding: space(2);
-    margin-bottom: space();
-  }
 }

@@ -2,21 +2,25 @@ section_content_summary__title: "Section Content Summary"
 section_content_summary__items:
   - placeholder: true
     title: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
-    heading: 'Chatin palveluajat'
-    lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan.'
+    heading: 'Osoite'
+    lead_text: 'Pyörämäentie 412345 Palpola'
     link__url: '#'
     link_text: 'Tutustu kohteeseen'
     open_text: "Siirry verkkoasiointtiin"
     icon_before: "laptop"
     icon_after: "external-link-alt"
+    number_heading: 'Puhelin'
+    number_lead_text: '02 334 4567'
   - placeholder: true
     title: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
-    heading: 'Chatin palveluajat'
-    lead_text: 'Päivähoitovaihtoehtoja on monta sekä kaupungin tarjoamina että yksityisinä: päiväkoteja, perhepäivähoitoa, ja ryhmäperhepäivä-hoitoa. Voit etsiä sopivaa päivähoitopaikkaa ennen haun alkua. Perheen toive pyritään aina huomioimaan mahdollisuuksien mukaan.'
+    heading: 'Osoite'
+    lead_text: 'Pyörämäentie 412345 Palpola'
     link__url: '#'
     link_text: 'Tutustu kohteeseen'
     open_text: "Siirry verkkoasiointtiin"
     icon_before: "laptop"
     icon_after: "external-link-alt"
+    number_heading: 'Puhelin'
+    number_lead_text: '02 334 4567'
 section_content_summary__link_text: 'Read more'
 section_content_summary__link_url: '/front'

@@ -1,6 +1,10 @@
 .content-summary{
   display: flex;
   flex-wrap: wrap;
+  border-radius: 0.75rem;
+  background-color: var(--color-background);
+  padding: 2rem;
+  margin-bottom: 1rem;
 
   &__text {
     font-family: 'Lexend', serif;
@@ -35,6 +39,7 @@
       font-weight: bold;
       letter-spacing: $letter-spacing--none;
       line-height: $line-height--narrow;
+      margin-bottom: space(1.5);
     }
 
     .heading {
@@ -57,7 +62,8 @@
   .button {
     @include button-with-icon;
 
-    margin-top: 0;
+    padding: space(0.75) space();
+    margin-top: space();
 
     &__text {
       font-family: 'Lexend', serif;
