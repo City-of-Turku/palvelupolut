@@ -41,7 +41,6 @@
       {% for item in section_cards__items %}
         {% block section_cards_item %}
           {% if item.placeholder %}
-
             {% include '@molecules/cards/card/card.twig' with {
               card__modifiers: card_modifiers,
               card__image__src: item.image__src,
@@ -58,5 +57,4 @@
       {% endfor %}
     {% endblock %}
   </div>
-
 </div>

@@ -16,8 +16,8 @@
     }
 
     .fontawesome-icon {
-      width: space(.75);
-      height: space(.75);
+      width: space(0.75);
+      height: space(0.75);
     }
   }
 
@@ -34,7 +34,7 @@
 
   &__text {
     font-size: $font-size--small-1;
-    padding-left: 2.3rem;
+    padding-left: space(2.3);
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--small;
     position: relative;
@@ -56,14 +56,18 @@
         }
       }
       &::after {
-        content: "";
+        content: '';
         display: block;
         width: 100%;
-        height: 30px;
+        height: space(1.875);
         position: absolute;
         bottom: 0;
-        background: rgb(251,243,237);
-        background: linear-gradient(0deg, rgba(251,243,237,1) 0%, rgba(0,0,0,0) 38%);
+        background: rgb(251, 243, 237);
+        background: linear-gradient(
+          0deg,
+          rgba(251, 243, 237, 1) 0%,
+          rgba(0, 0, 0, 0) 38%
+        );
       }
     }
   }

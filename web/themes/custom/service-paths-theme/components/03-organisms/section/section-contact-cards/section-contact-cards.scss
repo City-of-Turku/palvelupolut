@@ -55,6 +55,7 @@
       }
 
       .section-contact-cards__map {
+
         @include above($width-large) {
           flex: 33%;
         }

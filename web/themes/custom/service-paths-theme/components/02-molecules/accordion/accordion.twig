@@ -4,7 +4,6 @@
 {% set accordion__modifiers = accordion__modifiers|default([]) %}
 
 <div {{ bem(accordion__base_class, accordion__modifiers) }}>
-
   {% if accordion__heading %}
     {% include '@atoms/text/heading/heading.twig' with {
       heading__level: accordion__heading_level|default('2'),

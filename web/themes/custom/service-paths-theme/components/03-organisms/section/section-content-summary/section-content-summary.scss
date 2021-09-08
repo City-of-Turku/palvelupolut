@@ -13,14 +13,14 @@
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
     box-shadow: none;
-    border-radius: space(.75);
+    border-radius: space(0.75);
     background-color: color(background);
     padding: space();
 
     .fontawesome-icon {
       width: space();
       height: space();
-      margin-right: space(.75);
+      margin-right: space(0.75);
       position: relative;
       top: 3px;
     }
@@ -31,7 +31,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     width: calc(88rem + 22rem);
     max-width: 100vw;
     height: 100%;

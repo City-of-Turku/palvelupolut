@@ -1,10 +1,10 @@
-.content-summary{
+.content-summary {
   display: flex;
   flex-wrap: wrap;
-  border-radius: 0.75rem;
+  border-radius: space(0.75);
   background-color: var(--color-background);
-  padding: 2rem;
-  margin-bottom: 1rem;
+  padding: space(2);
+  margin-bottom: space(1);
 
   &__text {
     font-family: 'Lexend', serif;
@@ -15,8 +15,8 @@
 
   &__link {
     .fontawesome-icon {
-      width: space(.75);
-      height: space(.75);
+      width: space(0.75);
+      height: space(0.75);
     }
   }
 
@@ -48,7 +48,7 @@
       font-weight: bold;
       letter-spacing: $letter-spacing--large;
       line-height: $line-height--narrow;
-      margin-bottom: space(.25);
+      margin-bottom: space(0.25);
     }
 
     .link {
@@ -82,9 +82,9 @@
     }
 
     .fontawesome-icon--after {
-      width: space(.75);
-      height: space(.75);
-      margin-left: space(.75);
+      width: space(0.75);
+      height: space(0.75);
+      margin-left: space(0.75);
     }
 
     .link--external {

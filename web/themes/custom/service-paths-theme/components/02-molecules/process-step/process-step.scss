@@ -3,14 +3,16 @@
   margin-bottom: space(2);
   display: grid;
   grid-template-columns: space(4.75) auto;
-  grid-template-areas: "number title"
-    "number text"
-    "number link" ;
+  grid-template-areas:
+    'number title'
+    'number text'
+    'number link';
 
   @include above($width-large) {
     grid-template-columns: space(5.75) auto;
-    grid-template-areas: "number title link"
-      "number text link";
+    grid-template-areas:
+      'number title link'
+      'number text link';
     margin-bottom: space(3);
   }
 
