@@ -46,7 +46,7 @@
   }
 
   &__text {
-    color: color(text-dark);
+    color: color(text);
     font-size: $font-size--small-1;
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
@@ -103,7 +103,7 @@
     }
 
     a {
-      color: color(text-dark);
+      color: color(text);
       font-size: $font-size--small-2;
       font-weight: bold;
       letter-spacing: $letter-spacing--large;
