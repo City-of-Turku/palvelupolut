@@ -23,7 +23,7 @@
   }
 
   &::placeholder {
-    color: color(text-dark);
+    color: color(text);
     font-weight: 300;
   }
 
@@ -33,6 +33,10 @@
 
   &--submit {
     @include button-base;
+
+    &:focus {
+      color: color(text);
+    }
 
     display: block;
   }

@@ -7,7 +7,11 @@
   position: relative;
 
   &:hover {
-    box-shadow: 0 0 2px var(--color-text);
+    box-shadow: 0 5px 6px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
+  &:focus {
+    outline-offset: 3px;
   }
 
   a {
