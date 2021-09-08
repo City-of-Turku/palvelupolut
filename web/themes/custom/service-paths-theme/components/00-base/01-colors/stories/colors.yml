@@ -2,7 +2,6 @@ palettes:
   - palette_heading: 'Text'
     colors:
       - name: 'Text'
-      - name: 'Text dark'
       - name: 'Text inverse'
       - name: 'Text error'
   - palette_heading: 'Border'

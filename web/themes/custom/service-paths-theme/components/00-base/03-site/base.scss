@@ -9,9 +9,10 @@ body {
   font-family: $font-family--base;
   font-size: $font-size--small-1;
   line-height: $line-height--base;
-  color: color(text-dark);
+  color: color(text);
   background-color: color(background);
   letter-spacing: $letter-spacing--large;
+  font-weight: 300;
 }
 
 *,

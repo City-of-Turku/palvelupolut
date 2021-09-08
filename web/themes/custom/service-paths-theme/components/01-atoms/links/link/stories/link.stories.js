@@ -8,7 +8,6 @@ import linkTemplate from '../link.twig';
 
 import linkData from './link.yml';
 import linkExternalData from './link-external.yml';
-import linkActionData from './link-action.yml';
 import linkBackToTopData from './link-back-to-top.yml';
 import linkIconData from './link-icon.yml';
 import linkIconAttachmentData from './link-icon-attachment.yml';
@@ -24,10 +23,6 @@ export const link = () => (
     <ComponentWrapper
       markup={linkTemplate(linkExternalData)}
       label="Link, external"
-    />
-    <ComponentWrapper
-      markup={linkTemplate(linkActionData)}
-      label="Link action"
     />
     <ComponentWrapper
       markup={linkTemplate(linkBackToTopData)}

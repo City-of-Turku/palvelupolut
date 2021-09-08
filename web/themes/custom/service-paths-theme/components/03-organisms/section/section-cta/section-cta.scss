@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-bottom:  var(--space-elements);
+  margin-bottom: var(--space-elements);
 
   @include above($width-medium) {
     flex-direction: row;

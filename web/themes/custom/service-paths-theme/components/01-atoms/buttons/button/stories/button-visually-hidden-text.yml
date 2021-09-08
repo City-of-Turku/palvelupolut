@@ -1,5 +1,0 @@
-button__content: 'Button with visually hidden text'
-button__icon: 'attachment'
-button__modifiers:
-  - 'visually-hidden-text'
-button__type: 'button'

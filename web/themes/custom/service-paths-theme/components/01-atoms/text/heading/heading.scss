@@ -1,18 +1,50 @@
 .heading {
   &--h1 {
     @include h1;
+
+    a {
+      box-shadow: inset 0 -0.2875rem 0 -0.1rem;
+
+      &:hover {
+        box-shadow: inset 0 -6ex 0 0 var(--color-text);
+      }
+    }
   }
 
   &--h2 {
     @include h2;
+
+    a {
+      box-shadow: inset 0 -0.25rem 0 -0.1rem;
+
+      &:hover {
+        box-shadow: inset 0 -6ex 0 0 var(--color-text);
+      }
+    }
   }
 
   &--h3 {
     @include h3;
+
+    a {
+      box-shadow: inset 0 -0.25rem 0 -0.1rem;
+
+      &:hover {
+        box-shadow: inset 0 -6ex 0 0 var(--color-text);
+      }
+    }
   }
 
   &--h4 {
     @include h4;
+
+    a {
+      box-shadow: inset 0 -0.2rem 0 -0.1rem;
+
+      &:hover {
+        box-shadow: inset 0 -6ex 0 0 var(--color-text);
+      }
+    }
   }
 
   &--h5,

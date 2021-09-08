@@ -37,6 +37,7 @@
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
     margin-bottom: space(0.25);
+
     .icon {
       position: relative;
       top: space(0.125);
@@ -51,10 +52,11 @@
 
   &__link {
     font-size: $font-size--small-2;
+
     .fontawesome-icon {
       position: relative;
-      top: 0.125rem;
-      margin-right: 0.75rem;
+      top: space(0.125);
+      margin-right: space(0.75);
     }
 
     .link {

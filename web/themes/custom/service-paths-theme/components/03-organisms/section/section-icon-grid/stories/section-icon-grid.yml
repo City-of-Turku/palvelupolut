@@ -11,7 +11,7 @@ section_icon_grid__items:
   - placeholder: true
     title: 'Painotteisuus'
     lead_text: 'Luonto'
-    icon: 'topic'
+    icon: 'map-signs'
   - placeholder: true
     title: 'Palvelusta vastaa'
     lead_text: 'Turun kaupunki, kunallinen'

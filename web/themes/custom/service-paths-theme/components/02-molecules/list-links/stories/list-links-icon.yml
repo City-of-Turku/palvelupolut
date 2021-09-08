@@ -11,4 +11,4 @@ list_links__items:
       - 'external'
   - title: 'The name of the attachment'
     url: '#'
-    icon_before: 'attachment'
+    icon_before: 'paperclip'

@@ -10,7 +10,6 @@ import buttonData from './button.yml';
 import buttonSmallData from './button-small.yml';
 import buttonInverseData from './button-inverse.yml';
 import buttonMinimalData from './button-minimal.yml';
-import buttonVisuallyHiddenTextData from './button-visually-hidden-text.yml';
 
 /**
  * Storybook Definition.
@@ -32,10 +31,6 @@ export const button = () => (
       <ComponentWrapper
         markup={buttonTemplate(buttonMinimalData)}
         label="Button minimal"
-      />
-      <ComponentWrapper
-        markup={buttonTemplate(buttonVisuallyHiddenTextData)}
-        label="Button visually hidden text"
       />
     </CollectionWrapper>
   </>
