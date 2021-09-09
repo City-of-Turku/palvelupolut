@@ -12,6 +12,7 @@ global:
 contact-card:
   js:
     components/02-molecules/contact-card/contact-card.js: {}
+    components/01-atoms/links/link/link.js: { }
   dependencies:
     - core/jquery
     - core/jquery.once
