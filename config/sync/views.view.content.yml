@@ -160,7 +160,7 @@ display:
           id: title
           table: node_field_data
           field: title
-          label: Title
+          label: Otsikko
           exclude: false
           alter:
             alter_text: false
@@ -434,7 +434,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Otsikko
             description: ''
             use_operator: false
             operator: title_op
@@ -567,7 +567,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Kieli
             description: ''
             use_operator: false
             operator: langcode_op

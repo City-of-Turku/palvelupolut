@@ -1,0 +1,8 @@
+settings:
+  allowed_values:
+    -
+      label: Suomi
+    -
+      label: Englanti
+    -
+      label: Ruotsi

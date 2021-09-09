@@ -16,7 +16,7 @@ dependencies:
 _core:
   default_config_hash: dHOSWSHbMJNke0ZBGh1O5KrnwynSOCOpQycITW-pwfs
 id: media_library
-label: 'Media library'
+label: Mediakirjasto
 module: views
 description: 'Find and manage media.'
 tag: ''
@@ -379,7 +379,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Kieli
             description: ''
             use_operator: false
             operator: langcode_op
