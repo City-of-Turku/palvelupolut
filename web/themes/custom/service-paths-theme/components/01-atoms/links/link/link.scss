@@ -78,8 +78,9 @@
   &--back-to-top {
     width: max-content;
     position: sticky;
-    bottom: 5rem;
-    display: flex;
+    bottom: space(5);
+    right: space();
+    display: none;
     flex-direction: column;
     justify-content: center;
     margin-left: auto;
@@ -88,6 +89,10 @@
     letter-spacing: $letter-spacing--small;
     background: rgba(255, 255, 255, 0.75);
     z-index: 2;
+
+    &.js-show {
+      display: flex;
+    }
 
     .fontawesome-icon {
       @include transition(transform);

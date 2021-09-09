@@ -27,6 +27,15 @@
       box-shadow: none;
       color: color(text-inverse);
     }
+
+    &:focus {
+      box-shadow: none;
+      outline-offset: 6px;
+    }
+
+    &:focus:hover {
+      box-shadow: none;
+    }
   }
 
   .icon {
