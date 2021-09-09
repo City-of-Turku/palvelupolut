@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: gLmoA0yjvlXfMRp9ihOhRKSSQQlbdLdvpDkbVwkYPrg
 id: files
-label: Files
+label: Tiedostot
 module: file
 description: 'Find and manage files.'
 tag: default
@@ -700,7 +700,7 @@ display:
           entity_type: file
           entity_field: status
       sorts: {  }
-      title: Files
+      title: Tiedostot
       header: {  }
       footer: {  }
       empty:
@@ -742,7 +742,7 @@ display:
       path: admin/content/files
       menu:
         type: tab
-        title: Files
+        title: Tiedostot
         description: ''
         menu_name: admin
         weight: 0
