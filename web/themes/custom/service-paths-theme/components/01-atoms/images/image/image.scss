@@ -2,6 +2,7 @@
   display: block;
   height: auto;
   max-width: 100%;
+  border-radius: 18px;
 }
 
 img,
@@ -11,8 +12,8 @@ picture {
 
 figure {
   margin: 0; /* override normalize */
-}
 
-.figure__caption {
-  font-style: italic;
+  .figure__image {
+    border-radius: 18px 18px 0 0;
+  }
 }

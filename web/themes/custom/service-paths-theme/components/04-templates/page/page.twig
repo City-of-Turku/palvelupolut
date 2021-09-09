@@ -22,13 +22,13 @@
     {% block page_main %}
       {% include "@templates/page/page-content.twig" %}
     {% endblock %}
-
-    {% include "@atoms/links/link/link.twig" with {
-      link__content: "Back to top"|t,
-      link__url: "#main-content",
-      link__modifiers: ["back-to-top"],
-    } %}
   </main>
+
+  {% include "@atoms/links/link/link.twig" with {
+    link__content: "Back to top"|t,
+    link__url: "#main-content",
+    link__modifiers: ["back-to-top"],
+  } %}
 
   {% block page_footer %}
     {% include "@organisms/footer/footer.twig" %}
