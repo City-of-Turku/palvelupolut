@@ -3,7 +3,7 @@ langcode: fi
 status: true
 dependencies: {  }
 id: fi
-label: Finnish
+label: Suomi
 direction: ltr
 weight: -10
 locked: false
