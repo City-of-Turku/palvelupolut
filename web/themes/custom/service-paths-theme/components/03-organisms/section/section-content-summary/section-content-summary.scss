@@ -1,4 +1,5 @@
-.section-content-summary {
+.section-content-summary,
+.section-content-summary-invert {
   position: relative;
   padding: space(2) 0;
 
@@ -40,6 +41,15 @@
     left: 50%;
     z-index: -1;
     transform: translateX(-50%);
+    background: var(--color-background-section);
+  }
+}
+
+.section-content-summary-invert {
+  &::before {
+    background: var(--color-background);
+  }
+  .content-summary {
     background: var(--color-background-section);
   }
 }

@@ -47,7 +47,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Suodattaa
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -375,7 +375,7 @@ display:
       bundles:
         - service
       entity_type: node
-      title: 'Service Channels'
+      title: Palvelukanavat
       show_title: true
       pager:
         type: none
@@ -768,11 +768,11 @@ display:
         operator: AND
         groups:
           1: AND
-      title: 'Service Channels'
+      title: Palvelukanavat
       exposed_form:
         type: bef
         options:
-          submit_button: Filter
+          submit_button: Suodattaa
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -796,6 +796,14 @@ display:
                 plugin_id: default
                 advanced:
                   placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_tags_target_id:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
               field_service_channel_type_value:

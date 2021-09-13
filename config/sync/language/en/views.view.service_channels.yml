@@ -1,0 +1,7 @@
+display:
+  page_1:
+    display_options:
+      title: 'Service Channels'
+      exposed_form:
+        options:
+          submit_button: Filter

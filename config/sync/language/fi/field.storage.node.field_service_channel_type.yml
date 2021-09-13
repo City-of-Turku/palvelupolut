@@ -1,0 +1,10 @@
+settings:
+  allowed_values:
+    0:
+      label: Verkossa
+    1:
+      label: Puhelimella
+    3:
+      label: Lomakkeella
+    4:
+      label: Palvelupaikassa

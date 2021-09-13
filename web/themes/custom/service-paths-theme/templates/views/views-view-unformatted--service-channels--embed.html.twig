@@ -23,7 +23,7 @@
 
 <div {{ bem(section_content_summary__base_class, section_content_summary__modifiers, section_content_summary__blockname) }}>
   {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 2,
+    heading__level: 3,
     heading__base_class: "title",
     heading__blockname: content_summary__base_class,
     heading: title|striptags ~ '(' ~ count_results ~ ')',
@@ -31,8 +31,9 @@
 
   {% set ptv_id = null %}
   {% set ptv_type = null %}
-  <div {{ bem("inner", [], section_content_summary__base_class) }}>
-    {% for row in rows[:2] %}
+
+  {% for row in rows[:2] %}
+    <div {{ bem("inner", [], section_content_summary__base_class) }}>
       {% if row.content['#row']._relationship_entities.field_services.field_ptv_id.value and ptv_id is null %}
         {% set ptv_id = row.content['#row']._relationship_entities.field_services.field_ptv_id.value %}
       {% endif %}
@@ -41,8 +42,9 @@
       {% endif %}
 
       {{- row.content -}}
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
+
 
   {% if rows|length > 2 %}
     <div {{ bem("read-more-link", [], content_summary__base_class) }}>
