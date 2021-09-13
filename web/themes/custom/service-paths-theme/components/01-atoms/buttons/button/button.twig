@@ -24,64 +24,49 @@
   {% set hide_text_visually = true %}
 {% endif %}
 
-{% if button__link %}
-  <button
-    type="{{ button__type }}"
-    {{ bem(button__base_class, button__modifiers, button__blockname, button__extra_classes) }}
+<button
+  type="{{ button__type }}"
+  {{ bem(button__base_class, button__modifiers, button__blockname, button__extra_classes) }}
+
+  {% if button__link %}
     tabindex='-1'
-  >
-    {% if button__icon_before %}
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: button__icon_before,
-        fontawesome_icon__modifiers: button__icon_before_modifiers,
-        fontawesome_icon__decorative: true,
-      } %}
-    {% endif %}
+  {% endif %}
+>
+  {% if button__icon_before %}
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: button__icon_before,
+      fontawesome_icon__modifiers: button__icon_before_modifiers,
+      fontawesome_icon__decorative: true,
+    } %}
+  {% endif %}
 
-    {% block button_content %}
-      <span
-      {{ bem('text', button__modifiers, button__base_class, hide_text_visually ? ['visually-hidden'] : []) }}>
-        {{ button__content }}
+  {% block button_content %}
+    <span
+      {{ bem('text', button__modifiers, button__base_class, hide_text_visually ? ['visually-hidden'] : []) }}
+    >
+      {{ button__content }}
     </span>
-    {% endblock %}
-      {% include "@atoms/links/link/link.twig" with {
-        link__modifiers: button__link_modifiers,
-        link__url: button__link,
-      } %}
-    {% if button__icon_after %}
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: button__icon_after,
-        fontawesome_icon__modifiers: button__icon_after_modifiers,
-        fontawesome_icon__decorative: true,
-      } %}
-    {% endif %}
-  </button>
-{% else %}
-  <button
-    type="{{ button__type }}"
-    {{ bem(button__base_class, button__modifiers, button__blockname, button__extra_classes) }}
-  >
-    {% if button__icon_before %}
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: button__icon_before,
-        fontawesome_icon__modifiers: button__icon_before_modifiers,
-        fontawesome_icon__decorative: true,
-      } %}
-    {% endif %}
+  {% endblock %}
 
-    {% block button_content %}
-      <span
-      {{ bem('text', button__modifiers, button__base_class, hide_text_visually ? ['visually-hidden'] : []) }}>
-        {{ button__content }}
-    </span>
-    {% endblock %}
+  {# TODO: Remove link from button! This is invalid HTML. #}
+  {#
+    The HTML element needs to either button or anchor. If it is a link it should also not
+    be styled like a button.
 
-    {% if button__icon_after %}
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: button__icon_after,
-        fontawesome_icon__modifiers: button__icon_after_modifiers,
-        fontawesome_icon__decorative: true,
-      } %}
-    {% endif %}
-  </button>
-{% endif %}
+    @see https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5/6393863
+  #}
+  {% if button__link %}
+    {% include "@atoms/links/link/link.twig" with {
+      link__modifiers: button__link_modifiers,
+      link__url: button__link,
+    } %}
+  {% endif %}
+
+  {% if button__icon_after %}
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: button__icon_after,
+      fontawesome_icon__modifiers: button__icon_after_modifiers,
+      fontawesome_icon__decorative: true,
+    } %}
+  {% endif %}
+</button>
