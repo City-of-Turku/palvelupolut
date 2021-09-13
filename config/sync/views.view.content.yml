@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: P7F4DFe8BL31DRVqsvS-ix9KZZqvvaPjZ7zEvGo9yNM
 id: content
-label: Content
+label: Sisältö
 module: node
 description: 'Find and manage content.'
 tag: default
@@ -28,7 +28,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Suodattaa
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -343,8 +343,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
-            format_custom_false: Unpublished
+            format_custom_true: Julkaistu
+            format_custom_false: Julkaisematon
           plugin_id: field
           entity_type: node
           entity_field: status
@@ -544,11 +544,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Julkaistu
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Julkaisematon
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -610,7 +610,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       sorts: {  }
-      title: Content
+      title: Sisältö
       empty:
         area_text_custom:
           id: area_text_custom
@@ -654,14 +654,14 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: Content
+        title: Sisältö
         description: ''
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: Content
+        title: Sisältö
         description: 'Find and manage content'
         menu_name: admin
         weight: -10

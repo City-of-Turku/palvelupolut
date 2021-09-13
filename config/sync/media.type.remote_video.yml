@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: FvzYbqrSLeKG-eXDngFRYlGe3_f8RaSXPBf3i4jWpa0
 id: remote_video
-label: 'Remote video'
+label: 'Video (ulkoinen linkki)'
 description: 'A remotely hosted video from YouTube or Vimeo.'
 source: 'oembed:video'
 queue_thumbnail_downloads: false

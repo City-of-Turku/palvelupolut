@@ -218,7 +218,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: Published
+            label: Julkaistu
             description: ''
             identifier: status
             optional: true
@@ -229,11 +229,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Julkaistu
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Julkaisematon
                 operator: '='
                 value: '0'
           plugin_id: boolean

@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: hzgvcRgZHltqWf8hBmttoWh95tCJoPL25lPq9YSIRsY
 id: video
-label: Video
+label: 'Video (lataa mediakirjastoon)'
 description: 'A locally hosted video file.'
 source: video_file
 queue_thumbnail_downloads: false

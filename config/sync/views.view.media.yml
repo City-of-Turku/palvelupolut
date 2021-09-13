@@ -42,7 +42,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Suodattaa
+          submit_button: Filter
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -484,8 +484,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
-            format_custom_false: Unpublished
+            format_custom_true: Julkaistu
+            format_custom_false: Julkaisematon
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -741,11 +741,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Julkaistu
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Julkaisematon
                 operator: '='
                 value: '0'
           plugin_id: boolean

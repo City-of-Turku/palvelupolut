@@ -1,0 +1,2 @@
+label: 'Short date'
+pattern: 'd.m.Y - H:i'
