@@ -16,7 +16,7 @@
         .once()
         .each(function (i) {
           const readMore = $(this).find('.contact-card__more-link');
-          const cardText = $(this).find('.contact-card__text');
+          const cardText = $(this).find('.contact-card__link-list');
           readMore.on('click', function (e) {
             e.preventDefault();
             cardText.toggleClass('open');

@@ -53,7 +53,7 @@ display:
           total_pages: 0
           tags:
             previous: '‹ Previous'
-            next: 'Next ›'
+            next: 'Seuraava ›'
             first: '« First'
             last: 'Last »'
           expose:

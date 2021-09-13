@@ -43,14 +43,14 @@
               fontawesome_icon__name: "chevron-left",
               fontawesome_icon__blockname: selection_box__base_class,
             } %}
-            <span>{{ items.previous.text|default('Previous'|t) }}</span>
+            <span>{{ 'Previous'|t }}</span>
           </a>
         </li>
       {% endif %}
       {% if items.next %}
         <li {{ bem('item', ['next'], pager__base_class) }}>
           <a {{ bem('link', ['next'], pager__base_class) }} href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
-            <span>{{ items.next.text|default('Next'|t) }}</span>
+            <span>{{ 'Next'|t }}</span>
             {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
               fontawesome_icon__name: "chevron-right",
               fontawesome_icon__blockname: selection_box__base_class,

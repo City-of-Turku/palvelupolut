@@ -1,0 +1,13 @@
+display:
+  page:
+    display_options:
+      filters:
+        field_ptv_id_value:
+          expose:
+            label: 'Palvelukanavan tunnus'
+        field_tags_target_id:
+          expose:
+            label: Asiasanat
+        field_service_channel_type_value:
+          expose:
+            label: Tyyppi

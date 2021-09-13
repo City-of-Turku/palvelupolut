@@ -71,7 +71,9 @@
 {% endfor %}
 
 {% include "@molecules/contact-card/contact-card.twig" with {
-  section_contact_cards__modifiers: process_step_modifiers,
-  contact_card__title: 'Phone Numbers'|t,
+  contact_card__base_class: "collapsible contact-card",
   contact_card__items: cards,
+  contact_card__title: 'Phone Numbers'|t,
+  contact_card__link_text: 'Read more'|t,
+  contact_card__link_url: '#',
 } %}

@@ -7,7 +7,7 @@
  */
 
 (function ($, Drupal) {
-  Drupal.behaviors.contact_card = {
+  Drupal.behaviors.link = {
     attach() {
       $(window).scroll(function () {
         if ($(window).scrollTop() > 500) {

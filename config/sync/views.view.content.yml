@@ -41,7 +41,7 @@ display:
           items_per_page: 50
           tags:
             previous: '‹ Previous'
-            next: 'Next ›'
+            next: 'Seuraava ›'
             first: '« First'
             last: 'Last »'
       style:
