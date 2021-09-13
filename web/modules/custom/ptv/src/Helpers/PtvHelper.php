@@ -295,10 +295,8 @@ class PtvHelper {
               foreach ($times as $key => $days) {
                 $final_time = array_key_first($days);
                 $days_array = current($days);
-                $from = $days_array[0];
-                $from = t($from, [], ['langcode' => $langcode]);
-                $to = array_pop($days_array);
-                $to = t($to, [], ['langcode' => $langcode]);
+                $from = t('%from', ['%from' => $days_array[0]], ['langcode' => $langcode]);
+                $to = t('%to', ['%to' => array_pop($days_array)], ['langcode' => $langcode]);
                 $final_days = $from . ' - ' . $to;
                 $opening_hours[$i]['first'] = $final_days;
                 $opening_hours[$i]['second'] = $final_time;
