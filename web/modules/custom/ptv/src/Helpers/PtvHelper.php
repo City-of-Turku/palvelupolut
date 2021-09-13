@@ -326,9 +326,7 @@ class PtvHelper {
         break;
 
     }
-
     return $data;
-
   }
 
 }
