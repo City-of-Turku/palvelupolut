@@ -102,6 +102,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
  */
 if (getenv('LANDO_INFO') && file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
   include $app_root . '/' . $site_path . '/settings.lando.php';
+  $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.lando.yml';
 }
 
 // Silta cluster configuration overrides.

@@ -28,11 +28,11 @@
       {% endblock %}
     </div>
 
-    <div {{ bem("item", ["language-switcher"], header__base_class) }}>
+    <nav {{ bem("item", ["language-switcher"], header__base_class) }} aria-label="{{ "Language"|t }}">
       {% block header_language_menu %}
         {% include "@molecules/navigation/language-switcher/language-switcher.twig" %}
       {% endblock %}
-    </div>
+    </nav>
   </div>
 
   <div {{ bem("bottom", [], header__base_class) }}>

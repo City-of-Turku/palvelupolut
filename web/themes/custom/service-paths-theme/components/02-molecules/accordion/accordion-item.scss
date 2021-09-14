@@ -13,6 +13,11 @@
   &--warning {
     color: color(text-error);
 
+    .heading {
+      color: color(text-error);
+      display: inline-block;
+    }
+
     .accordion-item__content {
       color: color(text);
     }
@@ -39,6 +44,11 @@
     font-weight: bold;
     letter-spacing: 0;
     line-height: $line-height--heading;
+
+    .heading {
+      font-size: $font-size--large-1 !important;
+      margin: 0 !important;
+    }
 
     &::marker {
       display: none;
