@@ -9,7 +9,7 @@
 
   @include above($width-large) {
     flex-direction: row;
-    padding: space(4) space(2) space(2);
+    padding: space(2);
   }
 
   .teaser {
