@@ -11,3 +11,7 @@ display:
         field_service_channel_type_value:
           expose:
             label: Tyyppi
+      title: Asiointikanavat
+  embed:
+    display_options:
+      title: Asiointikanavat

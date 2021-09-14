@@ -171,7 +171,11 @@
       </div>
 
     </div>
-    {{ content.field_services }}
+
+    <div {{ bem("section-cards-teasers") }}>
+      {{ content.field_services }}
+    </div>
+
   {% endblock %}
 
 {% endembed %}
