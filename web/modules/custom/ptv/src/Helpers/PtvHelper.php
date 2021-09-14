@@ -2,8 +2,6 @@
 
 namespace Drupal\ptv\Helpers;
 
-use Drupal\Component\Utility\Html;
-
 /**
  * Helper class for PTV related data.
  */
@@ -297,8 +295,8 @@ class PtvHelper {
               foreach ($times as $key => $days) {
                 $final_time = array_key_first($days);
                 $days_array = current($days);
-                $from = t(Html::escape($days_array[0]), [], ['langcode' => $langcode]);
-                $to = t(Html::escape(array_pop($days_array)), [], ['langcode' => $langcode]);
+                $from = $this->getTranslatedDay($days_array[0]);
+                $to = $this->getTranslatedDay(array_pop($days_array));
                 $final_days = $from . ' - ' . $to;
                 $opening_hours[$i]['first'] = $final_days;
                 $opening_hours[$i]['second'] = $final_time;
@@ -331,6 +329,25 @@ class PtvHelper {
 
     }
     return $data;
+  }
+
+  /**
+   * Returns string.
+   */
+  public function getTranslatedDay($var) {
+    $days = [
+      'Monday' => t('Monday'),
+      'Tuesday' => t('Tuesday'),
+      'Wedneday' => t('Wedneday'),
+      'Thursday' => t('Thursday'),
+      'Friday' => t('Friday'),
+      'Saturday' => t('Saturday'),
+      'Sunday' => t('Sunday'),
+    ];
+    if (in_array($var, array_keys($days))) {
+      return $days[$var];
+    }
+    return $var;
   }
 
 }
