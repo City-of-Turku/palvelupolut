@@ -54,8 +54,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Seuraava ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -250,7 +250,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Tila
           exclude: false
           alter:
             alter_text: false
@@ -469,7 +469,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Toimenpiteet
           exclude: false
           alter:
             alter_text: false
@@ -650,7 +650,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: Status
+            label: Tila
             description: ''
             identifier: status
             optional: true

@@ -38,10 +38,11 @@ function service_paths_theme_preprocess_select(&$variables) {
  */
 function service_paths_theme_preprocess_links__language_block(&$variables) {
   $current_language = \Drupal::languageManager()->getCurrentLanguage();
+  $languages = \Drupal::languageManager()->getLanguages();
   $links = [];
 
   foreach ($variables['links'] as $langcode => $link) {
-    $links[$langcode]['title'] = $link['text'];
+    $links[$langcode]['title'] = $languages[$langcode]->getName();
 
     if (!empty($link['link'])) {
       $links[$langcode]['url'] = service_paths_theme_get_link_url($link['link']['#url'], $link['link']['#options']);

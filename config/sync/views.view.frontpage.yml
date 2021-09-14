@@ -186,8 +186,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Seuraava ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
           quantity: 9
       query:
         type: views_query

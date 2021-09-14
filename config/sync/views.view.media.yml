@@ -67,8 +67,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Seuraava ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
           quantity: 9
       style:
         type: table
@@ -184,7 +184,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Toimenpide
           include_exclude: exclude
           selected_actions: {  }
           entity_type: media
@@ -196,7 +196,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Thumbnail
+          label: Esikatselukuva
           exclude: false
           alter:
             alter_text: false
@@ -278,7 +278,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Media name'
+          label: 'Mediatiedoston nimi'
           exclude: false
           element_type: ''
           element_class: ''
@@ -309,7 +309,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Type
+          label: Tyyppi
           exclude: false
           alter:
             alter_text: false
@@ -374,7 +374,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Author
+          label: Julkaisija
           exclude: false
           alter:
             alter_text: false
@@ -439,7 +439,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Tila
           exclude: false
           alter:
             alter_text: false
@@ -506,7 +506,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Updated
+          label: Päivitetty
           exclude: false
           alter:
             alter_text: false
@@ -573,7 +573,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Toimenpiteet
           exclude: false
           alter:
             alter_text: false
@@ -631,7 +631,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: 'Media name'
+            label: 'Mediatiedoston nimi'
             description: ''
             use_operator: false
             operator: name_op
@@ -673,7 +673,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Type
+            label: Tyyppi
             description: ''
             use_operator: false
             operator: bundle_op
@@ -730,7 +730,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: 'Julkaisun tila'
             description: ''
             identifier: status
             optional: true
