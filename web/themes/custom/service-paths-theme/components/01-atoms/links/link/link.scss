@@ -270,4 +270,10 @@
       color: color(text-inverse);
     }
   }
+
+  &--external--text {
+    .fas {
+      margin-left: 0.5rem;
+    }
+  }
 }
