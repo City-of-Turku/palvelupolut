@@ -93,10 +93,13 @@
       hero__modifiers: hero__modifiers|default(["light"]),
       hero__title: content.field_heading|render|trim ? content.field_heading : label,
       hero__lead_text: content.field_lead_text|field_value,
+      with_image: content.field_lead_image|render,
     } %}
-      {% block hero_image %}
-        {{ content.field_lead_image }}
-      {% endblock %}
+      {% if content.field_lead_image|render %}
+        {% block hero_image %}
+          {{ content.field_lead_image }}
+        {% endblock %}
+      {% endif %}
     {% endembed %}
   {% endblock %}
 

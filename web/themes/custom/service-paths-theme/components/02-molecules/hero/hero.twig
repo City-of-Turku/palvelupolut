@@ -31,9 +31,11 @@
     {% endif %}
   </div>
 
-  <div {{ bem("image", [], hero__base_class) }} aria-hidden="true">
-    {% block hero_image %}
-      {% include "@atoms/images/image/responsive-image.twig" with hero__image %}
-    {% endblock %}
-  </div>
+  {% if with_image %}
+    <div {{ bem("image", [], hero__base_class) }} aria-hidden="true">
+      {% block hero_image %}
+        {% include "@atoms/images/image/responsive-image.twig" with hero__image %}
+      {% endblock %}
+    </div>
+  {% endif %}
 </div>
