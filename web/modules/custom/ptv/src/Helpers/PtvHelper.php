@@ -2,6 +2,8 @@
 
 namespace Drupal\ptv\Helpers;
 
+use Drupal\Component\Utility\Html;
+
 /**
  * Helper class for PTV related data.
  */
@@ -295,8 +297,8 @@ class PtvHelper {
               foreach ($times as $key => $days) {
                 $final_time = array_key_first($days);
                 $days_array = current($days);
-                $from = t('%from', ['%from' => $days_array[0]], ['langcode' => $langcode]);
-                $to = t('%to', ['%to' => array_pop($days_array)], ['langcode' => $langcode]);
+                $from = t(Html::escape($days_array[0]), [], ['langcode' => $langcode]);
+                $to = t(Html::escape(array_pop($days_array)), [], ['langcode' => $langcode]);
                 $final_days = $from . ' - ' . $to;
                 $opening_hours[$i]['first'] = $final_days;
                 $opening_hours[$i]['second'] = $final_time;
