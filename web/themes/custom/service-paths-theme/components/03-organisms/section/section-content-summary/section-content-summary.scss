@@ -5,6 +5,10 @@
   .heading {
     margin-bottom: space(2);
     text-transform: uppercase;
+
+    @include above($width-xl) {
+      max-width: calc(100% - #{$width--sidebar});
+    }
   }
 
   .read-more-link {
@@ -24,10 +28,18 @@
       position: relative;
       top: 3px;
     }
+
+    @include above($width-xl) {
+      max-width: calc(100% - #{$width--sidebar});
+    }
   }
 
   .content-summary {
     margin-bottom: space(2);
+
+    @include above($width-xl) {
+      max-width: calc(100% - #{$width--sidebar});
+    }
   }
 
   &::before {
