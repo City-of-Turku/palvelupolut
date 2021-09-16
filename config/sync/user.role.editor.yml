@@ -13,7 +13,6 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
-  - 'administer ptv'
   - 'administer users'
   - 'change own username'
   - 'create blog_post content'
