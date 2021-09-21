@@ -57,6 +57,7 @@ class PtvHelper {
         $service_classes = [];
         foreach ($object->serviceNames as $value) {
           if ($value->type == 'Name') {
+            $name = $value->value;
             if ($value->language == 'fi') {
               $name = $value->value;
             }
