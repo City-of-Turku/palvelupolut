@@ -7,7 +7,7 @@ section_content_summary__items:
     link__url: '#'
     link_text: 'Tutustu kohteeseen'
     open_text: "Siirry verkkoasiointtiin"
-    icon_before: "laptop"
+    icon_before: "arrow-right"
     icon_after: "external-link-alt"
     number_heading: 'Puhelin'
     number_lead_text: '02 334 4567'
@@ -18,7 +18,7 @@ section_content_summary__items:
     link__url: '#'
     link_text: 'Tutustu kohteeseen'
     open_text: "Siirry verkkoasiointtiin"
-    icon_before: "laptop"
+    icon_before: "arrow-right"
     icon_after: "external-link-alt"
     number_heading: 'Puhelin'
     number_lead_text: '02 334 4567'
