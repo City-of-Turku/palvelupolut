@@ -3,6 +3,15 @@
   position: relative;
   padding: space(2) 0;
 
+  &__inner:last-child {
+    .content-summary {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    margin-bottom: space(2);
+  }
   .heading {
     margin-bottom: space(2);
     text-transform: uppercase;
@@ -36,7 +45,7 @@
   }
 
   .content-summary {
-    margin-bottom: space(2);
+    margin-bottom: space(1);
 
     @include above($width-xl) {
       max-width: calc(100% - #{$width--sidebar});
@@ -63,5 +72,13 @@
   }
   .content-summary {
     background: var(--color-background-section);
+  }
+}
+.section-contact-cards--vertical {
+  .section-content-summary {
+    padding: 0 0 space(2);
+    &:last-child {
+      padding: 0;
+    }
   }
 }
