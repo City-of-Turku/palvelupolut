@@ -24,9 +24,9 @@
 <div {{ bem(section_content_summary__base_class, section_content_summary__modifiers, section_content_summary__blockname) }}>
   {% include "@atoms/text/heading/heading.twig" with {
     heading__level: 3,
-    heading__base_class: "title",
+    heading__base_class: "title-group",
     heading__blockname: content_summary__base_class,
-    heading: title|striptags ~ '(' ~ count_results ~ ')',
+    heading: title|striptags ~ '(' ~ count_results ~ ' ' ~ 'pcs'|t ~ ')',
   } %}
 
   {% set ptv_id = null %}

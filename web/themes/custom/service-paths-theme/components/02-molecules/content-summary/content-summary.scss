@@ -93,4 +93,13 @@
       }
     }
   }
+  p {
+    font-size: $font-size--small-2;
+  }
+  .contact-card {
+    .contact-card__title,
+    .contact-card__text {
+      font-size: $font-size--small-2;
+    }
+  }
 }

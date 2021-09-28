@@ -17,10 +17,16 @@
         .each(function (i) {
           const readMore = $(this).find('.contact-card__more-link');
           const cardText = $(this).find('.contact-card__link-list');
+          const moreText = readMore.find('a').html();
+          const lessText = Drupal.t('Read less');
           readMore.on('click', function (e) {
             e.preventDefault();
             cardText.toggleClass('open');
-            readMore.hide();
+            if (cardText.hasClass('open')) {
+              readMore.find('a').html(lessText);
+            } else {
+              readMore.find('a').html(moreText);
+            }
           });
         });
     },

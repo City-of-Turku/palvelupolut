@@ -42,6 +42,19 @@
     p {
       margin: 0;
     }
+    ul {
+      display: inline-block;
+      margin: 1rem 0 1rem;
+      font-size: $font-size--small-2;
+
+      li {
+        @extend .list-item;
+        list-style-type: disc;
+        &::marker {
+          content: inherit;
+        }
+      }
+    }
   }
 
   &__title {

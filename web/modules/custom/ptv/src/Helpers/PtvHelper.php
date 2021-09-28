@@ -249,9 +249,11 @@ class PtvHelper {
             if (!empty($sentences)) {
               foreach ($sentences as $key => $value) {
                 $accessibility .= '<h4>' . $value['group'] . '</h4>';
+                $accessibility .= '<ul>';
                 foreach ($value['sentences'] as $sentence) {
-                  $accessibility .= '<p>' . $sentence . '</p>';
+                  $accessibility .= '<li>' . $sentence . '</li>';
                 }
+                $accessibility .= '</ul>';
               }
             }
           }
