@@ -120,6 +120,7 @@
     {{ title_suffix }}
 
     {% embed "@molecules/hero/hero.twig" with {
+      hero__modifiers: hero__modifiers|default(["light"]),
       hero__title: label,
       hero__lead_text: node.field_description.summary,
       with_image: content.field_lead_image|render,

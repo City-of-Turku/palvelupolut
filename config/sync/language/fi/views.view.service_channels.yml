@@ -12,6 +12,9 @@ display:
           expose:
             label: Tyyppi
       title: Asiointikanavat
+      header:
+        result:
+          content: '<h3>Löytyi @total palvelukanavaa</h3>'
   embed:
     display_options:
       title: Asiointikanavat

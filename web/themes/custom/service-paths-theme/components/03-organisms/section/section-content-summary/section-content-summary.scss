@@ -20,6 +20,9 @@
       max-width: calc(100% - #{$width--sidebar});
     }
   }
+  .title-group {
+    text-transform: uppercase;
+  }
 
   .read-more-link {
     font-size: $font-size--small-2;

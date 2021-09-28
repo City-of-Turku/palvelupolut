@@ -73,27 +73,14 @@
     'Phone': 'phone',
     'WebPage': 'globe',
     'PrintableForm': 'laptop',
-    'ServiceLocation': 'map-marker-alt',
+    'ServiceLocation': 'arrow-right',
   }
 %}
 
 {% set type = node.field_service_channel_type.value ? node.field_service_channel_type.value : 'Link' %}
 {% set link_modifiers = [] %}
 
-{% if type == 'EChannel' %}
-
-  {% set button = 'Go to online service'|t %}
-  {% if node.field_webpage.title %}
-    {% set button = node.field_webpage.title %}
-  {% endif %}
-  {% set button_url = url %}
-  {% if node.field_webpage.0.url %}
-    {% set button_url = node.field_webpage.0.url.toString %}
-  {% endif %}
-
-{% elseif type == 'Phone' %}
-
-  {% set first = node.field_phone_numbers[0].first %}
+{% if node.field_phone_numbers[0].second %}
   {% set second = node.field_phone_numbers[0].second %}
   {% set phone_nr = node.field_phone_numbers[0].second|replace({'+358 ': '0'}) %}
   {% set first_part = phone_nr|slice(0,2) %}
@@ -105,13 +92,36 @@
     {% set second_part = phone_nr|slice(3,3) %}
     {% set third_part = phone_nr|slice(6) %}
   {% endif %}
-  {% set button = first_part ~ ' ' ~ second_part ~ ' ' ~ third_part %}
+  {% set phone_nr = first_part ~ ' ' ~ second_part ~ ' ' ~ third_part %}
+{% endif %}
+
+
+{% if type == 'EChannel' %}
+
+  {% set button = 'Go to online service'|t %}
+  {% if node.field_webpage.title %}
+    {% set button = node.field_webpage.title %}
+  {% endif %}
+  {% set button_url = url %}
+  {% if node.field_webpage.0.url %}
+    {% set button_url = node.field_webpage.0.url.toString %}
+  {% endif %}
+  {% set heading = 'Service Hours'|t %}
+  {% set lead_text = content.field_opening_hours %}
+
+{% elseif type == 'Phone' %}
+
+  {% set button = phone_nr %}
+  {% set phone_nr = '' %}
   {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second %}
+  {% set lead_text = content.field_opening_hours %}
 
 {% elseif type == 'ServiceLocation' %}
 
   {% set button = 'Go to service location'|t %}
   {% set button_url = url %}
+  {% set heading = 'Address'|t %}
+  {% set lead_text = content.field_address %}
 
 {% elseif type == 'WebPage' %}
 
@@ -123,6 +133,7 @@
       {% set link_modifiers = link_modifiers|merge(['external']) %}
     {% endif %}
   {% endif %}
+  {% set lead_text = node.field_description.summary %}
 
 {% elseif type == 'PrintableForm' %}
 
@@ -134,6 +145,7 @@
       {% set link_modifiers = link_modifiers|merge(['external']) %}
     {% endif %}
   {% endif %}
+  {% set lead_text = node.field_description.summary %}
 
 {% else %}
 
@@ -147,8 +159,10 @@
 {% include "@molecules/content-summary/content-summary.twig" with {
   content_summary___modifiers: content_summary_modifiers,
   content_summary__title: label,
-  content_summary__heading: '',
-  content_summary__lead_text: node.field_description.summary,
+  content_summary__heading: heading,
+  content_summary__lead_text: lead_text,
+  content_summary__number_heading: type == 'ServiceLocation' ? 'Phone'|t : '',
+  content_summary__number_lead_text: phone_nr,
   content_summary__link_text: type == 'ServiceLocation' ? '' : 'Read more'|t,
   content_summary__link_url: type == 'ServiceLocation' ? '' : url,
   content_summary__open_text: button,

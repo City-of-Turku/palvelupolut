@@ -30,35 +30,49 @@ php:
 
   cron:
     ptvcron1:
-      schedule: '0 1 * * *'
-      command: |
-        drush migrate:reset-status services;
-        drush migrate:import services --limit=30;
-    ptvcron2:
-      schedule: '10 1 * * *'
-      command: |
-        drush migrate:reset-status services_translations;
-        drush migrate:import services_translations --limit=30;
-    ptvcron3:
       schedule: '0 3 * * *'
       command: |
-        drush migrate:reset-status service_channels;
-        drush migrate:import service_channels --limit=30;
-    ptvcron4:
+        drush migrate:reset-status services;
+        drush migrate:import services --sync;
+      resources:
+        requests:
+          memory: 512M
+          cpu: 1000m
+        limits:
+          memory: 512M
+    ptvcron2:
       schedule: '10 3 * * *'
       command: |
-        drush migrate:reset-status service_channels_translations;
-        drush migrate:import service_channels_translations --limit=30;
-    ptvcron5:
-      schedule: '30 1 * * *'
-      command: |
         drush migrate:reset-status services_translations;
-        drush migrate:import services_translations --update;
-    ptvcron6:
-      schedule: '30 3 * * *'
+        drush migrate:import services_translations --sync --update;
+      resources:
+        requests:
+          memory: 512M
+          cpu: 1000m
+        limits:
+          memory: 512M
+    ptvcron3:
+      schedule: '0 4 * * *'
+      command: |
+        drush migrate:reset-status service_channels;
+        drush migrate:import service_channels --sync;
+      resources:
+        requests:
+          memory: 512M
+          cpu: 1000m
+        limits:
+          memory: 512M
+    ptvcron4:
+      schedule: '10 4 * * *'
       command: |
         drush migrate:reset-status service_channels_translations;
-        drush migrate:import service_channels_translations --update;
+        drush migrate:import service_channels_translations --sync --update;
+      resources:
+        requests:
+          memory: 512M
+          cpu: 1000m
+        limits:
+          memory: 512M
 
 nginx:
   resources:

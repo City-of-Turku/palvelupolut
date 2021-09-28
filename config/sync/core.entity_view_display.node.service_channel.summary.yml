@@ -27,6 +27,7 @@ dependencies:
     - node.type.service_channel
   module:
     - address
+    - double_field
     - link
     - options
     - text
@@ -58,6 +59,28 @@ content:
     third_party_settings: {  }
     type: email_mailto
     region: content
+  field_opening_hours:
+    type: double_field_unformatted_list
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      inline: true
+      first:
+        link: false
+        format_type: medium
+        hidden: false
+        thousand_separator: ''
+        decimal_separator: .
+        scale: 2
+      second:
+        link: false
+        format_type: medium
+        hidden: false
+        thousand_separator: ''
+        decimal_separator: .
+        scale: 2
+    third_party_settings: {  }
   field_service_channel_type:
     weight: 4
     label: hidden
@@ -84,7 +107,6 @@ hidden:
   field_lead_image: true
   field_location: true
   field_meta_tags: true
-  field_opening_hours: true
   field_paragraphs: true
   field_paragraphs_contacts: true
   field_paragraphs_sidebar: true

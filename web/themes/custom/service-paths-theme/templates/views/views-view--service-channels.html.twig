@@ -43,11 +43,7 @@
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {% if header %}
-    <div class="view-header">
-      {{ header }}
-    </div>
-  {% endif %}
+
   {% if exposed %}
 
     {% set selection_box__base_class = "selection_box" %}
@@ -67,6 +63,12 @@
   {% if attachment_before %}
     <div class="attachment attachment-before">
       {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
     </div>
   {% endif %}
 

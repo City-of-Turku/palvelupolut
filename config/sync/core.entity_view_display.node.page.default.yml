@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_heading
+    - field.field.node.page.field_hero_style
     - field.field.node.page.field_lead_image
     - field.field.node.page.field_lead_text
     - field.field.node.page.field_meta_tags
@@ -73,6 +74,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_hero_style: true
   field_show_toc: true
   langcode: true
   links: true

@@ -82,6 +82,11 @@
   }]) %}
 {% endfor %}
 
+{% set hero_style = 'dark' %}
+{% if node.field_hero_style.value %}
+  {% set hero_style = node.field_hero_style.value %}
+{% endif %}
+
 {% embed "@templates/page/page-content.twig" with {
   page_sidebar: content.field_paragraphs_sidebar|render
 } %}
@@ -90,7 +95,7 @@
     {{ title_suffix }}
 
     {% embed "@molecules/hero/hero.twig" with {
-      hero__modifiers: hero__modifiers|default(["light"]),
+      hero__modifiers: [hero_style],
       hero__title: content.field_heading|render|trim ? content.field_heading : label,
       hero__lead_text: content.field_lead_text|field_value,
       with_image: content.field_lead_image|render,

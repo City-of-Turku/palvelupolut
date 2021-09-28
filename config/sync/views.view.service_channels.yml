@@ -546,6 +546,7 @@ display:
         exposed_form: false
         fields: false
         group_by: false
+        header: false
       row:
         type: 'entity:node'
         options:
@@ -1012,6 +1013,17 @@ display:
           entity_field: nid
           plugin_id: field
       group_by: true
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<h3>@total service channels found</h3>'
+          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:
