@@ -28,6 +28,7 @@
       <div {{ bem("link", [], content_summary__base_class) }} >
         {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
           fontawesome_icon__name: "arrow-right",
+          fontawesome_icon__role: "presentation",
         } %}
 
         {% include "@atoms/links/link/link.twig" with {
@@ -36,15 +37,12 @@
         } %}
       </div>
     {% endif %}
-
-    {% include "@atoms/buttons/button/button.twig" with {
-      button__content: content_summary__open_text,
-      button__type: "button",
-      button__icon_after: content_summary__icon_after,
-      button__icon_before: content_summary__icon_before,
-      button__modifiers: ["minimal"],
-      button__link: content_summary__open_url,
-      button__link_modifiers: content_summary__button_link_modifiers,
+    {% include "@atoms/links/link/link.twig" with {
+      link__content: content_summary__open_text,
+      link__url: content_summary__open_url,
+      link__modifiers: ["minimal"],
+      link__icon_before: content_summary__icon_before,
+      link__icon_after:  content_summary__icon_after,
     } %}
   </div>
 

@@ -59,7 +59,7 @@
       line-height: $line-height--small;
     }
   }
-  .button {
+  .link--minimal {
     @include button-with-icon;
 
     padding: space(0.75) space();
