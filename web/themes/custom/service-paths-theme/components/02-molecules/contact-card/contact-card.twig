@@ -45,6 +45,7 @@
               <div {{ bem("link-with-icon", [], contact_card__base_class) }}>
                 {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
                   fontawesome_icon__name: item.icon,
+                  fontawesome_icon__decorative: true,
                 } %}
 
                 {% if item.link_title %}
@@ -75,10 +76,6 @@
 
   {% if contact_card__link_url %}
     <div {{ bem("more-link", [], contact_card__base_class) }} >
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: "arrow-down",
-      } %}
-
       {% include "@atoms/links/link/link.twig" with {
         link__content: contact_card__link_text,
         link__url: contact_card__link_url,

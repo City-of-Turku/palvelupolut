@@ -61,12 +61,17 @@
                 {% set link_modifiers = box_links__link_modifiers|default([]) %}
                 {% set icon = 'arrow-right' %}
                 {% if item.content['#url'].external %}
-                  {% set link_modifiers = link_modifiers|merge(['external']) %}
-                  {% set icon = 'globe' %}
+                  {% if base_path in item.content['#url'].getUri() and 'sites/default/files' in item.content['#url'].getUri() %}
+                    {% set icon = 'file-alt' %}
+                  {% else %}
+                    {% set link_modifiers = link_modifiers|merge(['external']) %}
+                    {% set icon = 'globe' %}
+                  {% endif %}
                 {% endif %}
 
                 {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
                   fontawesome_icon__name: icon,
+                  fontawesome_icon__decorative: true,
                 } %}
 
                 {% include "@atoms/links/link/link.twig" with {
