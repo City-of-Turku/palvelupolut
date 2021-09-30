@@ -30,7 +30,7 @@ php:
 
   cron:
     ptvcron1:
-      schedule: '0 21 * * *'
+      schedule: '0 14 * * *'
       command: |
         drush migrate:reset-status services;
         drush migrate:import services --sync;
@@ -41,7 +41,7 @@ php:
         limits:
           memory: 512M
     ptvcron2:
-      schedule: '10 21 * * *'
+      schedule: '10 14 * * *'
       command: |
         drush migrate:reset-status services_translations;
         drush migrate:import services_translations --sync --update;
