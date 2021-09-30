@@ -25,6 +25,10 @@
       transform: translateX(50%);
     }
 
+    &:focus:hover {
+      box-shadow: none;
+    }
+
     svg {
       width: space(1.25);
       height: space(1.25);

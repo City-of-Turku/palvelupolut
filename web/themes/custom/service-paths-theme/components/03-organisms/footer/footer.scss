@@ -47,10 +47,14 @@
   }
 
   .leaflet-container {
-    margin: space(2) 0;
+    margin: 0 0 space(2);
     width: 400px;
     justify-self: center;
     border-radius: 16px;
+
+    @include above($width-medium) {
+      margin: space(2) 0;
+    }
 
     @include above($width-large) {
       margin: 0;

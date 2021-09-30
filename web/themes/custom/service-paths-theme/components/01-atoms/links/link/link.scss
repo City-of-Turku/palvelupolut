@@ -35,6 +35,37 @@
     color: color(text);
   }
 
+  &--minimal {
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 11px;
+    line-height: 1.4;
+    padding: 0.67rem 1rem;
+    width: fit-content;
+    border-color: var(--color-background-dark);
+    display: inline-flex;
+    align-items: center;
+    font-family: "Lexend", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    background-color: transparent;
+    color: color(text);
+    text-decoration: underline;
+    border: 2px solid;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: color(text);
+      border-color: black;
+      box-shadow: 0 0 2px var(--color-text);
+    }
+    &:focus:hover {
+      box-shadow: 0 0 2px var(--color-text);
+    }
+  }
+
   &--icon {
     @include bold-highlight;
 
