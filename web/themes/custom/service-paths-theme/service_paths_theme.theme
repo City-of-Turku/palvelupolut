@@ -32,6 +32,13 @@ function service_paths_theme_preprocess_select(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_field().
+ */
+function service_paths_theme_preprocess_field(&$variables, $hook) {
+  $variables['base_path'] = \Drupal::request()->getHost();
+}
+
+/**
  * Implements hook_preprocess_links__LINKS().
  *
  * Helper for adding language links in an easy to theme format.

@@ -45,6 +45,7 @@
               <div {{ bem("link-with-icon", [], contact_card__base_class) }}>
                 {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
                   fontawesome_icon__name: item.icon,
+                  fontawesome_icon__decorative: true,
                 } %}
 
                 {% if item.link_title %}

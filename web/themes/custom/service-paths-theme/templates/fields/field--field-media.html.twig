@@ -38,28 +38,35 @@
  */
 #}
 
-{% for item in items %}
 
-  {% embed "@atoms/lists/list-item.twig" with {
-    list_item__base_class: "box-links__item",
-    list_item__blockname:  box_links__base_class,
-  } %}
-    {% block list_item_content %}
-      {% set link_modifiers = box_links__link_modifiers|default([]) %}
+{% set box_links__base_class = box_links__base_class|default('box-links') %}
+{% set box_links__modifiers = box_links__modifiers|default([]) %}
 
-      {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
-        fontawesome_icon__name: "attachment",
-      } %}
+<div {{ bem(box_links__base_class, box_links__modifiers) }}>
 
-      {% include "@atoms/links/link/link.twig" with {
-        link__content: item.content['#title'],
-        link__url: item.content['#url'],
-        link__attributes: item.content['#attributes'],
-        link__suffix: "(size)",
-      } %}
+	<div {{ bem("links", [], box_links__base_class) }}>
+		{% embed "@atoms/lists/list-unordered.twig" with {
+      list__base_class: "box-links",
+      list__modifiers:  box_links__modifiers,
+      list__blockname:  box_links__base_class,
+    } %}
+			{% block list_content %}
+				{% for item in items %}
+          {% embed "@atoms/lists/list-item.twig" with {
+            list_item__base_class: "item",
+            list_item__blockname:  box_links__base_class,
+          } %}
+            {% block list_item_content %}
 
-    {% endblock %}
-  {% endembed %}
+                {{ item.content }}
 
-{% endfor %}
+            {% endblock %}
+          {% endembed %}
+				{% endfor %}
+			{% endblock %}
+
+		{% endembed %}
+
+	</div>
+</div>
 
