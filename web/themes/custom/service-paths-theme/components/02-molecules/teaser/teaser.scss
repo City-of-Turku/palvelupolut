@@ -58,6 +58,9 @@
       &:hover {
         text-decoration: underline;
       }
+      &:focus:hover {
+        box-shadow: none;
+      }
     }
   }
 
