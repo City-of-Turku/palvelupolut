@@ -11,6 +11,7 @@ import linkExternalData from './link-external.yml';
 import linkBackToTopData from './link-back-to-top.yml';
 import linkIconData from './link-icon.yml';
 import linkIconAttachmentData from './link-icon-attachment.yml';
+import linkMinimalData from './link-minimal.yml';
 
 /**
  * Storybook Definition.
@@ -32,6 +33,10 @@ export const link = () => (
     <ComponentWrapper
       markup={linkTemplate(linkIconAttachmentData)}
       label="Link icon with attachment"
+    />
+    <ComponentWrapper
+      markup={linkTemplate(linkMinimalData)}
+      label="Link minimal"
     />
   </CollectionWrapper>
 );
