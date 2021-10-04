@@ -17,6 +17,7 @@ process:
     plugin: migration_lookup
     source: services
     migration: services
+    no_stub: true
   field_ptv_id: id
 
   path/pathauto:

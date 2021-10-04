@@ -33,6 +33,7 @@ process:
     plugin: migration_lookup
     source: services
     migration: services
+    no_stub: true
   field_description/value: description
   field_description/summary: summary
   field_description/format:
