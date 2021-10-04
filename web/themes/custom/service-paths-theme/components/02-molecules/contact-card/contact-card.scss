@@ -13,6 +13,12 @@
       font-weight: bold;
       letter-spacing: $letter-spacing--large;
       line-height: $line-height--small;
+      text-decoration: underline;
+      box-shadow: none;
+      &:hover {
+        box-shadow: inset 0 -6ex 0 0 var(--color-text);
+        color: var(--color-text-inverse);
+      }
     }
 
     .fontawesome-icon {
