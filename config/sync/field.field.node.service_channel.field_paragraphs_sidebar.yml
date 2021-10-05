@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs_sidebar
     - node.type.service_channel
-    - paragraphs.paragraphs_type.contact_card
+    - paragraphs.paragraphs_type.contacts_section
     - paragraphs.paragraphs_type.general
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.process
@@ -26,45 +26,48 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      contact_card: contact_card
+      contacts_section: contacts_section
       general: general
       links: links
       process: process
     target_bundles_drag_drop:
       accordion:
-        weight: 10
+        weight: -27
         enabled: false
       accordion_item:
-        weight: 11
+        weight: -26
         enabled: false
       contact_card:
+        weight: -23
+        enabled: false
+      contacts_section:
         enabled: true
-        weight: 13
+        weight: -22
       cta:
-        weight: 12
+        weight: -25
         enabled: false
       cta_grid:
-        weight: 13
+        weight: -24
         enabled: false
       general:
         enabled: true
-        weight: 14
+        weight: -21
       icon:
-        weight: 19
+        weight: -16
         enabled: false
       icons_grid:
-        weight: 20
+        weight: -15
         enabled: false
       links:
         enabled: true
-        weight: 15
+        weight: -20
       process:
         enabled: true
-        weight: 16
+        weight: -19
       references:
-        weight: 17
+        weight: -18
         enabled: false
       step:
-        weight: 18
+        weight: -17
         enabled: false
 field_type: entity_reference_revisions

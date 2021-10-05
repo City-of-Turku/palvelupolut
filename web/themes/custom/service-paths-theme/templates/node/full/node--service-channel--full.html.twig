@@ -84,9 +84,13 @@
   "field_contacts_heading",
   "field_services"
 ] %}
+{% set sidebar = false %}
+{% if content.field_paragraphs_sidebar or content.field_services %}
+  {% set sidebar = true %}
+{% endif %}
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: content.field_paragraphs_sidebar
+  page_sidebar: sidebar
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}
@@ -114,6 +118,7 @@
 
   {% block page_sidebar_post_content %}
     {{ content.field_paragraphs_sidebar }}
+    {{ content.field_services }}
   {% endblock %}
 
   {% block page_content_post_content %}
@@ -173,10 +178,6 @@
         </div>
       </div>
 
-    </div>
-
-    <div {{ bem("section-cards-teasers") }}>
-      {{ content.field_services }}
     </div>
 
   {% endblock %}

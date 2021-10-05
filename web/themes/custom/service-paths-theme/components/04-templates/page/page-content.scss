@@ -19,6 +19,10 @@
     @include above($width-large) {
       --space-elements: #{space(2)};
     }
+
+    .box-links {
+      margin: 0;
+    }
   }
 
   &__post-content {
