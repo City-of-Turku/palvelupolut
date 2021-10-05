@@ -1,6 +1,12 @@
 .box-links {
   margin: var(--space-elements) 0;
 
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
   .button {
     @include button-with-icon;
 

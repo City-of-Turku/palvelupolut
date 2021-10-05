@@ -41,6 +41,10 @@
 {% set section_teaser__base_class = section_teaser__base_class|default("section-teaser") %}
 {% set section_teaser__modifiers = section_teaser__modifiers|default([]) %}
 
+{% set box_links__base_class = box_links__base_class|default('box-links') %}
+{% set box_links__modifiers = box_links__modifiers|default([]) %}
+
+
 {% include "@atoms/text/heading/heading.twig" with {
     heading__level: 2,
     heading__base_class: "title",
@@ -48,10 +52,39 @@
     heading: 'Provide Services'|t,
   } %}
 
-<div {{ bem(section_teaser__base_class, section_teaser__modifiers) }}>
+<div {{ bem(box_links__base_class, box_links__modifiers) }}>
 
+  <div {{ bem("links", [], box_links__base_class) }}>
+		{% embed "@atoms/lists/list-unordered.twig" with {
+      list__base_class: "box-links",
+      list__modifiers:  box_links__modifiers,
+      list__blockname:  box_links__base_class,
+    } %}
+      {% block list_content %}
+        {% for item in items %}
+          {% embed "@atoms/lists/list-item.twig" with {
+            list_item__base_class: "item",
+            list_item__blockname:  box_links__base_class,
+          } %}
+            {% block list_item_content %}
 
-  {% for item in items %}
-    {{ item.content }}
-  {% endfor %}
+                {% set link_modifiers = box_links__link_modifiers|default([]) %}
+                {% set icon = 'arrow-right' %}
+
+                {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+                  fontawesome_icon__name: icon,
+                  fontawesome_icon__decorative: true,
+                } %}
+
+                {{ item.content }}
+
+            {% endblock %}
+          {% endembed %}
+        {% endfor %}
+      {% endblock %}
+
+		{% endembed %}
+
+	</div>
+
 </div>
