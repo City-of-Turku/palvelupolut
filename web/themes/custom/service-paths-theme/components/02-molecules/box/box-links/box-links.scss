@@ -66,11 +66,14 @@
       margin-right: space();
       width: space();
       height: space();
+      top: 2px;
+      position: relative;
 
       @include above($width-large) {
         margin-right: space(1.25);
         width: space(1.25);
         height: space(1.25);
+        top: 3px;
       }
     }
 
