@@ -25,11 +25,14 @@
     padding-bottom: space(math.div(1, 2));
     position: relative;
 
+    &:focus:hover {
+      color: white;
+    }
     &:hover,
     &:focus {
       background-color: transparent;
       box-shadow: none;
-      color: color(primary);
+      color: color(white);
     }
 
     &:not(&--is-active) {
@@ -41,7 +44,7 @@
         left: 0;
         right: 0;
         height: 0.1875rem;
-        background-color: color(accent);
+        background-color: color(primary);
       }
 
       &::before {
@@ -87,7 +90,7 @@
         left: 0;
         right: 0;
         height: 0.1875rem;
-        background-color: color(accent);
+        background-color: color(primary);
         opacity: 1;
       }
     }

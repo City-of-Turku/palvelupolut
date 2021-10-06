@@ -40,7 +40,8 @@
 
     .icon {
       position: relative;
-      top: space(0.125);
+      display: flex;
+      align-self: center;
       margin-right: space(0.75);
     }
   }

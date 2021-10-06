@@ -52,6 +52,7 @@
       display: inline-block;
       margin: 1rem 0 1rem;
       font-size: $font-size--small-2;
+      margin-left: space(1.25);
 
       li {
         @extend .list-item;
@@ -80,6 +81,8 @@
       width: space(1.25);
       height: space(1.25);
       position: relative;
+      display: flex;
+      align-self: center;
     }
 
     .link {
