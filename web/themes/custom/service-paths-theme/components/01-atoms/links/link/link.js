@@ -44,4 +44,17 @@
       });
     },
   };
+  Drupal.behaviors.externalLink = {
+    attach: function (context) {
+      $.expr[':'].external = function(obj) {
+        return !obj.href.match(/^mailto\:/) && (obj.hostname != location.hostname);
+      };
+      $('a:external').addClass('external_link');
+      $('a:external').click(function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.open(this.href, '_blank');
+      });
+    }
+  };
 })(jQuery, Drupal, drupalSettings);

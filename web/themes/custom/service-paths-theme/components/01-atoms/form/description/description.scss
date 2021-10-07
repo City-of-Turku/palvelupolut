@@ -2,6 +2,6 @@
   font-size: $font-size--small-2;
 
   &--error {
-    color: red;
+    color: color(text-error);
   }
 }
