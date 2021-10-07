@@ -6,7 +6,7 @@ list_links__link_modifiers:
 list_links__items:
   - title: 'Read more on Facebook'
     url: '#'
-    icon: 'facebook'
+    icon: 'arrow-right'
   - title: 'External link'
     url: '#'
     icon: 'globe'
