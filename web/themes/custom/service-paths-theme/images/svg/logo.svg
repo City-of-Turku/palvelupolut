@@ -1,10 +1,9 @@
 <svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 60" width="382" height="54">
-	<title>text-1631799717092</title>
 	<style>
 		tspan { white-space:pre }
-		.txt0 { font-size: 51px;fill: #000000;font-weight: 500;font-family: "Lexend-Medium", "Lexend" } 
+		.txt0 { font-size: 51px;fill: #000000;font-weight: 500;font-family: "Lexend-Medium", "Lexend" }
 	</style>
-	<text id="PALVELUPOLUT   " style="transform: matrix(1,0,0,1,18.222,47.058)" >
+	<text id="PALVELUPOLUT" style="transform: matrix(1,0,0,1,18.222,47.058)" >
 		<tspan x="0" y="0" class="txt0">P</tspan><tspan  y="0" class="txt0">A</tspan><tspan  y="0" class="txt0">L</tspan><tspan  y="0" class="txt0">V</tspan><tspan  y="0" class="txt0">E</tspan><tspan  y="0" class="txt0">L</tspan><tspan  y="0" class="txt0">U</tspan><tspan  y="0" class="txt0">P</tspan><tspan  y="0" class="txt0">O</tspan><tspan  y="0" class="txt0">L</tspan><tspan  y="0" class="txt0">U</tspan><tspan  y="0" class="txt0">T</tspan><tspan  y="0" class="txt0">
 </tspan>
 	</text>

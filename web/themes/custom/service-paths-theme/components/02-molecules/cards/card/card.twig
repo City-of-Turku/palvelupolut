@@ -64,8 +64,9 @@
                 list_item__blockname: card__base_class,
               } %}
                 {% block list_item_content %}
-                  {% include "@atoms/images/icon/icon.twig" with {
-                    icon__name: item.icon,
+                  {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+                    fontawesome_icon__name: item.icon,
+                    fontawesome_icon__decorative: "true",
                   } %}
 
                   {% include "@atoms/text/text-long/text-long.twig" with {
@@ -83,6 +84,8 @@
         {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
           fontawesome_icon__name: "arrow-right",
           fontawesome_icon__role: "presentation",
+          fontawesome_icon__decorative: "true",
+          fontawesome_icon__title: "Tutustu kohteeseen Päiväkoti Taikametsä",
         } %}
 
         {% include "@atoms/links/link/link.twig" with {

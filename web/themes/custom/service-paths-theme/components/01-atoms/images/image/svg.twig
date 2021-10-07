@@ -19,7 +19,7 @@
   {% set svg_path = svg__full_path %}
 {% endif %}
 
-<div {{ bem(svg_base_class, svg_modifiers, svg_blockname) }}>
+<div {{ bem(svg_base_class, svg_modifiers, svg_blockname) }} aria-label='hidden'>
   {% if svg__raw %}
     {{ svg__raw|raw }}
   {% else %}
