@@ -26,6 +26,12 @@
     input__modifiers: text_element__modifiers|merge(["text"]),
     input__placeholder: text_element__placeholder
   } %}
+  {% if 'error' in text_element__modifiers %}
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: "times",
+      fontawesome_icon__decorative: true,
+    } %}
+  {% endif %}
   {% include "@atoms/form/description/description.twig" with {
     description__content: text_element__description,
     description__modifiers: text_element__modifiers
