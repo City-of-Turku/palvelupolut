@@ -8,7 +8,6 @@ import {
 import listLinksTemplate from '../list-links.twig';
 
 import listLinksData from './list-links.yml';
-import listLinksActionData from './list-links-action.yml';
 import listLinksIconData from './list-links-icon.yml';
 
 /**
@@ -22,10 +21,6 @@ export const listLinks = () => (
       <ComponentWrapper
         markup={listLinksTemplate(listLinksData)}
         label="Link list"
-      />
-      <ComponentWrapper
-        markup={listLinksTemplate(listLinksActionData)}
-        label="Link list action"
       />
       <ComponentWrapper
         markup={listLinksTemplate(listLinksIconData)}

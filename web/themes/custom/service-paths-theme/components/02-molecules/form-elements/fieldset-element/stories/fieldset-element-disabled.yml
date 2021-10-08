@@ -1,5 +1,0 @@
-fieldset_element__legend: Legend text
-fieldset_element__content: Fieldset content block
-fieldset_element__disabled: true
-fieldset_element__modifiers:
-  - disabled

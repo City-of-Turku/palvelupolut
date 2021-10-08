@@ -1,6 +1,6 @@
 text_element__label: Text label
 text_element__content: Text element
 text_element__placeholder: Placeholder text
-text_element__description: Text description
+text_element__description: Error description
 text_element__modifiers:
   - error
