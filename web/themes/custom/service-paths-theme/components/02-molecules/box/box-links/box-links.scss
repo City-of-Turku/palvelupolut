@@ -18,9 +18,9 @@
     }
 
     .fontawesome-icon--after {
-      width: space(.75);
-      height: space(.75);
-      margin-left: space(.75);
+      width: space(0.75);
+      height: space(0.75);
+      margin-left: space(0.75);
     }
   }
 
@@ -51,6 +51,11 @@
 
     .link {
       @include link-focus;
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: inset 0 10em 0 0 var(--color-text);
+      }
     }
   }
 
@@ -63,6 +68,9 @@
   &__item {
     padding: 0;
     margin-bottom: space(0.75);
+    display: flex;
+    text-decoration: underline;
+    box-shadow: none;
 
     @include above($width-large) {
       margin-bottom: space();
@@ -72,13 +80,14 @@
       margin-right: space();
       width: space();
       height: space();
+      min-width: space();
       top: 2px;
       position: relative;
 
       @include above($width-large) {
-        margin-right: space(1.25);
         width: space(1.25);
         height: space(1.25);
+        min-width: space(1.25);
         top: 3px;
       }
     }
@@ -94,6 +103,10 @@
 
     a {
       @include link-focus;
+      box-shadow: none;
+      span {
+        padding-left: 0;
+      }
     }
   }
 }

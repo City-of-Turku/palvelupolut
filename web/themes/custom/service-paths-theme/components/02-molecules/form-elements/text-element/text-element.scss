@@ -1,3 +1,13 @@
 .text-element {
   // color: red;
 }
+.text_element--error .fontawesome-icon {
+  border: 2px solid;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  top: 5px;
+  margin-left: 8px;
+  color: color(text-error);
+}
