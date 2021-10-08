@@ -10,6 +10,7 @@
  * - link__blockname - blockname prepended to the base classname
  * - link__icon_before - the name of the icon that will appear before the link text
  * - link__icon_after - the name of the icon that will appear after the link text
+ * - link__title - a11y title
  *
  * Available blocks:
  * - link_content - used to replace the content of the link
@@ -61,9 +62,11 @@
   {% for attribute, value in link__attributes %}
     {{ attribute }}="{{ value }}"
   {% endfor %}
+
   {% if link__url %}
     href="{{ link__url }}"
   {% endif %}
+
 >
   {% if link__icon_before %}
     {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
@@ -76,6 +79,10 @@
   {% block link_content %}
     {{- link__content -}}
   {% endblock %}
+
+ {% if link__title  %}
+   <span class="visually-hidden"> {{ link__content }} {{ link__title }} </span>
+ {% endif %}
 
   {% if link__icon_after %}
     {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
