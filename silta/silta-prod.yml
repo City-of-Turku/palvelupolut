@@ -24,7 +24,6 @@ php:
     requests:
       cpu: 200m
       memory: 256M
-
   # Don't show errors in production.
   errorLevel: "hide"
 
