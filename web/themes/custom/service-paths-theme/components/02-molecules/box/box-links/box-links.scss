@@ -26,6 +26,7 @@
 
   a {
     font-size: $font-size--base;
+    box-shadow: none;
   }
 
   .text-long {
@@ -49,7 +50,8 @@
     margin: 0;
     padding: 0;
 
-    .link {
+    .link,
+    a {
       @include link-focus;
       box-shadow: none;
 
