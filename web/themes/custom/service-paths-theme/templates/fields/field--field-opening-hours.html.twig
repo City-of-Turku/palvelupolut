@@ -56,10 +56,11 @@
 
 {% endfor %}
 
+<div class="contact-card_service-hours">
 {% include "@molecules/contact-card/contact-card.twig" with {
   section_contact_cards__modifiers: process_step_modifiers,
   contact_card__title: 'Service Hours'|t,
   contact_card__items: cards,
 } %}
-
+</div>
 

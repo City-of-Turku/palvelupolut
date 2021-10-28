@@ -40,7 +40,7 @@
 
   &__text {
     font-size: $font-size--small-1;
-    padding-left: space(2.3);
+    padding-left: space(2.5);
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--small;
     position: relative;
@@ -77,7 +77,7 @@
     flex-direction: column;
 
     .fontawesome-icon {
-      margin-right: space();
+      margin-right: space(1.25);
       width: space(1.25);
       height: space(1.25);
       position: relative;
@@ -151,5 +151,10 @@
         );
       }
     }
+  }
+}
+.contact-card_service-hours {
+  .contact-card__title {
+    font-weight: 400;
   }
 }
