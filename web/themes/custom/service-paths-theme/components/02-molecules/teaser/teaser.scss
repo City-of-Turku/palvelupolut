@@ -17,6 +17,10 @@
       align-self: start;
     }
 
+    .label {
+      font-size: $font-size--small-2;
+    }
+
     .date {
       border-right: 1px solid black;
       margin-right: space(1/2);

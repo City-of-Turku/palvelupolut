@@ -41,14 +41,12 @@
     }
 
     @include above($width-small) {
-      width: 16rem;
-      height: 16rem;
+      width: 14rem;
+      height: 14rem;
       padding-bottom: 0;
     }
 
     @include above($width-large) {
-      width: 20rem;
-      height: 20rem;
       margin: 0;
     }
   }
