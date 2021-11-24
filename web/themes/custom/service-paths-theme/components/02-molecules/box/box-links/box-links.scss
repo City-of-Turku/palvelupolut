@@ -1,6 +1,10 @@
 .box-links {
   margin: var(--space-elements) 0;
 
+  ul .box-links {
+    margin: 0;
+  }
+
   &::after {
     clear: both;
     content: '';
