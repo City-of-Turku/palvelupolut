@@ -39,20 +39,40 @@
 #}
 
 {% set cards = [] %}
+{% set title = 'Opening Hours'|t %}
+{% set default_title = true %}
+{% set title_changed = false %}
+{% set without_title = false %}
 
 {% for item in items %}
 
 	{% set first = item.content['#item'].getValue.first %}
 	{% set second = item.content['#item'].getValue.second %}
 
-	{% set data = {
-      "info_title": first,
-      "text" : second,
-      "icon": second ? "clock" : 'door-open',
-    }
-  %}
+  {% if second is null %}
+    {% set title = first %}
+    {% set title_changed = true %}
+    {% set without_title = false %}
+  {% else %}
 
-	{% set cards = cards|merge([data]) %}
+    {% set data = {
+        "info_title": without_title ? null : title,
+        "text" : first,
+        "text2" : second,
+        "icon": "clock",
+      }
+    %}
+
+    {% if title_changed or default_title %}
+      {% set without_title = true %}
+    {% else %}
+      {% set without_title = false %}
+      {% set title_changed = false %}
+    {% endif %}
+
+    {% set cards = cards|merge([data]) %}
+
+  {% endif %}
 
 {% endfor %}
 

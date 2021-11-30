@@ -46,7 +46,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Suodattaa
+          submit_button: Suodata
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -552,7 +552,46 @@ display:
         options:
           relationship: none
           view_mode: summary
-      arguments: {  }
+      arguments:
+        field_ptv_id_value:
+          id: field_ptv_id_value
+          table: node__field_ptv_id
+          field: field_ptv_id_value
+          relationship: field_services
+          group_type: group
+          admin_label: ''
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: true
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
+          plugin_id: string
       relationships:
         field_services:
           id: field_services
@@ -632,48 +671,6 @@ display:
           entity_type: node
           entity_field: langcode
           plugin_id: language
-        field_ptv_id_value:
-          id: field_ptv_id_value
-          table: node__field_ptv_id
-          field: field_ptv_id_value
-          relationship: field_services
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_ptv_id_value_op
-            label: 'Service ID'
-            description: ''
-            use_operator: false
-            operator: field_ptv_id_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: service
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: string
         field_tags_target_id:
           id: field_tags_target_id
           table: node__field_tags
@@ -773,7 +770,7 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Suodattaa
+          submit_button: Suodata
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'

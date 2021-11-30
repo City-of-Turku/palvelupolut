@@ -2,19 +2,16 @@ display:
   page:
     display_options:
       filters:
-        field_ptv_id_value:
-          expose:
-            label: 'Palvelukanavan tunnus'
         field_tags_target_id:
           expose:
             label: Asiasanat
         field_service_channel_type_value:
           expose:
-            label: Tyyppi
+            label: 'Mitä etsit'
       title: Asiointikanavat
       header:
         result:
-          content: '<h3>Löytyi @total palvelukanavaa</h3>'
+          content: '<h3>Löytyi @total asiointikanavaa</h3>'
   embed:
     display_options:
       title: Asiointikanavat
