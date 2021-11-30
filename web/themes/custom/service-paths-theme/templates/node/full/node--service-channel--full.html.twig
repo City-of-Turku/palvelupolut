@@ -143,6 +143,11 @@
               'text': content.field_address,
               'icon': 'map-marker-alt',
             }]) %}
+            {% set main_cards = main_cards|merge([{
+              'link_title': 'Location on map'|t,
+              'url': 'http://maps.google.com/?q=' ~ node.field_address.getString,
+              'icon': 'map-marked-alt',
+            }]) %}
           {% endif %}
           {% if node.field_email.value %}
             {% set main_cards = main_cards|merge([{
@@ -166,6 +171,7 @@
           } %}
 
           {{ content.field_opening_hours }}
+          {{ content.field_service_hours }}
           {{ content.field_phone_numbers }}
 
         </div>

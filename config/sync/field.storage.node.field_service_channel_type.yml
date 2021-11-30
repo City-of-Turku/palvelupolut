@@ -18,9 +18,6 @@ settings:
       value: Phone
       label: Phone
     -
-      value: WebPage
-      label: Webpage
-    -
       value: PrintableForm
       label: Print
     -

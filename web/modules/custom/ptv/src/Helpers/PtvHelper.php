@@ -19,13 +19,15 @@ class PtvHelper {
     $config_data = $config->get($key);
 
     $tmp_ids = [
-      'ff000abb-d4ba-4342-977b-743215b4d567',
-      'e1d74431-eee4-485c-bcc2-27c69ec7462b',
-      '353d9358-ed47-445c-889f-b505444fb216',
-      '70bef918-cd73-4a0d-90f1-52e6c835c9fa',
-      '552b8911-9117-472c-81eb-bf0fcd9b14e3',
-      '814d1a4c-2656-4348-b54b-8b04ede310ba',
-      'afa50539-473f-4823-baf4-d728a1bae7cb',
+      // 'ff000abb-d4ba-4342-977b-743215b4d567',
+      // 'e1d74431-eee4-485c-bcc2-27c69ec7462b',
+      // '353d9358-ed47-445c-889f-b505444fb216',
+      // '70bef918-cd73-4a0d-90f1-52e6c835c9fa',
+      // '552b8911-9117-472c-81eb-bf0fcd9b14e3',
+      // '814d1a4c-2656-4348-b54b-8b04ede310ba',
+      // 'afa50539-473f-4823-baf4-d728a1bae7cb',
+      // 'afa50539-473f-4823-baf4-d728a1bae7cb',
+      // 'ea68d45c-082a-4eae-9ecc-3331d072ff25'
     ];
 
     $data = [];
@@ -278,29 +280,34 @@ class PtvHelper {
                 }
               }
               if ($serviceHours->isAlwaysOpen) {
-                $opening_hours[$i]['first'] = 'Week';
-                $opening_hours[$i]['second'] = 'Always Open';
+                $opening_hours[$i]['first'] = 'Always Open';
                 continue;
               }
               $save_time = NULL;
               $h = 0;
               $times = [];
               foreach ($serviceHours->openingHour as $day) {
-                $time = substr($day->from, 0, -3) . ' - ' . substr($day->to, 0, -3);
+                $time = substr(str_replace(':', '.', ltrim($day->from, 0)), 0, -3) . ' - ' . substr(str_replace(':', '.', ltrim($day->to, 0)), 0, -3);
                 $weekday = $day->dayFrom;
                 $weekday .= !empty($day->dayTo) ? ' - ' . $day->dayTo : '';
-                $times[$h][$time][] = $weekday;
+
                 if ($save_time && $save_time != $time) {
                   $h++;
                 }
+                $times[$h][$time][] = $weekday;
                 $save_time = $time;
               }
               foreach ($times as $key => $days) {
                 $final_time = array_key_first($days);
                 $days_array = current($days);
-                $from = $this->getTranslatedDay($days_array[0]);
-                $to = $this->getTranslatedDay(array_pop($days_array));
-                $final_days = $from . ' - ' . $to;
+                $from = $this->getTranslatedDay($days_array[0], $langcode);
+                $to = $this->getTranslatedDay(array_pop($days_array), $langcode);
+                if ($from == $to) {
+                  $final_days = $from;
+                }
+                else {
+                  $final_days = $from . ' - ' . $to;
+                }
                 $opening_hours[$i]['first'] = $final_days;
                 $opening_hours[$i]['second'] = $final_time;
                 $i++;
@@ -337,15 +344,15 @@ class PtvHelper {
   /**
    * Returns string.
    */
-  public function getTranslatedDay($var) {
+  public function getTranslatedDay($var, $lang) {
     $days = [
-      'Monday' => t('Monday'),
-      'Tuesday' => t('Tuesday'),
-      'Wedneday' => t('Wedneday'),
-      'Thursday' => t('Thursday'),
-      'Friday' => t('Friday'),
-      'Saturday' => t('Saturday'),
-      'Sunday' => t('Sunday'),
+      'Monday' => t('Monday', [], ['langcode' => $lang]),
+      'Tuesday' => t('Tuesday', [], ['langcode' => $lang]),
+      'Wednesday' => t('Wednesday', [], ['langcode' => $lang]),
+      'Thursday' => t('Thursday', [], ['langcode' => $lang]),
+      'Friday' => t('Friday', [], ['langcode' => $lang]),
+      'Saturday' => t('Saturday', [], ['langcode' => $lang]),
+      'Sunday' => t('Sunday', [], ['langcode' => $lang]),
     ];
     if (in_array($var, array_keys($days))) {
       return $days[$var];

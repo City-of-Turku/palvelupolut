@@ -1,10 +1,8 @@
 settings:
   allowed_values:
     0:
-      label: Verkossa
+      label: Verkkoasiointi
     1:
-      label: Puhelimella
+      label: Puhelinasointi
     3:
       label: Lomakkeella
-    4:
-      label: Palvelupaikassa
