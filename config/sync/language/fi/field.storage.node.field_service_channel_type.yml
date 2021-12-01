@@ -3,6 +3,6 @@ settings:
     0:
       label: Verkkoasiointi
     1:
-      label: Puhelinasointi
+      label: Puhelinasiointi
     3:
-      label: Lomakkeella
+      label: Lomakkeet

@@ -7,7 +7,7 @@ display:
             label: Asiasanat
         field_service_channel_type_value:
           expose:
-            label: 'Mitä etsit'
+            label: 'Mitä etsit?'
       title: Asiointikanavat
       header:
         result:
