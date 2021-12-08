@@ -4,5 +4,7 @@ settings:
       label: Verkkoasiointi
     1:
       label: Puhelinasiointi
-    3:
+    2:
       label: Lomakkeet
+    3:
+      label: Palvelupaikat
