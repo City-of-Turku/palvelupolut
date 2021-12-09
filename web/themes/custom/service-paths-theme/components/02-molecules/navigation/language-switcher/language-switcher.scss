@@ -17,13 +17,13 @@
     padding: 0 space(math.div(1, 2));
     font-size: $font-size--small-2;
     text-transform: uppercase;
+    display: flex;
   }
 
   &__link {
     @include link-reset;
 
     letter-spacing: $letter-spacing--none;
-    padding-bottom: space(math.div(1, 2));
     position: relative;
 
     &:focus:hover {

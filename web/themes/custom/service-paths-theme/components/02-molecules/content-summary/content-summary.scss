@@ -5,12 +5,18 @@
   background-color: var(--color-background);
   padding: space(2);
   margin-bottom: space(1);
+  flex-direction: column;
+
+  @include above($width-large) {
+    flex-direction: row;
+  }
 
   &__text {
     font-family: 'Lexend', serif;
     font-size: $font-size--small-1;
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--small;
+    margin-top: space(.5);
   }
 
   &__link {
@@ -33,6 +39,10 @@
 
     &:last-child {
       margin-right: 0;
+      margin-bottom: 0;
+      @include above($width-large) {
+        margin-bottom: space(2);
+      }
     }
 
     .title {
@@ -51,6 +61,7 @@
       letter-spacing: $letter-spacing--large;
       line-height: $line-height--narrow;
       margin-bottom: space(0.25);
+      display: inline;
     }
 
     .link {
@@ -101,6 +112,7 @@
   }
   p {
     font-size: $font-size--small-1;
+    margin: 0;
   }
   .contact-card {
     .contact-card__title,

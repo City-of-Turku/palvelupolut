@@ -87,14 +87,14 @@
       width: space();
       height: space();
       min-width: space();
-      top: 2px;
+      display: flex;
+      align-self: center;
       position: relative;
 
       @include above($width-large) {
         width: space(1.25);
         height: space(1.25);
         min-width: space(1.25);
-        top: 3px;
       }
     }
 

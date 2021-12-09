@@ -11,6 +11,7 @@
   ol,
   ul {
     display: inline-block;
+    margin-top: 0;
 
     li {
       @extend .list-item;
