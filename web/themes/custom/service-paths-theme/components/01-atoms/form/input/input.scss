@@ -36,6 +36,7 @@
 
     &:focus {
       color: color(text);
+      outline-offset: 3px;
     }
 
     display: block;
