@@ -7,7 +7,7 @@
   margin-bottom: space(1);
   flex-direction: column;
 
-  @include above($width-large) {
+  @include above($width-xl) {
     flex-direction: row;
   }
 
@@ -31,7 +31,7 @@
   &__column {
     margin-bottom: space(2);
 
-    @include above($width-large) {
+    @include above($width-xl) {
       flex: 1;
       margin-right: space(2);
       margin-bottom: 0;
@@ -40,7 +40,7 @@
     &:last-child {
       margin-right: 0;
       margin-bottom: 0;
-      @include above($width-large) {
+      @include above($width-xl) {
         margin-bottom: space(2);
       }
     }
