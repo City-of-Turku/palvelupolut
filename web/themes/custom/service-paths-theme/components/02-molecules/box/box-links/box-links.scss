@@ -33,6 +33,11 @@
     box-shadow: none;
   }
 
+  a.link--enhanced.link--with-icon:focus {
+    outline: 1px solid black;
+    outline-offset: 2px;
+  }
+
   .text-long {
     margin-bottom: space(2);
   }

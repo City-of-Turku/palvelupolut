@@ -49,7 +49,7 @@
 {% if presentation_link %}
   {% set presentation_attributes = {
     role: 'presentation',
-    tabindex: '-1',
+    tabindex: '0',
   } %}
   {% set link__attributes = link__attributes|merge(presentation_attributes) %}
 {% endif %}
