@@ -72,6 +72,10 @@
     aria-labelledby="{{ link__label }}"
   {% endif %}
 
+  {% if link__describedby %}
+   aria-describedby="{{ link__describedby }}"
+  {% endif %}
+
 >
   {% if link__icon_before %}
     {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {

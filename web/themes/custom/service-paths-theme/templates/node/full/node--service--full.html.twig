@@ -136,7 +136,8 @@
   {% block page_content %}
 
     {% include "@molecules/navigation/anchor-menu/anchor-menu.twig" with {
-      anchor_menu__items: menu_items
+      anchor_menu__items: menu_items,
+      link__describedby: 'jump to'|t,
     } %}
 
     {% if content.field_description|render %}
