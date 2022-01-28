@@ -10,7 +10,6 @@ import inputTextData from './input-text.yml';
 
 import inputSubmitData from './input-submit.yml';
 
-
 /**
  * Storybook Definition.
  */
