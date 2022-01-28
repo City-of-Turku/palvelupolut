@@ -4,6 +4,17 @@
   display: grid;
   grid-gap: space();
 
+  legend {
+    text-transform: uppercase;
+    font-family: $font-family--heading;
+    font-size: $font-size--h4;
+    letter-spacing: $letter-spacing--none;
+    line-height: 1.5;
+    color: color(text);
+    font-weight: 700;
+    margin: 0 0 space();
+  }
+
   @include above($width-medium) {
     grid-gap: space(1.5);
   }
@@ -71,19 +82,5 @@
   // Hide the field created by Honeypot module, when the Honeypot element name is set to be "url".
   &-item--url {
     visibility: hidden;
-  }
-}
-.form {
-  legend {
-    text-transform: uppercase;
-    font-family: $font-family--heading;
-    font-size: $font-size--h4;
-    font-size-small: $font-size--h4--small;
-    letter-spacing: $letter-spacing--none;
-    line-height: 1.5;
-    color: color(text);
-    color-link-hover: color(text-inverse);
-    font-weight: 700;
-    margin: 0 0 space();
   }
 }

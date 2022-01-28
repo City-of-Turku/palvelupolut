@@ -34,7 +34,7 @@
     }
   }
 
-  &:before {
+  &::before {
     content: "";
     width: calc(88rem + 22rem);
     max-width: 100vw;
