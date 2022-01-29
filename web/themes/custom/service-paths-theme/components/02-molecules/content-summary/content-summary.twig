@@ -48,33 +48,39 @@
     } %}
   </div>
 
-  <div {{ bem("column", [], content_summary__base_class) }} >
-    {% include "@atoms/text/heading/heading.twig" with {
-      heading__level: 5,
-      heading__base_class: "heading",
-      heading__blockname: content_summary_base_class,
-      heading: content_summary__number_heading,
-    } %}
 
-    {% include "@atoms/text/text-long/text-long.twig" with {
-      text_long__base_class: "text",
-      text_long__content:  content_summary__number_lead_text,
-      text_long__blockname: content_summary__base_class,
-    } %}
+  <div {{ bem("column", [], content_summary__base_class) }} >
+    {% if content_summary__number_lead_text %}
+      {% include "@atoms/text/heading/heading.twig" with {
+        heading__level: 5,
+        heading__base_class: "heading",
+        heading__blockname: content_summary_base_class,
+        heading: content_summary__number_heading,
+      } %}
+
+      {% include "@atoms/text/text-long/text-long.twig" with {
+        text_long__base_class: "text",
+        text_long__content:  content_summary__number_lead_text,
+        text_long__blockname: content_summary__base_class,
+      } %}
+    {% endif %}
   </div>
 
   <div {{ bem("column", [], content_summary__base_class) }}  >
-    {% include "@atoms/text/heading/heading.twig" with {
-      heading__level: 5,
-      heading__base_class: "heading",
-      heading__blockname: content_summary_base_class,
-      heading: content_summary__heading,
-    } %}
+    {% if content_summary__lead_text %}
+      {% include "@atoms/text/heading/heading.twig" with {
+        heading__level: 5,
+        heading__base_class: "heading",
+        heading__blockname: content_summary_base_class,
+        heading: content_summary__heading,
+      } %}
 
-    {% include "@atoms/text/text-long/text-long.twig" with {
-      text_long__base_class: "text",
-      text_long__content:  content_summary__lead_text,
-      text_long__blockname: content_summary__base_class,
-    } %}
+      {% include "@atoms/text/text-long/text-long.twig" with {
+        text_long__base_class: "text",
+        text_long__content:  content_summary__lead_text,
+        text_long__blockname: content_summary__base_class,
+      } %}
+    {% endif %}
   </div>
+
 </div>

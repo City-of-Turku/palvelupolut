@@ -49,7 +49,7 @@
 	{% set first = item.content['#item'].getValue.first %}
 	{% set second = item.content['#item'].getValue.second %}
 
-  {% if second is null %}
+  {% if second is null and items|length > 1 %}
     {% set title = first %}
     {% set title_changed = true %}
     {% set without_title = false %}
