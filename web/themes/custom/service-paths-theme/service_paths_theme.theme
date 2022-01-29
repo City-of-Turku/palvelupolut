@@ -52,10 +52,11 @@ function service_paths_theme_preprocess_links__language_block(&$variables) {
 
     if (!empty($link['link'])) {
       $links[$langcode]['url'] = service_paths_theme_get_link_url($link['link']['#url'], $link['link']['#options']);
+      $links[$langcode]['attributes']['lang'] = $langcode;
 
       if ($current_language->getId() === $langcode) {
         $links[$langcode]['modifiers'] = ['is-active'];
-        $links[$langcode]['attributes'] = ['aria-current' => 'true'];
+        $links[$langcode]['attributes']['aria-current'] = 'page';
       }
     }
   }
