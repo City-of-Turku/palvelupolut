@@ -1,7 +1,12 @@
 language_switcher__items:
   - title: 'Suomi'
     url: '#'
+    attributes:
+      lang: 'fi'
+      aria-current: 'page'
     modifiers:
       - 'is-active'
   - title: 'English'
     url: '#'
+    attributes:
+      lang: 'en'
