@@ -27,6 +27,7 @@
 {% set back_to_top_link = 'back-to-top' in link__modifiers %}
 {% set presentation_link = not link__url %}
 {% set external_link = 'external' in link__modifiers %}
+{% set phone_link = 'phone' in link__modifiers %}
 
 {% if link_with_arrow  and not external_link %}
   {% set link__icon_after = 'arrow-right' %}
@@ -107,6 +108,12 @@
       fontawesome_icon__decorative: true,
       fontawesome_icon__modifiers: ['external-link'],
     } %}
+  {% endif %}
+
+  {% if link__info %}
+    {% include '@atoms/visually-hidden/visually-hidden.twig' with {
+        visually_hidden__content: link__info,
+      } %}
   {% endif %}
 
   {% if link__suffix %}

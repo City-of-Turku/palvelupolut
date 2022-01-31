@@ -11,6 +11,7 @@
 {% set language_switcher__base_class = "language-switcher" %}
 {% set language_switcher__modifiers =  language_switcher__modifiers|default([])%}
 
+<nav aria-label="{{ "Language"|t }}">
 {% embed "@atoms/lists/list-unordered.twig" with {
   list__base_class: language_switcher__base_class,
   list__modifiers: language_switcher__modifiers,
@@ -22,14 +23,7 @@
         list_item__blockname: language_switcher__base_class,
       } %}
         {% block list_item_content %}
-          {% if ("is-active" in item.modifiers) %}
-            {% set link__content %}
-              <span class="visually-hidden">{{ "Current language"|t }}: </span>
-              {{ item.title }}
-            {% endset %}
-          {% else %}
-            {% set link__content =  item.title %}
-          {% endif %}
+          {% set link__content =  item.title %}
 
           {% include "@atoms/links/link/link.twig" with {
             link__url: item.url,
@@ -43,3 +37,4 @@
     {% endfor %}
   {% endblock %}
 {% endembed %}
+</nav>

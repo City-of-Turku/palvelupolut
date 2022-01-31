@@ -37,23 +37,27 @@
   {% endif %}
 >
   {% if fontawesome_icon__title %}
-    <title id="title-{{ fontawesome_icon__name }}">{{ fontawesome_icon__title }}</title>
+    <title>{{ fontawesome_icon__title }}</title>
   {% endif %}
 
   {% if fontawesome_icon__desc %}
-    <desc id="desc-{{ fontawesome_icon__name }}">{{ fontawesome_icon__desc }}</desc>
+    <desc>{{ fontawesome_icon__desc }}</desc>
+  {% endif %}
+
+  {% if fontawesome_icon__name == 'external-link-alt' %}
+    <title>Opens in new window</title>
   {% endif %}
 
   {% if fontawesome_icon__name == 'phone' %}
-    <title id="title-{{ fontawesome_icon__name }}">Phone</title>
+    <title>Phone</title>
   {% endif %}
 
   {% if fontawesome_icon__name == 'globe' %}
-    <title id="title-{{ fontawesome_icon__name }}">Website</title>
+    <title>Website</title>
   {% endif %}
 
   {% if fontawesome_icon__name == 'at' %}
-    <title id="title-{{ fontawesome_icon__name }}">Email address</title>
+    <title>Email address</title>
   {% endif %}
 
   <use xlink:href="{{ fontawesome_icon__base_url }}sprites/fontawesome.svg#{{ fontawesome_icon__name }}"></use>

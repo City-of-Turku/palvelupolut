@@ -48,7 +48,12 @@
       });
       $('a[href^="mailto:"]')
         .once()
-        .append(`<span class="visually-hidden">Email address</span>`);
+        .append(
+          `<span class="visually-hidden">${Drupal.t('Email address')}</span>`,
+        );
+      $('a[href^="tel:"]')
+        .once()
+        .append(`<span class="visually-hidden">${Drupal.t('Phone')}</span>`);
     },
   };
 })(jQuery, Drupal, drupalSettings);

@@ -29,6 +29,18 @@
             }
           });
         });
+      $(document).ready(function () {
+        $('.leaflet-control-container', context)
+          .once()
+          .each(function (i) {
+            const zoomIn = $(this).find('.leaflet-control-zoom-in');
+            const zoomOut = $(this).find('.leaflet-control-zoom-out');
+            const zoomInText = Drupal.t('Zoom in');
+            const zoomOutText = Drupal.t('Zoom out');
+            zoomIn.attr('title', zoomInText);
+            zoomOut.attr('title', zoomOutText);
+          });
+      });
     },
   };
 })(jQuery, Drupal, drupalSettings);
