@@ -47,6 +47,7 @@
 
 .section-cards-teasers {
   @include background-full-width($background: color(background-section-dark));
+
   padding: space(2) 0 0;
 
   .box-links {

@@ -31,7 +31,7 @@
 {% for type, messages in message_list %}
   {% set role = (type == 'error') ? 'alert' : 'status' %}
 
-  <div{% if not presentational %} role="{{ role }}"{% endif %} aria-label="{{ status_type[type] }}"{{ attributes|without('role', 'aria-label') }}>
+  <div role="alert" aria-label="{{ status_type[type] }}"{{ attributes|without('aria-label') }}>
     <ul {{ bem('list', [], status__base_class)}}>
       {% for message in messages %}
         <li {{ bem(status__base_class, [type])}}>{{ message }}</li>

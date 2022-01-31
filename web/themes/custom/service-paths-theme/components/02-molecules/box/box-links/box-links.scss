@@ -33,6 +33,11 @@
     box-shadow: none;
   }
 
+  a.link--enhanced.link--with-icon:focus {
+    outline: 1px solid black;
+    outline-offset: 2px;
+  }
+
   .text-long {
     margin-bottom: space(2);
   }
@@ -57,6 +62,7 @@
     .link,
     a {
       @include link-focus;
+
       box-shadow: none;
 
       &:hover {
@@ -109,6 +115,7 @@
 
     a {
       @include link-focus;
+
       box-shadow: none;
       span {
         padding-left: 0;

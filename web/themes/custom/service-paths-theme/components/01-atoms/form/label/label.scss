@@ -27,6 +27,14 @@
       color: color(accent);
     }
 
+    &:focus,
+    input:focus + & {
+      .label__checkbox--checkbox {
+        outline: 1px solid;
+        outline-offset: space(.25);
+      }
+    }
+
     input:checked + & {
       font-weight: 600;
     }

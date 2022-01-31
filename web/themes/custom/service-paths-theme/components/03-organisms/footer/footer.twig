@@ -12,12 +12,6 @@
 
 <footer {{ bem(footer__base_class) }}>
   <div {{ bem("inner", [], footer__base_class) }}>
-    <div {{ bem("branding", [], footer__base_class) }}>
-      {% block footer_branding %}
-        {% include "@organisms/footer/footer-branding/footer-branding.twig" %}
-      {% endblock %}
-    </div>
-
     <div {{ bem("copyright", [], footer__base_class) }}>
       {{ "© Turku " ~ "Now"|date("Y") }}
     </div>

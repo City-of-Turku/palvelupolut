@@ -1,6 +1,6 @@
 .selection_box {
   &__wrapper {
-    margin: var(--space-elements) 0;
+    margin: 0 0 var(--space-elements);
     position: relative;
     padding: space(4) 0;
 
@@ -28,26 +28,7 @@
     .title {
       text-transform: uppercase;
     }
-  }
 
-  .input--submit {
-    width: fit-content;
-  }
-
-  input {
-    margin-bottom: 2rem;
-  }
-
-  .form-wrapper span {
-    color: color(text);
-    font-family: 'Lexend', serif;
-    font-size: $font-size--base;
-    font-weight: 800;
-    letter-spacing: $letter-spacing--small;
-    line-height: $line-height--narrow;
-  }
-
-  &__inner {
     .button.button--minimal {
       margin-bottom: space(0.75);
 
@@ -72,6 +53,23 @@
       letter-spacing: $letter-spacing--small;
       line-height: $line-height--narrow;
     }
+  }
+
+  .input--submit {
+    width: fit-content;
+  }
+
+  input {
+    margin-bottom: 2rem;
+  }
+
+  .form-wrapper span {
+    color: color(text);
+    font-family: 'Lexend', serif;
+    font-size: $font-size--base;
+    font-weight: 800;
+    letter-spacing: $letter-spacing--small;
+    line-height: $line-height--narrow;
   }
 
   &__selection-link {
