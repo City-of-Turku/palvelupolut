@@ -23,7 +23,7 @@
   </div>
 
   {% if page_sidebar %}
-    <div {{ bem('sidebar-pre-content', [], page_content__base_class) }}>
+    <div {{ bem('sidebar-pre-content', [], page_content__base_class) }} role='complementary'>
       {% block page_sidebar_pre_content %}{% endblock %}
     </div>
   {% endif %}
@@ -33,7 +33,7 @@
   </div>
 
   {% if page_sidebar %}
-    <div {{ bem('sidebar-post-content', [], page_content__base_class) }}>
+    <div {{ bem('sidebar-post-content', [], page_content__base_class) }} role='complementary'>
       {% block page_sidebar_post_content %}{% endblock %}
     </div>
   {% endif %}

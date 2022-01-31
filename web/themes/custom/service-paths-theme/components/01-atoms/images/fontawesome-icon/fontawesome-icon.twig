@@ -62,3 +62,9 @@
 
   <use xlink:href="{{ fontawesome_icon__base_url }}sprites/fontawesome.svg#{{ fontawesome_icon__name }}"></use>
 </svg>
+
+{% if fontawesome_icon__name == 'external-link-alt' %}
+  {% include '@atoms/visually-hidden/visually-hidden.twig' with {
+    visually_hidden__content: ' (opens in a new window, goes to a different website)'|t,
+  } %}
+{% endif %}

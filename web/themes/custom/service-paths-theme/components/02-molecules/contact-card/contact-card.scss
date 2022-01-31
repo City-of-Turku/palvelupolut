@@ -56,7 +56,9 @@
 
       li {
         @extend .list-item;
+
         list-style-type: disc;
+
         &::marker {
           content: inherit;
         }

@@ -17,7 +17,7 @@ export default { title: 'Atoms/Images' };
 
 export const image = () => (
   <CollectionWrapper>
-    <ComponentWrapper markup={imageTemplate(imageData)} label="Image" />
     <ComponentWrapper markup={figureTemplate(figureData)} label="Figure" />
+    <ComponentWrapper markup={imageTemplate(imageData)} label="Image" />
   </CollectionWrapper>
 );

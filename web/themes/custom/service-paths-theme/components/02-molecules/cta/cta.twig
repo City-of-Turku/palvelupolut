@@ -25,18 +25,13 @@
       heading__base_class: "title",
       heading__blockname: cta__base_class,
       heading: cta__title,
+      heading__url: cta__link,
     } %}
 
     {% include "@atoms/text/text-long/text-long.twig" with {
       text_long__blockname: cta__base_class,
       text_long__base_class: "text",
       text_long__content:  cta__lead_text,
-    } %}
-
-    {% include "@atoms/links/link/link.twig" with {
-      link__base_class: "link",
-      link__url: cta__link,
-      link__icon_before: "arrow-right",
     } %}
   </div>
 
