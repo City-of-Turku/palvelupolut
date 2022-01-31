@@ -3,7 +3,10 @@
 {% set accordion_item__base_class = accordion_item__base_class|default('accordion-item') %}
 {% set accordion_item__modifiers = accordion_item__modifiers|default([]) %}
 
-<details {{ bem(accordion_item__base_class, accordion_item__modifiers) }}>
+ {% if accordion_item__modifiers == 'open' %}
+   dada
+ {% endif %}
+<details {{ bem(accordion_item__base_class, accordion_item__modifiers) }}  aria-expanded='false'>
   <summary {{ bem('heading', [], accordion_item__base_class, accordion_item__modifiers) }}>
     {% if 'warning' in accordion_item__modifiers %}
       <div {{ bem('warning-accordion-heading', [], accordion_item__base_class) }}>
