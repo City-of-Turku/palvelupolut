@@ -78,7 +78,8 @@
 {% for i in content.field_paragraphs['#items']|keys %}
   {% set menu_items = menu_items|merge([{
     title: node.field_paragraphs[i].entity.field_paragraph_heading.value,
-    url: '#pg' ~ node.field_paragraphs[i].entity.id()
+    url: '#pg' ~ node.field_paragraphs[i].entity.id(),
+    id: 'pg' ~ node.field_paragraphs[i].entity.id()
   }]) %}
 {% endfor %}
 
@@ -112,7 +113,6 @@
     {% if node.field_show_toc.value == '1' %}
       {% include "@molecules/navigation/anchor-menu/anchor-menu.twig" with {
         anchor_menu__items: menu_items,
-        link__describedby: 'jump to'|t,
       } %}
     {% endif %}
 
