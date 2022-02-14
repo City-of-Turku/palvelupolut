@@ -73,6 +73,7 @@
     title: content.field_description_heading|render|trim
             ? content.field_description_heading : 'Description'|t,
     url: '#pg-description',
+    id: 'pg-description',
   }]) %}
 {% endif %}
 {% if content.field_requirements|render %}
@@ -80,6 +81,7 @@
     title: content.field_requirements_heading|render|trim
             ? content.field_requirements_heading : 'Requirements'|t,
     url: '#pg-requirements',
+    id: 'pg-requirements',
   }]) %}
 {% endif %}
 {% if content.field_user_instruction|render %}
@@ -87,6 +89,7 @@
     title: content.field_user_instruction_heading|render|trim
             ? content.field_user_instruction_heading : 'User Instruction'|t,
     url: '#pg-instruction',
+    id: 'pg-instruction',
   }]) %}
 {% endif %}
 {% if content.field_charge_info|render %}
@@ -94,13 +97,15 @@
     title: content.field_charge_info_heading|render|trim
             ? content.field_charge_info_heading : 'Charge Information'|t,
     url: '#pg-charge',
+    id: 'pg-charge',
   }]) %}
 {% endif %}
 {% for i in content.field_paragraphs['#items']|keys %}
   {% if node.field_paragraphs[i].entity.field_paragraph_heading.value %}
     {% set menu_items = menu_items|merge([{
       title: node.field_paragraphs[i].entity.field_paragraph_heading.value,
-      url: '#pg' ~ node.field_paragraphs[i].entity.id()
+      url: '#pg' ~ node.field_paragraphs[i].entity.id(),
+      id: 'pg' ~ node.field_paragraphs[i].entity.id(),
     }]) %}
   {% endif %}
 {% endfor %}
@@ -108,6 +113,7 @@
 {% set menu_items = menu_items|merge([{
   title: 'Service Channels'|t,
   url: '#pg-channels',
+  id: 'pg-channels',
 }]) %}
 
 
@@ -137,7 +143,6 @@
 
     {% include "@molecules/navigation/anchor-menu/anchor-menu.twig" with {
       anchor_menu__items: menu_items,
-      link__describedby: 'jump to'|t,
     } %}
 
     {% if content.field_description|render %}

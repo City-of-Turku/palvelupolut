@@ -112,7 +112,7 @@
 
   {% if link__info %}
     {% include '@atoms/visually-hidden/visually-hidden.twig' with {
-        visually_hidden__content: link__info,
+        visually_hidden__content: link__info|trim,
       } %}
   {% endif %}
 
