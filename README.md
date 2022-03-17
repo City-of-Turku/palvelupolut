@@ -1,8 +1,26 @@
 # Service Paths
 
-## Getting started
+## Production environment
 
-## Local development
+- URL: <https://palvelupolut.fi>
+- URL: <https://production.turku-service-paths-drupal.finland.wdr.io>
+- SSH: `ssh www-admin@production-shell.client-fi-turku-service-paths -J www-admin@ssh.finland.wdr.io`
+- Drush alias: `drush @prod st`
+
+## Staging environment
+
+- URL: <https://master.turku-service-paths-drupal.dev.wdr.io>
+- SSH: `ssh www-admin@master-shell.client-fi-turku-service-paths -J www-admin@ssh.dev.wdr.io`
+- Drush alias: `drush @master st`
+
+Drush alias for **current** Silta feature branch deployment is `drush @current st`.
+
+## Local environment
+
+- URL: <https://service-paths.lndo.site>
+- SSH: `lando ssh (-s <service>)`
+- Logs: `lando logs -s <service>`
+- Drush alias: `drush @local st`
 
 ### [Setup](https://docs.lando.dev/basics/installation.html)
 
