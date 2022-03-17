@@ -19,15 +19,23 @@ tooling:
   npm:
     description: Runs npm commands
     service: node
+  psalm:
+    description: Run Psalm tasks
+    cmd:
+      - appserver: ./vendor/bin/psalm
+  syncdb:
+    description: Synchronizes local db with test env
+    cmd:
+      - appserver: /app/.lando/syncdb.sh
+  update:
+    description: Updates local db & enables dev components
+    cmd:
+      - appserver: /app/.lando/update.sh
   xdebug:
     description: Loads Xdebug in the selected mode
     cmd:
       - appserver: /app/.lando/xdebug.sh
     user: root
-  psalm:
-    description: Run Psalm tasks
-    cmd:
-      - appserver: ./vendor/bin/psalm
 
 services:
   appserver:

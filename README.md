@@ -29,21 +29,19 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 3. Run `lando start`.
 4. Run `lando db-import db.sql.gz`.
 
-### [Services](https://docs.lando.dev/config/services.html)
+### Services
 
-- `chrome` - uses [selenium/standalone-chrome](https://hub.docker.com/r/selenium/standalone-chrome/) image, uncomment the service definition at `.lando.yml` to enable.
-- `elasticsearch` - available at <http://localhost:9200>. Uses [bitnami/elasticsearch:7](https://github.com/bitnami/bitnami-docker-elasticsearch) image, uncomment the service definition at `.lando.yml` to enable. ES settings file: `.lando/elasticsearch.yml`.
-- `kibana`  - available at <http://localhost:5601>. Uses [bitnami/kibana:7](https://github.com/bitnami/bitnami-docker-kibana) image, uncomment the service definition at `.lando.yml` to enable.
-- `mailhog` - uses Lando [MailHog service](https://docs.lando.dev/config/mailhog.html).
-- `node` - uses Lando [Node service](https://docs.lando.dev/config/node.html).
+- Mailhog for mail management: <http://mail.service-paths.lndo.site/>
 
 ### [Tools](https://docs.lando.dev/config/tooling.html)
 
 - `lando` - tools / commands overview.
 - `lando grumphp <commands>` - run [GrumPHP](https://github.com/phpro/grumphp) code quality checks. Modified or new files are checked on git commit, see more at `lando grumphp -h` or [wunderio/code-quality](https://github.com/wunderio/code-quality).
 - `lando npm <commands>` - run [npm](https://www.npmjs.com/) commands.
-- `lando xdebug <mode>` - load [Xdebug](https://xdebug.org/) in the selected [mode(s)](https://xdebug.org/docs/all_settings#mode).
 - `lando psalm <commands>` - run [Psalm](https://psalm.dev/) commands.
+- `lando syncdb` - synchronise local database with production environment.
+- `lando update` - update database & enable develpoment components.
+- `lando xdebug <mode>` - load [Xdebug](https://xdebug.org/) in the selected [mode(s)](https://xdebug.org/docs/all_settings#mode).
 
 ### Drupal development hints
 

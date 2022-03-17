@@ -34,12 +34,22 @@ switch ($env) {
     $settings['simple_environment_indicator'] = '#5B37BF Stage';
     break;
 
-  case 'local':
+    case 'local':
+    case 'lando':
     $settings['simple_environment_indicator'] = '#2F2942 Local';
+    // File proxy origin site.
+    $config['stage_file_proxy.settings']['origin'] = 'https://palvelupolut.fi';
     // Skip file system permissions hardening.
     $settings['skip_permissions_hardening'] = TRUE;
     // Skip trusted host pattern.
     $settings['trusted_host_patterns'] = ['.*'];
+    // $config['google_analytics.settings']['account'] = 'UA-XXXXXXXXX-99';
+    $config['system.performance']['css']['preprocess'] = FALSE;
+    $config['system.performance']['js']['preprocess'] = FALSE;
+
+    if (class_exists('Kint')) {
+      Kint::$max_depth = 4;
+    }
     break;
 
   default:
@@ -100,8 +110,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 /**
  * Lando configuration overrides.
  */
-if (getenv('LANDO_INFO') && file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
-  include $app_root . '/' . $site_path . '/settings.lando.php';
+if (getenv('LANDO_INFO')) {
   $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.lando.yml';
 }
 
