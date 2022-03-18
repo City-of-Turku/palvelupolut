@@ -60,11 +60,13 @@ services:
   node:
     type: node
     build:
+      - npm install
       - cd ./web/themes/custom/service-paths-theme && npm install
+      - cd ./web/themes/custom/service-paths-theme && npm run build
 
 proxy:
   mailhog:
-    - mail.service-paths.lndo.site
+    - mail-service-paths.lndo.site
 
 # Tested with Lando version
 version: v3.6.2
