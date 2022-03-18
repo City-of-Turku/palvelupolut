@@ -62,11 +62,17 @@ services:
     build:
       - npm install
       - cd ./web/themes/custom/service-paths-theme && npm install
-      - cd ./web/themes/custom/service-paths-theme && npm run build
+      - cd ./web/themes/custom/service-paths-theme && npm run build && npm run build-storybook
+  storybook:
+    type: 'php:7.3'
+    webroot: web/themes/custom/service-paths-theme/storybook-static
+    ssl: true
 
 proxy:
   mailhog:
     - mail-service-paths.lndo.site
+  storybook:
+    - storybook.lndo.site
 
 # Tested with Lando version
 version: v3.6.2
