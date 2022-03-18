@@ -60,7 +60,7 @@ services:
   node:
     type: node
     build:
-      - npm install
+      - cd ./web/themes/custom/service-paths-theme && npm install
 
 proxy:
   mailhog:
