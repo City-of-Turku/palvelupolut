@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: EZ9jb_GQzdqbQJmRqLhBrCq5mTFvLolB2-atGiivnw4
+langcode: fi
 title_resolvers:
   menu_link_title:
     enabled: '1'
@@ -15,6 +18,3 @@ home: ''
 show_current: 1
 show_current_as_link: 0
 show_fake_segments: 0
-_core:
-  default_config_hash: EZ9jb_GQzdqbQJmRqLhBrCq5mTFvLolB2-atGiivnw4
-langcode: fi

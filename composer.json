@@ -77,8 +77,8 @@
         "drupal/config_filter": "^2.2",
         "drupal/config_ignore": "^2.3",
         "drupal/config_perms": "^2.0",
-        "drupal/core-composer-scaffold": "^9.1",
-        "drupal/core-recommended": "^9.1",
+        "drupal/core-composer-scaffold": "^9.3",
+        "drupal/core-recommended": "^9.3",
         "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
         "drupal/devel_entity_updates": "^3.0",
@@ -134,7 +134,6 @@
         "wunderio/drupal-ping": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.1",
         "vimeo/psalm": "^4.7",
         "wunderio/code-quality": "^2.0"
     },

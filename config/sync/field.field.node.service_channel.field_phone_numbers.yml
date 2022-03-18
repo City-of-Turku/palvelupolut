@@ -20,20 +20,20 @@ default_value_callback: ''
 settings:
   first:
     label: Description
-    required: false
     list: false
     allowed_values: {  }
     max: null
     min: null
+    required: false
     on_label: 'On'
     off_label: 'Off'
   second:
     label: Number
-    required: true
     list: false
     allowed_values: {  }
     max: null
     min: null
+    required: true
     on_label: 'On'
     off_label: 'Off'
 field_type: double_field

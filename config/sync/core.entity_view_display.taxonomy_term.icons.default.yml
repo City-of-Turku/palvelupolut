@@ -14,19 +14,19 @@ bundle: icons
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_icon:
-    weight: 1
+    type: fontawesome_icon_formatter
     label: above
     settings:
       layers: false
     third_party_settings: {  }
-    type: fontawesome_icon_formatter
+    weight: 1
     region: content
 hidden:
   langcode: true

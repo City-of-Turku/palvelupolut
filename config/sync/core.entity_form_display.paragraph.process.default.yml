@@ -14,16 +14,17 @@ bundle: process
 mode: default
 content:
   field_paragraph_heading:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_process_steps:
     type: paragraphs_classic_asymmetric
     weight: 1
+    region: content
     settings:
       title: Step
       title_plural: Steps
@@ -32,7 +33,6 @@ content:
       form_display_mode: default
       default_paragraph_type: step
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   status: true

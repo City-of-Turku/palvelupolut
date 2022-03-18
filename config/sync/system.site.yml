@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+langcode: fi
 uuid: 09b39438-c7a1-4fac-be31-9150b9fa93ba
 name: Palvelupolut
 mail: services@palvelupolut.fi
@@ -8,7 +11,4 @@ page:
   front: /node/1249
 admin_compact_mode: false
 weight_select_max: 100
-langcode: fi
 default_langcode: fi
-_core:
-  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

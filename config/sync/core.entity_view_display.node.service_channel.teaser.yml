@@ -34,13 +34,13 @@ mode: teaser
 content:
   field_lead_image:
     type: entity_reference_entity_view
-    weight: 0
-    region: content
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_accessibility: true
   field_address: true

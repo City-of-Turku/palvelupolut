@@ -61,9 +61,9 @@ filters:
     weight: 100
     settings:
       default_view_mode: embed
+      allowed_view_modes:
+        embed: embed
       allowed_media_types:
         document: document
         image: image
         remote_video: remote_video
-      allowed_view_modes:
-        embed: embed
