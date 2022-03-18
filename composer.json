@@ -70,7 +70,7 @@
         "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/adminimal_theme": "^1.6",
         "drupal/backup_migrate": "^5.0",
-        "drupal/better_exposed_filters": "^5.0@beta",
+        "drupal/better_exposed_filters": "^5.0",
         "drupal/breadcrumb_manager": "^1.2",
         "drupal/chosen": "^3.0",
         "drupal/components": "^2.4",
