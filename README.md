@@ -7,6 +7,11 @@
 - SSH: `ssh www-admin@production-shell.client-fi-turku-service-paths -J www-admin@ssh.finland.wdr.io`
 - Drush alias: `drush @prod st`
 
+### Storybook
+
+- URL: <storybook.palvelupolut.fi>
+- Silta setup: `web/themes/custom/service-paths-theme/silta`
+
 ## Staging environment
 
 - URL: <https://master.turku-service-paths-drupal.dev.wdr.io>
@@ -35,7 +40,7 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 
 ### Services
 
-- Mailhog for mail management: <http://mail.service-paths.lndo.site/>
+- Mailhog for mail management: <http://mail-service-paths.lndo.site>
 
 ### [Tools](https://docs.lando.dev/config/tooling.html)
 
