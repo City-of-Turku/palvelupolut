@@ -16,6 +16,10 @@ tooling:
     description: Runs grumphp commands
     cmd:
       - appserver: ./vendor/bin/grumphp
+  import:
+    description: Import the services data
+    cmd:
+      - appserver: /app/.lando/import.sh
   npm:
     description: Runs npm commands
     service: node

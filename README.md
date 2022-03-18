@@ -47,6 +47,7 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 
 - `lando` - tools / commands overview.
 - `lando grumphp <commands>` - run [GrumPHP](https://github.com/phpro/grumphp) code quality checks. Modified or new files are checked on git commit, see more at `lando grumphp -h` or [wunderio/code-quality](https://github.com/wunderio/code-quality).
+- `lando import` - import the services data via `drush migrate` tasks.
 - `lando npm <commands>` - run [npm](https://www.npmjs.com/) commands.
 - `lando psalm <commands>` - run [Psalm](https://psalm.dev/) commands.
 - `lando syncdb` - synchronise local database with production environment.
