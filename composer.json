@@ -135,7 +135,7 @@
     },
     "require-dev": {
         "vimeo/psalm": "^4.7",
-        "wunderio/code-quality": "^2.0"
+        "wunderio/code-quality": "^2.1"
     },
     "conflict": {
         "drupal/drupal": "*"
