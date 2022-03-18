@@ -7,9 +7,9 @@
 - SSH: `ssh www-admin@production-shell.client-fi-turku-service-paths -J www-admin@ssh.finland.wdr.io`
 - Drush alias: `drush @prod st`
 
-### Storybook
+### Storybook - Service Paths design system
 
-- URL: <storybook.palvelupolut.fi>
+- URL: <https://storybook.palvelupolut.fi>
 - Silta setup: `web/themes/custom/service-paths-theme/silta`
 
 ## Staging environment
