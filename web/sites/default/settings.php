@@ -34,8 +34,8 @@ switch ($env) {
     $settings['simple_environment_indicator'] = '#5B37BF Stage';
     break;
 
-    case 'local':
-    case 'lando':
+  case 'local':
+  case 'lando':
     $settings['simple_environment_indicator'] = '#2F2942 Local';
     // File proxy origin site.
     $config['stage_file_proxy.settings']['origin'] = 'https://palvelupolut.fi';
