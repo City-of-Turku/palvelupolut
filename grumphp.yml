@@ -17,8 +17,8 @@ grumphp:
     phpcs:
       run_on: '%grumphp.run_on_paths%'
       standard: ['phpcs.xml']
-    php_stan:
-      run_on: '%grumphp.run_on_paths%'
+    # php_stan:
+    #   run_on: '%grumphp.run_on_paths%'
     yaml_lint:
       run_on: '%grumphp.run_on_paths%'
     json_lint:
