@@ -22,12 +22,16 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 - Logs: `lando logs -s <service>`
 - Drush alias: `drush @local st`
 
-### [Setup](https://docs.lando.dev/basics/installation.html)
+### Setup
 
-1. Install the latest [Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
-2. Update your project name and other Lando [Drupal 9 recipe](https://docs.lando.dev/config/drupal9.html)'s parameters at `.lando.yml`.
-3. Run `lando start`.
-4. Run `lando db-import db.sql.gz`.
+1. Read the [Lando docs](https://docs.lando.dev/) and install the **latest** [Lando](https://github.com/lando/lando/releases).
+2. Check out the repo: `git clone git@github.com:wunderio/client-fi-turku-service-paths.git service-paths && cd service-paths`.
+3. Start the site by running `lando start`.
+4. Import data:
+   1. `lando syncdb` - (**connect to VPN first!**) synchronise local DB with sanitised `production` environment or
+   2. `lando db-import db.sql.gz`.
+5. Update database & enable develpoment components: `lando update`.
+6. Import config if needed: `lando drush @local cim -y`.
 
 ### Services
 
