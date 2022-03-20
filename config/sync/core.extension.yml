@@ -98,6 +98,7 @@ module:
   twig_field_value: 0
   twig_tweak: 0
   ultimate_cron: 0
+  update: 0
   user: 0
   views_ui: 0
   warden: 0
