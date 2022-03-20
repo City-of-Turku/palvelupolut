@@ -261,7 +261,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity_operations
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -309,7 +309,7 @@ display:
           items_per_page: 50
           tags:
             next: 'Seuraava ›'
-            previous: '‹ Previous'
+            previous: '‹ Edellinen'
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
       exposed_form:
@@ -335,7 +335,7 @@ display:
           field: area_text_custom
           plugin_id: text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Ei sisältöä.'
       sorts: {  }
       arguments: {  }
       filters:

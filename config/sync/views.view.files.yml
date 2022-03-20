@@ -457,7 +457,7 @@ display:
           id: 0
           tags:
             next: 'Seuraava ›'
-            previous: '‹ Previous'
+            previous: '‹ Edellinen'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -992,7 +992,7 @@ display:
           id: 0
           tags:
             next: 'Seuraava ›'
-            previous: '‹ Previous'
+            previous: '‹ Edellinen'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -1017,7 +1017,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: Kaikki
           title_enable: true
           title: 'File usage information for {{ arguments.fid }}'
           default_argument_type: fixed

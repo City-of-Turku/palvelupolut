@@ -202,7 +202,7 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: field
-          label: Tyyppi
+          label: Type
           exclude: false
           alter:
             alter_text: false
@@ -465,7 +465,7 @@ display:
           admin_label: ''
           entity_type: media
           plugin_id: entity_operations
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -516,7 +516,7 @@ display:
           id: 0
           tags:
             next: 'Seuraava ›'
-            previous: '‹ Previous'
+            previous: '‹ Edellinen'
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
           expose:
@@ -634,7 +634,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Tyyppi
+            label: Type
             description: ''
             use_operator: false
             operator: bundle_op

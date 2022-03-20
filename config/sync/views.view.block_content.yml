@@ -218,7 +218,7 @@ display:
           admin_label: ''
           entity_type: block_content
           plugin_id: entity_operations
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -269,7 +269,7 @@ display:
           id: 0
           tags:
             next: 'Seuraava ›'
-            previous: '‹ Previous'
+            previous: '‹ Edellinen'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -281,7 +281,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Käytä
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'

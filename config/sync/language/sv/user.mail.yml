@@ -1,4 +1,5 @@
 cancel_confirm:
+  subject: 'Begäran om avslutande av konto för [user:display-name] på [site:name]'
   body: |-
     [user:display-name],
 
@@ -13,28 +14,27 @@ cancel_confirm:
     This link expires in one day and nothing will happen if it is not used.
 
     --  [site:name] team
-  subject: 'Begäran om avslutande av konto för [user:display-name] på [site:name]'
 password_reset:
-  body: "[user:display-name],\r\n\r\nEn begäran om att återställa lösenordet för ditt kontot har gjorts på [site:name].\r\n\r\nDu kan nu logga in genom att klicka på länken eller kopiera och klistra in den i din webbläsare.\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan bara användas en gång och kommer ta dig till en sida där du kan ange ditt lösenord. Denna länk upphör efter en dag och inget kommer hända om du inte använder den.\r\n\r\n--  Administratörerna på [site:name]"
   subject: 'Ersättande inloggningsuppgifter för [user:display-name] på [site:name]'
+  body: "[user:display-name],\r\n\r\nEn begäran om att återställa lösenordet för ditt kontot har gjorts på [site:name].\r\n\r\nDu kan nu logga in genom att klicka på länken eller kopiera och klistra in den i din webbläsare.\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan bara användas en gång och kommer ta dig till en sida där du kan ange ditt lösenord. Denna länk upphör efter en dag och inget kommer hända om du inte använder den.\r\n\r\n--  Administratörerna på [site:name]"
 register_admin_created:
-  body: "[user:display-name],\r\n\r\nEn administratör på [site:name] har skapat ett konto åt dig. Du kan nu logga in genom att klicka på länken eller kopiera och klistra in den i din webbläsare.\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan bara användas en gång och kommer ta dig till en sida där du kan ange ditt lösenord.\r\n\r\nEfter att du angivit ditt lösenord kan du i framtiden logga in på [site:login-url] genom att använda:\r\n\r\nanvändarnamn: [user:name]\r\nlösenord: Ditt lösenord\r\n\r\n--  Administratörerna på [site:name]"
   subject: 'En administratör har skapat ett konto åt dig på [site:name]'
+  body: "[user:display-name],\r\n\r\nEn administratör på [site:name] har skapat ett konto åt dig. Du kan nu logga in genom att klicka på länken eller kopiera och klistra in den i din webbläsare.\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan bara användas en gång och kommer ta dig till en sida där du kan ange ditt lösenord.\r\n\r\nEfter att du angivit ditt lösenord kan du i framtiden logga in på [site:login-url] genom att använda:\r\n\r\nanvändarnamn: [user:name]\r\nlösenord: Ditt lösenord\r\n\r\n--  Administratörerna på [site:name]"
 register_no_approval_required:
-  body: "[user:display-name],\r\n\r\nTack för att du har registrerat dig på [site:name]. Du kan nu logga in genom att klicka på denna länk eller genom att klippa ut och klistra in den i din webbläsare:\r\n\r\n[user:one-time-login-url]\r\n\r\nDetta är en engångsinloggning, så den kan bara användas en gång och kommer att leda dig till en sida där du kan välja ett eget lösenord.\r\n\r\nEfter detta kommer du kunna logga in på [site:login-url] med följande uppgifter:\r\n\r\nanvändarnamn: [user:name]\r\nlösenord: Ditt lösenord\r\n\r\n--  Administratörerna på [site:name]"
   subject: 'Kontouppgifter för [user:display-name] på [site:name]'
+  body: "[user:display-name],\r\n\r\nTack för att du har registrerat dig på [site:name]. Du kan nu logga in genom att klicka på denna länk eller genom att klippa ut och klistra in den i din webbläsare:\r\n\r\n[user:one-time-login-url]\r\n\r\nDetta är en engångsinloggning, så den kan bara användas en gång och kommer att leda dig till en sida där du kan välja ett eget lösenord.\r\n\r\nEfter detta kommer du kunna logga in på [site:login-url] med följande uppgifter:\r\n\r\nanvändarnamn: [user:name]\r\nlösenord: Ditt lösenord\r\n\r\n--  Administratörerna på [site:name]"
 register_pending_approval:
+  subject: 'Kontodetaljer för [user:display-name] på [site:name] (väntar på godkännande av administratör)'
   body: "[user:display-name],\r\n\r\nTack för att du registrerat dig på [site:name]. Din ansökan om ett konto väntar nu på godkännande. När den har godkänts kommer du att få ytterligare ett e-post som innehåller information om hur du loggar in, byter lösenord och andra detaljer.\r\n\r\n-- Administratörerna på [site:name]"
-  subject: 'Kontodetaljer för [user:display-name] på [site:name] (väntar på godkännande av administratör)'
 register_pending_approval_admin:
-  body: "[user:display-name] har ansökt om ett konto.\r\n\r\n[user:edit-url]"
   subject: 'Kontodetaljer för [user:display-name] på [site:name] (väntar på godkännande av administratör)'
+  body: "[user:display-name] har ansökt om ett konto.\r\n\r\n[user:edit-url]"
 status_activated:
-  body: "[user:display-name],\r\n\r\nDitt konto på [site:name] har aktiverats.\r\n\r\nDu kan nu logga in genom att klicka på denna länk eller genom att kopiera den till din webbläsare:\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan enbart användas en gång och kommer att leda dig till en sida där du kan ange ditt lösenord.\r\n\r\nEfter att du angett ett lösenord kommer du i framtiden att kunna logga in på [site:login-url] genom att använda:\r\n\r\nanvändarnamn: [user:account-name]\r\nlösenord: Ditt lösenord\r\n\r\n-- Administratörerna på [site:name]"
   subject: 'Kontodetaljer för [user:display-name] på [site:name] (godkänd)'
+  body: "[user:display-name],\r\n\r\nDitt konto på [site:name] har aktiverats.\r\n\r\nDu kan nu logga in genom att klicka på denna länk eller genom att kopiera den till din webbläsare:\r\n\r\n[user:one-time-login-url]\r\n\r\nDenna länk kan enbart användas en gång och kommer att leda dig till en sida där du kan ange ditt lösenord.\r\n\r\nEfter att du angett ett lösenord kommer du i framtiden att kunna logga in på [site:login-url] genom att använda:\r\n\r\nanvändarnamn: [user:account-name]\r\nlösenord: Ditt lösenord\r\n\r\n-- Administratörerna på [site:name]"
 status_blocked:
-  body: "[user:display-name],\r\n\r\nDitt konto på [site:name] har spärrats.\r\n\r\n--  Administratörerna  på [site:name]"
   subject: 'Kontouppgifter för [user:display-name] på [site:name] (spärrad)'
+  body: "[user:display-name],\r\n\r\nDitt konto på [site:name] har spärrats.\r\n\r\n--  Administratörerna  på [site:name]"
 status_canceled:
-  body: "[user:display-name],\r\n\r\nDitt konto på [site:name] har tagits bort.\r\n\r\n--  Administratörerna på [site:name]"
   subject: 'Kontouppgifter för [user:display-name] på [site:name] (borttagen)'
+  body: "[user:display-name],\r\n\r\nDitt konto på [site:name] har tagits bort.\r\n\r\n--  Administratörerna på [site:name]"
