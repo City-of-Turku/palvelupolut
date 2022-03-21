@@ -7,12 +7,14 @@
 exposeDomains:
   storybook-io:
     hostname: storybook.palvelupolut.finland.wdr.io
+    ssl:
+      enabled: true
+      issuer: letsencrypt
   storybook-fi:
     hostname: storybook.palvelupolut.fi
-
-ssl:
-  enabled:  true
-  issuer: letsencrypt
+    ssl:
+      enabled: true
+      issuer: letsencrypt
 
 nginx:
   basicauth:
