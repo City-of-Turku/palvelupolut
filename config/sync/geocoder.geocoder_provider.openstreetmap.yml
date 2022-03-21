@@ -6,9 +6,9 @@ id: openstreetmap
 label: OpenStreetMap
 plugin: openstreetmap
 configuration:
-  rootUrl: 'https://nominatim.openstreetmap.org'
-  userAgent: Service-Paths
-  referer: Service-Paths
   throttle:
     period: 2
     limit: 1
+  rootUrl: 'https://nominatim.openstreetmap.org'
+  userAgent: Service-Paths
+  referer: Service-Paths

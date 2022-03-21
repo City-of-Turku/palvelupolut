@@ -2,12 +2,19 @@ label: Startsida
 description: 'Allt innehåll som visas på startsidan.'
 display:
   default:
+    display_title: Förvald
     display_options:
-      empty:
-        area_text_custom:
-          content: 'Inget innehåll för framsidan har skapats ännu.<br />Följ <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">användarguiden</a> för att börja bygga din webbplats.'
-        title:
-          title: 'Välkommen till [site:name]'
+      pager:
+        options:
+          tags:
+            next: 'Nästa ›'
+            previous: '‹ Föregående'
+            first: '« Första'
+            last: 'Sista »'
+          expose:
+            items_per_page_label: 'Inlägg per sida'
+            items_per_page_options_all_label: '- Alla -'
+            offset_label: Kompensera
       exposed_form:
         options:
           submit_button: Verkställ
@@ -15,18 +22,11 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
-          tags:
-            previous: '‹ Föregående'
-            next: 'Nästa ›'
-            first: '« Första'
-            last: 'Sista »'
-    display_title: Förvald
+      empty:
+        area_text_custom:
+          content: 'Inget innehåll för framsidan har skapats ännu.<br />Följ <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">användarguiden</a> för att börja bygga din webbplats.'
+        title:
+          title: 'Välkommen till [site:name]'
   feed_1:
     display_title: Innehållsflöde
   page_1:

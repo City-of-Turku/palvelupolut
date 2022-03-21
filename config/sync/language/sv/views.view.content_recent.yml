@@ -4,6 +4,10 @@ display:
   default:
     display_title: Förvald
     display_options:
+      title: 'Nyligen uppdaterat innehåll'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Verkställ
@@ -11,10 +15,6 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-      fields:
-        changed:
-          separator: ', '
-      title: 'Nyligen uppdaterat innehåll'
       empty:
         area_text_custom:
           content: 'Inget innehåll tillgängligt.'

@@ -1,10 +1,10 @@
 settings:
   allowed_values:
-    0:
+    -
       label: Verkkoasiointi
-    1:
+    -
       label: Puhelinasiointi
-    2:
+    -
       label: Lomakkeet
-    3:
+    -
       label: Palvelupaikat

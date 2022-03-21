@@ -24,7 +24,7 @@ php:
     requests:
       cpu: 200m
       memory: 256M
-      
+
   # Don't show errors in production.
   errorLevel: "hide"
 
@@ -90,18 +90,12 @@ nginx:
     #   to:  https://palvelupolut.fi$request_uri
 
 exposeDomains:
-  - hostname: palvelupolut.finland.wdr.io
-    ssl:
-      enabled: true
-      issuer: letsencrypt
-  - hostname: palvelupolut.fi
-    ssl:
-      enabled: true
-      issuer: letsencrypt
-  - hostname: www.palvelupolut.fi
-    ssl:
-      enabled: true
-      issuer: letsencrypt
+  palvelupolut-io:
+    hostname: palvelupolut.finland.wdr.io
+  palvelupolut-fi:
+    hostname: palvelupolut.fi
+  wwww-palvelupolut-fi:
+    hostname: www.palvelupolut.fi
 
 mariadb:
   master:

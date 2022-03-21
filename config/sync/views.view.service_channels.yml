@@ -23,74 +23,11 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: true
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Suodata
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: full
-        options:
-          items_per_page: 12
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 5
-      style:
-        type: default
-        options:
-          grouping:
-            -
-              field: field_service_channel_type
-              rendered: true
-              rendered_strip: false
-          row_class: ''
-          default_row_class: true
-      row:
-        type: fields
-        options:
-          inline: {  }
-          separator: ''
-          hide_empty: false
-          default_field_elements: true
       fields:
         title:
           id: title
@@ -99,6 +36,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -154,9 +94,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         field_service_channel_type:
           id: field_service_channel_type
           table: node__field_service_channel_type
@@ -164,6 +101,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -218,30 +156,121 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 5
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Suodata
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: title
+          exposed: false
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: field_services
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: node
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            service_channel: service_channel
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            service_channel: service_channel
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -252,6 +281,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
           operator: in
           value:
             '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
@@ -284,27 +316,31 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
-      sorts:
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          order: ASC
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-      header: {  }
-      footer: {  }
-      empty: {  }
+      style:
+        type: default
+        options:
+          grouping:
+            -
+              field: field_service_channel_type
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_tags: {  }
       relationships:
         field_services:
           id: field_services
@@ -313,45 +349,10 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_services: Content'
-          required: false
           plugin_id: standard
-      arguments:
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: field_services
-          group_type: group
-          admin_label: ''
-          default_action: default
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: node
-          default_argument_options: {  }
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            items_per_page: 25
-            override: false
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          break_phrase: false
-          not: false
-          entity_type: node
-          entity_field: nid
-          plugin_id: node_nid
+          required: false
+      header: {  }
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -365,26 +366,12 @@ display:
       tags:
         - 'config:field.storage.node.field_service_channel_type'
   embed:
-    display_plugin: entity_view
     id: embed
     display_title: EVA
+    display_plugin: entity_view
     position: 1
     display_options:
-      display_extenders: {  }
-      bundles:
-        - service
-      entity_type: node
-      title: Palvelukanavat
-      show_title: true
-      pager:
-        type: none
-        options:
-          offset: 0
-      defaults:
-        pager: false
-        fields: false
-        footer: false
-        group_by: false
+      title: Asiointikanavat
       fields:
         field_service_channel_type:
           id: field_service_channel_type
@@ -393,6 +380,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -447,7 +435,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         rendered_entity:
           id: rendered_entity
           table: node
@@ -455,6 +442,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: rendered_entity
           label: ''
           exclude: false
           alter:
@@ -497,10 +486,22 @@ display:
           empty_zero: false
           hide_alter_empty: true
           view_mode: summary
-          entity_type: node
-          plugin_id: rendered_entity
-      footer: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+      defaults:
+        pager: false
+        group_by: false
+        fields: false
+        footer: false
       group_by: false
+      footer: {  }
+      display_extenders: {  }
+      entity_type: node
+      bundles:
+        - service
+      show_title: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -522,299 +523,12 @@ display:
         - 'config:core.entity_view_display.node.service_channel.teaser'
         - 'config:field.storage.node.field_service_channel_type'
   page:
-    display_plugin: page
     id: page
     display_title: Page
+    display_plugin: page
     position: 2
     display_options:
-      display_extenders: {  }
-      path: service-channels
-      style:
-        type: default
-        options:
-          row_class: ''
-          default_row_class: true
-          uses_fields: true
-      defaults:
-        style: false
-        row: false
-        arguments: false
-        relationships: false
-        filters: false
-        filter_groups: false
-        title: false
-        exposed_form: false
-        fields: false
-        group_by: false
-        header: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: summary
-      arguments:
-        field_ptv_id_value:
-          id: field_ptv_id_value
-          table: node__field_ptv_id
-          field: field_ptv_id_value
-          relationship: field_services
-          group_type: group
-          admin_label: ''
-          default_action: ignore
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: fixed
-          default_argument_options:
-            argument: ''
-          default_argument_skip_url: true
-          summary_options:
-            base_path: ''
-            count: true
-            items_per_page: 25
-            override: false
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          glossary: false
-          limit: 0
-          case: none
-          path_case: none
-          transform_dash: false
-          break_phrase: false
-          plugin_id: string
-      relationships:
-        field_services:
-          id: field_services
-          table: node__field_services
-          field: field_services
-          relationship: none
-          group_type: group
-          admin_label: 'field_services: Content'
-          required: false
-          plugin_id: standard
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            service_channel: service_channel
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
-        field_tags_target_id:
-          id: field_tags_target_id
-          table: node__field_tags
-          field: field_tags_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_tags_target_id_op
-            label: Tags
-            description: ''
-            use_operator: false
-            operator: field_tags_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: tags
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: true
-          type: textfield
-          limit: true
-          vid: tags
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-        field_service_channel_type_value:
-          id: field_service_channel_type_value
-          table: node__field_service_channel_type
-          field: field_service_channel_type_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_service_channel_type_value_op
-            label: Type
-            description: ''
-            use_operator: false
-            operator: field_service_channel_type_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      title: Palvelukanavat
-      exposed_form:
-        type: bef
-        options:
-          submit_button: Suodata
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            filter:
-              field_ptv_id_value:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  collapsible: false
-                  is_secondary: false
-              field_tags_target_id:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              field_service_channel_type_value:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
+      title: Asiointikanavat
       fields:
         title:
           id: title
@@ -823,6 +537,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -878,9 +595,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         field_service_channel_type:
           id: field_service_channel_type
           table: node__field_service_channel_type
@@ -888,6 +602,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -942,7 +657,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         nid:
           id: nid
           table: node_field_data
@@ -950,6 +664,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -1006,9 +723,291 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Suodata
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              field_ptv_id_value:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_tags_target_id:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_service_channel_type_value:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+      arguments:
+        field_ptv_id_value:
+          id: field_ptv_id_value
+          table: node__field_ptv_id
+          field: field_ptv_id_value
+          relationship: field_services
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: true
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
           entity_type: node
-          entity_field: nid
-          plugin_id: field
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            service_channel: service_channel
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_target_id_op
+            label: Asiasanat
+            description: ''
+            use_operator: false
+            operator: field_tags_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: tags
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: tags
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_service_channel_type_value:
+          id: field_service_channel_type_value
+          table: node__field_service_channel_type
+          field: field_service_channel_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_service_channel_type_value_op
+            label: 'Mitä etsit?'
+            description: ''
+            use_operator: false
+            operator: field_service_channel_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: true
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: summary
+      defaults:
+        title: false
+        exposed_form: false
+        group_by: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        arguments: false
+        filters: false
+        filter_groups: false
+        header: false
+      relationships:
+        field_services:
+          id: field_services
+          table: node__field_services
+          field: field_services
+          relationship: none
+          group_type: group
+          admin_label: 'field_services: Content'
+          plugin_id: standard
+          required: false
       group_by: true
       header:
         result:
@@ -1018,9 +1017,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
-          content: '<h3>@total service channels found</h3>'
           plugin_id: result
+          empty: false
+          content: '<h3>Löytyi @total asiointikanavaa</h3>'
+      display_extenders: {  }
+      path: service-channels
     cache_metadata:
       max-age: -1
       contexts:

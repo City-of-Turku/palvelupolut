@@ -3,6 +3,19 @@ display:
   default:
     display_title: Förvald
     display_options:
+      title: Media
+      fields:
+        media_bulk_form:
+          action_title: Åtgärd
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Inlägg per sida'
+            items_per_page_options_all_label: '- Alla -'
+            offset_label: Kompensera
       exposed_form:
         options:
           submit_button: 'Tillämpa filter'
@@ -10,18 +23,19 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-      pager:
-        options:
+      empty:
+        area_text_custom:
+          content: 'Ingen media tillgänglig.'
+      sorts:
+        created:
           expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
-          tags:
-            previous: ‹‹
-            next: ››
-      fields:
-        media_bulk_form:
-          action_title: Åtgärd
+            label: 'Nyaste först'
+        name:
+          expose:
+            label: 'Namn (A-Z)'
+        name_1:
+          expose:
+            label: 'Namn (Z-A)'
       filters:
         status:
           expose:
@@ -44,20 +58,6 @@ display:
         langcode:
           expose:
             label: Språk
-      sorts:
-        created:
-          expose:
-            label: 'Nyaste först'
-        name:
-          expose:
-            label: 'Namn (A-Z)'
-        name_1:
-          expose:
-            label: 'Namn (Z-A)'
-      title: Media
-      empty:
-        area_text_custom:
-          content: 'Ingen media tillgänglig.'
   page:
     display_title: Sida
     display_options:
@@ -79,14 +79,14 @@ display:
   widget:
     display_title: Widget
     display_options:
-      filters:
-        name:
-          expose:
-            label: Namn
       arguments:
         bundle:
           exception:
             title: Alla
+      filters:
+        name:
+          expose:
+            label: Namn
       header:
         display_link_grid:
           label: Rutnät
@@ -104,14 +104,14 @@ display:
           label: Författare
         changed:
           label: Uppdaterad
-      filters:
-        name:
-          expose:
-            label: Namn
       arguments:
         bundle:
           exception:
             title: Alla
+      filters:
+        name:
+          expose:
+            label: Namn
       header:
         display_link_grid:
           label: Rutnät

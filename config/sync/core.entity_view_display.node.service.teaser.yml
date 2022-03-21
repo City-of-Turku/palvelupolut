@@ -34,13 +34,13 @@ mode: teaser
 content:
   field_lead_image:
     type: entity_reference_entity_view
-    weight: 0
-    region: content
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_charge_info: true
   field_charge_info_heading: true

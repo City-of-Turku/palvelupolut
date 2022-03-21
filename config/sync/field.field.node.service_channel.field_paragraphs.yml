@@ -25,17 +25,17 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       general: general
       accordion: accordion
       icons_grid: icons_grid
       cta_grid: cta_grid
       links: links
+    negate: 0
     target_bundles_drag_drop:
       accordion:
-        enabled: true
         weight: -24
+        enabled: true
       accordion_item:
         weight: -23
         enabled: false
@@ -46,20 +46,20 @@ settings:
         weight: -22
         enabled: false
       cta_grid:
-        enabled: true
         weight: -20
-      general:
         enabled: true
+      general:
         weight: -25
+        enabled: true
       icon:
         weight: -15
         enabled: false
       icons_grid:
-        enabled: true
         weight: -21
-      links:
         enabled: true
+      links:
         weight: -19
+        enabled: true
       process:
         weight: -18
         enabled: false

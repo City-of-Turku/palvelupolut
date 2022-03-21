@@ -15,30 +15,30 @@ bundle: step
 mode: default
 content:
   field_link:
+    type: linkit
     weight: 2
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
-    region: content
   field_step_text:
+    type: string_textarea
     weight: 1
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   field_step_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

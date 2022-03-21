@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: nugrsE7oamG3Qh_Kn7tOHmVWTHGSvK-IWZoQzfQXVJg
+langcode: fi
 tag: span
 method: webfonts
 load_assets: true
@@ -5,14 +8,11 @@ use_cdn: true
 external_svg_location: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css'
 use_shim: false
 external_shim_location: 'https://use.fontawesome.com/releases/v5.13.1/js/v4-shims.js'
+allow_pseudo_elements: false
 use_solid_file: true
 use_regular_file: false
 use_light_file: false
 use_brands_file: true
 use_duotone_file: false
 external_svg_integrity: ''
-_core:
-  default_config_hash: nugrsE7oamG3Qh_Kn7tOHmVWTHGSvK-IWZoQzfQXVJg
-langcode: fi
-allow_pseudo_elements: false
 bypass_validation: false

@@ -13,11 +13,11 @@ bundle: icons
 mode: default
 content:
   field_icon:
+    type: fontawesome_icon_widget
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: fontawesome_icon_widget
-    region: content
   langcode:
     type: language_select
     weight: 2
@@ -35,10 +35,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 3
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden:
   description: true

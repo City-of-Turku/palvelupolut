@@ -36,22 +36,22 @@ bundle: service
 mode: default
 content:
   field_charge_info:
-    weight: 4
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 4
     region: content
   field_charge_info_heading:
-    weight: 14
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 14
     region: content
   field_charge_info_links:
-    weight: 17
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -61,25 +61,25 @@ content:
       target: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
+    weight: 17
     region: content
   field_description:
-    weight: 1
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 1
     region: content
   field_description_heading:
-    weight: 10
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 10
     region: content
   field_description_links:
-    weight: 11
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -89,59 +89,59 @@ content:
       target: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
+    weight: 11
     region: content
   field_lead_image:
-    weight: 0
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 0
     region: content
   field_meta_tags:
-    weight: 19
+    type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
+    weight: 19
     region: content
   field_paragraphs:
-    weight: 5
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 5
     region: content
   field_paragraphs_sidebar:
-    weight: 15
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 15
     region: content
   field_requirements:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_requirements_heading:
-    weight: 12
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 12
     region: content
   field_requirements_links:
-    weight: 16
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -151,49 +151,49 @@ content:
       target: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
+    weight: 16
     region: content
   field_service_classes:
-    weight: 8
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 8
     region: content
   field_tags:
-    weight: 6
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 6
     region: content
   field_target_groups:
-    weight: 7
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 7
     region: content
   field_user_instruction:
-    weight: 3
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 3
     region: content
   field_user_instruction_heading:
-    weight: 13
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 13
     region: content
   field_user_instruction_links:
-    weight: 18
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -203,23 +203,23 @@ content:
       target: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
+    weight: 18
     region: content
   service_channels_embed:
+    settings: {  }
+    third_party_settings: {  }
     weight: 9
     region: content
-    settings: {  }
-    third_party_settings: {  }
   service_channels_related:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   service_channels_service_service_channels:
-    weight: 10
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   field_ptv_id: true
   langcode: true

@@ -14,12 +14,12 @@ bundle: icons
 mode: icon
 content:
   field_icon:
-    weight: 0
+    type: fontawesome_icon_formatter
     label: hidden
     settings:
       layers: false
     third_party_settings: {  }
-    type: fontawesome_icon_formatter
+    weight: 0
     region: content
 hidden:
   description: true

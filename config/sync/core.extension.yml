@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: fi
 module:
   address: 0
   admin_toolbar: 0
@@ -95,6 +98,7 @@ module:
   twig_field_value: 0
   twig_tweak: 0
   ultimate_cron: 0
+  update: 0
   user: 0
   views_ui: 0
   warden: 0
@@ -110,6 +114,3 @@ theme:
   stable: 0
   service_paths_theme: 0
 profile: standard
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
-langcode: fi

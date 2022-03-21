@@ -18,22 +18,22 @@ bundle: blog_post
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 1
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 1
     region: content
   field_image:
     type: media_thumbnail
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_meta_tags: true
   langcode: true

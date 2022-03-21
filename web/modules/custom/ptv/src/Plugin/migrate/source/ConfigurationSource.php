@@ -73,8 +73,8 @@ class ConfigurationSource extends SourcePluginBase {
 
     $this->sourceConfig = $configuration['configuration_name'];
     $this->sourceKey = $configuration['key'];
-    $this->defaultLangcode = isset($configuration['default_langcode']) ? $configuration['default_langcode'] : NULL;
-    $this->languages = isset($configuration['languages']) ? $configuration['languages'] : NULL;
+    $this->defaultLangcode = $configuration['default_langcode'] ?? NULL;
+    $this->languages = $configuration['languages'] ?? NULL;
   }
 
   /**
