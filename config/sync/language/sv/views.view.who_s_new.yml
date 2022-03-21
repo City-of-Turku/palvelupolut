@@ -4,6 +4,7 @@ display:
   default:
     display_title: Förvald
     display_options:
+      title: 'Vilka är nya?'
       exposed_form:
         options:
           submit_button: Verkställ
@@ -11,7 +12,6 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-      title: 'Vilka är nya?'
   block_1:
     display_title: 'Vilka är nya?'
     display_options:

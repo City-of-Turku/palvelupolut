@@ -1,5 +1,5 @@
-geocoder_presave_disabled: false
-cache: true
 _core:
   default_config_hash: 5P0QjCOMc-OzCEJUXsMfJWVEj_K97A4OFOhGqnb5Seg
 langcode: fi
+geocoder_presave_disabled: false
+cache: true

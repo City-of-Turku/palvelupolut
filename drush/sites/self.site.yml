@@ -1,18 +1,27 @@
-# Edit or remove this file as needed.
-# Docs at https://github.com/drush-ops/drush/blob/master/examples/example.site.yml
-
-#prod:
-#  host: prod.domain.com
-#  user: www-admin
-#  root: /path/to/drupal
-#  uri: http://www.example.com
-#
-#stage:
-#  host: stage.domain.com
-#  user: www-admin
-#  root: /path/to/drupal
-#  uri: http://stage.example.com
-
 local:
   root: ${env.LANDO_WEBROOT}
   uri: https://${env.LANDO_APP_NAME}.${env.LANDO_DOMAIN}
+
+current:
+  host: ${ENVIRONMENT}-shell.${REPOSITORY}
+  ssh:
+    options: -J www-admin@ssh.dev.wdr.io
+  user: www-admin
+  root: /app/web
+  uri: https://${ENVIRONMENT}.${PROJECT}.dev.wdr.io
+
+master:
+  host: master-shell.client-fi-turku-service-paths
+  ssh:
+    options: -J www-admin@ssh.dev.wdr.io
+  user: www-admin
+  root: /app/web
+  uri: https://master.turku-service-paths-drupal.dev.wdr.io
+
+prod:
+  root: /app/web
+  uri: https://palvelupolut.fi
+  host: production-shell.client-fi-turku-service-paths
+  user: www-admin
+  ssh:
+    options: "-J www-admin@ssh.finland.wdr.io"

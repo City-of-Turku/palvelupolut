@@ -24,12 +24,12 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       contacts_section: contacts_section
       general: general
       links: links
       process: process
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: -27
@@ -41,8 +41,8 @@ settings:
         weight: -23
         enabled: false
       contacts_section:
-        enabled: true
         weight: -22
+        enabled: true
       cta:
         weight: -25
         enabled: false
@@ -50,8 +50,8 @@ settings:
         weight: -24
         enabled: false
       general:
-        enabled: true
         weight: -21
+        enabled: true
       icon:
         weight: -16
         enabled: false
@@ -59,11 +59,11 @@ settings:
         weight: -15
         enabled: false
       links:
-        enabled: true
         weight: -20
-      process:
         enabled: true
+      process:
         weight: -19
+        enabled: true
       references:
         weight: -18
         enabled: false

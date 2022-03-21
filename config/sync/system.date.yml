@@ -1,12 +1,12 @@
+_core:
+  default_config_hash: V9UurX2GPT05NWKG9f2GWQqFG2TRG8vczidwjpy7Woo
+langcode: fi
+first_day: 1
 country:
   default: FI
-first_day: 1
 timezone:
   default: Europe/Helsinki
   user:
     configurable: false
-    warn: false
     default: 0
-_core:
-  default_config_hash: V9UurX2GPT05NWKG9f2GWQqFG2TRG8vczidwjpy7Woo
-langcode: fi
+    warn: false

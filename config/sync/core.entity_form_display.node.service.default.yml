@@ -39,43 +39,43 @@ third_party_settings:
         - group_hero
         - group_paragraphs
         - group_ptv
+      label: Tabs
+      region: content
       parent_name: ''
       weight: 2
       format_type: tabs
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         direction: vertical
-      label: Tabs
     group_hero:
       children:
         - field_lead_image
+      label: Hero
+      region: content
       parent_name: group_tabs
       weight: 15
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Hero
     group_paragraphs:
       children:
         - field_paragraphs
+      label: Paragraphs
+      region: content
       parent_name: group_tabs
       weight: 16
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Paragraphs
     group_ptv:
       children:
         - field_description_heading
@@ -94,30 +94,30 @@ third_party_settings:
         - field_target_groups
         - field_service_classes
         - field_ptv_id
+      label: PTV
+      region: content
       parent_name: group_tabs
       weight: 18
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: PTV
     group_sidebar:
       children: {  }
+      label: Sidebar
+      region: hidden
       parent_name: ''
       weight: 10
       format_type: tab
-      region: hidden
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Sidebar
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -130,73 +130,75 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_charge_info:
+    type: text_textarea
     weight: 36
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_charge_info_heading:
+    type: string_textfield
     weight: 35
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_charge_info_links:
+    type: linkit
     weight: 37
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
-    region: content
   field_description:
+    type: text_textarea_with_summary
     weight: 27
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    type: text_textarea_with_summary
-    region: content
   field_description_heading:
+    type: string_textfield
     weight: 26
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_description_links:
+    type: linkit
     weight: 28
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
-    region: content
   field_lead_image:
+    type: media_library_widget
     weight: 12
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_meta_tags:
+    type: metatag_firehose
     weight: 42
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_paragraphs:
+    type: paragraphs_classic_asymmetric
     weight: 14
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -205,96 +207,94 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    type: paragraphs_classic_asymmetric
-    region: content
   field_ptv_id:
+    type: string_textfield
     weight: 41
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_requirements:
+    type: text_textarea
     weight: 30
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_requirements_heading:
+    type: string_textfield
     weight: 29
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_requirements_links:
+    type: linkit
     weight: 31
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
-    region: content
   field_service_classes:
+    type: entity_reference_autocomplete
     weight: 40
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_tags:
+    type: entity_reference_autocomplete
     weight: 38
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_target_groups:
+    type: entity_reference_autocomplete
     weight: 39
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_user_instruction:
+    type: text_textarea
     weight: 33
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_user_instruction_heading:
+    type: string_textfield
     weight: 32
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_user_instruction_links:
+    type: linkit
     weight: 34
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
     third_party_settings: {  }
-    type: linkit
-    region: content
   langcode:
     type: language_select
     weight: 1
@@ -310,24 +310,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 6
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 9
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -345,12 +345,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 3
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden:
   field_paragraphs_sidebar: true

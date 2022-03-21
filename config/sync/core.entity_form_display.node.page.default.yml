@@ -26,63 +26,63 @@ third_party_settings:
         - group_hero
         - group_paragraphs
         - group_sidebar
+      label: Tabs
+      region: content
       parent_name: ''
       weight: 2
       format_type: tabs
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         direction: vertical
-      label: Tabs
     group_paragraphs:
       children:
         - field_show_toc
         - field_paragraphs
+      label: Komponentit
+      region: content
       parent_name: group_tabs
       weight: 11
       format_type: tab
-      region: content
       format_settings:
-        description: ''
-        formatter: closed
-        required_fields: true
-        id: ''
         classes: ''
         show_empty_fields: false
-      label: Komponentit
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
     group_sidebar:
       children:
         - field_paragraphs_sidebar
+      label: Sivupalkki
+      region: content
       parent_name: group_tabs
       weight: 12
       format_type: tab
-      region: content
       format_settings:
-        description: ''
-        formatter: closed
-        required_fields: true
-        id: ''
         classes: ''
         show_empty_fields: false
-      label: Sivupalkki
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
     group_hero:
       children:
         - field_hero_style
         - field_heading
         - field_lead_image
         - field_lead_text
+      label: Hero
+      region: content
       parent_name: group_tabs
       weight: 10
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Hero
 _core:
   default_config_hash: AD_lefuYmjsKeH3OQApsyP_nLj6ZnGaALznLQSQ0Z_o
 id: node.page.default
@@ -97,43 +97,45 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_heading:
+    type: string_textfield
     weight: 4
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_hero_style:
+    type: options_select
     weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_lead_image:
+    type: media_library_widget
     weight: 5
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_lead_text:
+    type: text_textarea
     weight: 6
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_meta_tags:
+    type: metatag_firehose
     weight: 11
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_paragraphs:
+    type: paragraphs_classic_asymmetric
     weight: 12
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -142,11 +144,10 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    type: paragraphs_classic_asymmetric
-    region: content
   field_paragraphs_sidebar:
     type: paragraphs_classic_asymmetric
     weight: 26
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -155,14 +156,13 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    region: content
   field_show_toc:
+    type: boolean_checkbox
     weight: 11
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   langcode:
     type: language_select
     weight: 1
@@ -178,24 +178,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 8
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

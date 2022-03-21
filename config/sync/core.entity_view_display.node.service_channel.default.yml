@@ -40,72 +40,76 @@ bundle: service_channel
 mode: default
 content:
   field_accessibility:
-    weight: 9
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 9
     region: content
   field_address:
-    weight: 4
+    type: address_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: address_default
+    weight: 4
     region: content
   field_contacts_heading:
-    weight: 14
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 14
     region: content
   field_description:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: content
   field_email:
-    weight: 2
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 2
     region: content
   field_languages:
-    weight: 8
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 8
     region: content
   field_lead_image:
-    weight: 7
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 7
     region: content
   field_location:
-    weight: 16
+    type: leaflet_formatter_default
     label: hidden
     settings:
       multiple_map: false
-      popup_content: ''
       leaflet_map: 'OSM Mapnik'
       height: 300
       height_unit: px
       hide_empty_map: true
       disable_wheel: true
+      fullscreen_control: false
+      gesture_handling: false
       reset_map:
-        position: topright
         control: false
+        position: topright
+      popup: false
+      popup_content: ''
       map_position:
+        force: false
         center:
           lat: !!float 0
           lon: !!float 0
@@ -113,16 +117,12 @@ content:
         minZoom: 1
         maxZoom: 18
         zoomFiner: 0
-        force: false
       weight: ''
       icon:
         iconType: html
         iconUrl: ''
         shadowUrl: ''
         className: ''
-        html: '<i class="fa fa-map-marker-alt fa-3x"></i>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
         iconSize:
           x: '20'
           'y': '20'
@@ -138,8 +138,16 @@ content:
         popupAnchor:
           x: ''
           'y': ''
+        html: '<i class="fa fa-map-marker-alt fa-3x"></i>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+      leaflet_markercluster:
+        control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
+        include_path: false
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       geocoder:
+        control: false
         settings:
           position: topright
           input_size: 25
@@ -150,144 +158,136 @@ content:
           min_terms: 4
           delay: 800
           zoom: 16
-          options: ''
           popup: false
-        control: false
-      popup: false
-      fullscreen_control: false
-      gesture_handling: false
-      leaflet_markercluster:
-        control: false
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
-        include_path: false
+          options: ''
     third_party_settings: {  }
-    type: leaflet_formatter_default
+    weight: 16
     region: content
   field_meta_tags:
-    weight: 18
+    type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
+    weight: 18
     region: content
   field_opening_hours:
-    weight: 11
+    type: double_field_unformatted_list
     label: hidden
     settings:
-      inline: true
       first:
-        hidden: false
-        link: false
         format_type: medium
-        thousand_separator: ''
+        link: false
+        hidden: false
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
       second:
-        hidden: false
-        link: false
         format_type: medium
-        thousand_separator: ''
+        link: false
+        hidden: false
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
+      inline: true
     third_party_settings: {  }
-    type: double_field_unformatted_list
+    weight: 11
     region: content
   field_paragraphs:
-    weight: 5
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 5
     region: content
   field_paragraphs_contacts:
     type: entity_reference_revisions_entity_view
-    weight: 12
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 12
     region: content
   field_paragraphs_sidebar:
-    weight: 6
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 6
     region: content
   field_phone_numbers:
-    weight: 3
+    type: double_field_unformatted_list
     label: hidden
     settings:
-      inline: true
       first:
-        hidden: false
-        link: false
         format_type: medium
-        thousand_separator: ''
+        link: false
+        hidden: false
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
       second:
-        hidden: false
-        link: false
         format_type: medium
-        thousand_separator: ''
+        link: false
+        hidden: false
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
+      inline: true
     third_party_settings: {  }
-    type: double_field_unformatted_list
+    weight: 3
     region: content
   field_service_channel_type:
-    weight: 15
+    type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 15
     region: content
   field_services:
     type: entity_reference_label
-    weight: 13
-    region: content
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
+    weight: 13
+    region: content
   field_tags:
-    weight: 10
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 10
     region: content
   field_warning:
-    weight: 17
+    type: double_field_unformatted_list
     label: hidden
     settings:
-      inline: true
       first:
-        hidden: false
-        link: false
         format_type: medium
-        thousand_separator: ''
+        link: false
+        hidden: false
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
       second:
-        hidden: false
-        link: false
         format_type: medium
-        thousand_separator: ''
+        link: false
+        hidden: false
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
+      inline: true
     third_party_settings: {  }
-    type: double_field_unformatted_list
+    weight: 17
     region: content
   field_webpage:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -296,7 +296,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: content
 hidden:
   field_ptv_id: true

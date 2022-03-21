@@ -1,7 +1,22 @@
 uuid: 0239586c-eda4-45c5-a6f1-3f91ec4391de
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.blog_post
+    - node.type.page
+    - node.type.service
+    - node.type.service_channel
+    - taxonomy.vocabulary.icons
+  module:
+    - content_translation
+    - locale
+    - media
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
 id: editor
 label: Editor
 weight: 3

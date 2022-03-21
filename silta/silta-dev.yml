@@ -5,7 +5,8 @@
 # for all possible options.
 
 exposeDomains:
-  - hostname: service-paths.dev.wdr.io
+  service-paths-io:
+    hostname: service-paths.dev.wdr.io
 
 nginx:
   basicauth:

@@ -38,58 +38,58 @@ bundle: service_channel
 mode: summary
 content:
   field_address:
-    weight: 3
+    type: address_plain
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: address_plain
+    weight: 3
     region: content
   field_description:
-    weight: 0
+    type: text_summary_or_trimmed
     label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
-    type: text_summary_or_trimmed
+    weight: 0
     region: content
   field_email:
-    weight: 2
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 2
     region: content
   field_opening_hours:
     type: double_field_unformatted_list
-    weight: 5
-    region: content
     label: hidden
     settings:
-      inline: true
       first:
-        link: false
         format_type: medium
+        link: false
         hidden: false
-        thousand_separator: ''
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
       second:
-        link: false
         format_type: medium
+        link: false
         hidden: false
-        thousand_separator: ''
         decimal_separator: .
+        thousand_separator: ''
         scale: 2
+      inline: true
     third_party_settings: {  }
+    weight: 5
+    region: content
   field_service_channel_type:
-    weight: 4
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 4
     region: content
   field_webpage:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -98,7 +98,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: content
 hidden:
   field_accessibility: true

@@ -12,12 +12,12 @@ bundle: references
 mode: preview
 content:
   field_paragraph_content_ref:
-    weight: 0
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: summary
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 0
     region: content
 hidden: {  }

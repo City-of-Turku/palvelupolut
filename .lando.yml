@@ -4,6 +4,7 @@ recipe: drupal9
 config:
   php: '7.3'
   via: nginx
+  composer_version: 2-latest
   webroot: web
   database: mariadb:10.3
   xdebug: off
@@ -15,18 +16,30 @@ tooling:
     description: Runs grumphp commands
     cmd:
       - appserver: ./vendor/bin/grumphp
+  import:
+    description: Import the services data
+    cmd:
+      - appserver: /app/.lando/import.sh
   npm:
     description: Runs npm commands
     service: node
+  psalm:
+    description: Run Psalm tasks
+    cmd:
+      - appserver: ./vendor/bin/psalm
+  syncdb:
+    description: Synchronizes local db with test env
+    cmd:
+      - appserver: /app/.lando/syncdb.sh
+  update:
+    description: Updates local db & enables dev components
+    cmd:
+      - appserver: /app/.lando/update.sh
   xdebug:
     description: Loads Xdebug in the selected mode
     cmd:
       - appserver: /app/.lando/xdebug.sh
     user: root
-  psalm:
-    description: Run Psalm tasks
-    cmd:
-      - appserver: ./vendor/bin/psalm
 
 services:
   appserver:
@@ -44,46 +57,6 @@ services:
         XDEBUG_MODE:
         # Support debugging Drush with XDEBUG 3.
         PHP_IDE_CONFIG: "serverName=appserver"
-  # chrome:
-  #   type: compose
-  #   services:
-  #     image: selenium/standalone-chrome
-  #     user: root
-  #     ports:
-  #       - "4444:4444"
-  #     volumes:
-  #       - /dev/shm:/dev/shm
-  #     command: /opt/bin/entry_point.sh
-  # elasticsearch:
-  #   type: compose
-  #   services:
-  #     image: bitnami/elasticsearch:7
-  #     command: /opt/bitnami/scripts/elasticsearch/entrypoint.sh /opt/bitnami/scripts/elasticsearch/run.sh
-  #     ports:
-  #       - "9200:9200"
-  #       - "9300:9300"
-  #     volumes:
-  #       - ./.lando/elasticsearch.yml:/opt/bitnami/elasticsearch/config/elasticsearch.yml
-  #       - elasticsearch_data:/bitnami/elasticsearch/data
-  #   volumes:
-  #     elasticsearch_data:
-  #   overrides:
-  #     environment:
-  #       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
-  #       # Install plugins.
-  #       ELASTICSEARCH_PLUGINS: "analysis-icu"
-  # kibana:
-  #   type: compose
-  #   services:
-  #     image: bitnami/kibana:7
-  #     ports:
-  #       - "5601:5601"
-  #     depends_on:
-  #       - elasticsearch
-  #     command: /opt/bitnami/scripts/kibana/entrypoint.sh /opt/bitnami/scripts/kibana/run.sh
-  #   overrides:
-  #     environment:
-  #       KIBANA_ELASTICSEARCH_URL: "http://elasticsearch:9200"
   mailhog:
     type: mailhog
     hogfrom:
@@ -92,17 +65,18 @@ services:
     type: node
     build:
       - npm install
+      - cd ./web/themes/custom/service-paths-theme && npm install
+      - cd ./web/themes/custom/service-paths-theme && npm run build && npm run build-storybook
+  storybook:
+    type: 'php:7.3'
+    webroot: web/themes/custom/service-paths-theme/storybook-static
+    ssl: true
 
 proxy:
   mailhog:
-    - mail.service-paths.lndo.site
-
-events:
-  post-db-import:
-    - appserver: cd $LANDO_WEBROOT && drush cache:rebuild -y && drush @local user:login
-
-env_file:
-  - .lando/.env
+    - mail-service-paths.lndo.site
+  storybook:
+    - storybook.lndo.site
 
 # Tested with Lando version
-version: v3.1.0
+version: v3.6.2
