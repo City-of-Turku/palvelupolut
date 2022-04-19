@@ -61,7 +61,7 @@
   {% set data = {
       "link_title": phone_nr,
       "text": first,
-      "url": 'tel:' ~ second|replace(' ', ''),
+      "url": 'tel:' ~ second|replace({' ': ''}),
       "icon": "phone",
       "modifiers": ['phone'],
     }
@@ -75,6 +75,6 @@
   contact_card__base_class: "collapsible contact-card",
   contact_card__items: cards,
   contact_card__title: 'Phone Numbers'|t,
-  contact_card__link_text: items|length > 1 ? 'Read more'|t : '',
-  contact_card__link_url: items|length > 1 ? '#' : '',
+  contact_card__link_text: items|length > 2 ? 'Read more'|t : '',
+  contact_card__link_url: items|length > 2 ? '#' : '',
 } %}
