@@ -40,7 +40,7 @@
 
 {% embed "@organisms/section/section-teaser/section-teaser.twig" %}
   {% block section_teaser_items %}
-    {% for item in items %}
+    {% for item in items[:2] %}
       {{ item.content }}
     {% endfor %}
   {% endblock %}
