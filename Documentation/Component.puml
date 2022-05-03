@@ -1,0 +1,67 @@
+
+@startuml Service path
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4.puml
+' !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+' !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+' !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Dynamic.puml
+' !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Deployment.puml
+' uncomment the following line and comment the first to use locally
+' https://github.com/adrianvlupu/C4-PlantUML
+
+' !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+!includeurl ICONURL/common.puml
+!includeurl ICONURL/devicons/mysql.puml
+!includeurl ICONURL/devicons2/apache.puml
+!includeurl ICONURL/font-awesome/server.puml
+!includeurl ICONURL/font-awesome-5/drupal.puml
+
+' !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+' !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+' !include DEVICONS/angular.puml
+' !include DEVICONS/java.puml
+' !include DEVICONS/msql_server.puml
+' !include FONTAWESOME/users.puml
+' !include FONTAWESOME/font-awesome-5/drupal.puml
+
+
+LAYOUT_WITH_LEGEND()
+
+' LAYOUT_AS_SKETCH()
+title Component Drupal CMS
+
+Person(user, "Editors", "logged in users")
+Person_Ext(exuser, "External users", "anonymous")
+System(crontab, "System crontab")
+
+System_Boundary(c1, "Drupal CMS") {
+  System(ptv, "module PTV", "Custom module PTV")
+  System(dcron, "Drupal Cron", "Core functionality Drupal Cron")
+  System(ucron, "Ultimate Cron", "Contrib module Ultimate Cron")
+  System(ptvInt, "PTV Integration Cron", "Cronjob executing Custom module PTV function for saving data")
+  ' System(ptvInt, "PTV Integration Cron", "Cronjob executing Custom module PTV function for saving data")
+  ContainerDb(db, "Drupal DB", "Maria DB")
+}
+
+System(ptv_system, "PTV", "PTV External API", "")
+
+' How are these ececuted and what are they executing?
+' https://service-paths.lndo.site/en/admin/config/migrate_scheduler/cron_migration
+
+' Rel(exuser, cms, "Consuming content")
+' BiRel(cms, db, "Mysql")
+Rel(crontab, dcron, "System crontab execute Drupal cron")
+Rel(dcron, ucron, "Ultimate cron divide different actions by config on drupal cron execution")
+Rel(ucron, ptvInt, "asd")
+Rel(ptv_system, ptv, "json")
+Rel(ptv, db, "Saving ptv data by adding it as config data in the config table")
+' Rel(user, cms, "Adding content")
+' BiRel(ma, cdp, "REST API")
+' BiRel(ma, cms, "Talks")
+' Rel(unomi, cms, "")
+' Rel(spa, api, "Uses", "https")
+' Rel_R(api, db, "Reads/Writes")
+@enduml
