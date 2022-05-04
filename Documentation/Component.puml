@@ -42,6 +42,18 @@ System_Boundary(c1, "Drupal CMS") {
   System(dcron, "Drupal Cron", "Core functionality Drupal Cron")
   System(ucron, "Ultimate Cron", "Contrib module Ultimate Cron")
   System(ptvInt, "PTV Integration Cron", "Cronjob executing Custom module PTV function for saving data")
+  System_Boundary(c2, 'Migrate Scheduler Jobs') {
+    System(ptvCj1, "ptv_service_channels", "Runs: every 24h")
+    System(ptvCj2, "ptv_service_channels_update", "Runs: every 72h")
+    System(ptvCj3, "ptv_services", "Runs: every 24h")
+    System(ptvCj4, "ptv_services_update", "Runs: every 72h")
+  }
+  System_Boundary(m, 'Migration') {
+    System(ptvM1, "service_channels", "Migration source is ptv.settings config")
+    System(ptvM2, "ptv_service_channels_update", "Migration source is ptv.settings config")
+    System(ptvM3, "services", "Migration source is ptv.settings config")
+    System(ptvM4, "services_translations", "Migration source is ptv.settings config")
+  }
   ' System(ptvInt, "PTV Integration Cron", "Cronjob executing Custom module PTV function for saving data")
   ContainerDb(db, "Drupal DB", "Maria DB")
 }
@@ -58,6 +70,14 @@ Rel(dcron, ucron, "Ultimate cron divide different actions by config on drupal cr
 Rel(ucron, ptvInt, "asd")
 Rel(ptv_system, ptv, "json")
 Rel(ptv, db, "Saving ptv data by adding it as config data in the config table")
+Rel(ptvInt, ptvCj1, "Cronjob")
+Rel(ptvInt, ptvCj2, "Cronjob")
+Rel(ptvInt, ptvCj3, "Cronjob")
+Rel(ptvInt, ptvCj4, "Cronjob")
+Rel(ptvCj1, ptvM2, "Migration")
+Rel(ptvCj2, ptvM2, "Migration")
+Rel(ptvCj3, ptvM3, "Migration")
+Rel(ptvCj4, ptvM4, "Migration")
 ' Rel(user, cms, "Adding content")
 ' BiRel(ma, cdp, "REST API")
 ' BiRel(ma, cms, "Talks")
