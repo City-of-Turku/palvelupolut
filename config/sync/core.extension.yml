@@ -28,7 +28,6 @@ module:
   crop: 0
   ctools: 0
   datetime: 0
-  dblog: 0
   devel: 0
   devel_php: 0
   double_field: 0
