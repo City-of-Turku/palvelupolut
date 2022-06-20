@@ -1,6 +1,9 @@
 #!/bin/bash
 set -exu
 
+# Create the translations directory if it doesn't exist.
+mkdir -p /app/web/sites/default/files/translations
+
 # Disable Warden module.
 drush @local pmu dblog warden -y
 
