@@ -23,8 +23,8 @@ grumphp:
       run_on: '%grumphp.run_on_paths%'
     json_lint:
       run_on: '%grumphp.run_on_paths%'
-    psalm:
-      run_on: '%grumphp.run_on_paths%'
+    # psalm:
+    #   run_on: '%grumphp.run_on_paths%'
   extensions:
     - Wunderio\GrumPHP\Task\PhpCompatibility\PhpCompatibilityExtensionLoader
     - Wunderio\GrumPHP\Task\PhpCheckSyntax\PhpCheckSyntaxExtensionLoader
