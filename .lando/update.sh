@@ -4,18 +4,20 @@ set -exu
 # Create the translations directory if it doesn't exist.
 mkdir -p /app/web/sites/default/files/translations
 
+# Update the local database.
+drush @local updatedb --no-cache-clear -y
+drush @local cache:rebuild -y
+
+# Import configuration.
+# drush @local cim -y
+# drush @local cache:rebuild -y
+
 # Disable Warden module.
-drush @local pmu dblog warden -y
+drush @local pm:uninstall warden -y
 
 # Enable development modules.
-drush @local en dblog devel update stage_file_proxy -y
-
-# Update the local database.
-drush @local updb -y
-
-# Clear caches.
-drush @local cc drush
-drush @local cr -y
+drush @local pm:enable stage_file_proxy -y
+drush @local cache:rebuild -y
 
 # Generate login URL.
-drush @local uli
+drush @local user:login
