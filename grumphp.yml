@@ -23,6 +23,8 @@ grumphp:
       run_on: '%grumphp.run_on_paths%'
     json_lint:
       run_on: '%grumphp.run_on_paths%'
+    psalm:
+      run_on: '%grumphp.run_on_paths%'
   extensions:
     - Wunderio\GrumPHP\Task\PhpCompatibility\PhpCompatibilityExtensionLoader
     - Wunderio\GrumPHP\Task\PhpCheckSyntax\PhpCheckSyntaxExtensionLoader
@@ -31,5 +33,6 @@ grumphp:
     - Wunderio\GrumPHP\Task\PhpStan\PhpStanExtensionLoader
     - Wunderio\GrumPHP\Task\YamlLint\YamlLintExtensionLoader
     - Wunderio\GrumPHP\Task\JsonLint\JsonLintExtensionLoader
+    - Wunderio\GrumPHP\Task\Psalm\PsalmExtensionLoader
   git_hook_variables:
     EXEC_GRUMPHP_COMMAND: lando php
