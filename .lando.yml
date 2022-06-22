@@ -2,7 +2,7 @@ name: service-paths
 recipe: drupal9
 
 config:
-  php: '7.3'
+  php: '7.4'
   via: nginx
   composer_version: 2-latest
   webroot: web
@@ -68,7 +68,7 @@ services:
       - cd ./web/themes/custom/service-paths-theme && npm install
       - cd ./web/themes/custom/service-paths-theme && npm run build && npm run build-storybook
   storybook:
-    type: 'php:7.3'
+    type: 'php:7.4'
     webroot: web/themes/custom/service-paths-theme/storybook-static
     ssl: true
 
