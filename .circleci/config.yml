@@ -24,6 +24,8 @@ workflows:
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
           executor: cicd74
+          # Increase deployment_timeout temporarily.
+          deploy_timeout: 30m
           codebase-build:
             - silta/drupal-composer-install
             - silta/npm-install-build:
