@@ -10,6 +10,12 @@
       font-size: $font-size--large-5;
     }
   }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .page-content--full-width .accordion {

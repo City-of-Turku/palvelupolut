@@ -1,0 +1,7 @@
+section_accordion__heading: 'Accessibility'
+section_accordion__heading_icon: 'wheelchair'
+section_accordion__items:
+  - accordion__summary: 'Read more about accessibility'
+    accordion__content: 'Details about accessibility.'
+  - accordion__summary: 'Read more about accessibility'
+    accordion__content: 'Details about accessibility.'

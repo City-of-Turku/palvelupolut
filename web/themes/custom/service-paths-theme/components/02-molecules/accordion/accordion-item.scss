@@ -33,6 +33,17 @@
     }
   }
 
+  &--white {
+    background: color(background);
+    border-top: none;
+    border-radius: space(.75);
+    margin-bottom: space(1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
   &__heading {
     justify-content: space-between;
     display: flex;
@@ -45,9 +56,17 @@
     letter-spacing: 0;
     line-height: $line-height--heading;
 
+    .accordion-item--white & {
+      margin: 0 space(1.5);
+    }
+
     .heading {
       font-size: $font-size--large-1 !important;
       margin: 0 !important;
+
+      .accordion-item--white & {
+        font-size: $font-size--small-1 !important;
+      }
     }
 
     &::marker {
@@ -56,6 +75,11 @@
   }
 
   &__content {
+    .accordion-item--white & {
+      margin: 0 space(1.5);
+      padding: space(0.75) 0;
+    }
+
     p:first-child {
       margin-top: 0;
     }
@@ -66,6 +90,12 @@
   }
 
   &[open] {
+    .accordion-item__heading {
+      .heading--h3 {
+        color: $gray;
+      }
+    }
+
     .fontawesome-icon {
       transform: rotate(180deg);
     }
