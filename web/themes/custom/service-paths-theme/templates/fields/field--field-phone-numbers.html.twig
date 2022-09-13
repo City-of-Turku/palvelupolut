@@ -61,8 +61,8 @@
   {% set data = {
       "link_title": phone_nr,
       "text": first,
-      "url": 'tel:' ~ second|replace(' ', ''),
-      "icon": "phone",
+      "url": 'tel:' ~ second|replace({' ': ''}),
+      "icon": "phone-alt",
       "modifiers": ['phone'],
     }
   %}

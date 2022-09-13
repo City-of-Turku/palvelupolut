@@ -146,7 +146,7 @@
             {% set main_cards = main_cards|merge([{
               'link_title': 'Location on map'|t,
               'url': 'http://maps.google.com/?q=' ~ node.field_address.getString,
-              'icon': 'map-marked-alt',
+              'icon': 'map',
             }]) %}
           {% endif %}
           {% if node.field_email.value %}
@@ -156,8 +156,54 @@
               'icon': 'at',
             }]) %}
           {% endif %}
+
+          {% include "@molecules/contact-card/contact-card.twig" with {
+            section_contact_cards__modifiers: process_step_modifiers,
+            contact_card__title: '',
+            contact_card__items: main_cards,
+          } %}
+
+          {{ content.field_phone_numbers }}
+
+        </div>
+        <div {{ bem("inner", [], section_contact_cards__base_class) }}>
+          {% set secondary_cards = [] %}
+          {% set opening_hours_title = 'Opening Hours'|t %}
+          {% set opening_hours_default_title = true %}
+          {% set opening_hours_title_changed = false %}
+          {% set opening_hours_without_title = false %}
+
+          {% for item in content.field_opening_hours['#items'] %}
+            {% set first = item.getValue.first %}
+            {% set second = item.getValue.second %}
+
+            {% if second is null and items|length > 1 %}
+              {% set opening_hours_title = first %}
+              {% set opening_hours_title_changed = true %}
+              {% set opening_hours_without_title = false %}
+            {% else %}
+              {% set data = {
+                "info_title": opening_hours_without_title ? null : opening_hours_title,
+                "text" : first,
+                "text2" : second,
+                "icon": "clock",
+              }
+              %}
+
+              {% if opening_hours_title_changed or opening_hours_default_title %}
+                {% set opening_hours_without_title = true %}
+              {% else %}
+                {% set opening_hours_without_title = false %}
+                {% set opening_hours_title_changed = false %}
+              {% endif %}
+
+              {% set secondary_cards = secondary_cards|merge([data]) %}
+
+            {% endif %}
+          {% endfor %}
+
           {% if node.field_webpage.title %}
-            {% set main_cards = main_cards|merge([{
+            {% set secondary_cards = secondary_cards|merge([{
               'link_title': node.field_webpage.title,
               'url': node.field_webpage.0.url.toString,
               'icon': 'globe',
@@ -167,25 +213,29 @@
           {% include "@molecules/contact-card/contact-card.twig" with {
             section_contact_cards__modifiers: process_step_modifiers,
             contact_card__title: '',
-            contact_card__items: main_cards,
+            contact_card__items: secondary_cards,
           } %}
 
-          {{ content.field_opening_hours }}
-          {{ content.field_service_hours }}
-          {{ content.field_phone_numbers }}
-
-        </div>
-        <div {{ bem("inner", [], section_contact_cards__base_class) }}>
-          {{ content.field_accessibility }}
           {{ content.field_paragraphs_contacts }}
         </div>
         <div {{ bem("inner", [], section_contact_cards__base_class) }} aria-hidden="true">
           {{ content.field_location }}
         </div>
       </div>
-
     </div>
 
+    {% if content.field_accessibility|render %}
+      {% set section_accordion__items = [
+        {
+          accordion__summary: 'Read more about accessibility'|t,
+          accordion__content: content.field_accessibility
+        },
+      ] %}
+      {% include "@organisms/section/section-accordion/section-accordion.twig" with {
+        section_accordion__heading: 'Accessibility'|t,
+        section_accordion__heading_icon: 'wheelchair',
+        section_accordion__items: section_accordion__items
+      } %}
+    {% endif %}
   {% endblock %}
-
 {% endembed %}
