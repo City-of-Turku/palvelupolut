@@ -143,9 +143,11 @@
               'text': content.field_address,
               'icon': 'map-marker-alt',
             }]) %}
+          {% endif %}
+          {% if ptv_map_url %}
             {% set main_cards = main_cards|merge([{
               'link_title': 'Location on map'|t,
-              'url': 'http://maps.google.com/?q=' ~ node.field_address.getString,
+              'url': ptv_map_url,
               'icon': 'map',
             }]) %}
           {% endif %}

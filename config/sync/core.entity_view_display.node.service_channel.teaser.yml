@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
@@ -55,6 +56,7 @@ hidden:
   field_paragraphs_contacts: true
   field_paragraphs_sidebar: true
   field_phone_numbers: true
+  field_ptv_coordinates: true
   field_ptv_id: true
   field_service_channel_type: true
   field_services: true
