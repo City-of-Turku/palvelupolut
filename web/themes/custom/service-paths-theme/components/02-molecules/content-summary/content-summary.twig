@@ -14,14 +14,22 @@
 #}
 {% set content_summary__base_class = "content-summary" %}
 {% set content_summary__modifiers = content_summary__modifiers|default([]) %}
+{% set column_count = content_summary__number_lead_text ? 3 : 2 %}
 
 <div {{ bem(content_summary__base_class, content_summary__modifiers) }}>
-  <div {{ bem("column", [], content_summary__base_class) }}  >
+  {% set column__modifiers = column_count == 2 ? ['double'] : [] %}
+  <div {{ bem("column", column__modifiers, content_summary__base_class) }}  >
     {% include "@atoms/text/heading/heading.twig" with {
       heading__level: 4,
       heading__base_class: "title",
       heading__blockname: content_summary_base_class,
       heading: content_summary__title,
+    } %}
+
+    {% include "@atoms/text/text-long/text-long.twig" with {
+      text_long__base_class: "text",
+      text_long__content:  content_summary__main_text,
+      text_long__blockname: content_summary__base_class,
     } %}
 
     {% if content_summary__link_url %}
@@ -39,6 +47,7 @@
         } %}
       </div>
     {% endif %}
+
     {% include "@atoms/links/link/link.twig" with {
       link__content: content_summary__open_text,
       link__url: content_summary__open_url,
@@ -48,23 +57,24 @@
     } %}
   </div>
 
+  {% if column_count == 3 %}
+    <div {{ bem("column", [], content_summary__base_class) }} >
+      {% if content_summary__number_lead_text %}
+        {% include "@atoms/text/heading/heading.twig" with {
+          heading__level: 5,
+          heading__base_class: "heading",
+          heading__blockname: content_summary_base_class,
+          heading: content_summary__number_heading,
+        } %}
 
-  <div {{ bem("column", [], content_summary__base_class) }} >
-    {% if content_summary__number_lead_text %}
-      {% include "@atoms/text/heading/heading.twig" with {
-        heading__level: 5,
-        heading__base_class: "heading",
-        heading__blockname: content_summary_base_class,
-        heading: content_summary__number_heading,
-      } %}
-
-      {% include "@atoms/text/text-long/text-long.twig" with {
-        text_long__base_class: "text",
-        text_long__content:  content_summary__number_lead_text,
-        text_long__blockname: content_summary__base_class,
-      } %}
-    {% endif %}
-  </div>
+        {% include "@atoms/text/text-long/text-long.twig" with {
+          text_long__base_class: "text",
+          text_long__content:  content_summary__number_lead_text,
+          text_long__blockname: content_summary__base_class,
+        } %}
+      {% endif %}
+    </div>
+  {% endif %}
 
   <div {{ bem("column", [], content_summary__base_class) }}  >
     {% if content_summary__heading %}

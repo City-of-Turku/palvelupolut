@@ -6,6 +6,7 @@
   padding: space(2);
   margin-bottom: space(1);
   flex-direction: column;
+  gap: space(2);
 
   @include above($width-xl) {
     flex-direction: row;
@@ -29,19 +30,19 @@
   }
 
   &__column {
-    margin-bottom: space(2);
-
     @include above($width-xl) {
       flex: 1;
-      margin-right: space(2);
-      margin-bottom: 0;
-    }
 
-    &:last-child {
-      margin-right: 0;
-      margin-bottom: 0;
-      @include above($width-xl) {
-        margin-bottom: space(2);
+      &--double {
+        flex: 2;
+
+        > * {
+          max-width: 50%;
+        }
+
+        > .content-summary__text {
+          max-width: 75%;
+        }
       }
     }
 

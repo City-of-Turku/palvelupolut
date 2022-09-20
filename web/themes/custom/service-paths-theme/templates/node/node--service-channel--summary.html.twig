@@ -108,13 +108,16 @@
   {% endif %}
   {% set heading = 'Service Hours'|t %}
   {% set lead_text = content.field_opening_hours %}
+  {% set main_text = node.field_description.summary %}
 
 {% elseif type == 'Phone' %}
 
   {% set button = phone_nr %}
   {% set phone_nr = '' %}
   {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second|replace({' ': ''}) %}
+  {% set heading = 'Service Hours'|t %}
   {% set lead_text = content.field_opening_hours %}
+  {% set main_text = node.field_description.summary %}
 
 {% elseif type == 'ServiceLocation' %}
 
@@ -133,7 +136,7 @@
       {% set link_modifiers = link_modifiers|merge(['external']) %}
     {% endif %}
   {% endif %}
-  {% set lead_text = node.field_description.summary %}
+  {% set main_text = node.field_description.summary %}
 
 {% elseif type == 'PrintableForm' %}
 
@@ -145,7 +148,7 @@
       {% set link_modifiers = link_modifiers|merge(['external']) %}
     {% endif %}
   {% endif %}
-  {% set lead_text = node.field_description.summary %}
+  {% set main_text = node.field_description.summary %}
 
 {% else %}
 
@@ -159,6 +162,7 @@
 {% include "@molecules/content-summary/content-summary.twig" with {
   content_summary___modifiers: content_summary_modifiers,
   content_summary__title: label,
+  content_summary__main_text: main_text,
   content_summary__heading: heading,
   content_summary__lead_text: lead_text,
   content_summary__number_heading: type == 'ServiceLocation' ? 'Phone'|t : '',
