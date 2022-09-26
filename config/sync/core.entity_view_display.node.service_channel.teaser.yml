@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.service_channel.field_accessibility
+    - field.field.node.service_channel.field_accessibility_heading
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
@@ -44,6 +45,7 @@ content:
     region: content
 hidden:
   field_accessibility: true
+  field_accessibility_heading: true
   field_address: true
   field_contacts_heading: true
   field_description: true

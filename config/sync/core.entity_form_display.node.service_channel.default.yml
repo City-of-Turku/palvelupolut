@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.service_channel.field_accessibility
+    - field.field.node.service_channel.field_accessibility_heading
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
@@ -90,6 +91,7 @@ third_party_settings:
         - field_email
         - field_phone_numbers
         - field_address
+        - field_accessibility_heading
         - field_accessibility
         - field_opening_hours
         - field_tags
@@ -150,10 +152,18 @@ content:
     third_party_settings: {  }
   field_accessibility:
     type: text_textarea
-    weight: 26
+    weight: 27
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_accessibility_heading:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_address:
@@ -190,7 +200,7 @@ content:
     third_party_settings: {  }
   field_languages:
     type: options_buttons
-    weight: 29
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -211,7 +221,7 @@ content:
     third_party_settings: {  }
   field_opening_hours:
     type: double_field
-    weight: 27
+    weight: 28
     region: content
     settings:
       first:
@@ -330,7 +340,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 28
+    weight: 29
     region: content
     settings:
       match_operator: CONTAINS

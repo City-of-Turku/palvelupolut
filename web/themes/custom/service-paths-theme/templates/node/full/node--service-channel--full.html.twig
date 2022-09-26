@@ -229,7 +229,7 @@
     {% if content.field_accessibility|render %}
       {% set section_accordion__items = [
         {
-          accordion__summary: 'Read more about accessibility'|t,
+          accordion__summary: content.field_accessibility_heading|render|trim ? content.field_accessibility_heading : 'Service channel accessibility details'|t,
           accordion__content: content.field_accessibility
         },
       ] %}
