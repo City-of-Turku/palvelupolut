@@ -90,12 +90,6 @@
   }
 
   &[open] {
-    .accordion-item__heading {
-      .heading--h3 {
-        color: $gray;
-      }
-    }
-
     .fontawesome-icon {
       transform: rotate(180deg);
     }
