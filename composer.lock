@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c085d04d54afc43d0085804788bf425c",
+    "content-hash": "acafed6fa3fda9a25051b6aacbbfabf3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12172,21 +12172,25 @@
         },
         {
             "name": "wunderio/drupal-ping",
-            "version": "1.0.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wunderio/drupal-ping.git",
-                "reference": "1ba81d31a1527b19cbb115b01388c428e96136c9"
+                "reference": "3e766369a8e983c05c14a09b13830978830d0b20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wunderio/drupal-ping/zipball/1ba81d31a1527b19cbb115b01388c428e96136c9",
-                "reference": "1ba81d31a1527b19cbb115b01388c428e96136c9",
+                "url": "https://api.github.com/repos/wunderio/drupal-ping/zipball/3e766369a8e983c05c14a09b13830978830d0b20",
+                "reference": "3e766369a8e983c05c14a09b13830978830d0b20",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "~8.0 || ~9.0",
+                "drupal/core": "^8 || ^9",
                 "koodimonni/composer-dropin-installer": ">=1.0.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9",
+                "wunderio/code-quality": "^2"
             },
             "type": "web-dropin",
             "notification-url": "https://packagist.org/downloads/",
@@ -12199,6 +12203,12 @@
                     "email": "janne.koponen@wunder.io",
                     "homepage": "https://github.com/tharna",
                     "role": "Developer"
+                },
+                {
+                    "name": "Ragnar Kurm",
+                    "email": "ragnar.kurm@wunder.io",
+                    "homepage": "https://github.com/ragnarkurmwunder",
+                    "role": "Developer"
                 }
             ],
             "description": "Drupal health check endpoint for load balancers",
@@ -12210,9 +12220,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wunderio/drupal-ping/issues",
-                "source": "https://github.com/wunderio/drupal-ping/tree/1.0.2"
+                "source": "https://github.com/wunderio/drupal-ping/tree/2.3.3"
             },
-            "time": "2020-09-11T10:38:01+00:00"
+            "time": "2022-07-05T14:09:54+00:00"
         }
     ],
     "packages-dev": [

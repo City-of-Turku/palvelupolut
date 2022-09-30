@@ -132,7 +132,7 @@
         "leaflet/leaflet": "^1.0.2",
         "vlucas/phpdotenv": "^5.4.1",
         "webflo/drupal-finder": "^1.2.2",
-        "wunderio/drupal-ping": "^1.0.2"
+        "wunderio/drupal-ping": "^2.3.3"
     },
     "require-dev": {
         "vimeo/psalm": "^4.26",
@@ -244,7 +244,10 @@
             }
         },
         "dropin-paths": {
-            "web/": ["type:web-dropin"]
+            "web/": [
+                "type:web-dropin",
+                "package:wunderio/drupal-ping:_ping.php"
+            ]
         }
     }
 }
