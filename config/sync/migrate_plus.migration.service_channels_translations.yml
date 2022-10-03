@@ -1,5 +1,5 @@
 uuid: 90bf159e-4503-4509-98e4-6d252b58fa10
-langcode: fi
+langcode: en
 status: true
 dependencies: {  }
 id: service_channels_translations
@@ -56,6 +56,7 @@ process:
   field_phone_numbers: phone_numbers
   field_webpage: webpage
   field_address: address
+  field_ptv_coordinates: coordinates
   field_languages: langs
   field_service_channel_type: channel_type
   path/pathauto:

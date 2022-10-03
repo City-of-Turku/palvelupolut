@@ -1,0 +1,8 @@
+ptv.services:
+  type: config_object
+  label: 'PTV services configuration'
+  mapping:
+    map_url:
+      type: string
+      translatable: true
+      label: 'PTV map service url'

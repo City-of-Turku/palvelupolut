@@ -8,6 +8,45 @@
 use Drupal\Core\Url;
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function service_paths_theme_preprocess_node__service_channel(&$variables) {
+  $node = $variables['node'];
+  $map_url = \Drupal::config('ptv.services')->get('map_url');
+  $service_channel_id = $node->field_ptv_id->value;
+  $service_id = NULL;
+  $latitude = NULL;
+  $longitude = NULL;
+
+  // Fetch service id from the first service reference.
+  if ($node->field_services->entity) {
+    $service_id = $node->field_services->entity->field_ptv_id->value;
+  }
+
+  // Fetch the PTV-coordinates.
+  $field_ptv_coordinates = $node->field_ptv_coordinates->get(0);
+  if ($field_ptv_coordinates) {
+    $latitude = $field_ptv_coordinates->first;
+    $longitude = $field_ptv_coordinates->second;
+  }
+
+  // Create a map link if we have all the required parameters.
+  if ($map_url && $service_channel_id && $service_id && $latitude && $longitude) {
+    $variables['ptv_map_url'] = Url::fromUri(
+      $map_url . $service_id,
+      [
+        'query' => [
+          'lat' => $latitude,
+          'lon' => $longitude,
+          'zoom' => 9,
+          'sl' => $service_channel_id,
+        ],
+      ]
+    )->toString();
+  }
+}
+
+/**
  * Custom twig templates for radio and checkbox input labels.
  */
 function service_paths_theme_preprocess_form_element(&$variables) {

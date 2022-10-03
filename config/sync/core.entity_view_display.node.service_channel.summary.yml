@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.summary
     - field.field.node.service_channel.field_accessibility
+    - field.field.node.service_channel.field_accessibility_heading
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
@@ -18,6 +19,7 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
@@ -102,6 +104,7 @@ content:
     region: content
 hidden:
   field_accessibility: true
+  field_accessibility_heading: true
   field_contacts_heading: true
   field_languages: true
   field_lead_image: true
@@ -111,6 +114,7 @@ hidden:
   field_paragraphs_contacts: true
   field_paragraphs_sidebar: true
   field_phone_numbers: true
+  field_ptv_coordinates: true
   field_ptv_id: true
   field_services: true
   field_tags: true

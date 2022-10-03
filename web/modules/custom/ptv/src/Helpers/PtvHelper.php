@@ -161,6 +161,7 @@ class PtvHelper {
           $services[] = $value->service->id;
         }
         $address = [];
+        $coordinates = [];
         $langs = [];
         $phone_numbers = [];
         $ontology_terms = [];
@@ -225,6 +226,8 @@ class PtvHelper {
                 $address['country_code'] = 'FI';
               }
             }
+            $coordinates['first'] = $value->streetAddress->latitude;
+            $coordinates['second'] = $value->streetAddress->longitude;
 
             $sentences = [];
             $i = 0;
@@ -328,6 +331,7 @@ class PtvHelper {
           'phone_numbers' => $phone_numbers,
           'webpage' => $webpage ?? '',
           'address' => $address ?? '',
+          'coordinates' => $coordinates ?? '',
           'langs' => $langs,
           'accessibility' => $accessibility,
           'ontology_terms' => $ontology_terms,

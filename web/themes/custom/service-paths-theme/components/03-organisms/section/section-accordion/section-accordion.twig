@@ -1,0 +1,21 @@
+{% set section_accordion__base_class = section_accordion__base_class|default('section-accordion') %}
+{% set section_accordion__modifiers = section_accordion__modifiers|default([]) %}
+{% if section_accordion__heading %}
+  {% set heading %}
+    {{ section_accordion__heading }}
+    {% if section_accordion__heading_icon %}
+      {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
+        fontawesome_icon__name: section_accordion__heading_icon,
+        fontawesome_icon__decorative: true,
+      } %}
+    {% endif %}
+  {% endset %}
+{% endif %}
+
+<div {{ bem(section_accordion__base_class, section_accordion__modifiers) }}>
+  {% include "@molecules/accordion/accordion.twig" with {
+    accordion__modifiers: ['white'],
+    accordion__heading: heading ?? null,
+    accordion__items: section_accordion__items
+  } %}
+</div>

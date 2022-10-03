@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.service_channel.field_accessibility
+    - field.field.node.service_channel.field_accessibility_heading
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
@@ -89,10 +91,12 @@ third_party_settings:
         - field_email
         - field_phone_numbers
         - field_address
+        - field_accessibility_heading
         - field_accessibility
         - field_opening_hours
         - field_tags
         - field_languages
+        - field_ptv_coordinates
         - field_ptv_id
       label: PTV
       region: content
@@ -154,9 +158,17 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_accessibility_heading:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_address:
     type: address_default
-    weight: 26
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -180,7 +192,7 @@ content:
     third_party_settings: {  }
   field_email:
     type: email_default
-    weight: 24
+    weight: 23
     region: content
     settings:
       placeholder: ''
@@ -205,6 +217,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_opening_hours:
     type: double_field
@@ -267,7 +280,30 @@ content:
     third_party_settings: {  }
   field_phone_numbers:
     type: double_field
-    weight: 25
+    weight: 24
+    region: content
+    settings:
+      first:
+        type: textfield
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: textfield
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings: {  }
+  field_ptv_coordinates:
+    type: double_field
+    weight: 31
     region: content
     settings:
       first:
@@ -290,7 +326,7 @@ content:
     third_party_settings: {  }
   field_ptv_id:
     type: string_textfield
-    weight: 31
+    weight: 32
     region: content
     settings:
       size: 60
@@ -337,7 +373,7 @@ content:
     third_party_settings: {  }
   field_webpage:
     type: link_default
-    weight: 23
+    weight: 22
     region: content
     settings:
       placeholder_url: ''
