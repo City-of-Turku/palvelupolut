@@ -10,7 +10,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - ""
+            - "b4:06:fd:95:58:e8:cc:b1:84:35:f3:15:5e:19:11:ca"
       - checkout
       - run: ls -al
       - run: git status
