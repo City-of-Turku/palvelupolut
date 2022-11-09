@@ -56,7 +56,7 @@
     "create-file-webpack": "^1.0.2",
     "cross-env": "^7.0.3",
     "css-loader": "^4.3.0",
-    "eslint": "^7.23.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-loader": "^4.0.2",
