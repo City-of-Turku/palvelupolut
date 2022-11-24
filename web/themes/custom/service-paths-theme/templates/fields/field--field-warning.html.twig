@@ -38,22 +38,18 @@
  */
 #}
 
-
+{% set accordion_items = [] %}
 
 {% for item in items %}
-
-  {% set title = item.content['#item'].getValue.first %}
-  {% set text = item.content['#item'].getValue.second %}
-
-  {% include '@molecules/accordion/accordion-item.twig' with {
-    accordion_item__modifiers: ['warning'],
-    accordion__summary: title,
-    accordion__content: text,
-  } %}
-
+  {% set accordion_items = accordion_items|merge([{
+    'accordion__summary': item.content['#item'].getValue.first,
+    'accordion__content': item.content['#item'].getValue.second
+  }]) %}
 {% endfor %}
 
-<br/>
-
-
-
+{% if accordion_items %}
+  {% include '@molecules/accordion/accordion.twig' with {
+    accordion__modifiers: ['content-start', 'warning'],
+    accordion__items: accordion_items,
+  } %}
+{%  endif %}
