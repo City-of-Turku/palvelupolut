@@ -1,6 +1,7 @@
 // Simple Drupal.behaviors usage for Storybook
 
 window.Drupal = { behaviors: {} };
+window.drupalSettings = {};
 
 (function (Drupal, drupalSettings) {
   Drupal.throwError = function (error) {
@@ -24,4 +25,23 @@ window.Drupal = { behaviors: {} };
       }
     });
   };
+
+  Drupal.t = function (text) {
+    return text;
+  }
+
+  drupalSettings.servicePathsTheme = {
+    // This should reflect the output from
+    // @01-atoms/images/fontawesome-icon/fontawesome-icon.twig.
+    iconMarkupExternalLink: `
+      <svg class="fontawesome-icon fontawesome-icon--external-link" aria-hidden="true">
+        <title>Opens in new window</title>
+        <use xlink:href="sprites/fontawesome.svg#external-link-alt"></use>
+      </svg>
+      <span class="visually-hidden">
+        (opens in a new window, goes to a different website)
+      </span>
+    `,
+  };
+
 })(Drupal, window.drupalSettings);

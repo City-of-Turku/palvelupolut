@@ -9,6 +9,7 @@ env:
   browser: true
 globals:
   Drupal: true
+  jQuery: true
 parser: babel-eslint
 rules:
   strict: 0

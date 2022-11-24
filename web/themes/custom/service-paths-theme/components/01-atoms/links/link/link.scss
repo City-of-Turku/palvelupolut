@@ -80,6 +80,10 @@
       width: 1.25rem;
       height: 1.25rem;
     }
+
+    .fontawesome-icon--external-link {
+      margin-left: space(math.div(1, 2));
+    }
   }
 
   &--action {

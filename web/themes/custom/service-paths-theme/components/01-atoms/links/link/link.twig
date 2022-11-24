@@ -102,14 +102,6 @@
     } %}
   {% endif %}
 
-{#  {% if external_link %}#}
-{#    {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {#}
-{#      fontawesome_icon__name: 'external-link-alt',#}
-{#      fontawesome_icon__decorative: true,#}
-{#      fontawesome_icon__modifiers: ['external-link'],#}
-{#    } %}#}
-{#  {% endif %}#}
-
   {% if link__info %}
     {% include '@atoms/visually-hidden/visually-hidden.twig' with {
         visually_hidden__content: link__info|trim,

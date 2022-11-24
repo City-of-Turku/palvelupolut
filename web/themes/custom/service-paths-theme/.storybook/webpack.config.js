@@ -66,6 +66,10 @@ module.exports = async ({ config }) => {
     loader: 'eslint-loader',
     options: {
       cache: true,
+      globals: [
+        'jQuery',
+        'drupalSettings',
+      ],
     },
   });
 
