@@ -2,6 +2,7 @@
 /**
  * Available variables:
  * - link__content - the content of the link (typically text)
+ * - link__a11y_prefix - prefix text for screen readers
  * - link__url - the url this link should poing to
  * - link__attributes - array of attribute,value pairs
  * - link__base_class - the base class name
@@ -87,6 +88,9 @@
   {% endif %}
 
   {% block link_content %}
+    {% if link__a11y_prefix %}
+      <span class="visually-hidden"> {{ link__a11y_prefix }} </span>
+    {% endif %}
     {{- link__content -}}
   {% endblock %}
 

@@ -16,6 +16,7 @@
         {% include "@atoms/text/heading/heading.twig" with {
           heading__level: 3,
           heading: accordion__summary,
+          heading__a11y_prefix: "Warning"|t ~ ": ",
         } %}
       </div>
     {% else %}

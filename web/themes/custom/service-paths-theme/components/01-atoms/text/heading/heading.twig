@@ -8,6 +8,7 @@
  * - heading__blockname - blockname prepended to the base classname
  * - heading__extra_classes - extra class names
  *
+ * - heading__a11y_prefix - prefix text for screen readers
  * - heading - the content of the heading (typically text)
  *
  * - heading__url - (optional) the url the heading should poing to
@@ -29,6 +30,7 @@
 {% if heading__url %}
   {% include "@atoms/links/link/link.twig" with {
     "link__content": heading,
+    "link__a11y_prefix": heading__a11y_prefix,
     "link__url": heading__url,
     "link__attributes": heading__link_attributes,
     "link__base_class": heading__link_base_class,
@@ -36,6 +38,9 @@
     "link__blockname": heading__link_blockname|default(heading__base_class),
   } %}
 {% else %}
+  {% if heading__a11y_prefix %}
+    <span class="visually-hidden"> {{ heading__a11y_prefix }} </span>
+  {% endif %}
   {{ heading }}
 {% endif %}
 
