@@ -34,8 +34,20 @@
       }
 
       .contact-card {
+        margin-bottom: space(2);
+
+        &:last-child {
+          margin-bottom: space(2);
+        }
+
         @include above($width-large) {
           flex: 33%;
+          margin-bottom: 0;
+          margin-right: space(4);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
 

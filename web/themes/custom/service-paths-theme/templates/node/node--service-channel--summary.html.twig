@@ -113,7 +113,7 @@
 
   {% set button = phone_nr %}
   {% set phone_nr = '' %}
-  {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second %}
+  {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second|replace({' ': ''}) %}
   {% set lead_text = content.field_opening_hours %}
 
 {% elseif type == 'ServiceLocation' %}

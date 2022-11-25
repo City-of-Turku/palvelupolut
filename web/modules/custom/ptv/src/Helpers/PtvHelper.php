@@ -161,6 +161,7 @@ class PtvHelper {
           $services[] = $value->service->id;
         }
         $address = [];
+        $coordinates = [];
         $langs = [];
         $phone_numbers = [];
         $ontology_terms = [];
@@ -225,6 +226,8 @@ class PtvHelper {
                 $address['country_code'] = 'FI';
               }
             }
+            $coordinates['first'] = $value->streetAddress->latitude;
+            $coordinates['second'] = $value->streetAddress->longitude;
 
             $sentences = [];
             $i = 0;
@@ -271,6 +274,7 @@ class PtvHelper {
         }
         if (isset($object->serviceHours)) {
           $i = 0;
+          $ii = 0;
           foreach ($object->serviceHours as $serviceHours) {
             if ($serviceHours->validForNow) {
               foreach ($serviceHours->additionalInformation as $key => $value) {
@@ -287,32 +291,67 @@ class PtvHelper {
               $h = 0;
               $times = [];
               foreach ($serviceHours->openingHour as $day) {
-                $time = substr(str_replace(':', '.', ltrim($day->from, 0)), 0, -3) . ' - ' . substr(str_replace(':', '.', ltrim($day->to, 0)), 0, -3);
+                $time = substr(str_replace(':', '.', $day->from), 0, -3) . ' - ' . substr(str_replace(':', '.', ltrim($day->to, 0)), 0, -3);
                 $weekday = $day->dayFrom;
                 $weekday .= !empty($day->dayTo) ? ' - ' . $day->dayTo : '';
 
                 if ($save_time && $save_time != $time) {
                   $h++;
                 }
-                $times[$h][$time][] = $weekday;
                 $save_time = $time;
-              }
-              foreach ($times as $key => $days) {
-                $final_time = array_key_first($days);
-                $days_array = current($days);
-                $from = $this->getTranslatedDay($days_array[0], $langcode);
-                $to = $this->getTranslatedDay(array_pop($days_array), $langcode);
-                if ($from == $to) {
-                  $final_days = $from;
-                }
-                else {
-                  $final_days = $from . ' - ' . $to;
-                }
-                $opening_hours[$i]['first'] = $final_days;
-                $opening_hours[$i]['second'] = $final_time;
-                $i++;
+                $day_names[$weekday][] = $time;
               }
 
+              $weekdays = [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday',
+              ];
+              $groups = [];
+              $g = 0;
+              $save_days = NULL;
+              foreach ($weekdays as $day) {
+                if (isset($day_names[$day])) {
+                  if ($save_days && $save_days !== $day_names[$day]) {
+                    $g++;
+                  }
+                  $groups[$g]['days'][] = $this->getTranslatedDay($day, $langcode);
+                  if (isset($groups[$g]['times']) && is_array($groups[$g]['times'])) {
+                    $groups[$g]['times'] = array_merge($day_names[$day], $groups[$g]['times']);
+                  }
+                  else {
+                    $groups[$g]['times'] = $day_names[$day];
+                  }
+                  $groups[$g]['times'] = array_values(array_unique($groups[$g]['times']));
+
+                  $save_days = $day_names[$day];
+                }
+              }
+
+              $separator = t('and', [], ['langcode' => $langcode]);
+              foreach ($groups as $group) {
+                $days = $group['days'];
+                $times = $group['times'];
+                sort($times);
+                // phpcs:disable
+                $times = array_map(function ($item) {
+                    return ltrim($item, 0);
+                }, $times);
+                // phpcs:enable
+                $first = current($days);
+                if (count($days) > 1) {
+                  $last_day = array_pop($days);
+                  $first = $first . ' - ' . $last_day;
+                }
+                $second = implode(' ' . $separator . ' ', $times);
+                $opening_hours[$ii]['first'] = $first;
+                $opening_hours[$ii]['second'] = $second;
+                $ii++;
+              }
             }
           }
         }
@@ -328,6 +367,7 @@ class PtvHelper {
           'phone_numbers' => $phone_numbers,
           'webpage' => $webpage ?? '',
           'address' => $address ?? '',
+          'coordinates' => $coordinates ?? '',
           'langs' => $langs,
           'accessibility' => $accessibility,
           'ontology_terms' => $ontology_terms,

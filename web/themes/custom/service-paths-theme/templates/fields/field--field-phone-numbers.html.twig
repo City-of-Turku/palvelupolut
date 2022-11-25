@@ -62,7 +62,7 @@
       "link_title": phone_nr,
       "text": first,
       "url": 'tel:' ~ second|replace({' ': ''}),
-      "icon": "phone",
+      "icon": "phone-alt",
       "modifiers": ['phone'],
     }
   %}
@@ -72,7 +72,7 @@
 {% endfor %}
 
 {% include "@molecules/contact-card/contact-card.twig" with {
-  contact_card__base_class: "collapsible contact-card",
+  contact_card__base_class: items|length > 2 ? "collapsible contact-card" : "contact-card",
   contact_card__items: cards,
   contact_card__title: 'Phone Numbers'|t,
   contact_card__link_text: items|length > 2 ? 'Read more'|t : '',

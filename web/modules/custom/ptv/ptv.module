@@ -64,6 +64,7 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       'field_opening_hours',
       'field_phone_numbers',
       'field_ptv_id',
+      'field_ptv_coordinates',
       'field_service_channel_type',
       'field_tags',
       'field_webpage',

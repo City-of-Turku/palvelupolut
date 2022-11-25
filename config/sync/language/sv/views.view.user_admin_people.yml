@@ -43,6 +43,9 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
+      empty:
+        area_text_custom:
+          content: 'Inga personer tillgängliga.'
       filters:
         combine:
           expose:

@@ -53,6 +53,7 @@ process:
   field_phone_numbers: phone_numbers
   field_webpage: webpage
   field_address: address
+  field_ptv_coordinates: coordinates
   field_languages: langs
   field_service_channel_type: channel_type
 

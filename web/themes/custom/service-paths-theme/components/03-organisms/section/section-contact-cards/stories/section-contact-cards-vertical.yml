@@ -1,30 +1,35 @@
-section_contact_cards__title: 'Etsi sopivat vaihtoehdot'
-section_contact_cards__items:
-  - placeholder: true
-    title: 'Asiakasneuvonta'
-    contact__items:
-      - link_title: '02 123 456'
-        url: '#'
-        text: 'Puhelinneuvonta on auki'
-        icon: 'phone'
-      - link_title: 'Avaa chat'
-        url: '#'
-        text: 'Chat on avoinna'
-        icon: 'chat'
-      - info_title: 'varhaiskasvatus@turku.fia'
-        url: '#'
-        icon: 'mailbox'
-  - placeholder: true
-    title: 'Etsi sopivat vaihtoehdot'
-    contact__items:
-      - link_title: 'Näytä kartalla'
-        url: '#'
-        text: 'Toimipiste on avoinna arkisin'
-        icon: 'globe'
-      - info_title: 'Käyntiosoite'
-        url: '#'
-        text: 'Kylätie 22'
-        icon: 'map'
+section_contact_cards__title: 'Contact information'
+section_contact_cards__columns:
+  - section_contact_cards__items:
+    - placeholder: true
+      contact__items:
+        - info_title: 'Address'
+          text: 'Käsityöläiskatu 20<br />20100 TURKU<br />Suomi'
+          icon: 'map-marker-alt'
+        - link_title: 'Location on map'
+          url: '#'
+          icon: 'map'
+        - link_title: 'varhaiskasvatus@turku.fia'
+          url: '#'
+          icon: 'at'
+    - placeholder: true
+      title: 'Phone numbers'
+      contact__items:
+        - link_title: '123 456 7890'
+          text: 'Day Care Center Manager'
+          icon: 'phone-alt'
+        - link_title: '123 789 0456'
+          text: 'Day Care Centers number'
+          icon: 'phone-alt'
+  - section_contact_cards__items:
+    - placeholder: true
+      contact__items:
+        - info_title: 'Opening hours'
+          text: 'Monday - Sunday<br />6.30 - 22.00'
+          icon: 'clock'
+        - link_title: 'Asemanseudun päiväkoti'
+          url: '#'
+          icon: 'globe'
+  - contact_card__image__src: 'map.png'
 section_contact_cards__modifiers:
   - 'vertical'
-contact_card__image__src: 'map.png'

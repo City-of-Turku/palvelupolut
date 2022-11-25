@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.service_channel.field_accessibility
+    - field.field.node.service_channel.field_accessibility_heading
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
@@ -45,6 +47,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_accessibility_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
     region: content
   field_address:
     type: address_default
@@ -101,7 +111,6 @@ content:
       height_unit: px
       hide_empty_map: true
       disable_wheel: true
-      fullscreen_control: false
       gesture_handling: false
       reset_map:
         control: false
@@ -117,7 +126,6 @@ content:
         minZoom: 1
         maxZoom: 18
         zoomFiner: 0
-      weight: ''
       icon:
         iconType: html
         iconUrl: ''
@@ -145,6 +153,9 @@ content:
         control: false
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
         include_path: false
+      fullscreen:
+        control: false
+        options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       geocoder:
         control: false
@@ -160,6 +171,7 @@ content:
           zoom: 16
           popup: false
           options: ''
+      weight: ''
     third_party_settings: {  }
     weight: 16
     region: content
@@ -240,6 +252,30 @@ content:
       inline: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_ptv_coordinates:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 20
     region: content
   field_service_channel_type:
     type: list_default
