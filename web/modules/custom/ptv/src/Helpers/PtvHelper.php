@@ -46,17 +46,19 @@ class PtvHelper {
   /**
    * Returns an array of item's data.
    */
-  public function prepareMigrateData($key, $langcode, $id) {
+  public function prepareMigrateData($key, $langcode, $id, $skip_missing_translations = FALSE) {
 
     $ptv_service = \Drupal::service('ptv.api_service');
     $data = [];
-    $translations = [];
+    $translation_missing = TRUE;
+
     switch ($key) {
       case 'services':
         $object = $ptv_service->getService($id);
         $ontology_terms = [];
         $target_groups = [];
         $service_classes = [];
+
         foreach ($object->serviceNames as $value) {
           if ($value->type == 'Name') {
             $name = $value->value;
@@ -65,10 +67,23 @@ class PtvHelper {
             }
             if ($value->language == $langcode) {
               $name = $value->value;
+              $translation_missing = FALSE;
               break;
             }
           }
         }
+
+        // Skip an empty translation.
+        if ($skip_missing_translations && $translation_missing) {
+          $data = [
+            'id' => $id,
+            'name' => $name ?? $id,
+            'langcode' => FALSE,
+          ];
+
+          break;
+        }
+
         foreach ($object->serviceDescriptions as $value) {
           if ($value->language == $langcode) {
             switch ($value->type) {
@@ -127,7 +142,7 @@ class PtvHelper {
 
         $data = [
           'id' => $id,
-          'name' => $name,
+          'name' => $name ?? $id,
           'langcode' => $langcode,
           'summary' => $summary ?? '',
           'description' => $description ?? '',
@@ -144,6 +159,15 @@ class PtvHelper {
       case 'service_channels':
 
         $object = $ptv_service->getServiceChannel($id);
+        $services = [];
+        $address = [];
+        $coordinates = [];
+        $langs = [];
+        $phone_numbers = [];
+        $ontology_terms = [];
+        $opening_hours = [];
+        $accessibility = '';
+
         foreach ($object->serviceChannelNames as $value) {
           if ($value->type == 'Name') {
             $name = $value->value;
@@ -152,21 +176,26 @@ class PtvHelper {
             }
             if ($value->language == $langcode) {
               $name = $value->value;
+              $translation_missing = FALSE;
               break;
             }
           }
         }
-        $services = [];
+
+        // Skip an empty translation.
+        if ($skip_missing_translations && $translation_missing) {
+          $data = [
+            'id' => $id,
+            'name' => $name ?? $id,
+            'langcode' => FALSE,
+          ];
+
+          break;
+        }
+
         foreach ($object->services as $value) {
           $services[] = $value->service->id;
         }
-        $address = [];
-        $coordinates = [];
-        $langs = [];
-        $phone_numbers = [];
-        $ontology_terms = [];
-        $opening_hours = [];
-        $accessibility = '';
 
         foreach ($object->serviceChannelDescriptions as $value) {
           if ($value->language == $langcode) {
