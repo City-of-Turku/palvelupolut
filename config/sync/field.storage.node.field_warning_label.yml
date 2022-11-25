@@ -1,0 +1,21 @@
+uuid: f88cd39b-395e-4a7e-964f-8c2dcaca097c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_warning_label
+field_name: field_warning_label
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

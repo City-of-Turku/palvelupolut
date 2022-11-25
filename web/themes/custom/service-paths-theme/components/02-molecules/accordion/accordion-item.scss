@@ -23,12 +23,15 @@
     }
 
     .accordion-item__warning-accordion-heading {
+      display: flex;
+
       .fontawesome-icon {
+        flex: 0 0 auto;
         width: space(1.25);
         height: space(1.25);
         top: space(0.125);
         position: relative;
-        margin-right: space(1);
+        margin-right: space(1.25);
       }
     }
   }
@@ -86,6 +89,7 @@
 
     .text-long {
       margin-bottom: 0;
+      font-size: inherit;
     }
   }
 

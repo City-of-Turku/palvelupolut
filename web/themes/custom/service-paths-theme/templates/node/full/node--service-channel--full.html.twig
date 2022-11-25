@@ -111,7 +111,16 @@
   {% endblock %}
 
   {% block page_content %}
-    {{ content.field_warning }}
+    {% if content.field_warning_label['#items'].getValue() and content.field_warning_message['#items'].getValue() %}
+      {% include '@molecules/accordion/accordion.twig' with {
+        accordion__modifiers: ['content-start', 'warning'],
+        accordion__items: [{
+          'accordion__summary': content.field_warning_label,
+          'accordion__content': content.field_warning_message,
+        }],
+      } %}
+    {% endif %}
+
     {{ content.field_description }}
     {{ content.field_paragraphs }}
   {% endblock %}
