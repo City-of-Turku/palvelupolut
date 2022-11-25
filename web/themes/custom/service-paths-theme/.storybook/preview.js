@@ -13,6 +13,8 @@ import '../components/style.scss';
 
 // If in a Drupal project, it's recommended to import a symlinked version of drupal.js.
 import './_drupal.js';
+import './jquery-global.js';
+import once from 'jquery-once';
 
 // Add global types to the Storybook toolbar.
 export const globalTypes = {

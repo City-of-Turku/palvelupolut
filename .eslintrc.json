@@ -11,7 +11,8 @@
     "browser": true
   },
   "globals": {
-    "Drupal": true
+    "Drupal": true,
+    "drupalSettings": true
   },
   "rules": {
     "strict": "off",

@@ -8,7 +8,7 @@ list_links__items:
     url: '#'
     icon: 'arrow-right'
   - title: 'External link'
-    url: '#'
+    url: 'https://www.google.com'
     icon: 'globe'
     modifiers:
       - 'external'
@@ -23,4 +23,4 @@ attachment_links__items:
 box_links__cta: 'Sähköiseen asiointiin'
 
 box_links__open_text: "Poista omista valinnoista"
-box_links__button_link: "google.com"
+box_links__button_link: "https://www.google.com"

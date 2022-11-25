@@ -75,6 +75,8 @@
   }
 
   &__content {
+    word-break: break-word;
+
     .accordion-item--white & {
       margin: 0 space(1.5);
       padding: space(0.75) 0;

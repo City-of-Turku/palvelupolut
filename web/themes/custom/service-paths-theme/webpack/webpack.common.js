@@ -11,11 +11,11 @@ const componentsDir = path.resolve(rootDir, 'components');
 function getEntries(pattern) {
   const entries = {};
 
-  // glob.sync(pattern).forEach((file) => {
-  //   const filePath = file.split('components/')[1];
-  //   const newfilePath = `js/${filePath.replace('.js', '')}`;
-  //   entries[newfilePath] = file;
-  // });
+  glob.sync(pattern).forEach((file) => {
+    const filePath = file.split('components/')[1];
+    const newfilePath = `js/${filePath.replace('.js', '')}`;
+    entries[newfilePath] = file;
+  });
 
   entries.svgSprite = path.resolve(webpackDir, 'svgSprite.js');
   entries.css = path.resolve(webpackDir, 'css.js');

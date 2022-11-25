@@ -1,6 +1,7 @@
 .text-long {
   margin-bottom: var(--space-elements);
   font-size: $font-size--base;
+  word-break: break-word;
 
   p {
     @extend .paragraph;
