@@ -60,6 +60,11 @@ a {
   @include link;
 }
 
+b,
+strong {
+  font-weight: 700;
+}
+
 ul {
   list-style-type: square;
 }
