@@ -23,7 +23,8 @@ dependencies:
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
-    - field.field.node.service_channel.field_warning
+    - field.field.node.service_channel.field_warning_label
+    - field.field.node.service_channel.field_warning_message
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
@@ -70,7 +71,7 @@ third_party_settings:
         required_fields: true
     group_paragraphs:
       children:
-        - field_warning
+        - group_warning_message
         - field_paragraphs
       label: Paragraphs
       region: content
@@ -137,6 +138,21 @@ third_party_settings:
         classes: ''
         id: ''
         formatter: closed
+        description: ''
+        required_fields: true
+    group_warning_message:
+      children:
+        - field_warning_label
+        - field_warning_message
+      label: Varoitusviesti
+      region: content
+      parent_name: group_paragraphs
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
         description: ''
         required_fields: true
 id: node.service_channel.default
@@ -213,7 +229,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 32
+    weight: 11
     region: content
     settings:
       sidebar: true
@@ -244,7 +260,7 @@ content:
     third_party_settings: {  }
   field_paragraphs:
     type: paragraphs_classic_asymmetric
-    weight: 10
+    weight: 8
     region: content
     settings:
       title: Paragraph
@@ -348,28 +364,21 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_warning:
-    type: double_field
-    weight: 9
+  field_warning_label:
+    type: string_textfield
+    weight: 6
     region: content
     settings:
-      first:
-        type: textfield
-        label_display: block
-        size: 100
-        placeholder: ''
-        label: Ok
-        cols: 10
-        rows: 5
-      second:
-        type: textarea
-        label_display: block
-        size: 10
-        placeholder: ''
-        label: Ok
-        cols: 10
-        rows: 3
-      inline: false
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_warning_message:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
     third_party_settings: {  }
   field_webpage:
     type: link_default

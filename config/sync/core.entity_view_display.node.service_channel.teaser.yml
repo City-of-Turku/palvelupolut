@@ -24,7 +24,8 @@ dependencies:
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
-    - field.field.node.service_channel.field_warning
+    - field.field.node.service_channel.field_warning_label
+    - field.field.node.service_channel.field_warning_message
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
@@ -63,7 +64,8 @@ hidden:
   field_service_channel_type: true
   field_services: true
   field_tags: true
-  field_warning: true
+  field_warning_label: true
+  field_warning_message: true
   field_webpage: true
   langcode: true
   links: true
