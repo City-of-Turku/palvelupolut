@@ -12,4 +12,4 @@ contact_card__items:
     url: '#'
     icon: 'mailbox'
 contact_card__link_text: 'Read More'
-contact_card__link_url: '/'
+contact_card__link_url: 'https://www.turku.fi'

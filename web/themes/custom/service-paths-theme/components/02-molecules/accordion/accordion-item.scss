@@ -5,11 +5,6 @@
     border-bottom: space(0.125) solid;
   }
 
-  .fontawesome-icon {
-    width: 1.5em;
-    height: 1.5em;
-  }
-
   &--warning {
     color: color(text-error);
 
@@ -63,6 +58,11 @@
       margin: 0 space(1.5);
     }
 
+    .fontawesome-icon {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
     .heading {
       font-size: $font-size--large-1 !important;
       margin: 0 !important;
@@ -96,8 +96,10 @@
   }
 
   &[open] {
-    .fontawesome-icon {
-      transform: rotate(180deg);
+    .accordion-item__heading {
+      .fontawesome-icon {
+        transform: rotate(180deg);
+      }
     }
 
     .accordion-item__warning-accordion-heading {
