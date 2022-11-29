@@ -167,13 +167,15 @@
   content_summary__lead_text: lead_text,
   content_summary__number_heading: type == 'ServiceLocation' ? 'Phone'|t : '',
   content_summary__number_lead_text: phone_nr,
-  content_summary__link_text: type == 'ServiceLocation' ? '' : 'Read more'|t,
-  content_summary__link_url: type == 'ServiceLocation' ? '' : url,
+  content_summary__link_text: '',
+  content_summary__link_url: '',
   content_summary__open_text: button,
   content_summary__open_url: button_url,
   content_summary__button_link_modifiers: link_modifiers,
   content_summary__icon_before: type_mapping[type],
   content_summary__icon_after: '',
+  content_summary__read_more_label: node.field_read_more_label.value ? content.field_read_more_label : 'Read more'|t,
+  content_summary__read_more_content: type != 'ServiceLocation' and node.field_description.value ? content.field_description : '',
 } %}
 
 

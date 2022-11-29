@@ -29,5 +29,9 @@
 .page-content--full-width .accordion {
   @include above($width-large) {
     max-width: calc(100% - #{$width--sidebar});
+
+    &--within {
+      max-width: 100%;
+    }
   }
 }

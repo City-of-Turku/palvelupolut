@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
+    - field.field.node.service_channel.field_read_more_label
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
@@ -46,6 +47,7 @@ third_party_settings:
         - group_sidebar
         - group_contacts
         - group_ptv
+        - group_content_summary
       label: Tabs
       region: content
       parent_name: ''
@@ -153,6 +155,21 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        description: ''
+        required_fields: true
+    group_content_summary:
+      children:
+        - field_read_more_label
+      label: 'Content Summary'
+      region: content
+      parent_name: group_tabs
+      weight: 27
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
         description: ''
         required_fields: true
 id: node.service_channel.default
@@ -343,6 +360,14 @@ content:
   field_ptv_id:
     type: string_textfield
     weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_read_more_label:
+    type: string_textfield
+    weight: 33
     region: content
     settings:
       size: 60
