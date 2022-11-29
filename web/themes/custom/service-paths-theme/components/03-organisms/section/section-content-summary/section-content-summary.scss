@@ -27,6 +27,7 @@
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
     box-shadow: none;
+    border: 2px solid var(--color-background-dark);
     border-radius: space(0.75);
     background-color: color(background);
     padding: space();
