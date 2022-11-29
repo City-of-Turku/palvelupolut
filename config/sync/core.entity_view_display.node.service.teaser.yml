@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.service.field_requirements_heading
     - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
+    - field.field.node.service.field_service_type_label_locatio
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
@@ -56,6 +57,7 @@ hidden:
   field_requirements_heading: true
   field_requirements_links: true
   field_service_classes: true
+  field_service_type_label_locatio: true
   field_tags: true
   field_target_groups: true
   field_user_instruction: true

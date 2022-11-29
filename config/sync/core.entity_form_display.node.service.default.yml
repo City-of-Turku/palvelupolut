@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.service.field_requirements_heading
     - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
+    - field.field.node.service.field_service_type_label_locatio
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
@@ -39,6 +40,7 @@ third_party_settings:
         - group_hero
         - group_paragraphs
         - group_ptv
+        - group_service_channels
       label: Tabs
       region: content
       parent_name: ''
@@ -97,7 +99,7 @@ third_party_settings:
       label: PTV
       region: content
       parent_name: group_tabs
-      weight: 18
+      weight: 17
       format_type: tab
       format_settings:
         classes: ''
@@ -114,6 +116,21 @@ third_party_settings:
       format_type: tab
       format_settings:
         classes: ''
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_service_channels:
+      children:
+        - field_service_type_label_locatio
+      label: 'Service channels'
+      region: content
+      parent_name: group_tabs
+      weight: 18
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
         id: ''
         formatter: closed
         description: ''
@@ -194,6 +211,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_paragraphs:
     type: paragraphs_classic_asymmetric
@@ -247,6 +265,14 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_service_type_label_locatio:
+    type: string_textfield
+    weight: 43
+    region: content
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }

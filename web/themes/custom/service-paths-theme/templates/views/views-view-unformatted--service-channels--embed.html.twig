@@ -22,13 +22,6 @@
 {% set section_content_summary__modifiers = section_content_summary__modifiers|default([]) %}
 
 <div {{ bem(section_content_summary__base_class, section_content_summary__modifiers, section_content_summary__blockname) }}>
-  {% include "@atoms/text/heading/heading.twig" with {
-    heading__level: 3,
-    heading__base_class: "title-group",
-    heading__blockname: content_summary__base_class,
-    heading: title|striptags,
-  } %}
-
   {% set ptv_id = null %}
   {% set ptv_type = null %}
 
@@ -47,14 +40,22 @@
     {% endfor %}
   {% endset %}
 
+  {% if ptv_type == 'ServiceLocation' and view.current_entity.field_service_type_label_locatio.value %}
+    {% set title = view.current_entity.field_service_type_label_locatio.value %}
+  {% endif %}
+
+  {% include "@atoms/text/heading/heading.twig" with {
+    heading__level: 3,
+    heading__base_class: "title-group",
+    heading__blockname: content_summary__base_class,
+    heading: title|striptags,
+  } %}
+
   {% if rows|length > 2 %}
     <div {{ bem("read-more-link", [], content_summary__base_class) }}>
       {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
         fontawesome_icon__name: "arrow-right",
       } %}
-
-      {% set query_type = '?type[' ~ ptv_type ~ ']' %}
-
 
       {% if ptv_type is not null %}
         {% set url = '/service-channels/' ~ ptv_id ~ '?type%5B' ~ ptv_type ~ '%5D=' ~ ptv_type %}
