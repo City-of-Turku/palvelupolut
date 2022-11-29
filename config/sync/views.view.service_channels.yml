@@ -371,7 +371,7 @@ display:
     display_plugin: entity_view
     position: 1
     display_options:
-      title: Asiointikanavat
+      title: 'What are the different ways to get this service?'
       fields:
         field_service_channel_type:
           id: field_service_channel_type
