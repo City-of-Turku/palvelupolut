@@ -42,6 +42,8 @@
 
   {% if ptv_type == 'ServiceLocation' and view.current_entity.field_service_type_label_locatio.value %}
     {% set title = view.current_entity.field_service_type_label_locatio.value %}
+  {% elseif ptv_type == 'EChannel' %}
+    {% set title = 'Do you want to use the e-service?'|t %}
   {% endif %}
 
   {% include "@atoms/text/heading/heading.twig" with {
