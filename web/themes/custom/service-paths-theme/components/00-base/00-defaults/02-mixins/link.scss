@@ -21,6 +21,10 @@
 
     outline: 1px solid color(accent);
     outline-offset: 1px;
+
+    &:hover {
+      @include link--hover;
+    }
   }
 }
 
@@ -34,9 +38,6 @@
 
 @mixin link-focus($width: $border-width) {
   box-shadow: inset 0 -0.1875rem 0 -0.1rem var(--color-primary);
-  &:hover {
-    box-shadow: inset 0 -6ex 0 0 var(--color-text);
-  }
 }
 
 /*

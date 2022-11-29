@@ -51,13 +51,15 @@
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0;
-    background-color: transparent;
-    color: color(text);
+    background-color: var(--color-background-dark);
+    color: var(--color-text-inverse);
     text-decoration: underline;
     border: 2px solid;
-    &:focus:hover {
-      box-shadow: inset 0 -6ex 0 0 var(--color-text);
-      color: var(--color-text-inverse);
+
+    &:focus,
+    &:hover {
+      box-shadow: inset 0 -10ex 0 0 var(--color-text-inverse);
+      color: var(--color-text);
     }
   }
 

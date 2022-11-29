@@ -96,10 +96,6 @@
     padding: space(0.75) space();
     margin-top: space();
 
-    &:hover {
-      box-shadow: inset 0 -8ex 0 0 var(--color-text);
-    }
-
     &__text {
       font-family: 'Lexend', serif;
       font-size: $font-size--small-1;
