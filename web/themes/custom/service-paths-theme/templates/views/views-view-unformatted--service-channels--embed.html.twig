@@ -26,25 +26,26 @@
     heading__level: 3,
     heading__base_class: "title-group",
     heading__blockname: content_summary__base_class,
-    heading: title|striptags ~ ' (' ~ count_results ~ ' ' ~ 'pcs'|t ~ ')',
+    heading: title|striptags,
   } %}
 
   {% set ptv_id = null %}
   {% set ptv_type = null %}
 
-  {% for row in rows[:2] %}
-    <div {{ bem("inner", [], section_content_summary__base_class) }}>
-      {% if row.content['#row']._relationship_entities.field_services.field_ptv_id.value and ptv_id is null %}
-        {% set ptv_id = row.content['#row']._relationship_entities.field_services.field_ptv_id.value %}
-      {% endif %}
-      {% if row.content['#row']._entity.field_service_channel_type[0].value and ptv_type is null %}
-        {% set ptv_type = row.content['#row']._entity.field_service_channel_type[0].value %}
-      {% endif %}
+  {% set rows_content %}
+    {% for row in rows[:2] %}
+      <div {{ bem("inner", [], section_content_summary__base_class) }}>
+        {% if row.content['#row']._relationship_entities.field_services.field_ptv_id.value and ptv_id is null %}
+          {% set ptv_id = row.content['#row']._relationship_entities.field_services.field_ptv_id.value %}
+        {% endif %}
+        {% if row.content['#row']._entity.field_service_channel_type[0].value and ptv_type is null %}
+          {% set ptv_type = row.content['#row']._entity.field_service_channel_type[0].value %}
+        {% endif %}
 
-      {{- row.content -}}
-    </div>
-  {% endfor %}
-
+        {{- row.content -}}
+      </div>
+    {% endfor %}
+  {% endset %}
 
   {% if rows|length > 2 %}
     <div {{ bem("read-more-link", [], content_summary__base_class) }}>
@@ -62,9 +63,11 @@
       {% endif %}
 
       {% include "@atoms/links/link/link.twig" with {
-        link__content: 'See all'|t,
+        link__content: 'See all'|t  ~ ' (' ~ count_results ~ ' ' ~ 'pcs'|t ~ ')',
         link__url: url,
       } %}
     </div>
   {% endif %}
+
+  {{ rows_content }}
 </div>
