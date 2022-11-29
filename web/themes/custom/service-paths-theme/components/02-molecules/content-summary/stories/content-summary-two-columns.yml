@@ -1,0 +1,51 @@
+content_summary__title: 'Varhaiskasvatuksen nykyiset asiakkaat, sähköinen palvelu'
+content_summary__main_text: 'Voit hoitaa digitaalisessa palvelussa muun muassa seuraavia asioita: tuloselvitykset, paikan vastaanottaminen ja siirto toiseen varhaiskasvatuspaikkaan.'
+content_summary__heading: ''
+content_summary__lead_text: |
+  <div class="contact-card double-field-unformatted-list">
+    <ul class="contact-card__link-list">
+      <li class="contact-card__item">
+        <div class="contact-card__link-with-icon">
+          <svg class="fontawesome-icon" aria-hidden="true">
+            <use xlink:href="sprites/fontawesome.svg#clock"></use>
+          </svg>
+          <div class="contact-card__title">
+            Palvelupaikan aukioloajat
+          </div>
+        </div>
+        <div class="contact-card__text">
+          Maanantai - Tiistai
+        </div>
+        <div class="contact-card__text">
+          9.00 - 15.00
+        </div>
+      </li>
+      <li class="contact-card__item">
+        <div class="contact-card__text">
+          Keskiviikko
+        </div>
+        <div class="contact-card__text">
+          9.00 - 12.00
+        </div>
+      </li>
+      <li class="contact-card__item">
+        <div class="contact-card__text">
+          Torstai - Perjantai
+        </div>
+        <div class="contact-card__text">
+          9.00 - 15.00
+        </div>
+      </li>
+    </ul>
+  </div>
+content_summary__link_url: ''
+content_summary__link_text: ''
+content_summary__open_text: "Siirry digitaaliseen palveluun"
+content_summary__open_url: "https://www.turku.fi"
+content_summary__icon_before: "laptop"
+content_summary__icon_after:  ""
+content_summary__read_more_label: "Lue lisää digitaalisista palveluista"
+content_summary__read_more_content: |
+  <h5>Ensimmäinen luku</h5>
+  <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ym­päristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>
+  <p>Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, olivat langenneet sille osaksi jo ison jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan. - Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</p>

@@ -6,10 +6,14 @@
   padding: space(2);
   margin-bottom: space(1);
   flex-direction: column;
-  gap: space(2);
+  gap: space(1) space(2);
 
   @include above($width-xl) {
     flex-direction: row;
+  }
+
+  .heading {
+    margin-bottom: space(2);
   }
 
   &__text {
@@ -40,7 +44,8 @@
           max-width: 50%;
         }
 
-        > .content-summary__text {
+        > .content-summary__text,
+        > .link {
           max-width: 75%;
         }
       }
@@ -72,7 +77,19 @@
       letter-spacing: $letter-spacing--large;
       line-height: $line-height--small;
     }
+
+    p {
+      font-size: $font-size--small-1;
+      margin: 0;
+    }
   }
+
+  &__read-more {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: space(-2);
+  }
+
   .link--enhanced {
     @include button-with-icon;
 
@@ -92,11 +109,15 @@
       text-align: center;
     }
 
-    svg {
+    > .fontawesome-icon:first-child {
       margin-right: space();
       width: space(1.25);
       height: space(1.25);
       position: relative;
+    }
+
+    .fontawesome-icon {
+      flex: 0 0 auto;
     }
 
     .fontawesome-icon--after {
@@ -111,10 +132,7 @@
       }
     }
   }
-  p {
-    font-size: $font-size--small-1;
-    margin: 0;
-  }
+
   .contact-card {
     .contact-card__title,
     .contact-card__text {

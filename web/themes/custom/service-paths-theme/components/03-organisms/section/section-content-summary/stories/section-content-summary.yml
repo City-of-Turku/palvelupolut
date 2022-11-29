@@ -1,26 +1,70 @@
 section_content_summary__title: "Section Content Summary"
 section_content_summary__items:
   - placeholder: true
-    title: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
+    title: 'Asemanseudun päiväkoti (Käsityöläiskatu 20)'
     heading: 'Osoite'
-    lead_text: 'Pyörämäentie 412345 Palpola'
-    link__url: '#'
-    link_text: 'Tutustu kohteeseen'
-    open_text: "Siirry verkkoasiointtiin"
+    lead_text: 'Käsityöläiskatu 20<br />20100 TURKU'
+    link__url: ''
+    link_text: ''
+    open_url: '#'
+    open_text: "Siirry tietokortille"
     icon_before: "arrow-right"
-    icon_after: "external-link-alt"
+    icon_after: ""
     number_heading: 'Puhelin'
-    number_lead_text: '02 334 4567'
+    number_lead_text: '050 313 1755'
   - placeholder: true
-    title: 'Varhaiskasvatuksen sähköinen asiointi, nykyiset asiakkaat'
-    heading: 'Osoite'
-    lead_text: 'Pyörämäentie 412345 Palpola'
-    link__url: '#'
-    link_text: 'Tutustu kohteeseen'
-    open_text: "Siirry verkkoasiointtiin"
-    icon_before: "arrow-right"
-    icon_after: "external-link-alt"
-    number_heading: 'Puhelin'
-    number_lead_text: '02 334 4567'
-section_content_summary__link_text: 'Read more'
-section_content_summary__link_url: '/front'
+    title: 'Varhaiskasvatuksen nykyiset asiakkaat, sähköinen palvelu'
+    heading: ''
+    lead_text: |
+      <div class="contact-card double-field-unformatted-list">
+          <ul class="contact-card__link-list">
+            <li class="contact-card__item">
+              <div class="contact-card__link-with-icon">
+                <svg class="fontawesome-icon" aria-hidden="true">
+                  <use xlink:href="sprites/fontawesome.svg#clock"></use>
+                </svg>
+                <div class="contact-card__title">
+                  Palvelupaikan aukioloajat
+                </div>
+              </div>
+              <div class="contact-card__text">
+                Maanantai - Tiistai
+              </div>
+              <div class="contact-card__text">
+                9.00 - 15.00
+              </div>
+            </li>
+            <li class="contact-card__item">
+              <div class="contact-card__text">
+                Keskiviikko
+              </div>
+              <div class="contact-card__text">
+                9.00 - 12.00
+              </div>
+            </li>
+            <li class="contact-card__item">
+              <div class="contact-card__text">
+                Torstai - Perjantai
+              </div>
+              <div class="contact-card__text">
+                9.00 - 15.00
+              </div>
+            </li>
+          </ul>
+        </div>
+    main_text: '<p>Voit hoitaa digitaalisessa palvelussa muun muassa seuraavia asioita: tuloselvitykset, paikan vastaanottaminen ja siirto toiseen varhaiskasvatuspaikkaan.</p>'
+    link__url: ''
+    link_text: ''
+    open_url: 'https://www.turku.fi'
+    open_text: "Siirry digitaaliseen palveluun"
+    icon_before: "laptop"
+    icon_after: ""
+    number_heading: ''
+    number_lead_text: ''
+    read_more_label: "Lue lisää digitaalisista palveluista"
+    read_more_content: |
+      <h5>Ensimmäinen luku</h5>
+      <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ym­päristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>
+      <p>Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, olivat langenneet sille osaksi jo ison jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan. - Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</p>
+section_content_summary__link_text: 'Näytä kaikki (7kpl)'
+section_content_summary__link_url: '#'

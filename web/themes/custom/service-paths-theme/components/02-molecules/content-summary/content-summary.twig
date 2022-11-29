@@ -94,4 +94,18 @@
     {% endif %}
   </div>
 
+  {% if content_summary__read_more_label and content_summary__read_more_content %}
+    <div {{ bem("read-more", [], content_summary__base_class) }}  >
+      {% include "@molecules/accordion/accordion.twig" with {
+        accordion__modifiers: ['white', 'within'],
+        accordion__items: [
+          {
+            accordion__summary: content_summary__read_more_label,
+            accordion__content: content_summary__read_more_content,
+          },
+        ]
+      } %}
+    </div>
+  {% endif %}
+
 </div>

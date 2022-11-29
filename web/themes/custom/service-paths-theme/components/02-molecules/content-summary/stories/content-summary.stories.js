@@ -8,7 +8,7 @@ import {
 import contentSummaryTemplate from '../content-summary.twig';
 
 import contentSummaryData from './content-summary.yml';
-import contentSummaryNoPhoneData from './content-summary-no-phone.yml';
+import contentSummaryTwoColumnsData from './content-summary-two-columns.yml';
 
 /**
  * Storybook Definition.
@@ -20,11 +20,11 @@ export const contentSummary = () => (
     <CollectionWrapper>
       <ComponentWrapper
         markup={contentSummaryTemplate(contentSummaryData)}
-        label="Content summary"
+        label="Content summary, three column"
       />
       <ComponentWrapper
-        markup={contentSummaryTemplate(contentSummaryNoPhoneData)}
-        label="Content summary, without phone numbers"
+        markup={contentSummaryTemplate(contentSummaryTwoColumnsData)}
+        label="Content summary, two columns"
       />
     </CollectionWrapper>
   </>
