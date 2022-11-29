@@ -106,7 +106,7 @@
   {% if node.field_webpage.0.url %}
     {% set button_url = node.field_webpage.0.url.toString %}
   {% endif %}
-  {% set heading = 'Service Hours'|t %}
+  {% set heading = '' %}
   {% set lead_text = content.field_opening_hours %}
   {% set main_text = node.field_description.summary %}
 
@@ -115,7 +115,7 @@
   {% set button = phone_nr %}
   {% set phone_nr = '' %}
   {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second|replace({' ': ''}) %}
-  {% set heading = 'Service Hours'|t %}
+  {% set heading = '' %}
   {% set lead_text = content.field_opening_hours %}
   {% set main_text = node.field_description.summary %}
 
