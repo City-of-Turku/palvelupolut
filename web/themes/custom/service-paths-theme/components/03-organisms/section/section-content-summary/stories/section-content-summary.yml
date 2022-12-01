@@ -15,43 +15,7 @@ section_content_summary__items:
   - placeholder: true
     title: 'Varhaiskasvatuksen nykyiset asiakkaat, sähköinen palvelu'
     heading: ''
-    lead_text: |
-      <div class="contact-card double-field-unformatted-list">
-          <ul class="contact-card__link-list">
-            <li class="contact-card__item">
-              <div class="contact-card__link-with-icon">
-                <svg class="fontawesome-icon" aria-hidden="true">
-                  <use xlink:href="sprites/fontawesome.svg#clock"></use>
-                </svg>
-                <div class="contact-card__title">
-                  Palvelupaikan aukioloajat
-                </div>
-              </div>
-              <div class="contact-card__text">
-                Maanantai - Tiistai
-              </div>
-              <div class="contact-card__text">
-                9.00 - 15.00
-              </div>
-            </li>
-            <li class="contact-card__item">
-              <div class="contact-card__text">
-                Keskiviikko
-              </div>
-              <div class="contact-card__text">
-                9.00 - 12.00
-              </div>
-            </li>
-            <li class="contact-card__item">
-              <div class="contact-card__text">
-                Torstai - Perjantai
-              </div>
-              <div class="contact-card__text">
-                9.00 - 15.00
-              </div>
-            </li>
-          </ul>
-        </div>
+    lead_text: ''
     main_text: '<p>Voit hoitaa digitaalisessa palvelussa muun muassa seuraavia asioita: tuloselvitykset, paikan vastaanottaminen ja siirto toiseen varhaiskasvatuspaikkaan.</p>'
     link__url: ''
     link_text: ''
