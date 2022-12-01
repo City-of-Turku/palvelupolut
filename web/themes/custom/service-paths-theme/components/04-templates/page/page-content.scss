@@ -12,6 +12,10 @@
     width: 100%;
   }
 
+  &__content-section {
+    margin: var(--space-elements) 0;
+  }
+
   &__sidebar-pre-content,
   &__sidebar-post-content {
     grid-column-start: 2;

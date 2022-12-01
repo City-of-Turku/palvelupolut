@@ -59,6 +59,73 @@ function service_paths_theme_preprocess_page(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function service_paths_theme_preprocess_breadcrumb(&$variables) {
+  $request_attributes = \Drupal::request()->attributes;
+  $node = $request_attributes->get('node');
+  $view_mode = $request_attributes->get('view_mode');
+
+  // Add additional breadcrumb item for Service content type view modes that
+  // are used to list service channels by type.
+  if ($view_mode && $node instanceof Node && $node->bundle() === 'service') {
+    $additional_title = '';
+
+    switch ($view_mode) {
+      case 'service_channels_location':
+        $additional_title = $node->field_services_subtitle_location->value ?? t('All locations');
+        break;
+
+      case 'service_channels_e_service':
+        $additional_title = $node->field_services_subtitle_e_servic->value ?? t('All E-Services');
+        break;
+
+      case 'service_channels_phone':
+        $additional_title = $node->field_services_subtitle_phones->value ?? t('All phone numbers');
+        break;
+
+      case 'service_channels_print':
+        $additional_title = $node->field_services_subtitle_prints->value ?? t('All printable forms');
+        break;
+    }
+
+    if ($additional_title) {
+      $variables['breadcrumb'][] = [
+        'text' => $additional_title,
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function service_paths_theme_preprocess_node__service__service_channels_location(&$variables) {
+  _service_paths_theme_service_channels($variables, 'service_channels_embed_locations');
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function service_paths_theme_preprocess_node__service__service_channels_e_service(&$variables) {
+  _service_paths_theme_service_channels($variables, 'service_channels_embed_e_services');
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function service_paths_theme_preprocess_node__service__service_channels_phone(&$variables) {
+  _service_paths_theme_service_channels($variables, 'service_channels_embed_phones');
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function service_paths_theme_preprocess_node__service__service_channels_print(&$variables) {
+  _service_paths_theme_service_channels($variables, 'service_channels_embed_prints');
+}
+
+/**
  * Implements hook_preprocess_node().
  */
 function service_paths_theme_preprocess_node__service_channel(&$variables) {
@@ -75,7 +142,7 @@ function service_paths_theme_preprocess_node__service_channel(&$variables) {
   }
 
   // Fetch the PTV-coordinates.
-  $field_ptv_coordinates = $node->field_ptv_coordinates->get(0);
+  $field_ptv_coordinates = $node->hasField('field_ptv_coordinates') ? $node->field_ptv_coordinates->get(0) : NULL;
   if ($field_ptv_coordinates) {
     $latitude = $field_ptv_coordinates->first;
     $longitude = $field_ptv_coordinates->second;
@@ -261,4 +328,16 @@ function service_paths_theme_theme_suggestions_views_view_unformatted_alter(arra
 function service_paths_theme_get_link_url(Url $url, array $options) {
   $url->setOptions($options);
   return $url->toString();
+}
+
+/**
+ * Helper function to add service channels list related variables.
+ */
+function _service_paths_theme_service_channels(&$variables, $eva_pseudo_field_name) {
+  $service_channels_view = $variables['content'][$eva_pseudo_field_name]['#view'] ?? NULL;
+  if ($service_channels_view) {
+    $service_channels_view->execute();
+  }
+  $variables['service_channels'] = $variables['content'][$eva_pseudo_field_name] ?? '';
+  $variables['service_channels_total'] = $service_channels_view ? $service_channels_view->total_rows : 0;
 }

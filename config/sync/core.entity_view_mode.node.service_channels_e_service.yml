@@ -1,0 +1,10 @@
+uuid: c65cda0c-8f29-448e-b480-1acb9a4387a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.service_channels_e_service
+label: 'Service Channels - E-Service'
+targetEntityType: node
+cache: true

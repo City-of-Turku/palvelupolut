@@ -1,8 +1,9 @@
-uuid: 26a20d62-e8b8-491c-a364-5920fd0f8626
+uuid: 446b73cf-3676-42af-b60a-1d533c598e3c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.service_channels_phone
     - field.field.node.service.field_charge_info
     - field.field.node.service.field_charge_info_heading
     - field.field.node.service.field_charge_info_links
@@ -35,10 +36,10 @@ dependencies:
     - metatag
     - text
     - user
-id: node.service.default
+id: node.service.service_channels_phone
 targetEntityType: node
 bundle: service
-mode: default
+mode: service_channels_phone
 content:
   field_charge_info:
     type: text_default
@@ -174,38 +175,6 @@ content:
     third_party_settings: {  }
     weight: 20
     region: content
-  field_services_subtitle_e_servic:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 22
-    region: content
-  field_services_subtitle_location:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 21
-    region: content
-  field_services_subtitle_phones:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 23
-    region: content
-  field_services_subtitle_prints:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 24
-    region: content
   field_tags:
     type: entity_reference_label
     label: above
@@ -287,5 +256,9 @@ content:
     region: content
 hidden:
   field_ptv_id: true
+  field_services_subtitle_e_servic: true
+  field_services_subtitle_location: true
+  field_services_subtitle_phones: true
+  field_services_subtitle_prints: true
   langcode: true
   links: true

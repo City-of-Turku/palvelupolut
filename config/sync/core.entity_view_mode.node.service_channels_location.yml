@@ -1,0 +1,10 @@
+uuid: 46505c48-5dcc-4ea7-849e-6689b076de66
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.service_channels_location
+label: 'Service Channels - Location'
+targetEntityType: node
+cache: true

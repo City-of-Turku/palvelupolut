@@ -67,57 +67,6 @@
  */
 #}
 
-{% set menu_items = [] %}
-{% if content.field_description|render %}
-	{% set menu_items = menu_items|merge([{
-    title: content.field_description_heading|render|trim
-            ? content.field_description_heading : 'Description'|t,
-    url: '#pg-description',
-    id: 'pg-description',
-  }]) %}
-{% endif %}
-{% if content.field_requirements|render %}
-	{% set menu_items = menu_items|merge([{
-    title: content.field_requirements_heading|render|trim
-            ? content.field_requirements_heading : 'Requirements'|t,
-    url: '#pg-requirements',
-    id: 'pg-requirements',
-  }]) %}
-{% endif %}
-{% if content.field_user_instruction|render %}
-	{% set menu_items = menu_items|merge([{
-    title: content.field_user_instruction_heading|render|trim
-            ? content.field_user_instruction_heading : 'User Instruction'|t,
-    url: '#pg-instruction',
-    id: 'pg-instruction',
-  }]) %}
-{% endif %}
-{% if content.field_charge_info|render %}
-  {% set menu_items = menu_items|merge([{
-    title: content.field_charge_info_heading|render|trim
-            ? content.field_charge_info_heading : 'Charge Information'|t,
-    url: '#pg-charge',
-    id: 'pg-charge',
-  }]) %}
-{% endif %}
-{% for i in content.field_paragraphs['#items']|keys %}
-  {% if node.field_paragraphs[i].entity.field_paragraph_heading.value %}
-    {% set menu_items = menu_items|merge([{
-      title: node.field_paragraphs[i].entity.field_paragraph_heading.value,
-      url: '#pg' ~ node.field_paragraphs[i].entity.id(),
-      id: 'pg' ~ node.field_paragraphs[i].entity.id(),
-    }]) %}
-  {% endif %}
-{% endfor %}
-
-{% set menu_items = menu_items|merge([{
-  title: 'Service Channels'|t,
-  url: '#pg-channels',
-  id: 'pg-channels',
-}]) %}
-
-
-
 {% embed "@templates/page/page-content.twig" with {
   page_sidebar: false,
 } %}
@@ -125,77 +74,24 @@
     {{ title_prefix }}
     {{ title_suffix }}
 
-    {% embed "@molecules/hero/hero.twig" with {
+    {% set lead_text_with_count %}
+      {{ lead_text }} ({{ service_channels_total }}{{ 'pcs'|t }})
+    {% endset %}
+
+    {% include "@molecules/hero/hero.twig" with {
       hero__modifiers: hero__modifiers|default(["light"]),
       hero__title: label,
-      hero__lead_text: node.field_description.summary,
-      with_image: content.field_lead_image|render,
+      hero__subtitle: lead_text_with_count,
+      with_image: ''
     } %}
-      {% if content.field_lead_image|render %}
-        {% block hero_image %}
-          {{ content.field_lead_image }}
-        {% endblock %}
-      {% endif %}
-    {% endembed %}
   {% endblock %}
 
   {% block page_content %}
-
-    {% include "@molecules/navigation/anchor-menu/anchor-menu.twig" with {
-      anchor_menu__items: menu_items,
-    } %}
-
     {% if content.field_description|render %}
       <div id="pg-description" class="page-content__content-section">
-        {% include '@atoms/text/heading/heading.twig' with {
-          heading: content.field_description_heading|render|trim
-                    ? content.field_description_heading : 'Description'|t,
-          heading__level: '2',
-        } %}
         {{ content.field_description }}
-        {{ content.field_description_links }}
       </div>
     {% endif %}
-    {% if content.field_requirements|render %}
-      <div id="pg-requirements" class="page-content__content-section">
-        {% include '@atoms/text/heading/heading.twig' with {
-          heading: content.field_requirements_heading|render|trim
-                    ? content.field_requirements_heading : 'Requirements'|t,
-          heading__level: '2',
-        } %}
-        {{ content.field_requirements }}
-        {{ content.field_requirements_links }}
-      </div>
-    {% endif %}
-    {% if content.field_user_instruction|render %}
-      <div id="pg-instruction" class="page-content__content-section">
-        {% include '@atoms/text/heading/heading.twig' with {
-          heading: content.field_user_instruction_heading|render|trim
-                ? content.field_user_instruction_heading : 'User Instruction'|t,
-          heading__level: '2',
-        } %}
-        {{ content.field_user_instruction }}
-        {{ content.field_user_instruction_links }}
-      </div>
-    {% endif %}
-    {% if content.field_charge_info|render %}
-      <div id="pg-charge" class="page-content__content-section">
-        {% include '@atoms/text/heading/heading.twig' with {
-          heading: content.field_charge_info_heading|render|trim
-                  ? content.field_charge_info_heading : 'Charge Information'|t,
-          heading__level: '2',
-        } %}
-        {{ content.field_charge_info }}
-        {{ content.field_charge_info_links }}
-      </div>
-    {% endif %}
-
-    {{ content.field_paragraphs }}
-
-  {% endblock %}
-
-  {% block page_sidebar_post_content %}
-    {{ content.field_paragraphs_sidebar }}
   {% endblock %}
 
   {% block page_content_post_content %}
@@ -203,9 +99,8 @@
     {% set section_contact_cards__modifiers = section_contact_cards__modifiers|default(["vertical"]) %}
 
     <div id="pg-channels" {{ bem(section_contact_cards__base_class, section_contact_cards__modifiers) }}>
-      {{ content.service_channels_embed }}
+      {{ service_channels }}
     </div>
-
   {% endblock %}
 
 {% endembed %}

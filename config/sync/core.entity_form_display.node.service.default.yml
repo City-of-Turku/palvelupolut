@@ -19,6 +19,10 @@ dependencies:
     - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
     - field.field.node.service.field_service_type_label_locatio
+    - field.field.node.service.field_services_subtitle_e_servic
+    - field.field.node.service.field_services_subtitle_location
+    - field.field.node.service.field_services_subtitle_phones
+    - field.field.node.service.field_services_subtitle_prints
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
@@ -112,7 +116,7 @@ third_party_settings:
       label: Sidebar
       region: hidden
       parent_name: ''
-      weight: 10
+      weight: 16
       format_type: tab
       format_settings:
         classes: ''
@@ -123,6 +127,10 @@ third_party_settings:
     group_service_channels:
       children:
         - field_service_type_label_locatio
+        - field_services_subtitle_location
+        - field_services_subtitle_e_servic
+        - field_services_subtitle_phones
+        - field_services_subtitle_prints
       label: 'Service channels'
       region: content
       parent_name: group_tabs
@@ -207,7 +215,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 42
+    weight: 10
     region: content
     settings:
       sidebar: true
@@ -271,6 +279,38 @@ content:
   field_service_type_label_locatio:
     type: string_textfield
     weight: 43
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_services_subtitle_e_servic:
+    type: string_textfield
+    weight: 45
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_services_subtitle_location:
+    type: string_textfield
+    weight: 44
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_services_subtitle_phones:
+    type: string_textfield
+    weight: 46
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_services_subtitle_prints:
+    type: string_textfield
+    weight: 47
     region: content
     settings:
       size: 60

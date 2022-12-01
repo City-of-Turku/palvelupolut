@@ -60,8 +60,22 @@
       } %}
 
       {% if ptv_type is not null %}
-        {% set url = '/service-channels/' ~ ptv_id ~ '?type%5B' ~ ptv_type ~ '%5D=' ~ ptv_type %}
+        {# Default view mode is the one for ptv_type 'ServiceLocation'. #}
+        {% set url_view_mode = 'service_channels_location' %}
+        {% if ptv_type == 'EChannel' %}
+          {% set url_view_mode = 'service_channels_e_service' %}
+        {% elseif ptv_type == "Phone" %}
+          {% set url_view_mode = 'service_channels_phone' %}
+        {% elseif ptv_type == "PrintableForm" %}
+          {% set url_view_mode = 'service_channels_print' %}
+        {% endif %}
+        {% set url = url('view_mode_page.display_entity', {
+          'view_mode': url_view_mode,
+          'entity_type': 'node',
+          'entity_id': view.current_entity.id()
+        }) %}
       {% else %}
+        {# Fallback is the service channel search. #}
         {% set url = '/service-channels/' ~ ptv_id %}
       {% endif %}
 
