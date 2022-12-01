@@ -80,7 +80,9 @@
       {% endif %}
 
       {% include "@atoms/links/link/link.twig" with {
-        link__content: 'See all'|t  ~ ' (' ~ count_results ~ ' ' ~ 'pcs'|t ~ ')',
+        link__content: 'See all (@count_results pcs)'|t({
+          '@count_results': count_results
+        }),
         link__url: url,
       } %}
     </div>
