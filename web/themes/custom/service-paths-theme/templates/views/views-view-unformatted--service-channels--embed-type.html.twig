@@ -34,7 +34,7 @@
     } %}
 
     {% include "@atoms/links/link/link.twig" with {
-      link__content: 'Return to service page',
+      link__content: 'Return to service page'|t,
       link__url: url('entity.node.canonical', { 'node': view.current_entity.id() })
     } %}
   </div>
