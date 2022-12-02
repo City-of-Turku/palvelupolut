@@ -75,7 +75,9 @@
     {{ title_suffix }}
 
     {% set lead_text_with_count %}
-      {{ lead_text }} ({{ service_channels_total }}{{ 'pcs'|t }})
+      {{ lead_text }} ({{ '@count_results pcs'|t({
+        '@count_results': service_channels_total
+      }) }})
     {% endset %}
 
     {% include "@molecules/hero/hero.twig" with {
