@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_page_attachments_alter().
@@ -24,6 +25,37 @@ function service_paths_theme_page_attachments_alter(array &$page) {
   $page['#attached']['drupalSettings']['servicePathsTheme'] = [
     'iconMarkupExternalLink' => \Drupal::service('renderer')->renderPlain($external_link_icon),
   ];
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function service_paths_theme_preprocess_page(array &$variables) {
+  /** @var \Drupal\Core\Language\Language $language */
+  $language = $variables['language'];
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'] ?? FALSE;
+
+  // Show a message if we're on a node page and node doesn't have
+  // a translation for currently active language.
+  if ($node instanceof Node && !$node->hasTranslation($language->getId())) {
+    $message_text = '';
+    switch ($language->getId()) {
+      case 'fi':
+        $message_text = t('Unfortunately this content is not available in Finnish.');
+        break;
+
+      case 'en':
+        $message_text = t('Unfortunately this content is not available in English.');
+        break;
+
+      case 'sv':
+        $message_text = t('Unfortunately this content is not available in Swedish.');
+        break;
+    }
+
+    $variables['translation_status_message'] = $message_text;
+  }
 }
 
 /**

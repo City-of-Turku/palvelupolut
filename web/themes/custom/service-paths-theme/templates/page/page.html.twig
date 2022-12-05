@@ -39,7 +39,9 @@
 
 {% extends "@templates/page/page.twig" %}
   {% block page_header %}
-    {% embed "@organisms/header/header.twig" %}
+    {% embed "@organisms/header/header.twig" with {
+      warning_message: translation_status_message|default('')
+    } %}
       {% block header_language_menu %}
         {{ drupal_entity("block", "service_paths_theme_language_switcher") }}
       {% endblock %}
