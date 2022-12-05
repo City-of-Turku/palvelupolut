@@ -1,12 +1,12 @@
-uuid: de89de0b-5fde-43d1-8944-65cf4ace75f0
+uuid: 2b684deb-bb67-421f-8d79-ac32d92887f9
 langcode: en
 status: true
 dependencies:
   module:
     - double_field
     - node
-id: node.field_warning
-field_name: field_warning
+id: node.field_ptv_coordinates
+field_name: field_ptv_coordinates
 entity_type: node
 type: double_field
 settings:
@@ -18,7 +18,7 @@ settings:
       scale: 2
       datetime_type: datetime
     second:
-      type: text
+      type: string
       maxlength: 255
       precision: 10
       scale: 2

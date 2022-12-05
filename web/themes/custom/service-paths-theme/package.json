@@ -23,7 +23,10 @@
     "format": "prettier --write \"**/*.{js,yml,scss}\"",
     "lint-staged": "lint-staged"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "jquery-once": "^2.2.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.14",

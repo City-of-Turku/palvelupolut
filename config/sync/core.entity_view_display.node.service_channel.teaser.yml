@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.service_channel.field_accessibility
+    - field.field.node.service_channel.field_accessibility_heading
     - field.field.node.service_channel.field_address
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
@@ -18,11 +19,13 @@ dependencies:
     - field.field.node.service_channel.field_paragraphs_contacts
     - field.field.node.service_channel.field_paragraphs_sidebar
     - field.field.node.service_channel.field_phone_numbers
+    - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
-    - field.field.node.service_channel.field_warning
+    - field.field.node.service_channel.field_warning_label
+    - field.field.node.service_channel.field_warning_message
     - field.field.node.service_channel.field_webpage
     - node.type.service_channel
   module:
@@ -43,6 +46,7 @@ content:
     region: content
 hidden:
   field_accessibility: true
+  field_accessibility_heading: true
   field_address: true
   field_contacts_heading: true
   field_description: true
@@ -55,11 +59,13 @@ hidden:
   field_paragraphs_contacts: true
   field_paragraphs_sidebar: true
   field_phone_numbers: true
+  field_ptv_coordinates: true
   field_ptv_id: true
   field_service_channel_type: true
   field_services: true
   field_tags: true
-  field_warning: true
+  field_warning_label: true
+  field_warning_message: true
   field_webpage: true
   langcode: true
   links: true

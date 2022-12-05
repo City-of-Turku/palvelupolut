@@ -21,6 +21,7 @@ use Drupal\ptv\Helpers\PtvHelper;
  *   languages:
  *    - en
  *    - fi
+ *   skip_missing_translations: false
  * @endcode
  *
  * This will return a single row containing 'constants/entity_type' and
@@ -66,6 +67,13 @@ class ConfigurationSource extends SourcePluginBase {
   protected $languages;
 
   /**
+   * Should we skip missing translations.
+   *
+   * @var bool
+   */
+  protected $skipMissingTranslations;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration) {
@@ -75,6 +83,7 @@ class ConfigurationSource extends SourcePluginBase {
     $this->sourceKey = $configuration['key'];
     $this->defaultLangcode = $configuration['default_langcode'] ?? NULL;
     $this->languages = $configuration['languages'] ?? NULL;
+    $this->skipMissingTranslations = $configuration['skip_missing_translations'] ?? FALSE;
   }
 
   /**
@@ -132,7 +141,8 @@ class ConfigurationSource extends SourcePluginBase {
 
     $id = $row->getSourceProperty('id');
     $langcode = $row->getSourceProperty('langcode');
-    $data = $helper->prepareMigrateData($this->sourceKey, $langcode, $id);
+    $data = $helper->prepareMigrateData($this->sourceKey, $langcode, $id, $this->skipMissingTranslations);
+
     foreach ($data as $key => $value) {
       $row->setSourceProperty($key, $value);
     }

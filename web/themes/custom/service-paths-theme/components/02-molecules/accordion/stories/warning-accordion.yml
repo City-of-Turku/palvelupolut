@@ -3,5 +3,5 @@ accordion__items:
     accordion__content: 'The detail of the accordion item.'
   - accordion__summary: 'Title of the accordion item 2'
     accordion__content: 'The detail of the accordion item.'
-accordion_item__modifiers:
+accordion__modifiers:
   - 'warning'

@@ -9,6 +9,7 @@ source:
     - fi
     - en
     - sv
+  skip_missing_translations: true
   constants:
     uid: 1
 process:
@@ -20,7 +21,11 @@ process:
     plugin: default_value
     default_value: service
   title: name
-  langcode: langcode
+  langcode:
+    plugin: skip_on_empty
+    method: row
+    source: langcode
+    message: 'Translation missing'
 
   field_description/value: description
   field_description/summary: summary

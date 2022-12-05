@@ -16,7 +16,8 @@
     {% for item in accordion__items %}
       {% include '@molecules/accordion/accordion-item.twig' with {
         accordion__summary: item.accordion__summary,
-        accordion__content: item.accordion__content
+        accordion__content: item.accordion__content,
+        accordion_item__modifiers: accordion__modifiers
       } %}
     {% endfor %}
   {% endblock %}

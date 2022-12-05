@@ -8,12 +8,6 @@ exposeDomains:
   service-paths-io:
     hostname: service-paths.dev.wdr.io
 
-nginx:
-  basicauth:
-    credentials:
-      username: wunder
-      password: sp
-
 memcached:
   enabled: false
 

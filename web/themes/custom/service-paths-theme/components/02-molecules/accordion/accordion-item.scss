@@ -5,11 +5,6 @@
     border-bottom: space(0.125) solid;
   }
 
-  .fontawesome-icon {
-    width: 1.5em;
-    height: 1.5em;
-  }
-
   &--warning {
     color: color(text-error);
 
@@ -23,13 +18,27 @@
     }
 
     .accordion-item__warning-accordion-heading {
+      display: flex;
+
       .fontawesome-icon {
+        flex: 0 0 auto;
         width: space(1.25);
         height: space(1.25);
         top: space(0.125);
         position: relative;
-        margin-right: space(1);
+        margin-right: space(1.25);
       }
+    }
+  }
+
+  &--white {
+    background: color(background);
+    border-top: none;
+    border-radius: space(.75);
+    margin-bottom: space(1);
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 
@@ -45,9 +54,22 @@
     letter-spacing: 0;
     line-height: $line-height--heading;
 
+    .accordion-item--white & {
+      margin: 0 space(1.5);
+    }
+
+    .fontawesome-icon {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
     .heading {
       font-size: $font-size--large-1 !important;
       margin: 0 !important;
+
+      .accordion-item--white & {
+        font-size: $font-size--small-1 !important;
+      }
     }
 
     &::marker {
@@ -56,18 +78,28 @@
   }
 
   &__content {
+    word-break: break-word;
+
+    .accordion-item--white & {
+      margin: 0 space(1.5);
+      padding: space(0.75) 0;
+    }
+
     p:first-child {
       margin-top: 0;
     }
 
     .text-long {
       margin-bottom: 0;
+      font-size: inherit;
     }
   }
 
   &[open] {
-    .fontawesome-icon {
-      transform: rotate(180deg);
+    .accordion-item__heading {
+      .fontawesome-icon {
+        transform: rotate(180deg);
+      }
     }
 
     .accordion-item__warning-accordion-heading {

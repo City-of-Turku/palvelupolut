@@ -78,15 +78,6 @@
     display: flex;
     flex-direction: column;
 
-    .fontawesome-icon {
-      margin-right: space(1.25);
-      width: space(1.25);
-      height: space(1.25);
-      position: relative;
-      display: flex;
-      align-self: center;
-    }
-
     .link {
       color: black;
       font-size: $font-size--small-1;
@@ -111,6 +102,15 @@
     display: flex;
     margin-bottom: space(0.5);
 
+    > .fontawesome-icon {
+      margin-right: space(1.25);
+      width: space(1.25);
+      height: space(1.25);
+      position: relative;
+      display: flex;
+      align-self: center;
+    }
+
     h5 {
       margin: 0;
     }
@@ -122,12 +122,11 @@
     letter-spacing: $letter-spacing--none;
     line-height: $line-height--heading;
     margin-bottom: space(1.5);
-    text-transform: uppercase;
   }
 
   &__link-list {
     &.collapsible {
-      max-height: 185px;
+      max-height: 150px;
       overflow: hidden;
       position: relative;
 

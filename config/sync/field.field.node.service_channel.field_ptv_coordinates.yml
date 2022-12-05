@@ -1,25 +1,25 @@
-uuid: bc1b20e0-767a-403a-af59-c4a9ff6690b1
+uuid: fb2175f1-9df2-41ca-ad0a-bd132770470e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_warning
+    - field.storage.node.field_ptv_coordinates
     - node.type.service_channel
   module:
     - double_field
-id: node.service_channel.field_warning
-field_name: field_warning
+id: node.service_channel.field_ptv_coordinates
+field_name: field_ptv_coordinates
 entity_type: node
 bundle: service_channel
-label: 'Warning message'
+label: 'PTV Coordinates'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   first:
-    label: ''
+    label: Latitude
     list: false
     allowed_values: {  }
     max: null
@@ -28,7 +28,7 @@ settings:
     on_label: 'On'
     off_label: 'Off'
   second:
-    label: ''
+    label: Longitude
     list: false
     allowed_values: {  }
     max: null

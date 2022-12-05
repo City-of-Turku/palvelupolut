@@ -38,27 +38,6 @@
  */
 #}
 
-{% set cards = [] %}
-
 {% for item in items %}
-
-	{% set first = item.content['#item'].getValue.first %}
-	{% set second = item.content['#item'].getValue.second %}
-
-	{% set data = {
-      "info_title": 'Accessibility'|t,
-      "text" : item.content,
-      "icon": 'wheelchair',
-    }
-  %}
-
-	{% set cards = cards|merge([data]) %}
-
+  {{ item.content }}
 {% endfor %}
-
-{% include "@molecules/contact-card/contact-card.twig" with {
-  contact_card__base_class: "collapsible contact-card",
-  contact_card__items: cards,
-  contact_card__link_text: 'Read more'|t,
-  contact_card__link_url: '#',
-} %}

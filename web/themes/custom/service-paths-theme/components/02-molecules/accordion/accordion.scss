@@ -1,6 +1,10 @@
 .accordion {
   margin: var(--space-elements) 0;
 
+  &--content-start {
+    margin-top: 0;
+  }
+
   .heading {
     margin: 0 0 space(1.5);
     font-size: $font-size--large-3;
@@ -9,6 +13,12 @@
       margin: 0 0 space(2);
       font-size: $font-size--large-5;
     }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
 

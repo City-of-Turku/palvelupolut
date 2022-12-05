@@ -3,6 +3,24 @@ version: 2.1
 orbs:
   silta: silta/silta@0.1
 
+jobs:
+  pushcode:
+    docker:
+      - image: wunderio/silta-cicd:v0.1
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "b4:06:fd:95:58:e8:cc:b1:84:35:f3:15:5e:19:11:ca"
+      - checkout
+      - run: ls -al
+      - run: git status
+      - run: git remote add turkugithub git@github.com:City-of-Turku/palvelupolut
+      - run: git config --global user.email "reposync@wunder.io"
+      - run: git config --global user.name "Repository Sync Robot"
+      - run: git checkout ${CIRCLE_BRANCH}
+      - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+      - run: git push -u turkugithub ${CIRCLE_BRANCH}
+
 executors:
   cicd74:
     docker:
@@ -80,3 +98,14 @@ workflows:
           filters:
             branches:
               only: production
+
+      # Push code from master branch to Turku Github repository.
+      - pushcode:
+          name: pushcode
+          context: silta_finland
+          requires:
+            - build-deploy
+          filters:
+            branches:
+              only:
+                - master

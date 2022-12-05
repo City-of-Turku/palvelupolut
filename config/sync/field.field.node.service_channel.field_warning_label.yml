@@ -1,0 +1,19 @@
+uuid: 6058c647-7cdf-4538-a9f7-e707f34350f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_warning_label
+    - node.type.service_channel
+id: node.service_channel.field_warning_label
+field_name: field_warning_label
+entity_type: node
+bundle: service_channel
+label: Label
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

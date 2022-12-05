@@ -1,0 +1,7 @@
+accordion__items:
+  - accordion__summary: 'Title of the accordion item 1'
+    accordion__content: 'The detail of the accordion item.'
+  - accordion__summary: 'Title of the accordion item 2'
+    accordion__content: 'The detail of the accordion item.'
+accordion__modifiers:
+  - 'white'
