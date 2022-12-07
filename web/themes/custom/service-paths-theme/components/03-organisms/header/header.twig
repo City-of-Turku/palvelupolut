@@ -12,6 +12,18 @@
 #}
 {% set header__base_class = "header" %}
 
+{% if warning_message %}
+  {% embed "@molecules/status/status.twig" with {
+    message_list: {
+      'warning': [
+        warning_message,
+      ]
+    },
+    container_classes: ['status-container--pre-header']
+  } %}
+  {% endembed %}
+{% endif %}
+
 <header {{ bem(header__base_class) }}>
   {#
     Keyboard navigation/accessibility link to main content section in

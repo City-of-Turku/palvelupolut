@@ -19,6 +19,7 @@
  *   displaying messages of that specific type.
  * - attributes: HTML attributes for the element, including:
  *   - class: HTML classes.
+ * - container_classes: HTML classes for the status container element.
  */
 #}
 {% set status__base_class = 'status' %}
@@ -31,11 +32,17 @@
 {% for type, messages in message_list %}
   {% set role = (type == 'error') ? 'alert' : 'status' %}
 
-  <div role="alert" aria-label="{{ status_type[type] }}"{{ attributes|without('aria-label') }}>
+  {# Building list element before container to not pollute bem()-results
+     with css-classes from attributes #}
+  {%  set list %}
     <ul {{ bem('list', [], status__base_class)}}>
       {% for message in messages %}
         <li {{ bem(status__base_class, [type])}}>{{ message }}</li>
       {% endfor %}
     </ul>
+  {% endset %}
+
+  <div role="{{ role }}" aria-label="{{ status_type[type] }}"{{ attributes.addClass(container_classes)|without('aria-label') }}>
+    {{ list }}
   </div>
 {% endfor %}
