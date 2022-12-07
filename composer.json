@@ -153,7 +153,8 @@
             "koodimonni/composer-dropin-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpro/grumphp": true
-        }
+        },
+        "process-timeout": 600
     },
     "autoload": {
         "classmap": [
