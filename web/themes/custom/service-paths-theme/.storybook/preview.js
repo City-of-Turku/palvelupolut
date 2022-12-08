@@ -64,4 +64,14 @@ export const parameters = {
   },
 };
 
+// Make sure Drupal behaviours are run on all components.
+export const decorators = [
+  (Story) => {
+    useEffect(() => Drupal.attachBehaviors(), []);
+    return (
+      <Story/>
+    );
+  }
+];
+
 setupTwig(Twig);
