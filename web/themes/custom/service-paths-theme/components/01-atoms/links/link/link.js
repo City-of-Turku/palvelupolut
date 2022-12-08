@@ -38,7 +38,9 @@
                 .attr('target', '_blank');
 
               if (settings.servicePathsTheme !== undefined) {
-                const $extIconContainer = $(`<span class="foo-bar"></span>`);
+                const $extIconContainer = $(
+                  `<span class="fontawesome-icon__container"></span>`,
+                );
                 $extIconContainer.append(
                   settings.servicePathsTheme.iconMarkupExternalLink,
                 );
