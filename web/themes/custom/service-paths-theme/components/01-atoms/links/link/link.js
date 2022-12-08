@@ -38,9 +38,11 @@
                 .attr('target', '_blank');
 
               if (settings.servicePathsTheme !== undefined) {
-                $(this).append(
+                const $extIconContainer = $(`<span class="foo-bar"></span>`);
+                $extIconContainer.append(
                   settings.servicePathsTheme.iconMarkupExternalLink,
                 );
+                $(this).append($extIconContainer);
               }
             }
           }

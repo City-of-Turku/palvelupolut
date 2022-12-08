@@ -64,10 +64,4 @@ export const parameters = {
   },
 };
 
-// addDecorator is deprecated, but not sure how to use this otherwise.
-addDecorator((storyFn) => {
-  useEffect(() => Drupal.attachBehaviors(), []);
-  return storyFn();
-});
-
 setupTwig(Twig);
