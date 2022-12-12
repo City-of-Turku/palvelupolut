@@ -1,7 +1,17 @@
-// Simple Drupal.behaviors usage for Storybook
-
+// Simple Drupal.behaviors usage for Storybook.
+import Twig from 'twig';
+import { setupTwig } from './setupTwig';
+import iconMarkupExternalLinkTemplate from "../components/01-atoms/images/fontawesome-icon/fontawesome-icon.twig";
+const iconMarkupExternalLinkData = {
+  fontawesome_icon__name: 'external-link-alt',
+  fontawesome_icon__decorative: true,
+  fontawesome_icon__modifiers: ['external-link']
+};
 window.Drupal = { behaviors: {} };
 window.drupalSettings = {};
+
+// We need full twig support here.
+setupTwig(Twig);
 
 (function (Drupal, drupalSettings) {
   Drupal.throwError = function (error) {
@@ -28,20 +38,12 @@ window.drupalSettings = {};
 
   Drupal.t = function (text) {
     return text;
-  }
+  };
 
   drupalSettings.servicePathsTheme = {
     // This should reflect the output from
     // @01-atoms/images/fontawesome-icon/fontawesome-icon.twig.
-    iconMarkupExternalLink: `
-      <svg class="fontawesome-icon fontawesome-icon--external-link" aria-hidden="true">
-        <title>Opens in new window</title>
-        <use xlink:href="sprites/fontawesome.svg#external-link-alt"></use>
-      </svg>
-      <span class="visually-hidden">
-        (opens in a new window, goes to a different website)
-      </span>
-    `,
+    iconMarkupExternalLink: iconMarkupExternalLinkTemplate(iconMarkupExternalLinkData)
   };
 
 })(Drupal, window.drupalSettings);

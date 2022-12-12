@@ -5,4 +5,8 @@
   use {
     fill: currentColor;
   }
+
+  &__container {
+    display: inline-block;
+  }
 }
