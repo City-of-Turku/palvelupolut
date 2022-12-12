@@ -15,15 +15,14 @@
   "scripts": {
     "lint": "eslint ./components",
     "a11y": "npm run build-storybook && ./scripts/a11y.js -r",
-    "storybook": "start-storybook --ci -s ./dist,./images -p 6006",
-    "build-storybook": "build-storybook -s ./dist,./images -o storybook-static",
+    "storybook": "start-storybook --ci -p 6006",
+    "build-storybook": "build-storybook -o storybook-static",
     "webpack": "webpack --watch --config ./webpack/webpack.dev.js --display-error-details",
     "build": "webpack --config ./webpack/webpack.prod.js --display-error-details",
     "develop": "concurrently --raw \"npm run webpack\" \"npm run storybook\"",
     "format": "prettier --write \"**/*.{js,yml,scss}\"",
     "lint-staged": "lint-staged"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.5",
@@ -69,7 +68,6 @@
     "fs": "^0.0.1-security",
     "glob": "^7.2.3",
     "html-entities": "^1.4.0",
-    "imagemin-webpack-plugin": "^2.4.2",
     "jquery": "^3.6.1",
     "jquery-once": "^2.2.3",
     "js-yaml-loader": "^1.2.2",
@@ -77,7 +75,6 @@
     "mini-css-extract-plugin": "^1.2.1",
     "node-sass-glob-importer": "^5.3.2",
     "normalize.css": "^8.0.1",
-    "open-cli": "^6.0.1",
     "pa11y": "^5.3.0",
     "postcss": "^8.4.20",
     "postcss-css-variables": "^0.18.0",
@@ -93,9 +90,10 @@
     "sass": "^1.56.2",
     "sass-loader": "^10.4.1",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.12.0",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^21.0.0",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-webpack-plugin": "^2.4.0",
     "svg-sprite-loader": "^6.0.11",
     "twig": "git+https://github.com/dbruvers/twig.js.git",
@@ -107,5 +105,16 @@
     "webpack-cli": "^3.3.12",
     "webpack-merge": "^5.7.3",
     "yaml": "^1.10.2"
+  },
+  "overrides": {
+    "git-url-parse": ">12",
+    "glob-parent": ">5.1.1",
+    "meow": {
+      "trim-newlines": ">3.0.0"
+    },
+    "postcss": "$postcss",
+    "remark-parse": {
+      "trim": ">0.0.2"
+    }
   }
 }
