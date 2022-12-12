@@ -5,7 +5,7 @@ list_links__items:
     url: '#'
     icon_before: 'facebook'
   - title: 'External link'
-    url: 'https://www.google.com'
+    url: 'https://www.turku.fi'
     icon_before: 'globe'
     modifiers:
       - 'external'
