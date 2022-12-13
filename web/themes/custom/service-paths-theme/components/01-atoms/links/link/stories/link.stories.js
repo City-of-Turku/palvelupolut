@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from '@storybook/client-api';
 import {
   CollectionWrapper,
   ComponentWrapper,

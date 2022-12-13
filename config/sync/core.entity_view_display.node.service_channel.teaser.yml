@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
+    - field.field.node.service_channel.field_read_more_label
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
@@ -61,6 +62,7 @@ hidden:
   field_phone_numbers: true
   field_ptv_coordinates: true
   field_ptv_id: true
+  field_read_more_label: true
   field_service_channel_type: true
   field_services: true
   field_tags: true

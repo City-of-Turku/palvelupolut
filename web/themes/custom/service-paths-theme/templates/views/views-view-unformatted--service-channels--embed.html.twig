@@ -22,29 +22,36 @@
 {% set section_content_summary__modifiers = section_content_summary__modifiers|default([]) %}
 
 <div {{ bem(section_content_summary__base_class, section_content_summary__modifiers, section_content_summary__blockname) }}>
+  {% set ptv_id = null %}
+  {% set ptv_type = null %}
+
+  {% set rows_content %}
+    {% for row in rows[:2] %}
+      <div {{ bem("inner", [], section_content_summary__base_class) }}>
+        {% if row.content['#row']._relationship_entities.field_services.field_ptv_id.value and ptv_id is null %}
+          {% set ptv_id = row.content['#row']._relationship_entities.field_services.field_ptv_id.value %}
+        {% endif %}
+        {% if row.content['#row']._entity.field_service_channel_type[0].value and ptv_type is null %}
+          {% set ptv_type = row.content['#row']._entity.field_service_channel_type[0].value %}
+        {% endif %}
+
+        {{- row.content -}}
+      </div>
+    {% endfor %}
+  {% endset %}
+
+  {% if ptv_type == 'ServiceLocation' and view.current_entity.field_service_type_label_locatio.value %}
+    {% set title = view.current_entity.field_service_type_label_locatio.value %}
+  {% elseif ptv_type == 'EChannel' %}
+    {% set title = 'Do you want to use the e-service?'|t %}
+  {% endif %}
+
   {% include "@atoms/text/heading/heading.twig" with {
     heading__level: 3,
     heading__base_class: "title-group",
     heading__blockname: content_summary__base_class,
-    heading: title|striptags ~ ' (' ~ count_results ~ ' ' ~ 'pcs'|t ~ ')',
+    heading: title|striptags,
   } %}
-
-  {% set ptv_id = null %}
-  {% set ptv_type = null %}
-
-  {% for row in rows[:2] %}
-    <div {{ bem("inner", [], section_content_summary__base_class) }}>
-      {% if row.content['#row']._relationship_entities.field_services.field_ptv_id.value and ptv_id is null %}
-        {% set ptv_id = row.content['#row']._relationship_entities.field_services.field_ptv_id.value %}
-      {% endif %}
-      {% if row.content['#row']._entity.field_service_channel_type[0].value and ptv_type is null %}
-        {% set ptv_type = row.content['#row']._entity.field_service_channel_type[0].value %}
-      {% endif %}
-
-      {{- row.content -}}
-    </div>
-  {% endfor %}
-
 
   {% if rows|length > 2 %}
     <div {{ bem("read-more-link", [], content_summary__base_class) }}>
@@ -52,19 +59,34 @@
         fontawesome_icon__name: "arrow-right",
       } %}
 
-      {% set query_type = '?type[' ~ ptv_type ~ ']' %}
-
-
       {% if ptv_type is not null %}
-        {% set url = '/service-channels/' ~ ptv_id ~ '?type%5B' ~ ptv_type ~ '%5D=' ~ ptv_type %}
+        {# Default view mode is the one for ptv_type 'ServiceLocation'. #}
+        {% set url_view_mode = 'service_channels_location' %}
+        {% if ptv_type == 'EChannel' %}
+          {% set url_view_mode = 'service_channels_e_service' %}
+        {% elseif ptv_type == "Phone" %}
+          {% set url_view_mode = 'service_channels_phone' %}
+        {% elseif ptv_type == "PrintableForm" %}
+          {% set url_view_mode = 'service_channels_print' %}
+        {% endif %}
+        {% set url = url('view_mode_page.display_entity', {
+          'view_mode': url_view_mode,
+          'entity_type': 'node',
+          'entity_id': view.current_entity.id()
+        }) %}
       {% else %}
+        {# Fallback is the service channel search. #}
         {% set url = '/service-channels/' ~ ptv_id %}
       {% endif %}
 
       {% include "@atoms/links/link/link.twig" with {
-        link__content: 'See all'|t,
+        link__content: 'See all (@count_results pcs)'|t({
+          '@count_results': count_results
+        }),
         link__url: url,
       } %}
     </div>
   {% endif %}
+
+  {{ rows_content }}
 </div>

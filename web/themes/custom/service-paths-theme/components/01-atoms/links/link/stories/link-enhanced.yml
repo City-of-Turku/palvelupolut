@@ -1,4 +1,5 @@
 link__url: '#'
 link__content: 'This is active link text'
+link__icon_before: 'laptop'
 link__modifiers:
   - 'enhanced'

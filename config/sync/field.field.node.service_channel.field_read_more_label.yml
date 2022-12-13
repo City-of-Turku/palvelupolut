@@ -1,0 +1,19 @@
+uuid: dbd385eb-afaf-45f5-9686-46925aba4a14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_read_more_label
+    - node.type.service_channel
+id: node.service_channel.field_read_more_label
+field_name: field_read_more_label
+entity_type: node
+bundle: service_channel
+label: '"Read more"-accordion label'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

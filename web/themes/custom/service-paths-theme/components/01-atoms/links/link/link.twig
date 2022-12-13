@@ -90,7 +90,9 @@
     {%- if link__a11y_prefix %}
       <span class="visually-hidden"> {{ link__a11y_prefix }} </span>
     {% endif -%}
-    {{- link__content|spaceless -}}
+    {%- if link__content %}
+      {{- link__content|spaceless -}}
+    {% endif -%}
   {% endblock -%}
 
  {%- if link__title  %}
