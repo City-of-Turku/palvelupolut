@@ -1,17 +1,18 @@
-uuid: 2ea8a1e9-7c48-4ed9-bca6-eaab743dfc33
+uuid: 34971747-5e61-4944-9629-8e909afe31b7
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.taxonomy_term.field_ptv_uri
     - taxonomy.vocabulary.target_groups
-id: taxonomy_term.target_groups.name
-field_name: name
+id: taxonomy_term.target_groups.field_ptv_uri
+field_name: field_ptv_uri
 entity_type: taxonomy_term
 bundle: target_groups
-label: Name
+label: 'PTV URI'
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
