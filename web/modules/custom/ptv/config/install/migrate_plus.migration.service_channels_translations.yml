@@ -53,13 +53,15 @@ process:
   field_opening_hours: opening_hours
 
   field_tags:
-    plugin: entity_generate
+    plugin: ptv_entity_update_with_translations
     source: ontology_terms
     entity_type: taxonomy_term
     bundle: tags
-    property: name
+    value_key: field_ptv_uri
     values:
       langcode: langcode
+      name: name
+      field_ptv_uri: uri
 
   field_email: email
   field_phone_numbers: phone_numbers

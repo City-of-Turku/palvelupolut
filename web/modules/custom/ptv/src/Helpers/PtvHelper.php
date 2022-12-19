@@ -109,7 +109,10 @@ class PtvHelper {
           foreach ($object->ontologyTerms as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $ontology_terms[] = $value->value;
+                $ontology_terms[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
@@ -118,7 +121,10 @@ class PtvHelper {
           foreach ($object->targetGroups as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $target_groups[] = $value->value;
+                $target_groups[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
@@ -134,7 +140,10 @@ class PtvHelper {
           foreach ($object->serviceClasses as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $service_classes[] = $value->value;
+                $service_classes[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
@@ -296,7 +305,10 @@ class PtvHelper {
           foreach ($object->ontologyTerms as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $ontology_terms[] = $value->value;
+                $ontology_terms[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
