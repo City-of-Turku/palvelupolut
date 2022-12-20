@@ -82,6 +82,31 @@ class EntityUpdateWithTranslations extends EntityGenerate {
   }
 
   /**
+   * Generates an entity for a given value.
+   *
+   * Identical to EntityGenerate::generateEntity() with the exception of
+   * allowing $value to be of mixed types.
+   *
+   * @param mixed $value
+   *   Value to use in creation of the entity.
+   *
+   * @return int|string|null
+   *   The entity id of the generated entity or NULL.
+   */
+  protected function createEntity($value) {
+    if (!empty($value)) {
+      $entity = $this->entityTypeManager
+        ->getStorage($this->lookupEntityType)
+        ->create($this->entity($value));
+      $entity->save();
+
+      return $entity->id();
+    }
+
+    return NULL;
+  }
+
+  /**
    * Generate or update an entity with given values.
    *
    * @param array $value
@@ -89,8 +114,8 @@ class EntityUpdateWithTranslations extends EntityGenerate {
    * @param int|string|null $entity_id
    *   Single entity id. Optional, defaults to null.
    *
-   * @return int|string
-   *   The entity id.
+   * @return int|string|null
+   *   The entity id or NULL.
    */
   protected function updateEntity(array $value, $entity_id = NULL) {
     if (empty($value)) {
@@ -99,7 +124,7 @@ class EntityUpdateWithTranslations extends EntityGenerate {
 
     // Entity doesn't exist yet; create a new one.
     if (!$entity_id) {
-      return $this->generateEntity($value);
+      return $this->createEntity($value);
     }
 
     $langcode = $this->row->get('langcode');
