@@ -1,0 +1,24 @@
+uuid: f79da219-c6d6-4c84-901e-1c3b8156ed38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.target_groups.field_ptv_uri
+    - taxonomy.vocabulary.target_groups
+  module:
+    - text
+id: taxonomy_term.target_groups.default
+targetEntityType: taxonomy_term
+bundle: target_groups
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_ptv_uri: true
+  langcode: true
