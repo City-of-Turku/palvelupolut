@@ -5,6 +5,10 @@
     margin-top: 0;
   }
 
+  &--aside {
+    position: relative;
+  }
+
   &--within {
     margin: 0;
   }
@@ -23,6 +27,26 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+}
+
+.accordion__details-container {
+  .accordion--aside & {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: space(0.125);
+      position: absolute;
+      background-image: linear-gradient(to bottom, color(border-primary) 33%, rgba(255, 255, 255, 0) 0%);
+      background-position: top left;
+      background-size: space(0.125) space(0.375);
+      background-repeat: repeat-y;
+      top: 0;
+      bottom: 0;
+      left: space(1.05);
+      z-index: -1;
+    }
   }
 }
 

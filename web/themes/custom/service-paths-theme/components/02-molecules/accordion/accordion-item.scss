@@ -5,6 +5,31 @@
     border-bottom: space(0.125) solid;
   }
 
+  &--aside {
+    border-top: none;
+
+    .accordion-item__aside-accordion-heading {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      .fontawesome-icon {
+        width: space(1.25);
+        height: space(1.25);
+        top: space(0.125);
+        position: relative;
+        margin-right: space(1);
+        background: color(background-section-dark);
+        padding: space(0.5);
+        border-radius: space(0.625);
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
   &--warning {
     color: color(text-error);
 
@@ -58,6 +83,34 @@
     letter-spacing: 0;
     line-height: $line-height--heading;
 
+    .accordion-item--aside:first-child & {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: color(background);
+        top: 0;
+        height: 50%;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    .accordion-item--aside:last-child:not([open]) & {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: color(background);
+        bottom: 0;
+        height: 50%;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
     .accordion-item--white & {
       margin: 0 space(1.5);
     }
@@ -75,6 +128,10 @@
       font-size: $font-size--large-1 !important;
       margin: 0 !important;
 
+      .accordion-item--aside & {
+        font-size: $font-size--base !important;
+      }
+
       .accordion-item--white & {
         font-size: $font-size--small-1 !important;
       }
@@ -86,8 +143,27 @@
   }
 
   &__content {
+    margin-bottom: space(1);
     word-break: break-word;
 
+    .list-links {
+      margin-bottom: 0;
+
+      .list-links__item:last-child {
+        margin-bottom: 0;
+
+        .link--icon {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .accordion-item--aside & {
+      background: color(background-section);
+      padding: space(1);
+      border-radius: space(1);
+      margin-top: space(0.25);
+    }
     .accordion-item--white & {
       margin: 0 space(1.5);
       padding: space(0.75) 0;
@@ -111,6 +187,12 @@
     .accordion-item__heading {
       .fontawesome-icon {
         transform: rotate(180deg);
+      }
+    }
+
+    .accordion-item__aside-accordion-heading {
+      .fontawesome-icon {
+        transform: none;
       }
     }
 
