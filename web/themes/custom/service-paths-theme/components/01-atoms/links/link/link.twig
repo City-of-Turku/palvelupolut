@@ -77,44 +77,45 @@
   {% if link__describedby %}
    aria-describedby="{{ link__describedby }}"
   {% endif %}
-
 >
-  {% if link__icon_before %}
+  {%- if link__icon_before %}
     {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
       fontawesome_icon__name: link__icon_before,
       fontawesome_icon__modifiers: link__icon_before_modifiers,
       fontawesome_icon__decorative: true,
     } %}
-  {% endif %}
+  {% endif -%}
 
-  {% block link_content %}
-    {% if link__a11y_prefix %}
+  {%- block link_content %}
+    {%- if link__a11y_prefix %}
       <span class="visually-hidden"> {{ link__a11y_prefix }} </span>
-    {% endif %}
-    {{- link__content -}}
-  {% endblock %}
+    {% endif -%}
+    {%- if link__content %}
+      {{- link__content|spaceless -}}
+    {% endif -%}
+  {% endblock -%}
 
- {% if link__title  %}
+ {%- if link__title  %}
    <span class="visually-hidden"> {{ link__content }} {{ link__title }} </span>
- {% endif %}
+ {% endif -%}
 
-  {% if link__icon_after %}
+  {%- if link__icon_after %}
     {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
       fontawesome_icon__name: link__icon_after,
       fontawesome_icon__modifiers: link__icon_after_modifiers,
       fontawesome_icon__decorative: true,
     } %}
-  {% endif %}
+  {% endif -%}
 
-  {% if link__info %}
+  {%- if link__info %}
     {% include '@atoms/visually-hidden/visually-hidden.twig' with {
         visually_hidden__content: link__info|trim,
       } %}
-  {% endif %}
+  {% endif -%}
 
-  {% if link__suffix %}
+  {%- if link__suffix %}
     <span {{ bem('suffix', [], link__base_class) }}>
       {{ link__suffix }}
     </span>
-  {% endif %}
+  {% endif -%}
 </a>

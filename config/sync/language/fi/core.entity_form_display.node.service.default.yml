@@ -4,3 +4,5 @@ third_party_settings:
       label: Komponentit
     group_sidebar:
       label: Sivupalkki
+    group_service_channels:
+      label: Palvelupaikat

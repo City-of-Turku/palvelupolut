@@ -146,7 +146,7 @@
     } %}
 
     {% if content.field_description|render %}
-      <div id="pg-description">
+      <div id="pg-description" class="page-content__content-section">
         {% include '@atoms/text/heading/heading.twig' with {
           heading: content.field_description_heading|render|trim
                     ? content.field_description_heading : 'Description'|t,
@@ -157,7 +157,7 @@
       </div>
     {% endif %}
     {% if content.field_requirements|render %}
-      <div id="pg-requirements">
+      <div id="pg-requirements" class="page-content__content-section">
         {% include '@atoms/text/heading/heading.twig' with {
           heading: content.field_requirements_heading|render|trim
                     ? content.field_requirements_heading : 'Requirements'|t,
@@ -168,7 +168,7 @@
       </div>
     {% endif %}
     {% if content.field_user_instruction|render %}
-      <div id="pg-instruction">
+      <div id="pg-instruction" class="page-content__content-section">
         {% include '@atoms/text/heading/heading.twig' with {
           heading: content.field_user_instruction_heading|render|trim
                 ? content.field_user_instruction_heading : 'User Instruction'|t,
@@ -179,7 +179,7 @@
       </div>
     {% endif %}
     {% if content.field_charge_info|render %}
-      <div id="pg-charge">
+      <div id="pg-charge" class="page-content__content-section">
         {% include '@atoms/text/heading/heading.twig' with {
           heading: content.field_charge_info_heading|render|trim
                   ? content.field_charge_info_heading : 'Charge Information'|t,

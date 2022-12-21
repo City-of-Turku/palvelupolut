@@ -1,0 +1,23 @@
+uuid: b1344647-2e35-495e-825b-def506898a99
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: service_channels_location
+label: 'Service Channels - Location'
+type: 'canonical_entities:node'
+pattern: /%/locations
+view_mode: service_channels_location
+selection_criteria:
+  7a465996-d209-4e6c-a3fa-858430adff38:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7a465996-d209-4e6c-a3fa-858430adff38
+selection_logic: and
+weight: -5
+relationships: {  }

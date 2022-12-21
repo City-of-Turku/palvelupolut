@@ -1,0 +1,264 @@
+uuid: 446b73cf-3676-42af-b60a-1d533c598e3c
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.service_channels_phone
+    - field.field.node.service.field_charge_info
+    - field.field.node.service.field_charge_info_heading
+    - field.field.node.service.field_charge_info_links
+    - field.field.node.service.field_description
+    - field.field.node.service.field_description_heading
+    - field.field.node.service.field_description_links
+    - field.field.node.service.field_lead_image
+    - field.field.node.service.field_meta_tags
+    - field.field.node.service.field_paragraphs
+    - field.field.node.service.field_paragraphs_sidebar
+    - field.field.node.service.field_ptv_id
+    - field.field.node.service.field_requirements
+    - field.field.node.service.field_requirements_heading
+    - field.field.node.service.field_requirements_links
+    - field.field.node.service.field_service_classes
+    - field.field.node.service.field_service_type_label_locatio
+    - field.field.node.service.field_services_subtitle_e_servic
+    - field.field.node.service.field_services_subtitle_location
+    - field.field.node.service.field_services_subtitle_phones
+    - field.field.node.service.field_services_subtitle_prints
+    - field.field.node.service.field_tags
+    - field.field.node.service.field_target_groups
+    - field.field.node.service.field_user_instruction
+    - field.field.node.service.field_user_instruction_heading
+    - field.field.node.service.field_user_instruction_links
+    - node.type.service
+  module:
+    - entity_reference_revisions
+    - linkit
+    - metatag
+    - text
+    - user
+id: node.service.service_channels_phone
+targetEntityType: node
+bundle: service
+mode: service_channels_phone
+content:
+  field_charge_info:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_charge_info_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_charge_info_links:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_description_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_description_links:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_lead_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_paragraphs_sidebar:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_requirements:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_requirements_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_requirements_links:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_service_classes:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_service_type_label_locatio:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_target_groups:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_user_instruction:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_user_instruction_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_user_instruction_links:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  service_channels_embed:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  service_channels_embed_e_services:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_embed_locations:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_embed_phones:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_embed_prints:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_related:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_service_service_channels:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  field_ptv_id: true
+  field_services_subtitle_e_servic: true
+  field_services_subtitle_location: true
+  field_services_subtitle_phones: true
+  field_services_subtitle_prints: true
+  langcode: true
+  links: true
