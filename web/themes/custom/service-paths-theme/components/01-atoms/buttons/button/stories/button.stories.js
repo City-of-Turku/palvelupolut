@@ -16,17 +16,15 @@ import buttonInverseData from './button-inverse.yml';
 export default { title: 'Atoms/Button' };
 
 export const button = () => (
-  <>
-    <CollectionWrapper>
-      <ComponentWrapper markup={buttonTemplate(buttonData)} label="Button" />
-      <ComponentWrapper
-        markup={buttonTemplate(buttonSmallData)}
-        label="Button small"
-      />
-      <ComponentWrapper
-        markup={buttonTemplate(buttonInverseData)}
-        label="Button secondary"
-      />
-    </CollectionWrapper>
-  </>
+  <CollectionWrapper>
+    <ComponentWrapper markup={buttonTemplate(buttonData)} label="Button" />
+    <ComponentWrapper
+      markup={buttonTemplate(buttonSmallData)}
+      label="Button small"
+    />
+    <ComponentWrapper
+      markup={buttonTemplate(buttonInverseData)}
+      label="Button secondary"
+    />
+  </CollectionWrapper>
 );

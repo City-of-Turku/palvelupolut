@@ -62,7 +62,7 @@ services:
     hogfrom:
       - appserver
   node:
-    type: node
+    type: node:16
     build:
       - npm install
       - cd ./web/themes/custom/service-paths-theme && npm install

@@ -25,6 +25,9 @@ executors:
   cicd74:
     docker:
       - image: wunderio/silta-cicd:circleci-php7.4-node14-composer2-v0.1
+  cicd74n16:
+    docker:
+      - image: wunderio/silta-cicd:circleci-php7.4-node16-composer1-v0.1
 
 workflows:
   version: 2
@@ -71,6 +74,7 @@ workflows:
       # Storybook deployment to development cluster.
       - silta/simple-build-deploy:
           name: build-storybook
+          executor: cicd74n16
           context: silta_dev
           codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static
@@ -87,6 +91,7 @@ workflows:
       # Storybook deployment to production cluster.
       - silta/simple-build-deploy:
           name: build-storybook-prod
+          executor: cicd74n16
           context: silta_finland
           codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static
