@@ -91,7 +91,7 @@
       <span class="visually-hidden"> {{ link__a11y_prefix }} </span>
     {% endif -%}
     {%- if link__content %}
-      {{- link__content|spaceless -}}
+      {{- link__content|render|spaceless -}}
     {% endif -%}
   {% endblock -%}
 
