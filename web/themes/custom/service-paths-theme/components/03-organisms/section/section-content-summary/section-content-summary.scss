@@ -4,7 +4,7 @@
   padding: space(2) 0;
 
   &__inner:last-child {
-    .content-summary {
+    .content-summary:last-child {
       margin-bottom: 0;
     }
   }
@@ -12,16 +12,13 @@
   h3 {
     margin-bottom: space(2);
   }
+
   .heading {
     margin-bottom: space(2);
-    text-transform: uppercase;
 
     @include above($width-xl) {
       max-width: calc(100% - #{$width--sidebar});
     }
-  }
-  .title-group {
-    text-transform: uppercase;
   }
 
   .read-more-link {
@@ -30,9 +27,11 @@
     letter-spacing: $letter-spacing--large;
     line-height: $line-height--narrow;
     box-shadow: none;
+    border: 2px solid var(--color-background-dark);
     border-radius: space(0.75);
     background-color: color(background);
     padding: space();
+    margin: space(1) 0;
 
     .fontawesome-icon {
       width: space();
@@ -48,8 +47,6 @@
   }
 
   .content-summary {
-    margin-bottom: space(1);
-
     @include above($width-xl) {
       max-width: calc(100% - #{$width--sidebar});
     }

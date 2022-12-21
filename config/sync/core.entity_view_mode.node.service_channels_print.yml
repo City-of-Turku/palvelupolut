@@ -1,0 +1,10 @@
+uuid: b1a2f162-036a-46bf-a0e9-18b47ae664c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.service_channels_print
+label: 'Service Channels - Print'
+targetEntityType: node
+cache: true

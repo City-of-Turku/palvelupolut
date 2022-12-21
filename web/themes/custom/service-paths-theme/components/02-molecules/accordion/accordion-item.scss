@@ -42,6 +42,10 @@
     }
   }
 
+  &--within {
+    margin-bottom: 0;
+  }
+
   &__heading {
     justify-content: space-between;
     display: flex;
@@ -61,6 +65,10 @@
     .fontawesome-icon {
       width: 1.5em;
       height: 1.5em;
+    }
+
+    .accordion-item--within & {
+      margin: 0;
     }
 
     .heading {
@@ -83,6 +91,10 @@
     .accordion-item--white & {
       margin: 0 space(1.5);
       padding: space(0.75) 0;
+    }
+
+    .accordion-item--within & {
+      margin: 0;
     }
 
     p:first-child {

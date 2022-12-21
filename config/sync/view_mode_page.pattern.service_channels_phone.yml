@@ -1,0 +1,23 @@
+uuid: ad1ba50e-0fcc-4472-b077-b8fd0e7151a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: service_channels_phone
+label: 'Service Channels - Phone'
+type: 'canonical_entities:node'
+pattern: /%/phones
+view_mode: service_channels_phone
+selection_criteria:
+  1f5d54bd-fc5b-49e8-8b34-e15507964517:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1f5d54bd-fc5b-49e8-8b34-e15507964517
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -106,15 +106,18 @@
   {% if node.field_webpage.0.url %}
     {% set button_url = node.field_webpage.0.url.toString %}
   {% endif %}
-  {% set heading = 'Service Hours'|t %}
+  {% set heading = '' %}
   {% set lead_text = content.field_opening_hours %}
+  {% set main_text = node.field_description.summary %}
 
 {% elseif type == 'Phone' %}
 
   {% set button = phone_nr %}
   {% set phone_nr = '' %}
   {% set button_url = 'tel:' ~ node.field_phone_numbers[0].second|replace({' ': ''}) %}
+  {% set heading = '' %}
   {% set lead_text = content.field_opening_hours %}
+  {% set main_text = node.field_description.summary %}
 
 {% elseif type == 'ServiceLocation' %}
 
@@ -133,7 +136,7 @@
       {% set link_modifiers = link_modifiers|merge(['external']) %}
     {% endif %}
   {% endif %}
-  {% set lead_text = node.field_description.summary %}
+  {% set main_text = node.field_description.summary %}
 
 {% elseif type == 'PrintableForm' %}
 
@@ -145,7 +148,7 @@
       {% set link_modifiers = link_modifiers|merge(['external']) %}
     {% endif %}
   {% endif %}
-  {% set lead_text = node.field_description.summary %}
+  {% set main_text = node.field_description.summary %}
 
 {% else %}
 
@@ -154,22 +157,22 @@
 
 {% endif %}
 
-
-
 {% include "@molecules/content-summary/content-summary.twig" with {
-  content_summary___modifiers: content_summary_modifiers,
   content_summary__title: label,
+  content_summary__main_text: main_text,
   content_summary__heading: heading,
   content_summary__lead_text: lead_text,
   content_summary__number_heading: type == 'ServiceLocation' ? 'Phone'|t : '',
   content_summary__number_lead_text: phone_nr,
-  content_summary__link_text: type == 'ServiceLocation' ? '' : 'Read more'|t,
-  content_summary__link_url: type == 'ServiceLocation' ? '' : url,
+  content_summary__link_text: '',
+  content_summary__link_url: '',
   content_summary__open_text: button,
   content_summary__open_url: button_url,
   content_summary__button_link_modifiers: link_modifiers,
   content_summary__icon_before: type_mapping[type],
   content_summary__icon_after: '',
+  content_summary__read_more_label: node.field_read_more_label.value ? content.field_read_more_label : 'Read more'|t,
+  content_summary__read_more_content: type != 'ServiceLocation' and node.field_description.value ? content.field_description : '',
 } %}
 
 

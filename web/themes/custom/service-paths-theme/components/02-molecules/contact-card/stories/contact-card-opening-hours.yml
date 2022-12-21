@@ -1,0 +1,12 @@
+contact_card__title: ''
+contact_card__items:
+  - info_title: 'Palvelupaikan aukioloajat'
+    icon: 'clock'
+    text: 'Maanantai - Tiistai'
+    text2: '9.00 - 15.00'
+  - text: 'Keskiviikko'
+    text2: '9.00 - 12.00'
+  - text: 'Torstai - Perjantai'
+    text2: '9.00 - 15.00'
+contact_card__link_text: ''
+contact_card__link_url: ''

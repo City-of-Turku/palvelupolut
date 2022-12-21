@@ -19,6 +19,11 @@ dependencies:
     - field.field.node.service.field_requirements_heading
     - field.field.node.service.field_requirements_links
     - field.field.node.service.field_service_classes
+    - field.field.node.service.field_service_type_label_locatio
+    - field.field.node.service.field_services_subtitle_e_servic
+    - field.field.node.service.field_services_subtitle_location
+    - field.field.node.service.field_services_subtitle_phones
+    - field.field.node.service.field_services_subtitle_prints
     - field.field.node.service.field_tags
     - field.field.node.service.field_target_groups
     - field.field.node.service.field_user_instruction
@@ -41,6 +46,26 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  service_channels_embed_e_services:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_embed_locations:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_embed_phones:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  service_channels_embed_prints:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   field_charge_info: true
   field_charge_info_heading: true
@@ -56,6 +81,11 @@ hidden:
   field_requirements_heading: true
   field_requirements_links: true
   field_service_classes: true
+  field_service_type_label_locatio: true
+  field_services_subtitle_e_servic: true
+  field_services_subtitle_location: true
+  field_services_subtitle_phones: true
+  field_services_subtitle_prints: true
   field_tags: true
   field_target_groups: true
   field_user_instruction: true

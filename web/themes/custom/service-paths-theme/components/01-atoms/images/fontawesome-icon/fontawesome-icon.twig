@@ -12,13 +12,13 @@
  * - fontawesome_icon__decorative - boolean, hides icon for screen readers if true
  */
 #}
-{% set fontawesome_icon__base_class = fontawesome_icon__base_class|default("fontawesome-icon") %}
-{% set fontawesome_icon__modifiers = fontawesome_icon__modifiers|default([]) %}
-{% set fontawesome_icon__role = fontawesome_icon__role|default("img") %}
+{%- set fontawesome_icon__base_class = fontawesome_icon__base_class|default("fontawesome-icon") -%}
+{%- set fontawesome_icon__modifiers = fontawesome_icon__modifiers|default([]) -%}
+{%- set fontawesome_icon__role = fontawesome_icon__role|default("img") -%}
 
 {# If `directory` is defined, set the path relative for Drupal.
  # Otherwise, set the path relative to the Component Library. #}
-{% set fontawesome_icon__base_url = directory ? "/" ~ directory ~ "/images/" %}
+{%- set fontawesome_icon__base_url = directory ? "/" ~ directory ~ "/images/" -%}
 
 <svg {{ bem(fontawesome_icon__base_class, fontawesome_icon__modifiers, fontawesome_icon__blockname, fontawesome_icon__extra_class) }}
 
@@ -36,35 +36,35 @@
     aria-describedby="desc-{{ fontawesome_icon__name }}"
   {% endif %}
 >
-  {% if fontawesome_icon__title %}
+  {%- if fontawesome_icon__title %}
     <title>{{ fontawesome_icon__title }}</title>
-  {% endif %}
+  {% endif -%}
 
-  {% if fontawesome_icon__desc %}
+  {%- if fontawesome_icon__desc %}
     <desc>{{ fontawesome_icon__desc }}</desc>
-  {% endif %}
+  {% endif -%}
 
-  {% if fontawesome_icon__name == 'external-link-alt' %}
+  {%- if fontawesome_icon__name == 'external-link-alt' %}
     <title>Opens in new window</title>
-  {% endif %}
+  {% endif -%}
 
-  {% if fontawesome_icon__name == 'phone' %}
+  {%- if fontawesome_icon__name == 'phone' %}
     <title>Phone</title>
-  {% endif %}
+  {% endif -%}
 
-  {% if fontawesome_icon__name == 'globe' %}
+  {%- if fontawesome_icon__name == 'globe' %}
     <title>Website</title>
-  {% endif %}
+  {% endif -%}
 
-  {% if fontawesome_icon__name == 'at' %}
+  {%- if fontawesome_icon__name == 'at' %}
     <title>Email address</title>
-  {% endif %}
+  {% endif -%}
 
   <use xlink:href="{{ fontawesome_icon__base_url }}sprites/fontawesome.svg#{{ fontawesome_icon__name }}"></use>
 </svg>
 
-{% if fontawesome_icon__name == 'external-link-alt' %}
+{%- if fontawesome_icon__name == 'external-link-alt' %}
   {% include '@atoms/visually-hidden/visually-hidden.twig' with {
     visually_hidden__content: ' (opens in a new window, goes to a different website)'|t,
   } %}
-{% endif %}
+{% endif -%}
