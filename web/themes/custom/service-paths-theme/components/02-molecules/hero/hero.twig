@@ -40,11 +40,11 @@
     {% endif %}
   </div>
 
-  {% if with_image %}
-    <div {{ bem("image", [], hero__base_class) }} aria-hidden="true">
+  <div {{ bem("image", [], hero__base_class) }} aria-hidden="true">
+    {% if with_image %}
       {% block hero_image %}
         {% include "@atoms/images/image/responsive-image.twig" with hero__image %}
       {% endblock %}
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
 </div>

@@ -85,13 +85,9 @@
   "field_contacts_heading",
   "field_services"
 ] %}
-{% set sidebar = false %}
-{% if content.field_paragraphs_sidebar or content.field_services %}
-  {% set sidebar = true %}
-{% endif %}
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: sidebar
+  page_sidebar: true
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}
