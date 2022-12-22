@@ -1,6 +1,9 @@
 @use 'sass:math';
 
 .anchor-menu {
+  @include above($width-large) {
+    --space-elements: #{space(2)};
+  }
   margin: var(--space-elements) 0;
 
   .link {
