@@ -33,6 +33,18 @@ process:
     plugin: default_value
     default_value: basic_html
 
+  field_background_description/value: background_description
+  field_background_description/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_legislation:
+    plugin: sub_process
+    source: legislation_links
+    process:
+      title: title
+      uri: uri
+
   field_requirements/value: requirements
   field_requirements/format:
     plugin: default_value

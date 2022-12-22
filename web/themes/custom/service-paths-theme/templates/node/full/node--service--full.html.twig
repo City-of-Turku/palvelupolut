@@ -111,7 +111,7 @@
 {% endfor %}
 
 {% set menu_items = menu_items|merge([{
-  title: 'Service Channels'|t,
+  title: 'What are the different ways to get this service?'|t,
   url: '#pg-channels',
   id: 'pg-channels',
 }]) %}
@@ -119,7 +119,7 @@
 
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: false,
+  page_sidebar: true,
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}
@@ -195,6 +195,27 @@
   {% endblock %}
 
   {% block page_sidebar_post_content %}
+    {% set accordion_items = [] %}
+    {% if content.field_background_description|render|trim %}
+      {% set accordion_items = accordion_items|merge([{
+        accordion__summary: 'Background description'|t,
+        accordion__content: content.field_background_description,
+      }]) %}
+    {%  endif %}
+    {% if content.field_legislation|render|trim %}
+      {% set accordion_items = accordion_items|merge([{
+        accordion__summary: 'Legislation'|t,
+        list_links__items: content.field_legislation['#items'],
+      }]) %}
+    {%  endif %}
+    {%  if accordion_items is not empty %}
+      {%  include '@molecules/accordion/accordion.twig' with {
+        accordion__heading: 'General information and legislation'|t,
+        accordion__modifiers: 'aside',
+        accordion_item__modifiers: 'aside',
+        accordion__items: accordion_items,
+      } %}
+    {%  endif %}
     {{ content.field_paragraphs_sidebar }}
   {% endblock %}
 

@@ -1,0 +1,19 @@
+uuid: 87c1b58e-fe41-48e2-a01f-99492af67b40
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_background_description
+field_name: field_background_description
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

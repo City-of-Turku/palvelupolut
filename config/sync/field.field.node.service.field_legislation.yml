@@ -1,0 +1,23 @@
+uuid: 27a24c75-9301-44af-bd4a-4dc18e3f1eb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legislation
+    - node.type.service
+  module:
+    - link
+id: node.service.field_legislation
+field_name: field_legislation
+entity_type: node
+bundle: service
+label: Legislation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

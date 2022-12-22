@@ -44,6 +44,8 @@ function ptv_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
       'field_tags',
       'field_target_groups',
       'field_user_instruction',
+      'field_background_description',
+      'field_legislation',
     ];
     if (!$node->field_ptv_id->isEmpty()) {
       foreach ($ptv_fields as $field) {
@@ -144,6 +146,7 @@ function ptv_preprocess_text_fields(array &$vars) {
           'field_requirements',
           'field_user_instruction',
           'field_charge_info',
+          'field_background_description',
         ];
         break;
 

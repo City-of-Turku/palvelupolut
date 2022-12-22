@@ -55,6 +55,10 @@ class PtvHelper {
     switch ($key) {
       case 'services':
         $object = $ptv_service->getService($id);
+        $general_description = NULL;
+        if (!empty($object->generalDescriptionId)) {
+          $general_description = $ptv_service->getGeneralDescription($object->generalDescriptionId);
+        }
         $ontology_terms = [];
         $target_groups = [];
         $service_classes = [];
@@ -105,6 +109,22 @@ class PtvHelper {
             }
           }
         }
+
+        if (
+          !empty($general_description->descriptions) &&
+          is_array($general_description->descriptions)
+        ) {
+          foreach ($general_description->descriptions as $value) {
+            if ($value->language == $langcode) {
+              switch ($value->type) {
+                case 'BackgroundDescription':
+                  $background_description = $value->value;
+                  break;
+              }
+            }
+          }
+        }
+
         if (isset($object->ontologyTerms)) {
           foreach ($object->ontologyTerms as $term) {
             foreach ($term->name as $value) {
@@ -149,12 +169,42 @@ class PtvHelper {
           }
         }
 
+        if (
+          !empty($general_description->legislation) &&
+          is_array($general_description->legislation)
+        ) {
+          $legislation_links = [];
+          foreach ($general_description->legislation as $legislation) {
+            $legislation_link = [
+              'title' => '',
+              'uri' => '',
+            ];
+            if (isset($legislation->names)) {
+              foreach ($legislation->names as $linkName) {
+                if ($linkName->language == $langcode) {
+                  $legislation_link['title'] = $linkName->value;
+                }
+              }
+            }
+            if (isset($legislation->webPages)) {
+              foreach ($legislation->webPages as $linkUrl) {
+                if ($linkUrl->language == $langcode) {
+                  $legislation_link['uri'] = $linkUrl->url;
+                }
+              }
+            }
+            $legislation_links[] = $legislation_link;
+          }
+        }
+
         $data = [
           'id' => $id,
           'name' => $name ?? $id,
           'langcode' => $langcode,
           'summary' => $summary ?? '',
           'description' => $description ?? '',
+          'background_description' => $background_description ?? '',
+          'legislation_links' => $legislation_links ?? [],
           'user_instruction' => $user_instruction ?? '',
           'charge_info' => $charge_info ?? '',
           'ontology_terms' => $ontology_terms,
