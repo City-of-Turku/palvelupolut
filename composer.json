@@ -241,7 +241,7 @@
                 "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
             },
             "drupal/migrate_tools": {
-                "Do not roll back everything with --sync option": "https://www.drupal.org/files/issues/2020-01-06/sync-id-hash-3104268-4.patch"
+                "Combined patch for #3104268 (Do not roll back everything with --sync option) and #3260646 (Rolling back a skipped row (using --sync) results in: [warning] array_flip())": "patches/migrate_tools_3104268_3260646.patch"
             }
         },
         "dropin-paths": {
