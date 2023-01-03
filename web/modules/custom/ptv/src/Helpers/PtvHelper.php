@@ -317,17 +317,22 @@ class PtvHelper {
 
         if (isset($object->addresses) && is_array($object->addresses)) {
           foreach ($object->addresses as $value) {
-            foreach ($value->streetAddress->street as $street) {
-              if ($street->language == $langcode) {
-                $address['address_line1'] = $street->value . ' ' . $value->streetAddress->streetNumber;
+            if (isset($value->streetAddress->street) && is_array($value->streetAddress->street)) {
+              foreach ($value->streetAddress->street as $street) {
+                if ($street->language == $langcode) {
+                  $address['address_line1'] = $street->value . ' ' . $value->streetAddress->streetNumber;
+                }
               }
             }
-            $post_code = $value->streetAddress->postalCode;
-            foreach ($value->streetAddress->postOffice as $postOffice) {
-              if ($postOffice->language == $langcode) {
-                $address['locality'] = $postOffice->value;
-                $address['postal_code'] = $post_code;
-                $address['country_code'] = 'FI';
+
+            if (isset($value->streetAddress->postOffice) && is_array($value->streetAddress->postOffice)) {
+              $post_code = $value->streetAddress->postalCode;
+              foreach ($value->streetAddress->postOffice as $postOffice) {
+                if ($postOffice->language == $langcode) {
+                  $address['locality'] = $postOffice->value;
+                  $address['postal_code'] = $post_code;
+                  $address['country_code'] = 'FI';
+                }
               }
             }
             $coordinates['first'] = $value->streetAddress->latitude;
@@ -356,10 +361,10 @@ class PtvHelper {
             }
 
             if (!empty($sentences)) {
-              foreach ($sentences as $key => $value) {
-                $accessibility .= '<h4>' . $value['group'] . '</h4>';
+              foreach ($sentences as $key => $row) {
+                $accessibility .= '<h4>' . $row['group'] . '</h4>';
                 $accessibility .= '<ul>';
-                foreach ($value['sentences'] as $sentence) {
+                foreach ($row['sentences'] as $sentence) {
                   $accessibility .= '<li>' . $sentence . '</li>';
                 }
                 $accessibility .= '</ul>';
