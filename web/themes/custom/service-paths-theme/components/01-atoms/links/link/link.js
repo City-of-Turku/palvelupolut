@@ -38,9 +38,13 @@
                 .attr('target', '_blank');
 
               if (settings.servicePathsTheme !== undefined) {
-                $(this).append(
+                const $extIconContainer = $(
+                  `<span class="fontawesome-icon__container"></span>`,
+                );
+                $extIconContainer.append(
                   settings.servicePathsTheme.iconMarkupExternalLink,
                 );
+                $(this).append($extIconContainer);
               }
             }
           }

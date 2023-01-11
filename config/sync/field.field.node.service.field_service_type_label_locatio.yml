@@ -1,0 +1,19 @@
+uuid: 81082af4-8517-4de6-aed0-be825ebe7ce1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_type_label_locatio
+    - node.type.service
+id: node.service.field_service_type_label_locatio
+field_name: field_service_type_label_locatio
+entity_type: node
+bundle: service
+label: 'Service type label - Location'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.service_channel.field_phone_numbers
     - field.field.node.service_channel.field_ptv_coordinates
     - field.field.node.service_channel.field_ptv_id
+    - field.field.node.service_channel.field_read_more_label
     - field.field.node.service_channel.field_service_channel_type
     - field.field.node.service_channel.field_services
     - field.field.node.service_channel.field_tags
@@ -48,10 +49,9 @@ content:
     weight: 3
     region: content
   field_description:
-    type: text_summary_or_trimmed
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
@@ -83,6 +83,14 @@ content:
       inline: true
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_read_more_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_service_channel_type:
     type: list_key

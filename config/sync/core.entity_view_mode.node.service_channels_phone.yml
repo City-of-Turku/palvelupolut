@@ -1,0 +1,10 @@
+uuid: 1a62bd1a-bbc0-4590-aab8-4724923379b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.service_channels_phone
+label: 'Service Channels - Phone'
+targetEntityType: node
+cache: true

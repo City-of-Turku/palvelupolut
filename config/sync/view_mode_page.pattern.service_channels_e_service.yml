@@ -1,0 +1,23 @@
+uuid: c6204755-0246-4041-b4e5-a5c47dd7aa5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: service_channels_e_service
+label: 'Service Channels - E-Service'
+type: 'canonical_entities:node'
+pattern: /%/e-services
+view_mode: service_channels_e_service
+selection_criteria:
+  26fefa80-05cf-46fe-a1f6-def10e58b6a9:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 26fefa80-05cf-46fe-a1f6-def10e58b6a9
+selection_logic: and
+weight: -5
+relationships: {  }

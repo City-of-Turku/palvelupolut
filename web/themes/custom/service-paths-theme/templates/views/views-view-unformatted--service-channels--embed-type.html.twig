@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+{% set count_results = rows|length %}
+
+{% set section_content_summary__base_class = section_content_summary__base_class|default("section-content-summary") %}
+{% set section_content_summary__modifiers = section_content_summary__modifiers|default([]) %}
+
+<div {{ bem(section_content_summary__base_class, section_content_summary__modifiers, section_content_summary__blockname) }}>
+  {% for row in rows %}
+    <div {{ bem("inner", [], section_content_summary__base_class) }}>
+      {{- row.content -}}
+    </div>
+  {% endfor %}
+
+  <div {{ bem("read-more-link", [], content_summary__base_class) }}>
+    {% include "@atoms/images/fontawesome-icon/fontawesome-icon.twig" with {
+      fontawesome_icon__name: "arrow-right",
+    } %}
+
+    {% include "@atoms/links/link/link.twig" with {
+      link__content: 'Return to service page'|t,
+      link__url: url('entity.node.canonical', { 'node': view.current_entity.id() })
+    } %}
+  </div>
+</div>

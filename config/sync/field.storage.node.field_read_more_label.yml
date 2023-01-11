@@ -1,0 +1,21 @@
+uuid: 90518ecc-2b7c-47cd-a7be-db85c1914aaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_read_more_label
+field_name: field_read_more_label
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

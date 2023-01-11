@@ -1,0 +1,21 @@
+uuid: 0b262949-1412-40d8-a127-87b9f1b9d2ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_services_subtitle_location
+field_name: field_services_subtitle_location
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
