@@ -398,7 +398,7 @@ class PtvHelper {
                 }
               }
               if ($serviceHours->isAlwaysOpen) {
-                $opening_hours[$i]['first'] = 'Always Open';
+                $opening_hours[$i]['first'] = t('Always open', [], ['langcode' => $langcode]);
                 continue;
               }
               $save_time = NULL;
