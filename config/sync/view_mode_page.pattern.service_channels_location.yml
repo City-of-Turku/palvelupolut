@@ -3,21 +3,32 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: service_channels_location
-label: 'Service Channels - Location'
+label: 'Service Channels - Location EN'
 type: 'canonical_entities:node'
-pattern: /%/locations
+pattern: /%/service-locations
 view_mode: service_channels_location
 selection_criteria:
-  7a465996-d209-4e6c-a3fa-858430adff38:
+  e0c34e02-4879-46b6-a3d8-64967a4122ce:
     id: node_type
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 7a465996-d209-4e6c-a3fa-858430adff38
+    uuid: e0c34e02-4879-46b6-a3d8-64967a4122ce
+  d47f614f-40bb-469b-81be-f4527b508a9a:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: d47f614f-40bb-469b-81be-f4527b508a9a
 selection_logic: and
-weight: -5
-relationships: {  }
+weight: '-5'
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -3,21 +3,32 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: service_channels_print
-label: 'Service Channels - Print'
+label: 'Service Channels - Print EN'
 type: 'canonical_entities:node'
 pattern: /%/prints
 view_mode: service_channels_print
 selection_criteria:
-  4011784a-9c96-4a8c-83ef-a497bb050c51:
+  0612d462-e368-41b6-88b6-70d765bcdab9:
     id: node_type
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 4011784a-9c96-4a8c-83ef-a497bb050c51
+    uuid: 0612d462-e368-41b6-88b6-70d765bcdab9
+  b0cd2630-d459-4e58-98d7-d34010f662de:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: b0cd2630-d459-4e58-98d7-d34010f662de
 selection_logic: and
-weight: -5
-relationships: {  }
+weight: '1'
+relationships:
+  'node:langcode:language':
+    label: Language
