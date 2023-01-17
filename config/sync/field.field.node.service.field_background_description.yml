@@ -1,0 +1,21 @@
+uuid: 453b99c8-99c1-4a88-96f1-9f1e8166508e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_background_description
+    - node.type.service
+  module:
+    - text
+id: node.service.field_background_description
+field_name: field_background_description
+entity_type: node
+bundle: service
+label: 'Background description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

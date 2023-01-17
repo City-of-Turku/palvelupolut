@@ -203,4 +203,21 @@ class PtvApiService {
     return NULL;
   }
 
+  /**
+   * Get a General Description object.
+   *
+   * @param string $id
+   *   General description id.
+   *
+   * @return array|null
+   *   Returns General Description data or NULL.
+   */
+  public function getGeneralDescription($id) {
+    $response = $this->request('GET', 'GeneralDescription/' . $id);
+    if ($response) {
+      return $response;
+    }
+    return NULL;
+  }
+
 }

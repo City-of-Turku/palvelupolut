@@ -1,9 +1,11 @@
 {
   "extends": [
     "stylelint-config-standard",
+    "stylelint-config-standard-scss",
     "stylelint-config-prettier"
   ],
   "rules": {
+    "alpha-value-notation": null,
     "at-rule-no-unknown": [ true, {
       "ignoreAtRules": [
         "include",
@@ -20,7 +22,28 @@
         "use"
       ]
     }],
+    "color-function-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "font-family-name-quotes": null,
     "no-descending-specificity": null,
-    "function-calc-no-invalid": null
+    "number-max-precision": null,
+    "rule-empty-line-before": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-import-partial-extension": null,
+    "scss/at-mixin-argumentless-call-parentheses": null,
+    "scss/at-mixin-parentheses-space-before": null,
+    "scss/at-mixin-pattern": null,
+    "scss/at-rule-conditional-no-parentheses": null,
+    "scss/comment-no-empty": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/no-global-function-names": null,
+    "scss/operator-no-unspaced": null,
+    "selector-class-pattern": null,
+    "selector-not-notation": null,
+    "shorthand-property-no-redundant-values": null,
+    "value-keyword-case": null
   }
 }

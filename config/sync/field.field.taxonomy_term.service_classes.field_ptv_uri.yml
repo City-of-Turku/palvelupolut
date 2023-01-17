@@ -1,0 +1,19 @@
+uuid: 179dfd87-b12a-463e-8169-6bb9778315a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ptv_uri
+    - taxonomy.vocabulary.service_classes
+id: taxonomy_term.service_classes.field_ptv_uri
+field_name: field_ptv_uri
+entity_type: taxonomy_term
+bundle: service_classes
+label: 'PTV URI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

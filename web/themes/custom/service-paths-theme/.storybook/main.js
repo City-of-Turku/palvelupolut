@@ -1,4 +1,5 @@
 module.exports = {
+  staticDirs: ['../dist', '../images'],
   stories: ['../components/**/*.stories.@(js|mdx)'],
   addons: [
     {

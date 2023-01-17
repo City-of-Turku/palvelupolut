@@ -89,7 +89,7 @@
 {% endif %}
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: content.field_paragraphs_sidebar|render
+  page_sidebar: true
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}

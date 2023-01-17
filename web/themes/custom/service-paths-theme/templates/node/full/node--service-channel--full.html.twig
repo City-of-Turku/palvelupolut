@@ -67,6 +67,7 @@
  */
 #}
 
+{% set type = node.field_service_channel_type.value ? node.field_service_channel_type.value : 'Link' %}
 {% set excluded_fields = [
   "field_heading",
   "field_lead_image",
@@ -84,13 +85,9 @@
   "field_contacts_heading",
   "field_services"
 ] %}
-{% set sidebar = false %}
-{% if content.field_paragraphs_sidebar or content.field_services %}
-  {% set sidebar = true %}
-{% endif %}
 
 {% embed "@templates/page/page-content.twig" with {
-  page_sidebar: sidebar
+  page_sidebar: true
 } %}
   {% block page_content_pre_content %}
     {{ title_prefix }}
@@ -213,10 +210,24 @@
             {% endif %}
           {% endfor %}
 
-          {% if node.field_webpage.title %}
+          {% set webpage_url = node.field_webpage.0.url.toString %}
+          {% if webpage_url %}
+            {# Set webpage title in this priority order:
+              1. Use the title provided for the link in PTV (not always available).
+              2. Set a channel type based value (not set for all types).
+              3. Use the service channel name (fallback). #}
+            {% set webpage_title = node.label %}
+            {% if node.field_webpage.title %}
+              {% set webpage_title = node.field_webpage.title %}
+            {% elseif type == 'EChannel' %}
+              {% set webpage_title = 'Go to online service'|t %}
+            {% elseif type == 'PrintableForm' %}
+              {% set webpage_title = 'Open file'|t %}
+            {% endif %}
+
             {% set secondary_cards = secondary_cards|merge([{
-              'link_title': node.field_webpage.title,
-              'url': node.field_webpage.0.url.toString,
+              'link_title': webpage_title,
+              'url': webpage_url,
               'icon': 'globe',
             }]) %}
           {% endif %}
