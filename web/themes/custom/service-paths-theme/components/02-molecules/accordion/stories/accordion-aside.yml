@@ -1,0 +1,15 @@
+accordion__heading: 'Heading of the accordion'
+accordion__items:
+  - accordion__summary: 'Title of the accordion item 1'
+    accordion__content: 'The detail of the accordion item.'
+  - accordion__summary: 'Title of the accordion item 2'
+    list_links__items:
+      - title: 'Link to law'
+        url: '#'
+        icon_before: 'arrow-right'
+        modifiers:
+          - 'icon'
+accordion__modifiers:
+  - 'aside'
+accordion_item__modifiers:
+  - 'aside'

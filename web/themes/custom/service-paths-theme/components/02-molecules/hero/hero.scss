@@ -16,8 +16,9 @@
     color: color(text-inverse);
 
     @include above($width-large) {
-      margin-right: space(7.5);
+      flex: 1 1 auto;
       padding-top: space(1);
+      max-width: calc(100% - $width--sidebar - $grid-gutter-width);
     }
   }
 
@@ -27,10 +28,19 @@
     margin: space(2) auto 0;
     padding-bottom: 100%;
     position: relative;
-    flex-shrink: 0;
+
+    @include above($width-small) {
+      width: 14rem;
+      height: 14rem;
+      padding-bottom: 0;
+    }
+
     @include above($width-large) {
-      top: space(1.5);
-      right: space(3);
+      width: $width--sidebar;
+      flex: 0 0 auto;
+      margin: 0;
+      align-self: center;
+      justify-content: right;
     }
 
     img {
@@ -42,16 +52,11 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
       border-radius: 50%;
-    }
 
-    @include above($width-small) {
-      width: 14rem;
-      height: 14rem;
-      padding-bottom: 0;
-    }
-
-    @include above($width-large) {
-      margin: 0;
+      @include above($width-large) {
+        width: 14rem;
+        height: 14rem;
+      }
     }
   }
 
@@ -83,6 +88,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: $grid-gutter-width;
     padding: space(3.5) 0;
   }
 

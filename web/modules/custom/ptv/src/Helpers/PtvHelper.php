@@ -55,20 +55,26 @@ class PtvHelper {
     switch ($key) {
       case 'services':
         $object = $ptv_service->getService($id);
+        $general_description = NULL;
+        if (!empty($object->generalDescriptionId)) {
+          $general_description = $ptv_service->getGeneralDescription($object->generalDescriptionId);
+        }
         $ontology_terms = [];
         $target_groups = [];
         $service_classes = [];
 
-        foreach ($object->serviceNames as $value) {
-          if ($value->type == 'Name') {
-            $name = $value->value;
-            if ($value->language == 'fi') {
+        if (!empty($object->serviceNames) && is_array($object->serviceNames)) {
+          foreach ($object->serviceNames as $value) {
+            if ($value->type == 'Name') {
               $name = $value->value;
-            }
-            if ($value->language == $langcode) {
-              $name = $value->value;
-              $translation_missing = FALSE;
-              break;
+              if ($value->language == 'fi') {
+                $name = $value->value;
+              }
+              if ($value->language == $langcode) {
+                $name = $value->value;
+                $translation_missing = FALSE;
+                break;
+              }
             }
           }
         }
@@ -84,59 +90,116 @@ class PtvHelper {
           break;
         }
 
-        foreach ($object->serviceDescriptions as $value) {
-          if ($value->language == $langcode) {
-            switch ($value->type) {
-              case 'Summary':
-                $summary = $value->value;
-                break;
+        if (!empty($object->serviceDescriptions) && is_array($object->serviceDescriptions)) {
+          foreach ($object->serviceDescriptions as $value) {
+            if (isset($value->language, $value->type) && $value->language == $langcode) {
+              switch ($value->type) {
+                case 'Summary':
+                  $summary = $value->value;
+                  break;
 
-              case 'Description':
-                $description = $value->value;
-                break;
+                case 'Description':
+                  $description = $value->value;
+                  break;
 
-              case 'UserInstruction':
-                $user_instruction = $value->value;
-                break;
+                case 'UserInstruction':
+                  $user_instruction = $value->value;
+                  break;
 
-              case 'ChargeTypeAdditionalInfo':
-                $charge_info = $value->value;
-                break;
+                case 'ChargeTypeAdditionalInfo':
+                  $charge_info = $value->value;
+                  break;
+              }
             }
           }
         }
-        if (isset($object->ontologyTerms)) {
+
+        if (
+          !empty($general_description->descriptions) &&
+          is_array($general_description->descriptions)
+        ) {
+          foreach ($general_description->descriptions as $value) {
+            if ($value->language == $langcode) {
+              switch ($value->type) {
+                case 'BackgroundDescription':
+                  $background_description = $value->value;
+                  break;
+              }
+            }
+          }
+        }
+
+        if (isset($object->ontologyTerms) && is_array($object->ontologyTerms)) {
           foreach ($object->ontologyTerms as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $ontology_terms[] = $value->value;
+                $ontology_terms[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
         }
-        if (isset($object->targetGroups)) {
+
+        if (isset($object->targetGroups) && is_array($object->targetGroups)) {
           foreach ($object->targetGroups as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $target_groups[] = $value->value;
+                $target_groups[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
         }
-        if (isset($object->requirements)) {
+        if (isset($object->requirements) && is_array($object->requirements)) {
           foreach ($object->requirements as $requirement) {
             if ($requirement->language == $langcode) {
               $requirements = $requirement->value;
             }
           }
         }
-        if (isset($object->serviceClasses)) {
+
+        if (isset($object->serviceClasses) && is_array($object->serviceClasses)) {
           foreach ($object->serviceClasses as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $service_classes[] = $value->value;
+                $service_classes[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
+          }
+        }
+
+        if (
+          !empty($general_description->legislation) &&
+          is_array($general_description->legislation)
+        ) {
+          $legislation_links = [];
+          foreach ($general_description->legislation as $legislation) {
+            $legislation_link = [
+              'title' => '',
+              'uri' => '',
+            ];
+            if (isset($legislation->names)) {
+              foreach ($legislation->names as $linkName) {
+                if ($linkName->language == $langcode) {
+                  $legislation_link['title'] = $linkName->value;
+                }
+              }
+            }
+            if (isset($legislation->webPages)) {
+              foreach ($legislation->webPages as $linkUrl) {
+                if ($linkUrl->language == $langcode) {
+                  $legislation_link['uri'] = $linkUrl->url;
+                }
+              }
+            }
+            $legislation_links[] = $legislation_link;
           }
         }
 
@@ -146,6 +209,8 @@ class PtvHelper {
           'langcode' => $langcode,
           'summary' => $summary ?? '',
           'description' => $description ?? '',
+          'background_description' => $background_description ?? '',
+          'legislation_links' => $legislation_links ?? [],
           'user_instruction' => $user_instruction ?? '',
           'charge_info' => $charge_info ?? '',
           'ontology_terms' => $ontology_terms,
@@ -168,16 +233,18 @@ class PtvHelper {
         $opening_hours = [];
         $accessibility = '';
 
-        foreach ($object->serviceChannelNames as $value) {
-          if ($value->type == 'Name') {
-            $name = $value->value;
-            if ($value->language == 'fi') {
+        if (!empty($object->serviceChannelNames) && is_array($object->serviceChannelNames)) {
+          foreach ($object->serviceChannelNames as $value) {
+            if ($value->type == 'Name') {
               $name = $value->value;
-            }
-            if ($value->language == $langcode) {
-              $name = $value->value;
-              $translation_missing = FALSE;
-              break;
+              if ($value->language == 'fi') {
+                $name = $value->value;
+              }
+              if ($value->language == $langcode) {
+                $name = $value->value;
+                $translation_missing = FALSE;
+                break;
+              }
             }
           }
         }
@@ -193,31 +260,37 @@ class PtvHelper {
           break;
         }
 
-        foreach ($object->services as $value) {
-          $services[] = $value->service->id;
+        if (isset($object->services) && is_array($object->services)) {
+          foreach ($object->services as $value) {
+            $services[] = $value->service->id;
+          }
         }
 
-        foreach ($object->serviceChannelDescriptions as $value) {
-          if ($value->language == $langcode) {
-            switch ($value->type) {
-              case 'Summary':
-                $summary = $value->value;
-                break;
+        if (isset($object->serviceChannelDescriptions) && is_array($object->serviceChannelDescriptions)) {
+          foreach ($object->serviceChannelDescriptions as $value) {
+            if ($value->language == $langcode) {
+              switch ($value->type) {
+                case 'Summary':
+                  $summary = $value->value;
+                  break;
 
-              case 'Description':
-                $description = $value->value;
-                break;
+                case 'Description':
+                  $description = $value->value;
+                  break;
+              }
             }
           }
         }
-        if (isset($object->emails)) {
+
+        if (isset($object->emails) && is_array($object->emails)) {
           foreach ($object->emails as $value) {
             if ($value->language == $langcode) {
               $email = $value->value;
             }
           }
         }
-        if (isset($object->phoneNumbers)) {
+
+        if (isset($object->phoneNumbers) && is_array($object->phoneNumbers)) {
           $i = 0;
           foreach ($object->phoneNumbers as $value) {
             if ($value->language == $langcode) {
@@ -228,7 +301,8 @@ class PtvHelper {
             }
           }
         }
-        if (isset($object->webPages)) {
+
+        if (isset($object->webPages) && is_array($object->webPages)) {
           foreach ($object->webPages as $value) {
             if ($value->language == $langcode) {
               $webpage['uri'] = $value->url;
@@ -236,23 +310,29 @@ class PtvHelper {
             }
           }
         }
-        if (isset($object->languages)) {
+
+        if (isset($object->languages) && is_array($object->languages)) {
           $langs = $object->languages;
         }
 
-        if (isset($object->addresses)) {
+        if (isset($object->addresses) && is_array($object->addresses)) {
           foreach ($object->addresses as $value) {
-            foreach ($value->streetAddress->street as $street) {
-              if ($street->language == $langcode) {
-                $address['address_line1'] = $street->value . ' ' . $value->streetAddress->streetNumber;
+            if (isset($value->streetAddress->street) && is_array($value->streetAddress->street)) {
+              foreach ($value->streetAddress->street as $street) {
+                if ($street->language == $langcode) {
+                  $address['address_line1'] = $street->value . ' ' . $value->streetAddress->streetNumber;
+                }
               }
             }
-            $post_code = $value->streetAddress->postalCode;
-            foreach ($value->streetAddress->postOffice as $postOffice) {
-              if ($postOffice->language == $langcode) {
-                $address['locality'] = $postOffice->value;
-                $address['postal_code'] = $post_code;
-                $address['country_code'] = 'FI';
+
+            if (isset($value->streetAddress->postOffice) && is_array($value->streetAddress->postOffice)) {
+              $post_code = $value->streetAddress->postalCode;
+              foreach ($value->streetAddress->postOffice as $postOffice) {
+                if ($postOffice->language == $langcode) {
+                  $address['locality'] = $postOffice->value;
+                  $address['postal_code'] = $post_code;
+                  $address['country_code'] = 'FI';
+                }
               }
             }
             $coordinates['first'] = $value->streetAddress->latitude;
@@ -281,10 +361,10 @@ class PtvHelper {
             }
 
             if (!empty($sentences)) {
-              foreach ($sentences as $key => $value) {
-                $accessibility .= '<h4>' . $value['group'] . '</h4>';
+              foreach ($sentences as $key => $row) {
+                $accessibility .= '<h4>' . $row['group'] . '</h4>';
                 $accessibility .= '<ul>';
-                foreach ($value['sentences'] as $sentence) {
+                foreach ($row['sentences'] as $sentence) {
                   $accessibility .= '<li>' . $sentence . '</li>';
                 }
                 $accessibility .= '</ul>';
@@ -292,16 +372,21 @@ class PtvHelper {
             }
           }
         }
-        if (isset($object->ontologyTerms)) {
+
+        if (isset($object->ontologyTerms) && is_array($object->ontologyTerms)) {
           foreach ($object->ontologyTerms as $term) {
             foreach ($term->name as $value) {
               if ($value->language == $langcode) {
-                $ontology_terms[] = $value->value;
+                $ontology_terms[] = [
+                  'name' => $value->value,
+                  'uri' => $term->uri,
+                ];
               }
             }
           }
         }
-        if (isset($object->serviceHours)) {
+
+        if (isset($object->serviceHours) && is_array($object->serviceHours)) {
           $i = 0;
           $ii = 0;
           foreach ($object->serviceHours as $serviceHours) {

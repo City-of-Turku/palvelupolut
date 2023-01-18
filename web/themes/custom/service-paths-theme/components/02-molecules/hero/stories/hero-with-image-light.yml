@@ -1,0 +1,8 @@
+hero__title: 'The light hero'
+hero__subtitle: 'The light hero subtitle'
+hero__lead_text: 'Hero lead text paragraph'
+hero__image:
+  image_src: '/hero.jpg'
+with_image: true
+hero__modifiers:
+  - 'light'

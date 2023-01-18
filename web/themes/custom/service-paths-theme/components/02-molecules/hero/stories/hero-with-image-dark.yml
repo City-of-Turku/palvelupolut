@@ -1,0 +1,10 @@
+hero__title: 'Päivähoito Turussa'
+hero__subtitle: 'Alaotsikko'
+hero__lead_text:
+  'Varhaiskasvatuksen palvelut on tarkoitettu kaikille alle kouluikäisille lapsille Turussa. Tältä sivulta löydät kaiken tarvitsemasi tiedon vaihtoehdoista ja hakuprosessista.
+  Löydetään yhdessä lapsellesi sopivin vaihtoehto!'
+hero__image:
+  image_src: '/hero.jpg'
+with_image: true
+hero__modifiers:
+  - 'dark'

@@ -46,3 +46,6 @@ varnish:
 #       command: |
 #         drush migrate:reset-status service_channels_translations;
 #         drush migrate:import service_channels_translations --update;
+
+mailhog:
+  enabled: true
