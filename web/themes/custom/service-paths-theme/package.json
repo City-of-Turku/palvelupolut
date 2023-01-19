@@ -67,7 +67,7 @@
     "file-loader": "^6.2.0",
     "fs": "^0.0.1-security",
     "glob": "^7.2.3",
-    "html-entities": "^1.4.0",
+    "html-entities": "^2.3.3",
     "jquery": "^3.6.1",
     "jquery-once": "^2.2.3",
     "js-yaml-loader": "^1.2.2",
