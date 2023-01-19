@@ -1,0 +1,33 @@
+uuid: 5d2eb5f2-77ba-43f1-b6cd-c72d1e32342a
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: node_service_channel_sv
+label: 'Node: Service Channel SV'
+type: 'canonical_entities:node'
+pattern: 'servicekanaler/[node:title]'
+selection_criteria:
+  aab812a9-c3c3-42a1-8c28-57f0bbf7284e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: aab812a9-c3c3-42a1-8c28-57f0bbf7284e
+    context_mapping:
+      node: node
+    bundles:
+      service_channel: service_channel
+  d42a8732-4fd3-4f79-8e3d-721264c13b9d:
+    id: language
+    negate: false
+    uuid: d42a8732-4fd3-4f79-8e3d-721264c13b9d
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      sv: sv
+selection_logic: and
+weight: -6
+relationships:
+  'node:langcode:language':
+    label: Language

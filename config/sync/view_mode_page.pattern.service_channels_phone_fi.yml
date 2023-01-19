@@ -1,34 +1,34 @@
-uuid: c6204755-0246-4041-b4e5-a5c47dd7aa5e
+uuid: acd3a8e7-6c1f-4c29-93a0-aee0e5ad63e4
 langcode: en
 status: true
 dependencies:
   module:
     - language
     - node
-id: service_channels_e_service
-label: 'Service Channels - E-Service EN'
+id: service_channels_phone_fi
+label: 'Service Channels - Phone FI'
 type: 'canonical_entities:node'
-pattern: /%/e-services
-view_mode: service_channels_e_service
+pattern: /%/puhelinnumerot
+view_mode: service_channels_phone
 selection_criteria:
-  0398966f-c2ea-4718-a3ed-6d69f7618553:
+  52547775-3c75-4836-8adf-9cc18873fd73:
     id: node_type
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 0398966f-c2ea-4718-a3ed-6d69f7618553
-  35f93b88-51d4-4018-92f6-b4bd94d826bf:
+    uuid: 52547775-3c75-4836-8adf-9cc18873fd73
+  90093448-1dfb-4d7d-81ac-694a86d75b98:
     id: language
     langcodes:
-      en: en
+      fi: fi
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 35f93b88-51d4-4018-92f6-b4bd94d826bf
+    uuid: 90093448-1dfb-4d7d-81ac-694a86d75b98
 selection_logic: and
-weight: '-8'
+weight: '-4'
 relationships:
   'node:langcode:language':
     label: Language
