@@ -15,6 +15,10 @@
         color: var(--color-text-inverse);
       }
     }
+
+    > .fontawesome-icon--before {
+      margin: 0 0.5rem -2px 0;
+    }
   }
 
   &__text {

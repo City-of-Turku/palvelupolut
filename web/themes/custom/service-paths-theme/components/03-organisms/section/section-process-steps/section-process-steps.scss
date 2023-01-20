@@ -7,6 +7,12 @@
   flex-wrap: wrap;
   padding: space(2) 0;
 
+  &--sidebar {
+    &::before {
+      content: none;
+    }
+  }
+
   @include above($width-large) {
     padding: space(4) 0;
   }
