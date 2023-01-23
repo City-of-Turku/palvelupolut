@@ -6,9 +6,6 @@ accordion__items:
     list_links__items:
       - title: 'Link to law'
         url: '#'
-        icon_before: 'arrow-right'
-        modifiers:
-          - 'icon'
 accordion__modifiers:
   - 'aside'
 accordion_item__modifiers:

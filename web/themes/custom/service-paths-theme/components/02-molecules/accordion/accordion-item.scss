@@ -13,7 +13,9 @@
       align-items: center;
       flex-wrap: nowrap;
 
+      .accordion-item__index,
       .fontawesome-icon {
+        flex: 0 0 auto;
         width: space(1.25);
         height: space(1.25);
         top: space(0.125);
@@ -22,6 +24,8 @@
         background: color(background-section-dark);
         padding: space(0.5);
         border-radius: space(0.625);
+        line-height: 1.25rem;
+        text-align: center;
       }
     }
 
@@ -74,6 +78,7 @@
   &__heading {
     justify-content: space-between;
     display: flex;
+    gap: $space;
     align-items: center;
     margin: 0;
     padding: space(0.75) 0;
@@ -116,6 +121,7 @@
     }
 
     .fontawesome-icon {
+      flex: 0 0 auto;
       width: 1.5em;
       height: 1.5em;
     }
@@ -163,6 +169,25 @@
       padding: space(1);
       border-radius: space(1);
       margin-top: space(0.25);
+      font-size: $font-size--small-2;
+      line-height: $line-height--small;
+
+      p {
+        font-size: $font-size--small-2;
+        line-height: $line-height--small;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .list-links {
+        margin-top: $space;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
     .accordion-item--white & {
       margin: 0 space(1.5);

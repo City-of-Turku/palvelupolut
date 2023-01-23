@@ -38,15 +38,14 @@
  * @ingroup themeable
  */
 #}
+{% set accordion__modifiers = ['aside'] %}
 
-{% set section_process_steps__id = 'pg' ~ paragraph.id() %}
+{% extends "@molecules/accordion/accordion.twig" %}
 
-{% extends "@organisms/section/section-process-steps/section-process-steps.twig" %}
-
-{% block process_steps_heading %}
+{% block accordion_heading %}
   {{ content.field_paragraph_heading }}
 {% endblock %}
 
-{% block process_steps_items %}
+{% block accordion_content %}
   {{ content.field_process_steps }}
 {% endblock %}
