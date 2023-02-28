@@ -98,6 +98,28 @@
     }
   }
 
+  &__opening_hours_group {
+    margin-bottom: space();
+    font-size: $font-size--small-1;
+    padding-left: space(2.5);
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
+  }
+
+  &__opening_hours_group_title {
+    margin-bottom: space(0.5);
+    font-weight: 700;
+  }
+
+  &__opening_hours_day {
+    margin-bottom: space(0.5);
+  }
+
+  &__opening_hours_weekday,
+  &__opening_hours_hours {
+    display: block;
+  }
+
   &__link-with-icon {
     display: flex;
     margin-bottom: space(0.5);

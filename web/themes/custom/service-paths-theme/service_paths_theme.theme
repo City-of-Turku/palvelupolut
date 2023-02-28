@@ -5,6 +5,7 @@
  * Functions to support theming.
  */
 
+use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 
@@ -162,6 +163,15 @@ function service_paths_theme_preprocess_node__service_channel(&$variables) {
       ]
     )->toString();
   }
+
+  // Formulate opening hours.
+  if ($node->hasField('field_opening_hours')) {
+    $opening_hours_data = $node->field_opening_hours->getValue();
+
+    if ($opening_hours_data) {
+      $variables['opening_hours'] = _service_paths_theme_opening_hours($opening_hours_data);
+    }
+  }
 }
 
 /**
@@ -193,6 +203,20 @@ function service_paths_theme_preprocess_select(&$variables) {
  */
 function service_paths_theme_preprocess_field(&$variables, $hook) {
   $variables['base_path'] = \Drupal::request()->getHost();
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function service_paths_theme_preprocess_field__field_opening_hours(&$variables) {
+  // Format opening hours data into a twig friendly format.
+  $opening_hours_data = [];
+  if (isset($variables['element']['#items']) && $variables['element']['#items'] instanceof FieldItemList) {
+    $opening_hours_data = $variables['element']['#items']->getValue();
+  }
+  if ($opening_hours_data) {
+    $variables['opening_hours'] = _service_paths_theme_opening_hours($opening_hours_data);
+  }
 }
 
 /**
@@ -345,4 +369,70 @@ function _service_paths_theme_service_channels(array &$variables, string $eva_ps
   }
   $variables['service_channels'] = $variables['content'][$eva_pseudo_field_name] ?? '';
   $variables['service_channels_total'] = $service_channels_view ? $service_channels_view->total_rows : 0;
+}
+
+/**
+ * Helper function to format opening hours.
+ *
+ * @param array $opening_hours_data
+ *   Opening hours field data.
+ *
+ * @return array
+ *   Formatted opening hour data.
+ */
+function _service_paths_theme_opening_hours(array $opening_hours_data) {
+  $opening_hours = [];
+  $group_title = NULL;
+  $group_days = [];
+
+  foreach ($opening_hours_data as $opening_hour) {
+    $first = $opening_hour['first'];
+    $second = $opening_hour['second'];
+
+    if ($first && is_null($second)) {
+      // This is a group header. Close previous group, if found and create
+      // a new one.
+      _service_paths_theme_close_opening_hour_group($opening_hours, $group_title, $group_days);
+      $group_title = $first;
+    }
+    elseif ($second && is_null($first)) {
+      // This is a one line opening info, like 'Always open'.
+      $group_days[] = [
+        'weekday' => $second,
+      ];
+    }
+    else {
+      // A regular opening hour.
+      $group_days[] = [
+        'weekday' => $first,
+        'hours' => $second,
+      ];
+    }
+  }
+
+  // Close the last group and add to twig variables.
+  _service_paths_theme_close_opening_hour_group($opening_hours, $group_title, $group_days);
+
+  return $opening_hours;
+}
+
+/**
+ * Helper function to close an opening hour group.
+ *
+ * @param array $opening_hours
+ *   Opening hours data. Passed by reference.
+ * @param string $group_title
+ *   Title for the group to be closed. Passed by reference.
+ * @param array $group_days
+ *   Days for the group to be closed. Passed by reference.
+ */
+function _service_paths_theme_close_opening_hour_group(array &$opening_hours, &$group_title, array &$group_days) {
+  if ($group_title || $group_days) {
+    $opening_hours[] = [
+      'group_title' => $group_title,
+      'days' => $group_days,
+    ];
+  }
+  $group_title = NULL;
+  $group_days = [];
 }

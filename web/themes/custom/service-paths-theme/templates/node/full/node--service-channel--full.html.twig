@@ -175,40 +175,17 @@
 
         </div>
         <div {{ bem("inner", [], section_contact_cards__base_class) }}>
-          {% set secondary_cards = [] %}
-          {% set opening_hours_title = 'Opening Hours'|t %}
-          {% set opening_hours_default_title = true %}
-          {% set opening_hours_title_changed = false %}
-          {% set opening_hours_without_title = false %}
-
-          {% for item in content.field_opening_hours['#items'] %}
-            {% set first = item.getValue.first %}
-            {% set second = item.getValue.second %}
-
-            {% if second is null and items|length > 1 %}
-              {% set opening_hours_title = first %}
-              {% set opening_hours_title_changed = true %}
-              {% set opening_hours_without_title = false %}
-            {% else %}
-              {% set data = {
-                "info_title": opening_hours_without_title ? null : opening_hours_title,
-                "text" : first,
-                "text2" : second,
-                "icon": "clock",
-              }
-              %}
-
-              {% if opening_hours_title_changed or opening_hours_default_title %}
-                {% set opening_hours_without_title = true %}
-              {% else %}
-                {% set opening_hours_without_title = false %}
-                {% set opening_hours_title_changed = false %}
-              {% endif %}
-
-              {% set secondary_cards = secondary_cards|merge([data]) %}
-
-            {% endif %}
-          {% endfor %}
+          {% if opening_hours %}
+            {% set secondary_cards = [
+              {
+              'info_title': 'Opening Hours'|t,
+              'icon': 'clock',
+              },
+              {
+              'opening_hours': opening_hours,
+              },
+            ] %}
+          {% endif %}
 
           {% set webpage_url = node.field_webpage.0.url.toString %}
           {% if webpage_url %}

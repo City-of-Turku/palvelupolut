@@ -38,48 +38,20 @@
  */
 #}
 
-{% set cards = [] %}
-{% set title = 'Opening Hours'|t %}
-{% set default_title = true %}
-{% set title_changed = false %}
-{% set without_title = false %}
+{% if opening_hours %}
+  {% set cards = [
+    {
+      'info_title': 'Opening Hours'|t,
+      'icon': 'clock',
+    },
+    {
+      'opening_hours': opening_hours,
+    },
+  ] %}
 
-{% for item in items %}
-
-	{% set first = item.content['#item'].getValue.first %}
-	{% set second = item.content['#item'].getValue.second %}
-
-	{% if second is null and items|length > 1 %}
-		{% set title = first %}
-		{% set title_changed = true %}
-		{% set without_title = false %}
-	{% else %}
-
-		{% set data = {
-        "info_title": without_title ? null : title,
-        "text" : first,
-        "text2" : second,
-        "icon": "clock",
-      }
-    %}
-
-		{% if title_changed or default_title %}
-			{% set without_title = true %}
-		{% else %}
-			{% set without_title = false %}
-			{% set title_changed = false %}
-		{% endif %}
-
-		{% set cards = cards|merge([data]) %}
-
-	{% endif %}
-
-{% endfor %}
-
-{% include "@molecules/contact-card/contact-card.twig" with {
-  section_contact_cards__modifiers: process_step_modifiers,
-  contact_card__title: '',
-  contact_card__items: cards,
-} %}
-
-
+  {% include "@molecules/contact-card/contact-card.twig" with {
+    section_contact_cards__modifiers: process_step_modifiers,
+    contact_card__title: '',
+    contact_card__items: cards,
+  } %}
+{% endif %}
