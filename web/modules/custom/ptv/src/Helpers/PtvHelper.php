@@ -29,9 +29,11 @@ class PtvHelper {
 
     $data = [];
     foreach ($config_data as $key => $name) {
-      if ($debug && in_array($key, $tmp_ids)) {
-        foreach ($langcodes as $langcode) {
-          $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
+      if ($debug) {
+        if (in_array($key, $tmp_ids)) {
+          foreach ($langcodes as $langcode) {
+            $data[] = ['id' => $key, 'name' => $name, 'langcode' => $langcode];
+          }
         }
       }
       else {
@@ -390,118 +392,8 @@ class PtvHelper {
         }
 
         if (isset($object->serviceHours) && is_array($object->serviceHours)) {
-          $weekday_keys = [
-            'Monday' => 0,
-            'Tuesday' => 0,
-            'Wednesday' => 0,
-            'Thursday' => 0,
-            'Friday' => 0,
-            'Saturday' => 0,
-            'Sunday' => 0,
-          ];
-          $weekdays = array_keys($weekday_keys);
-          $i = 0;
-          foreach ($object->serviceHours as $serviceHours) {
-            if ($serviceHours->serviceHourType === 'DaysOfTheWeek' && $serviceHours->validForNow) {
-              // Check for a group title.
-              foreach ($serviceHours->additionalInformation as $key => $value) {
-                if ($value->language == $langcode) {
-                  $opening_hours[$i]['first'] = $value->value;
-                  $i++;
-                }
-              }
-
-              // Check if always open.
-              if ($serviceHours->isAlwaysOpen) {
-                $opening_hours[$i]['second'] = t('Always open', [], ['langcode' => $langcode]);
-                $i++;
-                continue;
-              }
-
-              // Process opening hours. Collect all times for each weekday.
-              // Weekdays might be separate data fields or set as a range for
-              // a single opening hour data block, so we'll spread any ranges
-              // into separate weekdays to have a uniform data set for later.
-              $times_per_day = [];
-              foreach ($serviceHours->openingHour as $day) {
-                $time = substr(str_replace(':', '.', $day->from), 0, -3) . ' - ' . substr(str_replace(':', '.', ltrim($day->to, 0)), 0, -3);
-                $time = ltrim($time, '0');
-                $times_per_day[$day->dayFrom][] = $time;
-
-                if ($day->dayTo) {
-                  $from_found = FALSE;
-                  foreach ($weekdays as $weekday) {
-                    // Skip until dayFrom is reached.
-                    if ($weekday === $day->dayFrom) {
-                      $from_found = TRUE;
-                      continue;
-                    }
-
-                    if ($from_found) {
-                      $times_per_day[$weekday][] = $time;
-                    }
-                  }
-                }
-              }
-
-              // Make sure times per day is always in proper weekday order.
-              $times_per_day = array_merge($weekday_keys, $times_per_day);
-              $times_per_day = array_filter($times_per_day);
-
-              // Group weekdays with identical opening hours, for consecutive
-              // weekdays only.
-              $grouped_times = [];
-              $last_weekday = NULL;
-              $last_data_weekday = NULL;
-              $last_time_array = [];
-              $last_group_index = NULL;
-              foreach ($weekdays as $weekday) {
-                if (isset($times_per_day[$weekday])) {
-                  if ($last_weekday === $last_data_weekday && $last_time_array === $times_per_day[$weekday]) {
-                    $grouped_times[$last_group_index]['end'] = $weekday;
-                  }
-                  else {
-                    $grouped_times[] = [
-                      'start' => $weekday,
-                      'end' => NULL,
-                      'times' => $times_per_day[$weekday],
-                    ];
-                  }
-                  $last_data_weekday = $weekday;
-                  $last_time_array = $times_per_day[$weekday];
-                }
-
-                $last_weekday = $weekday;
-                $last_group_index = array_key_last($grouped_times);
-              }
-
-              // Build results array.
-              $time_last_separator = ' ' . t('and', [], ['langcode' => $langcode]) . ' ';
-              foreach ($grouped_times as $grouped_time) {
-                // Weekday array, that will be imploded into a string with
-                // proper separator; first item is the start, second the end.
-                $weekday = [
-                  $this->getTranslatedDay($grouped_time['start'], $langcode),
-                ];
-                if ($grouped_time['end']) {
-                  $weekday[] = $this->getTranslatedDay($grouped_time['end'], $langcode);
-                }
-
-                // Remove the last time from times array. The remaining times
-                // array can be imploded into a string with comma, and then the
-                // last item will be added separated by an 'and'.
-                $last_time = array_pop($grouped_time['times']);
-                $times = [];
-                if ($grouped_time['times']) {
-                  $times[] = implode(', ', $grouped_time['times']);
-                }
-                $times[] = $last_time;
-                $opening_hours[$i]['first'] = implode(' - ', $weekday);
-                $opening_hours[$i]['second'] = implode($time_last_separator, $times);
-                $i++;
-              }
-            }
-          }
+          $opening_hours = $this->getOpeningHours($object->serviceHours, $langcode);
+          $holiday_opening_hours = $this->getOpeningHours($object->serviceHours, $langcode, 'holiday');
         }
 
         $data = [
@@ -547,6 +439,171 @@ class PtvHelper {
       return $days[$var];
     }
     return $var;
+  }
+
+  /**
+   * Get structured opening hours data.
+   *
+   * @param array $service_hours
+   *   Service hours from PTV API.
+   * @param string $langcode
+   *   Current language id.
+   * @param string $type
+   *   Type of opening hours. Allowed values are 'regular' and 'holiday'.
+   *   Defaults to 'regular'.
+   *
+   * @return array
+   *   Structured opening hours as expected by a migration into a double field.
+   */
+  public function getOpeningHours(array $service_hours, string $langcode, string $type = 'regular') {
+    $date_formatter = \Drupal::service('date.formatter');
+    $opening_hours = [];
+    $weekday_keys = [
+      'Monday' => 0,
+      'Tuesday' => 0,
+      'Wednesday' => 0,
+      'Thursday' => 0,
+      'Friday' => 0,
+      'Saturday' => 0,
+      'Sunday' => 0,
+    ];
+    $weekdays = array_keys($weekday_keys);
+    $i = 0;
+
+    foreach ($service_hours as $service_hour) {
+      // Check if service hour type matches requested type.
+      $type_ok = FALSE;
+      if ($type === 'regular' && $service_hour->serviceHourType === 'DaysOfTheWeek' && $service_hour->validForNow) {
+        $type_ok = TRUE;
+      }
+      elseif ($type === 'holiday' && $service_hour->serviceHourType === 'Exceptional') {
+        $type_ok = TRUE;
+      }
+
+      // Skip service hours that don't match requested type.
+      if (!$type_ok) {
+        continue;
+      }
+
+      // Check for a group title.
+      foreach ($service_hour->additionalInformation as $key => $value) {
+        if ($value->language == $langcode) {
+          $opening_hours[$i]['first'] = $value->value;
+          $i++;
+        }
+      }
+
+      // Check for valid time range.
+      if ($service_hour->validFrom) {
+        $opening_hours[$i]['first'] = 'valid_from';
+        $opening_hours[$i]['second'] = $date_formatter->format(strtotime($service_hour->validFrom), 'date');
+        $i++;
+      }
+      if ($service_hour->validTo) {
+        $opening_hours[$i]['first'] = 'valid_to';
+        $opening_hours[$i]['second'] = $date_formatter->format(strtotime($service_hour->validTo), 'date');
+        $i++;
+      }
+
+      // Check if always open.
+      if ($service_hour->isAlwaysOpen) {
+        $opening_hours[$i]['second'] = t('Always open', [], ['langcode' => $langcode]);
+        $i++;
+        continue;
+      }
+
+      // Check if closed.
+      if ($service_hour->isClosed) {
+        $opening_hours[$i]['second'] = t('Closed', [], ['langcode' => $langcode]);
+        $i++;
+        continue;
+      }
+
+      // Process opening hours. Collect all times for each weekday.
+      // Weekdays might be separate data fields or set as a range for
+      // a single opening hour data block, so we'll spread any ranges
+      // into separate weekdays to have a uniform data set for later.
+      $times_per_day = [];
+      foreach ($service_hour->openingHour as $day) {
+        $time = substr(str_replace(':', '.', $day->from), 0, -3) . ' - ' . substr(str_replace(':', '.', ltrim($day->to, 0)), 0, -3);
+        $time = ltrim($time, '0');
+        $times_per_day[$day->dayFrom][] = $time;
+
+        if ($day->dayTo) {
+          $from_found = FALSE;
+          foreach ($weekdays as $weekday) {
+            // Skip until dayFrom is reached.
+            if ($weekday === $day->dayFrom) {
+              $from_found = TRUE;
+              continue;
+            }
+
+            if ($from_found) {
+              $times_per_day[$weekday][] = $time;
+            }
+          }
+        }
+      }
+
+      // Make sure times per day is always in proper weekday order.
+      $times_per_day = array_merge($weekday_keys, $times_per_day);
+      $times_per_day = array_filter($times_per_day);
+
+      // Group weekdays with identical opening hours, for consecutive
+      // weekdays only.
+      $grouped_times = [];
+      $last_weekday = NULL;
+      $last_data_weekday = NULL;
+      $last_time_array = [];
+      $last_group_index = NULL;
+      foreach ($weekdays as $weekday) {
+        if (isset($times_per_day[$weekday])) {
+          if ($last_weekday === $last_data_weekday && $last_time_array === $times_per_day[$weekday]) {
+            $grouped_times[$last_group_index]['end'] = $weekday;
+          }
+          else {
+            $grouped_times[] = [
+              'start' => $weekday,
+              'end' => NULL,
+              'times' => $times_per_day[$weekday],
+            ];
+          }
+          $last_data_weekday = $weekday;
+          $last_time_array = $times_per_day[$weekday];
+        }
+
+        $last_weekday = $weekday;
+        $last_group_index = array_key_last($grouped_times);
+      }
+
+      // Build results array.
+      $time_last_separator = ' ' . t('and', [], ['langcode' => $langcode]) . ' ';
+      foreach ($grouped_times as $grouped_time) {
+        // Weekday array, that will be imploded into a string with
+        // proper separator; first item is the start, second the end.
+        $weekday = [
+          $this->getTranslatedDay($grouped_time['start'], $langcode),
+        ];
+        if ($grouped_time['end']) {
+          $weekday[] = $this->getTranslatedDay($grouped_time['end'], $langcode);
+        }
+
+        // Remove the last time from times array. The remaining times
+        // array can be imploded into a string with comma, and then the
+        // last item will be added separated by an 'and'.
+        $last_time = array_pop($grouped_time['times']);
+        $times = [];
+        if ($grouped_time['times']) {
+          $times[] = implode(', ', $grouped_time['times']);
+        }
+        $times[] = $last_time;
+        $opening_hours[$i]['first'] = implode(' - ', $weekday);
+        $opening_hours[$i]['second'] = implode($time_last_separator, $times);
+        $i++;
+      }
+    }
+
+    return $opening_hours;
   }
 
 }

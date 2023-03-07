@@ -1,0 +1,73 @@
+.dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index: 1000;
+  background: rgba(0,0,0,0.5);
+
+  &.open {
+    display: block;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 10;
+    width: 38rem;
+    max-width: 100vw;
+    margin: 4rem auto;
+    background: color(background);
+    border: 2px solid color(primary);
+    border-radius: 0.75rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: space(1);
+    padding: space(1) space(1.5);
+    border-bottom: 2px solid color(primary);
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+
+  &__heading {
+    flex: 1 1 auto;
+  }
+
+  &__close {
+    flex: 0 0 auto;
+
+    button {
+      border: none;
+      padding: 0 1rem;
+      margin: -1rem;
+    }
+
+    .fontawesome-icon {
+      margin-left: space(1);
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__content {
+    padding: space(1.5);
+
+    p, ol, ul {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

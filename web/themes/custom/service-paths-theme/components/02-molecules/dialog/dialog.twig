@@ -1,0 +1,40 @@
+{{ attach_library('service_paths_theme/dialog') }}
+
+{% set dialog__base_class = "dialog" %}
+{% set dialog__modifiers = dialog__modifiers|default([]) %}
+{% set dialog__id = dialog__link_text|clean_id %}
+{% set dialog__heading_id = (dialog__id ~ '-heading')|clean_id %}
+{% set dialog__heading_level = dialog__heading_level|default('3') %}
+
+{% include "@atoms/links/link/link.twig" with {
+  link__extra_classes: ['dialog__link'],
+  link__content: dialog__link_text,
+  link__url: '#' ~ dialog__id,
+} %}
+<div id="{{ dialog__id }}" {{ bem(dialog__base_class, dialog__modifiers) }}>
+  <div
+    {{ bem("inner", [], dialog__base_class) }}
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="{{ dialog__heading_id }}"
+  >
+    <div {{ bem("header", [], dialog__base_class) }}>
+      {% include '@atoms/text/heading/heading.twig' with {
+        heading__blockname: dialog__base_class,
+        heading: dialog__title,
+        heading__level: dialog__heading_level,
+        heading__id: dialog__heading_id,
+      } %}
+      <div {{ bem("close", [], dialog__base_class) }}>
+        {% include '@atoms/buttons/button/button.twig' with {
+          button__modifiers: ['minimal', 'small'],
+          button__content: 'Close'|t,
+          button__icon_after: 'times',
+        } %}
+      </div>
+    </div>
+    <div {{ bem("content", [], dialog__base_class) }}>
+      {{ dialog__content }}
+    </div>
+  </div>
+</div>

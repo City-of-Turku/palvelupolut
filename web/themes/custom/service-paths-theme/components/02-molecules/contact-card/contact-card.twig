@@ -87,24 +87,30 @@
 
             {% if item.opening_hours %}
               {% for opening_hour_group in item.opening_hours %}
-                <div {{ bem("opening_hours_group", [], contact_card__base_class) }}>
+                <div {{ bem("opening-hours-group", [], contact_card__base_class) }}>
                   {% if opening_hour_group.group_title %}
-                    <div {{ bem("opening_hours_group_title", [], contact_card__base_class) }}>
+                    <div {{ bem("opening-hours-group-title", [], contact_card__base_class) }}>
                       {{ opening_hour_group.group_title }}
                     </div>
                   {% endif %}
                   {% for day in opening_hour_group.days %}
-                    <div {{ bem("opening_hours_day", [], contact_card__base_class) }}>
-                      <span {{ bem("opening_hours_weekday", [], contact_card__base_class) }}>
+                    <div {{ bem("opening-hours-day", [], contact_card__base_class) }}>
+                      <span {{ bem("opening-hours-weekday", [], contact_card__base_class) }}>
                         {{ day.weekday }}
                       </span>
-                      <span {{ bem("opening_hours_hours", [], contact_card__base_class) }}>
+                      <span {{ bem("opening-hours-hours", [], contact_card__base_class) }}>
                         {{ day.hours }}
                       </span>
                     </div>
                   {% endfor %}
                 </div>
               {% endfor %}
+            {% endif %}
+
+            {% if item.additional_content %}
+              <div {{ bem("additional-content", [], contact_card__base_class) }}>
+                {{ item.additional_content }}
+              </div>
             {% endif %}
 
           {% endblock %}

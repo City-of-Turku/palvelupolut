@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.service_channel.field_contacts_heading
     - field.field.node.service_channel.field_description
     - field.field.node.service_channel.field_email
+    - field.field.node.service_channel.field_holiday_opening_hours
     - field.field.node.service_channel.field_languages
     - field.field.node.service_channel.field_lead_image
     - field.field.node.service_channel.field_location
@@ -52,6 +53,7 @@ hidden:
   field_contacts_heading: true
   field_description: true
   field_email: true
+  field_holiday_opening_hours: true
   field_languages: true
   field_location: true
   field_meta_tags: true

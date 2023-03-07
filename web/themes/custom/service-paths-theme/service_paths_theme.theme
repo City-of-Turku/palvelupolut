@@ -220,6 +220,66 @@ function service_paths_theme_preprocess_field__field_opening_hours(&$variables) 
 }
 
 /**
+ * Implements hook_preprocess_field().
+ */
+function service_paths_theme_preprocess_field__field_holiday_opening_hours(&$variables) {
+  // Format holiday opening hours data into a twig friendly format.
+  $holiday_opening_hours_data = [];
+  if (isset($variables['element']['#items']) && $variables['element']['#items'] instanceof FieldItemList) {
+    $holiday_opening_hours_data = $variables['element']['#items']->getValue();
+  }
+  if ($holiday_opening_hours_data) {
+    $holiday_opening_hours = [];
+    $holiday_opening_hour = [];
+
+    foreach ($holiday_opening_hours_data as $data) {
+      // Only the first item is populated; this is the date description.
+      if ($data['first'] && empty($data['second'])) {
+        // Save previous opening hour data.
+        if ($holiday_opening_hour) {
+          $holiday_opening_hours[] = $holiday_opening_hour;
+        }
+        // Create a new opening hour.
+        $holiday_opening_hour = [
+          'description' => $data['first'],
+        ];
+      }
+      // Valid from date.
+      elseif ($data['first'] === 'valid_from' && $data['second']) {
+        $holiday_opening_hour['valid_from'] = $data['second'];
+      }
+      // Valid to date.
+      elseif ($data['first'] === 'valid_to' && $data['second']) {
+        $holiday_opening_hour['valid_to'] = $data['second'];
+      }
+      // Opening hour information.
+      else {
+        $holiday_opening_hour['opening_hours'] = $data['second'];
+      }
+    }
+    // Save last opening hour.
+    if ($holiday_opening_hour) {
+      $holiday_opening_hours[] = $holiday_opening_hour;
+    }
+
+    // Order by valid_from date.
+    // phpcs:ignore PHPCS_SecurityAudit.BadFunctions.CallbackFunctions.WarnCallbackFunctions
+    usort($holiday_opening_hours, function ($a, $b) {
+      $a_timestamp = isset($a['valid_from']) ? strtotime($a['valid_from']) : 0;
+      $b_timestamp = isset($b['valid_from']) ? strtotime($b['valid_from']) : 0;
+
+      if ($a_timestamp === $b_timestamp) {
+        return 0;
+      }
+
+      return ($a_timestamp < $b_timestamp) ? -1 : 1;
+    });
+
+    $variables['holiday_opening_hours'] = $holiday_opening_hours;
+  }
+}
+
+/**
  * Implements hook_preprocess_links__LINKS().
  *
  * Helper for adding language links in an easy to theme format.
@@ -400,6 +460,12 @@ function _service_paths_theme_opening_hours(array $opening_hours_data) {
       $group_days[] = [
         'weekday' => $second,
       ];
+    }
+    elseif ($first === 'valid_from' && $second) {
+      // Include valid from date somewhere in opening hours (TBD).
+    }
+    elseif ($first === 'valid_to' && $second) {
+      // Include valid to date somewhere in opening hours (TBD).
     }
     else {
       // A regular opening hour.

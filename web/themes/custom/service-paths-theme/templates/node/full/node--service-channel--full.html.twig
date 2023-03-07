@@ -175,16 +175,18 @@
 
         </div>
         <div {{ bem("inner", [], section_contact_cards__base_class) }}>
+          {% set secondary_cards = [] %}
           {% if opening_hours %}
-            {% set secondary_cards = [
+            {% set secondary_cards = secondary_cards|merge([
               {
-              'info_title': 'Opening Hours'|t,
-              'icon': 'clock',
+                'info_title': 'Opening Hours'|t,
+                'icon': 'clock',
               },
               {
-              'opening_hours': opening_hours,
+                'opening_hours': opening_hours,
+                'additional_content': content.field_holiday_opening_hours,
               },
-            ] %}
+            ]) %}
           {% endif %}
 
           {% set webpage_url = node.field_webpage.0.url.toString %}

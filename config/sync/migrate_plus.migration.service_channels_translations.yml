@@ -56,6 +56,7 @@ process:
     plugin: default_value
     default_value: basic_html
   field_opening_hours: opening_hours
+  field_holiday_opening_hours: holiday_opening_hours
   field_tags:
     plugin: ptv_entity_update_with_translations
     source: ontology_terms

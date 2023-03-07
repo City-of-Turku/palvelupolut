@@ -1,17 +1,17 @@
-uuid: 1bb484b5-8524-4964-bf18-f22e2a76968c
+uuid: f60e0955-2637-4dca-befb-6334aae2a9bf
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_opening_hours
+    - field.storage.node.field_holiday_opening_hours
     - node.type.service_channel
   module:
     - double_field
-id: node.service_channel.field_opening_hours
-field_name: field_opening_hours
+id: node.service_channel.field_holiday_opening_hours
+field_name: field_holiday_opening_hours
 entity_type: node
 bundle: service_channel
-label: 'Opening Hours'
+label: 'Holiday Opening Hours'
 description: ''
 required: false
 translatable: true
