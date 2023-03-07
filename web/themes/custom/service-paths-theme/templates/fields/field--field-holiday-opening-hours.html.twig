@@ -37,21 +37,23 @@
  * @see template_preprocess_field()
  */
 #}
-
-{% if opening_hours %}
-  {% set cards = [
-    {
-      'info_title': 'Opening Hours'|t,
-      'icon': 'clock',
-    },
-    {
-      'opening_hours': opening_hours,
-    },
-  ] %}
-
-  {% include "@molecules/contact-card/contact-card.twig" with {
-    section_contact_cards__modifiers: process_step_modifiers,
-    contact_card__title: '',
-    contact_card__items: cards,
+{% if holiday_opening_hours %}
+  {% set dialog_content %}
+    <table class="table table--holiday-opening-hours">
+      <tbody>
+        {% for opening in holiday_opening_hours %}
+          <tr>
+            <td>{{ opening.valid_from }}{% if opening.valid_to %} - {{ opening.valid_to }}{% endif %}</td>
+            <td>{{ opening.description }}</td>
+            <td>{{ opening.opening_hours }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endset %}
+  {% include '@molecules/dialog/dialog.twig' with {
+    dialog__link_text: 'Holiday opening hours'|t,
+    dialog__title: 'Holiday opening hours'|t,
+    dialog__content: dialog_content,
   } %}
 {% endif %}
