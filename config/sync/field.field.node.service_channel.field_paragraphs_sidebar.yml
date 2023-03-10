@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.contacts_section
     - paragraphs.paragraphs_type.general
     - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.process
   module:
     - entity_reference_revisions
 id: node.service_channel.field_paragraphs_sidebar
@@ -27,6 +28,7 @@ settings:
       contacts_section: contacts_section
       general: general
       links: links
+      process: process
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -61,7 +63,7 @@ settings:
         enabled: true
       process:
         weight: -19
-        enabled: false
+        enabled: true
       references:
         weight: -18
         enabled: false

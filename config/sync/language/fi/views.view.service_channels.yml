@@ -2,3 +2,7 @@ display:
   embed:
     display_options:
       title: 'Miten ja mistä saan tätä palvelua?'
+  page:
+    display_options:
+      title: Asiointikanavat
+label: Asiointikanavat

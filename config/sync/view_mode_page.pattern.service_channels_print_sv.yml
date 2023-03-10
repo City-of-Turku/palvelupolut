@@ -1,0 +1,34 @@
+uuid: a76ba065-d73d-4f35-87e4-fa03d4629dde
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_print_sv
+label: 'Service Channels - Print SV'
+type: 'canonical_entities:node'
+pattern: /%/utskrivbara-blanketter
+view_mode: service_channels_print
+selection_criteria:
+  a6ee4562-91bb-4e2b-a70b-4083092cd419:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a6ee4562-91bb-4e2b-a70b-4083092cd419
+  96b88014-4470-482f-ac1e-6875b19fa8d6:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 96b88014-4470-482f-ac1e-6875b19fa8d6
+selection_logic: and
+weight: '0'
+relationships:
+  'node:langcode:language':
+    label: Language

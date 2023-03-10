@@ -1,0 +1,34 @@
+uuid: acd3a8e7-6c1f-4c29-93a0-aee0e5ad63e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_phone_fi
+label: 'Service Channels - Phone FI'
+type: 'canonical_entities:node'
+pattern: /%/puhelinnumerot
+view_mode: service_channels_phone
+selection_criteria:
+  52547775-3c75-4836-8adf-9cc18873fd73:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 52547775-3c75-4836-8adf-9cc18873fd73
+  90093448-1dfb-4d7d-81ac-694a86d75b98:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 90093448-1dfb-4d7d-81ac-694a86d75b98
+selection_logic: and
+weight: '-4'
+relationships:
+  'node:langcode:language':
+    label: Language

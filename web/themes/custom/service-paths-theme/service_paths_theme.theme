@@ -5,6 +5,7 @@
  * Functions to support theming.
  */
 
+use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 
@@ -162,6 +163,15 @@ function service_paths_theme_preprocess_node__service_channel(&$variables) {
       ]
     )->toString();
   }
+
+  // Formulate opening hours.
+  if ($node->hasField('field_opening_hours')) {
+    $opening_hours_data = $node->field_opening_hours->getValue();
+
+    if ($opening_hours_data) {
+      $variables['opening_hours'] = _service_paths_theme_opening_hours($opening_hours_data);
+    }
+  }
 }
 
 /**
@@ -193,6 +203,80 @@ function service_paths_theme_preprocess_select(&$variables) {
  */
 function service_paths_theme_preprocess_field(&$variables, $hook) {
   $variables['base_path'] = \Drupal::request()->getHost();
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function service_paths_theme_preprocess_field__field_opening_hours(&$variables) {
+  // Format opening hours data into a twig friendly format.
+  $opening_hours_data = [];
+  if (isset($variables['element']['#items']) && $variables['element']['#items'] instanceof FieldItemList) {
+    $opening_hours_data = $variables['element']['#items']->getValue();
+  }
+  if ($opening_hours_data) {
+    $variables['opening_hours'] = _service_paths_theme_opening_hours($opening_hours_data);
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function service_paths_theme_preprocess_field__field_holiday_opening_hours(&$variables) {
+  // Format holiday opening hours data into a twig friendly format.
+  $holiday_opening_hours_data = [];
+  if (isset($variables['element']['#items']) && $variables['element']['#items'] instanceof FieldItemList) {
+    $holiday_opening_hours_data = $variables['element']['#items']->getValue();
+  }
+  if ($holiday_opening_hours_data) {
+    $holiday_opening_hours = [];
+    $holiday_opening_hour = [];
+
+    foreach ($holiday_opening_hours_data as $data) {
+      // Only the first item is populated; this is the date description.
+      if ($data['first'] && empty($data['second'])) {
+        // Save previous opening hour data.
+        if ($holiday_opening_hour) {
+          $holiday_opening_hours[] = $holiday_opening_hour;
+        }
+        // Create a new opening hour.
+        $holiday_opening_hour = [
+          'description' => $data['first'],
+        ];
+      }
+      // Valid from date.
+      elseif ($data['first'] === 'valid_from' && $data['second']) {
+        $holiday_opening_hour['valid_from'] = $data['second'];
+      }
+      // Valid to date.
+      elseif ($data['first'] === 'valid_to' && $data['second']) {
+        $holiday_opening_hour['valid_to'] = $data['second'];
+      }
+      // Opening hour information.
+      else {
+        $holiday_opening_hour['opening_hours'] = $data['second'];
+      }
+    }
+    // Save last opening hour.
+    if ($holiday_opening_hour) {
+      $holiday_opening_hours[] = $holiday_opening_hour;
+    }
+
+    // Order by valid_from date.
+    // phpcs:ignore PHPCS_SecurityAudit.BadFunctions.CallbackFunctions.WarnCallbackFunctions
+    usort($holiday_opening_hours, function ($a, $b) {
+      $a_timestamp = isset($a['valid_from']) ? strtotime($a['valid_from']) : 0;
+      $b_timestamp = isset($b['valid_from']) ? strtotime($b['valid_from']) : 0;
+
+      if ($a_timestamp === $b_timestamp) {
+        return 0;
+      }
+
+      return ($a_timestamp < $b_timestamp) ? -1 : 1;
+    });
+
+    $variables['holiday_opening_hours'] = $holiday_opening_hours;
+  }
 }
 
 /**
@@ -345,4 +429,76 @@ function _service_paths_theme_service_channels(array &$variables, string $eva_ps
   }
   $variables['service_channels'] = $variables['content'][$eva_pseudo_field_name] ?? '';
   $variables['service_channels_total'] = $service_channels_view ? $service_channels_view->total_rows : 0;
+}
+
+/**
+ * Helper function to format opening hours.
+ *
+ * @param array $opening_hours_data
+ *   Opening hours field data.
+ *
+ * @return array
+ *   Formatted opening hour data.
+ */
+function _service_paths_theme_opening_hours(array $opening_hours_data) {
+  $opening_hours = [];
+  $group_title = NULL;
+  $group_days = [];
+
+  foreach ($opening_hours_data as $opening_hour) {
+    $first = $opening_hour['first'];
+    $second = $opening_hour['second'];
+
+    if ($first && is_null($second)) {
+      // This is a group header. Close previous group, if found and create
+      // a new one.
+      _service_paths_theme_close_opening_hour_group($opening_hours, $group_title, $group_days);
+      $group_title = $first;
+    }
+    elseif ($second && is_null($first)) {
+      // This is a one line opening info, like 'Always open'.
+      $group_days[] = [
+        'weekday' => $second,
+      ];
+    }
+    elseif ($first === 'valid_from' && $second) {
+      // Include valid from date somewhere in opening hours (TBD).
+    }
+    elseif ($first === 'valid_to' && $second) {
+      // Include valid to date somewhere in opening hours (TBD).
+    }
+    else {
+      // A regular opening hour.
+      $group_days[] = [
+        'weekday' => $first,
+        'hours' => $second,
+      ];
+    }
+  }
+
+  // Close the last group and add to twig variables.
+  _service_paths_theme_close_opening_hour_group($opening_hours, $group_title, $group_days);
+
+  return $opening_hours;
+}
+
+/**
+ * Helper function to close an opening hour group.
+ *
+ * @param array $opening_hours
+ *   Opening hours data. Passed by reference.
+ * @param string $group_title
+ *   Title for the group to be closed. Passed by reference.
+ * @param array $group_days
+ *   Days for the group to be closed. Passed by reference.
+ */
+function _service_paths_theme_close_opening_hour_group(array &$opening_hours, &$group_title, array &$group_days) {
+  if ($group_title || $group_days) {
+    $opening_hours[] = [
+      'group_title' => $group_title,
+      'days' => $group_days,
+    ];
+  }
+  $group_title = NULL;
+  $group_days = [];
 }

@@ -24,7 +24,10 @@
 {% if "subheading" in heading__modifiers %}
   <p {{ bem(heading__base_class, heading__modifiers, heading__blockname) }}>
 {% else %}
-  <h{{ heading__level }} {{ bem(heading__base_class, heading__modifiers, heading__blockname, heading__extra_classes) }}>
+  <h{{ heading__level }}
+    {{ bem(heading__base_class, heading__modifiers, heading__blockname, heading__extra_classes) }}
+    {% if heading__id %}id="{{ heading__id }}"{% endif %}
+  >
 {% endif %}
 
 {% if heading__url %}

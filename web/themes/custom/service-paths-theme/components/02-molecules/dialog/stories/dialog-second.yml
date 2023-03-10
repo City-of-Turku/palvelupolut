@@ -1,0 +1,3 @@
+dialog__link_text: 'Second dialog link'
+dialog__title: 'Second dialog title'
+dialog__content: '<p>Second dialog content here.</p><p>With <a href="#">a link</a> to test focus trapping.</p>'

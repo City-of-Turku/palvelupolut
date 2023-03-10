@@ -21,10 +21,14 @@
       </div>
     {% elseif 'aside' in accordion_item__modifiers %}
       <div {{ bem('aside-accordion-heading', [], accordion_item__base_class) }}>
-        {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
-          fontawesome_icon__name: 'child',
-          fontawesome_icon__decorative: true,
-        } %}
+        {% if accordion_item__index %}
+          <span {{ bem('index', [], accordion_item__base_class) }}>{{ accordion_item__index }}</span>
+        {% else %}
+          {% include '@atoms/images/fontawesome-icon/fontawesome-icon.twig' with {
+            fontawesome_icon__name: 'child',
+            fontawesome_icon__decorative: true,
+          } %}
+        {% endif %}
 
         {% include "@atoms/text/heading/heading.twig" with {
           heading__level: 3,
@@ -45,14 +49,23 @@
   </summary>
 
   <div {{ bem('content', [], accordion_item__base_class) }}>
+    {% if accordion__content__wrap_tag %}
+      <{{ accordion__content__wrap_tag }}>
+    {% endif %}
     {{ accordion__content }}
+    {% if accordion__content__wrap_tag %}
+      </{{ accordion__content__wrap_tag }}>
+    {% endif %}
 
-    {% embed '@molecules/list-links/list-links.twig' with {
-      list_links__base_class: 'list-links',
-      list_links__modifiers: accordion_item__modifiers,
-      list_links__items: list_links__items,
-    } %}
-    {% endembed %}
+    {% if list_links__items %}
+      {% embed '@molecules/list-links/list-links.twig' with {
+        list_links__base_class: 'list-links',
+        list_links__modifiers: accordion_item__modifiers,
+        list_links__items: list_links__items,
+        list_links__list_item_icon_before: 'arrow-right'
+      } %}
+      {% endembed %}
+    {% endif %}
 
   </div>
 

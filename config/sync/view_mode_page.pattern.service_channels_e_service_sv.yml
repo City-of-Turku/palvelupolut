@@ -1,0 +1,34 @@
+uuid: d6a03f49-bbdb-4207-ab01-1a74af74bd47
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_e_service_sv
+label: 'Service Channels - E-Service SV'
+type: 'canonical_entities:node'
+pattern: /%/e-tjanster
+view_mode: service_channels_e_service
+selection_criteria:
+  4ad2fac0-7049-4c0f-ac51-066ca24d62b0:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 4ad2fac0-7049-4c0f-ac51-066ca24d62b0
+  8cc85a64-329f-43b4-8bb7-1561fc5ea94e:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 8cc85a64-329f-43b4-8bb7-1561fc5ea94e
+selection_logic: and
+weight: '-9'
+relationships:
+  'node:langcode:language':
+    label: Language

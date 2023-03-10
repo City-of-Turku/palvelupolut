@@ -1,0 +1,34 @@
+uuid: b465adb8-2e26-42dc-83a6-b05a9c8fb944
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_print_fi
+label: 'Service Channels - Print FI'
+type: 'canonical_entities:node'
+pattern: /%/tulostettavat-lomakkeet
+view_mode: service_channels_print
+selection_criteria:
+  8783632f-a150-4162-bcfa-11fd2495e3d1:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8783632f-a150-4162-bcfa-11fd2495e3d1
+  2b8243fe-8bdc-4625-a860-18732352ea8c:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 2b8243fe-8bdc-4625-a860-18732352ea8c
+selection_logic: and
+weight: '-1'
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -1,0 +1,39 @@
+uuid: f60e0955-2637-4dca-befb-6334aae2a9bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_holiday_opening_hours
+    - node.type.service_channel
+  module:
+    - double_field
+id: node.service_channel.field_holiday_opening_hours
+field_name: field_holiday_opening_hours
+entity_type: node
+bundle: service_channel
+label: 'Holiday Opening Hours'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: 'Day/s or Title'
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: false
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    label: Hours
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: false
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

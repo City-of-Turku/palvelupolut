@@ -1,0 +1,34 @@
+uuid: 6682292f-6588-494e-9ce0-ef5ac91803f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_location_fi
+label: 'Service Channels - Location FI'
+type: 'canonical_entities:node'
+pattern: /%/palvelupaikat
+view_mode: service_channels_location
+selection_criteria:
+  6185128d-e347-459b-86e1-17e75a4f3941:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6185128d-e347-459b-86e1-17e75a4f3941
+  2239b13b-1f97-4332-8917-508eeab292a3:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 2239b13b-1f97-4332-8917-508eeab292a3
+selection_logic: and
+weight: '-7'
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -1,0 +1,33 @@
+uuid: 94aafa33-ef66-43d3-9f00-9b5caf2512f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: node_service_sv
+label: 'Node: Service SV'
+type: 'canonical_entities:node'
+pattern: 'tjanster/[node:title]'
+selection_criteria:
+  5a1ed892-a8df-4f8a-a82a-07cff684a355:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5a1ed892-a8df-4f8a-a82a-07cff684a355
+    context_mapping:
+      node: node
+    bundles:
+      service: service
+  3427b18c-043f-49d5-9f3b-c019203b5552:
+    id: language
+    negate: false
+    uuid: 3427b18c-043f-49d5-9f3b-c019203b5552
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      sv: sv
+selection_logic: and
+weight: -9
+relationships:
+  'node:langcode:language':
+    label: Language

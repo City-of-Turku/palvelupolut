@@ -1,0 +1,34 @@
+uuid: 6b227b05-be89-49c9-b306-03ecb99f46f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_e_service_fi
+label: 'Service Channels - E-Service FI'
+type: 'canonical_entities:node'
+pattern: /%/sahkoinen-asiointi
+view_mode: service_channels_e_service
+selection_criteria:
+  4231f717-c403-4948-bd1b-def5c4a285c1:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 4231f717-c403-4948-bd1b-def5c4a285c1
+  b9d2f666-b8e3-43ce-9d08-7d71c8f8a6c3:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: b9d2f666-b8e3-43ce-9d08-7d71c8f8a6c3
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
