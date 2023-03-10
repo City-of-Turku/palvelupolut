@@ -20,7 +20,7 @@
       const $telLinks = $('a[href^="tel:"]');
       // exclude mail-links and loop through the rest
       $('a')
-        .once()
+        .once('link')
         .not($mailLinks)
         .not($telLinks)
         // eslint-disable-next-line func-names

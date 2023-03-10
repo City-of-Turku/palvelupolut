@@ -66,6 +66,14 @@
     }
   }
 
+  &__additional-content {
+    font-size: $font-size--small-1;
+    padding-left: space(2.5);
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
+    position: relative;
+  }
+
   &__title {
     font-size: $font-size--small-1;
     font-weight: 800;
@@ -96,6 +104,28 @@
         margin-right: 0;
       }
     }
+  }
+
+  &__opening-hours-group {
+    margin-bottom: space();
+    font-size: $font-size--small-1;
+    padding-left: space(2.5);
+    letter-spacing: $letter-spacing--large;
+    line-height: $line-height--small;
+  }
+
+  &__opening-hours-group-title {
+    margin-bottom: space(0.5);
+    font-weight: 700;
+  }
+
+  &__opening-hours-day {
+    margin-bottom: space(0.5);
+  }
+
+  &__opening-hours-weekday,
+  &__opening-hours-hours {
+    display: block;
   }
 
   &__link-with-icon {

@@ -96,6 +96,17 @@ table caption {
   text-align: left;
 }
 
+tr {
+  .table--holiday-opening-hours & {
+    @include below($width-small) {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 0.075rem solid color(border-separator);
+      padding: space(math.div(1, 2));
+    }
+  }
+}
+
 th,
 td {
   padding: space(math.div(1, 2));
@@ -115,6 +126,15 @@ th {
 
 td {
   border-bottom: 0.075rem solid color(border-separator);
+
+  .table--holiday-opening-hours & {
+    @include below($width-small) {
+      flex: 0 0 auto;
+      width: 100%;
+      border-bottom: none;
+      padding: 0;
+    }
+  }
 }
 
 tfoot th,

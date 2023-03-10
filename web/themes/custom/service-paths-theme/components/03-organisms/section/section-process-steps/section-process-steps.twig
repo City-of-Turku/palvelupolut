@@ -12,23 +12,27 @@
 {% set section_process_steps__base_class = section_process_steps__base_class|default("section-process-steps") %}
 {% set section_process_steps__modifiers = section_process_steps__modifiers|default([]) %}
 
-<div {{ bem(section_process_steps__base_class, section_process_steps__modifiers, section_process_steps__blockname) }}>
-  {% if process_step__heading %}
-    {% include '@atoms/text/heading/heading.twig' with {
-      heading__level: process_step__heading_level|default('2'),
-      heading: process_step__heading,
-      heading__blockname: process_step__base_class,
-    } %}
-  {% endif %}
+<div{% if section_process_steps__id %} id="{{ section_process_steps__id }}"{% endif %} {{ bem(section_process_steps__base_class, section_process_steps__modifiers, section_process_steps__blockname) }}>
+  {% block process_steps_heading %}
+    {% if process_step__heading %}
+      {% include '@atoms/text/heading/heading.twig' with {
+        heading__level: process_step__heading_level|default('2'),
+        heading: process_step__heading,
+        heading__blockname: process_step__base_class,
+      } %}
+    {% endif %}
+  {% endblock %}
 
   <div {{ bem("process-steps", [], process_step__base_class) }}>
-    {% for item in section_process_steps__items %}
-      {% include "@molecules/process-step/process-step.twig" with {
-        process_step__modifiers: process_step_modifiers,
-        process_step__title: item.title,
-        process_step__lead_text: item.lead_text,
-        list_links__items: item.list_links__items,
-      } %}
-    {% endfor %}
+    {% block process_steps_items %}
+      {% for item in section_process_steps__items %}
+        {% include "@molecules/process-step/process-step.twig" with {
+          process_step__modifiers: process_step_modifiers,
+          process_step__title: item.title,
+          process_step__lead_text: item.lead_text,
+          list_links__items: item.list_links__items,
+        } %}
+      {% endfor %}
+    {% endblock %}
   </div>
 </div>

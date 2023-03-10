@@ -69,17 +69,49 @@
               </div>
             {% endif %}
 
-            {% include "@atoms/text/text-long/text-long.twig" with {
-              text_long__blockname: contact_card__base_class,
-              text_long__base_class: "text",
-              text_long__content:  item.text,
-            } %}
+            {% if item.text %}
+              {% include "@atoms/text/text-long/text-long.twig" with {
+                text_long__blockname: contact_card__base_class,
+                text_long__base_class: "text",
+                text_long__content:  item.text,
+              } %}
+            {% endif %}
 
-            {% include "@atoms/text/text-long/text-long.twig" with {
-              text_long__blockname: contact_card__base_class,
-              text_long__base_class: "text",
-              text_long__content:  item.text2,
-            } %}
+            {% if item.text2 %}
+              {% include "@atoms/text/text-long/text-long.twig" with {
+                text_long__blockname: contact_card__base_class,
+                text_long__base_class: "text",
+                text_long__content:  item.text2,
+              } %}
+            {% endif %}
+
+            {% if item.opening_hours %}
+              {% for opening_hour_group in item.opening_hours %}
+                <div {{ bem("opening-hours-group", [], contact_card__base_class) }}>
+                  {% if opening_hour_group.group_title %}
+                    <div {{ bem("opening-hours-group-title", [], contact_card__base_class) }}>
+                      {{ opening_hour_group.group_title }}
+                    </div>
+                  {% endif %}
+                  {% for day in opening_hour_group.days %}
+                    <div {{ bem("opening-hours-day", [], contact_card__base_class) }}>
+                      <span {{ bem("opening-hours-weekday", [], contact_card__base_class) }}>
+                        {{ day.weekday }}
+                      </span>
+                      <span {{ bem("opening-hours-hours", [], contact_card__base_class) }}>
+                        {{ day.hours }}
+                      </span>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            {% endif %}
+
+            {% if item.additional_content %}
+              <div {{ bem("additional-content", [], contact_card__base_class) }}>
+                {{ item.additional_content }}
+              </div>
+            {% endif %}
 
           {% endblock %}
         {% endembed %}

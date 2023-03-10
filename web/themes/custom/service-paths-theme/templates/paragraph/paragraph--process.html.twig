@@ -39,16 +39,14 @@
  */
 #}
 
-{% set pgId = paragraph.id() %}
+{% set section_process_steps__id = 'pg' ~ paragraph.id() %}
 
-{% set section_process_steps__base_class = section_process_steps__base_class|default("section-process-steps") %}
-{% set section_process_steps__modifiers = section_process_steps__modifiers|default([]) %}
+{% extends "@organisms/section/section-process-steps/section-process-steps.twig" %}
 
-
-<div id="pg{{ pgId }}" {{ bem(section_process_steps__base_class, section_process_steps__modifiers, section_process_steps__blockname) }}>
-
+{% block process_steps_heading %}
   {{ content.field_paragraph_heading }}
+{% endblock %}
+
+{% block process_steps_items %}
   {{ content.field_process_steps }}
-
-</div>
-
+{% endblock %}

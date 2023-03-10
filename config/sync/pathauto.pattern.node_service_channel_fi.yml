@@ -1,0 +1,33 @@
+uuid: 9ce8db6c-1c60-4f95-9188-9ce4336542d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: node_service_channel_fi
+label: 'Node: Service Channel FI'
+type: 'canonical_entities:node'
+pattern: 'asiointikanavat/[node:title]'
+selection_criteria:
+  37cdf960-797f-4802-943a-159115e8f4aa:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 37cdf960-797f-4802-943a-159115e8f4aa
+    context_mapping:
+      node: node
+    bundles:
+      service_channel: service_channel
+  72008fe4-9539-41f2-a409-509a0920d083:
+    id: language
+    negate: false
+    uuid: 72008fe4-9539-41f2-a409-509a0920d083
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      fi: fi
+selection_logic: and
+weight: -7
+relationships:
+  'node:langcode:language':
+    label: Language

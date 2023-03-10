@@ -3,7 +3,9 @@
   $underline-color: color(primary),
   $underline-width: -0.1875rem
 ) {
-  @include transition(box-shadow color);
+  @include with-motion-allowed {
+    @include transition(box-shadow color);
+  }
 
   // The box shadow spread is reduced by 0.1rem to workaround Chrome showing a slight
   // shadow on the y axis on some viewport widths.

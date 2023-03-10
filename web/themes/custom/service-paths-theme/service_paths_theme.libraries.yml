@@ -17,3 +17,11 @@ contact-card:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+dialog:
+  js:
+    dist/js/02-molecules/dialog/dialog.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

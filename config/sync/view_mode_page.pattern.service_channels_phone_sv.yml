@@ -1,0 +1,34 @@
+uuid: b0a90770-3981-4101-9837-80e84d1b335d
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: service_channels_phone_sv
+label: 'Service Channels - Phone SV'
+type: 'canonical_entities:node'
+pattern: /%/telefonservice
+view_mode: service_channels_phone
+selection_criteria:
+  834e961c-1387-42d2-96f4-dafa98f34169:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 834e961c-1387-42d2-96f4-dafa98f34169
+  fb389f26-3b3e-4e81-b5a1-b6cb74314023:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: fb389f26-3b3e-4e81-b5a1-b6cb74314023
+selection_logic: and
+weight: '-3'
+relationships:
+  'node:langcode:language':
+    label: Language

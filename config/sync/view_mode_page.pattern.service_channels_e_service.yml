@@ -3,21 +3,32 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: service_channels_e_service
-label: 'Service Channels - E-Service'
+label: 'Service Channels - E-Service EN'
 type: 'canonical_entities:node'
 pattern: /%/e-services
 view_mode: service_channels_e_service
 selection_criteria:
-  26fefa80-05cf-46fe-a1f6-def10e58b6a9:
+  0398966f-c2ea-4718-a3ed-6d69f7618553:
     id: node_type
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 26fefa80-05cf-46fe-a1f6-def10e58b6a9
+    uuid: 0398966f-c2ea-4718-a3ed-6d69f7618553
+  35f93b88-51d4-4018-92f6-b4bd94d826bf:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 35f93b88-51d4-4018-92f6-b4bd94d826bf
 selection_logic: and
-weight: -5
-relationships: {  }
+weight: '-8'
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -24,7 +24,7 @@ settings:
     allowed_values: {  }
     max: null
     min: null
-    required: true
+    required: false
     on_label: 'On'
     off_label: 'Off'
   second:

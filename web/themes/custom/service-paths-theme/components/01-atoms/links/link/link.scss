@@ -24,7 +24,9 @@
   }
 
   &__suffix {
-    @include transition;
+    @include with-motion-allowed {
+      @include transition;
+    }
 
     display: inline-flex;
     align-items: center;
@@ -101,7 +103,9 @@
     border-bottom: 0.1875rem solid color(border-primary);
 
     .fontawesome-icon {
-      @include transition(transform);
+      @include with-motion-allowed {
+        @include transition(transform);
+      }
 
       width: 1.5em;
       height: 1.5em;
@@ -136,7 +140,9 @@
     }
 
     .fontawesome-icon {
-      @include transition(transform);
+      @include with-motion-allowed {
+        @include transition(transform);
+      }
 
       order: -1;
       width: 3.2em;
@@ -165,11 +171,13 @@
     text-transform: uppercase;
     box-shadow: none;
     margin: 0;
-    @include transition(
-      background-color,
-      0.35s,
-      cubic-bezier(0.19, 1, 0.22, 1)
-    );
+    @include with-motion-allowed {
+      @include transition(
+        background-color,
+        0.35s,
+        cubic-bezier(0.19, 1, 0.22, 1)
+      );
+    }
 
     .fontawesome-icon--before {
       margin-right: space(math.div(3, 4));
@@ -226,7 +234,9 @@
     }
 
     .fontawesome-icon {
-      @include transition(transform);
+      @include with-motion-allowed {
+        @include transition(transform);
+      }
 
       flex: 0 0 2rem;
       width: 2rem;
@@ -259,7 +269,9 @@
   &--tab {
     @include bold-highlight();
     @include link-reset;
-    @include transition;
+    @include with-motion-allowed {
+      @include transition;
+    }
 
     background-color: color(background-section);
     border: 0.0625rem solid color(primary);

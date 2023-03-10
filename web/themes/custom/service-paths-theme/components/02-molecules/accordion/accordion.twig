@@ -4,16 +4,18 @@
 {% set accordion__modifiers = accordion__modifiers|default([]) %}
 
 <div {{ bem(accordion__base_class, accordion__modifiers) }}>
-  {% if accordion__heading %}
-    {% include '@atoms/text/heading/heading.twig' with {
-      heading__level: accordion__heading_level|default('2'),
-      heading: accordion__heading,
-      heading__blockname: accordion__base_class,
-    } %}
-  {% endif %}
+  {% block accordion_heading %}
+    {% if accordion__heading %}
+      {% include '@atoms/text/heading/heading.twig' with {
+        heading__level: accordion__heading_level|default('2'),
+        heading: accordion__heading,
+        heading__blockname: accordion__base_class,
+      } %}
+    {% endif %}
+  {%  endblock %}
 
-  {% block accordion_content %}
-    <div class="accordion__details-container">
+  <div class="accordion__details-container">
+    {% block accordion_content %}
       {% for item in accordion__items %}
         {% include '@molecules/accordion/accordion-item.twig' with {
           accordion__summary: item.accordion__summary,
@@ -22,6 +24,6 @@
           list_links__items: item.list_links__items
         } %}
       {% endfor %}
-    </div>
-  {% endblock %}
+    {% endblock %}
+  </div>
 </div>

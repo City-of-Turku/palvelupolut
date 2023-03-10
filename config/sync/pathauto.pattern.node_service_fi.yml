@@ -1,0 +1,33 @@
+uuid: b522d4ff-64ee-4e3c-9625-78714d04c888
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: node_service_fi
+label: 'Node: Service FI'
+type: 'canonical_entities:node'
+pattern: 'palvelut/[node:title]'
+selection_criteria:
+  3c8e3a80-c662-467a-8a71-59bb46ac7ff9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 3c8e3a80-c662-467a-8a71-59bb46ac7ff9
+    context_mapping:
+      node: node
+    bundles:
+      service: service
+  1d4ba5ec-df53-42e9-bc14-e038a5876a06:
+    id: language
+    negate: false
+    uuid: 1d4ba5ec-df53-42e9-bc14-e038a5876a06
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      fi: fi
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

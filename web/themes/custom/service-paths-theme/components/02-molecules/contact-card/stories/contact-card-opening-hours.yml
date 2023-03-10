@@ -2,11 +2,21 @@ contact_card__title: ''
 contact_card__items:
   - info_title: 'Palvelupaikan aukioloajat'
     icon: 'clock'
-    text: 'Maanantai - Tiistai'
-    text2: '9.00 - 15.00'
-  - text: 'Keskiviikko'
-    text2: '9.00 - 12.00'
-  - text: 'Torstai - Perjantai'
-    text2: '9.00 - 15.00'
+  - opening_hours:
+    - days:
+        - weekday: 'Maanantai - Perjantai'
+          hours: '8.15 - 15.00'
+    - group_title: 'Ajanvaraus, ohjaus ja neuvonta'
+      days:
+        - weekday: 'Maanantai'
+          hours: '8.30 - 11.15'
+        - weekday: 'Tiistai'
+          hours: '12.15 - 15.30'
+        - weekday: 'Keskiviikko - Torstai'
+          hours: '8.30 - 11.15'
+    - group_title: 'Toimisto'
+      days:
+        - weekday: 'Maanantai - Perjantai'
+          hours: '8.15 - 15.00'
 contact_card__link_text: ''
 contact_card__link_url: ''

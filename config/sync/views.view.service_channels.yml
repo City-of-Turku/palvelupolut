@@ -1641,7 +1641,7 @@ display:
     display_plugin: page
     position: 2
     display_options:
-      title: Asiointikanavat
+      title: 'Service channels'
       fields:
         title:
           id: title
