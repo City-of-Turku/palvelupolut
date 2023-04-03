@@ -1,7 +1,7 @@
 {# @todo Add missing comments about expected variables. #}
 
 {% set accordion_item__base_class = accordion_item__base_class|default('accordion-item') %}
-{% set accordion_item__modifiers = accordion_item__modifiers|default() %}
+{% set accordion_item__modifiers = accordion_item__modifiers|default([]) %}
 
 <details {{ bem(accordion_item__base_class, accordion_item__modifiers) }}  aria-expanded='false'>
   <summary {{ bem('heading', [], accordion_item__base_class, accordion_item__modifiers) }}>
