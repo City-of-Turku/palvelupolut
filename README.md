@@ -43,7 +43,7 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 
 - Mailhog for mail management: <http://mail-service-paths.lndo.site>
 
-### [Tools](https://docs.lando.dev/config/tooling.html)
+### [Tools](https://docs.lando.dev/core/v3/tooling.html)
 
 - `lando` - tools / commands overview.
 - `lando grumphp <commands>` - run [GrumPHP](https://github.com/phpro/grumphp) code quality checks. Modified or new files are checked on git commit, see more at `lando grumphp -h` or [wunderio/code-quality](https://github.com/wunderio/code-quality).
