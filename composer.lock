@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7bd33071b566bc107188cac1b66c355",
+    "content-hash": "95c3e2b8fd820339605e6a7d2ab93526",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3280,17 +3280,17 @@
         },
         {
             "name": "drupal/ctools",
-            "version": "3.14.0",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "8.x-3.14"
+                "reference": "4.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-8.x-3.14.zip",
-                "reference": "8.x-3.14",
-                "shasum": "8895a8e47199b458013bc153ceafa0b1495f33c1"
+                "url": "https://ftp.drupal.org/files/projects/ctools-4.0.4.zip",
+                "reference": "4.0.4",
+                "shasum": "4a2474eb2fd525b2add2db0e855c135ba7f0fb70"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -3298,8 +3298,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.14",
-                    "datestamp": "1684299793",
+                    "version": "4.0.4",
+                    "datestamp": "1684299878",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

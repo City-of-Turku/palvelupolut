@@ -79,7 +79,7 @@
         "drupal/config_perms": "^2.0",
         "drupal/core-composer-scaffold": "^9.4.7",
         "drupal/core-recommended": "^9.4.7",
-        "drupal/ctools": "^3.11",
+        "drupal/ctools": "^4.0",
         "drupal/devel": "^4.2.1",
         "drupal/devel_entity_updates": "^3.0.1",
         "drupal/devel_kint_extras": "^1.1",
