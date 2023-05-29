@@ -3976,7 +3976,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontawesome.git",
-                "reference": "83dcb18838d896c0791160b2cc6f5397efe8fe1f"
+                "reference": "2b96bdbb8844bdabf326b3d1c9967edecb2d2dde"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -3987,8 +3987,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.24+4-dev",
-                    "datestamp": "1672172933",
+                    "version": "8.x-2.25+9-dev",
+                    "datestamp": "1684942136",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
