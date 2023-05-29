@@ -5953,26 +5953,26 @@
         },
         {
             "name": "drupal/transliterate_twig",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/transliterate_twig.git",
-                "reference": "1.0.0"
+                "reference": "1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/transliterate_twig-1.0.0.zip",
-                "reference": "1.0.0",
-                "shasum": "868cd90bb0f822f63117bf56b62f3f2370032e8b"
+                "url": "https://ftp.drupal.org/files/projects/transliterate_twig-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "3f66880639d33e62d6482801937a15eaab8f9013"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0",
-                    "datestamp": "1598007184",
+                    "version": "1.0.1",
+                    "datestamp": "1663058172",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
