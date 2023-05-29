@@ -223,9 +223,6 @@
             "drupal/devel": {
                 "Brings back the Available Methods & Properties tabs for Kint dumps — Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
             },
-            "drupal/linkit": {
-                "Linkit for Link field": "https://www.drupal.org/files/issues/2020-09-23/linkit-for-link-field-2712951-190.patch"
-            },
             "drupal/stage_file_proxy": {
                 "It should be possible to disable the module, but still have it installed": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
             },
