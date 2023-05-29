@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10ef69d0d774fd973df7042bca691a9e",
+    "content-hash": "a7bd33071b566bc107188cac1b66c355",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2531,28 +2531,27 @@
         },
         {
             "name": "drupal/chosen",
-            "version": "3.0.5",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/chosen.git",
-                "reference": "3.0.5"
+                "reference": "4.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/chosen-3.0.5.zip",
-                "reference": "3.0.5",
-                "shasum": "73d828816d93bf282b59361f8720bde66411919a"
+                "url": "https://ftp.drupal.org/files/projects/chosen-4.0.0.zip",
+                "reference": "4.0.0",
+                "shasum": "6355b49a1dc90f372d38b0e100745e387cad3423"
             },
             "require": {
                 "drupal/chosen_lib": "*",
-                "drupal/core": "^9.2 || ^10",
-                "harvesthq/chosen": "^1.8.7"
+                "drupal/core": "^9.2 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.5",
-                    "datestamp": "1673783725",
+                    "version": "4.0.0",
+                    "datestamp": "1680955162",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2601,30 +2600,25 @@
                     "homepage": "https://www.drupal.org/user/235438"
                 }
             ],
-            "description": "Makes select elements more friendly using the Chosen jQuery plugin",
+            "description": "Makes select elements more user-friendly using <a href=\"https://github.com/JJJ/chosen\">Chosen</a>.",
             "homepage": "https://www.drupal.org/project/chosen",
-            "keywords": [
-                "Chosen",
-                "Drupal"
-            ],
             "support": {
-                "source": "https://drupal.org/project/chosen",
-                "issues": "https://drupal.org/project/issues/chosen"
+                "source": "https://git.drupalcode.org/project/chosen"
             }
         },
         {
             "name": "drupal/chosen_lib",
-            "version": "3.0.5",
+            "version": "4.0.0",
             "require": {
-                "drupal/chosen": "^3",
+                "drupal/chosen": "^4",
                 "drupal/core": "^9.2 || ^10",
                 "php": ">=5.6.0"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "3.0.5",
-                    "datestamp": "1673783725",
+                    "version": "4.0.0",
+                    "datestamp": "1680955162",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
