@@ -2314,17 +2314,17 @@
         },
         {
             "name": "drupal/backup_migrate",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/backup_migrate.git",
-                "reference": "5.0.2"
+                "reference": "5.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/backup_migrate-5.0.2.zip",
-                "reference": "5.0.2",
-                "shasum": "940667093e327650a5840f04080df95bf70a7fa2"
+                "url": "https://ftp.drupal.org/files/projects/backup_migrate-5.0.3.zip",
+                "reference": "5.0.3",
+                "shasum": "bc263f601f7a21248d4000a372d04a417df7e326"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -2335,8 +2335,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.0.2",
-                    "datestamp": "1660935347",
+                    "version": "5.0.3",
+                    "datestamp": "1671366510",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
