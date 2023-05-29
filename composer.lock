@@ -2453,20 +2453,20 @@
         },
         {
             "name": "drupal/breadcrumb_manager",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/breadcrumb_manager.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/breadcrumb_manager-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "897aeeaac2920c5ad1539714aa7728117beea767"
+                "url": "https://ftp.drupal.org/files/projects/breadcrumb_manager-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "0c5180f112652598b04ce102822e0ca4605b2f3a"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "require-dev": {
                 "drupal/context": "*"
@@ -2474,8 +2474,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1637154245",
+                    "version": "8.x-1.4",
+                    "datestamp": "1679071772",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2498,6 +2498,14 @@
                 {
                     "name": "g0blin79",
                     "homepage": "https://www.drupal.org/user/831030"
+                },
+                {
+                    "name": "guizzard",
+                    "homepage": "https://www.drupal.org/user/3752869"
+                },
+                {
+                    "name": "mithenks",
+                    "homepage": "https://www.drupal.org/user/3123089"
                 },
                 {
                     "name": "nikolas.costa",
