@@ -115,7 +115,7 @@
         "drupal/simplei": "^2.1",
         "drupal/stage_file_proxy": "^2.0",
         "drupal/token": "^1.11",
-        "drupal/transliterate_filenames": "^1.10",
+        "drupal/transliterate_filenames": "^2.0",
         "drupal/transliterate_twig": "^1.0",
         "drupal/twig_field_value": "^2.0",
         "drupal/twig_tweak": "^3.1.3",
