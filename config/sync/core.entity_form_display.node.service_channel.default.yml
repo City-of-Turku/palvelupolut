@@ -113,7 +113,7 @@ third_party_settings:
         show_empty_fields: false
         id: ''
         formatter: closed
-        description: 'To edit fields in this group, visit https://palvelutietovaranto.suomi.fi'
+        description: '<p><strong>To edit the disabled fields in this group, visit <a href="https://palvelutietovaranto.suomi.fi" target="_blank">https://palvelutietovaranto.suomi.fi</a></strong></p>'
         required_fields: false
     group_sidebar:
       children:

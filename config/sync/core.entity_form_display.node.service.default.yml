@@ -111,9 +111,10 @@ third_party_settings:
       format_type: tab
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
         formatter: closed
-        description: ''
+        description: '<p><strong>To edit the disabled fields in this group, visit <a href="https://palvelutietovaranto.suomi.fi" target="_blank">https://palvelutietovaranto.suomi.fi</a></strong></p>'
         required_fields: true
     group_sidebar:
       children: {  }
@@ -190,6 +191,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
+      linkit_auto_link_text: false
     third_party_settings: {  }
   field_description:
     type: text_textarea_with_summary
@@ -217,6 +219,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
+      linkit_auto_link_text: false
     third_party_settings: {  }
   field_lead_image:
     type: media_library_widget
@@ -233,6 +236,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
+      linkit_auto_link_text: false
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
@@ -286,6 +290,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
+      linkit_auto_link_text: false
     third_party_settings: {  }
   field_service_classes:
     type: entity_reference_autocomplete
@@ -381,6 +386,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
       linkit_profile: default
+      linkit_auto_link_text: false
     third_party_settings: {  }
   langcode:
     type: language_select
