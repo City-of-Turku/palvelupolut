@@ -34,6 +34,11 @@ workflows:
           name: validate
           executor: cicd80
 
+      - silta/analyze:
+          name: analyze
+          context: analyze
+          sources: web
+
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
           executor: cicd80
