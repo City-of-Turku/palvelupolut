@@ -102,7 +102,7 @@
         "drupal/menu_admin_per_menu": "^1.5",
         "drupal/menu_trail_by_path": "^2.0",
         "drupal/metatag": "^1.21",
-        "drupal/migrate_plus": "^5.3",
+        "drupal/migrate_plus": "^6.0",
         "drupal/migrate_scheduler": "1.0-rc1",
         "drupal/migrate_tools": "^6.0",
         "drupal/monolog": "^2.0.2",
