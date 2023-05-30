@@ -113,7 +113,7 @@
         "drupal/pathauto": "^1.11",
         "drupal/roleassign": "^2.0",
         "drupal/simplei": "^2.1",
-        "drupal/stage_file_proxy": "^1.2",
+        "drupal/stage_file_proxy": "^2.0",
         "drupal/token": "^1.11",
         "drupal/transliterate_filenames": "^1.10",
         "drupal/transliterate_twig": "^1.0",
