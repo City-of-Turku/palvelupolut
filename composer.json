@@ -86,7 +86,7 @@
         "drupal/devel_php": "^1.5",
         "drupal/double_field": "^4.0",
         "drupal/emulsify_twig": "^4.0",
-        "drupal/eva": "^2.1",
+        "drupal/eva": "^3.0",
         "drupal/field_group": "^3.2",
         "drupal/focal_point": "^1.5",
         "drupal/fontawesome": "2.x-dev",
