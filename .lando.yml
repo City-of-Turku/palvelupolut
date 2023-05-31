@@ -2,7 +2,7 @@ name: service-paths
 recipe: drupal9
 
 config:
-  php: '8.0'
+  php: '8.1'
   via: nginx
   composer_version: 2-latest
   webroot: web
