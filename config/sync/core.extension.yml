@@ -103,7 +103,6 @@ module:
   user: 0
   view_mode_page: 0
   views_ui: 0
-  warden: 0
   menu_admin_per_menu: 1
   pathauto: 1
   content_translation: 10

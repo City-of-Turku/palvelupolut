@@ -67,8 +67,6 @@
         "cweagans/composer-patches": "^1.7.2",
         "drupal/address": "^1.11",
         "drupal/admin_toolbar": "^3.1.1",
-        "drupal/adminimal_admin_toolbar": "^1.11",
-        "drupal/adminimal_theme": "^1.6",
         "drupal/backup_migrate": "^5.0.2",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/breadcrumb_manager": "^1.3",
@@ -120,7 +118,6 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^4.0",
         "drupal/view_mode_page": "^4.0.1",
-        "drupal/warden": "^3.0.0-rc1",
         "drush/drush": "^10.6.2",
         "erusev/parsedown": "^1.7.4",
         "fonticonpicker/fonticonpicker--fonticonpicker": "^3.1.1",
@@ -223,11 +220,6 @@
             },
             "drupal/stage_file_proxy": {
                 "It should be possible to disable the module, but still have it installed": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
-            },
-            "drupal/warden": {
-                "Support IP CIDR masks in allowed IPs": "https://www.drupal.org/files/issues/2019-01-07/warden-ip-range.txt",
-                "Theme name in array of generateSiteData": "https://www.drupal.org/files/issues/2019-01-21/warden-theme-name.patch",
-                "drush warden-update generates error": "https://www.drupal.org/files/issues/2020-10-10/3176191-3.patch"
             },
             "drupal/migrate_scheduler": {
                 "Make the configuration available to set/update from the admin UI": "https://www.drupal.org/files/issues/2021-04-14/migrate_scheduler_2973261_6.patch",
