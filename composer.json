@@ -212,6 +212,9 @@
         },
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/config_perms": {
+                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-15/config_perms.2.x-dev.rector.patch"
+            },
             "drupal/core": {
                 "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch"
             },
@@ -223,7 +226,8 @@
             },
             "drupal/migrate_scheduler": {
                 "Make the configuration available to set/update from the admin UI": "https://www.drupal.org/files/issues/2021-04-14/migrate_scheduler_2973261_6.patch",
-                "When using Migrate Plus, update the Last imported date stamp": "https://www.drupal.org/files/issues/2021-05-11/migrate_scheduler-migrate_plus_imported_date-3213539-2.patch"
+                "When using Migrate Plus, update the Last imported date stamp": "https://www.drupal.org/files/issues/2021-05-11/migrate_scheduler-migrate_plus_imported_date-3213539-2.patch",
+                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-16/migrate_scheduler.1.x-dev.rector.patch"
             },
             "drupal/config_ignore": {
                 "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
