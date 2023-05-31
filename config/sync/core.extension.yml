@@ -100,6 +100,7 @@ module:
   twig_tweak: 0
   ultimate_cron: 0
   update: 0
+  upgrade_status: 0
   user: 0
   view_mode_page: 0
   views_ui: 0
