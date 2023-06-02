@@ -64,7 +64,7 @@
     ],
     "require": {
         "composer/installers": "^2.2",
-        "cweagans/composer-patches": "^1.7.2",
+        "cweagans/composer-patches": "^1.7",
         "drupal/address": "^1.11",
         "drupal/admin_toolbar": "^3.1.1",
         "drupal/backup_migrate": "^5.0.2",
@@ -126,6 +126,7 @@
         "harvesthq/chosen": "^1.8.7",
         "kint-php/kint": "^3.3",
         "leaflet/leaflet": "^1.0.2",
+        "mglaman/composer-drupal-lenient": "^1.0",
         "vlucas/phpdotenv": "^5.4.1",
         "webflo/drupal-finder": "^1.2.2",
         "wunderio/drupal-ping": "^2.3.3"
@@ -137,7 +138,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
@@ -148,7 +149,8 @@
             "drupal/core-composer-scaffold": true,
             "koodimonni/composer-dropin-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpro/grumphp": true
+            "phpro/grumphp": true,
+            "mglaman/composer-drupal-lenient": true
         },
         "process-timeout": 600
     },
@@ -241,6 +243,9 @@
                 "type:web-dropin",
                 "package:wunderio/drupal-ping:_ping.php"
             ]
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/migrate_scheduler"]
         }
     }
 }
