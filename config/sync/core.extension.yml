@@ -110,7 +110,6 @@ module:
   paragraphs: 11
   standard: 1000
 theme:
-  bartik: 0
   seven: 0
   stable: 0
   service_paths_theme: 0
