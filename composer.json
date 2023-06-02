@@ -74,7 +74,7 @@
         "drupal/components": "^3.0@beta",
         "drupal/config_filter": "^2.4",
         "drupal/config_ignore": "^2.3",
-        "drupal/config_perms": "^2.0",
+        "drupal/config_perms": "^2.1",
         "drupal/core-composer-scaffold": "^9.4.7",
         "drupal/core-recommended": "^9.4.7",
         "drupal/ctools": "^4.0",
@@ -212,9 +212,6 @@
         },
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/config_perms": {
-                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-15/config_perms.2.x-dev.rector.patch"
-            },
             "drupal/core": {
                 "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch"
             },
