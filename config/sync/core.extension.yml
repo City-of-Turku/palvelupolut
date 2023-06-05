@@ -109,7 +109,7 @@ module:
   paragraphs: 11
   standard: 1000
 theme:
-  seven: 0
   stable: 0
   service_paths_theme: 0
+  claro: 0
 profile: standard
