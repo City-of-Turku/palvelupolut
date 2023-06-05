@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "34f483c1f340579c3850330f702ff7b4",
+    "content-hash": "6bf4a95d888ff7a72de395557c53d83f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11806,6 +11806,53 @@
                 "source": "https://github.com/wunderio/drupal-ping/tree/2.5.2"
             },
             "time": "2023-04-24T08:49:43+00:00"
+        },
+        {
+            "name": "wunderio/updates_log",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wunderio/drupal-updates-log.git",
+                "reference": "0d45491f7e5985de387535b4df4df5bfa06de6a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wunderio/drupal-updates-log/zipball/0d45491f7e5985de387535b4df4df5bfa06de6a3",
+                "reference": "0d45491f7e5985de387535b4df4df5bfa06de6a3",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ragnar Kurm",
+                    "email": "ragnar.kurm@wunder.io",
+                    "homepage": "https://github.com/ragnarkurmwunder",
+                    "role": "Owner"
+                },
+                {
+                    "name": "Juhani Christian Moilanen",
+                    "email": "juhani.moilanen@wunder.io",
+                    "homepage": "https://github.com/Juhani-moilanen",
+                    "role": "Owner"
+                }
+            ],
+            "description": "Log module update info",
+            "homepage": "https://github.com/wunderio/drupal-updates-log",
+            "keywords": [
+                "drupal",
+                "log",
+                "security",
+                "updates"
+            ],
+            "support": {
+                "issues": "https://github.com/wunderio/drupal-updates-log/issues",
+                "source": "https://github.com/wunderio/drupal-updates-log/tree/2.3.2"
+            },
+            "time": "2023-05-09T13:36:44+00:00"
         }
     ],
     "packages-dev": [
