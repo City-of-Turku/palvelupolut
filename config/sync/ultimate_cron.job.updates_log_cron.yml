@@ -1,0 +1,17 @@
+uuid: efb0514b-ea41-4c31-b658-9b4b90d9c91f
+langcode: fi
+status: true
+dependencies:
+  module:
+    - updates_log
+title: 'Default cron handler'
+id: updates_log_cron
+weight: 0
+module: updates_log
+callback: updates_log_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

@@ -6,3 +6,6 @@ third_party_settings:
       label: Sivupalkki
     group_service_channels:
       label: Palvelupaikat
+    group_ptv:
+      format_settings:
+        description: '<p><strong>Jos haluat muokata tämän PTV-välilehden käytöstä poistettuja (harmaita) kenttiä, saat tehtyä sen suoraan PTV:ssä osoitteessa <a href="https://palvelutietovaranto.suomi.fi" target="_blank">https://palvelutietovaranto.suomi.fi</a></strong></p>'

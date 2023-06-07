@@ -15,7 +15,7 @@ contact-card:
     dist/js/01-atoms/links/link/link.js: { }
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupal
 
 dialog:
@@ -23,5 +23,5 @@ dialog:
     dist/js/02-molecules/dialog/dialog.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupal
