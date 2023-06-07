@@ -340,8 +340,8 @@ class PtvHelper {
                 }
               }
             }
-            $coordinates['first'] = $value->streetAddress->latitude;
-            $coordinates['second'] = $value->streetAddress->longitude;
+            $coordinates['first'] = $value?->streetAddress?->latitude;
+            $coordinates['second'] = $value?->streetAddress?->longitude;
 
             $sentences = [];
             $i = 0;
