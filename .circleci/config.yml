@@ -95,10 +95,12 @@ workflows:
           build_folder: storybook-static
           release-suffix: sb
           codebase-build:
+            - silta/decrypt-files:
+                files: silta/secrets_prod
+                secret_key_env: SECRET_KEY
             - silta/npm-install-build:
                 build-command: npm run build && npm run build-storybook
           silta_config: silta/silta.yml,silta/silta-storybook-prod.yml,silta/secrets_prod
-          decrypt_files: silta/secrets_prod
           filters:
             branches:
               only: production
