@@ -62,7 +62,8 @@ workflows:
           # Extend the build-deploy configuration for the production environment.
           <<: *build-deploy
           name: build-deploy-prod
-          silta_config: silta/silta.yml,silta/silta-prod.yml
+          silta_config: silta/silta.yml,silta/silta-prod.yml,silta/secrets_prod
+          decrypt_files: silta/secrets_prod
           context: silta_finland
           filters:
             branches:
@@ -96,7 +97,8 @@ workflows:
           codebase-build:
             - silta/npm-install-build:
                 build-command: npm run build && npm run build-storybook
-          silta_config: silta/silta.yml,silta/silta-storybook-prod.yml
+          silta_config: silta/silta.yml,silta/silta-storybook-prod.yml,silta/secrets_prod
+          decrypt_files: silta/secrets_prod
           filters:
             branches:
               only: production

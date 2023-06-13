@@ -110,3 +110,7 @@ mailhog:
 
 smtp:
   enabled: true
+
+# Fastly WAF.
+signalsciences:
+  enabled: true

@@ -19,3 +19,7 @@ exposeDomains:
 nginx:
   basicauth:
     enabled: false
+
+# Fastly WAF.
+signalsciences:
+  enabled: true
