@@ -245,6 +245,9 @@
             },
             "drupal/paragraphs_asymmetric_translation_widgets": {
                 "EntityStorageException on paragraphs_asymmetric_translation_widgets_entity_translation_delete entityQuery | https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3358805": "https://www.drupal.org/files/issues/2023-05-08/paragraphs_asymmetric_translation_widgets-entity-query-access-3358805-2.patch"
+            },
+            "drupal/view_mode_page": {
+                "Drupal 10 compatibility | https://www.drupal.org/project/view_mode_page/issues/3356400": "https://www.drupal.org/files/issues/2023-05-30/3356400-drupal-10-compatibility-6.patch"
             }
         },
         "dropin-paths": {
