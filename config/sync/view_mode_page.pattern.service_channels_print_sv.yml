@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/utskrivbara-blanketter
 view_mode: service_channels_print
 selection_criteria:
-  a6ee4562-91bb-4e2b-a70b-4083092cd419:
-    id: node_type
+  47c20ed6-65ef-4f8b-bf62-2f918ead6101:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: a6ee4562-91bb-4e2b-a70b-4083092cd419
-  96b88014-4470-482f-ac1e-6875b19fa8d6:
+    uuid: 47c20ed6-65ef-4f8b-bf62-2f918ead6101
+  e0e342bd-a8d8-4e3f-9dfd-13dccca892d0:
     id: language
     langcodes:
       sv: sv
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 96b88014-4470-482f-ac1e-6875b19fa8d6
+    uuid: e0e342bd-a8d8-4e3f-9dfd-13dccca892d0
 selection_logic: and
-weight: '0'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

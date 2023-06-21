@@ -11,22 +11,22 @@ type: 'canonical_entities:node'
 pattern: /%/sahkoinen-asiointi
 view_mode: service_channels_e_service
 selection_criteria:
-  4231f717-c403-4948-bd1b-def5c4a285c1:
-    id: node_type
+  58bb7b7e-9d37-4917-a9e0-fd350c57c1bc:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 4231f717-c403-4948-bd1b-def5c4a285c1
-  b9d2f666-b8e3-43ce-9d08-7d71c8f8a6c3:
+    uuid: 58bb7b7e-9d37-4917-a9e0-fd350c57c1bc
+  50d59aeb-2362-4395-a34d-255b494066f2:
     id: language
     langcodes:
       fi: fi
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: b9d2f666-b8e3-43ce-9d08-7d71c8f8a6c3
+    uuid: 50d59aeb-2362-4395-a34d-255b494066f2
 selection_logic: and
 weight: -10
 relationships:

@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/telefonservice
 view_mode: service_channels_phone
 selection_criteria:
-  834e961c-1387-42d2-96f4-dafa98f34169:
-    id: node_type
+  bdb82a0a-5c5b-48d7-9296-14f9cd296c8c:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 834e961c-1387-42d2-96f4-dafa98f34169
-  fb389f26-3b3e-4e81-b5a1-b6cb74314023:
+    uuid: bdb82a0a-5c5b-48d7-9296-14f9cd296c8c
+  052e0848-d3cc-41c6-8db2-1028c126cb37:
     id: language
     langcodes:
       sv: sv
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: fb389f26-3b3e-4e81-b5a1-b6cb74314023
+    uuid: 052e0848-d3cc-41c6-8db2-1028c126cb37
 selection_logic: and
-weight: '-3'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language
