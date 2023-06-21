@@ -133,7 +133,7 @@
         "vlucas/phpdotenv": "^5.4.1",
         "webflo/drupal-finder": "^1.2.2",
         "wunderio/drupal-ping": "^2.3.3",
-        "wunderio/updates_log": "^2.3"
+        "wunderio/updates_log": "^2.4"
     },
     "require-dev": {
         "vimeo/psalm": "^4.26",
