@@ -165,7 +165,9 @@
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ],
-        "files": ["load.environment.php"]
+        "files": [
+            "load.environment.php"
+        ]
     },
     "scripts": {
         "post-install-cmd": [
@@ -218,10 +220,11 @@
             "drupal/core": {
                 "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
                 "CKEditor 5 isn't respecting field widgets row settings | https://www.drupal.org/project/drupal/issues/3241295": "https://www.drupal.org/files/issues/2023-05-08/3241295-d10.0.9-108.patch",
-                "CKEditor 5 should not grow to infinite height | https://www.drupal.org/project/drupal/issues/3273755": "https://www.drupal.org/files/issues/2023-05-31/3273755-64-CK5_add_height.patch"
+                "CKEditor 5 should not grow to infinite height | https://www.drupal.org/project/drupal/issues/3273755": "https://www.drupal.org/files/issues/2023-05-31/3273755-64-CK5_add_height.patch",
+                "Fix update module can get 'stuck' ": "https://www.drupal.org/files/issues/2022-03-30/update-module-stuck-mr782-dedup-2920285-35.patch"
             },
             "drupal/devel": {
-                "Brings back the Available Methods & Properties tabs for Kint dumps — Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
+                "Brings back the Available Methods & Properties tabs for Kint dumps \u2014 Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
             },
             "drupal/stage_file_proxy": {
                 "It should be possible to disable the module, but still have it installed": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
@@ -254,7 +257,9 @@
             ]
         },
         "drupal-lenient": {
-            "allowed-list": ["drupal/migrate_scheduler"]
+            "allowed-list": [
+                "drupal/migrate_scheduler"
+            ]
         }
     }
 }
