@@ -1,0 +1,24 @@
+uuid: dcea3dab-27a7-4d2a-a73c-eac6f8c6a96f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.cta_grid.field_cta_grid_item
+    - field.field.paragraph.cta_grid.field_paragraph_heading
+    - paragraphs.paragraphs_type.cta_grid
+id: paragraph.cta_grid.preview
+targetEntityType: paragraph
+bundle: cta_grid
+mode: preview
+content:
+  field_paragraph_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_cta_grid_item: true

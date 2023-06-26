@@ -1,0 +1,24 @@
+uuid: 1056449b-55c5-4e08-a4f4-78bd2a17882d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.process.field_paragraph_heading
+    - field.field.paragraph.process.field_process_steps
+    - paragraphs.paragraphs_type.process
+id: paragraph.process.preview
+targetEntityType: paragraph
+bundle: process
+mode: preview
+content:
+  field_paragraph_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_process_steps: true
