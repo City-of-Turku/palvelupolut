@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/service-locations
 view_mode: service_channels_location
 selection_criteria:
-  e0c34e02-4879-46b6-a3d8-64967a4122ce:
-    id: node_type
+  e683db60-ad07-45fd-a87e-0244d5d9e4bf:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: e0c34e02-4879-46b6-a3d8-64967a4122ce
-  d47f614f-40bb-469b-81be-f4527b508a9a:
+    uuid: e683db60-ad07-45fd-a87e-0244d5d9e4bf
+  70acc524-b63d-440b-bb7a-03230459310d:
     id: language
     langcodes:
       en: en
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: d47f614f-40bb-469b-81be-f4527b508a9a
+    uuid: 70acc524-b63d-440b-bb7a-03230459310d
 selection_logic: and
-weight: '-5'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

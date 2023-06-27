@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/puhelinnumerot
 view_mode: service_channels_phone
 selection_criteria:
-  52547775-3c75-4836-8adf-9cc18873fd73:
-    id: node_type
+  88f40c08-e4fc-41b1-82a2-337a76062ad2:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 52547775-3c75-4836-8adf-9cc18873fd73
-  90093448-1dfb-4d7d-81ac-694a86d75b98:
+    uuid: 88f40c08-e4fc-41b1-82a2-337a76062ad2
+  2bf36435-f38e-483e-9a45-d4c90e3135e9:
     id: language
     langcodes:
       fi: fi
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 90093448-1dfb-4d7d-81ac-694a86d75b98
+    uuid: 2bf36435-f38e-483e-9a45-d4c90e3135e9
 selection_logic: and
-weight: '-4'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

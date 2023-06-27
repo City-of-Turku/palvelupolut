@@ -7,4 +7,4 @@
 projectName: turku-service-paths-drupal
 
 php:
-  drupalCoreVersion: "9"
+  drupalCoreVersion: "10"

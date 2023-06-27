@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/e-services
 view_mode: service_channels_e_service
 selection_criteria:
-  0398966f-c2ea-4718-a3ed-6d69f7618553:
-    id: node_type
+  3c4d8a0b-3994-4332-a2ed-83d436925e50:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 0398966f-c2ea-4718-a3ed-6d69f7618553
-  35f93b88-51d4-4018-92f6-b4bd94d826bf:
+    uuid: 3c4d8a0b-3994-4332-a2ed-83d436925e50
+  62404e4f-8922-4c7b-bf08-190f55adf9de:
     id: language
     langcodes:
       en: en
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 35f93b88-51d4-4018-92f6-b4bd94d826bf
+    uuid: 62404e4f-8922-4c7b-bf08-190f55adf9de
 selection_logic: and
-weight: '-8'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

@@ -68,7 +68,7 @@ services:
       - cd ./web/themes/custom/service-paths-theme && npm install
       - cd ./web/themes/custom/service-paths-theme && npm run build && npm run build-storybook
   storybook:
-    type: 'php:8.0'
+    type: 'php:8.1'
     webroot: web/themes/custom/service-paths-theme/storybook-static
     ssl: true
 

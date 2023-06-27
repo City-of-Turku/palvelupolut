@@ -110,6 +110,7 @@
         "drupal/pathauto": "^1.11",
         "drupal/rdf": "^2.0",
         "drupal/roleassign": "^2.0",
+        "drupal/seven": "^1.0",
         "drupal/simplei": "^2.1",
         "drupal/stable": "^2.0",
         "drupal/stage_file_proxy": "^2.0",
@@ -167,12 +168,6 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
         "post-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
@@ -221,7 +216,9 @@
         "composer-exit-on-patch-failure": true,
         "patches": {
             "drupal/core": {
-                "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch"
+                "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
+                "CKEditor 5 isn't respecting field widgets row settings | https://www.drupal.org/project/drupal/issues/3241295": "https://www.drupal.org/files/issues/2023-05-08/3241295-d10.0.9-108.patch",
+                "CKEditor 5 should not grow to infinite height | https://www.drupal.org/project/drupal/issues/3273755": "https://www.drupal.org/files/issues/2023-05-31/3273755-64-CK5_add_height.patch"
             },
             "drupal/devel": {
                 "Brings back the Available Methods & Properties tabs for Kint dumps — Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
@@ -245,6 +242,9 @@
             },
             "drupal/paragraphs_asymmetric_translation_widgets": {
                 "EntityStorageException on paragraphs_asymmetric_translation_widgets_entity_translation_delete entityQuery | https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3358805": "https://www.drupal.org/files/issues/2023-05-08/paragraphs_asymmetric_translation_widgets-entity-query-access-3358805-2.patch"
+            },
+            "drupal/view_mode_page": {
+                "Drupal 10 compatibility | https://www.drupal.org/project/view_mode_page/issues/3356400": "https://www.drupal.org/files/issues/2023-05-30/3356400-drupal-10-compatibility-6.patch"
             }
         },
         "dropin-paths": {

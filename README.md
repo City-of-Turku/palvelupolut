@@ -56,6 +56,6 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 
 ### Drupal development hints
 
-- [Updating Drupal core](https://www.drupal.org/docs/8/update/update-core-via-composer).
+- [Updating Drupal core](https://www.drupal.org/docs/updating-drupal/updating-drupal-core-via-composer).
 - [Altering scaffold files](https://www.drupal.org/docs/develop/using-composer/using-drupals-composer-scaffold#toc_4) (`robots.txt`, `.htaccess` etc.).
 

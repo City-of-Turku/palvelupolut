@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/prints
 view_mode: service_channels_print
 selection_criteria:
-  0612d462-e368-41b6-88b6-70d765bcdab9:
-    id: node_type
+  534d4dad-8922-4d70-8574-aec52f7747c3:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 0612d462-e368-41b6-88b6-70d765bcdab9
-  b0cd2630-d459-4e58-98d7-d34010f662de:
+    uuid: 534d4dad-8922-4d70-8574-aec52f7747c3
+  3d715295-0838-42b9-8a12-452a42c10cae:
     id: language
     langcodes:
       en: en
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: b0cd2630-d459-4e58-98d7-d34010f662de
+    uuid: 3d715295-0838-42b9-8a12-452a42c10cae
 selection_logic: and
-weight: '1'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/palvelupaikat
 view_mode: service_channels_location
 selection_criteria:
-  6185128d-e347-459b-86e1-17e75a4f3941:
-    id: node_type
+  f3800277-c17d-43e0-819c-ea56ed2f93da:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 6185128d-e347-459b-86e1-17e75a4f3941
-  2239b13b-1f97-4332-8917-508eeab292a3:
+    uuid: f3800277-c17d-43e0-819c-ea56ed2f93da
+  45f11d87-1e09-448a-accd-42dfeb563400:
     id: language
     langcodes:
       fi: fi
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 2239b13b-1f97-4332-8917-508eeab292a3
+    uuid: 45f11d87-1e09-448a-accd-42dfeb563400
 selection_logic: and
-weight: '-7'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

@@ -3,8 +3,8 @@
 namespace Drupal\ptv\EventSubscriber;
 
 use Drupal\migrate\Event\MigrateImportEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\node\NodeInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Import and sync source and destination.

@@ -1,0 +1,26 @@
+uuid: a0245018-328c-4b36-9aef-25676c1d4fd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.links.field_link
+    - field.field.paragraph.links.field_media
+    - field.field.paragraph.links.field_paragraph_heading
+    - paragraphs.paragraphs_type.links
+id: paragraph.links.preview
+targetEntityType: paragraph
+bundle: links
+mode: preview
+content:
+  field_paragraph_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_media: true

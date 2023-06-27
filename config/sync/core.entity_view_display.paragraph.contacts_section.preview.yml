@@ -1,0 +1,24 @@
+uuid: fb102d34-3742-44ae-8dfb-649f27da0282
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.contacts_section.field_cards
+    - field.field.paragraph.contacts_section.field_paragraph_heading
+    - paragraphs.paragraphs_type.contacts_section
+id: paragraph.contacts_section.preview
+targetEntityType: paragraph
+bundle: contacts_section
+mode: preview
+content:
+  field_paragraph_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_cards: true
