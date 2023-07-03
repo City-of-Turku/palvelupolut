@@ -5,7 +5,7 @@
 - URL: <https://palvelupolut.fi>
 - URL: <https://production.turku-service-paths-drupal.finland.wdr.io>
 - SSH: `ssh www-admin@production-shell.client-fi-turku-service-paths -J www-admin@ssh.finland.wdr.io`
-- Drush alias: `drush @prod st`
+- Drush alias: `drush @prod st`.
 
 ### Storybook - Service Paths design system
 
