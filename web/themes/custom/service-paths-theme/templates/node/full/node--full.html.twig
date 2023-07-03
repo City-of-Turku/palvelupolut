@@ -87,11 +87,12 @@
       hero__lead_text: content.field_lead_text|field_value,
       with_image: content.field_lead_image|render,
     } %}
-      {% if content.field_lead_image|render %}
-        {% block hero_image %}
+
+      {% block hero_image %}
+        {% if content.field_lead_image|render %}
           {{ content.field_lead_image }}
-        {% endblock %}
-      {% endif %}
+        {% endif %}
+      {% endblock %}
     {% endembed %}
   {% endblock %}
 

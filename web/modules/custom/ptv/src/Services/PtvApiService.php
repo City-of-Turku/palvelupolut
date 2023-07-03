@@ -2,8 +2,8 @@
 
 namespace Drupal\ptv\Services;
 
-use Drupal\ptv\PtvClient;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\ptv\PtvClient;
 
 /**
  * Service for getting PTV data.

@@ -1,8 +1,8 @@
 name: service-paths
-recipe: drupal9
+recipe: drupal10
 
 config:
-  php: '8.0'
+  php: '8.1'
   via: nginx
   composer_version: 2-latest
   webroot: web
@@ -49,9 +49,9 @@ services:
       environment:
         HASH_SALT: notsosecurehash
         ENVIRONMENT_NAME: local
-        DB_NAME_DRUPAL: drupal9
-        DB_USER_DRUPAL: drupal9
-        DB_PASS_DRUPAL: drupal9
+        DB_NAME_DRUPAL: drupal10
+        DB_USER_DRUPAL: drupal10
+        DB_PASS_DRUPAL: drupal10
         DB_HOST_DRUPAL: database
         # Support debugging with XDEBUG 3.
         XDEBUG_MODE:
@@ -68,7 +68,7 @@ services:
       - cd ./web/themes/custom/service-paths-theme && npm install
       - cd ./web/themes/custom/service-paths-theme && npm run build && npm run build-storybook
   storybook:
-    type: 'php:8.0'
+    type: 'php:8.1'
     webroot: web/themes/custom/service-paths-theme/storybook-static
     ssl: true
 
@@ -79,4 +79,4 @@ proxy:
     - storybook.lndo.site
 
 # Tested with Lando version
-version: v3.6.2
+version: v3.18.0

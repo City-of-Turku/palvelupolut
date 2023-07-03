@@ -2,7 +2,7 @@
   "private": true,
   "name": "service-paths-theme",
   "version": "1.0.0",
-  "description": "Drupal 9 theme based on Emulsify",
+  "description": "Drupal 10 theme based on Emulsify",
   "keywords": [
     "component library",
     "design system",

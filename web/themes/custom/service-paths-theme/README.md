@@ -1,4 +1,4 @@
-# Drupal 9 theme
+# Drupal 10 theme
 
 A Drupal theme based on Emulsify. Recommended for larger projects.
 

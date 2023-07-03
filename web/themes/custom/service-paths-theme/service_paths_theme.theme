@@ -399,6 +399,21 @@ function service_paths_theme_theme_suggestions_views_view_unformatted_alter(arra
 }
 
 /**
+ * Implements template_preprocess_views_view_unformatted().
+ */
+function service_paths_theme_preprocess_views_view_unformatted(array &$variables) {
+  // After upgrading EVA module the "current_entity" property
+  // doesn't exist anymore.
+  // This property is used in theme templates to print a View to
+  // node page with correct parameters.
+  // Pass current node to template manually.
+  if (!isset($variables['view']->current_entity) && $variables['view']->storage->get('base_table') === 'node_field_data') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $variables['view']->current_entity = $node;
+  }
+}
+
+/**
  * Get link url with set language.
  *
  * @param \Drupal\Core\Url $url

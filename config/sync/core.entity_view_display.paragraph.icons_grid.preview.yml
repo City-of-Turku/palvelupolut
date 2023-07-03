@@ -1,0 +1,24 @@
+uuid: 1b6a2198-0039-4b46-a853-93b13e7e3244
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.icons_grid.field_icons_grid_items
+    - field.field.paragraph.icons_grid.field_paragraph_heading
+    - paragraphs.paragraphs_type.icons_grid
+id: paragraph.icons_grid.preview
+targetEntityType: paragraph
+bundle: icons_grid
+mode: preview
+content:
+  field_paragraph_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_icons_grid_items: true

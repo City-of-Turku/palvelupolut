@@ -158,7 +158,7 @@ class EntityUpdateWithTranslations extends EntityGenerate {
   /**
    * {@inheritdoc}
    */
-  protected function entity($value) {
+  protected function entity($value): array {
     $entity_values = [];
 
     if ($this->lookupBundleKey) {

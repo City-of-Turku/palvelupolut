@@ -1,0 +1,28 @@
+uuid: c48d7e47-e5c2-4ada-a9bc-1e93eb4eef5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.contact_card.field_card_link
+    - field.field.paragraph.contact_card.field_card_text
+    - field.field.paragraph.contact_card.field_card_title
+    - field.field.paragraph.contact_card.field_icon
+    - paragraphs.paragraphs_type.contact_card
+id: paragraph.contact_card.preview
+targetEntityType: paragraph
+bundle: contact_card
+mode: preview
+content:
+  field_card_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_card_link: true
+  field_card_text: true
+  field_icon: true

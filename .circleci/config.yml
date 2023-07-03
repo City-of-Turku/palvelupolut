@@ -22,9 +22,9 @@ jobs:
       - run: git push -u turkugithub ${CIRCLE_BRANCH}
 
 executors:
-  cicd80:
+  cicd81:
     docker:
-      - image: wunderio/silta-cicd:circleci-php8.0-node16-composer2-v0.1
+      - image: wunderio/silta-cicd:circleci-php8.1-node16-composer2
 
 workflows:
   version: 2
@@ -32,7 +32,7 @@ workflows:
     jobs:
       - silta/drupal-validate:
           name: validate
-          executor: cicd80
+          executor: cicd81
 
       - silta/analyze:
           name: analyze
@@ -41,7 +41,7 @@ workflows:
 
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
-          executor: cicd80
+          executor: cicd81
           codebase-build:
             - silta/drupal-composer-install
             - silta/npm-install-build:
@@ -72,7 +72,7 @@ workflows:
       # Storybook deployment to development cluster.
       - silta/simple-build-deploy:
           name: build-storybook
-          executor: cicd80
+          executor: cicd81
           context: silta_dev
           codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static
@@ -89,7 +89,7 @@ workflows:
       # Storybook deployment to production cluster.
       - silta/simple-build-deploy:
           name: build-storybook-prod
-          executor: cicd80
+          executor: cicd81
           context: silta_finland
           codebase_root: web/themes/custom/service-paths-theme
           build_folder: storybook-static

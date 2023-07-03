@@ -11,24 +11,24 @@ type: 'canonical_entities:node'
 pattern: /%/tulostettavat-lomakkeet
 view_mode: service_channels_print
 selection_criteria:
-  8783632f-a150-4162-bcfa-11fd2495e3d1:
-    id: node_type
+  7429bdff-3a26-4db4-a7f5-090a82e4c4de:
+    id: 'entity_bundle:node'
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 8783632f-a150-4162-bcfa-11fd2495e3d1
-  2b8243fe-8bdc-4625-a860-18732352ea8c:
+    uuid: 7429bdff-3a26-4db4-a7f5-090a82e4c4de
+  842f617e-bb6e-429e-8c00-6395a66674ef:
     id: language
     langcodes:
       fi: fi
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 2b8243fe-8bdc-4625-a860-18732352ea8c
+    uuid: 842f617e-bb6e-429e-8c00-6395a66674ef
 selection_logic: and
-weight: '-1'
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language

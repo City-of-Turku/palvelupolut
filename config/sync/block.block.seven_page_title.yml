@@ -1,15 +1,17 @@
-uuid: b2fdb130-8a96-4242-a45f-7b2576232f64
+uuid: 2b5ab28f-d419-4d96-acaa-a9fea1debd74
 langcode: fi
 status: true
 dependencies:
+  module:
+    - node
   theme:
     - seven
 _core:
-  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: seven_page_title
 theme: seven
 region: header
-weight: -30
+weight: -2
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,14 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog_post: blog_post
+      page: page
+      service: service
+      service_channel: service_channel
