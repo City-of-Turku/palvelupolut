@@ -19,7 +19,7 @@ jobs:
       - run: git config --global user.name "Repository Sync Robot"
       - run: git checkout ${CIRCLE_BRANCH}
       - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-      - run: git push -u turkugithub ${CIRCLE_BRANCH}
+      - run: git push -u turkugithub ${CIRCLE_BRANCH} -f
 
 executors:
   cicd81:
