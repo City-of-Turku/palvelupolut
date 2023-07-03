@@ -23,14 +23,17 @@ $settings['hash_salt'] = $_ENV['HASH_SALT'];
 
 // Environment-specific settings.
 $env = $_ENV['ENVIRONMENT_NAME'];
+$settings['updates_log_disabled'] = TRUE;
 switch ($env) {
   case 'production':
+    $settings['updates_log_disabled'] = FALSE;
     $settings['simple_environment_indicator'] = '#9E005D Production';
     // Warden settings.
     $config['warden.settings']['warden_token'] = $_ENV['WARDEN_TOKEN'];
     break;
 
   case 'master':
+    $settings['updates_log_disabled'] = FALSE;
     $settings['simple_environment_indicator'] = '#5B37BF Stage';
     break;
 
