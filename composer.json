@@ -101,7 +101,7 @@
         "drupal/menu_trail_by_path": "^2.0",
         "drupal/metatag": "^2.0",
         "drupal/migrate_plus": "^6.0",
-        "drupal/migrate_scheduler": "1.0-rc1",
+        "drupal/migrate_scheduler": "^1.0@RC",
         "drupal/migrate_tools": "^6.0",
         "drupal/monolog": "^2.2",
         "drupal/paragraphs": "^1.14",
@@ -228,9 +228,7 @@
                 "It should be possible to disable the module, but still have it installed": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
             },
             "drupal/migrate_scheduler": {
-                "Make the configuration available to set/update from the admin UI": "https://www.drupal.org/files/issues/2021-04-14/migrate_scheduler_2973261_6.patch",
-                "When using Migrate Plus, update the Last imported date stamp": "https://www.drupal.org/files/issues/2021-05-11/migrate_scheduler-migrate_plus_imported_date-3213539-2.patch",
-                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-16/migrate_scheduler.1.x-dev.rector.patch"
+                "Make the configuration available to set/update from the admin UI": "https://www.drupal.org/files/issues/2021-04-14/migrate_scheduler_2973261_6.patch"
             },
             "drupal/config_ignore": {
                 "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
