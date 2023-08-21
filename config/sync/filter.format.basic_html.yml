@@ -10,7 +10,7 @@ dependencies:
     - media
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
-name: 'Basic HTML'
+name: Perus-HTML
 format: basic_html
 weight: 0
 filters:
@@ -67,3 +67,9 @@ filters:
         document: document
         image: image
         remote_video: remote_video
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
+    settings: {  }

@@ -219,8 +219,6 @@
         "patches": {
             "drupal/core": {
                 "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
-                "CKEditor 5 isn't respecting field widgets row settings | https://www.drupal.org/project/drupal/issues/3241295": "https://www.drupal.org/files/issues/2023-05-08/3241295-d10.0.9-108.patch",
-                "CKEditor 5 should not grow to infinite height | https://www.drupal.org/project/drupal/issues/3273755": "https://www.drupal.org/files/issues/2023-05-31/3273755-64-CK5_add_height.patch",
                 "Fix update module can get 'stuck' ": "https://www.drupal.org/files/issues/2022-03-30/update-module-stuck-mr782-dedup-2920285-35.patch"
             },
             "drupal/devel": {

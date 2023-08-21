@@ -1,10 +1,7 @@
-label: 'Bibliotek med anpassade block'
-description: 'Hitta och hantera anpassade block.'
 display:
   default:
     display_title: Förvald
     display_options:
-      title: 'Bibliotek med anpassade block'
       fields:
         info:
           label: Blockbeskrivning
@@ -32,9 +29,6 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-      empty:
-        area_text_custom:
-          content: 'Det finns inga anpassade block tillgängliga.'
       filters:
         info:
           expose:
@@ -46,4 +40,4 @@ display:
     display_title: Sida
     display_options:
       menu:
-        title: 'Bibliotek med anpassade block'
+        title: Block
