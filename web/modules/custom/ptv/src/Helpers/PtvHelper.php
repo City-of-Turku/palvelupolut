@@ -24,6 +24,8 @@ class PtvHelper {
       $tmp_ids = [
         '0573053b-08b9-47dd-9130-65f3a60dbdba',
         'f57476db-1451-4f6b-a53d-11c7615c6c28',
+        'f3b3a5b0-d70c-497b-aef4-e3d6d14faeef',
+        'd1fc398c-740c-4908-a9ea-504fe8781ca0',
       ];
     }
 
@@ -82,6 +84,15 @@ class PtvHelper {
             }
           }
         }
+
+        $publishing_status = $object->publishingStatus === 'Published' ? '1' : '0';
+
+        // DEBUG change status for "Avustukset".
+        /*
+         * if ($object->id === 'd1fc398c-740c-4908-a9ea-504fe8781ca0') {
+         *   $publishing_status = '0';
+         * }
+         */
 
         // Skip an empty translation.
         if ($skip_missing_translations && $translation_missing) {
@@ -209,6 +220,7 @@ class PtvHelper {
 
         $data = [
           'id' => $id,
+          'publishing_status' => $publishing_status,
           'name' => $name ?? $id,
           'langcode' => $langcode,
           'summary' => $summary ?? '',
@@ -237,6 +249,14 @@ class PtvHelper {
         $opening_hours = [];
         $holiday_opening_hours = [];
         $accessibility = '';
+
+        $publishing_status = $object->publishingStatus === 'Published' ? '1' : '0';
+        // DEBUG change status for "Kupittaan maauimala".
+        /*
+         * if ($object->id === 'f3b3a5b0-d70c-497b-aef4-e3d6d14faeef') {
+         *   $publishing_status = '0';
+         * }
+         */
 
         if (!empty($object->serviceChannelNames) && is_array($object->serviceChannelNames)) {
           foreach ($object->serviceChannelNames as $value) {
@@ -398,6 +418,7 @@ class PtvHelper {
 
         $data = [
           'id' => $id,
+          'publishing_status' => $publishing_status,
           'name' => $name ?? $id,
           'langcode' => $langcode,
           'services' => $services,
