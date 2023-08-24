@@ -12,6 +12,7 @@ process:
   type:
     plugin: default_value
     default_value: service
+  status: publishing_status
   title: name
   field_ptv_id: id
   path/pathauto:

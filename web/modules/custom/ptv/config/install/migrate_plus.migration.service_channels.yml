@@ -12,6 +12,7 @@ process:
   type:
     plugin: default_value
     default_value: service_channel
+  status: publishing_status
   field_service_channel_type:
     plugin: skip_on_value
     source: channel_type
