@@ -10,6 +10,7 @@ dependencies:
     - taxonomy.vocabulary.icons
   module:
     - content_translation
+    - file
     - locale
     - media
     - node
@@ -43,6 +44,7 @@ permissions:
   - 'delete any page content'
   - 'delete blog_post revisions'
   - 'delete content translations'
+  - 'delete own files'
   - 'delete own service content'
   - 'delete own service_channel content'
   - 'delete page revisions'

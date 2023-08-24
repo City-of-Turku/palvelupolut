@@ -1,5 +1,5 @@
 uuid: caa64a06-b7df-44b0-9f68-e55f3ca20e0e
-langcode: en
+langcode: fi
 status: true
 dependencies:
   module:
@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
-name: 'Landing page'
+name: Laskeutumissivu
 type: page
 description: 'Landing page'
 help: ''

@@ -1,7 +1,9 @@
 uuid: 2215d174-91ae-498c-a53f-04e6dc698ecd
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: user_manager
 label: 'User manager'
 weight: 4
@@ -9,3 +11,4 @@ is_admin: null
 permissions:
   - 'access user profiles'
   - 'administer users'
+  - 'delete own files'
