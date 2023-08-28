@@ -1,5 +1,5 @@
 uuid: 1c76af2a-5c99-432e-bd54-b287ea67fe6d
-langcode: fi
+langcode: en
 status: true
 dependencies: {  }
 id: services
@@ -20,7 +20,9 @@ process:
   type:
     plugin: default_value
     default_value: service
-  status: publishing_status
+  status:
+    plugin: default_value
+    default_value: '1'
   title: name
   field_ptv_id: id
   path/pathauto:
