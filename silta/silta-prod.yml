@@ -33,7 +33,7 @@ php:
       schedule: '0 1 * * *'
       command: |
         drush migrate:reset-status services;
-        drush migrate:import services --sync;
+        drush migrate:import services;
       resources:
         requests:
           memory: 512M
@@ -44,7 +44,7 @@ php:
       schedule: '10 1 * * *'
       command: |
         drush migrate:reset-status services_translations;
-        drush migrate:import services_translations --sync --update;
+        drush migrate:import services_translations --update;
       resources:
         requests:
           memory: 512M
@@ -55,7 +55,7 @@ php:
       schedule: '0 3 * * *'
       command: |
         drush migrate:reset-status service_channels;
-        drush migrate:import service_channels --sync;
+        drush migrate:import service_channels;
       resources:
         requests:
           memory: 512M
@@ -66,7 +66,7 @@ php:
       schedule: '10 3 * * *'
       command: |
         drush migrate:reset-status service_channels_translations;
-        drush migrate:import service_channels_translations --sync --update;
+        drush migrate:import service_channels_translations --update;
       resources:
         requests:
           memory: 512M
