@@ -60,11 +60,38 @@ class PtvMigrationEvents implements EventSubscriberInterface {
    */
   private function unpublishTranslation(Node $default, string $lang): void {
     $node = $default->getTranslation($lang);
-    $node->set('status', '0');
-    $node->set('revision_log', 'Data no longer available in PTV');
-    $node->setRevisionUserId(1);
-    $node->setRevisionCreationTime(time());
-    $node->save();
+    // Check each translation status individually.
+    if ($node->isPublished()) {
+      $node->set('status', '0');
+      $node->setNewRevision(TRUE);
+      $node->set('revision_log', 'Data no longer available in PTV');
+      $node->setRevisionUserId(1);
+      $node->setRevisionCreationTime(time());
+      $node->save();
+    }
+  }
+
+  /**
+   * Saves the node in "published" state.
+   *
+   * @param \Drupal\node\Entity\Node $default
+   *   The node.
+   * @param string $lang
+   *   The lang code.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  private function publishTranslation(Node $default, string $lang): void {
+    $node = $default->getTranslation($lang);
+    // Check each translation status individually.
+    if (!$node->isPublished()) {
+      $node->set('status', '1');
+      $node->setNewRevision(TRUE);
+      $node->set('revision_log', 'PTV data re-published');
+      $node->setRevisionUserId(1);
+      $node->setRevisionCreationTime(time());
+      $node->save();
+    }
   }
 
   /**
@@ -109,12 +136,26 @@ class PtvMigrationEvents implements EventSubscriberInterface {
     // do not exist in the PTV info.
     while ($id_map->valid()) {
       $map_source_id = $id_map->currentSource();
-      if (!in_array($this->standardizeIds($map_source_id), $source_id_values, TRUE)) {
+      // Content has been removed or unpublished in PTV, unpublish existing.
+      if (!in_array(
+        $this->standardizeIds($map_source_id),
+        $source_id_values,
+        TRUE)) {
         $destination_ids = $id_map->currentDestination();
         $node = Node::load($destination_ids['nid']);
-        if ($node instanceof Node && $node->isPublished()) {
+        if ($node instanceof Node) {
           foreach ($node->getTranslationLanguages() as $lang_code => $lang) {
             $this->unpublishTranslation($node, $lang_code);
+          }
+        }
+      }
+      // Content has been re-published in PTV, publish existing unpublished.
+      else {
+        $destination_ids = $id_map->currentDestination();
+        $node = Node::load($destination_ids['nid']);
+        if ($node instanceof Node) {
+          foreach ($node->getTranslationLanguages() as $lang_code => $lang) {
+            $this->publishTranslation($node, $lang_code);
           }
         }
       }
