@@ -20,6 +20,9 @@ $databases['default']['default'] = [
 
 // Salt for one-time login links, cancel links, form tokens, etc.
 $settings['hash_salt'] = $_ENV['HASH_SALT'];
+
+// Disable Updates log
+$settings['updates_log_disabled'] = TRUE;
 $config['config_split.config_split.production']['status'] = FALSE;
 
 // Environment-specific settings.
@@ -29,6 +32,9 @@ switch ($env) {
   case 'production':
     $settings['updates_log_disabled'] = FALSE;
     $settings['simple_environment_indicator'] = '#9E005D Production';
+
+    // Enable Updates log
+    $settings['updates_log_disabled'] = FALSE;
     $config['config_split.config_split.production']['status'] = TRUE;
     break;
 
