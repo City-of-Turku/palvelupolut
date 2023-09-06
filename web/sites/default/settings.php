@@ -20,6 +20,7 @@ $databases['default']['default'] = [
 
 // Salt for one-time login links, cancel links, form tokens, etc.
 $settings['hash_salt'] = $_ENV['HASH_SALT'];
+$config['config_split.config_split.production']['status'] = FALSE;
 
 // Environment-specific settings.
 $env = $_ENV['ENVIRONMENT_NAME'];
@@ -28,8 +29,7 @@ switch ($env) {
   case 'production':
     $settings['updates_log_disabled'] = FALSE;
     $settings['simple_environment_indicator'] = '#9E005D Production';
-    // Warden settings.
-    $config['warden.settings']['warden_token'] = $_ENV['WARDEN_TOKEN'];
+    $config['config_split.config_split.production']['status'] = TRUE;
     break;
 
   case 'master':
@@ -80,23 +80,6 @@ $settings['file_scan_ignore_directories'] = [
   'node_modules',
   'bower_components',
 ];
-
-// Warden settings.
-// Shared security token between the site and Warden server.
-$config['warden.settings']['warden_token'] = '36a653f14544c7e7cae889360316e3addafae7b6eeac846f810215882b2799e6';
-// Location of the Warden server, no trailing slash.
-$config['warden.settings']['warden_server_host_path'] = 'https://warden.wunder.io';
-// Allow refreshing site data from the Warden server.
-$config['warden.settings']['warden_allow_requests'] = TRUE;
-// Basic HTTP authorization credentials.
-$config['warden.settings']['warden_http_username'] = 'warden';
-$config['warden.settings']['warden_http_password'] = 'wunder';
-// IP addresses of the Warden server allowed to make callback requests.
-$config['warden.settings']['warden_public_allow_ips'] = '35.228.188.78,35.228.81.50,10.0.0.0/8';
-// Define the module locations.
-$config['warden.settings']['warden_preg_match_custom'] = '{^modules\/custom\/*}';
-$config['warden.settings']['warden_preg_match_contrib'] = '{^modules\/contrib\/*}';
-$config['warden.settings']['warden_match_contrib'] = TRUE;
 
 /**
  * Load local development override configuration, if available.
