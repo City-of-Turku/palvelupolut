@@ -27,10 +27,8 @@ $config['config_split.config_split.production']['status'] = FALSE;
 
 // Environment-specific settings.
 $env = $_ENV['ENVIRONMENT_NAME'];
-$settings['updates_log_disabled'] = TRUE;
 switch ($env) {
   case 'production':
-    $settings['updates_log_disabled'] = FALSE;
     $settings['simple_environment_indicator'] = '#9E005D Production';
 
     // Enable Updates log
@@ -39,7 +37,6 @@ switch ($env) {
     break;
 
   case 'master':
-    $settings['updates_log_disabled'] = FALSE;
     $settings['simple_environment_indicator'] = '#5B37BF Stage';
     break;
 
