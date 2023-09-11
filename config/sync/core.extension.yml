@@ -21,6 +21,7 @@ module:
   config_filter: 0
   config_ignore: 0
   config_perms: 0
+  config_split: 0
   config_translation: 0
   contextual: 0
   crop: 0
@@ -100,7 +101,6 @@ module:
   twig_tweak: 0
   ultimate_cron: 0
   update: 0
-  updates_log: 0
   user: 0
   view_mode_page: 0
   views_ui: 0

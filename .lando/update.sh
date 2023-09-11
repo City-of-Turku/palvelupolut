@@ -12,9 +12,6 @@ drush @local cache:rebuild -y
 # drush @local cim -y
 # drush @local cache:rebuild -y
 
-# Disable Warden module.
-drush @local pm:uninstall warden -y
-
 # Enable development modules.
 drush @local pm:enable stage_file_proxy -y
 drush @local cache:rebuild -y

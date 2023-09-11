@@ -1,0 +1,16 @@
+uuid: 8b0a8e87-378d-4d7f-b13e-93a52f138fdd
+langcode: en
+status: true
+dependencies: {  }
+id: production
+label: Production
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/sync-prod
+module:
+  updates_log: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }
