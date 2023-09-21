@@ -122,7 +122,7 @@ if (getenv("SILTA_CLUSTER") && getenv('MEMCACHED_HOST')) {
   // module should also be checked but this is not possible until this issue
   // has been fixed: https://www.drupal.org/project/drupal/issues/2766509
   if (!InstallerKernel::installationAttempted() && (class_exists('Memcache', FALSE) || class_exists('Memcached', FALSE))) {
-    $settings['cache']['default'] = 'cache.backend.memcache';
+  //  $settings['cache']['default'] = 'cache.backend.memcache';
   }
 
   /**
