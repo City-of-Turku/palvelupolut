@@ -119,8 +119,8 @@ memcached:
   enabled: true
   resources:
     requests:
-    cpu: 50m
-    memory: 1Gi
+      cpu: 50m
+      memory: 1Gi
   limits:
     cpu: 200m
     memory: 2Gi
