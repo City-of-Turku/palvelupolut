@@ -6,6 +6,8 @@
  */
 
 // Database settings, overridden per environment.
+use Drupal\Core\Installer\InstallerKernel;
+
 $databases = [];
 $databases['default']['default'] = [
   'database' => $_ENV['DB_NAME_DRUPAL'],
@@ -106,4 +108,35 @@ if (getenv('LANDO_INFO')) {
 // Silta cluster configuration overrides.
 if (isset($_ENV['SILTA_CLUSTER']) && file_exists($app_root . '/' . $site_path . '/settings.silta.php')) {
   include $app_root . '/' . $site_path . '/settings.silta.php';
+}
+
+/**
+ * Set the memcache server hostname when a memcached server is available.
+ */
+if (getenv("SILTA_CLUSTER") && getenv('MEMCACHED_HOST')) {
+  $settings['memcache']['servers'] = [getenv('MEMCACHED_HOST') . ':11211' => 'default'];
+
+  // Set the default cache backend to use memcache if memcache host is set and
+  // if one of the memcache libraries was found. Cache backends should not be
+  // set to memcache during installation. The existence of the memcache drupal
+  // module should also be checked but this is not possible until this issue
+  // has been fixed: https://www.drupal.org/project/drupal/issues/2766509
+  if (!InstallerKernel::installationAttempted() && (class_exists('Memcache', FALSE) || class_exists('Memcached', FALSE))) {
+    $settings['cache']['default'] = 'cache.backend.memcache';
+  }
+
+  /**
+   * Memcache configuration.
+   */
+  if (class_exists('Memcached', FALSE)) {
+    $settings['memcache']['extension'] = 'Memcached';
+    // Memcached PECL Extension Support.
+    $settings['memcache']['options'] = [
+      // Enable compression for PHP 7.
+      \Memcached::OPT_COMPRESSION => TRUE,
+      \Memcached::OPT_DISTRIBUTION => \Memcached::DISTRIBUTION_CONSISTENT,
+      // Decrease latency.
+      \Memcached::OPT_TCP_NODELAY => TRUE,
+    ];
+  }
 }
