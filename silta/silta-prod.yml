@@ -121,9 +121,9 @@ memcached:
     requests:
       cpu: 50m
       memory: 1Gi
-  limits:
-    cpu: 200m
-    memory: 2Gi
+    limits:
+      cpu: 200m
+      memory: 2Gi
   arguments:
     - /run.sh
     # MaxMemoryLimit, this should be less than the resources.limits.memory, or memcached will crash.
