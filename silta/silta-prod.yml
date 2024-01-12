@@ -28,12 +28,18 @@ php:
   # Don't show errors in production.
   errorLevel: "hide"
 
+  # Static IP is required for SMTP, migration cronjobs & cURL's.
+  nodeSelector:
+    cloud.google.com/gke-nodepool: static-ip
+
   cron:
     ptvcron1:
       schedule: '0 1 * * *'
       command: |
         drush migrate:reset-status services;
         drush migrate:import services;
+      nodeSelector:
+        cloud.google.com/gke-nodepool: static-ip
       resources:
         requests:
           memory: 512M
@@ -45,6 +51,8 @@ php:
       command: |
         drush migrate:reset-status services_translations;
         drush migrate:import services_translations --update;
+      nodeSelector:
+        cloud.google.com/gke-nodepool: static-ip
       resources:
         requests:
           memory: 512M
@@ -56,6 +64,8 @@ php:
       command: |
         drush migrate:reset-status service_channels;
         drush migrate:import service_channels;
+      nodeSelector:
+        cloud.google.com/gke-nodepool: static-ip
       resources:
         requests:
           memory: 512M
@@ -67,6 +77,8 @@ php:
       command: |
         drush migrate:reset-status service_channels_translations;
         drush migrate:import service_channels_translations --update;
+      nodeSelector:
+        cloud.google.com/gke-nodepool: static-ip
       resources:
         requests:
           memory: 512M
@@ -110,6 +122,8 @@ mailhog:
 
 smtp:
   enabled: true
+  address: smtp.turku.fi:587
+  starttls: "YES"
 
 # Fastly WAF.
 signalsciences:
