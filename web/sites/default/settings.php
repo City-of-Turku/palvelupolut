@@ -25,6 +25,12 @@ $settings['hash_salt'] = $_ENV['HASH_SALT'];
 $settings['updates_log_disabled'] = TRUE;
 $config['config_split.config_split.production']['status'] = FALSE;
 
+// Default SMTP settings.
+$config['smtp.settings']['smtp_host'] = 'mailhog';
+$config['smtp.settings']['smtp_port'] = '1025';
+$config['smtp.settings']['smtp_protocol'] = 'standard';
+$config['smtp.settings']['smtp_on'] = 1;
+
 // Environment-specific settings.
 $env = $_ENV['ENVIRONMENT_NAME'];
 switch ($env) {
@@ -34,10 +40,18 @@ switch ($env) {
     // Enable Updates log
     $settings['updates_log_disabled'] = FALSE;
     $config['config_split.config_split.production']['status'] = TRUE;
+
+    // SMTP settings.
+    $config['smtp.settings']['smtp_host'] = 'smtp.turku.fi';
+    $config['smtp.settings']['smtp_port'] = '587';
     break;
 
   case 'master':
     $settings['simple_environment_indicator'] = '#5B37BF Stage';
+
+    // SMTP settings.
+    $config['smtp.settings']['smtp_host'] = 'master-mailhog';
+    $config['smtp.settings']['smtp_port'] = '1025';
     break;
 
   case 'local':

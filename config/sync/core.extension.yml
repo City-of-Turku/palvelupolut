@@ -62,6 +62,7 @@ module:
   link: 0
   linkit: 0
   locale: 0
+  mailsystem: 0
   material_icons: 0
   media: 0
   media_library: 0
@@ -91,6 +92,7 @@ module:
   roleassign: 0
   shortcut: 0
   simplei: 0
+  smtp: 0
   system: 0
   taxonomy: 0
   text: 0
