@@ -68,7 +68,7 @@ switch ($env) {
     $config['system.performance']['js']['preprocess'] = FALSE;
 
     if (class_exists('Kint')) {
-      Kint::$max_depth = 4;
+      Kint::$depth_limit = 4;
     }
     break;
 

@@ -205,7 +205,8 @@ content:
     type: address_default
     weight: 25
     region: content
-    settings: {  }
+    settings:
+      wrapper_type: details
     third_party_settings: {  }
   field_contacts_heading:
     type: string_textfield
