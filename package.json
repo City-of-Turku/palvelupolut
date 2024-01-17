@@ -15,7 +15,6 @@
     "lint:js": "eslint --no-error-on-unmatched-pattern './web/themes/custom/' './web/modules/custom/'",
     "lint:css": "stylelint --allow-empty-input './web/themes/custom/**/*.{css,scss,sass}' './web/modules/custom/**/*.{css,scss,sass}'"
   },
-  "dependencies": {},
   "devDependencies": {
     "eslint": "^7.14.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -24,6 +23,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-yml": "^1.12.2",
     "prettier": "2.2.1",
     "stylelint": "^13.2.0",
     "stylelint-config-prettier": "^8.0.2",
