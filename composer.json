@@ -128,7 +128,7 @@
         "drupal/twig_tweak": "^3.1.3",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_mode_page": "^4.0.1",
-        "drush/drush": "^11",
+        "drush/drush": "^12.4",
         "erusev/parsedown": "^1.7.4",
         "fonticonpicker/fonticonpicker--fonticonpicker": "^3.1.1",
         "furf/jquery-ui-touch-punch": "dev-master",
