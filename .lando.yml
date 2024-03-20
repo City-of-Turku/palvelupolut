@@ -52,6 +52,7 @@ services:
         DB_PASS_DRUPAL: drupal10
         DB_HOST_DRUPAL: database
         DRUSH_OPTIONS_URI: https://service-paths.lndo.site
+        MEMCACHED_HOST: memcached
         # Support debugging with XDEBUG 3.
         XDEBUG_MODE:
         # Support debugging Drush with XDEBUG 3.
@@ -60,6 +61,9 @@ services:
     type: mailhog
     hogfrom:
       - appserver
+  memcached:
+    type: memcached
+    portforward: true
   node:
     type: node:16
     build:
