@@ -23,6 +23,9 @@ $databases['default']['default'] = [
 // Salt for one-time login links, cancel links, form tokens, etc.
 $settings['hash_salt'] = $_ENV['HASH_SALT'];
 
+// Location of the site configuration files.
+$settings['config_sync_directory'] = '../config/sync';
+
 // Configuration split settings for development.
 $config['config_split.config_split.production']['status'] = FALSE;
 $config['config_split.config_split.development']['status'] = TRUE;
@@ -79,42 +82,21 @@ switch ($env) {
     break;
 }
 
-// Location of the site configuration files.
-$settings['config_sync_directory'] = '../config/sync';
-
 // Load services definition file.
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
-/**
- * The default list of directories that will be ignored by Drupal's file API.
- *
- * By default ignore node_modules and bower_components folders to avoid issues
- * with common frontend tools and recursive scanning of directories looking for
- * extensions.
- *
- * @see file_scan_directory()
- * @see \Drupal\Core\Extension\ExtensionDiscovery::scanDirectory()
- */
+// The default list of directories that will be ignored by Drupal's file API.
 $settings['file_scan_ignore_directories'] = [
   'node_modules',
   'bower_components',
 ];
 
-/**
- * Load local development override configuration, if available.
- *
- * Use settings.local.php to override variables on secondary (staging,
- * development, etc) installations of this site. Typically used to disable
- * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
- * other things that should not happen on development and testing sites.
- */
+// Load local development override configuration, if available.
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
-/**
- * Lando configuration overrides.
- */
+// Lando configuration overrides.
 if (getenv('LANDO_INFO')) {
   $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.lando.yml';
 }
@@ -124,24 +106,18 @@ if (isset($_ENV['SILTA_CLUSTER']) && file_exists($app_root . '/' . $site_path . 
   include $app_root . '/' . $site_path . '/settings.silta.php';
 }
 
-/**
- * Set the memcache server hostname when a memcached server is available.
- */
+// Set the memcache server hostname when a memcached server is available.
 if (getenv("SILTA_CLUSTER") && getenv('MEMCACHED_HOST')) {
   $settings['memcache']['servers'] = [getenv('MEMCACHED_HOST') . ':11211' => 'default'];
 
-  // Set the default cache backend to use memcache if memcache host is set and
-  // if one of the memcache libraries was found. Cache backends should not be
-  // set to memcache during installation. The existence of the memcache drupal
-  // module should also be checked but this is not possible until this issue
-  // has been fixed: https://www.drupal.org/project/drupal/issues/2766509
+  // Ensure the memcache Drupal module exists and one of the memcache libraries is found.
+  // Cache backends should not be set to memcache during installation.
+  // @see https://www.drupal.org/project/drupal/issues/2766509
   if (!InstallerKernel::installationAttempted() && (class_exists('Memcache', FALSE) || class_exists('Memcached', FALSE))) {
     //$settings['cache']['default'] = 'cache.backend.memcache';
   }
 
-  /**
-   * Memcache configuration.
-   */
+  // Memcache configuration.
   if (class_exists('Memcached', FALSE)) {
     $settings['memcache']['extension'] = 'Memcached';
     // Memcached PECL Extension Support.
