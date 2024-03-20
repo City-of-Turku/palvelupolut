@@ -49,7 +49,6 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 - `lando npm <commands>` - run [npm](https://www.npmjs.com/) commands.
 - `lando psalm <commands>` - run [Psalm](https://psalm.dev/) commands.
 - `lando syncdb` - synchronise local database with production environment.
-- `lando update` - update database & enable develpoment components.
 - `lando xdebug <mode>` - load [Xdebug](https://xdebug.org/) in the selected [mode(s)](https://xdebug.org/docs/all_settings#mode).
 
 ### Drupal development hints

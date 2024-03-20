@@ -31,10 +31,6 @@ tooling:
     description: Synchronizes local db with test env
     cmd:
       - appserver: /app/.lando/syncdb.sh
-  update:
-    description: Updates local db & enables dev components
-    cmd:
-      - appserver: /app/.lando/update.sh
   xdebug:
     description: Loads Xdebug in the selected mode
     cmd:
