@@ -26,7 +26,6 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 - Storybook: <https://storybook.lndo.site>
 - SSH: `lando ssh (-s <service>)`
 - Logs: `lando logs -s <service>`
-- Drush alias: `drush @local st`
 
 ### Setup
 
