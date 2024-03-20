@@ -44,6 +44,9 @@ workflows:
           executor: cicd81
           codebase-build:
             - silta/drupal-composer-install
+            - run:
+                name: Create translations folder
+                command: mkdir -p web/sites/default/files/translations
             - silta/npm-install-build:
                 path: './web/themes/custom/service-paths-theme'
           silta_config: silta/silta.yml,silta/silta-dev.yml
