@@ -8,3 +8,6 @@ projectName: turku-service-paths-drupal
 
 php:
   drupalCoreVersion: "10"
+  postupgrade:
+    afterCommand: |
+      drush uli

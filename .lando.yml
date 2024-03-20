@@ -78,5 +78,4 @@ proxy:
   storybook:
     - storybook.lndo.site
 
-# Tested with Lando version
-version: v3.18.0
+version: v3.20.8

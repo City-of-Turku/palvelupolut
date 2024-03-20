@@ -13,6 +13,13 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-controls',
     '@storybook/addon-toolbars',
-    '@whitespace/storybook-addon-html',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
   ],
 };
