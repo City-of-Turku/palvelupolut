@@ -3,7 +3,7 @@ _core:
 langcode: en
 hotlink: true
 origin: 'https://palvelupolut.fi'
-origin_dir: 'sites/default/files'
+origin_dir: sites/default/files
 proxy_headers: ''
 use_imagecache_root: true
 verify: true
