@@ -1,0 +1,17 @@
+uuid: 2ad97b57-8b81-41e6-ad3c-995fdadd881f
+langcode: en
+status: true
+dependencies: {  }
+id: development
+label: Development
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/sync-dev
+module:
+  stage_file_proxy: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

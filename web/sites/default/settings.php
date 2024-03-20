@@ -23,9 +23,12 @@ $databases['default']['default'] = [
 // Salt for one-time login links, cancel links, form tokens, etc.
 $settings['hash_salt'] = $_ENV['HASH_SALT'];
 
-// Disable Updates log
-$settings['updates_log_disabled'] = TRUE;
+// Configuration split settings for development.
 $config['config_split.config_split.production']['status'] = FALSE;
+$config['config_split.config_split.development']['status'] = TRUE;
+
+// File proxy origin site.
+$config['stage_file_proxy.settings']['origin'] = 'https://palvelupolut.fi';
 
 // Default SMTP settings.
 $config['smtp.settings']['smtp_host'] = 'mailhog';
@@ -39,9 +42,9 @@ switch ($env) {
   case 'production':
     $settings['simple_environment_indicator'] = '#9E005D Production';
 
-    // Enable Updates log
-    $settings['updates_log_disabled'] = FALSE;
+    // Configuration split settings for production.
     $config['config_split.config_split.production']['status'] = TRUE;
+    $config['config_split.config_split.development']['status'] = FALSE;
 
     // SMTP settings.
     $config['smtp.settings']['smtp_host'] = 'smtp.turku.fi';
@@ -59,13 +62,10 @@ switch ($env) {
   case 'local':
   case 'lando':
     $settings['simple_environment_indicator'] = '#2F2942 Local';
-    // File proxy origin site.
-    $config['stage_file_proxy.settings']['origin'] = 'https://palvelupolut.fi';
     // Skip file system permissions hardening.
     $settings['skip_permissions_hardening'] = TRUE;
     // Skip trusted host pattern.
     $settings['trusted_host_patterns'] = ['.*'];
-    // $config['google_analytics.settings']['account'] = 'UA-XXXXXXXXX-99';
     $config['system.performance']['css']['preprocess'] = FALSE;
     $config['system.performance']['js']['preprocess'] = FALSE;
 

@@ -35,8 +35,7 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 4. Import data:
    1. `lando syncdb` - (**connect to VPN first!**) synchronise local DB with sanitised `production` environment or
    2. `lando db-import db.sql.gz`.
-5. Update database & enable develpoment components: `lando update`.
-6. Import config if needed: `lando drush @local cim -y`.
+5. Update database & enable development components: `lando drush deploy`.
 
 ### Services
 

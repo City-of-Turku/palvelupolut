@@ -45,6 +45,8 @@ services:
   appserver:
     build:
       - composer install
+      # Create the translations directory if it doesn't exist.
+      - mkdir -p ./web/sites/default/files/translations
     overrides:
       environment:
         HASH_SALT: notsosecurehash
@@ -79,4 +81,4 @@ proxy:
   storybook:
     - storybook.lndo.site
 
-version: v3.20.8
+version: v3.21
