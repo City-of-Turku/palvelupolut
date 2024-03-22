@@ -107,7 +107,7 @@ if (isset($_ENV['SILTA_CLUSTER']) && file_exists($app_root . '/' . $site_path . 
 }
 
 // Set the memcache server hostname when a memcached server is available.
-if (getenv("SILTA_CLUSTER") && getenv('MEMCACHED_HOST')) {
+if (getenv('MEMCACHED_HOST')) {
   $settings['memcache']['servers'] = [getenv('MEMCACHED_HOST') . ':11211' => 'default'];
 
   // Ensure the memcache Drupal module exists and one of the memcache libraries is found.
