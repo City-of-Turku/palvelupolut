@@ -114,7 +114,7 @@ if (getenv('MEMCACHED_HOST')) {
   // Cache backends should not be set to memcache during installation.
   // @see https://www.drupal.org/project/drupal/issues/2766509
   if (!InstallerKernel::installationAttempted() && (class_exists('Memcache', FALSE) || class_exists('Memcached', FALSE))) {
-    //$settings['cache']['default'] = 'cache.backend.memcache';
+    $settings['cache']['default'] = 'cache.backend.memcache';
   }
 
   // Memcache configuration.
