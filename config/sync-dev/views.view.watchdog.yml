@@ -1,5 +1,5 @@
-uuid: f052f298-d9ec-49b2-9e77-186604b134d3
-langcode: en
+uuid: 3255f828-23f1-46eb-aa78-be82c812145c
+langcode: fi
 status: true
 dependencies:
   module:
@@ -17,7 +17,7 @@ base_field: wid
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Isäntä
     display_plugin: default
     position: 0
     display_options:
