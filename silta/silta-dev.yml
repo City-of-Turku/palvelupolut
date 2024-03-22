@@ -9,7 +9,20 @@ exposeDomains:
     hostname: service-paths.dev.wdr.io
 
 memcached:
-  enabled: false
+  enabled: true
+  resources:
+    requests:
+      cpu: 50m
+      memory: 200M
+    limits:
+      cpu: 100m
+      memory: 384M
+  arguments:
+    - /run.sh
+    # MaxMemoryLimit, this should be less than the resources.limits.memory, or memcached will crash.
+    - -m 128
+    # MaxItemSize
+    - -I 16M
 
 varnish:
   enabled: false

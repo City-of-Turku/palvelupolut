@@ -26,7 +26,6 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 - Storybook: <https://storybook.lndo.site>
 - SSH: `lando ssh (-s <service>)`
 - Logs: `lando logs -s <service>`
-- Drush alias: `drush @local st`
 
 ### Setup
 
@@ -36,8 +35,7 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 4. Import data:
    1. `lando syncdb` - (**connect to VPN first!**) synchronise local DB with sanitised `production` environment or
    2. `lando db-import db.sql.gz`.
-5. Update database & enable develpoment components: `lando update`.
-6. Import config if needed: `lando drush @local cim -y`.
+5. Update database & enable development components: `lando drush deploy`.
 
 ### Services
 
@@ -51,7 +49,6 @@ Drush alias for **current** Silta feature branch deployment is `drush @current s
 - `lando npm <commands>` - run [npm](https://www.npmjs.com/) commands.
 - `lando psalm <commands>` - run [Psalm](https://psalm.dev/) commands.
 - `lando syncdb` - synchronise local database with production environment.
-- `lando update` - update database & enable develpoment components.
 - `lando xdebug <mode>` - load [Xdebug](https://xdebug.org/) in the selected [mode(s)](https://xdebug.org/docs/all_settings#mode).
 
 ### Drupal development hints

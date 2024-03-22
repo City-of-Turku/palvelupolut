@@ -6,6 +6,8 @@
  */
 
 // Database settings, overridden per environment.
+use Drupal\Core\Installer\InstallerKernel;
+
 $databases = [];
 $databases['default']['default'] = [
   'database' => $_ENV['DB_NAME_DRUPAL'],
@@ -21,9 +23,15 @@ $databases['default']['default'] = [
 // Salt for one-time login links, cancel links, form tokens, etc.
 $settings['hash_salt'] = $_ENV['HASH_SALT'];
 
-// Disable Updates log
-$settings['updates_log_disabled'] = TRUE;
+// Location of the site configuration files.
+$settings['config_sync_directory'] = '../config/sync';
+
+// Configuration split settings for development.
 $config['config_split.config_split.production']['status'] = FALSE;
+$config['config_split.config_split.development']['status'] = TRUE;
+
+// File proxy origin site.
+$config['stage_file_proxy.settings']['origin'] = 'https://palvelupolut.fi';
 
 // Default SMTP settings.
 $config['smtp.settings']['smtp_host'] = 'mailhog';
@@ -37,9 +45,9 @@ switch ($env) {
   case 'production':
     $settings['simple_environment_indicator'] = '#9E005D Production';
 
-    // Enable Updates log
-    $settings['updates_log_disabled'] = FALSE;
+    // Configuration split settings for production.
     $config['config_split.config_split.production']['status'] = TRUE;
+    $config['config_split.config_split.development']['status'] = FALSE;
 
     // SMTP settings.
     $config['smtp.settings']['smtp_host'] = 'smtp.turku.fi';
@@ -57,13 +65,10 @@ switch ($env) {
   case 'local':
   case 'lando':
     $settings['simple_environment_indicator'] = '#2F2942 Local';
-    // File proxy origin site.
-    $config['stage_file_proxy.settings']['origin'] = 'https://palvelupolut.fi';
     // Skip file system permissions hardening.
     $settings['skip_permissions_hardening'] = TRUE;
     // Skip trusted host pattern.
     $settings['trusted_host_patterns'] = ['.*'];
-    // $config['google_analytics.settings']['account'] = 'UA-XXXXXXXXX-99';
     $config['system.performance']['css']['preprocess'] = FALSE;
     $config['system.performance']['js']['preprocess'] = FALSE;
 
@@ -77,42 +82,21 @@ switch ($env) {
     break;
 }
 
-// Location of the site configuration files.
-$settings['config_sync_directory'] = '../config/sync';
-
 // Load services definition file.
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
-/**
- * The default list of directories that will be ignored by Drupal's file API.
- *
- * By default ignore node_modules and bower_components folders to avoid issues
- * with common frontend tools and recursive scanning of directories looking for
- * extensions.
- *
- * @see file_scan_directory()
- * @see \Drupal\Core\Extension\ExtensionDiscovery::scanDirectory()
- */
+// The default list of directories that will be ignored by Drupal's file API.
 $settings['file_scan_ignore_directories'] = [
   'node_modules',
   'bower_components',
 ];
 
-/**
- * Load local development override configuration, if available.
- *
- * Use settings.local.php to override variables on secondary (staging,
- * development, etc) installations of this site. Typically used to disable
- * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
- * other things that should not happen on development and testing sites.
- */
+// Load local development override configuration, if available.
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
-/**
- * Lando configuration overrides.
- */
+// Lando configuration overrides.
 if (getenv('LANDO_INFO')) {
   $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.lando.yml';
 }
@@ -120,4 +104,29 @@ if (getenv('LANDO_INFO')) {
 // Silta cluster configuration overrides.
 if (isset($_ENV['SILTA_CLUSTER']) && file_exists($app_root . '/' . $site_path . '/settings.silta.php')) {
   include $app_root . '/' . $site_path . '/settings.silta.php';
+}
+
+// Set the memcache server hostname when a memcached server is available.
+if (getenv('MEMCACHED_HOST')) {
+  $settings['memcache']['servers'] = [getenv('MEMCACHED_HOST') . ':11211' => 'default'];
+
+  // Ensure the memcache Drupal module exists and one of the memcache libraries is found.
+  // Cache backends should not be set to memcache during installation.
+  // @see https://www.drupal.org/project/drupal/issues/2766509
+  if (!InstallerKernel::installationAttempted() && (class_exists('Memcache', FALSE) || class_exists('Memcached', FALSE))) {
+    //$settings['cache']['default'] = 'cache.backend.memcache';
+  }
+
+  // Memcache configuration.
+  if (class_exists('Memcached', FALSE)) {
+    $settings['memcache']['extension'] = 'Memcached';
+    // Memcached PECL Extension Support.
+    $settings['memcache']['options'] = [
+      // Enable compression for PHP 7.
+      \Memcached::OPT_COMPRESSION => TRUE,
+      \Memcached::OPT_DISTRIBUTION => \Memcached::DISTRIBUTION_CONSISTENT,
+      // Decrease latency.
+      \Memcached::OPT_TCP_NODELAY => TRUE,
+    ];
+  }
 }

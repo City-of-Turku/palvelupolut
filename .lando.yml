@@ -6,7 +6,7 @@ config:
   via: nginx
   composer_version: 2-latest
   webroot: web
-  database: mariadb:10.3
+  database: mariadb:10.6
   xdebug: off
   config:
     php: .lando/php.ini
@@ -31,10 +31,6 @@ tooling:
     description: Synchronizes local db with test env
     cmd:
       - appserver: /app/.lando/syncdb.sh
-  update:
-    description: Updates local db & enables dev components
-    cmd:
-      - appserver: /app/.lando/update.sh
   xdebug:
     description: Loads Xdebug in the selected mode
     cmd:
@@ -45,6 +41,8 @@ services:
   appserver:
     build:
       - composer install
+      # Create the translations directory if it doesn't exist.
+      - mkdir -p ./web/sites/default/files/translations
     overrides:
       environment:
         HASH_SALT: notsosecurehash
@@ -53,6 +51,8 @@ services:
         DB_USER_DRUPAL: drupal10
         DB_PASS_DRUPAL: drupal10
         DB_HOST_DRUPAL: database
+        DRUSH_OPTIONS_URI: https://service-paths.lndo.site
+        MEMCACHED_HOST: memcached
         # Support debugging with XDEBUG 3.
         XDEBUG_MODE:
         # Support debugging Drush with XDEBUG 3.
@@ -61,6 +61,9 @@ services:
     type: mailhog
     hogfrom:
       - appserver
+  memcached:
+    type: memcached
+    portforward: true
   node:
     type: node:16
     build:
@@ -78,4 +81,4 @@ proxy:
   storybook:
     - storybook.lndo.site
 
-version: v3.20.8
+version: v3.21
