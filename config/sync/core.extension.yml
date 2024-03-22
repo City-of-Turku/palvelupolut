@@ -65,6 +65,7 @@ module:
   media: 0
   media_library: 0
   memcache: 0
+  memcache_admin: 0
   menu_link_content: 0
   menu_trail_by_path: 0
   menu_ui: 0
@@ -76,7 +77,6 @@ module:
   migrate_plus: 0
   migrate_scheduler: 0
   migrate_tools: 0
-  monolog: 0
   mysql: 0
   node: 0
   options: 0
