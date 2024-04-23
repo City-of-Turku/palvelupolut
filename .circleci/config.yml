@@ -24,7 +24,7 @@ jobs:
 executors:
   cicd81:
     docker:
-      - image: wunderio/silta-cicd:circleci-php8.1-node16-composer2
+      - image: wunderio/silta-cicd:circleci-php8.1-node16-composer2-v1
 
 workflows:
   version: 2
