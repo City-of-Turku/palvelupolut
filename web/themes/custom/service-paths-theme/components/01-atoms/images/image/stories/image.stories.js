@@ -5,7 +5,7 @@ import {
 } from '../../../../storybook/storybook';
 
 import imageTemplate from '../responsive-image.twig';
-import figureTemplate from '../figure.twig';
+import figureTemplate from '../responsive-figure.twig';
 
 import imageData from './image.yml';
 import figureData from './figure.yml';
