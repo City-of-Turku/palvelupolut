@@ -96,7 +96,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  transliterate_filenames: 0
   twig_field_value: 0
   twig_tweak: 0
   ultimate_cron: 0
