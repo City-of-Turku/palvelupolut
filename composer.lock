@@ -6176,17 +6176,17 @@
         },
         {
             "name": "drupal/ultimate_cron",
-            "version": "2.0.0-alpha6",
+            "version": "2.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ultimate_cron.git",
-                "reference": "8.x-2.0-alpha6"
+                "reference": "8.x-2.0-alpha7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ultimate_cron-8.x-2.0-alpha6.zip",
-                "reference": "8.x-2.0-alpha6",
-                "shasum": "42ab6df8e94a9b3772876a378062534552a32826"
+                "url": "https://ftp.drupal.org/files/projects/ultimate_cron-8.x-2.0-alpha7.zip",
+                "reference": "8.x-2.0-alpha7",
+                "shasum": "d3667775c113c9565adec6794f6e7e74d8f19ec7"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -6194,8 +6194,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-alpha6",
-                    "datestamp": "1666471448",
+                    "version": "8.x-2.0-alpha7",
+                    "datestamp": "1707160107",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -6219,10 +6219,6 @@
                 {
                     "name": "Berdir",
                     "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "Dane Powell",
-                    "homepage": "https://www.drupal.org/user/339326"
                 },
                 {
                     "name": "gielfeldt",
