@@ -100,7 +100,7 @@
         "drupal/hreflang": "^1.13",
         "drupal/leaflet": "^10.2",
         "drupal/leaflet_more_maps": "^2.1.2",
-        "drupal/linkit": "^6.0@beta",
+        "drupal/linkit": "^6.1",
         "drupal/mailsystem": "^4.4",
         "drupal/material_icons": "^2.0",
         "drupal/memcache": "^2.5",
