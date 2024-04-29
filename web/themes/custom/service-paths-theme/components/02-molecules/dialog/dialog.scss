@@ -7,7 +7,7 @@
   bottom: 0;
   overflow-y: scroll;
   z-index: 1000;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 
   &.open {
     display: block;
@@ -31,7 +31,12 @@
     padding: space(1) space(1.5);
     border-bottom: 2px solid color(primary);
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-size: 1rem;
       margin: 0;
     }
@@ -60,7 +65,9 @@
   &__content {
     padding: space(1.5);
 
-    p, ol, ul {
+    p,
+    ol,
+    ul {
       &:first-child {
         margin-top: 0;
       }

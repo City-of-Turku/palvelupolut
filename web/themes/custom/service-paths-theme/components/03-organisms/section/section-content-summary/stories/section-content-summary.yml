@@ -1,4 +1,4 @@
-section_content_summary__title: "Section Content Summary"
+section_content_summary__title: 'Section Content Summary'
 section_content_summary__items:
   - placeholder: true
     title: 'Asemanseudun päiväkoti (Käsityöläiskatu 20)'
@@ -7,9 +7,9 @@ section_content_summary__items:
     link__url: ''
     link_text: ''
     open_url: '#'
-    open_text: "Siirry tietokortille"
-    icon_before: "arrow-right"
-    icon_after: ""
+    open_text: 'Siirry tietokortille'
+    icon_before: 'arrow-right'
+    icon_after: ''
     number_heading: 'Puhelin'
     number_lead_text: '050 313 1755'
   - placeholder: true
@@ -20,12 +20,12 @@ section_content_summary__items:
     link__url: ''
     link_text: ''
     open_url: 'https://www.turku.fi'
-    open_text: "Siirry digitaaliseen palveluun"
-    icon_before: "laptop"
-    icon_after: ""
+    open_text: 'Siirry digitaaliseen palveluun'
+    icon_before: 'laptop'
+    icon_after: ''
     number_heading: ''
     number_lead_text: ''
-    read_more_label: "Lue lisää digitaalisista palveluista"
+    read_more_label: 'Lue lisää digitaalisista palveluista'
     read_more_content: |
       <h5>Ensimmäinen luku</h5>
       <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ym­päristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>

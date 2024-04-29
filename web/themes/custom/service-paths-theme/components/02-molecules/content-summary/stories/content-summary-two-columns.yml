@@ -4,11 +4,11 @@ content_summary__heading: ''
 content_summary__lead_text: ''
 content_summary__link_url: ''
 content_summary__link_text: ''
-content_summary__open_text: "Siirry digitaaliseen palveluun"
-content_summary__open_url: "https://www.turku.fi"
-content_summary__icon_before: "laptop"
-content_summary__icon_after:  ""
-content_summary__read_more_label: "Lue lisää digitaalisista palveluista"
+content_summary__open_text: 'Siirry digitaaliseen palveluun'
+content_summary__open_url: 'https://www.turku.fi'
+content_summary__icon_before: 'laptop'
+content_summary__icon_after: ''
+content_summary__read_more_label: 'Lue lisää digitaalisista palveluista'
 content_summary__read_more_content: |
   <h5>Ensimmäinen luku</h5>
   <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ym­päristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>

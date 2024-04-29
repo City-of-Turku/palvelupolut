@@ -37,7 +37,8 @@ export const parameters = {
   options: {
     // Show stories from `Documentation` directory before any other stories.
     storySort: {
-      order: ['Documentation',
+      order: [
+        'Documentation',
         ['Introduction', 'Interface', 'Component structure'],
       ],
     },
@@ -52,7 +53,7 @@ export const parameters = {
   html: {
     // Override the wrapper element selector used to grab the component HTML.
     // @see https://github.com/whitespace-se/storybook-addon-html#usage
-    root: '#component-root'
+    root: '#component-root',
   },
   docs: {
     // Customise Source tab content.
@@ -68,10 +69,8 @@ export const parameters = {
 export const decorators = [
   (Story) => {
     useEffect(() => Drupal.attachBehaviors(), []);
-    return (
-      <Story/>
-    );
-  }
+    return <Story />;
+  },
 ];
 
 setupTwig(Twig);

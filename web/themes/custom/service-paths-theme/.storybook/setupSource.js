@@ -38,5 +38,5 @@ export default (source, storyContext) => {
   // return <>
   //   <h1>This is the source code</h1>
   // </>
-  return <>{code}</>
+  return <>{code}</>;
 };

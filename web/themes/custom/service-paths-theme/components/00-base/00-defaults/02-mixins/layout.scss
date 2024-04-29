@@ -6,7 +6,10 @@
  * Calculates widths for CSS grid items. Returns REM values.
  */
 @mixin grid-width($column-span: $grid-columns) {
-  max-width: calc(#{$column-span * $grid-column-width} + #{($column-span - 1) * $grid-gutter-width});
+  max-width: calc(
+    #{$column-span * $grid-column-width} + #{($column-span - 1) *
+      $grid-gutter-width}
+  );
 }
 
 /*

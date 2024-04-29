@@ -31,7 +31,7 @@
     input:focus + & {
       .label__checkbox--checkbox {
         outline: 1px solid;
-        outline-offset: space(.25);
+        outline-offset: space(0.25);
       }
     }
 

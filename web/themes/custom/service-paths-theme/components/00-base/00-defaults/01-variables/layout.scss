@@ -32,13 +32,18 @@ $width--page-wrapper: calc(#{$width--page} + var(--space-page-padding) * 2);
 
 $grid-gutter-width: space(2);
 $grid-columns: 12;
-$grid-column-width: math.div(($width--page - ($grid-columns - 1) * $grid-gutter-width), $grid-columns); // 5.5rem
+$grid-column-width: math.div(
+  ($width--page - ($grid-columns - 1) * $grid-gutter-width),
+  $grid-columns
+); // 5.5rem
 
 @function grid-width($column-count, $include-trailing-gutter: false) {
   @if ($include-trailing-gutter) {
-    @return $grid-column-width * $column-count + $grid-gutter-width * $column-count;
+    @return $grid-column-width * $column-count + $grid-gutter-width *
+      $column-count;
   }
-  @return $grid-column-width * $column-count + $grid-gutter-width * ($column-count - 1);
+  @return $grid-column-width * $column-count + $grid-gutter-width *
+    ($column-count - 1);
 }
 
 @function grid-gutter-width($times: 1) {
