@@ -122,7 +122,7 @@
         "drupal/smtp": "^1.2",
         "drupal/stable": "^2.0",
         "drupal/stage_file_proxy": "^2.1",
-        "drupal/token": "^1.11",
+        "drupal/token": "^1.14",
         "drupal/transliterate_filenames": "^2.0",
         "drupal/transliterate_twig": "^2.0",
         "drupal/twig_field_value": "^2.0",
