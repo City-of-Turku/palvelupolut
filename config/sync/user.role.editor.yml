@@ -11,6 +11,7 @@ dependencies:
   module:
     - content_translation
     - file
+    - help
     - locale
     - media
     - node
@@ -25,6 +26,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
