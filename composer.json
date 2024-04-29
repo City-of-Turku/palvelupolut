@@ -77,7 +77,7 @@
         "drupal/chosen": "^4.0",
         "drupal/components": "^3.0@beta",
         "drupal/config_filter": "^2.4",
-        "drupal/config_ignore": "^3.2",
+        "drupal/config_ignore": "^3.3",
         "drupal/config_perms": "^2.1",
         "drupal/config_split": "^2.0@RC",
         "drupal/core-composer-scaffold": "^10.2",
