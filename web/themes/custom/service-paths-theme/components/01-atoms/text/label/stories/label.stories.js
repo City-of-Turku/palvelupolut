@@ -4,7 +4,7 @@ import {
   ComponentWrapper,
 } from '../../../../storybook/storybook';
 
-import labelTemplate from '../label.twig';
+import labelTemplate from '../label-text.twig';
 
 import labelData from './label.yml';
 
