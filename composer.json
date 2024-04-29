@@ -133,7 +133,7 @@
         "erusev/parsedown": "^1.7.4",
         "fonticonpicker/fonticonpicker--fonticonpicker": "^3.1.1",
         "furf/jquery-ui-touch-punch": "dev-master",
-        "geocoder-php/nominatim-provider": "^5.6",
+        "geocoder-php/nominatim-provider": "^5.7",
         "harvesthq/chosen": "^1.8.7",
         "kint-php/kint": "^4.2",
         "leaflet/leaflet": "^1.0.2",

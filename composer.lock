@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f4a236105ccf399e38900a7025b2546",
+    "content-hash": "39fc2bd5e6306df2d0e4d870a3111686",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6653,26 +6653,23 @@
         },
         {
             "name": "geocoder-php/common-http",
-            "version": "4.5.0",
+            "version": "4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geocoder-php/php-common-http.git",
-                "reference": "4ee2cee60d21631e2a09c196bf6b9fd296bca728"
+                "reference": "d8c22a66120daed35ba8017467bc1ebfec28a63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/4ee2cee60d21631e2a09c196bf6b9fd296bca728",
-                "reference": "4ee2cee60d21631e2a09c196bf6b9fd296bca728",
+                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/d8c22a66120daed35ba8017467bc1ebfec28a63e",
+                "reference": "d8c22a66120daed35ba8017467bc1ebfec28a63e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "php-http/client-implementation": "^1.0",
-                "php-http/discovery": "^1.6",
-                "php-http/httplug": "^1.0 || ^2.0",
-                "php-http/message-factory": "^1.0.2",
-                "psr/http-message": "^1.0",
-                "psr/http-message-implementation": "^1.0",
+                "php": "^8.0",
+                "php-http/discovery": "^1.17",
+                "psr/http-client-implementation": "^1.0",
+                "psr/http-factory-implementation": "^1.0",
                 "willdurand/geocoder": "^4.0"
             },
             "require-dev": {
@@ -6680,7 +6677,7 @@
                 "php-http/message": "^1.0",
                 "php-http/mock-client": "^1.0",
                 "phpunit/phpunit": "^9.5",
-                "symfony/stopwatch": "~2.5"
+                "symfony/stopwatch": "~2.5 || ~5.0"
             },
             "type": "library",
             "extra": {
@@ -6712,9 +6709,9 @@
                 "http geocoder"
             ],
             "support": {
-                "source": "https://github.com/geocoder-php/php-common-http/tree/4.5.0"
+                "source": "https://github.com/geocoder-php/php-common-http/tree/4.6.0"
             },
-            "time": "2022-07-30T12:09:30+00:00"
+            "time": "2023-12-28T10:51:54+00:00"
         },
         {
             "name": "geocoder-php/nominatim-provider",
@@ -8216,16 +8213,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.19.0",
+            "version": "1.19.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "1856a119a0b0ba8da8b5c33c080aa7af8fac25b4"
+                "reference": "0700efda8d7526335132360167315fdab3aeb599"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/1856a119a0b0ba8da8b5c33c080aa7af8fac25b4",
-                "reference": "1856a119a0b0ba8da8b5c33c080aa7af8fac25b4",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/0700efda8d7526335132360167315fdab3aeb599",
+                "reference": "0700efda8d7526335132360167315fdab3aeb599",
                 "shasum": ""
             },
             "require": {
@@ -8249,7 +8246,8 @@
                 "php-http/httplug": "^1.0 || ^2.0",
                 "php-http/message-factory": "^1.0",
                 "phpspec/phpspec": "^5.1 || ^6.1 || ^7.3",
-                "symfony/phpunit-bridge": "^6.2"
+                "sebastian/comparator": "^3.0.5 || ^4.0.8",
+                "symfony/phpunit-bridge": "^6.4.4 || ^7.0.1"
             },
             "type": "composer-plugin",
             "extra": {
@@ -8288,9 +8286,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/discovery/issues",
-                "source": "https://github.com/php-http/discovery/tree/1.19.0"
+                "source": "https://github.com/php-http/discovery/tree/1.19.4"
             },
-            "time": "2023-06-19T08:45:36+00:00"
+            "time": "2024-03-29T13:00:05+00:00"
         },
         {
             "name": "php-http/guzzle7-adapter",
@@ -8479,61 +8477,6 @@
                 "source": "https://github.com/php-http/message/tree/1.16.1"
             },
             "time": "2024-03-07T13:22:09+00:00"
-        },
-        {
-            "name": "php-http/message-factory",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/message-factory.git",
-                "reference": "4d8778e1c7d405cbb471574821c1ff5b68cc8f57"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-http/message-factory/zipball/4d8778e1c7d405cbb471574821c1ff5b68cc8f57",
-                "reference": "4d8778e1c7d405cbb471574821c1ff5b68cc8f57",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "psr/http-message": "^1.0 || ^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                }
-            ],
-            "description": "Factory interfaces for PSR-7 HTTP Message",
-            "homepage": "http://php-http.org",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "stream",
-                "uri"
-            ],
-            "support": {
-                "issues": "https://github.com/php-http/message-factory/issues",
-                "source": "https://github.com/php-http/message-factory/tree/1.1.0"
-            },
-            "abandoned": "psr/http-factory",
-            "time": "2023-04-14T14:16:17+00:00"
         },
         {
             "name": "php-http/promise",
@@ -9094,16 +9037,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.1",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
                 "shasum": ""
             },
             "require": {
@@ -9112,7 +9055,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -9127,7 +9070,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -9141,9 +9084,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/1.1"
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
             },
-            "time": "2023-04-04T09:50:52+00:00"
+            "time": "2023-04-04T09:54:51+00:00"
         },
         {
             "name": "psr/log",
