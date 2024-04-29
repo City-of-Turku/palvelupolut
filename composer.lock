@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a37ad6919df27cfa5b7e092421ec713c",
+    "content-hash": "903852a8d3220ce95f69bd72f19bfc23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1959,17 +1959,17 @@
         },
         {
             "name": "drupal/better_exposed_filters",
-            "version": "6.0.3",
+            "version": "6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/better_exposed_filters.git",
-                "reference": "6.0.3"
+                "reference": "6.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-6.0.3.zip",
-                "reference": "6.0.3",
-                "shasum": "b5c20207d7679542bb81955771956c18083e6e0b"
+                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-6.0.5.zip",
+                "reference": "6.0.5",
+                "shasum": "a325449adf32c13dd8e348bf10979aea301da84e"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -1981,8 +1981,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.3",
-                    "datestamp": "1671541877",
+                    "version": "6.0.5",
+                    "datestamp": "1713570803",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2021,6 +2021,10 @@
                 {
                     "name": "rlhawk",
                     "homepage": "https://www.drupal.org/user/352283"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
                 }
             ],
             "description": "Replaces the Views default single- or multi-select boxes with more advanced options.",
