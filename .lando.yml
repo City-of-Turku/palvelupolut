@@ -9,6 +9,7 @@ config:
   xdebug: off
   config:
     php: .lando/php.ini
+    database: .lando/database.cnf
 
 tooling:
   grumphp:
