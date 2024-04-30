@@ -2,8 +2,8 @@ section_cards__title: '34 tulosta listana'
 section_cards__items:
   - placeholder: true
     image__src: 'hero.jpg'
-    link__url: "front"
-    link__text: "Tutustu kohteeseen"
+    link__url: 'front'
+    link__text: 'Tutustu kohteeseen'
     heading: 'Päiväkoti Taikametsä'
     card__items:
       - lead_text: 'Palvelusta vastaa'
@@ -16,8 +16,8 @@ section_cards__items:
         icon: 'play '
   - placeholder: true
     image__src: 'hero.jpg'
-    link__url: "front"
-    link__text: "Tutustu kohteeseen"
+    link__url: 'front'
+    link__text: 'Tutustu kohteeseen'
     heading: 'Päiväkoti Taikametsä'
     card__items:
       - lead_text: 'Palvelusta vastaa'
@@ -30,8 +30,8 @@ section_cards__items:
         icon: 'play'
   - placeholder: true
     image__src: 'hero.jpg'
-    link__url: "front"
-    link__text: "Tutustu kohteeseen"
+    link__url: 'front'
+    link__text: 'Tutustu kohteeseen'
     heading: 'Päiväkoti Taikametsä'
     card__items:
       - lead_text: 'Palvelusta vastaa'
@@ -44,8 +44,8 @@ section_cards__items:
         icon: 'play'
   - placeholder: true
     image__src: 'hero.jpg'
-    link__url: "front"
-    link__text: "Tutustu kohteeseen"
+    link__url: 'front'
+    link__text: 'Tutustu kohteeseen'
     heading: 'Päiväkoti Taikametsä'
     card__items:
       - lead_text: 'Palvelusta vastaa'
@@ -58,8 +58,8 @@ section_cards__items:
         icon: 'play'
   - placeholder: true
     image__src: 'hero.jpg'
-    link__url: "front"
-    link__text: "Tutustu kohteeseen"
+    link__url: 'front'
+    link__text: 'Tutustu kohteeseen'
     heading: 'Päiväkoti Taikametsä'
     card__items:
       - lead_text: 'Palvelusta vastaa'
@@ -72,8 +72,8 @@ section_cards__items:
         icon: 'play'
   - placeholder: true
     image__src: 'hero.jpg'
-    link__url: "front"
-    link__text: "Tutustu kohteeseen"
+    link__url: 'front'
+    link__text: 'Tutustu kohteeseen'
     heading: 'Päiväkoti Taikametsä'
     card__items:
       - lead_text: 'Palvelusta vastaa'

@@ -10,7 +10,9 @@ php:
   drupalCoreVersion: "10"
   postupgrade:
     afterCommand: |
-      drush uli
+      drush locale:update
+      drush cache:rebuild
+      drush user:login
 #   cron:
 #     ptvcron1:
 #       schedule: '0 1 * * *'

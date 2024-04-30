@@ -4,9 +4,9 @@ content_summary__heading: 'Osoite'
 content_summary__lead_text: 'Käsityöläiskatu 20<br />20100 TURKU'
 content_summary__link_url: ''
 content_summary__link_text: ''
-content_summary__open_text: "Siirry tietokortille"
-content_summary__open_url: ""
-content_summary__icon_before: "arrow-right"
-content_summary__icon_after:  ""
+content_summary__open_text: 'Siirry tietokortille'
+content_summary__open_url: ''
+content_summary__icon_before: 'arrow-right'
+content_summary__icon_after: ''
 content_summary__number_heading: 'Puhelin'
 content_summary__number_lead_text: '050 313 1755'

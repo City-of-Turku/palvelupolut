@@ -1,8 +1,8 @@
-selection_box__title: "Omat valinnat"
+selection_box__title: 'Omat valinnat'
 selection_box__link_title: 'Lisää omiin valintoihin'
 selection_box__url: '#'
-selection_box__open_text: "Poista omista valinnoista"
-checkbox_list__title: "Checkbox title"
+selection_box__open_text: 'Poista omista valinnoista'
+checkbox_list__title: 'Checkbox title'
 checkbox_list__items:
   - placeholder: true
     id: '1'

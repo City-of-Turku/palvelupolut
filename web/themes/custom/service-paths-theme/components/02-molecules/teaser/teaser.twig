@@ -34,13 +34,13 @@
     } %}
 
     <div {{ bem('meta', [], teaser__base_class) }}>
-      {% include '@atoms/text/label/label.twig' with {
+      {% include '@atoms/text/label/label-text.twig' with {
         label__base_class: 'date',
         label__content:  teaser__date,
         label__blockname: teaser__base_class,
       } %}
 
-      {% include '@atoms/text/label/label.twig' with {
+      {% include '@atoms/text/label/label-text.twig' with {
         label__base_class: 'label',
         label__content:  teaser__lead_text,
         label__blockname: teaser__base_class,

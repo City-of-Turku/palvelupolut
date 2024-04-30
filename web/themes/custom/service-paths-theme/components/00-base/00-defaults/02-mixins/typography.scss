@@ -202,7 +202,11 @@
   }
 }
 
-@mixin label($color: color(text), $margin: 0, $padding: space(math.div(1, 4)) 0) {
+@mixin label(
+  $color: color(text),
+  $margin: 0,
+  $padding: space(math.div(1, 4)) 0
+) {
   margin: $margin;
   padding: $padding; // Align vertically with body text.
   line-height: $line-height--base;

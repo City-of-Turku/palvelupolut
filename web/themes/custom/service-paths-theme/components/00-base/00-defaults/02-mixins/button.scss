@@ -88,7 +88,7 @@ $button-colors: (
   }
 }
 
-@mixin button-with-icon () {
+@mixin button-with-icon() {
   margin-top: space(2);
   padding: space(0.75) space(1.25);
   width: fit-content;

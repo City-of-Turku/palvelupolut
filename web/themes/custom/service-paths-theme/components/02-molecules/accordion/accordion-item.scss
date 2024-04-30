@@ -63,7 +63,7 @@
   &--white {
     background: color(background);
     border-top: none;
-    border-radius: space(.75);
+    border-radius: space(0.75);
     margin-bottom: space(1);
 
     &:last-child {
@@ -92,7 +92,7 @@
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         background: color(background);
         top: 0;
@@ -106,7 +106,7 @@
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         background: color(background);
         bottom: 0;

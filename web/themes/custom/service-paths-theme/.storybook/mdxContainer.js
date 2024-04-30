@@ -4,7 +4,9 @@ import { DocsContainer } from '@storybook/addon-docs';
 export const ToolbarContext = React.createContext();
 
 export default ({ children, context }) => {
-  const { globals: { locale }} = context;
+  const {
+    globals: { locale },
+  } = context;
 
   return (
     <DocsContainer context={context}>
@@ -13,4 +15,4 @@ export default ({ children, context }) => {
       </ToolbarContext.Provider>
     </DocsContainer>
   );
-}
+};

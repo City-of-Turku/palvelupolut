@@ -1,0 +1,105 @@
+# Override the MariaDB defaults in the local environment defined in /opt/bitnami/mariadb/conf/my.cnf.
+# Lando will copy this file to /opt/bitnami/mariadb/conf/bitnami/my_custom.cnf.
+
+# Keep default MariaDB settings from Lando around and override as needed below.
+# Don't change: start.
+[mysqld]
+
+# Basic Settings.
+default-storage-engine=innodb
+
+# Fine Tuning.
+key_buffer_size=384M
+max_allowed_packet=32M
+thread_stack=400K
+thread_cache_size=8
+read_rnd_buffer_size=8M
+myisam_sort_buffer_size=64M
+table_open_cache=512
+sort_buffer_size=2M
+read_buffer_size=2M
+
+# Query Cache Configuration.
+query_cache_limit=1M
+query_cache_size=64M
+
+# Logging and Replication.
+expire_logs_days=10
+max_binlog_size=100M
+
+# InnoDB settings.
+innodb_log_file_size=101M
+innodb_flush_log_at_trx_commit=0
+innodb_buffer_pool_size=384M
+innodb_log_buffer_size=4M
+innodb_file_per_table=1
+innodb_open_files=256
+innodb_io_capacity=512
+innodb_flush_method=O_DIRECT
+innodb_thread_concurrency=8
+innodb_lock_wait_timeout=121
+
+[mysqldump]
+quick
+quote-names
+max_allowed_packet=32M
+
+[isamchk]
+key_buffer_size=384M
+sort_buffer_size=256M
+read_buffer=2M
+write_buffer=2M
+# Don't change: finish.
+
+# Here you can override the Lando MariaDB default configuration.
+# Try to keep in sync with Silta config defined in silta/silta.yml.
+
+[mysqld]
+skip-name-resolve
+explicit_defaults_for_timestamp
+basedir=/opt/bitnami/mariadb
+plugin_dir=/opt/bitnami/mariadb/plugin
+port=3306
+socket=/opt/bitnami/mariadb/tmp/mysql.sock
+tmpdir=/opt/bitnami/mariadb/tmp
+max_allowed_packet=256M
+bind-address=0.0.0.0
+pid-file=/opt/bitnami/mariadb/tmp/mysqld.pid
+log-error=/opt/bitnami/mariadb/logs/mysqld.log
+character-set-server=UTF8
+collation-server=utf8_unicode_ci
+transaction-isolation=READ-COMMITTED
+# Default max_connections value is 150.
+# Each active connection consumes approx. 19-20MB of memory.
+# Consider adding additional memory for production requests/limits when scaling up.
+max_connections=200
+# Set innodb_buffer_pool_size to 70/80% of resources.requests.memory (366Mi).
+innodb_buffer_pool_size=275Mi
+innodb_log_buffer_size=8M
+# Set innodb_log_file_size to 12.5% of innodb_buffer_pool_size (34Mi is 12.5% of 275Mi).
+innodb_log_file_size=34Mi
+innodb_lock_wait_timeout=120
+innodb_open_files=49152
+innodb_flush_log_at_trx_commit=2
+innodb_flush_method=O_DIRECT
+table_open_cache=4000
+table_definition_cache=1000
+back_log=2048
+tmp_table_size=64M
+max_heap_table_size=32M
+join_buffer_size=2M
+# have_query_cache=NO
+performance_schema=1
+innodb_write_io_threads=16
+innodb_use_native_aio=0
+[client]
+port=3306
+socket=/opt/bitnami/mariadb/tmp/mysql.sock
+default-character-set=UTF8
+plugin_dir=/opt/bitnami/mariadb/plugin
+# Add default protocol to avoid warning.
+protocol=TCP
+[manager]
+port=3306
+socket=/opt/bitnami/mariadb/tmp/mysql.sock
+pid-file=/opt/bitnami/mariadb/tmp/mysqld.pid

@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.service_channels_phone
 label: 'Service Channels - Phone'
+description: ''
 targetEntityType: node
 cache: true

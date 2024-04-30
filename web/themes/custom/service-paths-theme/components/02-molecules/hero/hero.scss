@@ -65,21 +65,20 @@
     margin-bottom: space(1.5);
 
     &--subheading {
-
       .hero__title--h1 + & {
         @include h2($font-weight: 300, $color: color(text-inverse));
       }
     }
 
     & + &--subheading {
-      margin-top: space(-1)
+      margin-top: space(-1);
     }
 
     @include above($width-large) {
       margin-bottom: space(2);
 
       & + &--subheading {
-        margin-top: space(-1.5)
+        margin-top: space(-1.5);
       }
     }
   }

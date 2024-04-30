@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.service_channels_e_service
 label: 'Service Channels - E-Service'
+description: ''
 targetEntityType: node
 cache: true

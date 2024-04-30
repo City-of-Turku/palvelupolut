@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.service_channels_location
 label: 'Service Channels - Location'
+description: ''
 targetEntityType: node
 cache: true

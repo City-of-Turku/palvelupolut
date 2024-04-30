@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.section_teaser
 label: 'Section Teaser'
+description: ''
 targetEntityType: node
 cache: true

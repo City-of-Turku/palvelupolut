@@ -1,11 +1,11 @@
 // Simple Drupal.behaviors usage for Storybook.
 import Twig from 'twig';
 import { setupTwig } from './setupTwig';
-import iconMarkupExternalLinkTemplate from "../components/01-atoms/images/fontawesome-icon/fontawesome-icon.twig";
+import iconMarkupExternalLinkTemplate from '../components/01-atoms/images/fontawesome-icon/fontawesome-icon.twig';
 const iconMarkupExternalLinkData = {
   fontawesome_icon__name: 'external-link-alt',
   fontawesome_icon__decorative: true,
-  fontawesome_icon__modifiers: ['external-link']
+  fontawesome_icon__modifiers: ['external-link'],
 };
 window.Drupal = { behaviors: {} };
 window.drupalSettings = {};
@@ -43,7 +43,8 @@ setupTwig(Twig);
   drupalSettings.servicePathsTheme = {
     // This should reflect the output from
     // @01-atoms/images/fontawesome-icon/fontawesome-icon.twig.
-    iconMarkupExternalLink: iconMarkupExternalLinkTemplate(iconMarkupExternalLinkData)
+    iconMarkupExternalLink: iconMarkupExternalLinkTemplate(
+      iconMarkupExternalLinkData,
+    ),
   };
-
 })(Drupal, window.drupalSettings);

@@ -4,12 +4,12 @@ recipe: drupal10
 config:
   php: '8.1'
   via: nginx
-  composer_version: 2-latest
   webroot: web
   database: mariadb:10.6
   xdebug: off
   config:
     php: .lando/php.ini
+    database: .lando/database.cnf
 
 tooling:
   grumphp:

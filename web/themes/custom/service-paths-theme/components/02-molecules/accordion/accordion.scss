@@ -35,10 +35,14 @@
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       width: space(0.125);
       position: absolute;
-      background-image: linear-gradient(to bottom, color(border-primary) 33%, rgba(255, 255, 255, 0) 0%);
+      background-image: linear-gradient(
+        to bottom,
+        color(border-primary) 33%,
+        rgba(255, 255, 255, 0) 0%
+      );
       background-position: top left;
       background-size: space(0.125) space(0.375);
       background-repeat: repeat-y;

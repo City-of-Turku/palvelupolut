@@ -67,10 +67,16 @@ switch ($env) {
     $settings['simple_environment_indicator'] = '#2F2942 Local';
     // Skip file system permissions hardening.
     $settings['skip_permissions_hardening'] = TRUE;
+
     // Skip trusted host pattern.
     $settings['trusted_host_patterns'] = ['.*'];
     $config['system.performance']['css']['preprocess'] = FALSE;
     $config['system.performance']['js']['preprocess'] = FALSE;
+
+    // Enable Twig debugging.
+    $config['system.performance']['twig.config']['debug'] = TRUE;
+    $config['system.performance']['twig.config']['auto_reload'] = TRUE;
+
 
     if (class_exists('Kint')) {
       Kint::$depth_limit = 4;

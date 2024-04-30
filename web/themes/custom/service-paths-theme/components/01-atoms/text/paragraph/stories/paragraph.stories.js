@@ -4,7 +4,7 @@ import {
   ComponentWrapper,
 } from '../../../../storybook/storybook';
 
-import paragraphTemplate from './paragraph.twig';
+import paragraphTemplate from './paragraph-storybook.twig';
 
 /**
  * Storybook Definition.
