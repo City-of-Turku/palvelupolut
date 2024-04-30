@@ -171,19 +171,8 @@
         "process-timeout": 600
     },
     "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ],
         "files": [
             "load.environment.php"
-        ]
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
     },
     "extra": {
