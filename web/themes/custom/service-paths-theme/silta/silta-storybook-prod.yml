@@ -15,12 +15,6 @@ exposeDomains:
       enabled: true
       issuer: letsencrypt
 
-nginx:
-  basicauth:
-    credentials:
-      username: wunder
-      password: sp
-
 # Fastly WAF.
 signalsciences:
   enabled: true

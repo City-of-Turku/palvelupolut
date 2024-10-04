@@ -1,6 +1,6 @@
 # Service Paths
 
-palvelupolut.fi is in archive mode and no longer maintained. The site is behind http authentication, credentials can be found in the `silta/silta.yml` file.
+palvelupolut.fi is in archive mode and no longer maintained. The site is behind HTTP authentication, credentials can be found in the `silta/silta.yml` file.  HTTP authentication is disabled for Wunder Telia VPN users and selected Turku IP addresses.
 
 ## Production environment
 
