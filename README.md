@@ -1,5 +1,7 @@
 # Service Paths
 
+palvelupolut.fi is in archive mode and no longer maintained. The site is behind http authentication, credentials can be found in the `silta/silta.yml` file.
+
 ## Production environment
 
 - URL: <https://palvelupolut.fi>
