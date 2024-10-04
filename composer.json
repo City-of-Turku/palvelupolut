@@ -219,9 +219,6 @@
                 "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
                 "#2920285: Fix update module can get 'stuck' ": "https://www.drupal.org/files/issues/2023-10-10/update-module-stuck.patch"
             },
-            "drupal/devel": {
-                "Brings back the Available Methods & Properties tabs for Kint dumps \u2014 Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
-            },
             "drupal/stage_file_proxy": {
                 "It should be possible to disable the module, but still have it installed": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
             },
