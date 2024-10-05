@@ -124,3 +124,17 @@ memcached:
     - -m 128
     # MaxItemSize
     - -I 16M
+
+nginx:
+  basicauth:
+    credentials:
+      username: wunder
+      password: palvelupolut
+  noauthips:
+    wunder-vpn: 194.89.156.118/32
+    turku-alpe: 194.111.66.17
+    turku-hallinto: 194.111.66.10
+    turku-hyto: 195.156.213.180
+    turku-kouluterkkarit: 195.165.123.184
+    turku-skanssi-monitori: 194.111.66.42
+    turku-soske: 194.111.66.19

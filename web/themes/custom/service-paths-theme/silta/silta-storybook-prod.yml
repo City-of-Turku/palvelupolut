@@ -15,10 +15,6 @@ exposeDomains:
       enabled: true
       issuer: letsencrypt
 
-nginx:
-  basicauth:
-    enabled: false
-
 # Fastly WAF.
 signalsciences:
   enabled: true
