@@ -129,7 +129,7 @@ nginx:
   basicauth:
     credentials:
       username: wunder
-      password: sp
+      password: palvelupolut
   noauthips:
     wunder-vpn: 194.89.156.118/32
     turku-alpe: 194.111.66.17
