@@ -1,6 +1,5 @@
 _core:
   default_config_hash: nugrsE7oamG3Qh_Kn7tOHmVWTHGSvK-IWZoQzfQXVJg
-langcode: fi
 tag: span
 method: webfonts
 load_assets: true

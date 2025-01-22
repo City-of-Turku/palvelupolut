@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Target Groups'
 vid: target_groups
-description: ''
+description: null
 weight: 0
+new_revision: false

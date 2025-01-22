@@ -13,8 +13,8 @@ _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
 name: Laskeutumissivu
 type: page
-description: 'Landing page'
-help: ''
+description: null
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false

@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Service Classes'
 vid: service_classes
-description: ''
+description: null
 weight: 0
+new_revision: false
