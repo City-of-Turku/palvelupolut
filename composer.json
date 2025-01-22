@@ -91,7 +91,7 @@
         "drupal/eva": "^3.0",
         "drupal/field_group": "^3.2",
         "drupal/focal_point": "^2.0",
-        "drupal/fontawesome": "2.x-dev",
+        "drupal/fontawesome": "^3.0",
         "drupal/geocoder": "^4.23",
         "drupal/geofield": "^1.44",
         "drupal/google_tag": "^2.0",
