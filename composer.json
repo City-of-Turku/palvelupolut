@@ -80,8 +80,8 @@
         "drupal/config_ignore": "^3.3",
         "drupal/config_perms": "^2.1",
         "drupal/config_split": "^2.0",
-        "drupal/core-composer-scaffold": "10.3.11",
-        "drupal/core-recommended": "10.3.11",
+        "drupal/core-composer-scaffold": "^10.4",
+        "drupal/core-recommended": "^10.4",
         "drupal/ctools": "^4.0",
         "drupal/devel": "^5.2",
         "drupal/devel_kint_extras": "^1.1",
@@ -225,6 +225,9 @@
             },
             "drupal/migrate_tools": {
                 "Do not roll back everything with --sync option": "https://www.drupal.org/files/issues/2023-05-16/sync-id-hash-3104268-21.patch"
+            },
+            "drupal/breadcrumb_manager": {
+                "Error on Drupal 10.4 update 3494696": "https://www.drupal.org/files/issues/2024-12-18/breadcrumb_manager_10_4_compatibility.patch"
             }
         },
         "dropin-paths": {
