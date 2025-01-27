@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: migrate_scheduler_cron
 weight: 0
 module: migrate_scheduler
-callback: migrate_scheduler_cron
+callback: 'migrate_scheduler#cron'
 scheduler:
   id: simple
 launcher:
