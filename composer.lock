@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8ae1c2a0656c64706e8064654a2581d",
+    "content-hash": "79810ff88819441116c293aaaba67085",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3801,26 +3801,26 @@
         },
         {
             "name": "drupal/emulsify_twig",
-            "version": "4.0.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/emulsify_twig.git",
-                "reference": "4.0.0"
+                "reference": "5.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/emulsify_twig-4.0.0.zip",
-                "reference": "4.0.0",
-                "shasum": "291883db32ca3f751a9501ec2aed77d2174d38e2"
+                "url": "https://ftp.drupal.org/files/projects/emulsify_twig-5.0.0.zip",
+                "reference": "5.0.0",
+                "shasum": "382871d3dd5040f693fda03a246a9ca667225f8c"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.0",
-                    "datestamp": "1676582809",
+                    "version": "5.0.0",
+                    "datestamp": "1714690018",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3833,16 +3833,12 @@
             ],
             "authors": [
                 {
-                    "name": "Aaron Stanush",
-                    "homepage": "https://www.drupal.org/user/89718"
-                },
-                {
                     "name": "amazingrando",
                     "homepage": "https://www.drupal.org/user/609802"
                 },
                 {
-                    "name": "bjlewis2",
-                    "homepage": "https://www.drupal.org/user/223774"
+                    "name": "americkson",
+                    "homepage": "https://www.drupal.org/user/1460062"
                 },
                 {
                     "name": "callinmullaney",
@@ -3863,6 +3859,10 @@
                 {
                     "name": "fk_bender",
                     "homepage": "https://www.drupal.org/user/3539842"
+                },
+                {
+                    "name": "generalredneck",
+                    "homepage": "https://www.drupal.org/user/368854"
                 }
             ],
             "description": "Provides Twig functions for use with Emulsify",
