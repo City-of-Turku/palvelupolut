@@ -1,0 +1,36 @@
+# Database dumps
+*.sql
+*.sql.gz
+*.mysql
+*.mysql.gz
+*.dump
+*.dump.gz
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Drupal specific files
+web/sites/*/files
+web/sites/*/private
+web/sites/*/settings.local.php
+web/sites/*/services.local.yml
+private/
+
+# Vendor directories and dependencies
+vendor/
+node_modules/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Log files
+*.log
+logs/
+
+# Cache files
+*.cache

@@ -1,0 +1,51 @@
+---
+description: Common rules for Cursor AI usage in Service Paths project
+alwaysApply: true
+---
+
+# Common Rules for Cursor AI Usage
+
+## File Organization
+- Keep all rule files in @.cursor/rules/ directory
+- Use .mdc extension for rule files
+- Name files descriptively (e.g., common.mdc)
+- Each rule file should focus on a specific component or feature
+
+## Documentation
+- Use markdown for documentation
+- Reference files with @ prefix for better IDE integration
+- Document dependencies and versions
+- Note breaking changes
+- Include future considerations
+- Keep documentation up to date with code changes, especially @README.md
+- Document version constraints and requirements
+- Keep cursor code functionality related rules up to date with code changes (@.cursor/rules/*.mdc)
+- When proposing code changes, always include a git commit message following the format defined in Git Commits section
+
+## Git Commits
+Prefix commit message with JIRA ticket number from branch name.
+Format commit messages using the following types:
+
+- feat: New feature
+- fix: Bug fix
+- docs: Documentation
+- style: Formatting
+- refactor: Code restructure
+- test: Testing
+- chore: Maintenance
+
+Examples:
+
+TKU-1053: (chore) Upgrade Drupal core to 10.4
+
+When modifying rule files, add references at the end, example:
+
+Refs: common.mdc
+
+## Code Standards
+- Follow Drupal coding standards
+- Follow PHP Static Analysis rules defined in @phpstan.neon
+- Group related changes by component
+- Use consistent naming conventions
+- Comment complex logic
+- Consider backward compatibility
