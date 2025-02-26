@@ -26,6 +26,9 @@ $settings['hash_salt'] = $_ENV['HASH_SALT'];
 // Location of the site configuration files.
 $settings['config_sync_directory'] = '../config/sync';
 
+// Set state cache flag to TRUE.
+$settings['state_cache'] = TRUE;
+
 // Configuration split settings for development.
 $config['config_split.config_split.production']['status'] = FALSE;
 $config['config_split.config_split.development']['status'] = TRUE;

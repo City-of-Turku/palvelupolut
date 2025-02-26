@@ -1,10 +1,9 @@
 _core:
   default_config_hash: LqXuXXQCTd1NWw7dGLef0PCi3_aEEWQuogAblo4hHaE
-langcode: en
 hotlink: true
 origin: 'https://palvelupolut.fi'
 origin_dir: sites/default/files
-proxy_headers: ''
 use_imagecache_root: true
+proxy_headers: ''
 verify: true
 excluded_extensions: ''

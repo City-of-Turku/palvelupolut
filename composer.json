@@ -60,10 +60,6 @@
                     "type": "zip"
                 }
             }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/artursv/monolog.git"
         }
     ],
     "require": {
@@ -75,23 +71,23 @@
         "drupal/better_exposed_filters": "^6.0",
         "drupal/breadcrumb_manager": "^1.3",
         "drupal/chosen": "^4.0",
-        "drupal/components": "^3.0@beta",
+        "drupal/components": "^3.1",
         "drupal/config_filter": "^2.4",
         "drupal/config_ignore": "^3.3",
         "drupal/config_perms": "^2.1",
         "drupal/config_split": "^2.0",
-        "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "^10.2",
+        "drupal/core-composer-scaffold": "^10.4",
+        "drupal/core-recommended": "^10.4",
         "drupal/ctools": "^4.0",
         "drupal/devel": "^5.2",
         "drupal/devel_kint_extras": "^1.1",
         "drupal/devel_php": "^1.6",
         "drupal/double_field": "^4.0",
-        "drupal/emulsify_twig": "^4.0",
-        "drupal/eva": "^3.0",
+        "drupal/emulsify_twig": "^5.0",
+        "drupal/eva": "^3.1",
         "drupal/field_group": "^3.2",
         "drupal/focal_point": "^2.0",
-        "drupal/fontawesome": "2.x-dev",
+        "drupal/fontawesome": "^3.0",
         "drupal/geocoder": "^4.23",
         "drupal/geofield": "^1.44",
         "drupal/google_tag": "^2.0",
@@ -109,7 +105,7 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_scheduler": "^1.0@RC",
         "drupal/migrate_tools": "^6.0",
-        "drupal/monolog": "^3.0",
+        "drupal/monolog": "^2.2",
         "drupal/paragraphs": "^1.14",
         "drupal/paragraphs_asymmetric_translation_widgets": "1.x-dev",
         "drupal/password_policy": "^4.0",
@@ -119,8 +115,8 @@
         "drupal/seven": "^1.0",
         "drupal/simplei": "^2.1",
         "drupal/smtp": "^1.2",
-        "drupal/stable": "^2.0",
-        "drupal/stage_file_proxy": "^2.1",
+        "drupal/stable": "^2.1",
+        "drupal/stage_file_proxy": " 3.1.3",
         "drupal/token": "^1.14",
         "drupal/transliterate_filenames": "^2.0",
         "drupal/transliterate_twig": "^2.0",
@@ -137,7 +133,6 @@
         "kint-php/kint": "^4.2",
         "leaflet/leaflet": "^1.0.2",
         "mglaman/composer-drupal-lenient": "^1.0",
-        "monolog/monolog": "dev-instana-compatibility as 3.4.0",
         "vlucas/phpdotenv": "^5.6",
         "webflo/drupal-finder": "^1.2.2",
         "wunderio/drupal-ping": "^2.5",
@@ -217,17 +212,14 @@
                 "Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
                 "#2920285: Fix update module can get 'stuck' ": "https://www.drupal.org/files/issues/2023-10-10/update-module-stuck.patch"
             },
-            "drupal/stage_file_proxy": {
-                "It should be possible to disable the module, but still have it installed": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
-            },
             "drupal/migrate_scheduler": {
                 "Make the configuration available to set/update from the admin UI": "https://www.drupal.org/files/issues/2021-04-14/migrate_scheduler_2973261_6.patch"
             },
             "drupal/migrate_tools": {
                 "Do not roll back everything with --sync option": "https://www.drupal.org/files/issues/2023-05-16/sync-id-hash-3104268-21.patch"
             },
-            "drupal/view_mode_page": {
-                "Drupal 10 compatibility | https://www.drupal.org/project/view_mode_page/issues/3356400": "https://www.drupal.org/files/issues/2023-05-30/3356400-drupal-10-compatibility-6.patch"
+            "drupal/breadcrumb_manager": {
+                "Error on Drupal 10.4 update 3494696": "https://www.drupal.org/files/issues/2024-12-18/breadcrumb_manager_10_4_compatibility.patch"
             }
         },
         "dropin-paths": {

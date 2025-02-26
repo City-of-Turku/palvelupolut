@@ -1,6 +1,5 @@
 _core:
   default_config_hash: o4bYR9ZupWb3AsOIizTUG4g-nu1mdJqA59UB7QT-ifQ
-langcode: fi
 definitions:
   contact__site_page:
     menu_name: footer
